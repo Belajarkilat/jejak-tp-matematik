@@ -21,11 +21,11 @@ jobs:
       - name: Bank yang dicommit mesti sama dengan hasil bina
         run: git diff --exit-code -- 'bank-*.js'
       - name: Semak jawapan berangka secara bebas
-        run: node tools/semak-jawapan.js m3b1 m3b2 m3b3 m3b4 m3b5 m3b6 m3b7 m3b8 m3b9
+        run: node tools/semak-jawapan.js m1b1 m1b2 m1b3 m1b4 m1b5 m1b6 m1b7 m1b8 m1b9 m1b10 m1b11 m1b12 m1b13 m3b1 m3b2 m3b3 m3b4 m3b5 m3b6 m3b7 m3b8 m3b9
       - name: Audit semua keadaan rajah interaktif
         run: node tools/audit-rajah.js
       - name: Ujian main penuh (semua soalan, telefon 390px)
         run: |
           python3 -m http.server 8811 > /dev/null 2>&1 &
           sleep 2
-          node tools/uji-penuh.js m3b1 m3b2 m3b3 m3b4 m3b5 m3b6 m3b7 m3b8 m3b9
+          node tools/uji-penuh.js m1b1 m1b2 m1b3 m1b4 m1b5 m1b6 m1b7 m1b8 m1b9 m1b10 m1b11 m1b12 m1b13 m3b1 m3b2 m3b3 m3b4 m3b5 m3b6 m3b7 m3b8 m3b9
