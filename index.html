@@ -1036,6 +1036,8 @@ body.zon-murid{color:var(--tinta)}
 <script src="bank-m3b1.js?v=1"></script>
 <script src="bank-m3b2.js?v=1"></script>
 <script src="bank-m3b3.js?v=1"></script>
+<script src="bank-m3b4.js?v=1"></script>
+<script src="bank-m3b5.js?v=1"></script>
 <script src="interaktif.js?v=1"></script>
 <script src="muzik.js?v=2"></script>
 <script src="conteng.js?v=1"></script>
@@ -1137,7 +1139,7 @@ body.zon-murid{color:var(--tinta)}
 /* Semua 51 bab (Tingkatan 1-5) sedia dimainkan. Bab 1-2 setiap tingkatan
    percuma; Bab 3 ke atas memerlukan kelas milik guru Premium (RM23/tahun).
    Lihat bebasBab() dan premiumAktif(). */
-var JUMLAH_BAB={3:3};
+var JUMLAH_BAB={3:5};
 var BAB_TERSEDIA=[];
 Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("m"+t+"b"+i);
@@ -1205,7 +1207,13 @@ var DUNIA={
         misi:"Tulis nombor gergasi dan nombor halus dengan kemas dan tepat."},
   m3b3:{warna:"#2F9E44",lembut:"#DDF5E1",gelap:"#1F6E2F",ikon:"💰",
         hentian:["🏦","📈","📊","🧾","💳","🤝"],
-        misi:"Urus wang dengan bijak: simpan, labur, dan elak jerat hutang."}
+        misi:"Urus wang dengan bijak: simpan, labur, dan elak jerat hutang."},
+  m3b4:{warna:"#C2410C",lembut:"#FFE8D9",gelap:"#9A3412",ikon:"📐",
+        hentian:["🗺️","🔬","🧮","🧩","🏡","🎨"],
+        misi:"Kecilkan atau besarkan dunia dengan skala yang tepat."},
+  m3b5:{warna:"#1971C2",lembut:"#DCEBFA",gelap:"#11508A",ikon:"📏",
+        hentian:["📐","📈","🖩️","🚩","🗼","🌳"],
+        misi:"Ukur tinggi dan jarak yang tak boleh dicapai, dengan satu sudut dan satu sisi."}
 };
 var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔢",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
 function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
@@ -3678,7 +3686,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan mana satu kelas gagal",
    "Ulasan PBD sedia salin ke SPPB",
-   "Matematik Tingkatan 3 Bab 1 hingga 3, percuma sepanjang pilot",
+   "Matematik Tingkatan 3 Bab 1 hingga 5, percuma sepanjang pilot",
    "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);

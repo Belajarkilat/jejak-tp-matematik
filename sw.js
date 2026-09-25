@@ -9,10 +9,10 @@
    - halaman (navigasi): rangkaian dahulu (3 saat), jatuh balik ke cache
    - fail statik sama asal: cache dahulu, dikemas kini di latar (stale-while-revalidate)
    Tukar VERSI setiap kali fail app diterbitkan supaya cache lama dibuang. */
-const VERSI = "jm-2026-09-25c";
+const VERSI = "jm-2026-09-26b";
 const SHELL = [
   "./", "index.html", "math-ext.css", "fon/fon.css", "interaktif.js", "muzik.js", "conteng.js", "akses.js",
-  "konfig.js", "bank-m3b1.js", "bank-m3b2.js", "bank-m3b3.js", "manifest.webmanifest", "ikon.svg", "ikon-192.png", "ikon-512.png"
+  "konfig.js", "bank-m3b1.js", "bank-m3b2.js", "bank-m3b3.js", "bank-m3b4.js", "bank-m3b5.js", "manifest.webmanifest", "ikon.svg", "ikon-192.png", "ikon-512.png"
 ];
 
 self.addEventListener("install", e => {

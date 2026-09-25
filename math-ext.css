@@ -87,3 +87,5 @@ body.conteng-buka{padding-bottom:46vh}
 /* Butang merah dalam paparan guru, tema gelap: teks gelap di atas merah cerah */
 :root[data-theme="dark"] body:not(.zon-murid) .btn:not(.ghost):not(.teal):not(.hijau){color:#1B0F10}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body:not(.zon-murid) .btn:not(.ghost):not(.teal):not(.hijau){color:#1B0F10}}
+
+.jmi-label b{color:var(--dunia-teks,var(--dunia,#6D3BFF))}

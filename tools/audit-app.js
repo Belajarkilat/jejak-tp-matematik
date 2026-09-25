@@ -11,7 +11,7 @@ const fs = require("fs");
   const axeSrc = await (await fetch("https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js")).text();
   for (const tema of ["light", "dark"]) {
     const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, colorScheme: tema });
-    await ctx.addInitScript(() => { try { localStorage.setItem("jm-bab", "m3b1"); } catch (e) {} });
+    await ctx.addInitScript(id => { try { localStorage.setItem("jm-bab", id); } catch (e) {} }, process.env.BAB || "m3b1");
     const p = await ctx.newPage(); const ralat = [], gagal = [];
     p.on("pageerror", e => ralat.push("pageerror: " + e.message));
     p.on("console", m => { if (m.type() === "error") ralat.push("console: " + m.text().slice(0, 140)); });

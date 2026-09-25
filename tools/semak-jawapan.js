@@ -5,7 +5,7 @@
    3. Senarai bacaan (--senarai) mencetak semua soalan untuk semakan mata. */
 const path = require("path");
 const nyah = t => String(t).replace(/<sup>(.*?)<\/sup>/g, "^($1)").replace(/<[^>]+>/g, "");
-const nombor = t => { const x = nyah(t).replace(/^RM\s*/i, "").replace(/\s*(mm|cm|kali|%)$/i, "").replace(/\s+/g, "").replace("−", "-"); return /^-?\d+(\.\d+)?$/.test(x) ? parseFloat(x) : null; };
+const nombor = t => { const x = nyah(t).replace("−", "-").trim(); const r = /^1\s*:\s*(\d[\d\s]*)$/.exec(x); if (r) return parseFloat(r[1].replace(/\s+/g, "")); const r2 = /^(\d[\d\s]*)\s*:\s*1$/.exec(x); if (r2) return parseFloat(r2[1].replace(/\s+/g, "")); const m = /^-?\d[\d\s]*(?:\.\d+)?/.exec(x.replace(/^RM\s*/i, "")); if (!m) return null; const sisa = x.replace(/^RM\s*/i, "").slice(m[0].length); if (!/^\s*(%|°|mm|cm|m|km|cm²|m²|kali.*|hektar|unit.*|minit|saat|tahun|g|kg)?$/.test(sisa)) return null; return parseFloat(m[0].replace(/\s+/g, "")); };
 let gagal = 0, dikira = 0, jumlah = 0;
 const hujah = process.argv.slice(2), senarai = hujah.includes("--senarai");
 for(const id of hujah.filter(x => !x.startsWith("--"))){

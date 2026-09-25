@@ -4,9 +4,9 @@
   "description": "Jejak TP Matematik: pentaksiran bilik darjah KSSM, rangka kerja sama seperti Jejak TP Sains",
   "scripts": {
     "bina": "node bina.js",
-    "semak": "node tools/semak-jawapan.js m3b1 m3b2 m3b3",
+    "semak": "node tools/semak-jawapan.js m3b1 m3b2 m3b3 m3b4 m3b5",
     "rajah": "node tools/audit-rajah.js",
-    "uji": "node tools/uji-penuh.js m3b1 m3b2 m3b3",
+    "uji": "node tools/uji-penuh.js m3b1 m3b2 m3b3 m3b4 m3b5",
     "uji-db": "node tools/uji-db.js",
     "beza-teras": "node tools/beza-teras.js",
     "semua": "npm run bina && npm run semak && npm run rajah"
