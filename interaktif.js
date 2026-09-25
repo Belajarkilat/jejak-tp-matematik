@@ -486,7 +486,15 @@
 
   var JMI = { W: W, lukis: lukis, semuaKeadaan: semuaKeadaan, keadaan: keadaan, bundarAB: bundarAB, kiraAB: kiraAB, hurai: hurai, tulisNombor: tulisNombor };
 
-  if (typeof module !== "undefined" && module.exports) { module.exports = JMI; return; }
+  /* Pembantu lukisan didedahkan kepada fail widget-*.js (widget tambahan setiap bab). */
+  JMI.h = { teks: teks, kotak: kotak, garis: garis, laluan: laluan, svg: svg, w: w, b1: b1, esc: esc, ungkap: ungkap, nomK: nomK, LEBAR: LEBAR };
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = JMI;
+    /* Widget tambahan: setiap widget-*.js mengeksport function (JMI) yang mendaftar W.<nama>. */
+    require("fs").readdirSync(__dirname).filter(function (f) { return /^widget-.*\.js$/.test(f); }).sort()
+      .forEach(function (f) { require("./" + f)(JMI); });
+    return;
+  }
 
   /* ---------- pelayar ---------- */
   function klik() {

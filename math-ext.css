@@ -88,4 +88,6 @@ body.conteng-buka{padding-bottom:46vh}
 :root[data-theme="dark"] body:not(.zon-murid) .btn:not(.ghost):not(.teal):not(.hijau){color:#1B0F10}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body:not(.zon-murid) .btn:not(.ghost):not(.teal):not(.hijau){color:#1B0F10}}
 
-.jmi-label b{color:var(--dunia-teks,var(--dunia,#6D3BFF))}
+.jmi-label b{color:var(--dunia-gelap,var(--vena))}
+:root[data-theme="dark"] .jmi-label b{color:var(--tinta)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jmi-label b{color:var(--tinta)}}

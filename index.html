@@ -1038,7 +1038,15 @@ body.zon-murid{color:var(--tinta)}
 <script src="bank-m3b3.js?v=1"></script>
 <script src="bank-m3b4.js?v=1"></script>
 <script src="bank-m3b5.js?v=1"></script>
-<script src="interaktif.js?v=1"></script>
+<script src="bank-m3b6.js?v=1"></script>
+<script src="bank-m3b7.js?v=1"></script>
+<script src="bank-m3b8.js?v=1"></script>
+<script src="bank-m3b9.js?v=1"></script>
+<script src="interaktif.js?v=2"></script>
+<script src="widget-m3b6.js?v=1"></script>
+<script src="widget-m3b7.js?v=1"></script>
+<script src="widget-m3b8.js?v=1"></script>
+<script src="widget-m3b9.js?v=1"></script>
 <script src="muzik.js?v=2"></script>
 <script src="conteng.js?v=1"></script>
 <script src="akses.js?v=1"></script>
@@ -1139,7 +1147,7 @@ body.zon-murid{color:var(--tinta)}
 /* Semua 51 bab (Tingkatan 1-5) sedia dimainkan. Bab 1-2 setiap tingkatan
    percuma; Bab 3 ke atas memerlukan kelas milik guru Premium (RM23/tahun).
    Lihat bebasBab() dan premiumAktif(). */
-var JUMLAH_BAB={3:5};
+var JUMLAH_BAB={3:9};
 var BAB_TERSEDIA=[];
 Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("m"+t+"b"+i);
@@ -1213,7 +1221,19 @@ var DUNIA={
         misi:"Kecilkan atau besarkan dunia dengan skala yang tepat."},
   m3b5:{warna:"#1971C2",lembut:"#DCEBFA",gelap:"#11508A",ikon:"📏",
         hentian:["📐","📈","🖩️","🚩","🗼","🌳"],
-        misi:"Ukur tinggi dan jarak yang tak boleh dicapai, dengan satu sudut dan satu sisi."}
+        misi:"Ukur tinggi dan jarak yang tak boleh dicapai, dengan satu sudut dan satu sisi."},
+  m3b6:{warna:"#0B7285",lembut:"#D5F1F5",gelap:"#075463",ikon:"\u{1F535}",
+        hentian:["\u{1F3A1}","\u{1F570}\u{FE0F}","\u{1F6B2}","\u{1F6E4}\u{FE0F}","\u{1F517}","\u{1F3C5}"],
+        misi:"Cari sudut tersembunyi dalam bulatan, dari roda ferris sampailah lencana."},
+  m3b7:{warna:"#5F3DC4",lembut:"#EDE7FA",gelap:"#432B99",ikon:"\u{1F3D7}\u{FE0F}",
+        hentian:["\u270F\u{FE0F}","\u{1F3E0}","\u{1F6CB}\u{FE0F}","\u{1F9F1}","\u{1F3D7}\u{FE0F}","\u{1F52C}"],
+        misi:"Lukis rumah kayu dari tiga arah, dan bina semula daripada lakaran."},
+  m3b8:{warna:"#2F7D32",lembut:"#DDF3E1",gelap:"#1E5C24",ikon:"\u{1F4CD}",
+        hentian:["\u{1F6DD}","\u{1F4F6}","\u{1F6E3}\u{FE0F}","\u{1F500}","\u{1F5FA}\u{FE0F}","\u{1F4E1}"],
+        misi:"Cari semua tempat yang betul, ikut syarat jarak yang diberi."},
+  m3b9:{warna:"#C2255C",lembut:"#FFE3EC",gelap:"#8F1B43",ikon:"\u{1F4C8}",
+        hentian:["\u{1F3A2}","\u{1F695}","\u{1F5FA}\u{FE0F}","\u{1F686}","\u{1F6A6}","\u{1F9ED}"],
+        misi:"Lukis garis lurus, cari titik temu, dan reka laluan sendiri di atas peta."}
 };
 var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔢",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
 function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
@@ -3686,7 +3706,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan mana satu kelas gagal",
    "Ulasan PBD sedia salin ke SPPB",
-   "Matematik Tingkatan 3 Bab 1 hingga 5, percuma sepanjang pilot",
+   "Matematik Tingkatan 3 Bab 1 hingga 9, percuma sepanjang pilot",
    "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);
