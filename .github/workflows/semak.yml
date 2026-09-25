@@ -1,4 +1,3 @@
-# Untuk mengaktifkan: salin fail ini ke .github/workflows/semak.yml (perlu token GitHub dengan skop "workflow": gh auth refresh -h github.com -s workflow)
 # Setiap push dan pull request: bina bank soalan, semak jawapan dan rajah,
 # kemudian main semua soalan melalui UI sebenar. Bank yang dicommit mesti
 # sama dengan hasil bina (jangan sunting bank-*.js tangan, sunting sumber/).
