@@ -2,6 +2,7 @@
    conteng, maklum balas amber + langkah + cuba lagi. Tangkapan skrin disimpan
    dalam folder yang diberi.   node tools/uji-p1.js <folder> */
 const { chromium } = require("playwright");
+const BASE = process.env.BASE || "http://localhost:8811";
 const dir = process.argv[2] || ".";
 (async () => {
   const b = await chromium.launch();
@@ -9,7 +10,7 @@ const dir = process.argv[2] || ".";
   await ctx.addInitScript(() => { try { localStorage.setItem("jm-bab", "m3b1"); } catch (e) {} });
   const p = await ctx.newPage(); const ralat = [];
   p.on("pageerror", e => ralat.push("pageerror: " + e.message));
-  await p.goto("http://localhost:8811/index.html?demo=murid", { waitUntil: "domcontentloaded" });
+  await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "domcontentloaded" });
   await p.waitForTimeout(1800);
   await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(900);
   console.log("seg Cikgu kelihatan:", await p.$eval("#segMod", e => getComputedStyle(e).display !== "none"));

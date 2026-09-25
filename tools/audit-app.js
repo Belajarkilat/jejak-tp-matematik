@@ -3,6 +3,7 @@
    pada skrin utama dalam tema cerah dan gelap.
      node tools/audit-app.js   (perlu server 8811 dan sambungan internet untuk axe) */
 const { chromium } = require("playwright");
+const BASE = process.env.BASE || "http://localhost:8811";
 const fs = require("fs");
 (async () => {
   const b = await chromium.launch();
@@ -21,7 +22,7 @@ const fs = require("fs");
       const r = await p.evaluate(async () => (await window.axe.run({ exclude: [[".ngw"]] }, { runOnly: ["wcag2a", "wcag2aa"] })).violations.map(v => ({ id: v.id, kesan: v.impact, n: v.nodes.length, contoh: v.nodes[0].target.join(" ").slice(0, 60), ringkas: v.help })));
       laporan.push({ tema, skrin: nama, pelanggaran: r });
     };
-    await p.goto("http://localhost:8811/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1800);
+    await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1800);
     await axe("nama murid");
     await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(900);
     await axe("peta");
@@ -30,7 +31,7 @@ const fs = require("fs");
     const teksMurid = await p.evaluate(() => document.body.innerText);
     if (/sains|inhaler|hemoglobin|nafas|peparu/i.test(teksMurid)) ralat.push("teks Sains/Biologi tertinggal pada skrin murid: " + (teksMurid.match(/sains|inhaler|hemoglobin|nafas|peparu/i) || [])[0]);
     /* dashboard guru demo */
-    await p.goto("http://localhost:8811/index.html?demo=cikgu", { waitUntil: "load" }); await p.waitForTimeout(2200);
+    await p.goto(BASE + "/index.html?demo=cikgu", { waitUntil: "load" }); await p.waitForTimeout(2200);
     const teksGuru = await p.evaluate(() => document.body.innerText);
     if (/sains/i.test(teksGuru)) ralat.push("teks 'Sains' pada dashboard guru: " + (teksGuru.match(/.{0,40}sains.{0,40}/i) || [])[0]);
     for (const [id, nama] of [["tabPapan", "papan"], ["tabSenarai", "nama & PIN"], ["tabDiag", "diagnostik"], ["tabTangga", "tangga TP"]]) {

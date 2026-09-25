@@ -2,13 +2,14 @@
    cache), putuskan rangkaian, muat semula, dan pastikan murid masih boleh
    bermain sebuah soalan.   node tools/uji-luar-talian.js  (perlu server 8811) */
 const { chromium } = require("playwright");
+const BASE = process.env.BASE || "http://localhost:8811";
 (async () => {
   const b = await chromium.launch();
   const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
   await ctx.addInitScript(() => { try { localStorage.setItem("jm-bab", "m3b2"); } catch (e) {} });
   const p = await ctx.newPage(); const ralat = [];
   p.on("pageerror", e => ralat.push(e.message));
-  await p.goto("http://localhost:8811/index.html?demo=murid", { waitUntil: "load" });
+  await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" });
   await p.waitForTimeout(3500);
   const sw = await p.evaluate(async () => { const r = await navigator.serviceWorker.getRegistration(); return r ? (r.active ? "aktif" : "belum aktif") : "tiada"; });
   console.log("service worker:", sw);
