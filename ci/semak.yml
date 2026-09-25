@@ -1,0 +1,32 @@
+# Untuk mengaktifkan: salin fail ini ke .github/workflows/semak.yml (perlu token GitHub dengan skop "workflow": gh auth refresh -h github.com -s workflow)
+# Setiap push dan pull request: bina bank soalan, semak jawapan dan rajah,
+# kemudian main semua soalan melalui UI sebenar. Bank yang dicommit mesti
+# sama dengan hasil bina (jangan sunting bank-*.js tangan, sunting sumber/).
+name: Semak kandungan
+on:
+  push:
+  pull_request:
+jobs:
+  semak:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - name: Bina bank soalan (semakan struktur, petunjuk panjang jawapan, rajah)
+        run: node bina.js
+      - name: Bank yang dicommit mesti sama dengan hasil bina
+        run: git diff --exit-code -- 'bank-*.js'
+      - name: Semak jawapan berangka secara bebas
+        run: node tools/semak-jawapan.js m3b1 m3b2 m3b3
+      - name: Audit semua keadaan rajah interaktif
+        run: node tools/audit-rajah.js
+      - name: Ujian main penuh (semua soalan, telefon 390px)
+        run: |
+          python3 -m http.server 8811 > /dev/null 2>&1 &
+          sleep 2
+          node tools/uji-penuh.js m3b1 m3b2 m3b3

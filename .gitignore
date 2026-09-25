@@ -1,0 +1,10 @@
+.env
+node_modules/
+index-uji.html
+galeri.html
+*.log
+supabase/.temp/
+# nota dalaman dan dokumen kerajaan: kekal setempat
+SAMBUNG.md
+ARKITEKTUR.md
+dskp/

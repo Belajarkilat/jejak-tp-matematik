@@ -1,0 +1,14 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({args:['--autoplay-policy=no-user-gesture-required']});
+const ctx=await b.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+await ctx.addInitScript(()=>{window.__osc=0;const o=AudioContext.prototype.createOscillator;AudioContext.prototype.createOscillator=function(){window.__osc++;return o.call(this)};});
+const p=await ctx.newPage();
+await p.goto('http://localhost:8811/index.html?demo=murid',{waitUntil:'domcontentloaded'});await p.waitForTimeout(1500);
+await p.fill('#namaBebas','Aina');await p.click('text=Mula main');await p.waitForTimeout(3500);
+console.log('AC:',await p.evaluate(()=>window.JM_AC&&window.JM_AC()&&window.JM_AC().state),' osc:',await p.evaluate(()=>window.__osc));
+const n1=await p.evaluate(()=>window.__osc);await p.waitForTimeout(4000);
+console.log('osc bertambah:',(await p.evaluate(()=>window.__osc))>n1);
+await p.click('#btnMuzik');await p.waitForTimeout(800);const n2=await p.evaluate(()=>window.__osc);await p.waitForTimeout(4000);
+console.log('selepas tutup, tiada not baharu:',(await p.evaluate(()=>window.__osc))-n2<=8,' aria-pressed:',await p.$eval('#btnMuzik',e=>e.getAttribute('aria-pressed')),' simpan:',await p.evaluate(()=>localStorage.getItem('jm-muzik')));
+await p.click('#btnCikgu');await p.waitForTimeout(500);
+await b.close();})();
