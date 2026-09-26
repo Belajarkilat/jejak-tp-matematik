@@ -383,3 +383,82 @@ begin
 end $$;
 revoke all on function jm_ping(text, text, text, int, text) from public;
 grant execute on function jm_ping(text, text, text, int, text) to anon, authenticated;
+
+-- Disalin daripada cikgunani/skema.sql (27 Sep 2026), lo_* -> jm_*
+-- ---------- kunci lajur premium (27 Sep 2026) ----------
+-- Dulu authenticated ada UPDATE/INSERT pada SEMUA lajur jm_guru, jadi guru
+-- boleh menetapkan premium_*_tamat sendiri daripada konsol pelayar. Kini
+-- premium hanya boleh ditulis oleh service_role (webhook ToyyibPay dan
+-- jejak-tp-admin/premium.js). App hanya menulis lajur profil di bawah.
+revoke insert, update on jm_guru from authenticated;
+grant insert (id, nama, sekolah, telefon, setuju_pemasaran, setuju_masa) on jm_guru to authenticated;
+grant update (id, nama, sekolah, telefon, setuju_pemasaran, setuju_masa) on jm_guru to authenticated;
+
+-- ---------- bayaran ToyyibPay (27 Sep 2026) ----------
+-- Satu baris setiap bil. Dicipta oleh Edge Function bayar-cipta,
+-- disahkan oleh bayar-terima (callback) selepas status disemak semula
+-- dengan API getBillTransactions. Guru hanya boleh membaca baris sendiri.
+create table if not exists jm_bayaran (
+  id         uuid primary key default gen_random_uuid(),
+  guru       uuid not null references auth.users(id) on delete restrict,
+  emel       text not null,
+  peringkat  text not null check (peringkat in ('rendah', 'atas')),
+  jumlah_sen int  not null check (jumlah_sen > 0),
+  billcode   text unique,
+  status     text not null default 'menunggu' check (status in ('menunggu', 'berjaya', 'gagal')),
+  refno      text,
+  saluran    text,
+  premium_tamat_baru timestamptz,
+  dicipta    timestamptz not null default now(),
+  dibayar    timestamptz
+);
+create index if not exists jm_bayaran_guru on jm_bayaran (guru, dicipta desc);
+alter table jm_bayaran enable row level security;
+drop policy if exists jm_bayaran_diri on jm_bayaran;
+create policy jm_bayaran_diri on jm_bayaran for select to authenticated using (guru = auth.uid());
+revoke all on jm_bayaran from anon, authenticated;
+grant select on jm_bayaran to authenticated;
+
+-- Harga dalam sen. RM23 sebelum 1 Jan 2027 (waktu Malaysia). Selepas itu
+-- RM33, kecuali guru perintis: pernah berjaya bayar peringkat yang sama
+-- sebelum 1 Jan 2027 dan langganannya tidak terputus (tamat + 30 hari tangguh).
+create or replace function jm_harga(p_guru uuid, p_peringkat text)
+returns int language sql stable security definer set search_path = public as $$
+  select case
+    when now() < timestamptz '2027-01-01 00:00:00+08' then 2300
+    when exists (select 1 from jm_bayaran b where b.guru = p_guru and b.peringkat = p_peringkat
+                 and b.status = 'berjaya' and b.dibayar < timestamptz '2027-01-01 00:00:00+08')
+     and coalesce((select case when p_peringkat = 'rendah' then premium_rendah_tamat else premium_atas_tamat end
+                    from jm_guru where id = p_guru), '-infinity') > now() - interval '30 days'
+      then 2300
+    else 3300 end
+$$;
+
+-- Tandakan bil berjaya dan lanjutkan premium 365 hari daripada tarikh tamat
+-- sedia ada (jika masih aktif) atau daripada sekarang. Idempotent: callback
+-- berulang untuk bil yang sama tidak menambah hari lagi.
+create or replace function jm_bayaran_berjaya(p_billcode text, p_refno text, p_saluran text, p_jumlah_sen int)
+returns jsonb language plpgsql security definer set search_path = public as $$
+declare b jm_bayaran%rowtype; tamat timestamptz;
+begin
+  select * into b from jm_bayaran where billcode = p_billcode for update;
+  if b.id is null then return jsonb_build_object('ok', false, 'sebab', 'bil tiada'); end if;
+  if b.status = 'berjaya' then return jsonb_build_object('ok', true, 'ulang', true, 'tamat', b.premium_tamat_baru); end if;
+  if p_jumlah_sen < b.jumlah_sen then return jsonb_build_object('ok', false, 'sebab', 'jumlah kurang'); end if;
+  if b.peringkat = 'rendah' then
+    update jm_guru set premium_rendah_tamat = greatest(coalesce(premium_rendah_tamat, now()), now()) + interval '365 days'
+      where id = b.guru returning premium_rendah_tamat into tamat;
+  else
+    update jm_guru set premium_atas_tamat = greatest(coalesce(premium_atas_tamat, now()), now()) + interval '365 days'
+      where id = b.guru returning premium_atas_tamat into tamat;
+  end if;
+  if tamat is null then return jsonb_build_object('ok', false, 'sebab', 'guru tiada'); end if;
+  update jm_bayaran set status = 'berjaya', refno = p_refno, saluran = p_saluran,
+         dibayar = now(), premium_tamat_baru = tamat where id = b.id;
+  return jsonb_build_object('ok', true, 'tamat', tamat);
+end $$;
+
+revoke all on function jm_harga(uuid, text) from public, anon, authenticated;
+revoke all on function jm_bayaran_berjaya(text, text, text, int) from public, anon, authenticated;
+grant execute on function jm_harga(uuid, text) to service_role;
+grant execute on function jm_bayaran_berjaya(text, text, text, int) to service_role;
