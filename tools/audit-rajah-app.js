@@ -15,7 +15,8 @@ fs.mkdirSync(ARAH, { recursive: true });
   const axeSrc = await (await fetch("https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js")).text();
   let masalah = 0;
   for (const bab of BAB) for (const tema of ["light", "dark"]) {
-    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, colorScheme: tema });
+    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block", colorScheme: tema });
+    await require("./_buka").bukaSemua(ctx);
     await ctx.addInitScript(id => { try { localStorage.setItem("jm-bab", id); } catch (e) {} }, bab);
     const p = await ctx.newPage(); const ralat = [];
     p.on("pageerror", e => ralat.push("pageerror: " + e.message));

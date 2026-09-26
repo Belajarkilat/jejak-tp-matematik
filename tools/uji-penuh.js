@@ -18,7 +18,8 @@ const tanpaLaporanPenuh = process.argv.includes("--ringkas");
   const b = await chromium.launch();
   let jumlahGagal = 0;
   for (const bab of babDiuji) {
-    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
+    await require("./_buka").bukaSemua(ctx);
     await ctx.addInitScript(id => { try { localStorage.setItem("jm-bab", id); } catch (e) {} }, bab);
     const p = await ctx.newPage();
     const ralat = [];

@@ -8,7 +8,8 @@ fs.mkdirSync(ARAH, { recursive: true });
 (async () => {
   const b = await chromium.launch();
   for (const bab of (process.env.BAB || "m1b1").split(",")) {
-    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+    const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
+    await require("./_buka").bukaSemua(ctx);
     await ctx.addInitScript(id => { try { localStorage.setItem("jm-bab", id); } catch (e) {} }, bab);
     const p = await ctx.newPage();
     await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1500);

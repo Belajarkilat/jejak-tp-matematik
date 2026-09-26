@@ -1204,8 +1204,8 @@ var BAB_TERSEDIA=[];
 Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("m"+t+"b"+i);
 });
-/* PILOT Matematik: semua bab percuma sehingga harga ditetapkan. */
-function bebasBab(id){ return /^m\db\d+$/.test(id||""); }
+/* Bab 1 dan 2 setiap tingkatan percuma; Bab 3 ke atas Premium. */
+function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=2; }
 /* Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan,
    RM23/tahun setiap satu. Murid: premium ikut kelas (KM.premiumRendah/
    KM.premiumAtas, daripada jm_kelas_buka). Guru: premium ikut akaun
@@ -3836,7 +3836,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan mana satu kelas gagal",
    "Ulasan PBD sedia salin ke SPPB",
-   "Matematik Tingkatan 1, 2 (Bab 1 hingga 13) dan Tingkatan 3 (Bab 1 hingga 9), percuma sepanjang pilot",
+   "35 bab Matematik Tingkatan 1, 2 dan 3 (Bab 1-2 percuma, selebihnya Premium: harga perintis RM23/tahun hingga 31 Dis 2026)",
    "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);
@@ -4063,9 +4063,12 @@ function barisPremium(nama, kod, aktif, tamat){
 function kadPremium(){
   var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
   bd.appendChild(el("h3",null,"Premium"));
-  bd.appendChild(el("p","note","Harga perintis RM23/tahun hingga 31 Dis 2026, kekal setiap tahun untuk cikgu perintis. Mulai 1 Jan 2027: RM33. T1-3 dan T4-5 dijual berasingan."));
+  bd.appendChild(el("p","note","Harga perintis RM23/tahun hingga 31 Dis 2026, kekal setiap tahun untuk cikgu perintis. Mulai 1 Jan 2027: RM33. Menengah rendah (T1-3) dahulu, menengah atas (T4-5) akan datang."));
   bd.appendChild(barisPremium("Menengah rendah · Tingkatan 1–3","Menengah Rendah",PROFIL.premiumRendah,PROFIL.premiumRendahTamat));
-  bd.appendChild(barisPremium("Menengah atas · Tingkatan 4–5","Menengah Atas",PROFIL.premiumAtas,PROFIL.premiumAtasTamat));
+  var ba=el("div","baris-premium"), ka=el("div","grow");
+  ka.appendChild(el("b",null,"Menengah atas · Tingkatan 4–5"));
+  ka.appendChild(el("span","status","\u{1F552} Akan datang"));
+  ba.appendChild(ka); bd.appendChild(ba);
   return p;
 }
 
@@ -4313,7 +4316,8 @@ function renderKelasGuru(){
   var dj=$("demoJalur"); dj.innerHTML=""; dj.classList.toggle("hidden",!k.contoh);
   if(k.contoh){
     dj.appendChild(el("p",null,"Kelas contoh dengan 6 murid rekaan. Beginilah rupa keputusan apabila murid cikgu bermain."));
-    dj.appendChild(el("p","note","Versi pilot: semua bab Matematik Tingkatan 1, 2 dan 3 dibuka percuma."));
+    dj.appendChild(el("p","note","Bab 1-2 setiap tingkatan percuma. Harga perintis RM23/tahun hingga 31 Dis 2026 untuk buka semua bab T1-3 (menengah atas akan datang). "+
+      '<a href="landing.html#harga">Lihat harga penuh</a>'));
     var bm=el("button","btn ghost sm"); bm.type="button"; bm.textContent="Cuba sebagai murid"; bm.onclick=cubaSebagaiMurid;
     dj.appendChild(bm);
     if(!SESI){

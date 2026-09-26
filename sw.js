@@ -9,7 +9,7 @@
    - halaman (navigasi): rangkaian dahulu (3 saat), jatuh balik ke cache
    - fail statik sama asal: cache dahulu, dikemas kini di latar (stale-while-revalidate)
    Tukar VERSI setiap kali fail app diterbitkan supaya cache lama dibuang. */
-const VERSI = "jm-2026-09-26f";
+const VERSI = "jm-2026-09-27a";
 const SHELL = [
   "./", "index.html", "math-ext.css", "fon/fon.css", "interaktif.js", "muzik.js", "conteng.js", "akses.js",
   "konfig.js", "bank-m1b1.js", "widget-m1b1.js", "bank-m1b2.js", "widget-m1b2.js", "bank-m1b3.js", "widget-m1b3.js", "bank-m1b4.js", "widget-m1b4.js", "bank-m1b5.js", "widget-m1b5.js", "bank-m1b6.js", "widget-m1b6.js", "bank-m1b7.js", "widget-m1b7.js", "bank-m1b8.js", "widget-m1b8.js", "bank-m1b9.js", "widget-m1b9.js", "bank-m1b10.js", "widget-m1b10.js", "bank-m1b11.js", "widget-m1b11.js", "bank-m1b12.js", "widget-m1b12.js", "bank-m1b13.js", "widget-m1b13.js", "bank-m2b1.js", "widget-m2b1.js", "bank-m2b2.js", "widget-m2b2.js", "bank-m2b3.js", "widget-m2b3.js", "bank-m2b4.js", "widget-m2b4.js", "bank-m2b5.js", "widget-m2b5.js", "bank-m2b6.js", "widget-m2b6.js", "bank-m2b7.js", "widget-m2b7.js", "bank-m2b8.js", "widget-m2b8.js", "bank-m2b9.js", "widget-m2b9.js", "bank-m2b10.js", "widget-m2b10.js", "bank-m2b11.js", "widget-m2b11.js", "bank-m2b12.js", "widget-m2b12.js", "bank-m2b13.js", "widget-m2b13.js", "bank-m3b1.js", "bank-m3b2.js", "bank-m3b3.js", "bank-m3b4.js", "bank-m3b5.js", "bank-m3b6.js", "bank-m3b7.js", "bank-m3b8.js", "bank-m3b9.js", "widget-m3b6.js", "widget-m3b7.js", "widget-m3b8.js", "widget-m3b9.js", "manifest.webmanifest", "ikon.svg", "ikon-192.png", "ikon-512.png"
