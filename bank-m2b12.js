@@ -633,9 +633,9 @@ window.BANK["m2b12"] =
      "t": "Cikgu berkata median lebih sesuai daripada min bagi data yang mempunyai satu markah ekstrem. Seorang murid tidak setuju kerana min menggunakan semua data. Siapa yang lebih tepat?",
      "p": [
       "Cikgu, kerana nilai ekstrem menarik min ke arahnya tetapi kurang mempengaruhi median",
-      "Murid, kerana min mengambil kira semua data dan tidak terkesan oleh nilai ekstrem",
+      "Murid, kerana min mengambil kira setiap nilai dan tidak terkesan oleh nilai ekstrem",
       "Kedua-duanya sama tepat kerana min dan median sentiasa bernilai sama",
-      "Cikgu, kerana median menggunakan semua data dengan lebih adil daripada min"
+      "Cikgu, kerana median menggunakan setiap nilai dengan lebih adil daripada min"
      ],
      "b": 0,
      "u": "Satu markah ekstrem menaikkan atau menurunkan jumlah, jadi min berubah banyak. Median hanya bergantung pada nilai tengah, jadi kurang berubah."

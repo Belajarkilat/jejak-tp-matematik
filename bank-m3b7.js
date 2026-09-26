@@ -120,9 +120,9 @@ window.BANK["m3b7"] =
      "j": "pilih",
      "t": "Objek yang sama dipandang dari arah yang berlainan menghasilkan unjuran yang:",
      "p": [
-      "Sentiasa sama bentuk",
-      "Sentiasa berbentuk segi empat sama",
-      "Sentiasa berbentuk garis lurus",
+      "Pasti sama bentuk",
+      "Pasti berbentuk segi empat sama",
+      "Pasti berbentuk garis lurus",
       "Boleh berbeza bentuk"
      ],
      "b": 3,

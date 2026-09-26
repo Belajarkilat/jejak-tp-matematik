@@ -63,9 +63,9 @@ window.BANK["m2b2"] =
      "j": "pilih",
      "t": "Kembangan dua ungkapan algebra bermaksud:",
      "p": [
-      "Mendarab setiap sebutan dalam satu kurungan dengan setiap sebutan dalam kurungan lain",
+      "Mendarab setiap sebutan dengan setiap sebutan kurungan lain",
       "Menambah sebutan daripada kedua-dua kurungan kemudian membuang kurungan",
-      "Mencari faktor sepunya bagi sebutan dalam kedua-dua kurungan",
+      "Mencari faktor sepunya bagi sebutan dalam kedua-dua kurungan itu",
       "Menggantikan x dengan satu nombor tertentu dalam setiap kurungan"
      ],
      "b": 0,
@@ -527,22 +527,27 @@ window.BANK["m2b2"] =
      "u": "Ganti x = 7: (7 + 1)/2 + (7 − 1)/3. Kira setiap pecahan: 8/2 + 6/3 = 4 + 2 = 6."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, tetapkan x = 7. Berapakah nilai (5x + 1)/6 di sebelah kanan?",
-     "b": 6,
-     "tol": 0.001000000001,
-     "u": "(5 × 7 + 1)/6 = 36/6 = 6. Nilai ini sama dengan sebelah kiri."
+     "j": "pilih",
+     "t": "Seorang murid menulis 1/x + 1/y = 2/(x + y). Apakah kesilapannya?",
+     "p": [
+      "Penyebut mesti disamakan dahulu, jadi hasilnya ialah x + y semua dibahagi xy",
+      "Dia sepatutnya mendarab 1/x dengan 1/y untuk mendapat 1/xy",
+      "Dia sepatutnya menolak penyebut daripada pengangka",
+      "Tiada kesilapan kerana pengangka dan penyebut boleh ditambah terus"
+     ],
+     "b": 0,
+     "u": "Samakan penyebut: 1/x = y/xy dan 1/y = x/xy. Jumlah = (y + x)/xy. Uji x = 1, y = 1: 1 + 1 = 2, tetapi 2/(1 + 1) = 1, jadi jawapan murid salah."
     },
     {
      "j": "pilih",
      "t": "Permudahkan (x + 1)/2 + (x − 1)/3.",
      "p": [
-      "(5x + 1)/6",
       "2x/5",
+      "(5x + 1)/6",
       "(5x − 1)/6",
       "(x + 1)/6"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Penyebut sepunya ialah 6. 3(x + 1)/6 + 2(x − 1)/6 = (3x + 3 + 2x − 2)/6 = (5x + 1)/6."
     },
     {
@@ -550,11 +555,11 @@ window.BANK["m2b2"] =
      "t": "Permudahkan 3/(2x) + 1/x.",
      "p": [
       "4/(3x)",
-      "5/(2x)",
       "4/(2x)",
+      "5/(2x)",
       "3/(2x²)"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Tukar 1/x kepada 2/(2x). Kemudian 3/(2x) + 2/(2x) = 5/(2x). Penyebut tidak ditambah."
     },
     {
@@ -563,22 +568,22 @@ window.BANK["m2b2"] =
      "p": [
       "(x + 4)/12",
       "(x + 3)/2",
-      "(x + 8)/12",
-      "(5x + 8)/12"
+      "(5x + 8)/12",
+      "(x + 8)/12"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Penyebut sepunya 12. 3(x + 2)/12 − 2(x − 1)/12 = (3x + 6 − 2x + 2)/12 = (x + 8)/12."
     },
     {
      "j": "pilih",
      "t": "Permudahkan 2/x + 3/(x + 1).",
      "p": [
+      "(5x + 2)/(x(x + 1))",
       "5/(2x + 1)",
       "(5x + 2)/(x + 1)",
-      "(5x + 2)/x",
-      "(5x + 2)/(x(x + 1))"
+      "(5x + 2)/x"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Penyebut sepunya x(x + 1). 2(x + 1)/[x(x + 1)] + 3x/[x(x + 1)] = (2x + 2 + 3x)/[x(x + 1)] = (5x + 2)/[x(x + 1)]."
     },
     {
@@ -603,12 +608,12 @@ window.BANK["m2b2"] =
     "j": "pilih",
     "t": "Permudahkan (2x + 1)/3 − (x − 2)/6.",
     "p": [
-     "(3x + 4)/6",
      "3x/6",
+     "(3x + 4)/6",
      "(x + 3)/6",
      "(5x + 4)/6"
     ],
-    "b": 0,
+    "b": 1,
     "u": "Tukar kepada penyebut 6: 2(2x + 1)/6 − (x − 2)/6 = (4x + 2 − x + 2)/6 = (3x + 4)/6. Tanda tolak meliputi kedua-dua sebutan x − 2."
    }
   },
@@ -650,11 +655,11 @@ window.BANK["m2b2"] =
      "t": "Faktorkan x² − 9 sebelum menggugurkan faktor sepunya dalam Rajah 1. Hasilnya ialah:",
      "p": [
       "(x − 3)(x − 3)",
-      "(x + 3)(x − 3)",
       "(x + 3)(x + 3)",
+      "(x + 3)(x − 3)",
       "(x + 9)(x − 1)"
      ],
-     "b": 1,
+     "b": 2,
      "u": "x² − 9 = (x + 3)(x − 3). Faktor (x + 3) kemudian boleh digugurkan dengan penyebut x + 3."
     },
     {
@@ -663,42 +668,47 @@ window.BANK["m2b2"] =
      "p": [
       "(x + 3)/2",
       "(x − 3)/6",
-      "(x − 3)/2",
-      "(x² − 9)/2"
+      "(x² − 9)/2",
+      "(x − 3)/2"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Faktorkan x² − 9 = (x + 3)(x − 3). Gugurkan (x + 3), dan 3/6 = 1/2. Hasilnya (x − 3)/2."
     },
     {
      "j": "pilih",
      "t": "Permudahkan (x + 2)/4 ÷ (x + 2)/8.",
      "p": [
+      "2",
       "1/2",
       "4",
-      "1/4",
-      "2"
+      "1/4"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Bahagi dengan pecahan bermaksud darab dengan songsangnya: (x + 2)/4 × 8/(x + 2) = 8/4 = 2."
     },
     {
      "j": "pilih",
      "t": "Permudahkan (6x + 12)/9.",
      "p": [
-      "(2x + 4)/3",
       "(2x + 12)/3",
+      "(2x + 4)/3",
       "(6x + 4)/3",
       "(x + 2)/3"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Faktor sepunya 3 pada pengangka dan penyebut: (6x + 12)/9 = 3(2x + 4)/(3 × 3) = (2x + 4)/3. Bahagikan SEMUA sebutan pengangka."
     },
     {
-     "j": "nombor",
-     "t": "Permudahkan (2x + 4)/(x + 2). Berapakah nilainya apabila x = 5?",
+     "j": "pilih",
+     "t": "Seorang murid memudahkan (x + 3)/(x + 5) menjadi 3/5 dengan menggugurkan x. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menggugurkan x + 3 dengan x + 5 sekali gus",
+      "Dia sepatutnya menambah 3 dan 5 untuk mendapat 8 sebagai penyebut",
+      "x ialah sebutan dalam hasil tambah, bukan faktor, dan hanya faktor boleh digugurkan",
+      "Tiada kesilapan kerana x terdapat di atas dan di bawah pecahan"
+     ],
      "b": 2,
-     "tol": 0.001000000001,
-     "u": "2x + 4 = 2(x + 2), jadi (2x + 4)/(x + 2) = 2 untuk semua x selain −2. Apabila x = 5 nilainya ialah 14/7 = 2."
+     "u": "Hanya faktor (hasil darab) boleh digugurkan, bukan sebutan dalam hasil tambah. Uji x = 1: (1 + 3)/(1 + 5) = 4/6, bukan 3/5."
     }
    ],
    "bos": {

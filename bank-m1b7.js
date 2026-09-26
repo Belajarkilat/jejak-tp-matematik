@@ -223,10 +223,10 @@ window.BANK["m1b7"] =
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih operasi 'darab -1'. Tanda antara a dan b:",
      "p": [
-      "Bertukar kepada &gt;",
-      "Kekal &lt;",
-      "Menjadi =",
-      "Hilang"
+      "Bertukar ke tanda &gt;",
+      "Kekal sebagai tanda &lt;",
+      "Menjadi tanda sama dengan =",
+      "Tanda itu terus hilang begitu"
      ],
      "b": 0,
      "u": "Darab dengan nombor negatif membalikkan tanda. -4 menjadi 4 dan 6 menjadi -6, jadi 4 &gt; -6."
@@ -300,9 +300,9 @@ window.BANK["m1b7"] =
      "t": "Had laju sebuah lebuh raya ialah 110 km/j. Laju v yang dibenarkan dinyatakan sebagai:",
      "p": [
       "v ≤ 110",
-      "v ≥ 110 km/j sahaja",
-      "v &lt; 110 km/j sahaja",
-      "v &gt; 110 km/j sahaja"
+      "v ≥ 110",
+      "v &lt; 110",
+      "v &gt; 110"
      ],
      "b": 0,
      "u": "Had laju bermaksud tidak boleh melebihi 110, dan tepat 110 masih dibenarkan. Maka v ≤ 110."
@@ -311,10 +311,10 @@ window.BANK["m1b7"] =
      "j": "pilih",
      "t": "Sebuah lif boleh membawa paling banyak 8 orang. Jika n ialah bilangan orang, maka:",
      "p": [
-      "n ≥ 8 orang sahaja",
+      "n ≥ 8",
       "n ≤ 8",
-      "n &lt; 8 orang sahaja",
-      "n &gt; 8 orang sahaja"
+      "n &lt; 8",
+      "n &gt; 8"
      ],
      "b": 1,
      "u": "Paling banyak 8 bermaksud 8 atau kurang, jadi n ≤ 8."
@@ -362,9 +362,9 @@ window.BANK["m1b7"] =
      "t": "Wang Aina, w, kurang daripada RM50. Ketaksamaan yang betul ialah:",
      "p": [
       "w &lt; 50",
-      "w ≤ 50 (termasuk RM50)",
-      "w &gt; 50 (lebih daripada)",
-      "w ≥ 50 (sekurang-kurangnya)"
+      "w ≤ 50",
+      "w &gt; 50",
+      "w ≥ 50"
      ],
      "b": 0,
      "u": "Kurang daripada 50 tidak termasuk 50, jadi w &lt; 50."
@@ -406,10 +406,10 @@ window.BANK["m1b7"] =
      "j": "pilih",
      "t": "Selesaikan x + 5 &gt; 9.",
      "p": [
-      "x &gt; 14 (tolak dahulu)",
-      "x &lt; 4 (tanda dibalikkan)",
+      "x &gt; 14",
+      "x &lt; 4",
       "x &gt; 4",
-      "x &lt; 14 (tambah 5 dahulu)"
+      "x &lt; 14"
      ],
      "b": 2,
      "u": "Tolak 5 daripada kedua-dua belah: x &gt; 9 - 5, iaitu x &gt; 4."
@@ -418,9 +418,9 @@ window.BANK["m1b7"] =
      "j": "pilih",
      "t": "Selesaikan x - 3 ≤ 2.",
      "p": [
-      "x ≤ -1 (tolak 3 dahulu)",
-      "x ≥ 5 (tanda dibalikkan)",
-      "x ≥ -1 (tolak 3 dahulu)",
+      "x ≤ -1",
+      "x ≥ 5",
+      "x ≥ -1",
       "x ≤ 5"
      ],
      "b": 3,
@@ -445,9 +445,9 @@ window.BANK["m1b7"] =
      "t": "Selesaikan -2x &gt; 6.",
      "p": [
       "x &lt; -3",
-      "x &gt; -3 (tanda kekal)",
-      "x &lt; 3 (lupa tanda negatif)",
-      "x &gt; 3 (lupa tanda negatif)"
+      "x &gt; -3",
+      "x &lt; 3",
+      "x &gt; 3"
      ],
      "b": 0,
      "u": "Bahagi kedua-dua belah dengan -2 dan balikkan tanda: x &lt; -3."
@@ -456,10 +456,10 @@ window.BANK["m1b7"] =
      "j": "pilih",
      "t": "Selesaikan 2x + 3 ≥ 11.",
      "p": [
-      "x ≤ 4 (tanda dibalikkan)",
+      "x ≤ 4",
       "x ≥ 4",
-      "x ≥ 7 (tidak ditolak 3)",
-      "x ≥ 14 (tidak dibahagi 2)"
+      "x ≥ 7",
+      "x ≥ 14"
      ],
      "b": 1,
      "u": "Tolak 3: 2x ≥ 8. Bahagi dengan 2: x ≥ 4."

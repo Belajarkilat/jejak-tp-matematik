@@ -103,7 +103,7 @@ window.BANK["m2b4"] =
      "p": [
       "Sisi bertentangan sahaja yang sama panjang",
       "Sudutnya sama besar tetapi sisinya berbeza",
-      "Empat sisinya sama panjang dan empat sudutnya tegak",
+      "Sisi dan sudutnya semuanya sama",
       "Ia mempunyai bilangan sisi yang genap"
      ],
      "b": 2,
@@ -201,7 +201,7 @@ window.BANK["m2b4"] =
      "t": "Mengapakah semua sisi poligon yang dibina daripada bulatan dengan sudut pusat sama adalah sama panjang?",
      "p": [
       "Setiap sisi dilukis dengan pembaris yang sama",
-      "Setiap bucu sama jauh dari pusat dan sudut pusatnya sama",
+      "Bucu sama jauh dari pusat dan sudut pusatnya sama",
       "Jejari bulatan sentiasa lebih panjang daripada sisi",
       "Bucu dipilih secara rawak pada lilitan bulatan"
      ],
@@ -507,11 +507,16 @@ window.BANK["m2b4"] =
      "u": "Jumlah = 540°. x = 540 − (100 + 110 + 120 + 130) = 80."
     },
     {
-     "j": "nombor",
-     "t": "Sudut-sudut sebuah segi lima ialah 2x, 3x, 100°, 120° dan 140°. Berapakah nilai x?",
-     "b": 36,
-     "tol": 0.001000000001,
-     "u": "2x + 3x + 360° = 540°. Maka 5x = 180° dan x = 36°."
+     "j": "pilih",
+     "t": "Seorang murid mengira jumlah sudut pedalaman sebuah segi lima sebagai 5 × 180° = 900°. Apakah kesilapannya?",
+     "p": [
+      "Segi lima boleh dibahagi kepada 7 segi tiga, jadi jumlahnya ialah 7 × 180°",
+      "Setiap sudut segi lima ialah 90°, jadi jumlahnya ialah 5 × 90° = 450°",
+      "Segi lima boleh dibahagi kepada 3 segi tiga, jadi jumlahnya ialah 3 × 180° = 540°",
+      "Tiada kesilapan kerana setiap sisi menyumbang satu sudut 180°"
+     ],
+     "b": 2,
+     "u": "Jumlah sudut pedalaman = (n − 2) × 180°. Ganti n = 5: 3 × 180° = 540°. Bilangan segi tiga ialah lima tolak dua."
     }
    ],
    "bos": {
@@ -580,29 +585,34 @@ window.BANK["m2b4"] =
      "p": [
       "Poligon mempunyai empat sudut tegak yang sama",
       "Setiap sudut peluaran poligon ialah 90°",
-      "Berjalan mengelilingi poligon ialah satu pusingan penuh",
-      "Jumlah sudut pedalaman poligon ialah 360°"
+      "Jumlah sudut pedalaman poligon ialah 360°",
+      "Berjalan mengelilingi poligon ialah satu pusingan penuh"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Bila kita berjalan mengelilingi sebuah poligon dan kembali ke tempat asal, jumlah semua pusingan ialah satu pusingan penuh iaitu 360°."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah poligon sekata mempunyai jumlah sudut pedalaman 720°. Poligon kedua mempunyai jumlah sudut pedalaman 360° lebih banyak. Berapakah bilangan sisi poligon kedua?",
-     "b": 8,
-     "tol": 0.001000000001,
-     "u": "Jumlah kedua = 720° + 360° = 1 080°. (n − 2) × 180° = 1 080°, maka n − 2 = 6 dan n = 8."
+     "j": "pilih",
+     "t": "Seorang murid berkata jubin segi lima sekata boleh disusun rapat di satu titik kerana 5 × 72° = 360°. Apakah kesilapannya?",
+     "p": [
+      "72° ialah sudut peluaran; sudut jubin ialah 108° dan 3 × 108° = 324°, bukan 360°",
+      "Sudut jubin ialah 60° dan enam jubin muat di satu titik",
+      "Tiada kesilapan kerana 5 × 72° = 360° membuktikan jubin muat",
+      "Jubin segi lima tidak dapat disusun kerana 360° tidak boleh dibahagi 5"
+     ],
+     "b": 0,
+     "u": "Sudut pedalaman segi lima sekata = 540° ÷ 5 = 108°. Di satu titik, 3 × 108° = 324° dan 4 × 108° = 432°. Tiada gandaan 108° yang tepat 360°, jadi ada ruang kosong."
     },
     {
      "j": "pilih",
      "t": "Seorang murid berkata, 'Poligon yang lebih banyak sisi mempunyai sudut peluaran yang lebih besar.' Adakah dia betul?",
      "p": [
       "Betul, kerana bilangan sudut peluaran bertambah",
+      "Salah, sudut peluaran 360° ÷ n semakin kecil",
       "Betul, kerana jumlah sudut peluaran bertambah",
-      "Salah, kerana sudut peluaran sentiasa 90°",
-      "Salah, sudut peluaran ialah 360° ÷ n jadi semakin kecil"
+      "Salah, kerana sudut peluaran sentiasa 90°"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Untuk poligon sekata, sudut peluaran = 360° ÷ n. Apabila n bertambah, nilai itu semakin kecil, dan jumlah semua sudut peluaran tetap 360°."
     }
    ],

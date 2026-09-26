@@ -355,9 +355,9 @@ window.BANK["m3b9"] =
      "j": "pilih",
      "t": "Dalam Rajah 1, tetapkan m = 1 dan c = 1. Antara titik A(2, 3) dan B(−2, −1), yang manakah terletak pada garis itu?",
      "p": [
-      "A sahaja",
+      "A tetapi bukan B",
       "Kedua-dua A dan B",
-      "B sahaja",
+      "B tetapi bukan A",
       "Tiada satu pun"
      ],
      "b": 1,

@@ -63,7 +63,7 @@ window.BANK["m3b8"] =
      "j": "pilih",
      "t": "Lokus ialah satu set titik yang:",
      "p": [
-      "Kedudukannya memenuhi syarat tertentu",
+      "Kedudukannya sentiasa memenuhi syarat tertentu",
       "Semuanya terletak pada satu garis lurus sahaja",
       "Jaraknya dari pusat sentiasa berubah-ubah",
       "Sentiasa membentuk bulatan penuh"
@@ -519,9 +519,9 @@ window.BANK["m3b8"] =
      "t": "Kedudukan yang memenuhi dua syarat lokus serentak ialah:",
      "p": [
       "Titik persilangan kedua-dua lokus",
-      "Semua titik pada lokus yang pertama sahaja",
+      "Setiap titik pada lokus yang pertama",
       "Titik tengah antara dua pusat lokus",
-      "Gabungan semua titik dua lokus itu"
+      "Gabungan setiap titik pada dua lokus itu"
      ],
      "b": 0,
      "u": "Titik itu mesti berada pada lokus pertama dan lokus kedua sekali gus, iaitu titik persilangan."

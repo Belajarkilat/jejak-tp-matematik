@@ -521,11 +521,16 @@ window.BANK["m2b11"] =
      "u": "B(−2, 1) dan C(−4, 2). BC = √(2² + 1²) = √5 = 2.24."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, pilih besar ×2 (pembesaran). Kira panjang B′C′, kepada 2 tempat perpuluhan, kemudian semak dengan rajah.",
-     "b": 4.47,
-     "tol": 0.005000000005,
-     "u": "Pembesaran ×2 menggandakan semua panjang: B′C′ = 2 × 2.24 = 4.47."
+     "j": "pilih",
+     "t": "Seorang murid berkata bentuk yang dipantulkan kemudian diputar 90° tidak lagi kongruen dengan bentuk asal kerana dua transformasi mengubah saiznya. Apakah kesilapannya?",
+     "p": [
+      "Putaran mengubah saiz bentuk sebanyak sudut putarannya",
+      "Imej menjadi serupa tetapi tidak kongruen dengan bentuk asal",
+      "Pantulan dan putaran ialah isometri, jadi bentuk dan saiz kekal dan imej masih kongruen",
+      "Hanya translasi ialah isometri, jadi imej tidak kongruen"
+     ],
+     "b": 2,
+     "u": "Isometri mengekalkan jarak antara titik. Pantulan dan putaran ialah isometri, jadi gabungan keduanya juga mengekalkan bentuk dan saiz. Imej kongruen dengan bentuk asal."
     },
     {
      "j": "nombor",
@@ -540,34 +545,34 @@ window.BANK["m2b11"] =
      "p": [
       "Ya, kerana bentuknya sama",
       "Ya, kerana sudutnya sama",
-      "Tidak, sisinya lebih pendek",
-      "Tidak, kerana sudutnya berubah"
+      "Tidak, kerana sudutnya berubah",
+      "Tidak, sisinya lebih pendek"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Kongruen memerlukan bentuk dan saiz yang sama. Sudut sama, tetapi sisi lebih pendek, jadi imej hanya serupa."
     },
     {
      "j": "pilih",
      "t": "Jika dua bentuk kongruen, satu bentuk boleh menjadi imej kepada satu lagi melalui:",
      "p": [
+      "Satu atau lebih isometri",
       "Satu pembesaran yang sesuai",
       "Satu regangan yang sesuai",
-      "Satu pengecilan yang sesuai",
-      "Satu atau lebih isometri"
+      "Satu pengecilan yang sesuai"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Bentuk kongruen dihubungkan oleh isometri, iaitu translasi, pantulan, putaran atau gabungannya."
     },
     {
      "j": "pilih",
      "t": "Segi tiga ABC dipantulkan, kemudian imejnya ditranslasikan. Imej akhir ialah:",
      "p": [
-      "Kongruen dengan ABC",
       "Serupa tetapi lebih besar",
+      "Kongruen dengan ABC",
       "Serupa tetapi lebih kecil",
       "Tidak serupa dengan ABC"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Kedua-dua pantulan dan translasi ialah isometri, jadi gabungannya juga mengekalkan bentuk dan saiz."
     }
    ],
@@ -607,11 +612,11 @@ window.BANK["m2b11"] =
      "t": "Sesuatu bentuk mempunyai simetri putaran jika, apabila diputar kurang daripada 360°, bentuk itu:",
      "p": [
       "Bertukar menjadi lebih kecil",
-      "Kelihatan sama seperti asalnya",
       "Bergerak ke tempat lain yang jauh",
+      "Kelihatan sama seperti asalnya",
       "Mengubah warnanya secara beransur"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Simetri putaran bermaksud bentuk padan semula dengan kedudukan asalnya sebelum satu pusingan penuh."
     },
     {
@@ -643,22 +648,27 @@ window.BANK["m2b11"] =
      "u": "Segi empat selari hanya padan selepas diputar 180° dan 360°, jadi peringkatnya 2."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, pilih trapezium (sama kaki). Berapakah peringkat simetri putarannya?",
-     "b": 1,
-     "tol": 0.001000000001,
-     "u": "Trapezium sama kaki hanya padan selepas satu pusingan penuh, jadi peringkatnya 1. Ini bermaksud ia tiada simetri putaran."
+     "j": "pilih",
+     "t": "Seorang murid berkata segi empat selari mempunyai simetri putaran peringkat 4 kerana ia ada empat bucu. Apakah kesilapannya?",
+     "p": [
+      "Peringkat sama dengan bilangan sisi bentuk itu, jadi jawapannya betul",
+      "Peringkat segi empat selari ialah 1 kerana ia tiada paksi simetri",
+      "Tiada kesilapan kerana bilangan bucu sesuatu bentuk menentukan peringkat simetri putarannya",
+      "Peringkat ialah bilangan kali bentuk padan dengan dirinya dalam satu pusingan penuh, dan segi empat selari padan 2 kali"
+     ],
+     "b": 3,
+     "u": "Segi empat selari padan dengan dirinya selepas 180° dan 360° sahaja, jadi peringkatnya 2. Bilangan bucu tidak menentukan peringkat."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih segi tepat (segi empat tepat). Sudut putaran terkecil (lebih besar daripada 0°) yang memadankannya dengan dirinya ialah:",
      "p": [
+      "180°",
       "90°",
       "120°",
-      "180°",
       "60°"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Peringkat segi empat tepat ialah 2, jadi sudut terkecil ialah 360° ÷ 2 = 180°."
     },
     {
@@ -666,11 +676,11 @@ window.BANK["m2b11"] =
      "t": "Sebuah bentuk mempunyai simetri putaran peringkat 6. Sudut putaran terkecil yang memadankannya dengan dirinya ialah:",
      "p": [
       "90°",
+      "60°",
       "36°",
-      "120°",
-      "60°"
+      "120°"
      ],
-     "b": 3,
+     "b": 1,
      "u": "360° ÷ 6 = 60°."
     }
    ],

@@ -512,10 +512,10 @@ window.BANK["m2b8"] =
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih garis y = −1. Bilangan titik persilangan dengan lengkung y = x<sup>2</sup> ialah:",
      "p": [
-      "Satu titik persilangan",
+      "Ada satu titik persilangan",
       "Tiada titik persilangan",
-      "Dua titik persilangan",
-      "Tiga titik persilangan"
+      "Ada dua titik persilangan",
+      "Ada tiga titik persilangan"
      ],
      "b": 1,
      "u": "x² tidak pernah negatif, jadi lengkung tidak pernah mencapai y = −1. Tiada titik persilangan."
@@ -545,11 +545,16 @@ window.BANK["m2b8"] =
      "u": "Pada titik persilangan, nilai y bagi kedua-dua fungsi sama, jadi x² = x + 2."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, pilih garis y = −x + 6. Berapakah hasil tambah kedua-dua nilai x pada titik persilangan?",
-     "b": -1,
-     "tol": 0.001000000001,
-     "u": "x² = −x + 6, maka (x − 2)(x + 3) = 0, jadi x = 2 dan x = −3. Hasil tambah = 2 + (−3) = −1."
+     "j": "pilih",
+     "t": "Seorang murid memalot titik (−2, 4), (−1, 1), (0, 0), (1, 1) dan (2, 4) bagi y = x² kemudian menyambungnya dengan garis lurus. Apakah kesilapannya?",
+     "p": [
+      "Graf y = x² ialah lengkung licin, jadi titik mesti disambung dengan lengkung",
+      "Titik (0, 0) tidak patut dipalot kerana ia ialah asalan",
+      "Titik negatif patut disambung dengan garis putus-putus",
+      "Tiada kesilapan kerana garis lurus antara titik lebih tepat"
+     ],
+     "b": 0,
+     "u": "Fungsi kuadratik memberi lengkung berbentuk U (parabola). Sambungkan titik dengan lengkung licin; garis lurus antara titik memotong lengkung sebenar."
     }
    ],
    "bos": {
@@ -576,12 +581,12 @@ window.BANK["m2b8"] =
      "j": "pilih",
      "t": "Dalam Rajah 1, tetapkan n = 2 dan a = −1. Graf y = −x² terbuka ke:",
      "p": [
-      "Bawah",
       "Atas",
+      "Bawah",
       "Kiri",
       "Kanan"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Apabila a negatif dan n = 2, lengkung ∩ terbuka ke bawah."
     },
     {
@@ -589,11 +594,11 @@ window.BANK["m2b8"] =
      "t": "Dalam Rajah 1, tetapkan n = −1 dan a = 2. Kedua-dua cabang graf berada di sukuan:",
      "p": [
       "2 dan 4",
-      "1 dan 3",
       "1 dan 2",
+      "1 dan 3",
       "3 dan 4"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Bagi y = 2/x, x dan y sentiasa sama tanda, jadi cabang berada dalam sukuan 1 dan 3."
     },
     {
@@ -616,10 +621,10 @@ window.BANK["m2b8"] =
      "p": [
       "Kerana y sentiasa sama dengan sifar",
       "Kerana graf berhenti pada x = 0",
-      "Pembahagian dengan sifar tidak tertakrif",
-      "Kerana x negatif tidak dibenarkan"
+      "Kerana x negatif tidak dibenarkan",
+      "Pembahagian dengan sifar tidak tertakrif"
      ],
-     "b": 2,
+     "b": 3,
      "u": "y = a/x. Apabila x = 0, pembahagian dengan sifar tidak tertakrif, jadi tiada titik dan graf terputus."
     },
     {
@@ -633,20 +638,25 @@ window.BANK["m2b8"] =
      "j": "pilih",
      "t": "Fungsi manakah yang grafnya melalui (0, 0) dan (1, 2), dan ialah garis lurus?",
      "p": [
+      "y = 2x",
       "y = 2x²",
       "y = 2/x",
-      "y = x³ + 1",
-      "y = 2x"
+      "y = x³ + 1"
      ],
-     "b": 3,
+     "b": 0,
      "u": "y = 2x melalui (0, 0) dan (1, 2) dan ialah garis lurus. y = 2x² juga melalui kedua-dua titik tetapi melengkung. y = 2/x tidak tertakrif pada x = 0, dan y = x³ + 1 tidak melalui (0, 0)."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, tetapkan n = 3 dan a = −2. Berapakah nilai y apabila x = 2?",
-     "b": -16,
-     "tol": 0.001000000001,
-     "u": "Bagi n = 3 dan a = −2, y = −2x³. Ganti x = 2: y = −2 × 2³ = −2 × 8 = −16."
+     "j": "pilih",
+     "t": "Seorang murid berkata graf y = x³ dan y = x² tidak pernah berada di bawah paksi-x. Apakah kesilapannya?",
+     "p": [
+      "y = x² juga berada di bawah paksi-x apabila x negatif",
+      "y = x³ negatif apabila x negatif, jadi graf itu berada di bawah paksi-x untuk x negatif",
+      "Graf y = x³ tidak melalui asalan kerana pangkatnya tiga",
+      "Tiada kesilapan kerana pangkat tiga menghasilkan nilai positif"
+     ],
+     "b": 1,
+     "u": "Ganti x = −2: (−2)³ = −8, negatif, jadi titik (−2, −8) berada di bawah paksi-x. Manakala (−2)² = 4, positif, jadi y = x² tidak pernah di bawah paksi-x."
     }
    ],
    "bos": {

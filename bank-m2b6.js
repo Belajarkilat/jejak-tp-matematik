@@ -332,10 +332,10 @@ window.BANK["m2b6"] =
      "j": "pilih",
      "t": "Dalam bentangan silinder, lebar segi empat tepat itu sama dengan:",
      "p": [
-      "Jejari tapak bulatan",
-      "Tinggi silinder itu",
+      "Panjang jejari tapak bulatan",
+      "Ukuran tinggi silinder itu",
       "Lilitan tapak, iaitu 2πr",
-      "Diameter tapak bulat"
+      "Ukuran diameter tapak bulat"
      ],
      "b": 2,
      "u": "Permukaan melengkung dibuka menjadi segi empat tepat. Satu sisinya sama dengan lilitan tapak bulatan, 2πr."
@@ -488,12 +488,16 @@ window.BANK["m2b6"] =
      "u": "Guna isi padu sfera = 4/3 πr³. Ganti r = 7: 4/3 × 22/7 × 343 = 4/3 × 1 078 = 1 437.33 cm³."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, pilih prisma segi tiga, saiz kecil (tapak segi tiga bersudut tegak 3 cm dan 4 cm; panjang 10 cm). Berapakah isi padunya (cm³)?",
-     "b": 60,
-     "tol": 0.001000000001,
-     "suf": "cm³",
-     "u": "Isi padu = luas tapak × panjang = 1/2 × 3 × 4 × 10 = 60 cm³."
+     "j": "pilih",
+     "t": "Seorang murid mengira isi padu kon berjejari 3 cm dan tinggi 7 cm sebagai πr²t = π × 9 × 7 = 63π cm³. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menggunakan 4/3 πr³ untuk mengira isi padu kon",
+      "Dia sepatutnya mendarab dengan 2 dan bukan dengan satu pertiga",
+      "Tiada kesilapan kerana rumus kon sama seperti rumus silinder",
+      "Dia terlupa faktor satu pertiga bagi kon, jadi isi padu betul ialah 21π cm³"
+     ],
+     "b": 3,
+     "u": "Isi padu kon = 1/3 πr²t. Ganti r = 3 dan t = 7: 1/3 × π × 9 × 7 = 21π cm³. πr²t ialah isi padu silinder yang sama tapak dan tinggi, tiga kali ganda isi padu kon."
     },
     {
      "j": "nombor",
@@ -515,12 +519,12 @@ window.BANK["m2b6"] =
      "j": "pilih",
      "t": "Sebuah kon dan sebuah silinder mempunyai tapak dan tinggi yang sama. Isi padu kon ialah:",
      "p": [
+      "Satu pertiga isi padu silinder",
       "Satu perdua isi padu silinder",
       "Dua pertiga isi padu silinder",
-      "Sama dengan isi padu silinder",
-      "Satu pertiga isi padu silinder"
+      "Sama dengan isi padu silinder"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Air dalam kon yang penuh perlu dituang tiga kali untuk memenuhkan silinder yang sama tapak dan tinggi."
     }
    ],
@@ -589,12 +593,12 @@ window.BANK["m2b6"] =
      "j": "pilih",
      "t": "Air dalam sebuah kon penuh dituang ke dalam silinder yang sama tapak dan tinggi. Berapa kali tuangan diperlukan untuk memenuhkan silinder?",
      "p": [
-      "3 kali",
       "Dua kali",
+      "3 kali",
       "Empat kali",
       "Enam kali"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Isi padu kon ialah satu pertiga isi padu silinder, jadi perlu 3 kali tuangan."
     },
     {
@@ -606,12 +610,16 @@ window.BANK["m2b6"] =
      "u": "Isi padu bola = 4/3 × 22/7 × 3.5³ = 179.67 cm³. Luas tapak bikar = 22/7 × 7² = 154 cm². Kenaikan = 179.67 ÷ 154 = 1.17 cm."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah kon aiskrim berjejari 3.5 cm dan tinggi tegak 12 cm diisi penuh dengan aiskrim. Satu hemisfera aiskrim berjejari 3.5 cm diletakkan di atasnya. Guna π = 22/7. Berapakah jumlah isi padu aiskrim kepada 2 tempat perpuluhan (cm³)?",
-     "b": 243.83,
-     "tol": 0.005000000005,
-     "suf": "cm³",
-     "u": "Kon = 1/3 × 22/7 × 3.5² × 12 = 154 cm³. Hemisfera = 89.83 cm³. Jumlah = 243.83 cm³."
+     "j": "pilih",
+     "t": "Seorang murid mengira luas permukaan sfera berjejari 3 cm sebagai 4 × π × 3 = 12π cm². Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menggunakan 4/3 πj³ untuk mengira luas permukaan sfera",
+      "Dia sepatutnya menggunakan 2πj bagi luas permukaan sfera",
+      "Dia terlupa menguasaduakan jejari, jadi luas betul ialah 4πj² = 36π cm²",
+      "Tiada kesilapan kerana luas permukaan sfera ialah 4πj"
+     ],
+     "b": 2,
+     "u": "Luas permukaan sfera = 4πj². Ganti j = 3: 4 × π × 9 = 36π cm². Rumus 4/3 πj³ ialah isi padu."
     }
    ],
    "bos": {

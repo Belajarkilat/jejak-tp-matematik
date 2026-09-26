@@ -225,8 +225,8 @@ window.BANK["m1b6"] =
      "t": "Dalam Rajah 1, setiap titik yang dilukis pada garis ialah:",
      "p": [
       "Satu titik yang bukan penyelesaian",
-      "Penyelesaian bagi x sahaja",
-      "Penyelesaian bagi y sahaja",
+      "Nilai x yang memenuhi persamaan itu",
+      "Nilai y yang memenuhi persamaan itu",
       "Satu penyelesaian bagi 2x + y = 6"
      ],
      "b": 3,
@@ -552,8 +552,8 @@ window.BANK["m1b6"] =
      "p": [
       "Tolak kedua-dua persamaan",
       "Tambah kedua-dua persamaan",
-      "Darabkan (2) dengan 2 sahaja",
-      "Gantikan x = 0 dalam (1)"
+      "Darabkan persamaan kedua dengan 2",
+      "Gantikan x = 0 dalam persamaan pertama"
      ],
      "b": 1,
      "u": "Pekali y ialah +1 dan −1 (berlawanan tanda), jadi tambah untuk menghapuskan y."

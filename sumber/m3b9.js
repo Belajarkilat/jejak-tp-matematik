@@ -80,7 +80,7 @@ const ARAS = [
  {j:"pilih",t:"Yang manakah titik pada garis y = 2x − 3?",p:["(3, 3)","(2, 3)","(3, 2)","(1, 1)"],b:0,u:"Gantikan x = 3: y = 2(3) − 3 = 3. Titik lain tidak memuaskan persamaan.",kira:()=>[[3,3],[2,3],[3,2],[1,1]].filter(p => p[1] === 2*p[0] - 3).length === 1 && 2*3 - 3 === 3},
  {j:"nombor",t:"Titik (4, k) terletak pada garis y = 3x − 5. Cari nilai k.",b:7,tol:0.01,u:"k = 3(4) − 5 = 7.",kira:()=>3*4 - 5},
  {j:"pilih",t:"Titik (a, 5) terletak pada garis y = 2x + 1. Cari nilai a.",p:["2","−2","11","12"],b:0,u:"5 = 2a + 1, maka 2a = 4 dan a = 2.",kira:()=>(5 - 1) / 2},
- {j:"pilih",t:"Dalam Rajah 1, tetapkan m = 1 dan c = 1. Antara titik A(2, 3) dan B(−2, −1), yang manakah terletak pada garis itu?",p:["Kedua-dua A dan B","A sahaja","B sahaja","Tiada satu pun"],b:0,u:"Bagi A: 2 + 1 = 3. Bagi B: −2 + 1 = −1. Kedua-duanya memuaskan y = x + 1.",kira:()=>2 + 1 === 3 && -2 + 1 === -1},
+ {j:"pilih",t:"Dalam Rajah 1, tetapkan m = 1 dan c = 1. Antara titik A(2, 3) dan B(−2, −1), yang manakah terletak pada garis itu?",p:["Kedua-dua A dan B","A tetapi bukan B","B tetapi bukan A","Tiada satu pun"],b:0,u:"Bagi A: 2 + 1 = 3. Bagi B: −2 + 1 = −1. Kedua-duanya memuaskan y = x + 1.",kira:()=>2 + 1 === 3 && -2 + 1 === -1},
  {j:"pilih",t:"Titik P(1, 4) tidak terletak pada garis y = 3x + 2. Berapakah nilai y pada garis itu apabila x = 1?",p:["5","4","6","3"],b:0,u:"y = 3(1) + 2 = 5, bukan 4. Jadi P berada di bawah garis.",kira:()=>3*1 + 2}],
  bos:{j:"banyak",t:"Pilih SEMUA titik yang terletak pada garis y = −x + 4.",p:["(0, 4)","(4, 0)","(2, 2)","(−1, 5)","(1, 4)","(3, 2)"],b:[0,1,2,3],u:"Titik yang memuaskan y = −x + 4 ialah (0, 4), (4, 0), (2, 2) dan (−1, 5). Bagi (1, 4), y sepatutnya 3. Bagi (3, 2), y sepatutnya 1."}},
 
