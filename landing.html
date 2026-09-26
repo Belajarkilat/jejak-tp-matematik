@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ms" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jejak TP Matematik — keputusan PBD dinilai dengan segera dan tepat</title>
+<meta name="description" content="Permainan pentaksiran bilik darjah Matematik KSSM Tingkatan 1, 2 dan 3 dengan rajah interaktif. Murid bermain, cikgu dapat rekod TP automatik tanpa isi manual.">
+<link rel="canonical" href="https://jejaktpmath.naikgred.com/landing.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ms_MY">
+<meta property="og:site_name" content="Jejak TP Matematik">
+<meta property="og:url" content="https://jejaktpmath.naikgred.com/landing.html">
+<meta property="og:title" content="Jejak TP Matematik — keputusan PBD dinilai dengan segera dan tepat">
+<meta property="og:description" content="Matematik KSSM Tingkatan 1, 2 dan 3 dengan rajah interaktif. Murid bermain, guru tinggal semak dan salin ulasan PBD. Semua bab percuma sepanjang pilot.">
+<meta property="og:image" content="https://jejaktpmath.naikgred.com/og-jejak-math.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jejak TP Matematik: keputusan PBD Matematik dinilai dengan segera dan tepat">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="ikon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#FBFAF6; --surface:#FFFFFF; --mint:#E4F5F1;
+  --ink:#12302C; --ink2:#4B6D67;
+  --teal:#1C7A73; --teal-deep:#0B4A46; --teal-line:#CFE6E1;
+  --gold:#E8A33D; --gold-ink:#7A4E0E;
+  --shadow:0 18px 40px -22px rgba(11,74,70,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B1815; --surface:#122622; --mint:#173A34;
+    --ink:#EAF3F0; --ink2:#9FC1BA;
+    --teal:#3FB6AB; --teal-deep:#0B4A46; --teal-line:#1E4A43;
+    --gold:#F0B35A; --gold-ink:#3A2510;
+    --shadow:0 18px 40px -22px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B1815; --surface:#122622; --mint:#173A34;
+  --ink:#EAF3F0; --ink2:#9FC1BA;
+  --teal:#3FB6AB; --teal-deep:#0B4A46; --teal-line:#1E4A43;
+  --gold:#F0B35A; --gold-ink:#3A2510;
+  --shadow:0 18px 40px -22px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Lexend",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Baloo 2","Trebuchet MS",sans-serif;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.narrow{max-width:640px}
+
+/* ---------- top bar ---------- */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding-block:18px;gap:12px}
+.mark{display:flex;align-items:center;gap:9px;font:700 18px "Baloo 2",sans-serif}
+.mark svg{width:30px;height:30px;flex:none}
+.topbar .cta{font:600 14px "Lexend",sans-serif;background:var(--teal);color:#fff;border-radius:11px;padding:10px 18px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
+
+/* ---------- hero ---------- */
+.hero{padding-block:28px 56px;display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:36px;align-items:center}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:32px}}
+.hero-photo{position:relative;justify-self:start}
+.hero-photo img{width:100%;max-width:184px;height:auto;display:block;border-radius:18px;border:6px solid var(--surface);box-shadow:var(--shadow);transform:rotate(-2.2deg)}
+.hero-badge{position:absolute;left:-10px;bottom:16px;background:var(--gold);color:#3A2510;font:700 12px "Baloo 2",sans-serif;padding:7px 11px;border-radius:10px;transform:rotate(-4deg);box-shadow:0 10px 22px -12px rgba(0,0,0,.35)}
+.eyebrow-tag{display:inline-block;background:var(--mint);color:var(--teal-deep);font:600 14.5px "Lexend",sans-serif;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+:root[data-theme="dark"] .eyebrow-tag,:root[data-theme="dark"] .step i,:root[data-theme="dark"] .cerita svg{color:#CFEFE9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow-tag,:root:not([data-theme="light"]) .step i,:root:not([data-theme="light"]) .cerita svg{color:#CFEFE9}}
+.hero h1{font-size:clamp(1.85rem,3.9vw,2.6rem);font-weight:800;line-height:1.16}
+.hero h1 mark{color:inherit;background:linear-gradient(transparent 60%,color-mix(in srgb,var(--gold) 55%,transparent) 60%);padding-inline:2px}
+.hero .lede{margin-top:16px;font-size:1.14rem;color:var(--ink2);max-width:46ch}
+.hero .ctas{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:600 16px "Lexend",sans-serif;padding:13px 22px;border-radius:13px;text-decoration:none;min-height:48px}
+.btn.utama{background:var(--teal-deep);color:#fff}
+.btn.kedua{background:var(--surface);color:var(--ink);border:2px solid var(--teal-line)}
+.hero .cuba-murid{margin-top:16px;display:inline-flex;align-items:center;min-height:44px;font:600 14.5px "Lexend",sans-serif;color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
+.hero .kod{margin-top:18px;font-size:.95rem;color:var(--ink2)}
+.hero .kod b{color:var(--ink);font-family:"Lexend",monospace}
+
+/* ---------- video demo ---------- */
+.video-sec{padding-block:8px 64px;scroll-margin-top:16px}
+.video-kotak{background:var(--mint);border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:44px;align-items:center}
+@media (max-width:760px){.video-kotak{grid-template-columns:1fr;padding:24px 18px;gap:28px}}
+.telefon{position:relative;justify-self:center;width:100%;max-width:300px;background:#0B1815;border-radius:34px;padding:9px;box-shadow:0 30px 60px -28px rgba(11,74,70,.55)}
+@media (max-width:760px){.telefon{max-width:270px}}
+.telefon video{display:block;width:100%;height:auto;aspect-ratio:720/1558;border-radius:26px;background:#0d3a33;object-fit:cover}
+.main-btn{position:absolute;inset:9px;border:0;border-radius:26px;background:rgba(11,24,21,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;color:#fff;font:700 15px "Lexend",sans-serif}
+.main-btn .label{background:rgba(11,24,21,.78);padding:7px 14px;border-radius:99px}
+.main-btn .bulat{width:76px;height:76px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -10px rgba(0,0,0,.5);transition:transform .15s}
+.main-btn:hover .bulat,.main-btn:focus-visible .bulat{transform:scale(1.07)}
+.main-btn svg{width:30px;height:30px;margin-left:4px}
+.main-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.telefon.sedang-main .main-btn{display:none}
+.video-sec .eyebrow-tag{background:var(--surface)}
+.video-sec h2{font-size:clamp(1.6rem,3.2vw,2.2rem)}
+.video-sec .lede{margin-top:10px;color:var(--ink2);max-width:46ch}
+.babak{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:6px}
+.babak button{width:100%;display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center;text-align:left;background:var(--surface);border:1.5px solid var(--teal-line);border-radius:14px;padding:10px 14px;min-height:48px;cursor:pointer;color:var(--ink);font:500 15.5px/1.35 "Lexend",sans-serif;transition:border-color .12s,background .12s}
+.babak button:hover{border-color:var(--teal)}
+.babak button[aria-current="true"]{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 10%,var(--surface))}
+.babak time{font:700 14px "Lexend",monospace;color:var(--teal);background:var(--mint);border-radius:8px;padding:4px 0;text-align:center}
+.video-sec .ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
+/* ---------- pillars ---------- */
+.pillar-sec{padding-block:12px 56px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+@media (max-width:760px){.pillars{grid-template-columns:1fr}}
+.pillar{background:var(--surface);border:1px solid var(--teal-line);border-radius:18px;padding:22px}
+.pillar svg{width:34px;height:34px;color:var(--teal)}
+.pillar h3{font-size:1.18rem;margin-top:14px}
+.pillar p{margin-top:6px;color:var(--ink2);font-size:.98rem}
+
+/* ---------- steps ---------- */
+.steps-sec{padding-block:12px 56px}
+.steps{margin-top:28px;display:flex;flex-direction:column;gap:0}
+.step{display:grid;grid-template-columns:44px 1fr;gap:18px;padding-block:18px;border-top:1px solid var(--teal-line)}
+.step:last-child{border-bottom:1px solid var(--teal-line)}
+.step i{font-style:normal;width:44px;height:44px;border-radius:50%;background:var(--mint);color:var(--teal-deep);display:flex;align-items:center;justify-content:center;font:700 17px "Baloo 2",sans-serif}
+.step h3{font-size:1.08rem}
+.step p{margin-top:4px;color:var(--ink2);font-size:.98rem;max-width:56ch}
+
+
+/* ---------- harga ---------- */
+/* ---------- tunjuk skrin ---------- */
+.tunjuk-sec{padding-block:12px 56px}
+.tunjuk-sec .lede{margin-top:10px;color:var(--ink2);max-width:56ch}
+.tunjuk{margin-top:28px;display:flex;flex-direction:column;gap:36px}
+.tunjuk-item{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.tunjuk-item:nth-child(2n){direction:rtl}
+.tunjuk-item:nth-child(2n) > *{direction:ltr}
+@media (max-width:800px){.tunjuk-item{grid-template-columns:1fr}.tunjuk-item:nth-child(2n){direction:ltr}}
+.tunjuk-frame{background:var(--surface);border:1px solid var(--teal-line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
+.tunjuk-frame img{width:100%;display:block;border-radius:9px}
+.tunjuk-label{display:inline-block;background:var(--mint);color:var(--teal-deep);font:600 13px "Lexend",sans-serif;padding:5px 12px;border-radius:99px}
+:root[data-theme="dark"] .tunjuk-label{color:#CFEFE9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tunjuk-label{color:#CFEFE9}}
+.tunjuk-item h3{font-size:1.4rem;margin-top:12px}
+.tunjuk-item p{margin-top:8px;color:var(--ink2)}
+.contoh-ulasan{margin-top:16px;background:var(--mint);border-radius:14px;padding:16px 18px}
+.contoh-ulasan .cap{display:block;font:600 12.5px "Lexend",sans-serif;color:var(--teal-deep);margin-bottom:6px}
+:root[data-theme="dark"] .contoh-ulasan .cap{color:#CFEFE9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contoh-ulasan .cap{color:#CFEFE9}}
+.contoh-ulasan p{margin:0;color:var(--ink);font-size:.96rem;font-style:italic}
+
+.harga-sec{padding-block:56px}
+.harga{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+@media (max-width:820px){.harga{grid-template-columns:1fr;max-width:420px}}
+.plan{background:var(--surface);border:1px solid var(--teal-line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.plan.utama{border:2px solid var(--teal);position:relative}
+.plan .siapa{font:600 .85rem "Lexend",sans-serif;color:var(--ink2)}
+.plan .rm{font:800 1.9rem "Baloo 2",sans-serif;margin-top:2px;display:flex;align-items:baseline;flex-wrap:wrap;gap:5px}
+.plan .rm small{font:500 .95rem "Lexend",sans-serif;color:var(--ink2);white-space:nowrap}
+.plan p{color:var(--ink2);font-size:.95rem;margin-top:6px}
+.plan ul{margin:10px 0 0;padding-left:20px;color:var(--ink2);font-size:.92rem;display:flex;flex-direction:column;gap:4px}
+.harga-nota{margin-top:16px;color:var(--ink2);font-size:.92rem;max-width:70ch}
+.plan .rm s{font:600 1.15rem "Lexend",sans-serif;color:var(--ink2);text-decoration-thickness:2px;text-decoration-color:#E0424B}
+.plan .perintis{align-self:flex-start;background:var(--gold);color:#3A2510;font:700 12.5px "Lexend",sans-serif;padding:4px 10px;border-radius:99px}
+.perintis-jalur{margin-top:14px;display:inline-block;background:color-mix(in srgb,var(--gold) 22%,var(--surface));border:1.5px solid var(--gold);border-radius:14px;padding:12px 16px;font-size:.98rem;color:var(--ink)}
+
+/* ---------- cerita ---------- */
+.cerita-sec{padding-block:12px 56px}
+.cerita{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--mint);border-radius:22px;padding:28px}
+@media (max-width:560px){.cerita{grid-template-columns:1fr}}
+.cerita svg{width:46px;height:46px;flex:none;color:var(--teal-deep)}
+.cerita h2{font-size:1.55rem}
+.cerita p{margin-top:10px;color:var(--ink2);max-width:60ch}
+.cerita blockquote{margin:16px 0 0;padding-left:16px;border-left:3px solid var(--teal);font-style:italic;color:var(--ink);max-width:56ch}
+.cerita blockquote cite{display:block;margin-top:8px;font-style:normal;font:600 .88rem "Lexend",sans-serif;color:var(--ink2)}
+
+/* ---------- soalan ---------- */
+.soalan-sec{padding-block:12px 56px}
+.soalan{margin-top:26px;display:flex;flex-direction:column;gap:0}
+.soalan details{border-top:1px solid var(--teal-line);padding-block:16px}
+.soalan details:last-child{border-bottom:1px solid var(--teal-line)}
+.soalan summary{cursor:pointer;font:600 16px "Lexend",sans-serif;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:44px}
+.soalan summary::-webkit-details-marker{display:none}
+.soalan summary::after{content:"+";font-size:1.3rem;color:var(--teal);flex:none}
+.soalan details[open] summary::after{content:"–"}
+.soalan details p{margin-top:10px;color:var(--ink2);max-width:64ch}
+
+/* ---------- penutup ---------- */
+.penutup{background:var(--mint);border-radius:26px;padding:44px 28px;text-align:left;margin-block:20px 60px}
+.penutup h2{font-size:2rem}
+.penutup p{margin-top:10px;color:var(--ink2);max-width:52ch}
+.penutup .ctas{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+
+footer{padding-block:26px 40px;border-top:1px solid var(--teal-line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;color:var(--ink2);font-size:.88rem}
+footer .ng{display:flex;align-items:center;gap:6px;font-weight:600}
+footer .ng b{color:var(--teal)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar">
+    <div class="mark">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="var(--teal)" stroke-width="4"/><circle cx="26" cy="32" r="7" fill="#E0424B"/><circle cx="38" cy="32" r="7" fill="var(--teal)"/></svg>
+      Jejak TP Matematik
+    </div>
+    <a class="cta" href="index.html?cikgu">Log masuk Guru</a>
+  </div>
+</div>
+
+<div class="wrap hero">
+  <div class="hero-photo">
+    <img src="promo-hero-math.jpg" alt="Ilustrasi cikgu Matematik berhijab memegang kalkulator, jangka lukis dan pembaris" width="440" height="794">
+    <div class="hero-badge">35 bab, T1–T3</div>
+  </div>
+  <div>
+    <span class="eyebrow-tag">Matematik Senang, TP Cemerlang</span>
+    <h1>Murid bermain dengan rajah interaktif, keputusan PBD dapat <mark>dinilai dengan segera dan tepat</mark>.</h1>
+    <p class="lede">Permainan pentaksiran bilik darjah untuk Matematik KSSM Tingkatan 1, 2 dan 3. Murid jejak peta laluan ikut bab dan gerakkan rajah sendiri, cikgu dapat rekod TP automatik tanpa isi borang manual.</p>
+    <div class="ctas">
+      <a class="btn utama" href="index.html?demo=cikgu">Lihat kelas contoh</a>
+      <a class="btn kedua" href="#video">&#9654;&nbsp; Tengok video 1 minit</a>
+    </div>
+    <a class="cuba-murid" href="index.html?demo=murid">Atau cuba sebagai murid →</a>
+    <p class="kod">Dah ada kod kelas daripada cikgu? Masukkan terus di <b>jejaktpmath.naikgred.com</b></p>
+  </div>
+</div>
+
+<div class="wrap video-sec" id="video">
+  <div class="video-kotak">
+    <div class="telefon" id="telefon">
+      <video id="vidDemo" src="video-demo-math.mp4?v=1" poster="video-demo-poster-math.jpg?v=1" preload="none" playsinline width="720" height="1558" aria-label="Video demo Jejak TP Matematik, satu minit"></video>
+      <button class="main-btn" id="mainBtn" type="button" aria-label="Main video demo">
+        <span class="bulat"><svg viewBox="0 0 24 24" fill="#12302C" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></span>
+        <span class="label">Tengok 1 minit</span>
+      </button>
+    </div>
+    <div>
+      <span class="eyebrow-tag">Video demo · 1 minit</span>
+      <h2>Murid bermain dengan rajah, TP auto dijana</h2>
+      <p class="lede">Rakaman sebenar app, bukan animasi. Tekan mana-mana babak untuk lompat terus ke bahagian yang cikgu nak tengok.</p>
+      <ol class="babak" id="babak">
+        <li><button type="button" data-t="7.5"><time>0:08</time>Murid main di telefon, macam game</button></li>
+        <li><button type="button" data-t="19.5"><time>0:20</time>Gerakkan gelongsor, rajah berubah terus</button></li>
+        <li><button type="button" data-t="37.5"><time>0:38</time>Hentian lulus, TP murid dijana secara automatik</button></li>
+        <li><button type="button" data-t="43.5"><time>0:44</time>Cikgu terus nampak TP setiap murid</button></li>
+        <li><button type="button" data-t="49.5"><time>0:50</time>Ulasan PBD siap, salin terus ke SPPB</button></li>
+        <li><button type="button" data-t="57.5"><time>0:58</time>Kelas yang lemah dikenal pasti dengan pantas</button></li>
+      </ol>
+      <div class="ctas">
+        <a class="btn utama" href="index.html?demo=cikgu">Cuba sendiri kelas contoh</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var v=document.getElementById('vidDemo'),t=document.getElementById('telefon'),b=document.getElementById('mainBtn');
+  var bb=[].slice.call(document.querySelectorAll('#babak button'));
+  function main(dari){ if(dari!=null){ try{v.currentTime=dari}catch(e){} } var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+  b.addEventListener('click',function(){ main(null); });
+  v.addEventListener('play',function(){ t.classList.add('sedang-main'); v.controls=true; });
+  bb.forEach(function(x){ x.addEventListener('click',function(){
+    var dari=+x.getAttribute('data-t');
+    if(v.readyState<1){ v.preload='auto'; v.addEventListener('loadedmetadata',function f(){ v.removeEventListener('loadedmetadata',f); main(dari); }); v.load(); main(null); }
+    else main(dari);
+    if(window.matchMedia('(max-width:760px)').matches) t.scrollIntoView({behavior:'smooth',block:'center'});
+  }); });
+  v.addEventListener('timeupdate',function(){
+    var k=-1; bb.forEach(function(x,i){ if(v.currentTime>=+x.getAttribute('data-t')-0.2) k=i; });
+    bb.forEach(function(x,i){ x.setAttribute('aria-current',i===k?'true':'false'); });
+  });
+})();
+</script>
+
+<div class="wrap pillar-sec">
+  <h2>Apa yang murid dan cikgu dapat</h2>
+  <div class="pillars">
+    <div class="pillar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20 12 5l7 15"/><circle cx="12" cy="13" r="2" fill="currentColor"/></svg>
+      <h3>Rajah yang murid boleh main</h3>
+      <p>Setiap bab ada rajah interaktif: gelongsor, lipat, putar dan ukur. Murid nampak sendiri kenapa jawapan itu betul, bukan hafal rumus.</p>
+    </div>
+    <div class="pillar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/><path d="M3 20h18"/></svg>
+      <h3>Rekod TP automatik</h3>
+      <p>Setiap hentian yang murid lepasi terus mencadangkan Tahap Penguasaan. Cikgu tinggal semak dan sahkan, tak payah isi satu-satu.</p>
+    </div>
+    <div class="pillar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M8 13h8M8 17h5"/></svg>
+      <h3>Evidens sedia eksport</h3>
+      <p>Setiap percubaan murid disimpan sebagai bukti PBD, siap dengan ulasan yang boleh disalin terus ke SPPB.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap steps-sec">
+  <h2>Kaedah penggunaan Jejak TP Matematik</h2>
+  <div class="steps">
+    <div class="step"><i>1</i><div><h3>Guru daftar dan import senarai murid</h3><p>Percuma. Muat naik fail Excel atau APDM sekali gus. Semua kelas dan PIN murid dijana sendiri.</p></div></div>
+    <div class="step"><i>2</i><div><h3>Kongsi kod kelas 6 aksara</h3><p>Murid taip nama dan PIN, terus bermain. Tiada akaun murid, tiada kata laluan untuk diingat.</p></div></div>
+    <div class="step"><i>3</i><div><h3>Murid jejak peta, hentian demi hentian</h3><p>Enam hentian setiap bab, daripada Mengingat sampai Mencipta. TP dicadang daripada percubaan pertama.</p></div></div>
+    <div class="step"><i>4</i><div><h3>Guru sahkan TP, eksport laporan</h3><p>Nampak terus soalan mana kelas tersasar. Data PBD siap dieksport ke Excel bila-bila.</p></div></div>
+  </div>
+</div>
+
+<div class="wrap tunjuk-sec">
+  <h2>Ini hasil yang guru akan dapat lihat selepas murid selesai menjawab soalan</h2>
+  <p class="lede">Bukan mockup. Ni skrin sebenar dashboard cikgu, daripada kelas contoh (murid rekaan) yang sama macam yang cikgu boleh cuba di atas tadi.</p>
+  <div class="tunjuk">
+    <div class="tunjuk-item">
+      <div class="tunjuk-frame"><img src="promo-tp-math.png" alt="Skrin keputusan murid menunjukkan cadangan TP dan ulasan PBD ditulis automatik untuk seorang murid" loading="lazy"></div>
+      <div>
+        <span class="tunjuk-label">Keputusan murid</span>
+        <h3>Ulasan PBD terus siap, tinggal salin</h3>
+        <p>Setiap murid dapat cadangan TP dan ulasan PBD ditulis automatik ikut prestasi sebenar dia hentian demi hentian. Cikgu sahkan atau ubah, terus salin ke SPPB. Tak payah karang sendiri untuk 40 orang murid.</p>
+        <div class="contoh-ulasan">
+          <span class="cap">Contoh ulasan sebenar, salin terus ke SPPB/IDME</span>
+          <p>"Aisyah mampu menyelesaikan masalah rutin yang melibatkan tangen, termasuk menggunakan sudut 90° antara jejari dengan tangen dan Teorem Pythagoras. Seterusnya latih masalah dengan dua tangen."</p>
+        </div>
+      </div>
+    </div>
+    <div class="tunjuk-item">
+      <div class="tunjuk-frame"><img src="promo-diagnostik-math.png" alt="Grid diagnostik menunjukkan jawapan setiap murid bagi setiap soalan, dengan amaran topik yang gagal dikuasai lebih separuh kelas" loading="lazy"></div>
+      <div>
+        <span class="tunjuk-label">Diagnostik</span>
+        <h3>Nampak terus soalan mana kelas tersasar</h3>
+        <p>Grid tunjuk siapa jawab apa, bagi setiap soalan. Topik yang gagal dikuasai lebih separuh kelas terus ditanda "kurang separuh kelas betul". Tak payah semak kertas satu-satu untuk tahu di mana nak fokus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap cerita-sec">
+  <div class="cerita">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    <div>
+      <h2>Ikut DSKP, dan sedang diuji bersama cikgu</h2>
+      <p>Setiap soalan ditulis ikut Standard Pembelajaran DSKP KSSM, dan Standard Prestasi disalin kata demi kata daripada dokumen rasmi. Lebih 1 200 jawapan berangka disemak semula dengan pengiraan bebas oleh sistem, supaya rajah dan jawapan tak bercanggah.</p>
+      <p>Jejak TP Matematik kini dalam fasa pilot bersama cikgu Matematik sekolah menengah. Ada soalan yang tak sesuai dengan buku teks cikgu? Beritahu melalui butang "Beri maklum balas" dalam app, kami betulkan.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap harga-sec" id="harga">
+  <h2>Percuma sepanjang pilot</h2>
+  <p class="narrow" style="margin-top:10px;color:var(--ink2)">Cuba dulu dengan kelas cikgu sendiri. Tak perlu kad bank.</p>
+  <div class="harga" style="grid-template-columns:minmax(0,520px)">
+    <div class="plan utama">
+      <span class="siapa">Pilot</span>
+      <span class="rm">RM0</span>
+      <span class="perintis">Semua bab dibuka</span>
+      <p>Semua 35 bab Matematik Tingkatan 1, 2 dan 3. Sehingga 20 kelas bagi setiap akaun cikgu, setiap kelas sehingga 60 murid, rekod TP dan eksport PBD ke Excel.</p>
+    </div>
+  </div>
+  <p class="harga-nota">Harga selepas pilot akan dimaklumkan lebih awal kepada cikgu yang berdaftar. Cikgu yang menyertai pilot tak akan dikenakan bayaran tanpa makluman.</p>
+</div>
+
+<div class="wrap soalan-sec">
+  <h2>Soalan lazim</h2>
+  <div class="soalan">
+    <details>
+      <summary>Bab apa yang dah ada?</summary>
+      <p>Matematik KSSM Tingkatan 1 (13 bab), Tingkatan 2 (13 bab) dan Tingkatan 3 (9 bab). Tingkatan 4 dan 5 belum ada.</p>
+    </details>
+    <details>
+      <summary>Data murid selamat?</summary>
+      <p>Murid masuk guna kod kelas 6 aksara rawak dan PIN 4 angka. Tiada e-mel atau nombor telefon murid direkod. Data tidak dikongsi atau dijual kepada pihak ketiga.</p>
+    </details>
+    <details>
+      <summary>Berapa ramai murid boleh bermain?</summary>
+      <p>Sehingga 60 murid sekelas, dan 20 kelas bagi setiap akaun cikgu. Cukup untuk semua kelas yang cikgu ajar.</p>
+    </details>
+    <details>
+      <summary>Perlu internet sepanjang masa?</summary>
+      <p>Perlu talian data atau WiFi semasa murid bermain, sebab setiap jawapan dihantar terus supaya rekod TP tak hilang. App boleh dibuka semula tanpa internet selepas dibuka sekali.</p>
+    </details>
+    <details>
+      <summary>Murid tertekan dengan pemasa?</summary>
+      <p>Tak. Mod tenang hidup secara lalai: tiada pemasa atau meter yang mengejar murid. Pemasa hanya untuk murid yang pilih "Mod cabaran masa".</p>
+    </details>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="penutup">
+    <h2>Cuba dulu dengan kelas cikgu sendiri</h2>
+    <p>Lima minit untuk import senarai murid, terus dapat kod kelas untuk dikongsi. Tiada kad kredit diperlukan untuk mula.</p>
+    <div class="ctas">
+      <a class="btn utama" href="index.html?daftar">Daftar percuma</a>
+      <a class="btn kedua" href="index.html?demo=cikgu">Lihat kelas contoh dulu</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>
+    <span>Jejak TP Matematik · Matematik KSSM Tingkatan 1–3</span>
+    <span class="ng">A <b>Naik</b>Gred product</span>
+  </footer>
+</div>
+
+</body>
+</html>
