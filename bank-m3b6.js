@@ -111,7 +111,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, ∠AOB (sudut pusat) ialah 80°. Berapakah ∠APB (sudut pada lilitan) dalam darjah?",
      "b": 40,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pada lilitan ialah separuh sudut pusat: 80° ÷ 2 = 40°."
     },
@@ -119,7 +119,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Sudut pusat yang dicangkum oleh sebuah lengkok ialah 130°. Berapakah sudut pada lilitan yang dicangkum oleh lengkok yang sama?",
      "b": 65,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "130° ÷ 2 = 65°."
     },
@@ -127,7 +127,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Sudut pada lilitan yang dicangkum oleh lengkok PQ ialah 35°. Berapakah sudut pusat yang dicangkum oleh lengkok PQ?",
      "b": 70,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat ialah dua kali sudut pada lilitan: 35° × 2 = 70°."
     },
@@ -184,7 +184,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, AB ialah diameter. Berapakah ∠APB (sudut dalam semibulatan) dalam darjah?",
      "b": 90,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat bagi diameter ialah 180°. Sudut pada lilitan ialah separuhnya: 90°."
     },
@@ -216,7 +216,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "AC ialah diameter sebuah bulatan dan B terletak pada lilitan. Jika ∠BAC = 35°, berapakah ∠ACB dalam darjah?",
      "b": 55,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "∠ABC = 90° (sudut dalam semibulatan). ∠ACB = 180° − 90° − 35° = 55°."
     },
@@ -224,7 +224,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Pada muka jam berpusat O, setiap jam mewakili sudut pusat yang sama. Berapakah sudut pusat antara jam 12 dan jam 5 dalam darjah?",
      "b": 150,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Setiap jam = 360° ÷ 12 = 30°. Dari jam 12 ke jam 5 ada 5 jam: 5 × 30° = 150°."
     },
@@ -232,7 +232,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Pada muka jam yang sama, P ialah titik pada lilitan di lengkok besar. Berapakah sudut pada lilitan yang dicangkum oleh lengkok jam 12 hingga jam 5 dalam darjah?",
      "b": 75,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat lengkok itu ialah 150°. Sudut pada lilitan ialah 150° ÷ 2 = 75°."
     },
@@ -265,7 +265,7 @@ window.BANK["m3b6"] =
     "j": "nombor",
     "t": "AB ialah diameter sebuah bulatan berpusat O dan C terletak pada lilitan. ∠CAB = 2x dan ∠ABC = x + 15. Berapakah nilai x?",
     "b": 25,
-    "tol": 0.1,
+    "tol": 0.001000000001,
     "u": "∠ACB = 90° (dalam semibulatan). Jumlah sudut segi tiga: 90 + 2x + x + 15 = 180, jadi 3x = 75 dan x = 25."
    }
   },
@@ -297,7 +297,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "ABCD ialah sisi empat kitaran. Jika ∠ABC = 80°, berapakah ∠ADC dalam darjah?",
      "b": 100,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut bertentangan sisi empat kitaran berjumlah 180°. ∠ADC = 180° − 80° = 100°."
     },
@@ -305,7 +305,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "ABCD ialah sisi empat kitaran dan ∠BAD = 112°. Berapakah ∠BCD dalam darjah?",
      "b": 68,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "∠BCD bertentangan dengan ∠BAD. 180° − 112° = 68°."
     },
@@ -313,7 +313,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "ABCD ialah sisi empat kitaran. ∠ABC = 3x dan ∠ADC = 2x + 30°. Berapakah nilai x?",
      "b": 30,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "u": "Sudut bertentangan berjumlah 180°: 3x + 2x + 30 = 180. Maka 5x = 150 dan x = 30."
     },
     {
@@ -344,7 +344,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "ABCD ialah sisi empat kitaran. Sisi BC dipanjangkan ke titik E. Jika ∠DAB = 72°, berapakah sudut peluaran ∠DCE dalam darjah?",
      "b": 72,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "∠BCD = 180° − 72° = 108°. ∠DCE terletak pada garis lurus BCE: 180° − 108° = 72°. Sudut peluaran sama dengan sudut pedalaman bertentangan."
     },
@@ -425,7 +425,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, jejari OT = 6 cm dan tangen TP = 8 cm. Kira panjang OP dalam cm.",
      "b": 10,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "∠OTP = 90°, jadi OP² = 6² + 8² = 100. OP = 10 cm."
     },
@@ -433,7 +433,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Tangen PT menyentuh sebuah bulatan berpusat O di T. Jika OT = 8 cm dan OP = 17 cm, berapakah panjang PT dalam cm?",
      "b": 15,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "PT² = OP² − OT² = 289 − 64 = 225. PT = 15 cm."
     },
@@ -441,7 +441,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Tangen PT menyentuh sebuah bulatan berpusat O di T. Jika ∠TOP = 62°, berapakah ∠TPO dalam darjah?",
      "b": 28,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "∠OTP = 90°. ∠TPO = 180° − 90° − 62° = 28°."
     },
@@ -449,7 +449,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, OT = 6 cm dan TP = 8 cm. Kira ∠TOP kepada 1 tempat perpuluhan (darjah).",
      "b": 53.1,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "°",
      "u": "tan ∠TOP = TP ÷ OT = 8 ÷ 6. ∠TOP = tan⁻¹(1.333) = 53.1°."
     },
@@ -469,7 +469,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Sebuah landasan lurus menyentuh sebuah taman berbentuk bulatan berpusat O dan berjejari 20 m, di T. Titik P pada landasan berjarak 21 m dari T. Berapakah OP dalam m?",
      "b": 29,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "m",
      "u": "Landasan ialah tangen, jadi ∠OTP = 90°. OP² = 20² + 21² = 841. OP = 29 m."
     }
@@ -478,7 +478,7 @@ window.BANK["m3b6"] =
     "j": "nombor",
     "t": "Tangen PT menyentuh bulatan berpusat O di T. Jika ∠OPT = 30° dan OT = 7 cm, berapakah panjang OP dalam cm?",
     "b": 14,
-    "tol": 0.05,
+    "tol": 0.001000000001,
     "suf": "cm",
     "u": "∠OTP = 90°. OT bertentangan dengan ∠OPT, jadi sin 30° = 7 ÷ OP. OP = 7 ÷ 0.5 = 14 cm."
    }
@@ -511,7 +511,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan OP = 13 cm dan jejari OA = 5 cm. Berapakah panjang PA dalam cm?",
      "b": 12,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "∠OAP = 90°, jadi PA² = OP² − OA² = 169 − 25 = 144. PA = 12 cm."
     },
@@ -519,14 +519,14 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dua tangen PA dan PB dilukis dari titik P ke sebuah bulatan. PA = 3x + 2 dan PB = 5x − 8. Berapakah nilai x?",
      "b": 5,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "u": "PA = PB, jadi 3x + 2 = 5x − 8. Maka 10 = 2x dan x = 5."
     },
     {
      "j": "nombor",
      "t": "Dua tangen PA dan PB dilukis dari titik P ke sebuah bulatan berpusat O. Jika ∠APB = 50°, berapakah ∠AOB dalam darjah?",
      "b": 130,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "∠OAP = ∠OBP = 90°. Jumlah sudut sisi empat OAPB ialah 360°: ∠AOB = 360° − 90° − 90° − 50° = 130°."
     },
@@ -546,7 +546,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dua tangen PA dan PB dilukis dari titik P ke sebuah bulatan berpusat O. Jika ∠OPA = 25°, berapakah ∠APB dalam darjah?",
      "b": 50,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "PO membahagi dua ∠APB. ∠APB = 2 × 25° = 50°."
     },
@@ -554,7 +554,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Bulatan berpusat O berjejari 8 cm. Tangen PA menyentuh bulatan di A, dengan OP = 17 cm dan PA = 15 cm. Berapakah luas segi tiga OAP dalam cm²?",
      "b": 60,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "∠OAP = 90°. Luas = ½ × OA × PA = ½ × 8 × 15 = 60 cm²."
     },
@@ -580,7 +580,7 @@ window.BANK["m3b6"] =
     "j": "nombor",
     "t": "Dua bulatan berjejari 3 cm dan 8 cm mempunyai pusat berjarak 13 cm. Sebuah tali sawat menyentuh kedua-dua bulatan sebagai tangen sepunya luar. Berapakah panjang tangen sepunya itu dalam cm?",
     "b": 12,
-    "tol": 0.05,
+    "tol": 0.001000000001,
     "suf": "cm",
     "u": "Lukis garis dari pusat kecil selari dengan tangen. Segi tiga bersudut tegak terbentuk dengan hipotenus 13 dan sisi (8 − 3) = 5. Panjang tangen = √(13² − 5²) = 12 cm."
    }
@@ -613,7 +613,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, ∠TOA (sudut pusat) ialah 80°. Berapakah sudut antara tangen dengan perentas TA dalam darjah?",
      "b": 40,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut dalam tembereng selang-seli ialah separuh sudut pusat, iaitu 40°. Sudut tangen–perentas juga 40°."
     },
@@ -621,7 +621,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Sudut antara sebuah tangen dengan sebuah perentas ialah 55°. Berapakah sudut dalam tembereng selang-seli dalam darjah?",
      "b": 55,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Kedua-dua sudut itu sama besar mengikut teorem tembereng selang-seli."
     },
@@ -629,7 +629,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Tangen PQ menyentuh sebuah bulatan berpusat O di T. Jika sudut antara PQ dengan perentas TA ialah 68°, berapakah ∠TOA dalam darjah?",
      "b": 136,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut tembereng selang-seli ialah 68°. Sudut pusat dua kali ganda: 68° × 2 = 136°."
     },
@@ -637,7 +637,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Dua tangen PA dan PB dilukis dari titik P ke sebuah bulatan. Jika ∠APB = 40°, berapakah ∠PAB dalam darjah?",
      "b": 70,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "PA = PB, jadi segi tiga PAB sama kaki. ∠PAB = (180° − 40°) ÷ 2 = 70°."
     },
@@ -657,7 +657,7 @@ window.BANK["m3b6"] =
      "j": "nombor",
      "t": "Garis lurus PQ ialah tangen kepada sebuah bulatan di T. Perentas TA dan TB dilukis dari T, kedua-duanya di sebelah bulatan. Sudut antara TA dengan TP ialah 50° dan sudut antara TB dengan TQ ialah 60°. Berapakah ∠ATB dalam darjah?",
      "b": 70,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "P, T dan Q terletak pada garis lurus, jadi tiga sudut di T berjumlah 180°: ∠ATB = 180° − 50° − 60° = 70°."
     },

@@ -75,7 +75,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Sebuah segi empat sama bersisi 7 cm. Berapakah perimeternya?",
      "b": 28,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Segi empat sama mempunyai 4 sisi sama panjang. Perimeter = 4 × 7 = 28 cm."
     },
@@ -83,7 +83,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan panjang 8 cm dan lebar 3 cm. Berapakah perimeter segi empat tepat itu?",
      "b": 22,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Perimeter = 2 × (8 + 3) = 2 × 11 = 22 cm."
     },
@@ -103,7 +103,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Sebuah padang bola berukuran 100 m × 64 m. Murid berlari satu pusingan mengelilingi tepi padang. Berapakah jarak larian itu?",
      "b": 328,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
      "u": "Perimeter = 2 × (100 + 64) = 2 × 164 = 328 m."
     },
@@ -111,7 +111,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Sebuah segi tiga sama sisi mempunyai sisi 9 cm. Berapakah perimeternya?",
      "b": 27,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Tiga sisi sama panjang. Perimeter = 3 × 9 = 27 cm."
     },
@@ -119,7 +119,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Perimeter sebuah segi empat tepat ialah 20 cm dan panjangnya 6 cm. Berapakah lebarnya?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Panjang + lebar = 20 ÷ 2 = 10 cm. Lebar = 10 − 6 = 4 cm."
     },
@@ -176,8 +176,8 @@ window.BANK["m1b10"] =
      "j": "pilih",
      "t": "Bagaimanakah luas bentuk tidak sekata dianggar pada kertas grid?",
      "p": [
-      "Kira semua petak yang disentuh oleh bentuk sebagai petak penuh",
-      "Kira petak separa sahaja dan abaikan semua petak penuh",
+      "Kira petak yang disentuh oleh bentuk sebagai petak penuh",
+      "Kira petak separa dan abaikan petak penuh",
       "Kira petak penuh, dan dua petak separa dikira satu petak",
       "Ukur perimeter, kemudian darabkan hasilnya dengan dua"
      ],
@@ -188,21 +188,21 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Segi tiga dan langkah 'petak penuh'. Berapakah bilangan petak penuh dalam segi tiga itu?",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Rajah menunjukkan 10 petak hijau yang berada sepenuhnya di dalam segi tiga."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Segi tiga dan langkah '+ separa'. Berapakah bilangan petak separa?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Rajah menunjukkan 5 petak kuning yang hanya separuh berada dalam segi tiga."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Segi tiga dan langkah 'anggaran'. Berapakah anggaran luas segi tiga itu?",
      "b": 12.5,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "suf": "unit²",
      "u": "Anggaran = 10 + 5 ÷ 2 = 12.5 unit²."
     },
@@ -210,7 +210,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Segi empat selari dan langkah 'anggaran'. Berapakah anggaran luasnya?",
      "b": 16,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "unit²",
      "u": "Ada 10 petak penuh dan 12 petak separa. Anggaran = 10 + 12 ÷ 2 = 16 unit²."
     },
@@ -231,9 +231,9 @@ window.BANK["m1b10"] =
      "t": "Mengapakah kertas grid sesuai untuk menganggar luas bentuk melengkung?",
      "p": [
       "Petak yang dipotong lengkung boleh dikira setengah",
-      "Kerana lengkung sentiasa mempunyai luas tepat 1 unit²",
-      "Kerana bentuk melengkung tiada perimeter langsung",
-      "Kerana petak grid sentiasa lebih besar daripada bentuk"
+      "Setiap petak pada lengkung mempunyai luas tepat 1 unit²",
+      "Bentuk melengkung boleh dihitung dengan rumus luas segi empat tepat",
+      "Petak grid yang besar menutup seluruh bentuk itu"
      ],
      "b": 0,
      "u": "Bentuk melengkung tiada rumus mudah, jadi petak penuh dikira dan petak separa dikira setengah untuk mendapat anggaran."
@@ -242,7 +242,7 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Sebuah bentuk meliputi 14 petak penuh dan 8 petak separa pada grid 1 cm². Berapakah anggaran luasnya?",
      "b": 18,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Anggaran = 14 + 8 ÷ 2 = 14 + 4 = 18 cm²."
     }
@@ -295,9 +295,9 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi empat selari dengan asas 6 cm dan tinggi 3 cm. Berapakah luasnya?",
      "b": 18,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = asas × tinggi = 6 × 3 = 18 cm²."
+     "u": "Guna luas = asas × tinggi. Ganti: 6 × 3 = 18. Jadi luas = 18 cm²."
     },
     {
      "j": "pilih",
@@ -327,25 +327,25 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Sebuah segi tiga mempunyai asas 10 cm dan tinggi 6 cm. Berapakah luasnya?",
      "b": 30,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = ½ × 10 × 6 = 30 cm²."
+     "u": "Guna luas = ½ × asas × tinggi. Ganti: ½ × 10 × 6 = 30. Jadi luas = 30 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi tiga dengan asas 6 cm dan tinggi 5 cm. Berapakah luasnya?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = ½ × 6 × 5 = 15 cm²."
+     "u": "Guna luas = ½ × asas × tinggi. Ganti: ½ × 6 × 5 = 15. Jadi luas = 15 cm²."
     },
     {
      "j": "nombor",
      "t": "Luas sebuah segi empat selari ialah 48 cm² dan asasnya 8 cm. Berapakah tinggi serenjangnya?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Tinggi = luas ÷ asas = 48 ÷ 8 = 6 cm."
+     "u": "Guna luas = asas × tinggi, jadi tinggi = luas ÷ asas. Ganti: 48 ÷ 8 = 6. Tinggi serenjang = 6 cm."
     },
     {
      "j": "susun",
@@ -369,9 +369,9 @@ window.BANK["m1b10"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, pilih segi empat selari dengan asas 6 cm, tinggi 3 cm dan puncak 4 ke kanan, jadi sisi condongnya 5 cm. Berapakah perimeter segi empat selari itu?",
     "b": 22,
-    "tol": 0.05,
+    "tol": 0.001000000001,
     "suf": "cm",
-    "u": "Sisi condong ialah √(4² + 3²) = 5 cm. Perimeter = 2 × (6 + 5) = 22 cm. Perimeter guna sisi condong, luas guna tinggi serenjang."
+    "u": "Sisi condong ialah hipotenus segi tiga bersudut tegak dengan sisi 4 dan 3: √(4² + 3²) = √25 = 5 cm. Perimeter = 2 × (6 + 5) = 22 cm. Perimeter guna sisi condong, luas guna tinggi serenjang."
    }
   },
   {
@@ -402,17 +402,17 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sisi atas 3 cm, sisi bawah 7 cm dan tinggi 4 cm. Berapakah luas trapezium itu?",
      "b": 20,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = ½ × (3 + 7) × 4 = ½ × 10 × 4 = 20 cm²."
+     "u": "Guna luas = ½ × (a + b) × tinggi. Ganti: ½ × (3 + 7) × 4 = ½ × 10 × 4 = 20. Jadi luas = 20 cm²."
     },
     {
      "j": "nombor",
      "t": "Sebuah trapezium mempunyai sisi selari 5 cm dan 9 cm, dan tinggi 4 cm. Berapakah luasnya?",
      "b": 28,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = ½ × (5 + 9) × 4 = 28 cm²."
+     "u": "Guna luas = ½ × (a + b) × tinggi. Ganti: ½ × (5 + 9) × 4 = ½ × 14 × 4 = 28. Jadi luas = 28 cm²."
     },
     {
      "j": "pilih",
@@ -430,25 +430,25 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Sebuah lelayang mempunyai pepenjuru 10 cm dan 6 cm. Berapakah luasnya?",
      "b": 30,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas lelayang = ½ × hasil darab dua pepenjuru = ½ × 10 × 6 = 30 cm²."
+     "u": "Guna luas lelayang = ½ × hasil darab dua pepenjuru. Ganti: ½ × 10 × 6 = 30. Jadi luas = 30 cm²."
     },
     {
      "j": "nombor",
      "t": "Luas sebuah lelayang ialah 48 cm² dan satu pepenjurunya 12 cm. Berapakah panjang pepenjuru yang satu lagi?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "½ × 12 × d = 48, jadi 6d = 48 dan d = 8 cm."
+     "u": "Guna ½ × 12 × d = 48. Maka 6d = 48, d = 48 ÷ 6 = 8. Pepenjuru yang satu lagi = 8 cm."
     },
     {
      "j": "nombor",
      "t": "Luas sebuah trapezium ialah 36 cm². Sisi selarinya 5 cm dan 7 cm. Berapakah tingginya?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "½ × (5 + 7) × t = 36, jadi 6t = 36 dan t = 6 cm."
+     "u": "Guna ½ × (5 + 7) × t = 36. Maka 6t = 36, t = 36 ÷ 6 = 6. Tinggi = 6 cm."
     },
     {
      "j": "pilih",
@@ -467,8 +467,8 @@ window.BANK["m1b10"] =
     "j": "nombor",
     "t": "Sebidang tanah berbentuk trapezium mempunyai sisi selari 12 m dan 18 m, dengan jarak antara kedua-duanya 10 m. Rumput dipasang pada harga RM4 satu meter persegi. Berapakah kos memasang rumput di seluruh tanah itu (RM)?",
     "b": 600,
-    "tol": 0.01,
-    "u": "Luas = ½ × (12 + 18) × 10 = 150 m². Kos = 150 × 4 = RM600."
+    "tol": 0.001000000001,
+    "u": "Luas = ½ × (12 + 18) × 10 = ½ × 30 × 10 = 150 m². Kos = luas × harga = 150 × RM4 = RM600."
    }
   },
   {
@@ -487,17 +487,17 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, sudut yang dibuang berukuran 3 cm × 2 cm daripada segi empat tepat 8 cm × 6 cm. Berapakah luas bentuk L yang tinggal?",
      "b": 42,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 8 × 6 − 3 × 2 = 48 − 6 = 42 cm²."
+     "u": "Luas bentuk L = luas segi empat tepat − luas sudut yang dibuang. Ganti: 8 × 6 − 3 × 2 = 48 − 6 = 42. Jadi luas = 42 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut yang dibuang 4 cm × 3 cm. Berapakah luas bentuk L itu?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 48 − 4 × 3 = 48 − 12 = 36 cm²."
+     "u": "Luas bentuk L = 8 × 6 − 4 × 3 = 48 − 12 = 36 cm²."
     },
     {
      "j": "pilih",
@@ -512,35 +512,39 @@ window.BANK["m1b10"] =
      "u": "Dua sisi baharu yang terhasil bersamaan dengan dua sisi yang dibuang, jadi perimeter kekal 2 × (8 + 6) = 28 cm."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, berapakah perimeter bentuk L itu, walau apa pun saiz sudut yang dibuang?",
-     "b": 28,
-     "tol": 0.01,
-     "suf": "cm",
-     "u": "Perimeter kekal sama dengan segi empat tepat asal: 2 × (8 + 6) = 28 cm."
+     "j": "pilih",
+     "t": "Seorang murid mengira luas bentuk L (segi empat tepat 8 cm × 6 cm dengan sudut 3 cm × 2 cm dibuang) sebagai 8 × 6 + 3 × 2. Apakah kesilapannya?",
+     "p": [
+      "Luas sudut yang dibuang mesti ditolak, bukan ditambah",
+      "Luas sudut yang dibuang mesti didarab dengan 2",
+      "Luas segi empat tepat mesti dicari dengan 2 × (8 + 6)",
+      "Tiada kesilapan kerana bentuk L lebih besar daripada segi empat tepat"
+     ],
+     "b": 0,
+     "u": "Sudut dibuang, jadi luasnya ditolak: 8 × 6 − 3 × 2 = 48 − 6 = 42 cm². Menambah memberi 54 cm², lebih besar daripada segi empat tepat asal, yang mustahil."
     },
     {
      "j": "nombor",
      "t": "Sebuah pelan rumah terdiri daripada segi empat tepat 10 m × 6 m dan segi tiga di atas sisi 10 m dengan tinggi 4 m. Berapakah luas keseluruhannya?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
-     "u": "Segi empat tepat = 10 × 6 = 60 m². Segi tiga = ½ × 10 × 4 = 20 m². Jumlah = 80 m²."
+     "u": "Pecahkan bentuk: segi empat tepat dan segi tiga. Segi empat tepat = 10 × 6 = 60 m². Segi tiga = ½ × 10 × 4 = 20 m². Jumlah = 60 + 20 = 80 m²."
     },
     {
      "j": "nombor",
      "t": "Bilik berbentuk L diperoleh daripada segi empat tepat 9 m × 7 m dengan sudut 4 m × 3 m dibuang. Jubin berharga RM25 satu meter persegi. Berapakah kos jubin seluruh bilik (RM)?",
      "b": 1275,
-     "tol": 0.01,
-     "u": "Luas = 9 × 7 − 4 × 3 = 63 − 12 = 51 m². Kos = 51 × 25 = RM1 275."
+     "tol": 0.001000000001,
+     "u": "Luas = 9 × 7 − 4 × 3 = 63 − 12 = 51 m². Kos = luas × harga = 51 × RM25 = RM1 275."
     },
     {
      "j": "nombor",
      "t": "Dinding sebuah pondok berbentuk segi empat tepat lebar 6 m dan tinggi 3 m, dengan bumbung segi tiga tinggi 2 m di atasnya. Berapakah luas muka depan pondok itu?",
      "b": 24,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
-     "u": "Segi empat tepat = 6 × 3 = 18 m². Segi tiga = ½ × 6 × 2 = 6 m². Jumlah = 24 m²."
+     "u": "Pecahkan muka depan: segi empat tepat 6 × 3 = 18 m² dan segi tiga ½ × 6 × 2 = 6 m². Luas muka depan = 18 + 6 = 24 m²."
     },
     {
      "j": "susun",
@@ -564,8 +568,8 @@ window.BANK["m1b10"] =
     "j": "nombor",
     "t": "Sebuah padang berbentuk L diperoleh daripada segi empat tepat 50 m × 30 m dengan sudut 20 m × 10 m dibuang. Pagar mengelilingi padang pada harga RM12 satu meter, dan rumput pada harga RM3 satu meter persegi. Berapakah jumlah kos pagar dan rumput (RM)?",
     "b": 5820,
-    "tol": 0.01,
-    "u": "Perimeter = 2 × (50 + 30) = 160 m, kos pagar = 160 × 12 = RM1 920. Luas = 50 × 30 − 20 × 10 = 1 300 m², kos rumput = 1 300 × 3 = RM3 900. Jumlah = RM5 820."
+    "tol": 0.001000000001,
+    "u": "Pagar: perimeter = 2 × (50 + 30) = 160 m, kos = 160 × RM12 = RM1 920. Rumput: luas = 50 × 30 − 20 × 10 = 1 500 − 200 = 1 300 m², kos = 1 300 × RM3 = RM3 900. Jumlah = RM1 920 + RM3 900 = RM5 820."
    }
   },
   {
@@ -584,76 +588,80 @@ window.BANK["m1b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, perimeter tetap 24 cm. Tetapkan panjang 6 cm. Berapakah luas segi empat tepat itu?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Lebar = 12 − 6 = 6 cm. Luas = 6 × 6 = 36 cm²."
+     "u": "Perimeter 24 cm, jadi panjang + lebar = 12. Lebar = 12 − 6 = 6. Luas = 6 × 6 = 36 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan panjang 11 cm. Berapakah luas segi empat tepat itu?",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Lebar = 12 − 11 = 1 cm. Luas = 11 × 1 = 11 cm²."
+     "u": "Panjang + lebar = 12. Lebar = 12 − 11 = 1. Luas = 11 × 1 = 11 cm²."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, apabila perimeter tetap 24 cm, luas paling besar diperoleh apabila panjang ialah:",
      "p": [
-      "Ukuran 6 cm × 6 cm",
       "Ukuran 8 × 4 cm",
+      "Ukuran 6 cm × 6 cm",
       "Ukuran 10 cm × 2 cm",
       "Ukuran 11 cm × 1 cm"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Pada panjang 6 cm, lebar juga 6 cm dan luas ialah 36 cm², paling besar. Bentuk yang lebih memanjang mempunyai luas lebih kecil."
     },
     {
      "j": "pilih",
      "t": "Dua segi empat tepat mempunyai perimeter yang sama. Pernyataan yang benar ialah:",
      "p": [
-      "Luas kedua-duanya mesti sama",
+      "Luas kedua-duanya sama kerana perimeter sama",
+      "Yang lebih panjang mempunyai luas lebih besar",
       "Luas kedua-duanya mungkin berbeza",
-      "Yang lebih panjang sentiasa luas lebih besar",
-      "Luas kedua-duanya sentiasa sama dengan perimeter"
+      "Luas kedua-duanya sama dengan perimeternya"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Pada perimeter 24 cm, ukuran 6 × 6 memberi 36 cm² tetapi 10 × 2 memberi 20 cm². Perimeter sama tidak bermaksud luas sama."
     },
     {
      "j": "nombor",
      "t": "Seutas tali sepanjang 40 m digunakan membentuk segi empat sama. Berapakah luas kawasan yang dikelilingi tali itu?",
      "b": 100,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
-     "u": "Sisi = 40 ÷ 4 = 10 m. Luas = 10 × 10 = 100 m²."
+     "u": "Segi empat sama: sisi = perimeter ÷ 4 = 40 ÷ 4 = 10 m. Luas = 10 × 10 = 100 m²."
     },
     {
      "j": "nombor",
      "t": "Perimeter sebuah segi empat tepat ialah 36 cm dan lebarnya 5 cm. Berapakah luasnya?",
      "b": 65,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Panjang = 36 ÷ 2 − 5 = 13 cm. Luas = 13 × 5 = 65 cm²."
+     "u": "Panjang + lebar = 36 ÷ 2 = 18. Panjang = 18 − 5 = 13 cm. Luas = 13 × 5 = 65 cm²."
     },
     {
-     "j": "nombor",
-     "t": "Luas sebuah segi empat sama ialah 64 m². Berapakah perimeternya?",
-     "b": 32,
-     "tol": 0.01,
-     "suf": "m",
-     "u": "Sisi = √64 = 8 m. Perimeter = 4 × 8 = 32 m."
+     "j": "pilih",
+     "t": "Pak Ali ada 30 m dawai untuk memagar kebun segi empat tepat. Seorang murid mencadangkan 14 m × 1 m kerana 'lebih panjang bermakna lebih luas'. Apakah kesilapannya?",
+     "p": [
+      "Bentuk yang lebih panjang memberi luas lebih besar, tetapi 14 m × 1 m tidak muat",
+      "Luas tidak bergantung pada ukuran panjang dan lebar",
+      "Perimeter dan luas mempunyai nilai yang sama",
+      "Bentuk yang lebih hampir segi empat sama memberi luas lebih besar, contohnya 7 m × 8 m = 56 m²"
+     ],
+     "b": 3,
+     "u": "Panjang + lebar = 15. Ukuran 14 × 1 memberi luas 14 m², tetapi 7 × 8 memberi 56 m². Bagi perimeter tetap, bentuk yang hampir segi empat sama memberi luas paling besar."
     },
     {
      "j": "pilih",
      "t": "Seutas dawai 20 m dibengkokkan menjadi segi empat tepat. Ukuran yang memberi luas paling besar ialah:",
      "p": [
+      "5 m × 5 m",
       "8.5 m × 1.5 m",
       "7 × 3 m",
-      "5 m × 5 m",
       "9.5 m × 0.5 m"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Luas: 5 × 5 = 25, 7 × 3 = 21, 8.5 × 1.5 = 12.75, 9.5 × 0.5 = 4.75. Segi empat sama memberi luas paling besar."
     }
    ],

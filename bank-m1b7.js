@@ -99,14 +99,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan t &gt; 2. Berapakah nombor bulat terkecil pada garis nombor (-8 hingga 8) yang memenuhi syarat itu?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "t &gt; 2 tidak termasuk 2. Nombor bulat pertama selepas 2 ialah 3."
     },
     {
      "j": "nombor",
      "t": "Suhu di puncak sebuah bukit ialah -3°C dan suhu di kaki bukit ialah 5°C. Berapakah beza suhu itu (dalam °C)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Beza = 5 - (-3) = 5 + 3 = 8. Kaki bukit lebih panas 8°C."
     },
     {
@@ -235,14 +235,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih operasi 'darab 2'. Berapakah nilai b selepas operasi?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "b = 6, jadi 6 × 2 = 12."
     },
     {
      "j": "nombor",
      "t": "Diberi 3 &lt; 7. Kedua-dua belah didarab dengan -2. Berapakah nilai di sebelah kanan (yang tadi 7)?",
      "b": -14,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "7 × (-2) = -14 dan 3 × (-2) = -6. Tanda berbalik, jadi -6 &gt; -14."
     },
     {
@@ -347,14 +347,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan v ≤ 90. Berapakah bilangan titik (kelipatan 10 dari 40 hingga 120) yang memenuhi syarat itu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik yang memenuhi ialah 40, 50, 60, 70, 80 dan 90, iaitu 6 titik."
     },
     {
      "j": "nombor",
      "t": "Sebuah bas boleh membawa paling banyak 40 penumpang. Berapakah nilai maksimum n, iaitu bilangan penumpang?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ketaksamaan ialah n ≤ 40, jadi nilai terbesar n ialah 40."
     },
     {
@@ -386,7 +386,7 @@ window.BANK["m1b7"] =
     "j": "nombor",
     "t": "Sebuah kedai memberi diskaun jika jumlah belian sekurang-kurangnya RM80. Aina membeli barang berharga RM35 dan RM28. Berapakah jumlah minimum tambahan (dalam RM) supaya dia layak mendapat diskaun?",
     "b": 17,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Jumlah sekarang ialah 35 + 28 = 63. Perlu 63 + x ≥ 80, maka x ≥ 17. Minimumnya RM17."
    }
   },
@@ -430,14 +430,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Selesaikan 3x &lt; 18. Berapakah nilai sempadan x (x &lt; ...)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bahagi kedua-dua belah dengan 3 (positif, tanda kekal): x &lt; 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1 (2x + 3 &lt; 11), berapakah nilai maksimum x yang merupakan nombor bulat dan memenuhi ketaksamaan itu?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x &lt; 8, maka x &lt; 4. Nombor bulat terbesar yang kurang daripada 4 ialah 3."
     },
     {
@@ -468,14 +468,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Selesaikan 5x - 7 &gt; 13. Berapakah nilai bulat terkecil x?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "5x &gt; 20, maka x &gt; 4. Nombor bulat terkecil lebih besar daripada 4 ialah 5."
     },
     {
      "j": "nombor",
      "t": "Selesaikan 4 - x ≥ 1. Berapakah nilai bulat terbesar x?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Tolak 4: -x ≥ -3. Bahagi dengan -1 dan balikkan tanda: x ≤ 3. Nilai terbesar ialah 3."
     }
    ],
@@ -513,21 +513,21 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Aina ada RM60. Dia membeli sebuah bekas RM15 dan beberapa keping kuih RM7 sekeping. Berapakah bilangan kuih maksimum yang boleh dia beli?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "7n + 15 ≤ 60, maka 7n ≤ 45 dan n ≤ 6.43. Nombor bulat terbesar ialah 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 6. Berapakah nilai 7n + 15?",
      "b": 57,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "7 × 6 + 15 = 42 + 15 = 57. Nilai ini kurang daripada 60, jadi n = 6 memenuhi."
     },
     {
      "j": "nombor",
      "t": "Sebuah teksi mengenakan tambang RM4 ditambah RM2 setiap kilometer. Farid ada RM30. Berapakah jarak maksimum yang boleh dia tempuh (dalam km)?",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "4 + 2d ≤ 30, maka 2d ≤ 26 dan d ≤ 13. Jarak maksimum ialah 13 km."
     },
     {
@@ -546,14 +546,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Sewa gelanggang ialah RM12 sejam dan yuran tetap RM5. Belanjawan ialah RM50. Berapakah jam maksimum (nombor bulat) yang boleh disewa?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "12j ≤ 45, maka j ≤ 3.75. Nombor bulat terbesar ialah 3 jam."
     },
     {
      "j": "nombor",
      "t": "Purata tiga ujian mesti sekurang-kurangnya 60 markah. Markah dua ujian ialah 55 dan 62. Berapakah markah minimum ujian ketiga?",
      "b": 63,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "(55 + 62 + m) ÷ 3 ≥ 60. 117 + m ≥ 180, maka m ≥ 63."
     },
     {
@@ -585,7 +585,7 @@ window.BANK["m1b7"] =
     "j": "nombor",
     "t": "Puan Sari mempunyai RM100. Dia mahu membeli x buah buku berharga RM8 seunit dan 2 batang pen berharga RM3 seunit, serta mahu baki wangnya sekurang-kurangnya RM20. Berapakah bilangan buku maksimum yang boleh dia beli?",
     "b": 9,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Belanja = 8x + 6 dan baki = 100 - (8x + 6) ≥ 20. Maka 8x + 6 ≤ 80, 8x ≤ 74 dan x ≤ 9.25. Nombor bulat terbesar ialah 9."
    }
   },
@@ -629,14 +629,14 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x &gt; -2 dan x ≤ 3. Berapakah bilangan nombor bulat yang memenuhi kedua-dua syarat?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nombor bulat yang memenuhi -2 &lt; x ≤ 3 ialah -1, 0, 1, 2 dan 3, iaitu 5 nombor."
     },
     {
      "j": "nombor",
      "t": "Berapakah nombor bulat terbesar yang memenuhi x &gt; 1 dan x ≤ 6?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "1 &lt; x ≤ 6. Nombor terbesar ialah 6, kerana ≤ termasuk 6."
     },
     {
@@ -655,7 +655,7 @@ window.BANK["m1b7"] =
      "j": "nombor",
      "t": "Selesaikan serentak 2x - 1 &gt; 3 dan x + 4 ≤ 9. Berapakah bilangan nombor bulat x yang memenuhi?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x &gt; 4 memberi x &gt; 2, dan x ≤ 5. Jadi 2 &lt; x ≤ 5, iaitu x = 3, 4, 5, tiga nombor."
     },
     {

@@ -87,7 +87,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x bagi B = 5 dan y bagi B = −2. Berapakah jarak AB (unit)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "A(−3, −2) dan B(5, −2) berada pada garis mengufuk yang sama. Jarak = 5 − (−3) = 8."
     },
@@ -95,7 +95,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (−3, 3). Berapakah jarak AB (unit)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "A(−3, −2) dan B(−3, 3) berada pada garis menegak yang sama. Jarak = 3 − (−2) = 5."
     },
@@ -103,7 +103,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (0, 2). Berapakah jarak mendatar dari A ke B (unit)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "Jarak mendatar ialah beza koordinat x: 0 − (−3) = 3."
     },
@@ -196,28 +196,28 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (2, 4). Berapakah koordinat x bagi titik tengah M?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x = (−4 + 2) ÷ 2 = −1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (2, 4). Berapakah koordinat y bagi titik tengah M?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "y = (−2 + 4) ÷ 2 = 1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (4, 2). Berapakah koordinat x bagi titik tengah M?",
      "b": 0,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x = (−4 + 4) ÷ 2 = 0. Titik tengah berada pada paksi-y."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (−2, −4). Berapakah koordinat y bagi titik tengah M?",
      "b": -3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "y = (−2 + (−4)) ÷ 2 = −6 ÷ 2 = −3."
     },
     {
@@ -266,9 +266,9 @@ window.BANK["m2b7"] =
     "j": "pilih",
     "t": "Mengapakah titik tengah dikira dengan mencari min (purata) koordinat dua hujung?",
     "p": [
-     "Kerana titik tengah sentiasa terletak pada salah satu paksi",
-     "Kerana jarak mesti dibahagi dua mengikut rumus Pythagoras sahaja",
-     "Kerana koordinat mesti didarab dengan dua sebelum dijumlahkan",
+     "Kerana titik tengah terletak pada salah satu paksi apabila dua titik itu berjauhan",
+     "Kerana jarak dibahagi dua mengikut rumus Pythagoras bagi setiap koordinat",
+     "Kerana koordinat didarab dengan dua sebelum dijumlahkan untuk mendapat purata",
      "Kerana titik tengah terletak separuh jalan mengikut arah mendatar dan arah mencancang"
     ],
     "b": 3,
@@ -291,7 +291,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (2, 4). Berapakah jarak AB (unit)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "A(−2, 1), B(2, 4): jarak mendatar 4 dan jarak mencancang 3. AB = √(16 + 9) = 5."
     },
@@ -299,7 +299,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan B kepada (4, 5). Berapakah jarak AB, kepada 2 tempat perpuluhan?",
      "b": 7.21,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "unit",
      "u": "Jarak mendatar 6 dan jarak mencancang 4. AB = √(36 + 16) = √52 = 7.21."
     },
@@ -307,15 +307,15 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Kira jarak antara P(1, 1) dan Q(7, 9).",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
-     "u": "PQ = √(6² + 8²) = √100 = 10."
+     "u": "Guna jarak = √[(beza x)² + (beza y)²]. Beza x = 7 − 1 = 6 dan beza y = 9 − 1 = 8. PQ = √(36 + 64) = √100 = 10."
     },
     {
      "j": "nombor",
      "t": "Kira jarak antara P(−3, 4) dan Q(2, −8).",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "Jarak mendatar 5 dan jarak mencancang 12. PQ = √(25 + 144) = 13."
     },
@@ -323,15 +323,15 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Berapakah koordinat x bagi titik tengah P(1, 1) dan Q(7, 9)?",
      "b": 4,
-     "tol": 0.01,
-     "u": "x = (1 + 7) ÷ 2 = 4."
+     "tol": 0.001000000001,
+     "u": "Koordinat x titik tengah = min bagi dua nilai x. Ganti: (1 + 7) ÷ 2 = 8 ÷ 2 = 4."
     },
     {
      "j": "nombor",
      "t": "Berapakah koordinat y bagi titik tengah P(1, 1) dan Q(7, 9)?",
      "b": 5,
-     "tol": 0.01,
-     "u": "y = (1 + 9) ÷ 2 = 5."
+     "tol": 0.001000000001,
+     "u": "Koordinat y titik tengah = min bagi dua nilai y. Ganti: (1 + 9) ÷ 2 = 10 ÷ 2 = 5."
     },
     {
      "j": "pilih",
@@ -362,7 +362,7 @@ window.BANK["m2b7"] =
     "j": "nombor",
     "t": "M ialah titik tengah AB dengan A(−3, 2) dan B(5, 8). Berapakah jarak AM (unit)?",
     "b": 5,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "unit",
     "u": "M = ((−3 + 5) ÷ 2, (2 + 8) ÷ 2) = (1, 5). AM = √(4² + 3²) = 5. Ini juga separuh daripada AB = 10."
    }
@@ -383,7 +383,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, 1 unit = 1 km. Berapakah jarak terus dari Sekolah (S) ke Pasar (P), kepada 2 tempat perpuluhan (km)?",
      "b": 6.32,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "km",
      "u": "S(−4, 2) dan P(2, 4): jarak mendatar 6, mencancang 2. √(36 + 4) = √40 = 6.32 km."
     },
@@ -391,7 +391,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Berapakah jarak terus dari Sekolah (S) ke Masjid (M) dalam Rajah 1, kepada 2 tempat perpuluhan (km)?",
      "b": 5.39,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "km",
      "u": "S(−4, 2) dan M(−2, −3): jarak mendatar 2, mencancang 5. √(4 + 25) = √29 = 5.39 km."
     },
@@ -399,7 +399,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Berapakah jarak terus dari Hentian (H) ke Klinik (K) dalam Rajah 1, kepada 2 tempat perpuluhan (km)?",
      "b": 3.61,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "km",
      "u": "H(1, 0) dan K(4, −2): jarak mendatar 3, mencancang 2. √(9 + 4) = √13 = 3.61 km."
     },
@@ -407,14 +407,14 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Sebuah bas akan berhenti di titik tengah antara Sekolah (S) dan Klinik (K). Berapakah koordinat x titik itu?",
      "b": 0,
-     "tol": 0.01,
-     "u": "x = (−4 + 4) ÷ 2 = 0."
+     "tol": 0.001000000001,
+     "u": "Koordinat x titik tengah = min bagi dua nilai x. Ganti: (−4 + 4) ÷ 2 = 0 ÷ 2 = 0."
     },
     {
      "j": "nombor",
      "t": "Sebuah bas akan berhenti di titik tengah antara Sekolah (S) dan Klinik (K). Berapakah koordinat y titik itu?",
      "b": 0,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "y = (2 + (−2)) ÷ 2 = 0. Bas berhenti di asalan."
     },
     {
@@ -445,7 +445,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Sebuah menara diletakkan tepat di tengah antara Sekolah (S) dan Pasar (P). Berapakah jarak menara itu dari Sekolah, kepada 2 tempat perpuluhan (km)?",
      "b": 3.16,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "km",
      "u": "SP = √40 = 6.3246. Menara di titik tengah, jadi jaraknya separuh: 3.16 km."
     }
@@ -454,7 +454,7 @@ window.BANK["m2b7"] =
     "j": "nombor",
     "t": "Seorang murid berjalan terus dari Hentian (H) ke Sekolah (S), kemudian terus ke Klinik (K) dalam Rajah 1. Berapakah jumlah jarak perjalanan itu, kepada 2 tempat perpuluhan (km)?",
     "b": 14.33,
-    "tol": 0.02,
+    "tol": 0.005000000005,
     "suf": "km",
     "u": "HS = √29 = 5.385. SK = √(64 + 16) = √80 = 8.944. Jumlah = 14.33 km."
    }
@@ -475,7 +475,7 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, A(−3, −2) dan B(3, −2). Berapakah panjang AB (unit)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "A dan B mempunyai koordinat y yang sama. AB = 3 − (−3) = 6."
     },
@@ -495,8 +495,8 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan C kepada (0, 3). Berapakah nilai AC<sup>2</sup>?",
      "b": 34,
-     "tol": 0.01,
-     "u": "AC² = (0 − (−3))² + (3 − (−2))² = 9 + 25 = 34."
+     "tol": 0.001000000001,
+     "u": "Guna AC² = (beza x)² + (beza y)². Beza x = 0 − (−3) = 3 dan beza y = 3 − (−2) = 5. AC² = 9 + 25 = 34."
     },
     {
      "j": "pilih",
@@ -514,9 +514,9 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Bucu segi tiga PQR ialah P(1, 1), Q(5, 1) dan R(3, 4). Berapakah panjang PR, kepada 2 tempat perpuluhan?",
      "b": 3.61,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "unit",
-     "u": "PR = √(2² + 3²) = √13 = 3.61."
+     "u": "Guna PR = √[(beza x)² + (beza y)²]. Beza x = 3 − 1 = 2 dan beza y = 4 − 1 = 3. PR = √13 = 3.61."
     },
     {
      "j": "pilih",
@@ -531,12 +531,16 @@ window.BANK["m2b7"] =
      "u": "PR = √13 dan QR = √(4 + 9) = √13, manakala PQ = 4. Dua sisi sama, jadi segi tiga itu sama kaki."
     },
     {
-     "j": "nombor",
-     "t": "Segi empat tepat ABCD mempunyai A(0, 0), B(4, 0), C(4, 3) dan D(0, 3). Berapakah panjang pepenjuru AC?",
-     "b": 5,
-     "tol": 0.01,
-     "suf": "unit",
-     "u": "AC = √(4² + 3²) = √25 = 5."
+     "j": "pilih",
+     "t": "Seorang murid mengira jarak antara (1, 2) dan (4, 6) sebagai 3 + 4 = 7. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menolak 3 daripada 4 untuk mendapat 1",
+      "Dia sepatutnya mendarab 3 × 4 untuk mendapat 12",
+      "Tiada kesilapan kerana jarak ialah hasil tambah dua beza",
+      "Dia menambah dua beza; jarak ialah punca kuasa dua bagi 3² + 4², iaitu 5"
+     ],
+     "b": 3,
+     "u": "Beza x = 4 − 1 = 3 dan beza y = 6 − 2 = 4. Jarak = √(3² + 4²) = √25 = 5. Jarak lurus lebih pendek daripada 3 + 4 = 7 yang mengikut petak grid."
     },
     {
      "j": "susun",
@@ -591,33 +595,33 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, M(1, 2) ialah titik tengah AB dan A(−3, −1). Berapakah koordinat x bagi B?",
      "b": 5,
-     "tol": 0.01,
-     "u": "(−3 + x) ÷ 2 = 1, jadi −3 + x = 2 dan x = 5."
+     "tol": 0.001000000001,
+     "u": "M ialah titik tengah AB: (−3 + x) ÷ 2 = 1. Darab 2: −3 + x = 2. Maka x = 2 + 3 = 5."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, M(1, 2) ialah titik tengah AB dan A(−3, −1). Berapakah koordinat y bagi B?",
      "b": 5,
-     "tol": 0.01,
-     "u": "(−1 + y) ÷ 2 = 2, jadi −1 + y = 4 dan y = 5."
+     "tol": 0.001000000001,
+     "u": "M ialah titik tengah AB: (−1 + y) ÷ 2 = 2. Darab 2: −1 + y = 4. Maka y = 4 + 1 = 5."
     },
     {
      "j": "pilih",
      "t": "M(2, 3) ialah titik tengah PQ dan P(−1, 4). Koordinat Q ialah:",
      "p": [
+      "(5, 2)",
       "(0.5, 3.5)",
       "(3, −1)",
-      "(1, 7)",
-      "(5, 2)"
+      "(1, 7)"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Q = (2 × 2 − (−1), 2 × 3 − 4) = (5, 2)."
     },
     {
      "j": "nombor",
      "t": "A(2, −3) dan B(8, 5). C ialah titik tengah AB. Berapakah jarak CB (unit)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "AB = √(6² + 8²) = 10. C ialah titik tengah, jadi CB = 10 ÷ 2 = 5."
     },
@@ -625,33 +629,38 @@ window.BANK["m2b7"] =
      "j": "nombor",
      "t": "Titik P(−2, 1) dan Q(4, k) berjarak 10 unit. Cari nilai k yang positif.",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "36 + (k − 1)² = 100, jadi (k − 1)² = 64 dan k − 1 = ±8. Nilai positif ialah k = 9."
     },
     {
-     "j": "nombor",
-     "t": "A(1, 2) dan B(a, 2). Titik tengah AB ialah (4, 2). Cari nilai a.",
-     "b": 7,
-     "tol": 0.01,
-     "u": "(1 + a) ÷ 2 = 4, jadi 1 + a = 8 dan a = 7."
+     "j": "pilih",
+     "t": "Seorang murid mencari titik tengah bagi (2, 8) dan (6, 4) dengan menolak koordinat: 6 − 2 dan 4 − 8, iaitu (4, −4). Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya mendarab koordinat, iaitu (12, 32)",
+      "Dia menolak koordinat; titik tengah ialah min setiap koordinat, iaitu (4, 6)",
+      "Dia sepatutnya menambah koordinat tanpa membahagi, iaitu (8, 12)",
+      "Tiada kesilapan kerana titik tengah ialah beza koordinat"
+     ],
+     "b": 1,
+     "u": "Titik tengah = ((2 + 6) ÷ 2, (8 + 4) ÷ 2) = (4, 6). Beza koordinat memberi vektor dari satu titik ke titik lain, bukan titik tengah."
     },
     {
      "j": "pilih",
      "t": "Segi empat tepat mempunyai bucu A(0, 0), B(6, 0), C(6, 8) dan D(0, 8). Titik tengah pepenjuru AC ialah:",
      "p": [
-      "(3, 4)",
       "(6, 4)",
       "(3, 8)",
+      "(3, 4)",
       "(6, 8)"
      ],
-     "b": 0,
+     "b": 2,
      "u": "Titik tengah AC = ((0 + 6) ÷ 2, (0 + 8) ÷ 2) = (3, 4)."
     },
     {
      "j": "nombor",
      "t": "Sebuah kapal berada di A(−6, 2) dan kapal lain di B(6, 7). Berapakah jarak antara kedua-dua kapal (unit)?",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "unit",
      "u": "Jarak mendatar 12 dan jarak mencancang 5. √(144 + 25) = 13."
     }

@@ -75,7 +75,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan masa 3 jam. Berapakah jarak yang dilalui basikal Aina (km)?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km",
      "u": "Graf menunjukkan 12 km setiap jam. Selepas 3 jam, jarak = 12 × 3 = 36 km."
     },
@@ -83,7 +83,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Aina berlari 400 m dalam 80 saat. Berapakah lajunya (m/s)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s",
      "u": "Laju = jarak ÷ masa = 400 ÷ 80 = 5 m/s."
     },
@@ -103,7 +103,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Sebuah kereta bergerak 150 km dalam 3 jam. Berapakah lajunya (km/j)?",
      "b": 50,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Laju = 150 ÷ 3 = 50 km/j."
     },
@@ -190,8 +190,8 @@ window.BANK["m2b9"] =
      "j": "pilih",
      "t": "Laju seragam bermaksud laju yang:",
      "p": [
-      "Sentiasa naik",
-      "Sentiasa berkurang dengan masa",
+      "Naik dengan masa",
+      "Berkurang dengan masa",
       "Berubah pada setiap minit perjalanan",
       "Tidak berubah sepanjang jalan"
      ],
@@ -214,7 +214,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan masa 1 jam. Berapakah laju bas pada ketika itu (km/j)?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Dalam 1 jam pertama, bas bergerak 60 km. Laju = 60 ÷ 1 = 60 km/j."
     },
@@ -222,7 +222,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan masa 2 jam. Berapakah laju bas pada ketika itu (km/j)?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Antara 1.5 jam dan 3 jam, jarak bertambah 120 − 60 = 60 km dalam 1.5 jam. Laju = 60 ÷ 1.5 = 40 km/j."
     },
@@ -254,7 +254,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Sebuah kereta mencatat jarak 50 km pada masa 1 jam, 100 km pada 2 jam dan 150 km pada 3 jam. Jika laju kekal seragam, berapakah jarak pada masa 4 jam (km)?",
      "b": 200,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km",
      "u": "Jarak bertambah 50 km setiap jam, jadi laju seragam ialah 50 km/j. Pada 4 jam, jarak = 50 × 4 = 200 km."
     },
@@ -280,7 +280,7 @@ window.BANK["m2b9"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, berapakah jarak yang dilalui bas semasa 1.5 jam yang terakhir (km)?",
     "b": 60,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "km",
     "u": "Pada 1.5 jam, jarak ialah 60 km. Pada 3 jam, jarak ialah 120 km. Jarak dalam 1.5 jam terakhir = 120 − 60 = 60 km."
    }
@@ -301,7 +301,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih laju 54 km/j. Berapakah laju itu dalam m/s?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s",
      "u": "54 km = 54 000 m dan 1 jam = 3 600 s. Laju = 54 000 ÷ 3 600 = 15 m/s."
     },
@@ -309,15 +309,15 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Tukarkan 36 km/j kepada m/s.",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s",
-     "u": "36 × 1 000 ÷ 3 600 = 10 m/s."
+     "u": "Tukar km/j kepada m/s: darab 1 000 (km ke m) dan bahagi 3 600 (jam ke saat). 36 × 1 000 ÷ 3 600 = 10 m/s."
     },
     {
      "j": "nombor",
      "t": "Tukarkan 20 m/s kepada km/j.",
      "b": 72,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "20 m/s dalam 1 jam ialah 20 × 3 600 = 72 000 m = 72 km. Maka 20 m/s = 72 km/j."
     },
@@ -326,8 +326,8 @@ window.BANK["m2b9"] =
      "t": "Untuk menukar laju daripada km/j kepada m/s, kita:",
      "p": [
       "Darab dengan 3 600 dan bahagi dengan 1 000",
-      "Darab dengan 60 sahaja",
-      "Bahagi dengan 1 000 sahaja",
+      "Darab dengan 60",
+      "Bahagi dengan 1 000",
       "Darab dengan 1 000 dan bahagi dengan 3 600"
      ],
      "b": 3,
@@ -349,17 +349,17 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Seekor cheetah berlari dengan laju 30 m/s. Berapakah lajunya dalam km/j?",
      "b": 108,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
-     "u": "30 × 3 600 ÷ 1 000 = 108 km/j."
+     "u": "Tukar m/s kepada km/j: darab 3 600 (saat ke jam) dan bahagi 1 000 (m ke km). 30 × 3 600 ÷ 1 000 = 108 km/j."
     },
     {
      "j": "nombor",
      "t": "Laju bunyi di udara ialah 340 m/s. Berapakah laju itu dalam km/j?",
      "b": 1224,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "suf": "km/j",
-     "u": "340 × 3 600 ÷ 1 000 = 1 224 km/j."
+     "u": "Tukar m/s kepada km/j: darab 3 600 dan bahagi 1 000. 340 × 3 600 ÷ 1 000 = 1 224 km/j."
     },
     {
      "j": "susun",
@@ -383,7 +383,7 @@ window.BANK["m2b9"] =
     "j": "nombor",
     "t": "Sebuah kereta api bergerak dengan laju 90 km/j. Berapakah jarak yang dilalui dalam 10 saat (m)?",
     "b": 250,
-    "tol": 0.5,
+    "tol": 0.001000000001,
     "suf": "m",
     "u": "90 km/j = 90 ÷ 3.6 = 25 m/s. Dalam 10 saat, jarak = 25 × 10 = 250 m."
    }
@@ -416,7 +416,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, sebuah kereta memandu 60 km pada 60 km/j dan 60 km pada 30 km/j. Berapakah jumlah masa perjalanan (jam)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "jam",
      "u": "Bahagian pertama: 60 ÷ 60 = 1 jam. Bahagian kedua: 60 ÷ 30 = 2 jam. Jumlah masa = 1 + 2 = 3 jam."
     },
@@ -424,7 +424,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan laju bahagian kedua 30 km/j. Berapakah laju purata seluruh perjalanan (km/j)?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Jumlah jarak = 120 km dan jumlah masa = 3 jam. Laju purata = 120 ÷ 3 = 40 km/j."
     },
@@ -432,7 +432,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Aiman berjalan 6 km dalam 2 jam pertama dan 4 km dalam 3 jam berikutnya. Berapakah laju purata (km/j)?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Jumlah jarak = 10 km dan jumlah masa = 5 jam. Laju purata = 10 ÷ 5 = 2 km/j."
     },
@@ -440,7 +440,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Sebuah bas bergerak 120 km dalam 2 jam dan kemudian 60 km dalam 1 jam. Berapakah laju purata seluruh perjalanan (km/j)?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Jumlah jarak = 180 km dan jumlah masa = 3 jam. Laju purata = 180 ÷ 3 = 60 km/j."
     },
@@ -460,7 +460,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Sebuah motosikal bergerak dari A ke B sejauh 90 km pada laju 90 km/j dan pulang pada laju 45 km/j. Berapakah laju purata seluruh perjalanan (km/j)?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
      "u": "Pergi mengambil 1 jam dan pulang 2 jam. Jumlah jarak = 180 km, jumlah masa = 3 jam. Laju purata = 180 ÷ 3 = 60 km/j."
     },
@@ -486,7 +486,7 @@ window.BANK["m2b9"] =
     "j": "nombor",
     "t": "Ali memandu 100 km pada 50 km/j dan 100 km pada 100 km/j. Berapakah laju purata (km/j) kepada 1 tempat perpuluhan?",
     "b": 66.7,
-    "tol": 0.05,
+    "tol": 0.05000000005,
     "suf": "km/j",
     "u": "Masa pertama = 2 jam dan masa kedua = 1 jam, jumlah masa 3 jam. Laju purata = 200 ÷ 3 = 66.7 km/j. Ini bukan (50 + 100) ÷ 2 = 75."
    }
@@ -519,7 +519,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Sebuah kereta memecut daripada 0 m/s kepada 20 m/s dalam 5 saat. Berapakah pecutannya (m/s²)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s²",
      "u": "Perubahan laju = 20 − 0 = 20 m/s. Pecutan = 20 ÷ 5 = 4 m/s²."
     },
@@ -527,7 +527,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, laju awal kereta ialah 4 m/s dan pecutan tetap. Berapakah laju kereta pada masa 4 saat (m/s)?",
      "b": 16,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s",
      "u": "Daripada graf, laju bertambah 3 m/s setiap saat. Pada 4 saat, laju = 4 + 3 × 4 = 16 m/s."
     },
@@ -535,7 +535,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah pecutan kereta itu (m/s²)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s²",
      "u": "Pada 4 saat, laju berubah daripada 4 kepada 16 m/s, iaitu 12 m/s. Pecutan = 12 ÷ 4 = 3 m/s²."
     },
@@ -555,28 +555,32 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Sebuah kereta bergerak pada 30 m/s dan membrek sehingga berhenti dalam 6 saat. Berapakah nyahpecutannya (m/s²)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s²",
      "u": "Laju berkurang daripada 30 kepada 0 m/s, iaitu 30 m/s dalam 6 saat. Nyahpecutan = 30 ÷ 6 = 5 m/s²."
     },
     {
-     "j": "nombor",
-     "t": "Pecutan sebuah motosikal ialah 1.5 m/s². Berapakah pertambahan lajunya selepas 8 saat (m/s)?",
-     "b": 12,
-     "tol": 0.01,
-     "suf": "m/s",
-     "u": "Pertambahan laju = pecutan × masa = 1.5 × 8 = 12 m/s."
+     "j": "pilih",
+     "t": "Seorang murid berkata sebuah kereta yang membrek daripada 20 m/s kepada 0 m/s dalam 5 saat mempunyai pecutan 4 m/s². Apakah kesilapannya?",
+     "p": [
+      "Pecutan ialah 5 m/s² kerana masa yang diambil ialah 5 saat",
+      "Laju berkurang, jadi ia nyahpecutan 4 m/s² atau pecutan −4 m/s²",
+      "Pecutan ialah 100 m/s² kerana 20 × 5 = 100",
+      "Tiada kesilapan kerana pecutan mesti bernilai positif"
+     ],
+     "b": 1,
+     "u": "Perubahan laju = 0 − 20 = −20 m/s. Pecutan = −20 ÷ 5 = −4 m/s², iaitu nyahpecutan 4 m/s². Tanda negatif menunjukkan laju semakin kurang."
     },
     {
      "j": "pilih",
      "t": "Satu m/s² bersamaan dengan berapa km/j² (kilometer sejam sejam)?",
      "p": [
       "3.6",
-      "12 960",
       "3 600 000",
+      "12 960",
       "1 000"
      ],
-     "b": 1,
+     "b": 2,
      "u": "1 m = 0.001 km dan 1 saat = 1/3 600 jam. 1 m/s² = 0.001 × 3 600 × 3 600 = 12 960 km/j²."
     }
    ],
@@ -617,25 +621,25 @@ window.BANK["m2b9"] =
      "p": [
       "Pecutan",
       "Laju seragam",
-      "Nyahpecutan",
-      "Laju sifar sepanjang masa"
+      "Laju sifar sepanjang masa",
+      "Nyahpecutan"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Laju berkurang dengan masa, jadi kereta itu mengalami nyahpecutan."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah laju kereta pada masa 3 saat (m/s)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s",
-     "u": "Laju = 20 − 4 × 3 = 8 m/s."
+     "u": "Laju = laju awal − nyahpecutan × masa. Ganti: 20 − 4 × 3 = 20 − 12 = 8 m/s."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pada saat yang ke berapakah kereta itu berhenti?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "saat",
      "u": "Laju berkurang 4 m/s setiap saat, jadi 20 ÷ 4 = 5 saat untuk laju menjadi 0."
     },
@@ -643,7 +647,7 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Berapakah nyahpecutan kereta dalam Rajah 1 (m/s²)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s²",
      "u": "Pada 5 saat laju berubah daripada 20 kepada 0 m/s. Nyahpecutan = 20 ÷ 5 = 4 m/s²."
     },
@@ -651,37 +655,41 @@ window.BANK["m2b9"] =
      "j": "nombor",
      "t": "Seorang pelari memecut daripada 3 m/s kepada 9 m/s dengan pecutan 1.5 m/s². Berapakah masa yang diambil (saat)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "saat",
      "u": "Perubahan laju = 9 − 3 = 6 m/s. Masa = perubahan laju ÷ pecutan = 6 ÷ 1.5 = 4 saat."
     },
     {
-     "j": "nombor",
-     "t": "Kereta A memecut 2 m/s² dari keadaan pegun selama 10 saat. Kereta B memecut 3 m/s² dari keadaan pegun selama 6 saat. Berapakah beza laju akhir kedua-dua kereta (m/s)?",
-     "b": 2,
-     "tol": 0.01,
-     "suf": "m/s",
-     "u": "Laju akhir A = 2 × 10 = 20 m/s dan laju akhir B = 3 × 6 = 18 m/s. Bezanya 20 − 18 = 2 m/s."
+     "j": "pilih",
+     "t": "Seorang murid menukar 90 km/j kepada m/s dengan mendarab 90 × 3.6 = 324 m/s. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya membahagi dengan 3.6, jadi jawapan betul ialah 25 m/s",
+      "Dia sepatutnya mendarab dengan 1 000, jadi jawapan ialah 90 000 m/s",
+      "Dia sepatutnya menolak 3.6 daripada 90, jadi jawapan ialah 86.4 m/s",
+      "Tiada kesilapan kerana km/j lebih kecil daripada m/s"
+     ],
+     "b": 0,
+     "u": "1 km/j = 1 000 m ÷ 3 600 s = 1/3.6 m/s. Jadi 90 km/j = 90 ÷ 3.6 = 25 m/s. Nilai dalam m/s lebih kecil daripada km/j."
     },
     {
      "j": "pilih",
      "t": "Sebuah lif bergerak pada 4 m/s dan berhenti dalam 2 saat. Berapakah nyahpecutan lif itu?",
      "p": [
       "8 m/s²",
+      "2 m/s²",
       "0.5 m/s²",
-      "6 m/s²",
-      "2 m/s²"
+      "6 m/s²"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Laju berkurang 4 m/s dalam 2 saat. Nyahpecutan = 4 ÷ 2 = 2 m/s²."
     },
     {
      "j": "nombor",
      "t": "Sebuah kereta bergerak pada 72 km/j dan membrek sehingga berhenti dalam 5 saat. Berapakah nyahpecutan kereta itu (m/s²)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s²",
-     "u": "72 km/j = 20 m/s. Nyahpecutan = 20 ÷ 5 = 4 m/s²."
+     "u": "Tukar 72 km/j kepada m/s: 72 × 1 000 ÷ 3 600 = 20 m/s. Nyahpecutan = perubahan laju ÷ masa = 20 ÷ 5 = 4 m/s²."
     }
    ],
    "bos": {

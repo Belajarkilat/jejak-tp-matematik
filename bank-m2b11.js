@@ -135,7 +135,7 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3 dan b = 2. Berapakah koordinat-x titik A′, imej bagi A(−1, −1)?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Koordinat-x imej = −1 + 3 = 2."
     },
     {
@@ -203,21 +203,21 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan paksi x = 2. Berapakah koordinat-x titik A′, imej bagi A(1, 1)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "A berada 1 unit di kiri x = 2, jadi A′ berada 1 unit di kanan: 2 + 1 = 3."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan paksi x = 0. Berapakah koordinat-x titik A′, imej bagi A(1, 1)?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pantulan pada paksi-y menukar tanda koordinat-x: 1 menjadi −1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan paksi y = 0. Berapakah koordinat-y titik A′, imej bagi A(1, 1)?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pantulan pada paksi-x menukar tanda koordinat-y: 1 menjadi −1."
     },
     {
@@ -321,21 +321,21 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pusat P(0, 0) dan putaran +90° (lawan jam). Berapakah koordinat-x titik A′, imej bagi A(1, 1)?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Putaran 90° lawan jam pada asalan menukar (1, 1) kepada (−1, 1). Koordinat-x ialah −1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pusat P(0, 0) dan putaran 180°. Berapakah koordinat-y titik A′, imej bagi A(1, 1)?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Putaran 180° pada asalan menukar tanda kedua-dua koordinat: (1, 1) menjadi (−1, −1)."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pusat P(2, 2) dan putaran 180°. Berapakah koordinat-x titik A′, imej bagi A(1, 1)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "A ialah 1 unit di kiri dan 1 unit di bawah P. Putaran 180° meletakkan A′ 1 unit di kanan dan di atas P, iaitu (3, 3)."
     },
     {
@@ -366,7 +366,7 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pusat P(0, 0). Berapakah panjang PA, kepada 2 tempat perpuluhan?",
      "b": 1.41,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "u": "PA = √(1² + 1²) = √2 = 1.41. PA′ juga 1.41."
     },
     {
@@ -386,7 +386,7 @@ window.BANK["m2b11"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, tetapkan pusat P(2, 2) dan putaran −90° (ikut jam). Berapakah jumlah koordinat-x dan koordinat-y bagi A′, imej bagi A(1, 1)?",
     "b": 4,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "A berada di (−1, −1) daripada P. Putaran 90° ikut jam menukar (x, y) kepada (y, −x): (−1, 1). Maka A′ = (2 − 1, 2 + 1) = (1, 3). Jumlah = 1 + 3 = 4."
    }
   },
@@ -406,43 +406,43 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3 dan b = 1. Kira koordinat-x imej A′ bagi A(−1, −1), kemudian semak dengan rajah.",
      "b": 2,
-     "tol": 0.01,
-     "u": "Koordinat-x = −1 + 3 = 2."
+     "tol": 0.001000000001,
+     "u": "Translasi (a, b) menambah a pada koordinat-x. Ganti: x′ = −1 + 3 = 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3 dan b = 1. Kira koordinat-y imej A′ bagi A(−1, −1), kemudian semak dengan rajah.",
      "b": 0,
-     "tol": 0.01,
-     "u": "Koordinat-y = −1 + 1 = 0."
+     "tol": 0.001000000001,
+     "u": "Translasi (a, b) menambah b pada koordinat-y. Ganti: y′ = −1 + 1 = 0."
     },
     {
      "j": "nombor",
      "t": "Pada peta harta karun, sebuah kapal berada di titik (2, 3). Ia ditranslasikan oleh vektor (−4, 5). Berapakah koordinat-y kedudukan baharu kapal?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Koordinat-y = 3 + 5 = 8. Kedudukan baharu ialah (−2, 8)."
     },
     {
      "j": "nombor",
      "t": "Titik P(−3, 2) ditranslasikan kepada P′(1, −1). Berapakah nilai a bagi vektor translasi (a, b)?",
      "b": 4,
-     "tol": 0.01,
-     "u": "a = 1 − (−3) = 4."
+     "tol": 0.001000000001,
+     "u": "Vektor translasi: a = x imej − x objek. Ganti: a = 1 − (−3) = 1 + 3 = 4."
     },
     {
      "j": "nombor",
      "t": "Titik P(−3, 2) ditranslasikan kepada P′(1, −1). Berapakah nilai b bagi vektor translasi (a, b)?",
      "b": -3,
-     "tol": 0.01,
-     "u": "b = −1 − 2 = −3."
+     "tol": 0.001000000001,
+     "u": "Vektor translasi: b = y imej − y objek. Ganti: b = −1 − 2 = −3."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3 dan b = −3. Berapakah jarak AA′ dalam unit, kepada 2 tempat perpuluhan?",
      "b": 4.24,
-     "tol": 0.01,
-     "u": "Jarak = √(3² + (−3)²) = √18 = 4.24 unit."
+     "tol": 0.005000000005,
+     "u": "Guna jarak = √(a² + b²). Ganti a = 3 dan b = −3: √(9 + 9) = √18 = 4.24 unit."
     },
     {
      "j": "pilih",
@@ -473,7 +473,7 @@ window.BANK["m2b11"] =
     "j": "nombor",
     "t": "Titik A(−1, −1) ditranslasikan oleh (a, b) kepada A′(3, 2). Kemudian A′ ditranslasikan oleh (−1, −3). Berapakah jumlah koordinat-x dan koordinat-y bagi imej akhir?",
     "b": 1,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Imej akhir = (3 − 1, 2 − 3) = (2, −1). Jumlah = 2 + (−1) = 1."
    }
   },
@@ -517,21 +517,21 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih translasi. Berapakah panjang BC bagi segi tiga ABC, kepada 2 tempat perpuluhan?",
      "b": 2.24,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "u": "B(−2, 1) dan C(−4, 2). BC = √(2² + 1²) = √5 = 2.24."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih besar ×2 (pembesaran). Kira panjang B′C′, kepada 2 tempat perpuluhan, kemudian semak dengan rajah.",
      "b": 4.47,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "u": "Pembesaran ×2 menggandakan semua panjang: B′C′ = 2 × 2.24 = 4.47."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kecil ×½ (pengecilan). Kira panjang B′C′, kepada 2 tempat perpuluhan, kemudian semak dengan rajah.",
      "b": 1.12,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "u": "Pengecilan ×½ menjadikan semua panjang separuh: B′C′ = 2.24 ÷ 2 = 1.12."
     },
     {
@@ -618,35 +618,35 @@ window.BANK["m2b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi tiga (sama sisi). Berapakah peringkat simetri putarannya?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Segi tiga sama sisi padan dengan dirinya pada 120°, 240° dan 360°, jadi peringkatnya 3."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih petak (segi empat sama). Berapakah peringkat simetri putarannya?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Segi empat sama padan pada 90°, 180°, 270° dan 360°, jadi peringkatnya 4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih bintang (lima penjuru). Berapakah peringkat simetri putarannya?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bintang lima penjuru padan lima kali dalam satu pusingan (setiap 72°)."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih selari (segi empat selari). Berapakah peringkat simetri putarannya?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Segi empat selari hanya padan selepas diputar 180° dan 360°, jadi peringkatnya 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih trapezium (sama kaki). Berapakah peringkat simetri putarannya?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Trapezium sama kaki hanya padan selepas satu pusingan penuh, jadi peringkatnya 1. Ini bermaksud ia tiada simetri putaran."
     },
     {

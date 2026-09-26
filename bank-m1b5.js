@@ -87,8 +87,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 4. Berapakah jumlah semua guli, iaitu guli dalam beg dan guli di luar beg?",
      "b": 7,
-     "tol": 0.01,
-     "u": "Jumlah = x + 3 = 4 + 3 = 7 guli."
+     "tol": 0.001000000001,
+     "u": "Guli dalam beg = x = 4 dan guli di luar = 3. Jumlah = x + 3 = 4 + 3 = 7 guli."
     },
     {
      "j": "pilih",
@@ -191,8 +191,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tiga beg mengandungi x guli setiap satu dan ada 2 guli di luar. Tetapkan x = 5. Berapakah jumlah semua guli?",
      "b": 17,
-     "tol": 0.01,
-     "u": "Jumlah = 3x + 2 = 3(5) + 2 = 17 guli."
+     "tol": 0.001000000001,
+     "u": "Jumlah = 3x + 2. Ganti x = 5: 3(5) + 2 = 15 + 2 = 17 guli."
     },
     {
      "j": "pilih",
@@ -222,15 +222,15 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Cari nilai 5m − 4 apabila m = 6.",
      "b": 26,
-     "tol": 0.01,
-     "u": "5(6) − 4 = 30 − 4 = 26."
+     "tol": 0.001000000001,
+     "u": "Ganti m = 6 dalam 5m − 4: 5(6) − 4 = 30 − 4 = 26."
     },
     {
      "j": "nombor",
      "t": "Cari nilai 2(p + 3) apabila p = 4.",
      "b": 14,
-     "tol": 0.01,
-     "u": "2(4 + 3) = 2 × 7 = 14."
+     "tol": 0.001000000001,
+     "u": "Ganti p = 4 dalam 2(p + 3): 2(4 + 3) = 2 × 7 = 14."
     },
     {
      "j": "pilih",
@@ -248,8 +248,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Menggunakan ungkapan tambang 4 + 2k, berapakah tambang (RM) bagi perjalanan sejauh 7 km?",
      "b": 18,
-     "tol": 0.01,
-     "u": "4 + 2(7) = 4 + 14 = 18."
+     "tol": 0.001000000001,
+     "u": "Ganti k = 7 dalam 4 + 2k: 4 + 2(7) = 4 + 14 = 18. Tambang RM18."
     },
     {
      "j": "pilih",
@@ -261,14 +261,14 @@ window.BANK["m1b5"] =
       "60"
      ],
      "b": 1,
-     "u": "20 − 3(4) = 20 − 12 = 8."
+     "u": "Ganti n = 4: 20 − 3(4) = 20 − 12 = 8. Baki RM8."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Diberi a = 2 dan b = 3. Cari nilai 3(a + 2b) − 4.",
     "b": 20,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "3(2 + 2 × 3) − 4 = 3(8) − 4 = 24 − 4 = 20."
    }
   },
@@ -288,8 +288,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih ungkapan A: 3x + 2y + 5x − 4. Berapakah bilangan sebutan dalam ungkapan itu?",
      "b": 4,
-     "tol": 0.01,
-     "u": "Sebutan ialah 3x, 2y, 5x dan −4. Semuanya ada 4 sebutan."
+     "tol": 0.001000000001,
+     "u": "Sebutan dipisahkan oleh tanda + atau −: 3x, 2y, 5x dan −4. Ada 4 sebutan."
     },
     {
      "j": "pilih",
@@ -349,8 +349,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih ungkapan B: 2x + 3x² − x + 6. Berapakah pekali bagi sebutan x²?",
      "b": 3,
-     "tol": 0.01,
-     "u": "Sebutan 3x² mempunyai pekali 3."
+     "tol": 0.001000000001,
+     "u": "Sebutan 3x² ialah 3 × x². Pekali ialah nombor yang mendarab pemboleh ubah, iaitu 3."
     },
     {
      "j": "pilih",
@@ -430,7 +430,7 @@ window.BANK["m1b5"] =
       "3x − 2"
      ],
      "b": 0,
-     "u": "4x − x = 3x dan 5 − 3 = 2, jadi 3x + 2."
+     "u": "Buka kurungan: 4x + 5 − x − 3. Kumpul: 4x − x = 3x dan 5 − 3 = 2. Jadi 3x + 2."
     },
     {
      "j": "pilih",
@@ -460,8 +460,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Ringkaskan 5x + 2 + 3x − 7, kemudian cari nilainya apabila x = 2.",
      "b": 11,
-     "tol": 0.01,
-     "u": "5x + 2 + 3x − 7 = 8x − 5. Apabila x = 2, nilainya 8(2) − 5 = 11."
+     "tol": 0.001000000001,
+     "u": "Ringkaskan dahulu: 5x + 3x = 8x dan 2 − 7 = −5, jadi 8x − 5. Ganti x = 2: 8(2) − 5 = 16 − 5 = 11."
     },
     {
      "j": "pilih",
@@ -473,14 +473,14 @@ window.BANK["m1b5"] =
       "5p + 3"
      ],
      "b": 3,
-     "u": "3p + 2p = 5p dan 4 + (−1) = 3, jadi 5p + 3."
+     "u": "Jumlah = (3p + 4) + (2p − 1). Kumpul p: 3p + 2p = 5p. Kumpul malar: 4 − 1 = 3. Jadi 5p + 3."
     },
     {
      "j": "nombor",
      "t": "Panjang tiga sisi sebuah segi tiga ialah (x + 2), (2x + 1) dan (3x − 1) cm. Jika x = 3, berapakah perimeter segi tiga itu (cm)?",
      "b": 20,
-     "tol": 0.01,
-     "u": "Perimeter = (x + 2) + (2x + 1) + (3x − 1) = 6x + 2. Apabila x = 3, perimeter = 20 cm."
+     "tol": 0.001000000001,
+     "u": "Perimeter = (x + 2) + (2x + 1) + (3x − 1) = 6x + 2. Ganti x = 3: 6(3) + 2 = 18 + 2 = 20 cm."
     },
     {
      "j": "pilih",
@@ -499,8 +499,8 @@ window.BANK["m1b5"] =
     "j": "nombor",
     "t": "Cari nilai bagi (4x + 3) + (2x − 1) − (x + 5) apabila x = 4.",
     "b": 17,
-    "tol": 0.01,
-    "u": "Ringkaskan: 4x + 2x − x = 5x dan 3 − 1 − 5 = −3. Jadi 5x − 3. Apabila x = 4, 5(4) − 3 = 17."
+    "tol": 0.001000000001,
+    "u": "Ringkaskan: 4x + 2x − x = 5x dan 3 − 1 − 5 = −3, jadi 5x − 3. Ganti x = 4: 5(4) − 3 = 20 − 3 = 17."
    }
   },
   {
@@ -519,8 +519,8 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 3 dan x = 2. Berapakah nilai x<sup>3</sup>?",
      "b": 8,
-     "tol": 0.01,
-     "u": "x × x × x = 2 × 2 × 2 = 8."
+     "tol": 0.001000000001,
+     "u": "Guna x³ = x × x × x. Ganti x = 2: 2 × 2 × 2 = 8."
     },
     {
      "j": "pilih",
@@ -535,11 +535,16 @@ window.BANK["m1b5"] =
      "u": "Pendaraban berulang empat kali ditulis sebagai kuasa x⁴, tetapi 4x bermaksud x + x + x + x."
     },
     {
-     "j": "nombor",
-     "t": "Apabila x = 5, berapakah nilai x<sup>2</sup> − 2x?",
-     "b": 15,
-     "tol": 0.01,
-     "u": "x² = 25 dan 2x = 10, jadi 25 − 10 = 15."
+     "j": "pilih",
+     "t": "Seorang murid mengira nilai 3x<sup>2</sup> apabila x = 4 sebagai (3 × 4)<sup>2</sup> = 144. Apakah kesilapannya?",
+     "p": [
+      "Dia patut mendarab 3 × 4 × 2 = 24 kerana kuasanya ialah 2",
+      "Dia patut menjumlahkan 3 + 4² = 19 kerana ada tanda tambah",
+      "Kuasa dua hanya untuk x, jadi 3x² = 3 × 4² = 3 × 16 = 48",
+      "Nilai 144 betul kerana 3x² dan (3x)² membawa maksud yang sama"
+     ],
+     "b": 2,
+     "u": "3x² = 3 × x × x. Ganti x = 4: 3 × 4 × 4 = 48. Nilai 144 ialah untuk (3x)², iaitu kuasa dua dikenakan pada 3 juga."
     },
     {
      "j": "pilih",
@@ -547,57 +552,57 @@ window.BANK["m1b5"] =
      "p": [
       "9y",
       "(3y)<sup>2</sup>",
-      "3y<sup>2</sup>",
-      "3 + 2y"
+      "3 + 2y",
+      "3y<sup>2</sup>"
      ],
-     "b": 2,
-     "u": "y × y = y², jadi 3 × y × y = 3y²."
+     "b": 3,
+     "u": "Pekali 3 kekal. y × y = y². Jadi 3 × y × y = 3y²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 4 dan x = 3. Berapakah nilai x<sup>4</sup>?",
      "b": 81,
-     "tol": 0.01,
-     "u": "3 × 3 × 3 × 3 = 81."
+     "tol": 0.001000000001,
+     "u": "Guna x⁴ = x × x × x × x. Ganti x = 3: 3 × 3 × 3 × 3 = 9 × 9 = 81."
     },
     {
      "j": "pilih",
      "t": "Ringkaskan 2a × 3a.",
      "p": [
+      "6a<sup>2</sup>",
       "5a<sup>2</sup>",
       "6a",
-      "5a",
-      "6a<sup>2</sup>"
+      "5a"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Darab pekali: 2 × 3 = 6. Darab pemboleh ubah: a × a = a². Jadi 6a²."
     },
     {
      "j": "pilih",
      "t": "Mengapakah 2x<sup>2</sup> tidak sama dengan (2x)<sup>2</sup>?",
      "p": [
-      "Hanya x dikuasa duakan dalam 2x², tetapi 2 juga dalam (2x)²",
       "Kedua-duanya sama kerana mempunyai 2 dan x",
+      "Hanya x dikuasa duakan dalam 2x², tetapi 2 juga dalam (2x)²",
       "Kerana 2x² sentiasa sama dengan 4x",
       "Kerana kuasa dua tidak boleh digunakan pada 2"
      ],
-     "b": 0,
+     "b": 1,
      "u": "2x² = 2 × x × x manakala (2x)² = 2x × 2x = 4x². Contohnya apabila x = 3, 2x² = 18 tetapi (2x)² = 36."
     },
     {
      "j": "nombor",
      "t": "Sebuah petak berbentuk segi empat sama mempunyai sisi 3p meter. Jika p = 2, berapakah luas petak itu (m<sup>2</sup>)?",
      "b": 36,
-     "tol": 0.01,
-     "u": "Luas = 3p × 3p = 9p². Apabila p = 2, luas = 9 × 4 = 36 m²."
+     "tol": 0.001000000001,
+     "u": "Luas = sisi × sisi = 3p × 3p = 9p². Ganti p = 2: 9 × 2² = 9 × 4 = 36 m²."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Isi padu sebuah kubus bersisi 2y cm ialah 2y × 2y × 2y. Berapakah isi padu (cm<sup>3</sup>) apabila y = 3?",
     "b": 216,
-    "tol": 0.01,
-    "u": "2y × 2y × 2y = 8y³. Apabila y = 3, 8 × 27 = 216 cm³."
+    "tol": 0.001000000001,
+    "u": "Isi padu = 2y × 2y × 2y = 8y³. Ganti y = 3: 8 × 3³ = 8 × 27 = 216 cm³."
    }
   },
   {
@@ -616,20 +621,20 @@ window.BANK["m1b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1 (operasi darab), tetapkan a = 3 dan b = 2. Berapakah jumlah bar x dalam 3 × (2x)?",
      "b": 6,
-     "tol": 0.01,
-     "u": "3 baris, setiap baris 2 bar x. Jumlahnya 6 bar, iaitu 6x."
+     "tol": 0.001000000001,
+     "u": "Guna a × (bx): 3 × (2x) = 3 × 2 × x = 6x. Ada 6 bar x."
     },
     {
      "j": "pilih",
      "t": "Ringkaskan 4 × 5y.",
      "p": [
       "9y",
-      "20y",
       "20",
+      "20y",
       "45y"
      ],
-     "b": 1,
-     "u": "Darab pekali: 4 × 5 = 20. Pemboleh ubah y kekal, jadi 20y."
+     "b": 2,
+     "u": "Darab pekali dahulu: 4 × 5 = 20. Pemboleh ubah y kekal, jadi 4 × 5y = 20y."
     },
     {
      "j": "pilih",
@@ -637,60 +642,65 @@ window.BANK["m1b5"] =
      "p": [
       "5xy",
       "6x + y",
-      "6xy",
-      "32xy"
+      "32xy",
+      "6xy"
      ],
-     "b": 2,
-     "u": "3 × 2 = 6 dan x × y = xy, jadi 6xy."
+     "b": 3,
+     "u": "Darab pekali: 3 × 2 = 6. Darab pemboleh ubah: x × y = xy. Jadi 3x × 2y = 6xy."
     },
     {
      "j": "pilih",
      "t": "Ringkaskan 12x ÷ 4.",
      "p": [
+      "3x",
       "8x",
       "3",
-      "48x",
-      "3x"
+      "48x"
      ],
-     "b": 3,
-     "u": "12 ÷ 4 = 3 dan x kekal, jadi 3x."
+     "b": 0,
+     "u": "Bahagi pekali: 12 ÷ 4 = 3. Pemboleh ubah x kekal. Jadi 12x ÷ 4 = 3x."
     },
     {
-     "j": "nombor",
-     "t": "Ringkaskan 15ab ÷ 3a, kemudian cari nilainya apabila a = 2 dan b = 4.",
-     "b": 20,
-     "tol": 0.01,
-     "u": "15ab ÷ 3a = 5b. Apabila b = 4, nilainya 20."
+     "j": "pilih",
+     "t": "Seorang murid meringkaskan 12x ÷ 4x dan menulis 3x. Apakah kesilapannya?",
+     "p": [
+      "Dia patut membahagi 12 dengan 4 kemudian mendarab dengan x²",
+      "Pemboleh ubah x pada pengangka dan penyebut dibatalkan, jadi hasilnya ialah 3",
+      "Hasilnya patut 8x kerana 12 − 4 = 8 dan x kekal",
+      "Jawapan 3x betul kerana x pada pengangka kekal"
+     ],
+     "b": 1,
+     "u": "12x ÷ 4x = (12 ÷ 4) × (x ÷ x) = 3 × 1 = 3. Bila x dibahagi dengan x, hasilnya 1, jadi x hilang."
     },
     {
      "j": "pilih",
      "t": "Ringkaskan 8x<sup>2</sup> ÷ 2x.",
      "p": [
-      "4x",
       "6x",
       "4x<sup>2</sup>",
+      "4x",
       "4"
      ],
-     "b": 0,
-     "u": "8 ÷ 2 = 4 dan x² ÷ x = x, jadi 4x."
+     "b": 2,
+     "u": "Bahagi pekali: 8 ÷ 2 = 4. Bahagi pemboleh ubah: x² ÷ x = x. Jadi 8x² ÷ 2x = 4x."
     },
     {
      "j": "nombor",
      "t": "Sebuah segi empat tepat berlebar 3x cm dan panjang 5x cm. Jika x = 2, berapakah luasnya (cm<sup>2</sup>)?",
      "b": 60,
-     "tol": 0.01,
-     "u": "Luas = 3x × 5x = 15x². Apabila x = 2, luas = 15 × 4 = 60 cm²."
+     "tol": 0.001000000001,
+     "u": "Luas = lebar × panjang = 3x × 5x = 15x². Ganti x = 2: 15 × 2² = 15 × 4 = 60 cm²."
     },
     {
      "j": "pilih",
      "t": "Apakah hasil 6x × 2x dan 6x ÷ 2x mengikut turutan?",
      "p": [
       "12x dan 3x",
-      "12x<sup>2</sup> dan 3",
       "12x<sup>2</sup> dan 3x",
-      "8x dan 4x"
+      "8x dan 4x",
+      "12x<sup>2</sup> dan 3"
      ],
-     "b": 1,
+     "b": 3,
      "u": "6x × 2x = 12x². Bagi 6x ÷ 2x, x dibatalkan dan tinggal 6 ÷ 2 = 3."
     }
    ],

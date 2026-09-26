@@ -86,7 +86,7 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 1 : 100. Berapakah panjang lukisan bilik darjah (cm)?",
      "b": 8,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Panjang sebenar 8 m = 800 cm. Pada skala 1 : 100, panjang lukisan = 800 ÷ 100 = 8 cm."
     },
@@ -94,7 +94,7 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 1 : 200. Berapakah lebar lukisan bilik darjah (cm)?",
      "b": 3,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Lebar sebenar 6 m = 600 cm. Lukisan = 600 ÷ 200 = 3 cm."
     },
@@ -187,7 +187,7 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 10 : 1. Berapakah panjang lukisan semut (cm)?",
      "b": 6,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Panjang sebenar 6 mm × 10 = 60 mm = 6 cm."
     },
@@ -195,7 +195,7 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 20 : 1. Berapakah lebar lukisan semut (cm)?",
      "b": 8,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Lebar sebenar 4 mm × 20 = 80 mm = 8 cm."
     },
@@ -252,7 +252,7 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Sebatang pensel 15 cm dilukis dengan panjang 3 cm. Skalanya ialah 1 : n. Cari n.",
      "b": 5,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "u": "3 : 15 = 1 : 5, jadi n = 5."
     },
     {
@@ -303,17 +303,17 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 1 : 400. Berapakah panjang lukisan padang (cm)?",
      "b": 3,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Panjang sebenar 12 m = 1 200 cm. Lukisan = 1 200 ÷ 400 = 3 cm."
+     "u": "Tukar 12 m kepada cm: 12 × 100 = 1 200 cm. Lukisan = sebenar ÷ 400 = 1 200 ÷ 400 = 3 cm."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 1 : 600. Berapakah lebar lukisan padang (cm)?",
      "b": 1.5,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "suf": "cm",
-     "u": "Lebar sebenar 9 m = 900 cm. Lukisan = 900 ÷ 600 = 1.5 cm."
+     "u": "Tukar 9 m kepada cm: 9 × 100 = 900 cm. Skala 1 : 600, jadi lukisan = 900 ÷ 600 = 1.5 cm."
     },
     {
      "j": "pilih",
@@ -332,17 +332,17 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Skala sebuah lukisan ialah 1 : 250. Bilik sebenar sepanjang 7.5 m. Berapakah panjang lukisan bilik itu (cm)?",
      "b": 3,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "7.5 m = 750 cm. Lukisan = 750 ÷ 250 = 3 cm."
+     "u": "Tukar 7.5 m kepada cm: 7.5 × 100 = 750 cm. Lukisan = sebenar ÷ n = 750 ÷ 250 = 3 cm."
     },
     {
      "j": "nombor",
      "t": "Pada skala 1 : 500, sebatang jalan dilukis sepanjang 8.4 cm. Berapakah panjang sebenar jalan itu (m)?",
      "b": 42,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "8.4 cm × 500 = 4 200 cm = 42 m."
+     "u": "Sebenar = lukisan × n = 8.4 × 500 = 4 200 cm. Tukar kepada m: 4 200 ÷ 100 = 42 m."
     },
     {
      "j": "pilih",
@@ -354,14 +354,14 @@ window.BANK["m3b4"] =
       "120 cm"
      ],
      "b": 3,
-     "u": "6 cm × 20 = 120 cm."
+     "u": "Panjang sebenar = panjang lukisan × 20. Ganti: 6 cm × 20 = 120 cm."
     },
     {
      "j": "nombor",
      "t": "Ukuran sebenar 3.6 m dilukis sepanjang 12 cm. Skalanya ialah 1 : n. Cari n.",
      "b": 30,
-     "tol": 0.05,
-     "u": "3.6 m = 360 cm. n = 360 ÷ 12 = 30."
+     "tol": 0.001000000001,
+     "u": "Tukar 3.6 m = 360 cm. Skala = 12 : 360. Bahagi kedua-dua dengan 12: 1 : 30, jadi n = 360 ÷ 12 = 30."
     },
     {
      "j": "pilih",
@@ -380,9 +380,9 @@ window.BANK["m3b4"] =
     "j": "nombor",
     "t": "Sebuah bangunan setinggi 45 m dilukis dengan skala 1 : 300. Berapakah tinggi lukisan bangunan itu (cm)?",
     "b": 15,
-    "tol": 0.05,
+    "tol": 0.001000000001,
     "suf": "cm",
-    "u": "45 m = 4 500 cm. Tinggi lukisan = 4 500 ÷ 300 = 15 cm."
+    "u": "Tukar 45 m kepada cm: 45 × 100 = 4 500 cm. Tinggi lukisan = 4 500 ÷ 300 = 15 cm."
    }
   },
   {
@@ -401,15 +401,15 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, bentuk asal mempunyai lebar 4 unit dan tinggi 3 unit. Pada skala 2 : 1, berapakah lebar bentuk baharu?",
      "b": 8,
-     "tol": 0.05,
-     "u": "Setiap ukuran didarab 2: 4 × 2 = 8."
+     "tol": 0.001000000001,
+     "u": "Skala 2 : 1 mendarab setiap ukuran dengan 2. Lebar baharu = 4 × 2 = 8 unit."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pada skala 3 : 1, berapakah tinggi bentuk baharu?",
      "b": 9,
-     "tol": 0.05,
-     "u": "3 × 3 = 9."
+     "tol": 0.001000000001,
+     "u": "Skala 3 : 1 mendarab setiap ukuran dengan 3. Tinggi asal 3 unit, jadi tinggi baharu = 3 × 3 = 9 unit."
     },
     {
      "j": "pilih",
@@ -421,7 +421,7 @@ window.BANK["m3b4"] =
       "12 unit persegi"
      ],
      "b": 1,
-     "u": "Luas didarab kuasa dua bagi faktor: 10 × 2² = 40."
+     "u": "Luas didarab (faktor skala)². Ganti: 10 × 2² = 10 × 4 = 40 unit persegi."
     },
     {
      "j": "pilih",
@@ -439,8 +439,8 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Segi empat tepat 3 × 5 unit dibesarkan pada skala 4 : 1. Berapakah luas segi empat tepat baharu (unit persegi)?",
      "b": 240,
-     "tol": 0.5,
-     "u": "Sisi baharu 12 × 20 = 240. Atau 15 × 4² = 240."
+     "tol": 0.001000000001,
+     "u": "Sisi baharu: 3 × 4 = 12 dan 5 × 4 = 20. Luas = 12 × 20 = 240 unit persegi. Semak: 15 × 4² = 240."
     },
     {
      "j": "pilih",
@@ -452,7 +452,7 @@ window.BANK["m3b4"] =
       "4 unit"
      ],
      "b": 3,
-     "u": "Skala 1 : 2 mengecilkan separuh: 8 ÷ 2 = 4."
+     "u": "Skala 1 : 2 bermaksud lukisan separuh ukuran asal, jadi bahagi dengan 2. Ganti: 8 ÷ 2 = 4 unit."
     },
     {
      "j": "pilih",
@@ -470,16 +470,16 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pada skala 1 : 2, berapakah luas bentuk baharu (unit persegi)?",
      "b": 2.5,
-     "tol": 0.05,
-     "u": "Luas didarab (1/2)² = 1/4: 10 ÷ 4 = 2.5."
+     "tol": 0.05000000005,
+     "u": "Faktor skala ialah 1/2. Luas didarab (1/2)² = 1/4. Ganti: 10 × 1/4 = 2.5 unit persegi."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Segi tiga dengan tapak 6 unit dan tinggi 4 unit (luas 12 unit persegi) dibesarkan pada skala 5 : 1. Berapakah luas segi tiga baharu?",
     "b": 300,
-    "tol": 0.5,
-    "u": "Luas baharu = 12 × 5² = 300 unit persegi. Atau tapak 30, tinggi 20, luas ½ × 30 × 20 = 300."
+    "tol": 0.001000000001,
+    "u": "Luas didarab (faktor skala)². Ganti: 12 × 5² = 12 × 25 = 300 unit persegi. Semak: tapak 30, tinggi 20, luas ½ × 30 × 20 = 300."
    }
   },
   {
@@ -498,17 +498,17 @@ window.BANK["m3b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan skala 1 : 500. Berapakah luas lukisan taman itu (cm²)?",
      "b": 9.6,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "suf": "cm²",
-     "u": "Lukisan: 2 000 ÷ 500 = 4 cm dan 1 200 ÷ 500 = 2.4 cm. Luas = 4 × 2.4 = 9.6 cm²."
+     "u": "Tukar taman kepada cm: 20 m = 2 000 cm dan 12 m = 1 200 cm. Lukisan: 2 000 ÷ 500 = 4 cm dan 1 200 ÷ 500 = 2.4 cm. Luas = 4 × 2.4 = 9.6 cm²."
     },
     {
      "j": "nombor",
      "t": "Skala 1 : 200. Lukisan sebuah kebun berukuran 6 cm × 4 cm. Berapakah luas sebenar kebun itu (m²)?",
      "b": 96,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "suf": "m²",
-     "u": "Ukuran sebenar 6 × 200 = 1 200 cm = 12 m dan 4 × 200 = 800 cm = 8 m. Luas = 12 × 8 = 96 m²."
+     "u": "Ukuran sebenar = lukisan × 200: 6 × 200 = 1 200 cm = 12 m dan 4 × 200 = 800 cm = 8 m. Luas = 12 × 8 = 96 m²."
     },
     {
      "j": "pilih",
@@ -520,7 +520,7 @@ window.BANK["m3b4"] =
       "30 m²"
      ],
      "b": 1,
-     "u": "Luas sebenar = 12 × 50² = 30 000 cm² = 3 m² (1 m² = 10 000 cm²)."
+     "u": "Luas didarab (skala)². Ganti: 12 × 50² = 12 × 2 500 = 30 000 cm². Tukar kepada m²: 30 000 ÷ 10 000 = 3 m² (1 m² = 10 000 cm²)."
     },
     {
      "j": "pilih",
@@ -535,47 +535,51 @@ window.BANK["m3b4"] =
      "u": "Bilik sebenar 4 m × 3 m = 12 m² = 120 000 cm². Satu jubin 2 500 cm². Bilangan = 120 000 ÷ 2 500 = 48."
     },
     {
-     "j": "nombor",
-     "t": "Jarak sebenar dua kampung ialah 12 km. Pada peta berskala 1 : 50 000, berapakah jarak antara kampung itu (cm)?",
-     "b": 24,
-     "tol": 0.5,
-     "suf": "cm",
-     "u": "12 km = 1 200 000 cm. Jarak pada peta = 1 200 000 ÷ 50 000 = 24 cm."
+     "j": "pilih",
+     "t": "Ali mengira luas sebenar sebuah kebun daripada lukisan 4 cm × 3 cm pada skala 1 : 200 dengan 4 × 3 × 200 = 2 400 cm². Apakah kesilapannya?",
+     "p": [
+      "Luas dibahagi dengan skala 200 sahaja, jadi luas sebenar ialah 12 ÷ 200 = 0.06 cm²",
+      "Luas didarab 2 × 200 = 400, jadi luas sebenar ialah 4 800 cm²",
+      "Tiada kesilapan, kerana skala didarab sekali dengan luas lukisan",
+      "Luas didarab 200², iaitu 12 × 40 000 = 480 000 cm²"
+     ],
+     "b": 3,
+     "u": "Panjang dan lebar masing-masing didarab 200, jadi luas didarab 200 × 200 = 40 000. Luas lukisan = 4 × 3 = 12 cm². Luas sebenar = 12 × 40 000 = 480 000 cm² (= 48 m²)."
     },
     {
      "j": "pilih",
      "t": "Pada sebuah peta, jarak 5 cm mewakili jarak sebenar 2.5 km. Skala peta itu ialah:",
      "p": [
+      "1 : 50 000",
       "1 : 5 000",
       "1 : 500 000",
-      "1 : 12 500",
-      "1 : 50 000"
+      "1 : 12 500"
      ],
-     "b": 3,
-     "u": "2.5 km = 250 000 cm. Skala = 5 : 250 000 = 1 : 50 000."
+     "b": 0,
+     "u": "Tukar 2.5 km kepada cm: 2.5 × 100 000 = 250 000 cm. Skala = lukisan : sebenar = 5 : 250 000. Bahagi dengan 5: 1 : 50 000."
     },
     {
      "j": "pilih",
      "t": "Seorang jurutera menggunakan skala 1 : 250. Sebuah lukisan menara setinggi 40 cm. Tinggi sebenar menara ialah:",
      "p": [
-      "100 m",
       "10 m",
+      "100 m",
       "1 000 m",
       "16 m"
      ],
-     "b": 0,
-     "u": "40 cm × 250 = 10 000 cm = 100 m."
+     "b": 1,
+     "u": "Sebenar = lukisan × 250 = 40 × 250 = 10 000 cm. Tukar kepada m: 10 000 ÷ 100 = 100 m."
     },
     {
      "j": "pilih",
      "t": "Lukisan A berskala 1 : 100 dan lukisan B berskala 1 : 250 bagi objek yang sama. Berbanding lukisan B, lukisan A ialah:",
      "p": [
       "2.5 kali lebih kecil",
-      "2.5 kali lebih besar",
       "Sama besar",
+      "2.5 kali lebih besar",
       "10 kali lebih besar"
      ],
-     "b": 1,
+     "b": 2,
      "u": "250 ÷ 100 = 2.5. Skala 1 : 100 menghasilkan lukisan yang lebih besar.",
      "sama": true
     }
@@ -586,10 +590,10 @@ window.BANK["m3b4"] =
     "p": [
      "Betul, kerana 10 lebih besar daripada 5",
      "Betul, kerana nombor kedua yang besar menghasilkan lukisan besar",
-     "Salah, 1 : 10 menghasilkan lukisan lebih kecil kerana 1 cm mewakili 10 cm sebenar",
-     "Salah, kedua-dua skala menghasilkan lukisan sama besar"
+     "Salah, kedua-dua skala menghasilkan lukisan sama besar",
+     "Salah, 1 : 10 menghasilkan lukisan lebih kecil kerana 1 cm mewakili 10 cm sebenar"
     ],
-    "b": 2,
+    "b": 3,
     "u": "Pada 1 : 5, 1 cm mewakili 5 cm sebenar. Pada 1 : 10, 1 cm mewakili 10 cm sebenar, jadi objek dikecilkan lebih banyak."
    }
   },
@@ -609,56 +613,60 @@ window.BANK["m3b4"] =
      "j": "pilih",
      "t": "Seorang murid mahu melukis pelan bilik 5 m × 4 m pada kertas A4 berukuran 21 cm × 29.7 cm dengan skala 1 : 20. Adakah pelan itu muat?",
      "p": [
+      "Muat jika kertas diletakkan melintang",
       "Tidak muat pada mana-mana kedudukan kertas",
       "Muat jika kertas diletakkan menegak sahaja",
-      "Muat hanya pada skala 1 : 10",
-      "Muat jika kertas diletakkan melintang"
+      "Muat hanya pada skala 1 : 10"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Lukisan 25 cm × 20 cm. Kertas melintang 29.7 cm × 21 cm boleh memuatkannya. Kertas menegak (21 cm lebar) tidak boleh memuatkan 25 cm."
     },
     {
      "j": "pilih",
      "t": "Sebuah padang 100 m × 60 m mahu dilukis pada kertas 30 cm × 20 cm. Antara skala berikut, yang manakah paling besar tetapi masih muat?",
      "p": [
-      "1 : 400",
       "1 : 300",
+      "1 : 400",
       "1 : 200",
       "1 : 100"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Pada 1 : 400 lukisan 25 cm × 15 cm (muat). Pada 1 : 300 lukisan 33.3 cm (tidak muat)."
     },
     {
-     "j": "nombor",
-     "t": "Dua peta bagi tempat yang sama berskala 1 : 20 000 dan 1 : 50 000. Jarak antara dua tempat ialah 10 cm pada peta pertama. Berapakah jarak pada peta kedua (cm)?",
-     "b": 4,
-     "tol": 0.05,
-     "suf": "cm",
-     "u": "Jarak sebenar = 10 × 20 000 = 200 000 cm. Pada peta kedua = 200 000 ÷ 50 000 = 4 cm."
+     "j": "pilih",
+     "t": "Untuk melukis padang sepanjang 100 m pada skala 1 : 400, seorang murid mengira 100 m = 10 000 cm, kemudian 10 000 × 400 = 4 000 000 cm. Apakah kesilapannya?",
+     "p": [
+      "Ukuran mesti ditukar kepada meter dahulu, kemudian didarab 4, iaitu 100 × 4 = 400 m",
+      "Ukuran lukisan diperoleh dengan menolak, iaitu 10 000 − 400 = 9 600 cm",
+      "Bahagi dengan 400: 10 000 ÷ 400 = 25 cm",
+      "Tiada kesilapan, kerana skala mengecilkan lukisan dengan mendarab"
+     ],
+     "b": 2,
+     "u": "Skala 1 : 400 bermaksud lukisan = sebenar ÷ 400. Ganti: 10 000 cm ÷ 400 = 25 cm. Mendarab dengan 400 memberi ukuran yang jauh lebih besar daripada objek sebenar, padahal lukisan mesti lebih kecil."
     },
     {
      "j": "pilih",
      "t": "Sebuah kereta sebenar sepanjang 4.8 m dibuat model berskala 1 : 24. Panjang model itu ialah:",
      "p": [
       "2 cm",
-      "20 cm",
       "115.2 cm",
-      "0.2 cm"
+      "0.2 cm",
+      "20 cm"
      ],
-     "b": 1,
-     "u": "4.8 m = 480 cm. Model = 480 ÷ 24 = 20 cm."
+     "b": 3,
+     "u": "Tukar 4.8 m kepada cm: 4.8 × 100 = 480 cm. Panjang model = 480 ÷ 24 = 20 cm."
     },
     {
      "j": "pilih",
      "t": "Sebuah model tugu berskala 1 : 200 tingginya 15 cm. Jika model baharu dibuat pada skala 1 : 100, tingginya ialah:",
      "p": [
+      "30 cm",
       "7.5 cm",
       "15 cm",
-      "30 cm",
       "60 cm"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Tinggi sebenar = 15 × 200 = 3 000 cm. Model baharu = 3 000 ÷ 100 = 30 cm."
     },
     {
@@ -666,23 +674,23 @@ window.BANK["m3b4"] =
      "t": "Pada peta berskala 1 : 10 000, luas sebuah taman ialah 8 cm². Luas sebenar taman itu ialah:",
      "p": [
       "80 hektar",
+      "8 hektar",
       "0.8 hektar",
-      "800 hektar",
-      "8 hektar"
+      "800 hektar"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Luas sebenar = 8 × 10 000² cm² = 800 000 000 cm² = 80 000 m². 1 hektar = 10 000 m², jadi 8 hektar."
     },
     {
      "j": "pilih",
      "t": "Mengapakah pelan jurutera sering mempunyai skala bar (garisan bertanda) selain skala 1 : n?",
      "p": [
-      "Skala bar tetap betul walaupun pelan disalin dengan saiz lain",
       "Skala bar menjadikan pelan kelihatan lebih cantik dan kemas",
       "Skala 1 : n tidak boleh dipercayai dalam apa-apa keadaan",
+      "Skala bar tetap betul walaupun pelan disalin dengan saiz lain",
       "Skala bar menggantikan keperluan untuk mengukur langsung"
      ],
-     "b": 0,
+     "b": 2,
      "u": "Apabila pelan disalin dengan saiz berbeza, 1 : n menjadi salah tetapi garisan skala turut mengecil atau membesar bersamanya."
     },
     {
@@ -690,11 +698,11 @@ window.BANK["m3b4"] =
      "t": "Pelan berskala 1 : 100 disalin dengan mesin fotostat pada 50% daripada saiz asal. Skala pelan yang disalin ialah:",
      "p": [
       "1 : 50",
-      "1 : 200",
       "1 : 100",
-      "1 : 150"
+      "1 : 150",
+      "1 : 200"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Lukisan menjadi separuh, jadi 1 cm sekarang mewakili dua kali ukuran sebenar: 1 : 200."
     }
    ],

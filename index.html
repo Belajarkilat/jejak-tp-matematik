@@ -35,7 +35,19 @@ figure.jmi{position:relative}
 </style>
 <!-- Fon disimpan dalam app (tools/muat-fon.js), bukan dimuat dari Google -->
 <link rel="stylesheet" href="fon/fon.css">
-<script>if("serviceWorker" in navigator&&location.protocol!=="file:"){addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
+<script>
+/* Service worker + pemanasan cache: bank bab semasa dimuat sebelum SW mengawal halaman (kunjungan pertama),
+   jadi ia diminta sekali lagi supaya masuk cache dan bab itu boleh dibuka tanpa internet. */
+if("serviceWorker" in navigator&&location.protocol!=="file:"){addEventListener("load",function(){
+  navigator.serviceWorker.register("sw.js").then(function(){ return navigator.serviceWorker.ready; }).then(function(){
+    setTimeout(function(){
+      var id=null; try{ id=localStorage.getItem("jm-bab"); }catch(e){}
+      var I=window.BAB_INDEKS||{}; if(!id||!I[id]) id="m3b1";
+      (I[id].widget?["widget-"+id+".js?v=1"]:[]).concat(["bank-"+id+".js?v=1"]).forEach(function(u){ fetch(u).catch(function(){}); });
+    },2500);
+  }).catch(function(){});
+});}
+</script>
 <style>
 :root{
   --ground:#EDF0F5;
@@ -1033,72 +1045,18 @@ body.zon-murid{color:var(--tinta)}
 <script>setTimeout(function(){var e=document.getElementById('ng-pembuka');if(e)e.remove()},2100)</script>
 
 <!-- Sambungan pelayan dan kandungan bab, dimuatkan sebelum aplikasi. -->
-<script src="bank-m1b1.js?v=1"></script>
-<script src="bank-m1b2.js?v=1"></script>
-<script src="bank-m1b3.js?v=1"></script>
-<script src="bank-m1b4.js?v=1"></script>
-<script src="bank-m1b5.js?v=1"></script>
-<script src="bank-m1b6.js?v=1"></script>
-<script src="bank-m1b7.js?v=1"></script>
-<script src="bank-m1b8.js?v=1"></script>
-<script src="bank-m1b9.js?v=1"></script>
-<script src="bank-m1b10.js?v=1"></script>
-<script src="bank-m1b11.js?v=1"></script>
-<script src="bank-m1b12.js?v=1"></script>
-<script src="bank-m1b13.js?v=1"></script>
-<script src="bank-m3b1.js?v=1"></script>
-<script src="bank-m3b2.js?v=1"></script>
-<script src="bank-m3b3.js?v=1"></script>
-<script src="bank-m3b4.js?v=1"></script>
-<script src="bank-m3b5.js?v=1"></script>
-<script src="bank-m3b6.js?v=1"></script>
-<script src="bank-m3b7.js?v=1"></script>
-<script src="bank-m3b8.js?v=1"></script>
-<script src="bank-m3b9.js?v=1"></script>
-<script src="interaktif.js?v=2"></script>
-<script src="widget-m3b6.js?v=1"></script>
-<script src="widget-m3b7.js?v=1"></script>
-<script src="widget-m3b8.js?v=1"></script>
-<script src="widget-m3b9.js?v=1"></script>
-<script src="widget-m1b1.js?v=1"></script>
-<script src="widget-m1b2.js?v=1"></script>
-<script src="widget-m1b3.js?v=1"></script>
-<script src="widget-m1b4.js?v=1"></script>
-<script src="widget-m1b5.js?v=1"></script>
-<script src="widget-m1b6.js?v=1"></script>
-<script src="widget-m1b7.js?v=1"></script>
-<script src="widget-m1b8.js?v=1"></script>
-<script src="widget-m1b9.js?v=1"></script>
-<script src="widget-m1b10.js?v=1"></script>
-<script src="widget-m1b11.js?v=1"></script>
-<script src="widget-m1b12.js?v=1"></script>
-<script src="widget-m1b13.js?v=1"></script>
-<script src="bank-m2b1.js?v=1"></script>
-<script src="bank-m2b2.js?v=1"></script>
-<script src="bank-m2b3.js?v=1"></script>
-<script src="bank-m2b4.js?v=1"></script>
-<script src="bank-m2b5.js?v=1"></script>
-<script src="bank-m2b6.js?v=1"></script>
-<script src="bank-m2b7.js?v=1"></script>
-<script src="bank-m2b8.js?v=1"></script>
-<script src="bank-m2b9.js?v=1"></script>
-<script src="bank-m2b10.js?v=1"></script>
-<script src="bank-m2b11.js?v=1"></script>
-<script src="bank-m2b12.js?v=1"></script>
-<script src="bank-m2b13.js?v=1"></script>
-<script src="widget-m2b1.js?v=1"></script>
-<script src="widget-m2b2.js?v=1"></script>
-<script src="widget-m2b3.js?v=1"></script>
-<script src="widget-m2b4.js?v=1"></script>
-<script src="widget-m2b5.js?v=1"></script>
-<script src="widget-m2b6.js?v=1"></script>
-<script src="widget-m2b7.js?v=1"></script>
-<script src="widget-m2b8.js?v=1"></script>
-<script src="widget-m2b9.js?v=1"></script>
-<script src="widget-m2b10.js?v=1"></script>
-<script src="widget-m2b11.js?v=1"></script>
-<script src="widget-m2b12.js?v=1"></script>
-<script src="widget-m2b13.js?v=1"></script>
+<script src="bab-indeks.js?v=1"></script>
+<script src="interaktif.js?v=3"></script>
+<script>
+/* Muat bank soalan SATU bab sahaja (bab terakhir yang dimainkan). Bab lain dimuat bila dipilih.
+   Sebelum ini semua 35 bank (~730 KB dimampat) dimuat sekali gus pada kunjungan pertama. */
+(function(){
+  var I=window.BAB_INDEKS||{}, id="m3b1";
+  try{ var t=localStorage.getItem("jm-bab"); if(t&&I[t]) id=t; }catch(e){}
+  var h=""; if(I[id]&&I[id].widget) h+='<script src="widget-'+id+'.js?v=1"><\/script>';
+  document.write(h+'<script src="bank-'+id+'.js?v=1"><\/script>');
+})();
+</script>
 <script src="muzik.js?v=2"></script>
 <script src="conteng.js?v=1"></script>
 <script src="akses.js?v=1"></script>
@@ -1216,6 +1174,9 @@ function premiumAktif(t){
   return !!(PROFIL&&PROFIL[k]) || !!(KM&&KM[k]);
 }
 function tingkatanBab(id){ var m=/^m(\d)b/.exec(id||""); return m?+m[1]:3; }
+/* Kelas tidak menyimpan tingkatan dalam pangkalan data. Tingkatan dibaca daripada nama kelas
+   ("1 Amanah", "T2 Bestari", "Tingkatan 3 Cekap") supaya murid terus mendarat di peta yang betul. */
+function tingkatanKelas(nama){ var m=/^\s*(?:t(?:ing(?:katan)?)?\.?\s*)?([1-5])(?!\d)/i.exec(nama||""); var t=m?+m[1]:null; return t&&BAB_TERSEDIA.indexOf("m"+t+"b1")>=0?t:null; }
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("jm-bab"); }catch(e){}
 if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID="m3b1";
@@ -1388,14 +1349,39 @@ function pasangJenama(){
   document.title = BAB.tajuk ? ("Jejak TP Matematik · "+BAB.tajuk) : "Jejak TP Matematik";
 }
 function senaraiBab(){
-  return BAB_TERSEDIA.filter(function(x){ return !!window.BANK[x]; })
-    .map(function(x){ return window.BANK[x]; });
+  return BAB_TERSEDIA.filter(function(x){ return !!(window.BAB_INDEKS&&window.BAB_INDEKS[x]); })
+    .map(function(x){ return window.BAB_INDEKS[x]; });
+}
+/* Bank dimuat ikut keperluan. muatBank() memulangkan janji; widget rajah (jika ada) dimuat dahulu. */
+var BANK_MUAT={};
+function muatSkrip(src){
+  return new Promise(function(ok,tolak){
+    var e=document.createElement("script"); e.src=src; e.async=false; e.onload=ok;
+    e.onerror=function(){ tolak(new Error("gagal memuat "+src)); };
+    document.head.appendChild(e);
+  });
+}
+function muatBank(id){
+  if(window.BANK&&window.BANK[id]) return Promise.resolve();
+  if(BANK_MUAT[id]) return BANK_MUAT[id];
+  var i=window.BAB_INDEKS&&window.BAB_INDEKS[id];
+  if(!i) return Promise.reject(new Error("bab tidak dikenali"));
+  var p=(i.widget?muatSkrip("widget-"+id+".js?v=1"):Promise.resolve()).then(function(){ return muatSkrip("bank-"+id+".js?v=1"); });
+  BANK_MUAT[id]=p.catch(function(e){ delete BANK_MUAT[id]; throw e; });
+  return BANK_MUAT[id];
+}
+/* Pasang bab; jika bank belum dimuat, muat dahulu kemudian pasang dan panggil lepas(). */
+function pasangBabMuat(id,lepas){
+  if(window.BANK&&window.BANK[id]){ var r=pasangBab(id); if(lepas) lepas(r); return; }
+  muatBank(id).then(function(){ var r=pasangBab(id); if(lepas) lepas(r); })
+    .catch(function(){ alert("Bab ini tidak dapat dimuatkan. Semak internet dan cuba lagi."); });
 }
 /* Tukar bab: kemajuan setiap bab berasingan, jadi keadaan permainan
    dikosongkan dan rekod bab baharu dikira semula. */
 function tukarBab(id){
   if(id===BAB_ID) return;
   if(!bebasBab(id)&&!premiumAktif(tingkatanBab(id))) return;
+  if(!(window.BANK&&window.BANK[id])){ muatBank(id).then(function(){ tukarBab(id); }).catch(function(){ alert("Bab ini tidak dapat dimuatkan. Semak internet dan cuba lagi."); }); return; }
   if(!pasangBab(id)) return;
   S.aras=1; S.salah=[]; S.kad={}; S.lulus={}; S.skrin="peta";
   CUBAAN={}; GURU={};
@@ -1413,9 +1399,12 @@ function tukarBab(id){
    KEADAAN
    ============================================================ */
 var SKEMA=3;                       /* versi skema setiap dokumen tersimpan */
-var NAFAS_MAX=100, SUSUT=2.0, GANJARAN=28, DENDA=24, SOALAN_SET=4;
+var NAFAS_MAX=100, SUSUT=2.0, GANJARAN=28, DENDA=24, SOALAN_SET=6;
 var MIN_HANTAR=150;                /* aksara minimum sebelum tugasan reka cipta boleh dihantar */
-var AMBANG=0.8;                    /* nisbah betul minimum untuk dikira menguasai satu hentian */
+/* Hentian = 6 soalan rawak (daripada 8) + 1 bos = 7 item. Ambang 70% = 5 daripada 7.
+   Dengan 5 item dan ambang 80% (4/5), murid yang sebenarnya 80% menguasai gagal 26% daripada masa
+   dan murid 60% lulus 34%; 7 item memberi keputusan yang lebih stabil. */
+var AMBANG=0.7;                    /* nisbah betul minimum untuk dikira menguasai satu hentian */
 function ambangItem(n){ return Math.ceil(AMBANG*n); }
 
 var S={
@@ -1988,6 +1977,13 @@ function reset(){
   S.tenggangPenuh=masaBaca(S.set[S.qi]); S.tenggang=S.tenggangPenuh;
 }
 
+/* Jawapan berangka: terima koma perpuluhan, ruang, dan tanda tolak '−'. "1,200" dan "1 200" bermaksud 1200. */
+function nomJawapan(v){
+  var t=String(v).replace(/[−–]/g,"-").replace(/\s+/g,"");
+  if(/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(t)) t=t.replace(/,/g,"");
+  else t=t.replace(",",".");
+  return /^-?(\d+\.?\d*|\.\d+)$/.test(t)?parseFloat(t):NaN;
+}
 function adaJawapan(q){
   if(q.j==="pilih")return S.pilihan!==null&&S.pilihan>=0;
   if(q.j==="banyak"||q.j==="susun")return S.pilihan&&S.pilihan.length>0;
@@ -2016,7 +2012,7 @@ function semak(masaHabis){
     if(q.j==="pilih")b2=S.pilihan===q.b;
     else if(q.j==="banyak")b2=eqSet(S.pilihan,q.b);
     else if(q.j==="susun")b2=eq(S.pilihan,q.b);
-    else if(q.j==="nombor")b2=Math.abs(parseFloat(S.pilihan)-q.b)<=(q.tol||0.05);
+    else if(q.j==="nombor")b2=Math.abs(nomJawapan(S.pilihan)-q.b)<=(q.tol||0.05);
     S.retryOk=b2; S.disemak=true; bunyi(b2?"betul":"salah"); render();
     return;
   }
@@ -2026,7 +2022,7 @@ function semak(masaHabis){
     if(q.j==="pilih")betul=S.pilihan===q.b;
     else if(q.j==="banyak")betul=eqSet(S.pilihan,q.b);
     else if(q.j==="susun")betul=eq(S.pilihan,q.b);
-    else if(q.j==="nombor")betul=Math.abs(parseFloat(S.pilihan)-q.b)<=(q.tol||0.05);
+    else if(q.j==="nombor")betul=Math.abs(nomJawapan(S.pilihan)-q.b)<=(q.tol||0.05);
   }
   q._betul=betul; S.disemak=true;
 
@@ -2305,6 +2301,11 @@ function renderKodKelas(){
   bl.onclick=mainTanpaRekod;
   bawah.appendChild(bl);
   bd.appendChild(bawah);
+  /* Pautan asas ialah skrin murid; cikgu yang tersasar perlu jalan yang jelas. */
+  var bc=el("div","actions"); bc.style.justifyContent="center"; bc.style.marginTop="4px";
+  var ac=el("a","pautan"); ac.href="?cikgu"; ac.textContent="Saya cikgu →";
+  ac.style.minHeight="44px"; ac.style.display="inline-flex"; ac.style.alignItems="center";
+  bc.appendChild(ac); bd.appendChild(bc);
   p.appendChild(bd); st.appendChild(p);
   if(window.innerWidth>700) setTimeout(function(){ var e=$("kodKelasInp"); if(e) e.focus(); },30);
 }
@@ -2317,6 +2318,7 @@ function bukaKelas(kod){
   });
 }
 function pasangKM(d){
+  var kelasBaru=!KM||KM.id!==d.id;
   if(KM&&KM.id!==d.id){ S.no=null; S.kod=""; S.lulus={}; S.kad={}; }
   KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||"",
       premiumRendah:!!d.premium_rendah,premiumAtas:!!d.premium_atas};
@@ -2326,7 +2328,9 @@ function pasangKM(d){
   (d.murid||[]).forEach(function(m){ NAMA[d.id][m.no]=m.nama; });
   try{ localStorage.setItem("cn-km",JSON.stringify({v:SKEMA,km:KM,murid:d.murid||[]})); }catch(e){}
   /* Langganan mungkin dah luput sejak kali terakhir bab ini dibuka. */
-  if(!bebasBab(BAB_ID)&&!premiumAktif(tingkatanBab(BAB_ID))) pasangBab("m"+tingkatanBab(BAB_ID)+"b1");
+  if(!bebasBab(BAB_ID)&&!premiumAktif(tingkatanBab(BAB_ID))) pasangBabMuat("m"+tingkatanBab(BAB_ID)+"b1",function(){ render(); });
+  /* Kali pertama masuk kelas: mulakan di tingkatan kelas itu, bukan tingkatan lalai. */
+  var tk=tingkatanKelas(d.nama); if(kelasBaru&&tk&&tingkatanBab(BAB_ID)!==tk) pasangBabMuat("m"+tk+"b1",function(){ render(); });
   simpanDiri();
 }
 function lupaKM(){
@@ -2893,7 +2897,7 @@ function renderSoalan(){
   if(q._ulang) bd.appendChild(el("p","chip-ulang","Ulangan dari hentian "+q.tp+". Latihan sahaja, tidak dikira dalam keputusan hentian ini."));
 
   if(!S.modHarian&&!bos&&S.aras===1&&S.qi===0&&!Object.keys(S.lulus||{}).length)
-    bd.appendChild(el("p","qnote","Contoh soalan macam ni yang murid jawab sepanjang perjalanan. Pilih jawapan yang betul."));
+    bd.appendChild(el("p","qnote","Soalan pertama! Pilih jawapan yang betul, kemudian tekan Semak jawapan."));
 
   bd.appendChild(el("p","qtext",q.t));
   if(q.arahan) bd.appendChild(el("p","qnote",q.arahan));
@@ -2964,12 +2968,17 @@ function renderSoalan(){
   }
   else if(q.j==="nombor"){
     var row=el("div","numrow");
-    var inp=el("input");inp.type="number";inp.step="0.1";inp.id="numJwp";inp.placeholder="0";
-    inp.setAttribute("data-f","num");
+    /* type=text + inputmode=decimal: papan kekunci nombor iPhone tiada tanda tolak, dan type=number
+       menolak "1 200" atau "4,5". Butang ± menukar tanda; nomJawapan() menerima koma, ruang dan '−'. */
+    var inp=el("input");inp.type="text";inp.setAttribute("inputmode","decimal");inp.setAttribute("autocomplete","off");inp.id="numJwp";inp.placeholder="0";
+    inp.setAttribute("data-f","num"); inp.setAttribute("aria-label","Jawapan awak");
     inp.value=(S.pilihan===null||S.pilihan==="")?"":S.pilihan;
     inp.disabled=S.disemak;
-    inp.oninput=function(){S.pilihan=inp.value;var b=$("btnSemak");if(b)b.disabled=inp.value==="";};
-    row.appendChild(inp); row.appendChild(el("span",null,q.suf||""));
+    inp.oninput=function(){S.pilihan=inp.value;var b=$("btnSemak");if(b)b.disabled=inp.value.trim()==="";};
+    var tg=el("button","kbtn tanda"); tg.type="button"; tg.textContent="±"; tg.disabled=S.disemak;
+    tg.setAttribute("aria-label","Tukar tanda positif atau negatif");
+    tg.onclick=function(){ var v=inp.value.trim(); inp.value=/^[-−]/.test(v)?v.replace(/^[-−]\s*/,""):"-"+v; inp.oninput(); inp.focus(); };
+    row.appendChild(tg); row.appendChild(inp); row.appendChild(el("span",null,q.suf||""));
     body.appendChild(row);
   }
   else if(q.j==="buka"){
@@ -4079,24 +4088,25 @@ function paneRumah(ak){
   bp.onclick=function(){ S.guruSkrin="profil"; renderCikgu(); };
   var bo=el("button","btn ghost sm"); bo.textContent="Log keluar";
   bo.onclick=logKeluar;
-  var bsk=el("button","btn ghost sm"); bsk.textContent="Semak soalan";
+  var bsk=el("button","btn ghost sm"); bsk.textContent="Lihat semua soalan";
   bsk.onclick=function(){ location.href="semak.html"; };
   var bb=el("div","butang"); bb.appendChild(bsk); bb.appendChild(bp); bb.appendChild(bo);
   hd.appendChild(bb);
   ak.appendChild(hd);
 
   /* Pilot: kad Premium disembunyikan. */
-  var pb=el("div"); pilihBabGuru(pb); ak.appendChild(pb);
+  var pb=el("div"); pilihBabGuru(pb);
   if(RALAT_GURU){
+    ak.appendChild(pb);
     ak.appendChild(el("p","ralat",esc(RALAT_GURU)));
     var bc=el("button","btn sm"); bc.textContent="Cuba semula";
     bc.onclick=function(){ RALAT_GURU=""; muatGuru().catch(function(e){ RALAT_GURU=pesanRalat(e); }).then(segarGuru); renderCikgu(); };
     var ac=el("div","actions"); ac.appendChild(bc); ak.appendChild(ac);
     return;
   }
-  if(!GURU_DIMUAT){ ak.appendChild(el("p","note","Memuatkan kelas...")); return; }
+  if(!GURU_DIMUAT){ ak.appendChild(pb); ak.appendChild(el("p","note","Memuatkan kelas...")); return; }
 
-  if(S.imp) return paneImport(ak);
+  if(S.imp){ ak.appendChild(pb); return paneImport(ak); }
 
   var g=el("div","kelasgrid");
   KELAS_GURU.forEach(function(k){ g.appendChild(kadKelas(k)); });
@@ -4118,6 +4128,9 @@ function paneRumah(ak){
       '</ol><p class="note">Tiada fail Excel? Tekan <b>Tambah kelas</b> dan tampal nama murid. Buka <b>kelas contoh</b> untuk melihat rupa keputusan murid dahulu.</p></div>';
     ak.appendChild(p);
   }
+  /* Tugas utama (kelas, tambah, import) dahulu; pilihan bab di bawahnya. */
+  var tb=el("h3","subtajuk-bab","Bab yang tersedia"); tb.style.margin="18px 0 6px";
+  ak.appendChild(tb); ak.appendChild(pb);
   ak.appendChild(panelMaklumBalas());
 }
 
@@ -4208,6 +4221,7 @@ function kadKelas(k){
     '<span><b>'+(ada?(jum/ada).toFixed(1):"–")+'</b>purata TP</span></div>';
   b.onclick=function(){
     S.gk=k.id; S.muridPilih=null; S.tabCikgu=n?"kelas":"senarai";
+    var tk=k.contoh?null:tingkatanKelas(k.nama); if(tk&&tingkatanBab(BAB_ID)!==tk) tukarBabGuru("m"+tk+"b1");
     renderCikgu(); window.scrollTo({top:0});
   };
   return b;
@@ -4225,6 +4239,11 @@ function kadTambah(){
   var fm=medan("Nama kelas","text","namakelas","",{placeholder:"cth. 3 Amanah",maxlength:"60"});
   fm.style.marginTop="0";
   w.appendChild(fm);
+  var ft=el("div","medan"); var lt=el("label"); lt.htmlFor="m-tingkatan"; lt.textContent="Tingkatan"; ft.appendChild(lt);
+  var st=el("select"); st.id="m-tingkatan"; st.setAttribute("aria-describedby","m-tingkatan-nota");
+  Object.keys(JUMLAH_BAB).forEach(function(t){ var o=el("option",null,"Tingkatan "+t); o.value=t; st.appendChild(o); });
+  st.value=String(tingkatanBab(BAB_ID)); ft.appendChild(st); w.appendChild(ft);
+  var nt=el("p","note","Murid kelas ini terus mendarat di peta tingkatan yang dipilih."); nt.id="m-tingkatan-nota"; w.appendChild(nt);
   var msg=el("p","ralat",""); msg.hidden=true;
   var a=el("div","actions"); a.style.marginTop="0";
   var bs=el("button","btn sm"); bs.type="submit"; bs.textContent="Cipta kelas";
@@ -4236,6 +4255,7 @@ function kadTambah(){
     ev.preventDefault();
     var nama=fm.querySelector("input").value.trim();
     if(!nama){ msg.hidden=false; msg.textContent="Beri nama kelas."; return; }
+    if(!tingkatanKelas(nama)) nama=st.value+" "+nama;   /* nama tanpa nombor tingkatan: awalkan supaya murid tahu peta mana */
     bs.disabled=true; bs.textContent="Mencipta...";
     SB.from("jm_kelas").insert({nama:nama}).select("id,nama,kod").single().then(function(r){
       if(r.error){ bs.disabled=false; bs.textContent="Cipta kelas"; msg.hidden=false; msg.textContent=pesanRalat(r.error); return; }
@@ -4243,6 +4263,7 @@ function kadTambah(){
       KELAS_GURU.push({id:k.id,nama:k.nama,kod:k.kod});
       NOMBOR[k.id]=[]; NAMA[k.id]={}; PIN[k.id]={};
       S.tambahKelas=false; S.gk=k.id; S.tabCikgu="senarai";
+      var tk=tingkatanKelas(k.nama); if(tk&&tingkatanBab(BAB_ID)!==tk) tukarBabGuru("m"+tk+"b1");
       renderCikgu(); window.scrollTo({top:0});
     });
   };
@@ -4252,6 +4273,7 @@ function kadTambah(){
 function tukarBabGuru(id){
   if(id===BAB_ID) return;
   if(!bebasBab(id)&&!premiumAktif(tingkatanBab(id))) return;
+  if(!(window.BANK&&window.BANK[id])){ muatBank(id).then(function(){ tukarBabGuru(id); }).catch(function(){ alert("Bab ini tidak dapat dimuatkan. Semak internet dan cuba lagi."); }); return; }
   pasangBab(id);
   CUBAAN={}; GURU={};
   benihContohBab();
@@ -5152,7 +5174,7 @@ function paneTangga(){
     var r=el("div","rung");
     var cara=(i===5)
       ? "Tugasan reka cipta bertulis, dinilai oleh guru sahaja"
-      : "Perlu "+ambangItem(5)+" daripada 5 item betul, termasuk soalan bos dalam kiraan";
+      : "Perlu "+ambangItem(SOALAN_SET+1)+" daripada "+(SOALAN_SET+1)+" item betul, termasuk soalan bos dalam kiraan";
     r.innerHTML='<div class="rung-hd"><span class="tp-chip">TP'+(i+1)+'</span><span class="k">'+KKO[i]+'</span><span class="n">'+esc(a.tempat)+'</span></div>'+
       '<p>'+esc(SPI[i])+'</p><p class="note" style="margin-top:7px">'+esc(a.sk)+' · '+(a.soalan.length+1)+' item termasuk bos · '+esc(cara)+'</p>';
     lad.appendChild(r);

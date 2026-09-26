@@ -75,14 +75,14 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon sekata 6 sisi. Berapakah bilangan paksi simetrinya?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Poligon sekata n sisi mempunyai n paksi simetri. Segi enam sekata ada 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon sekata 8 sisi. Berapakah bilangan paksi simetrinya?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bilangan paksi simetri poligon sekata sama dengan bilangan sisinya, iaitu 8."
     },
     {
@@ -125,7 +125,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Sebuah poligon sekata mempunyai 5 paksi simetri. Berapakah bilangan sisinya?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bilangan paksi simetri poligon sekata sama dengan bilangan sisinya, jadi poligon itu ada 5 sisi."
     },
     {
@@ -176,7 +176,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 6 sisi. Berapakah sudut pusat (darjah) yang digunakan untuk membina segi enam sekata?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat = 360° ÷ 6 = 60°."
     },
@@ -184,7 +184,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 8 sisi. Berapakah sudut pusat (darjah) yang digunakan?",
      "b": 45,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat = 360° ÷ 8 = 45°."
     },
@@ -192,7 +192,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 5 sisi. Berapakah sudut pusat (darjah) yang digunakan?",
      "b": 72,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat = 360° ÷ 5 = 72°."
     },
@@ -212,7 +212,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Untuk membina segi sembilan sekata daripada bulatan, berapakah sudut pusat (darjah)?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut pusat = 360° ÷ 9 = 40°."
     },
@@ -237,7 +237,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Sudut pusat yang digunakan untuk membina sebuah poligon sekata ialah 30°. Berapakah bilangan sisi poligon itu?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bilangan sisi = 360° ÷ 30° = 12."
     },
     {
@@ -257,7 +257,7 @@ window.BANK["m2b4"] =
     "j": "nombor",
     "t": "Sudut pusat sebuah poligon sekata yang dibina daripada bulatan ialah 24°. Berapakah bilangan sisi poligon itu?",
     "b": 15,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Bilangan sisi = 360° ÷ 24° = 15."
    }
   },
@@ -277,7 +277,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 5 sisi. Berapakah jumlah sudut pedalaman segi lima itu (darjah)?",
      "b": 540,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Segi lima dibahagi kepada 3 segi tiga. Jumlah = 3 × 180° = 540°."
     },
@@ -285,7 +285,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 6 sisi. Berapakah jumlah sudut pedalaman segi enam itu (darjah)?",
      "b": 720,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Segi enam dibahagi kepada 4 segi tiga. Jumlah = 4 × 180° = 720°."
     },
@@ -293,24 +293,24 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 8 sisi. Berapakah bilangan segi tiga yang terbentuk oleh pepenjuru dari bucu A?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Bilangan segi tiga = n − 2 = 8 − 2 = 6."
+     "tol": 0.001000000001,
+     "u": "Dari satu bucu, pepenjuru membahagi poligon kepada (n − 2) segi tiga. Ganti n = 8: 8 − 2 = 6 segi tiga."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 6 sisi. Berapakah setiap sudut pedalaman segi enam sekata itu (darjah)?",
      "b": 120,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Setiap sudut pedalaman = 720° ÷ 6 = 120°."
+     "u": "Jumlah sudut pedalaman = (6 − 2) × 180° = 720°. Setiap sudut sekata = 720° ÷ 6 = 120°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 9 sisi. Berapakah setiap sudut peluaran segi sembilan sekata itu (darjah)?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Setiap sudut peluaran = 360° ÷ 9 = 40°."
+     "u": "Guna sudut peluaran poligon sekata = 360° ÷ n. Ganti n = 9: 360° ÷ 9 = 40°."
     },
     {
      "j": "pilih",
@@ -328,23 +328,23 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Berapakah hasil tambah sudut pedalaman sebuah poligon 10 sisi (darjah)?",
      "b": 1440,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "(10 − 2) × 180° = 8 × 180° = 1 440°."
+     "u": "Guna jumlah sudut pedalaman = (n − 2) × 180°. Ganti n = 10: (10 − 2) × 180° = 8 × 180° = 1 440°."
     },
     {
      "j": "nombor",
      "t": "Sebuah poligon sekata mempunyai sudut peluaran 60°. Berapakah bilangan sisinya?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Bilangan sisi = 360° ÷ 60° = 6."
+     "tol": 0.001000000001,
+     "u": "Guna n = 360° ÷ sudut peluaran. Ganti: 360° ÷ 60° = 6 sisi."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Setiap sudut pedalaman sebuah poligon sekata ialah 144°. Berapakah bilangan sisi poligon itu?",
     "b": 10,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Sudut peluaran = 180° − 144° = 36°. Bilangan sisi = 360° ÷ 36° = 10."
    }
   },
@@ -364,29 +364,29 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut peluaran 72°. Berapakah bilangan sisi poligon sekata itu?",
      "b": 5,
-     "tol": 0.01,
-     "u": "Bilangan sisi = 360° ÷ 72° = 5."
+     "tol": 0.001000000001,
+     "u": "Guna n = 360° ÷ sudut peluaran. Ganti: 360° ÷ 72° = 5 sisi."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut peluaran 45°. Berapakah sudut pedalaman poligon itu (darjah)?",
      "b": 135,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut pedalaman = 180° − 45° = 135°."
+     "u": "Sudut pedalaman + sudut peluaran = 180°. Maka sudut pedalaman = 180° − 45° = 135°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut peluaran 36°. Berapakah bilangan sisi poligon sekata itu?",
      "b": 10,
-     "tol": 0.01,
-     "u": "Bilangan sisi = 360° ÷ 36° = 10."
+     "tol": 0.001000000001,
+     "u": "Guna n = 360° ÷ sudut peluaran. Ganti: 360° ÷ 36° = 10 sisi."
     },
     {
      "j": "nombor",
      "t": "Sudut pedalaman sebuah poligon sekata ialah 156°. Berapakah bilangan sisinya?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Sudut peluaran = 180° − 156° = 24°. Bilangan sisi = 360° ÷ 24° = 15."
     },
     {
@@ -405,17 +405,17 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Sudut pedalaman sebuah poligon sekata ialah 108°. Berapakah sudut peluarannya (darjah)?",
      "b": 72,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut peluaran = 180° − 108° = 72°."
+     "u": "Sudut pedalaman + sudut peluaran = 180°. Maka sudut peluaran = 180° − 108° = 72°."
     },
     {
      "j": "nombor",
      "t": "Berapakah setiap sudut peluaran sebuah segi lapan sekata (darjah)?",
      "b": 45,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut peluaran = 360° ÷ 8 = 45°."
+     "u": "Guna sudut peluaran poligon sekata = 360° ÷ n. Segi lapan ada n = 8: 360° ÷ 8 = 45°."
     },
     {
      "j": "pilih",
@@ -434,7 +434,7 @@ window.BANK["m2b4"] =
     "j": "nombor",
     "t": "Setiap sudut pedalaman sebuah poligon sekata ialah 162°. Berapakah hasil tambah sudut pedalaman poligon itu (darjah)?",
     "b": 3240,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "°",
     "u": "Sudut peluaran = 18°, maka n = 360° ÷ 18° = 20. Hasil tambah = (20 − 2) × 180° = 3 240°."
    }
@@ -455,7 +455,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon 1 (segi lima). Berapakah nilai x (darjah)?",
      "b": 105,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah = 540°. x = 540° − (100° + 110° + 120° + 105°) = 105°."
     },
@@ -463,7 +463,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon 2 (segi lima). Berapakah nilai x (darjah)?",
      "b": 100,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah = 540°. x = 540° − (90° + 125° + 135° + 90°) = 100°."
     },
@@ -471,7 +471,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon 3 (segi enam). Berapakah nilai x (darjah)?",
      "b": 120,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah = 720°. x = 720° − (110° + 120° + 130° + 100° + 140°) = 120°."
     },
@@ -479,7 +479,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon 4 (segi enam). Berapakah nilai x (darjah)?",
      "b": 95,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah = 720°. x = 720° − (125° + 115° + 140° + 130° + 115°) = 95°."
     },
@@ -487,7 +487,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon 5 (segi tujuh). Berapakah nilai x (darjah)?",
      "b": 140,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah = 900°. x = 900° − (130° + 120° + 140° + 125° + 135° + 110°) = 140°."
     },
@@ -495,7 +495,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan poligon 6 (segi empat). Berapakah nilai x (darjah)?",
      "b": 85,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah = 360°. x = 360° − (80° + 100° + 95°) = 85°."
     },
@@ -503,14 +503,14 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Empat sudut sebuah segi lima ialah 100°, 110°, 120° dan 130°. Sudut yang kelima ialah x°. Berapakah nilai x?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Jumlah = 540°. x = 540 − (100 + 110 + 120 + 130) = 80."
     },
     {
      "j": "nombor",
      "t": "Sudut-sudut sebuah segi lima ialah 2x, 3x, 100°, 120° dan 140°. Berapakah nilai x?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + 3x + 360° = 540°. Maka 5x = 180° dan x = 36°."
     }
    ],
@@ -518,7 +518,7 @@ window.BANK["m2b4"] =
     "j": "nombor",
     "t": "Sudut-sudut sebuah segi enam ialah 100°, 110°, 130°, 140°, x dan (x + 20°). Berapakah nilai x (darjah)?",
     "b": 110,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "°",
     "u": "Jumlah = 720°. 100 + 110 + 130 + 140 + x + x + 20 = 720. Maka 2x + 500 = 720, 2x = 220 dan x = 110."
    }
@@ -539,15 +539,15 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 8 sisi dan kumpul 8 sudut. Berapakah jumlah sudut peluaran itu (darjah)?",
      "b": 360,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Semua sudut peluaran poligon berjumlah 360°, iaitu satu pusingan penuh."
+     "u": "Jumlah sudut peluaran mana-mana poligon = 360° (satu pusingan penuh), tidak kira bilangan sisi. Maka jawapannya 360°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 6 sisi dan kumpul 4 sudut. Berapakah jumlah 4 sudut peluaran itu (darjah)?",
      "b": 240,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Setiap sudut peluaran = 360° ÷ 6 = 60°. Empat sudut = 4 × 60° = 240°."
     },
@@ -555,22 +555,22 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Sebuah robot berjalan mengelilingi sebuah poligon sekata dan berpusing 40° pada setiap bucu. Berapakah bilangan sisi poligon itu?",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Jumlah pusingan sepenuhnya ialah 360°. Bilangan sisi = 360° ÷ 40° = 9."
     },
     {
      "j": "nombor",
      "t": "Sebuah taman berbentuk segi lapan sekata. Seorang pengawal berjalan mengelilinginya dan berpusing di setiap bucu. Berapakah sudut pusingan di setiap bucu (darjah)?",
      "b": 45,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut pusingan = sudut peluaran = 360° ÷ 8 = 45°."
+     "u": "Sudut pusingan di setiap bucu = sudut peluaran. Segi lapan sekata: 360° ÷ 8 = 45°."
     },
     {
      "j": "nombor",
      "t": "Sebuah gelanggang berbentuk segi dua belas sekata. Berapakah setiap sudut pedalamannya (darjah)?",
      "b": 150,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut peluaran = 360° ÷ 12 = 30°. Sudut pedalaman = 180° − 30° = 150°."
     },
@@ -578,10 +578,10 @@ window.BANK["m2b4"] =
      "j": "pilih",
      "t": "Mengapakah jumlah sudut peluaran sebuah poligon sentiasa 360° tanpa mengira bilangan sisi?",
      "p": [
-      "Semua poligon mempunyai empat sudut tegak yang sama",
-      "Setiap sudut peluaran poligon ialah tepat 90°",
+      "Poligon mempunyai empat sudut tegak yang sama",
+      "Setiap sudut peluaran poligon ialah 90°",
       "Berjalan mengelilingi poligon ialah satu pusingan penuh",
-      "Jumlah sudut pedalaman poligon sentiasa 360°"
+      "Jumlah sudut pedalaman poligon ialah 360°"
      ],
      "b": 2,
      "u": "Bila kita berjalan mengelilingi sebuah poligon dan kembali ke tempat asal, jumlah semua pusingan ialah satu pusingan penuh iaitu 360°."
@@ -590,7 +590,7 @@ window.BANK["m2b4"] =
      "j": "nombor",
      "t": "Sebuah poligon sekata mempunyai jumlah sudut pedalaman 720°. Poligon kedua mempunyai jumlah sudut pedalaman 360° lebih banyak. Berapakah bilangan sisi poligon kedua?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Jumlah kedua = 720° + 360° = 1 080°. (n − 2) × 180° = 1 080°, maka n − 2 = 6 dan n = 8."
     },
     {

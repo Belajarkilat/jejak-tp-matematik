@@ -99,21 +99,21 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Mod. Berapakah mod markah kuiz itu?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Markah 4 muncul 3 kali, paling banyak, jadi mod = 4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapa kali markah 4 muncul?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ada tiga titik pada markah 4."
     },
     {
      "j": "nombor",
      "t": "Jumlah semua markah dalam Rajah 1 ialah 40 dan ada 9 murid. Berapakah min markah, kepada 1 tempat perpuluhan?",
      "b": 4.4,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "u": "Min = 40 ÷ 9 = 4.4."
     },
     {
@@ -137,7 +137,7 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Cari median bagi data 2, 5, 7, 10.",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bilangan data genap, jadi ambil purata dua nilai tengah: (5 + 7) ÷ 2 = 6."
     }
    ],
@@ -188,14 +188,14 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Tambah semua dan nilai 2. Berapakah min baharu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Data baharu 4, 5, 5, 7, 9 mempunyai jumlah 30. Min = 30 ÷ 5 = 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Darab semua dan nilai 2. Berapakah median baharu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Data baharu 4, 6, 6, 10, 14. Nilai tengah ialah 6."
     },
     {
@@ -203,8 +203,8 @@ window.BANK["m2b12"] =
      "t": "Apabila setiap nilai ditambah dengan nombor yang sama, min, median dan mod:",
      "p": [
       "Ketiga-tiganya bertambah dengan nombor itu",
-      "Hanya min yang berubah, median dan mod kekal",
-      "Hanya mod yang berubah, min dan median kekal",
+      "Min berubah, median dan mod kekal",
+      "Mod berubah, min dan median kekal",
       "Ketiga-tiganya kekal sama seperti asal"
      ],
      "b": 0,
@@ -226,17 +226,17 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Tambah satu nilai dan nilai 5. Berapakah min baharu?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nilai 7 menjadi 12. Data 2, 3, 3, 5, 12 berjumlah 25, jadi min = 5."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih Tambah satu nilai. Mengapakah median dan mod tidak berubah?",
      "p": [
-      "Kerana min sentiasa sama dengan median dalam semua data",
-      "Kerana data langsung tidak berubah apabila satu nilai ditambah",
+      "Kerana min sama dengan median dalam data ini",
+      "Kerana data tidak berubah apabila satu nilai ditambah",
       "Nilai yang diubah bukan nilai tengah dan bukan mod",
-      "Kerana median dan mod tidak pernah boleh berubah walau apa pun"
+      "Kerana median dan mod tidak boleh berubah walau apa pun"
      ],
      "b": 2,
      "u": "Hanya nilai terbesar berubah. Nilai tengah ialah 3 dan nilai paling kerap ialah 3, jadi kedua-duanya kekal."
@@ -245,7 +245,7 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Sekumpulan data mempunyai min 12. Setiap nilai ditambah dengan 5, kemudian didarab dengan 2. Berapakah min baharu?",
      "b": 34,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Tambah 5: min menjadi 17. Darab 2: min menjadi 34."
     }
    ],
@@ -253,7 +253,7 @@ window.BANK["m2b12"] =
     "j": "nombor",
     "t": "Min lima nombor ialah 4. Satu nombor bernilai 7 diganti dengan 12. Berapakah min baharu?",
     "b": 5,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Jumlah asal = 4 × 5 = 20. Jumlah baharu = 20 − 7 + 12 = 25. Min baharu = 25 ÷ 5 = 5."
    }
   },
@@ -285,15 +285,15 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan selang 5 dan pilih Kelas 2 (25 - 29). Berapakah kekerapannya?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Markah 26, 27, 28 dan 29 berada dalam kelas 25 - 29. Kekerapan = 4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah titik tengah kelas 30 - 34?",
      "b": 32,
-     "tol": 0.01,
-     "u": "Titik tengah = (30 + 34) ÷ 2 = 32."
+     "tol": 0.001000000001,
+     "u": "Titik tengah kelas = (sempadan bawah + sempadan atas) ÷ 2. Ganti: (30 + 34) ÷ 2 = 64 ÷ 2 = 32."
     },
     {
      "j": "pilih",
@@ -311,15 +311,15 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tukar selang kepada 10. Berapakah kekerapan kelas 30 - 39?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ada 8 markah dari 31 hingga 38 dalam kelas 30 - 39."
     },
     {
      "j": "nombor",
      "t": "Dengan selang 5 dalam Rajah 1, jumlah kekerapan × titik tengah (jumlah fx) ialah 665. Berapakah min anggaran markah, kepada 2 tempat perpuluhan?",
      "b": 33.25,
-     "tol": 0.01,
-     "u": "Min anggaran = 665 ÷ 20 = 33.25."
+     "tol": 0.005000000005,
+     "u": "Min anggaran = jumlah fx ÷ jumlah kekerapan. Ganti: 665 ÷ 20 = 33.25."
     },
     {
      "j": "pilih",
@@ -355,7 +355,7 @@ window.BANK["m2b12"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, tetapkan selang 10. Berapakah min anggaran markah, kepada 1 tempat perpuluhan?",
     "b": 33.5,
-    "tol": 0.05,
+    "tol": 0.05000000005,
     "u": "Titik tengah 24.5, 34.5 dan 44.5 dengan kekerapan 7, 8 dan 5. Jumlah fx = 171.5 + 276 + 222.5 = 670. Min anggaran = 670 ÷ 20 = 33.5."
    }
   },
@@ -375,28 +375,28 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah jumlah bilangan data (jumlah kekerapan)?",
      "b": 14,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ada 14 murid dalam data itu."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah mod masa bacaan (minit)?",
      "b": 27,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nilai 27 muncul 3 kali, paling banyak."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah median masa bacaan (minit)?",
      "b": 29,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ada 14 data. Nilai ke-7 ialah 28 dan nilai ke-8 ialah 30. Median = (28 + 30) ÷ 2 = 29."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah min masa bacaan (minit), kepada 1 tempat perpuluhan?",
      "b": 29.6,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "u": "Jumlah masa ialah 414 minit. Min = 414 ÷ 14 = 29.6."
     },
     {
@@ -439,7 +439,7 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapa daun berada pada batang 3 dalam paparan batang dan daun?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nilai dari 30 hingga 39 ialah 30, 30, 32, 33, 35, 35 dan 36, iaitu 7 daun."
     }
    ],
@@ -447,7 +447,7 @@ window.BANK["m2b12"] =
     "j": "nombor",
     "t": "Seorang murid dengan masa bacaan 40 minit ditambah kepada data dalam Rajah 1. Berapakah median baharu (minit)?",
     "b": 30,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Kini ada 15 data. Nilai ke-8 selepas disusun ialah 30, jadi median baharu = 30."
    }
   },
@@ -467,15 +467,15 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan nilai terakhir 8. Berapakah median?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Data disusun: 4, 5, 5, 6, 7, 7, 7, 8, 9. Nilai kelima ialah 7."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan nilai terakhir 40. Berapakah min?",
      "b": 10,
-     "tol": 0.01,
-     "u": "Jumlah = 50 + 40 = 90. Min = 90 ÷ 9 = 10."
+     "tol": 0.001000000001,
+     "u": "Min = jumlah ÷ bilangan data. Jumlah = 50 + 40 = 90. Min = 90 ÷ 9 = 10."
     },
     {
      "j": "pilih",
@@ -490,11 +490,16 @@ window.BANK["m2b12"] =
      "u": "Median kekal 7 dan mod kekal 7, tetapi min naik daripada 6.7 kepada 14.4."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, tetapkan nilai terakhir 80. Berapakah min, kepada 1 tempat perpuluhan?",
-     "b": 14.4,
-     "tol": 0.05,
-     "u": "Jumlah = 50 + 80 = 130. Min = 130 ÷ 9 = 14.4."
+     "j": "pilih",
+     "t": "Seorang murid mengira median bagi 7, 3, 9, 5, 4 sebagai 9 kerana nilai di tengah senarai ialah 9. Apakah kesilapannya?",
+     "p": [
+      "Median ialah min, iaitu 5.6, jadi dia patut mengira jumlah dibahagi lima",
+      "Median ialah nilai yang paling kerap muncul, jadi dia patut mencari mod",
+      "Dia tidak menyusun data dahulu; selepas disusun 3, 4, 5, 7, 9, median ialah 5",
+      "Tiada kesilapan kerana nilai di tengah senarai asal ialah median"
+     ],
+     "b": 2,
+     "u": "Susun data: 3, 4, 5, 7, 9. Lima data, nilai ketiga ialah 5. Nilai di tengah senarai yang belum disusun bukan median."
     },
     {
      "j": "pilih",
@@ -502,41 +507,41 @@ window.BANK["m2b12"] =
      "p": [
       "Paling kerap muncul dalam set data itu",
       "Tepat di tengah selepas data disusun",
-      "Jauh berbeza daripada kebanyakan nilai lain",
-      "Sama nilainya dengan min bagi data itu"
+      "Sama nilainya dengan min bagi data itu",
+      "Jauh berbeza daripada kebanyakan nilai lain"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Nilai ekstrem ialah nilai yang jauh terpencil daripada kelompok data yang lain."
     },
     {
      "j": "pilih",
      "t": "Untuk data yang mempunyai nilai ekstrem, sukatan yang paling sesuai mewakili kebanyakan data ialah:",
      "p": [
+      "Median",
       "Min",
       "Jumlah",
-      "Nilai terbesar",
-      "Median"
+      "Nilai terbesar"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Median tidak banyak terkesan oleh nilai ekstrem."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan nilai terakhir 80. Berapakah julat?",
      "b": 76,
-     "tol": 0.01,
-     "u": "Julat = 80 − 4 = 76."
+     "tol": 0.001000000001,
+     "u": "Julat = nilai terbesar − nilai terkecil. Ganti: 80 − 4 = 76."
     },
     {
      "j": "pilih",
      "t": "Gaji lima orang pekerja dan seorang pengurus (RM ribu) ialah 2, 2, 3, 3, 4 dan 40. Mengapakah min (RM9 ribu) tidak sesuai mewakili gaji kebanyakan?",
      "p": [
-      "Nilai ekstrem 40 menarik min menjadi terlalu tinggi",
       "Min sentiasa salah untuk data gaji seperti ini",
+      "Nilai ekstrem 40 menarik min menjadi terlalu tinggi",
       "Mod lebih besar daripada min dalam data ini",
       "Median tidak wujud bagi data seperti ini"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Kebanyakan gaji hanya 2 hingga 4, tetapi satu nilai 40 menaikkan min kepada 9."
     }
    ],
@@ -575,40 +580,40 @@ window.BANK["m2b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Kelas B biasa dan ukuran Julat. Berapakah julat markah Kelas B?",
      "b": 23,
-     "tol": 0.01,
-     "u": "Julat = 75 − 52 = 23."
+     "tol": 0.001000000001,
+     "u": "Julat = nilai terbesar − nilai terkecil. Ganti: 75 − 52 = 23."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah median markah Kelas A?",
      "b": 65,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ada 8 markah. Nilai ke-4 ialah 64 dan nilai ke-5 ialah 66. Median = 65."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah min markah Kelas A, kepada 2 tempat perpuluhan?",
      "b": 64.75,
-     "tol": 0.01,
-     "u": "Jumlah markah ialah 518. Min = 518 ÷ 8 = 64.75."
+     "tol": 0.005000000005,
+     "u": "Min = jumlah markah ÷ bilangan murid. Ganti: 518 ÷ 8 = 64.75."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Kelas B ada ekstrem. Berapakah min markah Kelas B, kepada 2 tempat perpuluhan?",
      "b": 67.75,
-     "tol": 0.01,
-     "u": "Jumlah markah ialah 542. Min = 542 ÷ 8 = 67.75."
+     "tol": 0.005000000005,
+     "u": "Min = jumlah markah ÷ bilangan murid. Ganti: 542 ÷ 8 = 67.75."
     },
     {
      "j": "pilih",
      "t": "Kepentingan julat apabila membandingkan dua set data ialah:",
      "p": [
       "Menunjukkan nilai yang paling kerap muncul",
-      "Menunjukkan betapa tersebarnya data",
       "Menunjukkan nilai di tengah",
+      "Menunjukkan betapa tersebarnya data",
       "Menggantikan min dan median"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Dua set boleh mempunyai min atau median sama tetapi taburan yang sangat berbeza."
     },
     {
@@ -617,29 +622,34 @@ window.BANK["m2b12"] =
      "p": [
       "Kelas B, sebab julatnya lebih besar daripada A",
       "Kedua-duanya sama konsisten kerana median sama",
-      "Kelas A, sebab julatnya lebih kecil daripada B",
-      "Tidak dapat ditentukan tanpa min kedua-dua kelas"
+      "Tidak dapat ditentukan tanpa min kedua-dua kelas",
+      "Kelas A, sebab julatnya lebih kecil daripada B"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Julat A ialah 16 dan julat B ialah 23. Julat lebih kecil bermaksud markah lebih dekat antara satu sama lain."
     },
     {
-     "j": "nombor",
-     "t": "Min markah Kelas A ialah 64.75 daripada 8 murid. Seorang murid baharu mendapat 80 markah. Berapakah min baharu, kepada 2 tempat perpuluhan?",
-     "b": 66.44,
-     "tol": 0.01,
-     "u": "Jumlah baharu = 518 + 80 = 598. Min baharu = 598 ÷ 9 = 66.44."
+     "j": "pilih",
+     "t": "Cikgu berkata median lebih sesuai daripada min bagi data yang mempunyai satu markah ekstrem. Seorang murid tidak setuju kerana min menggunakan semua data. Siapa yang lebih tepat?",
+     "p": [
+      "Cikgu, kerana nilai ekstrem menarik min ke arahnya tetapi kurang mempengaruhi median",
+      "Murid, kerana min mengambil kira semua data dan tidak terkesan oleh nilai ekstrem",
+      "Kedua-duanya sama tepat kerana min dan median sentiasa bernilai sama",
+      "Cikgu, kerana median menggunakan semua data dengan lebih adil daripada min"
+     ],
+     "b": 0,
+     "u": "Satu markah ekstrem menaikkan atau menurunkan jumlah, jadi min berubah banyak. Median hanya bergantung pada nilai tengah, jadi kurang berubah."
     },
     {
      "j": "pilih",
      "t": "Apabila Kelas B ada ekstrem 98, min B (67.75) lebih tinggi daripada min A (64.75) tetapi median kedua-dua kelas sama. Kesimpulan yang paling adil ialah:",
      "p": [
       "Kelas B lebih baik dalam semua aspek kerana min lebih tinggi",
+      "Min B naik kerana satu markah ekstrem, bukan semua murid B lebih baik",
       "Kelas A lebih teruk dalam semua aspek kerana min lebih rendah",
-      "Tiada apa yang boleh disimpulkan tentang kedua-dua kelas itu",
-      "Min B naik kerana satu markah ekstrem, bukan semua murid B lebih baik"
+      "Tiada apa yang boleh disimpulkan tentang kedua-dua kelas itu"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Median sama bermaksud kebanyakan murid setara. Kenaikan min hanya disebabkan satu markah 98."
     }
    ],

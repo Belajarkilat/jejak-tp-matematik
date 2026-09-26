@@ -99,7 +99,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, P berada pada lokus. Berapakah jarak OP (cm)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Titik yang berada pada lokus berjarak tetap r = 3 cm dari O."
     },
@@ -107,7 +107,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Lokus titik yang berjarak 5 cm dari titik tetap O ialah sebuah bulatan. Berapakah diameter bulatan itu (cm)?",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Diameter = 2 × jejari = 2 × 5 = 10 cm."
     },
@@ -200,7 +200,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan P ke tepi = 0 cm dan P naik/turun = 3 cm. Berapakah PA (cm), 2 tempat perpuluhan?",
      "b": 4.24,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "P berada 3 cm dari titik tengah AB dan A berada 3 cm dari titik tengah. PA = √(3² + 3²) = √18 = 4.24 cm."
     },
@@ -208,7 +208,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan P ke tepi = 0 cm dan P naik/turun = 2 cm. Berapakah PB (cm), 2 tempat perpuluhan?",
      "b": 3.61,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "PB = √(3² + 2²) = √13 = 3.61 cm."
     },
@@ -240,7 +240,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Titik P berada pada pembahagi dua sama serenjang AB. Jika PA = 7 cm, berapakah PB (cm)?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Titik pada pembahagi dua sama serenjang sama jauh dari A dan B, jadi PB = PA = 7 cm."
     },
@@ -278,7 +278,7 @@ window.BANK["m3b8"] =
     "j": "nombor",
     "t": "Dua menara Wi-Fi A dan B berjarak 8 m. Titik P sama jauh dari A dan B dan berjarak 3 m dari garis AB. Berapakah PA (m)?",
     "b": 5,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "m",
     "u": "Titik tengah AB ke A ialah 4 m, dan P berjarak 3 m dari AB. PA = √(4² + 3²) = √25 = 5 m."
    }
@@ -311,7 +311,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah jarak antara dua garis putus-putus (cm)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Setiap garis putus-putus berjarak 3 cm dari PQ, jadi jarak antara keduanya = 3 + 3 = 6 cm."
     },
@@ -319,7 +319,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, P berada pada salah satu garis putus-putus. Berapakah jarak P ke garis PQ (cm)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Garis putus-putus ialah lokus titik yang berjarak 3 cm dari PQ."
     },
@@ -339,7 +339,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dua garis selari berjarak 9 cm. Lokus titik yang sama jauh dari kedua-duanya berjarak berapa dari salah satu garis (cm)?",
      "b": 4.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "cm",
      "u": "9 ÷ 2 = 4.5 cm."
     },
@@ -359,7 +359,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Sebuah pasar mesti dibina tepat 50 m dari sebatang jalan lurus. Berapakah jarak antara dua garis lokus kedudukan pasar itu (m)?",
      "b": 100,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
      "u": "Satu garis di setiap sisi jalan, masing-masing 50 m dari jalan. Jarak antara keduanya = 50 + 50 = 100 m."
     },
@@ -440,7 +440,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, sudut antara garis 1 dengan garis 2 ialah 60°. Berapakah sudut antara garis 1 dengan pembahagi dua sudut mengufuk (°)?",
      "b": 30,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Pembahagi dua sudut membahagi 60° kepada dua bahagian sama: 60° ÷ 2 = 30°."
     },
@@ -448,7 +448,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, P berada pada pembahagi dua sudut mengufuk dengan OP = 4 cm. Berapakah jarak P ke garis 1 (cm)?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Jarak serenjang = OP × sin 30° = 4 × 0.5 = 2 cm."
     },
@@ -456,7 +456,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dua garis bersilang pada sudut 80°. Pembahagi dua sudut membentuk sudut berapa dengan setiap garis (°)?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "80° ÷ 2 = 40°."
     },
@@ -464,7 +464,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, P berada pada pembahagi dua sudut mengufuk dan OP = 6 cm. Berapakah jarak P ke garis 2 (cm)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Jarak serenjang = 6 × sin 30° = 3 cm. Nilainya sama dengan jarak ke garis 1."
     },
@@ -497,7 +497,7 @@ window.BANK["m3b8"] =
     "j": "nombor",
     "t": "Dua jalan bersilang pada sudut 60°. Sebuah tiang lampu berada pada pembahagi dua sudut dan berjarak 5 m dari setiap jalan. Berapakah jarak tiang dari titik persilangan (m)?",
     "b": 10,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "m",
     "u": "Jarak serenjang = OP × sin 30° = 5, maka OP = 5 ÷ sin 30° = 5 ÷ 0.5 = 10 m."
    }
@@ -530,28 +530,28 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1 (A dan B berjarak 4 cm), tetapkan r = 3 cm. Berapakah bilangan titik yang sama jauh dari A dan B serta berjarak 3 cm dari A?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik tengah AB berjarak 2 cm dari A. Oleh sebab 3 &gt; 2, bulatan memotong pembahagi dua sama serenjang pada dua titik."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan r = 2 cm. Berapakah bilangan titik yang sama jauh dari A dan B serta berjarak 2 cm dari A?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik tengah AB berjarak tepat 2 cm dari A, jadi bulatan hanya menyentuh pembahagi dua sama serenjang pada satu titik."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan r = 1 cm. Berapakah bilangan titik yang sama jauh dari A dan B serta berjarak 1 cm dari A?",
      "b": 0,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik tengah AB berjarak 2 cm dari A. Bulatan berjejari 1 cm tidak sampai pembahagi dua sama serenjang, jadi tiada titik."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan r = 3 cm. Setiap titik yang memenuhi kedua-dua syarat berjarak berapa dari garis AB (cm), 2 tempat perpuluhan?",
      "b": 2.24,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "Jarak dari titik tengah AB ke A ialah 2 cm. Jarak dari AB = √(3² − 2²) = √5 = 2.24 cm."
     },
@@ -559,7 +559,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan r = 4 cm. Berapakah jarak antara dua titik yang memenuhi kedua-dua syarat (cm), 2 tempat perpuluhan?",
      "b": 6.93,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "Setiap titik berjarak √(4² − 2²) = √12 = 3.46 cm dari AB, di atas dan di bawah AB. Jarak antara keduanya = 2 × 3.46 = 6.93 cm."
     },
@@ -597,7 +597,7 @@ window.BANK["m3b8"] =
     "j": "nombor",
     "t": "A dan B berjarak 10 cm. Titik P sama jauh dari A dan B dan berjarak 13 cm dari A. Berapakah jarak P dari garis AB (cm)?",
     "b": 12,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm",
     "u": "Jarak dari titik tengah AB ke A ialah 5 cm. Jarak dari AB = √(13² − 5²) = √144 = 12 cm."
    }
@@ -630,7 +630,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tukar syarat kepada OP &gt; r. Berapakah jarak OP (km)?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km",
      "u": "Dalam rajah, OP &gt; r ditunjukkan dengan P pada 1.4 × 5 km = 7 km dari O."
     },
@@ -638,7 +638,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Isyarat sebuah menara sejauh 6 km. Berapakah luas kawasan liputan (km²), guna π = 3.142 dan 1 tempat perpuluhan?",
      "b": 113.1,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "km²",
      "u": "Luas = πj² = 3.142 × 6² = 113.1 km²."
     },
@@ -646,7 +646,7 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Bandar A dan B berjarak 20 km. Sebuah menara mesti sama jauh dari A dan B serta 26 km dari A. Berapakah jarak menara dari garis AB (km)?",
      "b": 24,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km",
      "u": "Titik tengah AB ke A ialah 10 km. Jarak dari AB = √(26² − 10²) = √576 = 24 km."
     },
@@ -678,14 +678,14 @@ window.BANK["m3b8"] =
      "j": "nombor",
      "t": "Sebuah menara mesti 5 km dari bandar A dan sama jauh dari dua jalan raya lurus yang bersilang di A. Berapakah bilangan lokasi menara yang mungkin?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dua jalan raya bersilang mempunyai dua pembahagi dua sudut. Setiap pembahagi memotong bulatan berjejari 5 km pada dua titik. Jumlah = 2 × 2 = 4 lokasi."
     },
     {
      "j": "nombor",
      "t": "Titik A dan B berjarak 8 cm. Berapakah bilangan titik yang sama jauh dari A dan B serta berjarak 2 cm dari A?",
      "b": 0,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik tengah AB berjarak 4 cm dari A. Bulatan berjejari 2 cm tidak sampai pembahagi dua sama serenjang, jadi tiada titik."
     }
    ],

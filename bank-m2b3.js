@@ -87,14 +87,14 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan k = 4. Berapakah jumlah tambang T (dalam RM)?",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "T = 3 + 2(4) = 3 + 8 = 11."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan k = 7. Berapakah jumlah tambang T (dalam RM)?",
      "b": 17,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "T = 3 + 2(7) = 3 + 14 = 17."
     },
     {
@@ -142,7 +142,7 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan k = 10. Berapakah jumlah tambang T (dalam RM)?",
      "b": 23,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "T = 3 + 2(10) = 3 + 20 = 23."
     }
    ],
@@ -182,28 +182,28 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan C = 20. Berapakah nilai F (°F)?",
      "b": 68,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "F = 9(20)/5 + 32 = 36 + 32 = 68."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan C = 100. Berapakah nilai F (°F)?",
      "b": 212,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "F = 9(100)/5 + 32 = 180 + 32 = 212. Ini suhu air mendidih."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan C = 0. Berapakah nilai F (°F)?",
      "b": 32,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "F = 9(0)/5 + 32 = 0 + 32 = 32. Ini suhu air membeku."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan C = 37. Berapakah nilai F (°F)?",
      "b": 98.6,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "u": "F = 9(37)/5 + 32 = 66.6 + 32 = 98.6."
     },
     {
@@ -321,8 +321,8 @@ window.BANK["m2b3"] =
      "p": [
       "u = v + at",
       "u = v − at",
-      "u = (v − a) / t",
-      "u = v / (at)"
+      "u = v − a ÷ t",
+      "u = v ÷ a − t"
      ],
      "b": 1,
      "u": "Tolak at daripada kedua-dua belah: v − at = u."
@@ -343,14 +343,14 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Diberi v = 20, u = 8 dan t = 3 dalam v = u + at. Cari nilai a.",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "a = (v − u) / t = (20 − 8) / 3 = 12 / 3 = 4."
     },
     {
      "j": "nombor",
      "t": "Diberi P = 2(l + w). Jika P = 30 dan l = 9, cari nilai w.",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "P / 2 = l + w, jadi w = P / 2 − l = 15 − 9 = 6."
     },
     {
@@ -387,7 +387,7 @@ window.BANK["m2b3"] =
     "j": "nombor",
     "t": "Diberi F = 77. Guna C = 5(F − 32) / 9 untuk mencari C (°C).",
     "b": 25,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "C = 5(77 − 32) / 9 = 5(45) / 9 = 225 / 9 = 25."
    }
   },
@@ -407,35 +407,35 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 4, b = 8 dan t = 5. Berapakah luas L (cm²)?",
      "b": 30,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "L = (4 + 8) × 5 / 2 = 12 × 5 / 2 = 30."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 6, b = 10 dan t = 4. Berapakah luas L (cm²)?",
      "b": 32,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "L = (6 + 10) × 4 / 2 = 16 × 4 / 2 = 32."
     },
     {
      "j": "nombor",
      "t": "Sebidang taman berbentuk trapezium mempunyai sisi selari 5 m dan 9 m dengan tinggi 6 m. Berapakah luasnya (m²)?",
      "b": 42,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "L = (5 + 9) × 6 / 2 = 14 × 6 / 2 = 42."
     },
     {
      "j": "nombor",
      "t": "Luas sebuah trapezium ialah 36 cm². Sisi selarinya 5 cm dan 7 cm. Cari tinggi t (cm).",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "t = 2L / (a + b) = 72 / 12 = 6."
     },
     {
      "j": "nombor",
      "t": "Luas sebuah trapezium ialah 45 cm². Sisi selari pendeknya 6 cm dan tingginya 5 cm. Cari sisi selari panjang b (cm).",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "b = 2L / t − a = 90 / 5 − 6 = 18 − 6 = 12."
     },
     {
@@ -466,7 +466,7 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Upah menampal jubin ialah RM3 bagi setiap m². Berapakah kos menampal lantai trapezium dengan a = 5 m, b = 7 m dan t = 4 m (dalam RM)?",
      "b": 72,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Luas = (5 + 7) × 4 / 2 = 24 m². Kos = 24 × 3 = RM72."
     }
    ],
@@ -474,7 +474,7 @@ window.BANK["m2b3"] =
     "j": "nombor",
     "t": "Sebuah plot trapezium mempunyai luas 60 m² dan tinggi 8 m. Sisi selari pendeknya 5 m. Cari sisi selari panjang b (m).",
     "b": 10,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "b = 2L / t − a = 120 / 8 − 5 = 15 − 5 = 10."
    }
   },
@@ -494,35 +494,35 @@ window.BANK["m2b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan u = 4, a = 3 dan t = 5. Berapakah nilai v (m/s)?",
      "b": 19,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "v = u + at = 4 + 3 × 5 = 4 + 15 = 19."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan u = 10, a = 5 dan t = 8. Berapakah nilai v (m/s)?",
      "b": 50,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "v = 10 + 5 × 8 = 10 + 40 = 50."
     },
     {
      "j": "nombor",
      "t": "Sebuah kereta bergerak dengan u = 12 m/s dan a = 2 m/s² selama 6 s. Cari v (m/s).",
      "b": 24,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "v = 12 + 2 × 6 = 12 + 12 = 24."
     },
     {
      "j": "nombor",
      "t": "Sebuah motosikal bermula dari keadaan rehat (u = 0) dan mencapai v = 30 m/s dalam 10 s. Cari pecutan a (m/s²).",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "a = (v − u) / t = (30 − 0) / 10 = 3."
     },
     {
      "j": "nombor",
      "t": "Sebuah bas dengan u = 6 m/s memecut 2 m/s² sehingga v = 22 m/s. Cari masa t (s).",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "t = (v − u) / a = (22 − 6) / 2 = 8."
     },
     {
@@ -538,25 +538,30 @@ window.BANK["m2b3"] =
      "u": "v − u = at. Bahagi kedua-dua belah dengan a: t = (v − u) / a."
     },
     {
-     "j": "nombor",
-     "t": "Diberi v = u + at dengan a = 2, t = 5 dan v = 3u. Cari nilai u.",
-     "b": 5,
-     "tol": 0.01,
-     "u": "3u = u + 2 × 5, jadi 2u = 10 dan u = 5."
+     "j": "pilih",
+     "t": "Seorang murid menukar v = u + at kepada a = v − u ÷ t. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menambah u kepada v sebelum membahagi dengan t",
+      "Dia sepatutnya mendarab v − u dengan t untuk mendapat a",
+      "Tiada kesilapan kerana pembahagian dibuat dahulu dalam tertib operasi",
+      "Dia tidak membahagi seluruh v − u dengan t, jadi hasilnya ialah v − u semua dibahagi t"
+     ],
+     "b": 3,
+     "u": "Daripada v = u + at, tolak u: v − u = at. Bahagi kedua-dua belah dengan t: a = (v − u) ÷ t. Tanpa kurungan, hanya u dibahagi dengan t."
     },
     {
      "j": "nombor",
      "t": "Sebuah roket bermula dengan u = 5 m/s dan memecut 4 m/s² selama 7 s. Berapakah pertambahan laju roket itu (m/s)?",
      "b": 28,
-     "tol": 0.01,
-     "u": "Pertambahan laju ialah at = 4 × 7 = 28 m/s."
+     "tol": 0.001000000001,
+     "u": "Pertambahan laju = at, bukan u + at. Ganti a = 4 dan t = 7: 4 × 7 = 28 m/s."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Kereta A bermula dengan u = 10 m/s dan a = 2 m/s². Kereta B bermula dengan u = 4 m/s dan a = 5 m/s². Selepas berapa saat laju kedua-dua kereta itu sama?",
     "b": 2,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "10 + 2t = 4 + 5t. Maka 6 = 3t dan t = 2 s. Semak: laju A = 14 m/s dan laju B = 14 m/s."
    }
   },
@@ -576,69 +581,74 @@ window.BANK["m2b3"] =
      "j": "pilih",
      "t": "Kuasa dua suatu nombor n ialah 16. Dalam Rajah 1, nilai n yang menjadikan luas petak sama dengan 16 ialah:",
      "p": [
+      "4 dan −4",
       "4 sahaja",
       "8",
-      "16",
-      "4 dan −4"
+      "16"
      ],
-     "b": 3,
+     "b": 0,
      "u": "4 × 4 = 16 dan (−4) × (−4) = 16, jadi n = 4 atau n = −4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 3. Berapakah nilai n × n?",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "3 × 3 = 9. Luas petak ialah 9, kurang daripada sasaran 16."
     },
     {
      "j": "pilih",
      "t": "Kuasa dua suatu nombor ditambah 3 ialah 19. Persamaan yang mewakili situasi ini ialah:",
      "p": [
-      "n<sup>2</sup> + 3 = 19",
       "(n + 3)<sup>2</sup> = 19",
+      "n<sup>2</sup> + 3 = 19",
       "2n + 3 = 19",
       "n<sup>2</sup> = 19 + 3"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Kuasa dua suatu nombor ialah n², dan ditambah 3 memberi n² + 3. Ia sama dengan 19."
     },
     {
-     "j": "nombor",
-     "t": "Kuasa dua suatu nombor positif ditambah 3 ialah 19. Cari nombor itu.",
-     "b": 4,
-     "tol": 0.01,
-     "u": "n² + 3 = 19, jadi n² = 16 dan n = 4 kerana nombor itu positif."
+     "j": "pilih",
+     "t": "Seorang murid menyelesaikan n² + 3 = 19 dengan menulis n² = 16, kemudian n = 8 kerana 16 ÷ 2 = 8. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menambah 3 pada 19 sebelum mengambil punca kuasa dua",
+      "Dia sepatutnya menolak 3 selepas mengambil punca kuasa dua",
+      "Dia membahagi 16 dengan 2, sedangkan punca kuasa dua bagi 16 ialah 4",
+      "Tiada kesilapan kerana kuasa dua bermaksud darab dengan 2"
+     ],
+     "b": 2,
+     "u": "n² = 19 − 3 = 16. Punca kuasa dua: n = √16 = 4. Semak: 4² + 3 = 19. Kuasa dua ialah n × n, bukan n × 2."
     },
     {
      "j": "pilih",
      "t": "Luas petak ialah A = s². Jika A = 49 dan s positif, nilai s ialah:",
      "p": [
       "24.5",
-      "7",
       "98",
-      "49"
+      "49",
+      "7"
      ],
-     "b": 1,
+     "b": 3,
      "u": "7 × 7 = 49, jadi s = 7."
     },
     {
      "j": "nombor",
      "t": "Sebuah kolam segi empat sama mempunyai luas 81 m². Berapakah panjang sisinya (m)?",
      "b": 9,
-     "tol": 0.01,
-     "u": "A = s², jadi s = √81 = 9."
+     "tol": 0.001000000001,
+     "u": "Guna luas petak A = s². Maka s = √A. Ganti A = 81: s = √81 = 9 m."
     },
     {
      "j": "pilih",
      "t": "Jadikan s perkara rumus bagi A = s² (s positif).",
      "p": [
+      "s = √A",
       "s = A / 2",
       "s = 2A",
-      "s = √A",
       "s = A<sup>2</sup>"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Ambil punca kuasa dua kedua-dua belah: √A = s, jadi s = √A."
     },
     {
@@ -646,11 +656,11 @@ window.BANK["m2b3"] =
      "t": "Dalam Rajah 1, mengapakah n = −4 juga memenuhi n² = 16?",
      "p": [
       "Kerana −4 lebih kecil daripada 4",
+      "Kerana (−4) × (−4) = 16",
       "Kerana 16 ialah nombor negatif",
-      "Kerana kuasa dua sentiasa negatif",
-      "Kerana (−4) × (−4) = 16"
+      "Kerana kuasa dua sentiasa negatif"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Nombor negatif didarab dengan nombor negatif memberi hasil positif, jadi (−4)² = 16."
     }
    ],

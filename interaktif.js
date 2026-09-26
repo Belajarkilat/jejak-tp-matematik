@@ -507,7 +507,15 @@
     var wd = W[spec.w]; if (!wd || spec.kunci) return;
     var s = keadaan(spec), kotakSvg = fig.querySelector(".jmi-svg");
     var panel = document.createElement("div"); panel.className = "jmi-kawal";
-    function lukisSemula() { kotakSvg.innerHTML = wd.lukis(spec, s); }
+    /* Pembaca skrin: nyatakan keadaan rajah selepas gelongsor berhenti (perihal rajah ialah aria-label svg). */
+    var siar = document.createElement("div"); siar.className = "sr-sahaja"; siar.setAttribute("aria-live", "polite"); siar.setAttribute("role", "status");
+    fig.appendChild(siar);
+    var siarMasa = 0;
+    function lukisSemula() {
+      kotakSvg.innerHTML = wd.lukis(spec, s);
+      clearTimeout(siarMasa);
+      siarMasa = setTimeout(function () { var sv = kotakSvg.querySelector("svg"); if (sv) siar.textContent = sv.getAttribute("aria-label") || ""; }, 500);
+    }
     wd.kawalan(spec).forEach(function (k) {
       var baris = document.createElement("div"); baris.className = "jmi-baris";
       var lbl = document.createElement("span"); lbl.className = "jmi-label";

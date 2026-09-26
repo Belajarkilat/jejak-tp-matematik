@@ -91,3 +91,5 @@ body.conteng-buka{padding-bottom:46vh}
 .jmi-label b{color:var(--dunia-gelap,var(--vena))}
 :root[data-theme="dark"] .jmi-label b{color:var(--tinta)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jmi-label b{color:var(--tinta)}}
+
+.numrow .tanda{min-width:48px;min-height:48px;font-size:22px;font-weight:700;padding:0 12px}

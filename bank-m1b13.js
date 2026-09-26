@@ -99,7 +99,7 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 3 cm dan b = 4 cm. Berapakah luas petak pada sisi a (cm²)?",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas petak = 3 × 3 = 9 cm²."
     },
@@ -107,8 +107,8 @@ window.BANK["m1b13"] =
      "j": "pilih",
      "t": "Sebuah segi tiga bersudut tegak mempunyai berapa hipotenus?",
      "p": [
-      "Dua sahaja",
-      "Tiga sahaja",
+      "Dua",
+      "Tiga",
       "Bergantung pada saiznya",
       "Satu"
      ],
@@ -192,7 +192,7 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 3 cm dan b = 4 cm. Berapakah jumlah luas petak hijau dan petak merah (cm²)?",
      "b": 25,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "9 + 16 = 25 cm², sama dengan luas petak ungu."
     },
@@ -200,7 +200,7 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 6 cm dan b = 8 cm. Berapakah luas petak pada hipotenus (cm²)?",
      "b": 100,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas petak hipotenus = 36 + 64 = 100 cm²."
     },
@@ -244,7 +244,7 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 5 cm dan b = 12 cm. Berapakah nilai c² (cm²)?",
      "b": 169,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "c² = 25 + 144 = 169 cm²."
     },
@@ -282,7 +282,7 @@ window.BANK["m1b13"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, tetapkan a = 6 cm dan b = 8 cm. Berapakah panjang hipotenus c (cm)?",
     "b": 10,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm",
     "u": "c² = 36 + 64 = 100, jadi c = 10 cm."
    }
@@ -303,49 +303,49 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 3 cm dan b = 4 cm. Berapakah panjang hipotenus (cm)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "c² = 9 + 16 = 25, jadi c = 5 cm."
+     "u": "Guna c² = a² + b². Ganti: c² = 3² + 4² = 9 + 16 = 25. Maka c = √25 = 5 cm."
     },
     {
      "j": "nombor",
      "t": "Sebuah segi tiga bersudut tegak mempunyai sisi 5 cm dan 12 cm. Berapakah panjang hipotenus (cm)?",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "c² = 25 + 144 = 169, jadi c = 13 cm."
+     "u": "Guna c² = a² + b². Ganti: c² = 5² + 12² = 25 + 144 = 169. Maka c = √169 = 13 cm."
     },
     {
      "j": "nombor",
      "t": "Hipotenus sebuah segi tiga bersudut tegak ialah 10 cm dan satu sisi lagi 6 cm. Berapakah panjang sisi yang ketiga (cm)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Sisi² = 100 − 36 = 64, jadi sisi = 8 cm."
+     "u": "Guna a² = c² − b². Ganti: 10² − 6² = 100 − 36 = 64. Maka sisi = √64 = 8 cm."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi tiga 8-15-17 dan cari sisi a jika b = 15 cm dan c = 17 cm. Berapakah a (cm)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "a² = 289 − 225 = 64, jadi a = 8 cm."
+     "u": "Guna a² = c² − b². Ganti: 17² − 15² = 289 − 225 = 64. Maka a = √64 = 8 cm."
     },
     {
      "j": "nombor",
      "t": "Dua sisi pendek sebuah segi tiga bersudut tegak masing-masing 1 cm. Berapakah panjang hipotenus, kepada 2 tempat perpuluhan (cm)?",
      "b": 1.41,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
-     "u": "c² = 1 + 1 = 2, jadi c = 1.41 cm."
+     "u": "Guna c² = a² + b². Ganti: c² = 1² + 1² = 2. Maka c = √2 = 1.41 cm (2 t.p.)."
     },
     {
      "j": "nombor",
      "t": "Dua sisi pendek sebuah segi tiga bersudut tegak ialah 4 cm dan 6 cm. Berapakah hipotenus, kepada 2 tempat perpuluhan (cm)?",
      "b": 7.21,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
-     "u": "c² = 16 + 36 = 52, jadi c = 7.21 cm."
+     "u": "Guna c² = a² + b². Ganti: c² = 4² + 6² = 16 + 36 = 52. Maka c = √52 = 7.21 cm (2 t.p.)."
     },
     {
      "j": "pilih",
@@ -357,7 +357,7 @@ window.BANK["m1b13"] =
       "a² = b² − c²"
      ],
      "b": 2,
-     "u": "Daripada c² = a² + b², tolak b² pada kedua-dua belah."
+     "u": "Daripada c² = a² + b², tolak b² pada kedua-dua belah: a² = c² − b². Kemudian ambil punca kuasa dua."
     },
     {
      "j": "pilih",
@@ -369,16 +369,16 @@ window.BANK["m1b13"] =
       "Ya, kerana 6² + 8² = 10²"
      ],
      "b": 3,
-     "u": "36 + 64 = 100, sama dengan 10². Ini akas Teorem Pythagoras."
+     "u": "6² + 8² = 36 + 64 = 100, sama dengan 10². Kuasa dua sisi terpanjang sama dengan jumlah kuasa dua dua sisi lain, jadi ia bersudut tegak (akas Teorem Pythagoras)."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Dalam Rajah 1, pilih segi tiga 7-24-25 dan cari sisi b jika a = 7 cm dan c = 25 cm. Berapakah b (cm)?",
     "b": 24,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm",
-    "u": "b² = 625 − 49 = 576, jadi b = 24 cm."
+    "u": "Guna b² = c² − a². Ganti: 25² − 7² = 625 − 49 = 576. Maka b = √576 = 24 cm."
    }
   },
   {
@@ -397,57 +397,57 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tangga 10 m diletakkan dengan kakinya 6 m dari dinding. Berapakah tinggi tangga mencecah dinding (m)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "h² = 100 − 36 = 64, jadi h = 8 m."
+     "u": "Tangga ialah hipotenus. Guna h² = c² − b². Ganti: 10² − 6² = 100 − 36 = 64. Maka h = √64 = 8 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, kaki tangga 10 m dialihkan 8 m dari dinding. Berapakah tinggi tangga mencecah dinding (m)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "h² = 100 − 64 = 36, jadi h = 6 m."
+     "u": "Guna h² = c² − b². Ganti: 10² − 8² = 100 − 64 = 36. Maka h = √36 = 6 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, kaki tangga 10 m berada 3 m dari dinding. Berapakah tinggi tangga mencecah dinding, kepada 2 tempat perpuluhan (m)?",
      "b": 9.54,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "m",
-     "u": "h² = 100 − 9 = 91, jadi h = 9.54 m."
+     "u": "Guna h² = c² − b². Ganti: 10² − 3² = 100 − 9 = 91. Maka h = √91 = 9.54 m (2 t.p.)."
     },
     {
      "j": "nombor",
      "t": "Sebatang tangga 13 m bersandar pada dinding dengan kaki tangga 5 m dari dinding. Berapakah tinggi tangga mencecah dinding (m)?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "h² = 169 − 25 = 144, jadi h = 12 m."
+     "u": "Guna h² = c² − b². Ganti: 13² − 5² = 169 − 25 = 144. Maka h = √144 = 12 m."
     },
     {
      "j": "nombor",
      "t": "Tali layang-layang sepanjang 25 m tegang lurus. Layang-layang itu berada 24 m tinggi. Berapakah jarak mengufuk pemegang layang-layang dari titik di bawahnya (m)?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Jarak² = 625 − 576 = 49, jadi jarak = 7 m."
+     "u": "Tali ialah hipotenus. Jarak² = 25² − 24² = 625 − 576 = 49. Maka jarak = √49 = 7 m."
     },
     {
      "j": "nombor",
      "t": "Sebuah padang bola berbentuk segi empat tepat berukuran 40 m × 30 m. Berapakah panjang pepenjuru padang itu (m)?",
      "b": 50,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Pepenjuru² = 1 600 + 900 = 2 500, jadi pepenjuru = 50 m."
+     "u": "Pepenjuru ialah hipotenus. Pepenjuru² = 40² + 30² = 1 600 + 900 = 2 500. Maka pepenjuru = √2 500 = 50 m."
     },
     {
      "j": "nombor",
      "t": "Aiman berjalan 8 km ke utara, kemudian 15 km ke timur. Berapakah jarak terus dia dari tempat mula (km)?",
      "b": 17,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km",
-     "u": "Jarak² = 64 + 225 = 289, jadi jarak = 17 km."
+     "u": "Utara dan timur bersudut tegak. Jarak² = 8² + 15² = 64 + 225 = 289. Maka jarak = √289 = 17 km."
     },
     {
      "j": "pilih",
@@ -459,16 +459,16 @@ window.BANK["m1b13"] =
       "20 cm"
      ],
      "b": 0,
-     "u": "Pepenjuru² = 6 400 + 3 600 = 10 000, jadi pepenjuru = 100 cm."
+     "u": "Pepenjuru² = 80² + 60² = 6 400 + 3 600 = 10 000. Maka pepenjuru = √10 000 = 100 cm."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Nadia berjalan 12 m ke barat, kemudian 5 m ke selatan. Berapakah jarak terus dia dari tempat mula (m)?",
     "b": 13,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "m",
-    "u": "Jarak² = 144 + 25 = 169, jadi jarak = 13 m."
+    "u": "Barat dan selatan bersudut tegak. Jarak² = 12² + 5² = 144 + 25 = 169. Maka jarak = √169 = 13 m."
    }
   },
   {
@@ -487,60 +487,64 @@ window.BANK["m1b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, rumah berukuran 6 × 4 m (lebar × tinggi bumbung). Berapakah panjang kasau s (m)?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Separuh lebar = 3 m. s² = 9 + 16 = 25, jadi s = 5 m."
+     "u": "Separuh lebar = 6 ÷ 2 = 3 m. Guna s² = 3² + 4² = 9 + 16 = 25. Maka s = 5 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih rumah berukuran 10 × 12 m. Berapakah panjang kasau s (m)?",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Separuh lebar = 5 m. s² = 25 + 144 = 169, jadi s = 13 m."
+     "u": "Separuh lebar = 10 ÷ 2 = 5 m. Guna s² = 5² + 12² = 25 + 144 = 169. Maka s = 13 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih rumah berukuran 16 × 6 m dengan dinding t = 3 m. Berapakah perimeter rumah (w + 2t + 2s) dalam m?",
      "b": 42,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Separuh lebar = 8. s² = 64 + 36 = 100, jadi s = 10. Perimeter = 16 + 6 + 20 = 42 m."
+     "u": "Separuh lebar = 16 ÷ 2 = 8. s² = 8² + 6² = 64 + 36 = 100, jadi s = 10. Perimeter = w + 2t + 2s = 16 + 6 + 20 = 42 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih rumah berukuran 12 × 8 m dengan dinding t = 3 m. Berapakah perimeter rumah (m)?",
      "b": 38,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Separuh lebar = 6. s² = 36 + 64 = 100, jadi s = 10. Perimeter = 12 + 6 + 20 = 38 m."
+     "u": "Separuh lebar = 12 ÷ 2 = 6. s² = 6² + 8² = 36 + 64 = 100, jadi s = 10. Perimeter = 12 + 6 + 20 = 38 m."
     },
     {
      "j": "nombor",
      "t": "Sebuah trapezium sama kaki mempunyai sisi selari 10 cm dan 16 cm, dan tinggi 8 cm. Berapakah panjang sisi condongnya, kepada 2 tempat perpuluhan (cm)?",
      "b": 8.54,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
-     "u": "Beza sisi selari ÷ 2 = (16 − 10) ÷ 2 = 3 cm. Sisi condong² = 9 + 64 = 73, jadi sisi condong = 8.54 cm."
+     "u": "Beza sisi selari ÷ 2 = (16 − 10) ÷ 2 = 3 cm. Sisi condong² = 3² + 8² = 9 + 64 = 73. Maka sisi condong = √73 = 8.54 cm."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah segi tiga sama kaki mempunyai tapak 24 cm dan tinggi 5 cm. Berapakah panjang setiap sisi yang sama (cm)?",
-     "b": 13,
-     "tol": 0.01,
-     "suf": "cm",
-     "u": "Separuh tapak = 12 cm. Sisi² = 144 + 25 = 169, jadi sisi = 13 cm."
+     "j": "pilih",
+     "t": "Segi tiga bersudut tegak mempunyai hipotenus c = 10 cm dan satu sisi b = 6 cm. Seorang murid mencari sisi a dengan a² = 10² + 6². Apakah kesilapannya?",
+     "p": [
+      "Sepatutnya a² = b² − c² kerana b lebih kecil",
+      "Sepatutnya a² = c² − b² kerana c ialah hipotenus",
+      "Sepatutnya a = c − b kerana sisi ditolak",
+      "Tiada kesilapan kerana kuasa dua sentiasa dijumlahkan"
+     ],
+     "b": 1,
+     "u": "Hipotenus c ialah sisi terpanjang, jadi c² = a² + b². Untuk mencari sisi pendek: a² = c² − b² = 100 − 36 = 64, maka a = 8 cm."
     },
     {
      "j": "pilih",
      "t": "Sebuah segi tiga mempunyai sisi 9 cm, 12 cm dan 16 cm. Adakah ia bersudut tegak?",
      "p": [
       "Ya, kerana 9² + 12² = 16²",
-      "Tidak, kerana 9² + 12² = 225 tetapi 16² = 256",
       "Ya, kerana 9 + 12 lebih besar daripada 16",
+      "Tidak, kerana 9² + 12² = 225 tetapi 16² = 256",
       "Tidak, kerana 16 bukan nombor genap"
      ],
-     "b": 1,
+     "b": 2,
      "u": "81 + 144 = 225, tetapi 16² = 256. Nilai tidak sama, jadi ia bukan segi tiga bersudut tegak."
     },
     {
@@ -549,10 +553,10 @@ window.BANK["m1b13"] =
      "p": [
       "Tidak, kerana 60 + 80 = 140",
       "Tidak, kerana 100 lebih besar daripada 80",
-      "Ya, kerana 60² + 80² = 100²",
-      "Ya, kerana semua ukuran nombor bulat"
+      "Ya, kerana semua ukuran nombor bulat",
+      "Ya, kerana 60² + 80² = 100²"
      ],
-     "b": 2,
+     "b": 3,
      "u": "3 600 + 6 400 = 10 000 = 100². Maka bucu itu sudut tegak."
     }
    ],
@@ -560,9 +564,9 @@ window.BANK["m1b13"] =
     "j": "nombor",
     "t": "Dalam trapezium ABCD, AB selari dengan DC dan sudut A ialah sudut tegak. AB = 12 cm, DC = 20 cm dan AD = 15 cm. Berapakah panjang BC (cm)?",
     "b": 17,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm",
-    "u": "Lukis garis dari B ke DC supaya terbentuk segi tiga bersudut tegak. Sisi mengufuk = 20 − 12 = 8 cm dan sisi tegak = 15 cm. BC² = 64 + 225 = 289, jadi BC = 17 cm."
+    "u": "Lukis garis dari B ke DC supaya terbentuk segi tiga bersudut tegak. Sisi mengufuk = 20 − 12 = 8 cm dan sisi tegak = AD = 15 cm. BC² = 8² + 15² = 64 + 225 = 289. Maka BC = 17 cm."
    }
   },
   {
@@ -581,56 +585,60 @@ window.BANK["m1b13"] =
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih sisi 4, 5, 6. Adakah segi tiga itu bersudut tegak?",
      "p": [
+      "Tidak, kerana 4² + 5² = 41 dan 6² = 36",
       "Ya, kerana 4² + 5² = 6²",
       "Ya, kerana 4 + 5 lebih besar daripada 6",
-      "Tidak, kerana ia tiada sisi sama panjang",
-      "Tidak, kerana 4² + 5² = 41 dan 6² = 36"
+      "Tidak, kerana ia tiada sisi sama panjang"
      ],
-     "b": 3,
+     "b": 0,
      "u": "16 + 25 = 41 tetapi 6² = 36. Nilai tidak sama, jadi tidak bersudut tegak."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih sisi 8, 15, 17. Adakah segi tiga itu bersudut tegak?",
      "p": [
-      "Ya, kerana 8² + 15² = 17²",
       "Tidak, kerana 8 + 15 tidak sama dengan 17",
+      "Ya, kerana 8² + 15² = 17²",
       "Tidak, kerana 17 ialah nombor ganjil",
       "Ya, kerana 8 + 15 = 17"
      ],
-     "b": 0,
-     "u": "64 + 225 = 289 = 17². Maka ia bersudut tegak."
+     "b": 1,
+     "u": "8² + 15² = 64 + 225 = 289 = 17². Kuasa dua sisi terpanjang sama dengan jumlah kuasa dua dua sisi lain, maka ia bersudut tegak."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, pilih sisi 7, 8, 10. Bandingkan 7² + 8² dengan 10². Apakah kesimpulannya?",
      "p": [
       "113 dan 100 sama, jadi bersudut tegak",
-      "113 lebih besar daripada 100, jadi bukan bersudut tegak",
       "100 lebih besar daripada 113, jadi bersudut tegak",
+      "113 lebih besar daripada 100, jadi bukan bersudut tegak",
       "Tidak boleh dibandingkan"
      ],
-     "b": 1,
+     "b": 2,
      "u": "49 + 64 = 113 tetapi 10² = 100. Nilainya tidak sama, jadi bukan segi tiga bersudut tegak."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah segi tiga bersudut tegak mempunyai hipotenus 20 cm dan satu sisi 12 cm. Berapakah sisi yang ketiga (cm)?",
-     "b": 16,
-     "tol": 0.01,
-     "suf": "cm",
-     "u": "Sisi² = 400 − 144 = 256, jadi sisi = 16 cm."
+     "j": "pilih",
+     "t": "Seorang murid menyemak segi tiga bersisi 5, 12 dan 13 dengan menulis 5² + 13² = 12². Apakah kesilapannya?",
+     "p": [
+      "Hipotenus ialah 5, jadi 12² + 13² = 5²",
+      "Sisi perlu ditambah tanpa dikuasaduakan: 5 + 12 = 13",
+      "Tiada kesilapan, susunan sisi tidak penting",
+      "Kuasa dua sisi terpanjang perlu berada berasingan: 5² + 12² = 13²"
+     ],
+     "b": 3,
+     "u": "Hipotenus ialah sisi terpanjang (13), jadi 13² berada di sebelah lain: 5² + 12² = 25 + 144 = 169 = 13². Jika sisi terpanjang ditukar tempat, persamaan tidak lagi benar."
     },
     {
      "j": "pilih",
      "t": "Zul berkata segi tiga dengan sisi 2, 3 dan 4 bersudut tegak kerana 2 + 3 lebih besar daripada 4. Apakah kesilapan Zul?",
      "p": [
+      "Dia sepatutnya menyemak 2² + 3² = 4²",
       "Dia sepatutnya menyemak 2 + 3 = 4",
       "Dia sepatutnya menyemak 2² + 4² = 3²",
-      "Dia sepatutnya menyemak 2² + 3² = 4²",
       "Tiada kesilapan"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Akas Teorem Pythagoras menggunakan kuasa dua. 4 + 9 = 13 tetapi 4² = 16, jadi segi tiga itu tidak bersudut tegak."
     },
     {
@@ -638,32 +646,32 @@ window.BANK["m1b13"] =
      "t": "Segi tiga dengan sisi 3, 4 dan 5 cm ialah bersudut tegak. Adakah segi tiga dengan sisi 30, 40 dan 50 cm juga bersudut tegak?",
      "p": [
       "Tidak, kerana 30 bukan 3",
+      "Ya, kerana 900 + 1 600 = 2 500",
       "Tidak, kerana sisinya lebih besar",
-      "Ya, kerana 30 + 40 = 70",
-      "Ya, kerana 900 + 1 600 = 2 500"
+      "Ya, kerana 30 + 40 = 70"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Semua sisi didarab 10, dan 900 + 1 600 = 2 500 = 50². Bentuknya sama, cuma lebih besar."
     },
     {
      "j": "nombor",
      "t": "Sebuah bingkai pintu berbentuk segi empat tepat berukuran 1.5 m × 2 m. Berapakah panjang pepenjuru yang sepatutnya, supaya bucu bingkai tepat sudut tegak (m)?",
      "b": 2.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "m",
-     "u": "Pepenjuru² = 2.25 + 4 = 6.25, jadi pepenjuru = 2.5 m."
+     "u": "Pepenjuru ialah hipotenus. Pepenjuru² = 1.5² + 2² = 2.25 + 4 = 6.25. Maka pepenjuru = √6.25 = 2.5 m."
     },
     {
      "j": "pilih",
      "t": "Antara set tiga sisi berikut, yang manakah membentuk segi tiga bersudut tegak?",
      "p": [
-      "5, 12, 13",
       "6, 7, 8",
       "4, 5, 7",
+      "5, 12, 13",
       "8, 9, 10"
      ],
-     "b": 0,
-     "u": "25 + 144 = 169 = 13². Set lain tidak memenuhi hubungan itu."
+     "b": 2,
+     "u": "5² + 12² = 25 + 144 = 169 = 13². Ketiga-tiga set lain tidak memenuhi a² + b² = c²."
     }
    ],
    "bos": {

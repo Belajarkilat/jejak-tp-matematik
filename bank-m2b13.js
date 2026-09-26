@@ -99,14 +99,14 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'nombor genap'. Berapakah n(A), bilangan kesudahan dalam peristiwa A?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nombor genap dalam ruang sampel ialah 2, 4 dan 6, jadi n(A) = 3."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'nombor perdana'. Berapakah n(A)?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nombor perdana dalam S ialah 2, 3 dan 5. Nombor 1 bukan perdana."
     },
     {
@@ -186,7 +186,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah bilangan kesudahan dalam ruang sampel S, iaitu n(S)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Syiling ada 2 kesudahan dan pemutar ada 3, jadi n(S) = 2 × 3 = 6."
     },
     {
@@ -205,7 +205,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'ekor dan ganjil'. Berapakah n(A)?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ekor dengan ganjil ialah E1 dan E3, jadi n(A) = 2."
     },
     {
@@ -260,7 +260,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Sebiji syiling dibaling, kemudian sebiji dadu dibaling. Berapakah n(S) bagi eksperimen ini?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2 kesudahan syiling darab 6 kesudahan dadu memberi 12."
     }
    ],
@@ -268,7 +268,7 @@ window.BANK["m2b13"] =
     "j": "nombor",
     "t": "Tiga syiling dibaling serentak. Berapakah bilangan kesudahan dalam ruang sampel?",
     "b": 8,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Setiap syiling ada 2 kesudahan, jadi 2 × 2 × 2 = 8."
    }
   },
@@ -300,21 +300,21 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Sebiji dadu dibaling 50 kali. Nombor genap muncul 22 kali. Berapakah kekerapan relatif nombor genap (perpuluhan)?",
      "b": 0.44,
-     "tol": 0.001,
-     "u": "22 ÷ 50 = 0.44."
+     "tol": 0.001000000001,
+     "u": "Kekerapan relatif = bilangan kejadian ÷ bilangan cubaan. Ganti: 22 ÷ 50 = 0.44."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan cubaan 1000 dan larian ke-1. Berapakah bilangan kejadian nombor genap?",
      "b": 479,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pada 1000 cubaan larian ke-1, nombor genap muncul 479 kali."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan cubaan 1000 dan larian ke-3. Berapakah bilangan kejadian nombor genap?",
      "b": 515,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Larian ke-3 pada 1000 cubaan mencatat 515 kejadian."
     },
     {
@@ -345,8 +345,8 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Sebuah pemutar diputar 200 kali dan warna merah muncul 62 kali. Anggarkan kebarangkalian eksperimen mendapat merah (perpuluhan).",
      "b": 0.31,
-     "tol": 0.001,
-     "u": "62 ÷ 200 = 0.31."
+     "tol": 0.001000000001,
+     "u": "Kebarangkalian eksperimen = bilangan kejadian ÷ bilangan cubaan. Ganti: 62 ÷ 200 = 0.31."
     },
     {
      "j": "susun",
@@ -370,7 +370,7 @@ window.BANK["m2b13"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, tetapkan cubaan 500 dan larian ke-2. Berapakah bilangan kejadian nombor genap?",
     "b": 247,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Pada 500 cubaan larian ke-2, nombor genap muncul 247 kali."
    }
   },
@@ -390,7 +390,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'nombor perdana'. Kira P(A) sebagai perpuluhan.",
      "b": 0.5,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "Nombor perdana dalam 1 hingga 8 ialah 2, 3, 5 dan 7. P(A) = 4/8 = 0.5."
     },
     {
@@ -421,7 +421,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'lebih daripada 5'. Kira P(A) sebagai perpuluhan.",
      "b": 0.375,
-     "tol": 0.001,
+     "tol": 0.0005000000005,
      "u": "Nombor lebih daripada 5 ialah 6, 7 dan 8, jadi P(A) = 3/8 = 0.375."
     },
     {
@@ -440,8 +440,8 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Sebuah kotak berisi 20 batang pen, dan 6 daripadanya berwarna merah. Sebatang pen dipilih secara rawak. Kira P(merah) sebagai perpuluhan.",
      "b": 0.3,
-     "tol": 0.001,
-     "u": "6 ÷ 20 = 0.3."
+     "tol": 0.001000000001,
+     "u": "P(merah) = bilangan pen merah ÷ jumlah pen. Ganti: 6 ÷ 20 = 0.3."
     },
     {
      "j": "pilih",
@@ -459,15 +459,15 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam sebuah kelas yang ada 40 orang murid, 14 orang datang ke sekolah dengan bas. Seorang murid dipilih secara rawak. Kira P(murid itu naik bas) sebagai perpuluhan.",
      "b": 0.35,
-     "tol": 0.001,
-     "u": "14 ÷ 40 = 0.35."
+     "tol": 0.001000000001,
+     "u": "P(naik bas) = bilangan murid naik bas ÷ jumlah murid. Ganti: 14 ÷ 40 = 0.35."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Sebuah beg mengandungi 4 bola merah, 6 bola hijau dan x bola kuning. Jika P(kuning) = 1/3, berapakah nilai x?",
     "b": 5,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "x ÷ (10 + x) = 1/3, jadi 3x = 10 + x. Maka 2x = 10 dan x = 5. Semak: 5/15 = 1/3."
    }
   },
@@ -499,7 +499,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'merah'. Kira P(A') sebagai perpuluhan.",
      "b": 0.5,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "n(A) = 5 daripada 10, jadi P(A) = 0.5 dan P(A') = 1 − 0.5 = 0.5."
     },
     {
@@ -518,7 +518,7 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'merah atau hijau'. Berapakah n(A'), iaitu bilangan guli dalam A'?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "A' ialah guli kuning sahaja, jadi n(A') = 10 − 5 − 3 = 2."
     },
     {
@@ -537,8 +537,8 @@ window.BANK["m2b13"] =
      "j": "nombor",
      "t": "Kebarangkalian hujan esok ialah 0.35. Berapakah kebarangkalian tidak hujan?",
      "b": 0.65,
-     "tol": 0.001,
-     "u": "P(tidak hujan) = 1 − 0.35 = 0.65."
+     "tol": 0.001000000001,
+     "u": "Guna P(A′) = 1 − P(A). Ganti: 1 − 0.35 = 0.65."
     },
     {
      "j": "pilih",
@@ -553,11 +553,16 @@ window.BANK["m2b13"] =
      "u": "Kebarangkalian sentiasa antara 0 dan 1, jadi 1.2 tidak mungkin."
     },
     {
-     "j": "nombor",
-     "t": "Dalam suatu jualan, kebarangkalian seorang pelanggan membeli ialah 3/8. Cari kebarangkalian pelanggan tidak membeli sebagai perpuluhan.",
-     "b": 0.625,
-     "tol": 0.001,
-     "u": "P(tidak membeli) = 1 − 3/8 = 5/8 = 0.625."
+     "j": "pilih",
+     "t": "Seorang murid berkata jika P(A) = 3/8 maka P(A′) = 3/8 juga. Apakah kesilapannya?",
+     "p": [
+      "P(A′) = 8/3 kerana kebalikan bagi 3/8",
+      "P(A) + P(A′) = 1, jadi P(A′) = 1 − 3/8 = 5/8",
+      "P(A′) = −3/8 kerana A′ bermaksud bertentangan dengan A",
+      "Tiada kesilapan kerana peristiwa dan pelengkapnya mempunyai nilai sama"
+     ],
+     "b": 1,
+     "u": "A dan A′ meliputi semua kesudahan tanpa bertindih, jadi P(A) + P(A′) = 1. P(A′) = 1 − 3/8 = 8/8 − 3/8 = 5/8. Kebarangkalian tidak boleh negatif atau lebih daripada 1."
     }
    ],
    "bos": {
@@ -596,11 +601,11 @@ window.BANK["m2b13"] =
      "t": "Dalam Rajah 1, pilih peristiwa 'dadu 7'. Penanda P(A) berada di:",
      "p": [
       "1, peristiwa yang pasti berlaku",
-      "0, peristiwa mustahil",
       "0.5, sama mungkin berlaku",
+      "0, peristiwa mustahil",
       "0.25, agak jarang berlaku"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Tiada nombor 7 pada dadu, jadi P(A) = 0/6 = 0."
     },
     {
@@ -609,51 +614,56 @@ window.BANK["m2b13"] =
      "p": [
       "Mustahil, P(A) = 0",
       "Berlaku separuh masa",
-      "Pasti berlaku, P(A) = 1",
-      "Berlaku 1 daripada 6 kali"
+      "Berlaku 1 daripada 6 kali",
+      "Pasti berlaku, P(A) = 1"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Semua enam nombor dadu kurang daripada 7, jadi P(A) = 6/6 = 1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih peristiwa 'As dalam 52 kad'. P(A) = 4/52. Cari P(A') sebagai perpuluhan, kepada 3 tempat perpuluhan.",
      "b": 0.923,
-     "tol": 0.001,
-     "u": "P(A') = 1 − 4/52 = 48/52 = 12/13 = 0.923."
+     "tol": 0.0005000000005,
+     "u": "Guna P(A′) = 1 − P(A). Ganti: 1 − 4/52 = 48/52 = 12/13 = 0.923."
     },
     {
      "j": "pilih",
      "t": "Peristiwa yang sama mungkin berlaku atau tidak berlaku mempunyai kebarangkalian:",
      "p": [
+      "0.5",
       "0.25",
       "0.75",
-      "0.05",
-      "0.5"
+      "0.05"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Peluang berlaku sama dengan peluang tidak berlaku, jadi kebarangkaliannya ialah 0.5."
     },
     {
      "j": "nombor",
      "t": "Sebuah pemutar mempunyai 8 sektor sama besar: 3 merah, 2 biru dan selebihnya hijau. Kira P(hijau) sebagai perpuluhan.",
      "b": 0.375,
-     "tol": 0.001,
+     "tol": 0.0005000000005,
      "u": "Sektor hijau = 8 − 3 − 2 = 3. P(hijau) = 3/8 = 0.375."
     },
     {
      "j": "nombor",
      "t": "Sekeping kad dipilih secara rawak daripada 40 keping kad bernombor 1 hingga 40. Kira P(gandaan 5) sebagai perpuluhan.",
      "b": 0.2,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "Gandaan 5 ada 8 (5, 10, ..., 40). P = 8/40 = 0.2."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah beg mengandungi 12 biji guli. P(biru) = 1/3 dan P(merah) = 1/4, manakala selebihnya kuning. Berapakah bilangan guli kuning?",
-     "b": 5,
-     "tol": 0.01,
-     "u": "Biru = 12 × 1/3 = 4 dan merah = 12 × 1/4 = 3. Kuning = 12 − 4 − 3 = 5."
+     "j": "pilih",
+     "t": "Seorang murid berkata kebarangkalian mendapat nombor genap apabila dadu dibaling ialah 3/5 kerana ada 3 nombor genap antara 1 hingga 6. Apakah kesilapannya?",
+     "p": [
+      "Ruang sampel ada 3 kesudahan sahaja, jadi kebarangkalian ialah 3/3",
+      "Ruang sampel ada 6 kesudahan, bukan 5, jadi kebarangkalian ialah 3/6 = 1/2",
+      "Kebarangkalian mesti dibahagi 2, jadi jawapannya ialah 3/10",
+      "Tiada kesilapan kerana penyebut ialah bilangan nombor genap tambah 2"
+     ],
+     "b": 1,
+     "u": "P(genap) = n(genap) ÷ n(S) = 3 ÷ 6 = 1/2. Penyebut ialah bilangan semua kesudahan dadu, iaitu 6."
     },
     {
      "j": "susun",

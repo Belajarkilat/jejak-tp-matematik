@@ -99,21 +99,21 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Blok L dan pandangan Pelan. Berapakah bilangan petak yang dilindungi oleh pelan itu?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pelan Blok L berbentuk L dan mempunyai 4 petak."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Tangga kayu dan pandangan Depan. Berapakah bilangan petak dongakan depannya?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dongakan depan tangga berundak: 1 + 2 + 3 = 6 petak."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Menara dan pandangan Pelan. Berapakah bilangan petak pelannya?",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pelan Menara ialah segi empat sama 3 × 3, iaitu 9 petak."
     },
     {
@@ -181,14 +181,14 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Rumah kayu dan pandangan Depan. Berapakah bilangan petak dongakan depannya?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ketinggian lajur ialah 2, 3 dan 2, jadi 2 + 3 + 2 = 7 petak."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Rumah kayu dan pandangan Sisi. Berapakah bilangan petak dongakan sisinya?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dari sisi, rumah itu kelihatan sebagai segi empat tepat 2 petak lebar dan 3 petak tinggi, iaitu 6 petak."
     },
     {
@@ -255,7 +255,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah beza bilangan kubus antara Tangga kayu dan Blok bertakuk?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Tangga kayu ada 12 kubus dan Blok bertakuk ada 11 kubus, jadi bezanya 1 kubus."
     }
    ],
@@ -288,7 +288,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, satu petak mewakili 5 cm. Pilih objek Meja. Berapakah lebar sebenar meja itu (cm)?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Meja selebar 3 petak, jadi 3 × 5 = 15 cm."
     },
@@ -296,7 +296,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, satu petak mewakili 5 cm. Berapakah tinggi sebenar Meja (cm)?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Dongakan depan meja setinggi 3 petak, jadi 3 × 5 = 15 cm."
     },
@@ -304,7 +304,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, satu petak mewakili 5 cm. Berapakah kedalaman sebenar Meja (cm)?",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Pelan meja sedalam 2 petak, jadi 2 × 5 = 10 cm."
     },
@@ -312,7 +312,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Pelan Meja dalam Rajah 1 ialah 6 petak, setiap petak mewakili 5 cm × 5 cm. Berapakah luas pelan sebenar meja (cm²)?",
      "b": 150,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Setiap petak mewakili 25 cm², jadi 6 × 25 = 150 cm²."
     },
@@ -333,7 +333,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, satu petak mewakili 5 cm. Pilih objek Kerusi. Berapakah tinggi sebenar Kerusi (cm)?",
      "b": 25,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Kerusi setinggi 5 petak, jadi 5 × 5 = 25 cm."
     },
@@ -353,7 +353,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Lebar sebenar Meja ialah 15 cm. Berapakah lebar dongakan depan meja itu (cm) jika dilukis pada skala 1 : 5?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Panjang lukisan = 15 cm ÷ 5 = 3 cm."
     }
@@ -362,7 +362,7 @@ window.BANK["m3b7"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, satu petak mewakili 5 cm × 5 cm. Pilih objek Kerusi. Berapakah luas sebenar dongakan depan Kerusi (cm²)?",
     "b": 325,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm²",
     "u": "Dongakan depan Kerusi ialah 13 petak. Setiap petak 25 cm², jadi 13 × 25 = 325 cm²."
    }
@@ -419,21 +419,21 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, bayangkan dahulu, kemudian semak dengan rajah. Pilih objek Blok bertakuk dan pandangan Depan. Berapakah petak dongakan depannya?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dongakan depan Blok bertakuk ialah segi empat tepat 3 × 2 = 6 petak. Takuk di belakang tidak mengubah bentuk luarnya."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Blok bertakuk dan pandangan Sisi. Berapakah petak dongakan sisinya?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dari sisi, blok kelihatan 2 petak lebar dan 2 petak tinggi, iaitu 4 petak."
     },
     {
      "j": "nombor",
      "t": "Blok berongga dalam Rajah 1 berasal daripada blok penuh 3 × 2 × 2 kubus. Berapa kubus telah dikeluarkan?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Blok penuh mempunyai 3 × 2 × 2 = 12 kubus. Blok berongga ada 11, jadi 1 kubus dikeluarkan."
     },
     {
@@ -452,7 +452,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Meja dalam Rajah 1 diperoleh daripada blok penuh 3 × 2 × 3 kubus dengan sebahagian dikeluarkan. Berapa kubus dikeluarkan?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Blok penuh mempunyai 3 × 2 × 3 = 18 kubus. Meja ada 14, jadi 4 kubus dikeluarkan."
     }
    ],
@@ -488,14 +488,14 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, kira dahulu, kemudian semak dengan rajah. Pilih objek Menara. Berapakah jumlah kubus pada Menara?",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Lapan lajur tinggi 1 dan satu lajur tengah tinggi 3: 8 + 3 = 11 kubus."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Menara dan pandangan Depan. Berapakah petak dongakan depannya?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dongakan depan berbentuk T: 3 petak tapak dan 2 petak tambahan di tengah, jumlah 5 petak."
     },
     {
@@ -514,21 +514,21 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Rumah kayu. Berapakah jumlah kubusnya?",
      "b": 14,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pelan 3 × 2 dengan tinggi lajur 2, 3, 2 pada setiap baris: (2 + 3 + 2) × 2 = 14 kubus."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Kerusi. Berapakah jumlah kubusnya?",
      "b": 20,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Empat kaki 2 kubus setiap satu = 8, tempat duduk 3 × 2 = 6, dan penyandar 3 × 2 = 6. Jumlah 20 kubus."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih objek Kerusi dan pandangan Sisi. Berapakah petak dongakan sisinya?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dari sisi, kaki dan tempat duduk ialah 2 petak lebar × 3 petak tinggi = 6 petak. Penyandar 1 petak lebar × 2 petak tinggi = 2 petak. Jumlah 8 petak."
     },
     {
@@ -547,7 +547,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah beza bilangan kubus antara Kerusi dan Rumah kayu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kerusi ada 20 kubus dan Rumah kayu ada 14 kubus, jadi bezanya 6."
     }
    ],
@@ -555,7 +555,7 @@ window.BANK["m3b7"] =
     "j": "nombor",
     "t": "Menara dalam Rajah 1 ditambah satu kubus di atas setiap satu daripada empat lajur sudutnya. Berapakah jumlah kubus Menara yang baharu?",
     "b": 15,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Menara asal ada 11 kubus. Tambah 4 kubus di sudut, jumlah 15 kubus."
    }
   },
@@ -575,7 +575,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, setiap kubus kayu ialah 10 cm × 10 cm × 10 cm. Pilih objek Rumah kayu. Berapakah isi padu model itu (cm³)?",
      "b": 14000,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Rumah kayu ada 14 kubus. Setiap kubus 1 000 cm³, jadi 14 × 1 000 = 14 000 cm³."
     },
@@ -583,7 +583,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Setiap kubus 10 cm. Menara dalam Rajah 1 dicat pada semua muka luar termasuk bahagian bawah. Berapakah luas permukaan yang dicat (cm²)?",
      "b": 3800,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Menara mempunyai 38 muka kubus yang terdedah. Setiap muka 100 cm², jadi 38 × 100 = 3 800 cm²."
     },
@@ -591,14 +591,14 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Cat untuk model berharga RM0.50 bagi setiap 100 cm². Meja dalam Rajah 1 (kubus 10 cm) dicat pada semua muka termasuk bahagian bawah. Berapakah kos cat (RM)?",
      "b": 23,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Meja ada 46 muka kubus terdedah, iaitu 4 600 cm². Kos = 46 × RM0.50 = RM23."
     },
     {
      "j": "nombor",
      "t": "Sebiji kubus kayu berharga RM3. Berapakah kos kubus untuk membina Menara dalam Rajah 1 (RM)?",
      "b": 33,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Menara ada 11 kubus, jadi 11 × RM3 = RM33."
     },
     {
@@ -629,7 +629,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Setiap kubus 10 cm. Dongakan depan Rumah kayu dalam Rajah 1 dilukis sebenar pada papan. Berapakah luas papan yang diperlukan (cm²)?",
      "b": 700,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Dongakan depan ada 7 petak. Setiap petak 100 cm², jadi 7 × 100 = 700 cm²."
     },
@@ -637,7 +637,7 @@ window.BANK["m3b7"] =
      "j": "nombor",
      "t": "Setiap kubus 10 cm. Berapakah beza isi padu antara Rumah kayu dengan Menara dalam Rajah 1 (cm³)?",
      "b": 3000,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Rumah kayu 14 kubus dan Menara 11 kubus. Beza 3 kubus × 1 000 = 3 000 cm³."
     }

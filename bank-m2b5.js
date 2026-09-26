@@ -99,7 +99,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Jejari sebuah bulatan ialah 6 cm. Berapakah diameternya (cm)?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Diameter = 2 × jejari = 2 × 6 = 12 cm."
     },
@@ -107,7 +107,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Diameter sebuah roda ialah 70 cm. Berapakah jejarinya (cm)?",
      "b": 35,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Jejari = diameter ÷ 2 = 70 ÷ 2 = 35 cm."
     },
@@ -200,7 +200,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan d = 3 cm. Berapakah panjang AM (cm)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Dalam segi tiga OAM bersudut tegak, AM = √(5² − 3²) = √16 = 4 cm."
     },
@@ -208,7 +208,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan d = 3 cm. Berapakah panjang perentas AB (cm)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "AB = 2 × AM = 2 × 4 = 8 cm."
     },
@@ -216,7 +216,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan d = 4 cm. Berapakah panjang perentas AB (cm)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "AM = √(5² − 4²) = 3 cm, jadi AB = 2 × 3 = 6 cm."
     },
@@ -260,7 +260,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Sebuah perentas 16 cm berjarak 6 cm dari pusat bulatan. Berapakah jejari bulatan itu (cm)?",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Separuh perentas = 8 cm. Jejari = √(8² + 6²) = √100 = 10 cm."
     }
@@ -294,25 +294,25 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 7 cm. Berapakah lilitan bulatan (cm)? Guna π = 22/7.",
      "b": 44,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Lilitan = 2πj = 2 × 22/7 × 7 = 44 cm."
+     "u": "Guna lilitan = 2πj. Ganti j = 7 dan π = 22/7: 2 × 22/7 × 7 = 44 cm."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 7 cm. Berapakah luas bulatan (cm²)? Guna π = 22/7.",
      "b": 154,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = πj² = 22/7 × 7 × 7 = 154 cm²."
+     "u": "Guna luas = πj². Ganti j = 7: 22/7 × 7 × 7 = 22 × 7 = 154 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 14 cm. Berapakah lilitan bulatan (cm)? Guna π = 22/7.",
      "b": 88,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Lilitan = 2 × 22/7 × 14 = 88 cm."
+     "u": "Guna lilitan = 2πj. Ganti j = 14: 2 × 22/7 × 14 = 88 cm."
     },
     {
      "j": "pilih",
@@ -342,17 +342,17 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Lilitan sebuah roda basikal ialah 176 cm. Berapakah diameternya (cm)? Guna π = 22/7.",
      "b": 56,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Diameter = lilitan ÷ π = 176 ÷ 22/7 = 56 cm."
+     "u": "Guna lilitan = πd, jadi d = lilitan ÷ π. Ganti: 176 ÷ 22/7 = 176 × 7/22 = 56 cm."
     },
     {
      "j": "nombor",
      "t": "Berapakah luas bulatan berdiameter 28 cm (cm²)? Guna π = 22/7.",
      "b": 616,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Jejari = 14 cm. Luas = 22/7 × 14 × 14 = 616 cm²."
+     "u": "Diameter 28 cm, jadi jejari = 28 ÷ 2 = 14 cm. Luas = πj² = 22/7 × 14 × 14 = 616 cm²."
     },
     {
      "j": "pilih",
@@ -371,7 +371,7 @@ window.BANK["m2b5"] =
     "j": "nombor",
     "t": "Sebuah pizza bulat berdiameter 28 cm. Berapakah jumlah luas dua pizza yang sama saiz (cm²)? Guna π = 22/7.",
     "b": 1232,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm²",
     "u": "Luas satu pizza = 22/7 × 14 × 14 = 616 cm². Dua pizza = 2 × 616 = 1 232 cm²."
    }
@@ -392,7 +392,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 7 cm dan sudut 90°. Berapakah panjang lengkok (cm)? Guna π = 22/7.",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Lengkok = 90/360 × 2 × 22/7 × 7 = 1/4 × 44 = 11 cm."
     },
@@ -400,7 +400,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 7 cm dan sudut 90°. Berapakah luas sektor (cm²)? Guna π = 22/7.",
      "b": 38.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "cm²",
      "u": "Luas = 90/360 × 22/7 × 7 × 7 = 1/4 × 154 = 38.5 cm²."
     },
@@ -408,7 +408,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 14 cm dan sudut 60°. Berapakah panjang lengkok (cm) kepada 2 tempat perpuluhan? Guna π = 22/7.",
      "b": 14.67,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "Lengkok = 60/360 × 2 × 22/7 × 14 = 1/6 × 88 = 14.67 cm."
     },
@@ -416,7 +416,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 21 cm dan sudut 120°. Berapakah panjang lengkok (cm)? Guna π = 22/7.",
      "b": 44,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Lengkok = 120/360 × 2 × 22/7 × 21 = 1/3 × 132 = 44 cm."
     },
@@ -424,7 +424,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jejari 21 cm dan sudut 120°. Berapakah luas sektor (cm²)? Guna π = 22/7.",
      "b": 462,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas = 1/3 × 22/7 × 21 × 21 = 1/3 × 1 386 = 462 cm²."
     },
@@ -432,7 +432,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Sebuah sektor berjejari 7 cm mempunyai sudut pusat 240°. Berapakah perimeter sektor itu (cm) kepada 2 tempat perpuluhan? Guna π = 22/7.",
      "b": 43.33,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "Lengkok = 2/3 × 44 = 29.33 cm. Perimeter = lengkok + dua jejari = 29.33 + 14 = 43.33 cm."
     },
@@ -452,7 +452,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Panjang lengkok sebuah sektor ialah 22 cm dan jejarinya 21 cm. Berapakah sudut pusat sektor itu (°)? Guna π = 22/7.",
      "b": 60,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Lilitan penuh = 2 × 22/7 × 21 = 132 cm. Sudut = 22/132 × 360 = 60°."
     }
@@ -461,7 +461,7 @@ window.BANK["m2b5"] =
     "j": "nombor",
     "t": "Sebuah jam dinding bulat berjejari 14 cm. Jarum minit bergerak dari nombor 12 ke nombor 4. Berapakah luas sektor yang dilalui jarum itu (cm²) kepada 2 tempat perpuluhan? Guna π = 22/7.",
     "b": 205.33,
-    "tol": 0.01,
+    "tol": 0.005000000005,
     "suf": "cm²",
     "u": "Dari 12 ke 4 ialah 4 daripada 12 bahagian, iaitu 120°. Luas = 1/3 × 22/7 × 14 × 14 = 1/3 × 616 = 205.33 cm²."
    }
@@ -482,15 +482,15 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan L = 14 m. Berapakah perimeter trek (m)? Guna π = 22/7.",
      "b": 72,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Perimeter = 2πj + 2L = 44 + 28 = 72 m."
+     "u": "Perimeter trek = lilitan dua separuh bulatan + 2 bahagian lurus. Lilitan = 2 × 22/7 × 7 = 44 m. Perimeter = 44 + 2 × 14 = 44 + 28 = 72 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan L = 14 m. Berapakah luas trek (m²)? Guna π = 22/7.",
      "b": 350,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
      "u": "Luas = πj² + 2jL = 154 + 2 × 7 × 14 = 154 + 196 = 350 m²."
     },
@@ -498,23 +498,23 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan L = 28 m. Berapakah perimeter trek (m)? Guna π = 22/7.",
      "b": 100,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Perimeter = 44 + 2 × 28 = 100 m."
+     "u": "Perimeter trek = lilitan bulatan penuh + 2 bahagian lurus. Lilitan = 44 m. Perimeter = 44 + 2 × 28 = 44 + 56 = 100 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan L = 21 m. Berapakah luas trek (m²)? Guna π = 22/7.",
      "b": 448,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
-     "u": "Luas = 154 + 2 × 7 × 21 = 154 + 294 = 448 m²."
+     "u": "Luas trek = luas bulatan + luas segi empat tepat. Bulatan: 22/7 × 7 × 7 = 154. Segi empat tepat: 2 × 7 × 21 = 294. Jumlah = 154 + 294 = 448 m²."
     },
     {
      "j": "nombor",
      "t": "Sebuah trek mempunyai dua separuh bulatan berjejari 35 m dan dua bahagian lurus, setiap satu 100 m. Berapakah jarak satu pusingan (m)? Guna π = 22/7.",
      "b": 420,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
      "u": "Dua separuh bulatan = 2 × 22/7 × 35 = 220 m. Dua bahagian lurus = 200 m. Jumlah = 420 m."
     },
@@ -522,17 +522,21 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Sebuah taman segi empat tepat berukuran 20 m × 14 m mempunyai kolam bulat berjejari 7 m. Berapakah luas kawasan berumput (m²)? Guna π = 22/7.",
      "b": 126,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
      "u": "Luas taman = 20 × 14 = 280 m². Luas kolam = 154 m². Berumput = 280 − 154 = 126 m²."
     },
     {
-     "j": "nombor",
-     "t": "Roda sebuah lori berjejari 35 cm. Berapakah jarak (cm) yang dilalui lori selepas roda berputar 10 kali? Guna π = 22/7.",
-     "b": 2200,
-     "tol": 0.01,
-     "suf": "cm",
-     "u": "Lilitan roda = 2 × 22/7 × 35 = 220 cm. Sepuluh putaran = 2 200 cm."
+     "j": "pilih",
+     "t": "Seorang murid mengira lilitan bulatan berjejari 7 cm sebagai 22/7 × 7 × 7 = 154 cm. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menggunakan πj, iaitu 22 cm",
+      "Dia sepatutnya menguasaduakan diameter, iaitu 196 cm",
+      "Dia menggunakan rumus luas πj²; lilitan ialah 2πj = 44 cm",
+      "Tiada kesilapan kerana 154 ialah lilitan bulatan itu"
+     ],
+     "b": 2,
+     "u": "Lilitan = 2πj. Ganti j = 7: 2 × 22/7 × 7 = 44 cm. Nilai 154 ialah luas bulatan dalam cm², bukan lilitan."
     },
     {
      "j": "pilih",
@@ -540,10 +544,10 @@ window.BANK["m2b5"] =
      "p": [
       "Luas bulatan penuh + dua bahagian lurus",
       "Diameter + satu bahagian lurus",
-      "Lilitan bulatan penuh + dua bahagian lurus",
-      "Lilitan satu separuh bulatan sahaja"
+      "Lilitan satu separuh bulatan sahaja",
+      "Lilitan bulatan penuh + dua bahagian lurus"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Dua separuh bulatan bersama menjadi satu bulatan penuh, jadi jarak = lilitan + dua bahagian lurus."
     }
    ],
@@ -551,7 +555,7 @@ window.BANK["m2b5"] =
     "j": "nombor",
     "t": "Sebuah trek berjejari 14 m pada lengkok dan bahagian lurus 50 m. Ali berlari 5 pusingan penuh. Berapakah jarak yang dilarinya (m)? Guna π = 22/7.",
     "b": 940,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "m",
     "u": "Satu pusingan = 2 × 22/7 × 14 + 2 × 50 = 88 + 100 = 188 m. Lima pusingan = 5 × 188 = 940 m."
    }
@@ -572,15 +576,15 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan R = 14 cm dan r = 7 cm. Berapakah luas cincin (cm²)? Guna π = 22/7.",
      "b": 462,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 22/7 × (14² − 7²) = 22/7 × 147 = 462 cm²."
+     "u": "Guna luas cincin = π(R² − r²). Ganti R = 14 dan r = 7: 22/7 × (196 − 49) = 22/7 × 147 = 462 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan R = 21 cm dan r = 7 cm. Berapakah luas cincin (cm²)? Guna π = 22/7.",
      "b": 1232,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas = 22/7 × (441 − 49) = 22/7 × 392 = 1 232 cm²."
     },
@@ -588,7 +592,7 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan R = 10.5 cm dan r = 3.5 cm. Berapakah luas cincin (cm²)? Guna π = 22/7.",
      "b": 308,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas = 22/7 × (110.25 − 12.25) = 22/7 × 98 = 308 cm²."
     },
@@ -596,31 +600,35 @@ window.BANK["m2b5"] =
      "j": "nombor",
      "t": "Sebuah CD mempunyai jejari luar 6 cm dan lubang tengah berjejari 1 cm. Berapakah luas permukaan CD itu (cm²)? Guna π = 22/7.",
      "b": 110,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 22/7 × (6² − 1²) = 22/7 × 35 = 110 cm²."
+     "u": "Guna luas = π(R² − r²). Ganti R = 6 dan r = 1: 22/7 × (36 − 1) = 22/7 × 35 = 110 cm²."
     },
     {
      "j": "nombor",
      "t": "Sebuah semibulatan berdiameter 14 cm. Berapakah perimeternya termasuk garis lurus (cm)? Guna π = 22/7.",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "Lengkok = separuh lilitan = 1/2 × 22/7 × 14 = 22 cm. Perimeter = 22 + 14 = 36 cm."
     },
     {
-     "j": "nombor",
-     "t": "Lilitan sebuah bulatan ialah 88 cm. Berapakah luasnya (cm²)? Guna π = 22/7.",
-     "b": 616,
-     "tol": 0.01,
-     "suf": "cm²",
-     "u": "Jejari = 88 ÷ (2 × 22/7) = 14 cm. Luas = 22/7 × 14 × 14 = 616 cm²."
+     "j": "pilih",
+     "t": "Seorang murid mengira luas bulatan berdiameter 14 cm sebagai 22/7 × 14 × 14 = 616 cm². Apakah kesilapannya?",
+     "p": [
+      "Dia menggunakan diameter, bukan jejari 7 cm, jadi luas betul ialah 154 cm²",
+      "Dia sepatutnya mendarab diameter dengan π sahaja untuk mendapat 44 cm²",
+      "Dia sepatutnya menggunakan rumus lilitan 2πj untuk mendapat luas",
+      "Tiada kesilapan kerana rumus luas bulatan menggunakan diameter"
+     ],
+     "b": 0,
+     "u": "Jejari = 14 ÷ 2 = 7 cm. Luas = πj² = 22/7 × 7 × 7 = 154 cm². Menggunakan diameter menjadikan luas empat kali ganda terlalu besar."
     },
     {
      "j": "nombor",
      "t": "Luas sebuah bulatan ialah 154 cm². Berapakah lilitannya (cm)? Guna π = 22/7.",
      "b": 44,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
      "u": "j² = 154 ÷ 22/7 = 49, jadi j = 7 cm. Lilitan = 2 × 22/7 × 7 = 44 cm."
     },
@@ -629,11 +637,11 @@ window.BANK["m2b5"] =
      "t": "Pizza A berdiameter 20 cm dan pizza B berdiameter 30 cm. Luas pizza B ialah ... kali luas pizza A.",
      "p": [
       "1.5",
+      "2.25",
       "3",
-      "2",
-      "2.25"
+      "2"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Nisbah luas = (30 ÷ 20)² = 1.5² = 2.25. Luas bergantung pada kuasa dua diameter."
     }
    ],

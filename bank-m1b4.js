@@ -87,7 +87,7 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, gerakkan gelongsor kepada ÷ 3. Berapakah nilai gula sekarang?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bahagi 18 dengan 3 untuk mendapat 6. Nisbah baharu ialah 4 : 6 : 8."
     },
     {
@@ -106,7 +106,7 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Ali ada 15 kad dan Siti ada 25 kad. Nisbah termudah kad Ali kepada kad Siti ialah 3 : x. Berapakah nilai x?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Faktor sepunya terbesar bagi 15 dan 25 ialah 5. Maka 15 : 25 = 3 : 5."
     },
     {
@@ -192,7 +192,7 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, jumlah wang ialah RM100. Berapakah nilai 1 bahagian (RM)?",
      "b": 20,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "RM",
      "u": "Jumlah bahagian ialah 2 + 3 = 5. Satu bahagian ialah RM100 ÷ 5 = RM20."
     },
@@ -200,7 +200,7 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jumlah wang kepada RM250. Berapakah bahagian Bilal (RM)?",
      "b": 150,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "RM",
      "u": "Satu bahagian ialah RM250 ÷ 5 = RM50. Bilal mendapat 3 bahagian, iaitu RM150."
     },
@@ -214,13 +214,13 @@ window.BANK["m1b4"] =
       "15"
      ],
      "b": 0,
-     "u": "Jumlah bahagian ialah 2 + 3 = 5."
+     "u": "Tambah semua sebutan nisbah: 2 + 3 = 5, jadi ada 5 bahagian sama besar."
     },
     {
      "j": "nombor",
      "t": "Dua adik-beradik berkongsi 60 biji gula-gula mengikut nisbah 1 : 2. Berapakah bilangan gula-gula bagi adik yang mendapat lebih banyak?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Jumlah bahagian ialah 3. Satu bahagian ialah 60 ÷ 3 = 20. Adik itu mendapat 2 × 20 = 40 biji."
     },
     {
@@ -239,7 +239,7 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Ali, Ben dan Cindy berkongsi RM120 mengikut nisbah 1 : 2 : 3. Berapakah bahagian Cindy (RM)?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "RM",
      "u": "Jumlah bahagian ialah 6. Satu bahagian ialah RM120 ÷ 6 = RM20. Cindy mendapat 3 × 20 = RM60."
     },
@@ -247,7 +247,7 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Nisbah murid lelaki kepada murid perempuan ialah 3 : 4. Jika ada 21 murid lelaki, berapakah bilangan murid perempuan?",
      "b": 28,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "3 bahagian bersamaan 21 murid, jadi 1 bahagian ialah 7. Murid perempuan ialah 4 × 7 = 28."
     },
     {
@@ -272,7 +272,7 @@ window.BANK["m1b4"] =
     "j": "nombor",
     "t": "Tiga sahabat berkongsi upah RM360 mengikut nisbah 2 : 3 : 4. Berapakah beza antara bahagian terbesar dengan bahagian terkecil (RM)?",
     "b": 80,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "RM",
     "u": "Jumlah bahagian ialah 9. Satu bahagian ialah RM360 ÷ 9 = RM40. Beza ialah (4 − 2) × 40 = RM80."
    }
@@ -305,33 +305,33 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan laju 72 km/j dan masa 3 jam. Berapakah jarak (km)?",
      "b": 216,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km",
-     "u": "Jarak = laju × masa = 72 × 3 = 216 km."
+     "u": "Guna jarak = laju × masa. Ganti: 72 × 3 = 216. Jadi jarak = 216 km."
     },
     {
      "j": "nombor",
      "t": "Sebuah bas bergerak sejauh 240 km dalam 3 jam. Berapakah lajunya (km/j)?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "km/j",
-     "u": "Laju = jarak ÷ masa = 240 ÷ 3 = 80 km/j."
+     "u": "Guna laju = jarak ÷ masa. Ganti: 240 ÷ 3 = 80. Jadi laju = 80 km/j."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan laju 54 km/j. Berapakah laju itu dalam m/s?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m/s",
-     "u": "54 km/j = 54 000 m ÷ 3 600 s = 15 m/s."
+     "u": "Tukar km kepada m dan jam kepada saat. 54 km/j = 54 × 1 000 m ÷ 3 600 s = 54 000 ÷ 3 600 = 15 m/s."
     },
     {
      "j": "nombor",
      "t": "Sebuah kereta bergerak pada laju 60 km/j. Berapa lamakah (jam) kereta itu menempuh 150 km?",
      "b": 2.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "jam",
-     "u": "Masa = jarak ÷ laju = 150 ÷ 60 = 2.5 jam."
+     "u": "Guna masa = jarak ÷ laju. Ganti: 150 ÷ 60 = 2.5. Jadi masa = 2.5 jam."
     },
     {
      "j": "pilih",
@@ -355,7 +355,7 @@ window.BANK["m1b4"] =
       "RM9 sekilogram"
      ],
      "b": 0,
-     "u": "Kadar = RM12 ÷ 3 kg = RM4 sekilogram."
+     "u": "Kadar = harga ÷ kuantiti = RM12 ÷ 3 kg = RM4 sekilogram."
     },
     {
      "j": "banyak",
@@ -380,9 +380,9 @@ window.BANK["m1b4"] =
     "j": "nombor",
     "t": "Seorang pelari berlari 100 m dalam 20 saat. Berapakah lajunya dalam km/j?",
     "b": 18,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "km/j",
-    "u": "Laju = 100 ÷ 20 = 5 m/s. Darab dengan 3.6 untuk mendapat 18 km/j."
+    "u": "Tukar dahulu: laju = 100 m ÷ 20 s = 5 m/s. Tukar kepada km/j dengan mendarab 3.6: 5 × 3.6 = 18 km/j."
    }
   },
   {
@@ -413,40 +413,40 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, 2 kg gula berharga RM5. Berapakah harga 6 kg gula (RM)?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "RM",
-     "u": "Harga 1 kg ialah RM5 ÷ 2 = RM2.50. Harga 6 kg ialah 6 × 2.50 = RM15."
+     "u": "Kaedah unitari: harga 1 kg = RM5 ÷ 2 = RM2.50. Harga 6 kg = 6 × RM2.50 = RM15."
     },
     {
      "j": "nombor",
      "t": "Harga 5 batang pen ialah RM12.50. Berapakah harga sebatang pen (RM)?",
      "b": 2.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "RM",
-     "u": "Kaedah unitari: RM12.50 ÷ 5 = RM2.50."
+     "u": "Kaedah unitari: harga sebatang = RM12.50 ÷ 5 = RM2.50."
     },
     {
      "j": "nombor",
      "t": "Jika 3 buah buku berharga RM18, berapakah harga 7 buah buku (RM)?",
      "b": 42,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "RM",
-     "u": "Harga sebuah buku ialah RM18 ÷ 3 = RM6. Harga 7 buah ialah 7 × 6 = RM42."
+     "u": "Harga sebuah buku = RM18 ÷ 3 = RM6. Harga 7 buah = 7 × RM6 = RM42."
     },
     {
      "j": "nombor",
      "t": "Sebuah kereta menggunakan 8 liter petrol untuk menempuh 96 km. Berapa liter petrol diperlukan untuk menempuh 150 km?",
      "b": 12.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "liter",
-     "u": "Petrol untuk 1 km ialah 8 ÷ 96 liter. Untuk 150 km: 150 × 8 ÷ 96 = 12.5 liter."
+     "u": "Kaedah unitari: petrol setiap km = 8 ÷ 96. Untuk 150 km: 150 × 8 ÷ 96 = 1 200 ÷ 96 = 12.5 liter."
     },
     {
      "j": "nombor",
      "t": "Cari nilai x bagi kadaran 3 : 8 = 12 : x.",
      "b": 32,
-     "tol": 0.01,
-     "u": "Darab silang: 3 × x = 8 × 12 = 96. Maka x = 96 ÷ 3 = 32."
+     "tol": 0.001000000001,
+     "u": "Darab silang: 3 × x = 8 × 12, iaitu 3x = 96. Bahagi: x = 96 ÷ 3 = 32."
     },
     {
      "j": "pilih",
@@ -482,8 +482,8 @@ window.BANK["m1b4"] =
     "j": "nombor",
     "t": "Tiga keping roti canai berharga RM4.50. Berapa keping roti canai boleh dibeli dengan RM12?",
     "b": 8,
-    "tol": 0.01,
-    "u": "Harga sekeping ialah RM4.50 ÷ 3 = RM1.50. Bilangan keping ialah RM12 ÷ RM1.50 = 8."
+    "tol": 0.001000000001,
+    "u": "Harga sekeping = RM4.50 ÷ 3 = RM1.50. Bilangan keping = RM12 ÷ RM1.50 = 8."
    }
   },
   {
@@ -514,8 +514,8 @@ window.BANK["m1b4"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah nilai A selepas B disamakan?",
      "b": 8,
-     "tol": 0.01,
-     "u": "A : B = 2 : 3 didarab dengan 4 menjadi 8 : 12. Maka A ialah 8."
+     "tol": 0.001000000001,
+     "u": "Sebutan B disamakan kepada 12. A : B = 2 : 3 didarab 4 menjadi 8 : 12. Maka A = 8."
     },
     {
      "j": "pilih",
@@ -530,34 +530,39 @@ window.BANK["m1b4"] =
      "u": "A : B = 8 : 12 dan B : C = 12 : 15. Maka A : B : C = 8 : 12 : 15."
     },
     {
-     "j": "nombor",
-     "t": "Diberi P : Q = 3 : 4 dan Q : R = 2 : 5. Jika P : Q : R = 3 : 4 : r, berapakah nilai r?",
-     "b": 10,
-     "tol": 0.01,
-     "u": "Samakan Q kepada 4. Q : R = 2 : 5 didarab 2 menjadi 4 : 10. Maka P : Q : R = 3 : 4 : 10."
+     "j": "pilih",
+     "t": "Seorang murid menggabungkan P : Q = 3 : 4 dan Q : R = 2 : 5 dan menulis P : Q : R = 3 : 4 : 5. Apakah kesilapannya?",
+     "p": [
+      "Dia patut menjumlahkan nombor-nombor itu, iaitu 3 + 4 + 2 + 5, untuk mendapat jawapan",
+      "Dia tidak menyamakan Q dahulu; Q ialah 4 dalam nisbah pertama tetapi 2 dalam nisbah kedua",
+      "Dia patut mendarab nombor-nombor itu, iaitu 3 × 4 × 2 × 5, untuk mendapat jawapan",
+      "Jawapan itu betul kerana R ialah 5 dalam nisbah yang kedua"
+     ],
+     "b": 1,
+     "u": "Sebutan sepunya Q mesti disamakan dahulu. Q : R = 2 : 5 didarab 2 menjadi 4 : 10. Maka P : Q : R = 3 : 4 : 10, bukan 3 : 4 : 5."
     },
     {
      "j": "nombor",
      "t": "Diberi a : b = 3 : 5 dan b : c = 10 : 7. Jika a = 6, berapakah nilai c?",
      "b": 7,
-     "tol": 0.01,
-     "u": "Samakan b kepada 10. a : b = 6 : 10. Maka a : b : c = 6 : 10 : 7 dan c = 7."
+     "tol": 0.001000000001,
+     "u": "Samakan b kepada 10: a : b = 3 : 5 didarab 2 menjadi 6 : 10. Maka a : b : c = 6 : 10 : 7. Bila a = 6, c = 7."
     },
     {
      "j": "nombor",
      "t": "Jus oren, epal dan mangga dicampur mengikut nisbah 3 : 2 : 1. Jika 4.5 liter jus oren digunakan, berapa liter jus mangga diperlukan?",
      "b": 1.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "suf": "liter",
-     "u": "3 bahagian ialah 4.5 liter, jadi 1 bahagian ialah 1.5 liter. Jus mangga ialah 1 bahagian, iaitu 1.5 liter."
+     "u": "3 bahagian = 4.5 liter, jadi 1 bahagian = 4.5 ÷ 3 = 1.5 liter. Jus mangga ialah 1 bahagian = 1.5 liter."
     },
     {
      "j": "nombor",
      "t": "Ali : Ben = 3 : 4 dan Ben : Cindy = 2 : 3. Jumlah wang mereka ialah RM195. Berapakah wang Cindy (RM)?",
      "b": 90,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "RM",
-     "u": "Samakan Ben kepada 4. Ben : Cindy = 4 : 6. Maka nisbah ialah 3 : 4 : 6 dengan 13 bahagian. Satu bahagian ialah RM15 dan Cindy ada 6 × 15 = RM90."
+     "u": "Samakan Ben kepada 4: Ben : Cindy = 2 : 3 didarab 2 menjadi 4 : 6. Ali : Ben : Cindy = 3 : 4 : 6, jumlah 13 bahagian. 1 bahagian = RM195 ÷ 13 = RM15. Cindy = 6 × RM15 = RM90."
     },
     {
      "j": "susun",
@@ -581,8 +586,8 @@ window.BANK["m1b4"] =
     "j": "nombor",
     "t": "Sebuah kilang menghasilkan botol kecil, sederhana dan besar. Nisbah kecil : sederhana ialah 3 : 2 dan sederhana : besar ialah 4 : 3. Jumlah botol ialah 780. Berapakah bilangan botol sederhana?",
     "b": 240,
-    "tol": 0.01,
-    "u": "Samakan sederhana kepada 4. Kecil : sederhana = 6 : 4. Maka kecil : sederhana : besar = 6 : 4 : 3 dengan 13 bahagian. Satu bahagian ialah 60 botol dan sederhana ialah 4 × 60 = 240."
+    "tol": 0.001000000001,
+    "u": "Samakan sederhana kepada 4: kecil : sederhana = 3 : 2 didarab 2 menjadi 6 : 4. Maka kecil : sederhana : besar = 6 : 4 : 3, jumlah 13 bahagian. 1 bahagian = 780 ÷ 13 = 60. Sederhana = 4 × 60 = 240."
    }
   },
   {
@@ -602,27 +607,27 @@ window.BANK["m1b4"] =
      "t": "Dalam Rajah 1, tetapkan 25%. Pecahan termudah yang sama nilai ialah:",
      "p": [
       "2/5",
-      "1/4",
       "25/50",
+      "1/4",
       "25/75"
      ],
-     "b": 1,
-     "u": "25% = 25/100. Bahagi dengan 25 untuk mendapat 1/4."
+     "b": 2,
+     "u": "25% = 25/100. Bahagi atas dan bawah dengan 25: 25 ÷ 25 = 1 dan 100 ÷ 25 = 4, jadi 1/4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 75%. Berapakah nilai perpuluhan bagi 75%?",
      "b": 0.75,
-     "tol": 0.001,
-     "u": "75% = 75/100 = 0.75."
+     "tol": 0.001000000001,
+     "u": "Tukar peratus kepada perpuluhan: 75% = 75 ÷ 100 = 0.75."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan 40%. Berapa biji kuih ialah 40% daripada 200 biji?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "biji",
-     "u": "40% × 200 = 40/100 × 200 = 80 biji."
+     "u": "40% daripada 200 = 40/100 × 200 = 0.4 × 200 = 80 biji."
     },
     {
      "j": "pilih",
@@ -630,38 +635,42 @@ window.BANK["m1b4"] =
      "p": [
       "35%",
       "53%",
-      "60%",
-      "30%"
+      "30%",
+      "60%"
      ],
-     "b": 2,
-     "u": "3/5 = 60/100 = 60%."
+     "b": 3,
+     "u": "Peratus = 3/5 × 100 = 60%. Atau 3/5 = 60/100 = 60%."
     },
     {
-     "j": "nombor",
-     "t": "Harga asal sehelai baju ialah RM80. Kedai memberi diskaun 15%. Berapakah harga selepas diskaun (RM)?",
-     "b": 68,
-     "tol": 0.01,
-     "suf": "RM",
-     "u": "Diskaun = 15% × 80 = RM12. Harga selepas diskaun ialah 80 − 12 = RM68."
+     "j": "pilih",
+     "t": "Sehelai baju berharga RM80 dengan diskaun 15%. Seorang murid mengira harga selepas diskaun sebagai 80 − 15 = RM65. Apakah kesilapannya?",
+     "p": [
+      "Dia menolak 15 ringgit, sedangkan diskaun 15% ialah 15/100 × 80 = RM12",
+      "Dia patut menambah 15% kepada harga asal RM80 untuk mendapat harga akhir",
+      "Dia patut membahagi RM80 dengan 15 untuk mendapat harga selepas diskaun",
+      "RM65 betul kerana diskaun ialah jumlah yang ditolak terus daripada harga"
+     ],
+     "b": 0,
+     "u": "Diskaun 15% = 15/100 × 80 = RM12. Harga selepas diskaun = 80 − 12 = RM68, bukan RM65."
     },
     {
      "j": "nombor",
      "t": "Nisbah murid lelaki kepada murid perempuan ialah 3 : 2. Berapa peratuskah murid lelaki?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "%",
-     "u": "Jumlah bahagian ialah 5. Murid lelaki ialah 3/5 = 60%."
+     "u": "Jumlah bahagian = 3 + 2 = 5. Peratus lelaki = 3/5 × 100 = 60%."
     },
     {
      "j": "pilih",
      "t": "Anggarkan 48% daripada RM199 dengan nombor mudah. Anggaran terbaik ialah:",
      "p": [
       "RM50",
+      "RM100",
       "RM150",
-      "RM200",
-      "RM100"
+      "RM200"
      ],
-     "b": 3,
+     "b": 1,
      "u": "48% hampir 50% dan RM199 hampir RM200. Separuh daripada RM200 ialah RM100."
     },
     {

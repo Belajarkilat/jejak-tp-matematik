@@ -99,7 +99,7 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jarak mencancang 4, jarak mengufuk 8 dan arah naik ke kanan. Berapakah kecerunan tanjakan itu (perpuluhan)?",
      "b": 0.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "u": "Kecerunan = 4 ÷ 8 = 0.5."
     },
     {
@@ -130,7 +130,7 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jarak mencancang 0 dan jarak mengufuk 5. Berapakah kecerunan landasan rata itu?",
      "b": 0,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kecerunan = 0 ÷ 5 = 0. Landasan rata tidak naik atau turun."
     },
     {
@@ -186,14 +186,14 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan m = 2. Apabila x = 1, berapakah nilai y pada garis itu?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pada garis y = 2x, apabila x = 1, y = 2 × 1 = 2. Ini ialah jarak mencancang bagi setiap 1 unit mengufuk."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan m = -3. Apabila x = 1, berapakah nilai y pada garis itu?",
      "b": -3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pada garis y = -3x, apabila x = 1, y = -3 × 1 = -3. Garis turun 3 unit bagi setiap 1 unit ke kanan."
     },
     {
@@ -213,9 +213,9 @@ window.BANK["m2b10"] =
      "t": "Tanda negatif pada kecerunan menunjukkan garis:",
      "p": [
       "Naik ke kanan",
-      "Mendatar sahaja",
+      "Mendatar",
       "Turun ke kanan",
-      "Mencancang sahaja"
+      "Mencancang"
      ],
      "b": 2,
      "u": "Kecerunan negatif bermaksud garis turun apabila bergerak dari kiri ke kanan."
@@ -260,7 +260,7 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Garis y = mx mempunyai kecerunan m. Berapakah kecerunan garis y = -5x?",
      "b": -5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bagi garis y = mx, m ialah kecerunan. Dalam y = -5x, m = -5."
     }
    ],
@@ -293,21 +293,21 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, A(1, 1). Tetapkan B(3, 4). Berapakah kecerunan garis AB (perpuluhan)?",
      "b": 1.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "u": "naik = 4 - 1 = 3 dan larian = 3 - 1 = 2. m = 3 ÷ 2 = 1.5."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, A(1, 1). Tetapkan B(4, -2). Berapakah kecerunan garis AB?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "naik = -2 - 1 = -3 dan larian = 4 - 1 = 3. m = -3 ÷ 3 = -1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, A(1, 1). Tetapkan B(-1, -3). Berapakah kecerunan garis AB?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "naik = -3 - 1 = -4 dan larian = -1 - 1 = -2. m = -4 ÷ -2 = 2."
     },
     {
@@ -350,7 +350,7 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Garis melalui P(2, 5) dan Q(4, 1). Berapakah kecerunannya?",
      "b": -2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "naik = 1 - 5 = -4 dan larian = 4 - 2 = 2. m = -4 ÷ 2 = -2."
     },
     {
@@ -375,7 +375,7 @@ window.BANK["m2b10"] =
     "j": "nombor",
     "t": "Garis melalui A(-3, 2) dan B(5, -2). Berapakah kecerunan garis itu (perpuluhan)?",
     "b": -0.5,
-    "tol": 0.01,
+    "tol": 0.01000000001,
     "u": "naik = -2 - 2 = -4 dan larian = 5 - (-3) = 8. m = -4 ÷ 8 = -0.5."
    }
   },
@@ -395,36 +395,36 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Sebuah tangga rumah naik 3 m bagi setiap 4 m mengufuk. Berapakah kecerunannya (perpuluhan)?",
      "b": 0.75,
-     "tol": 0.01,
-     "u": "Kecerunan = 3 ÷ 4 = 0.75."
+     "tol": 0.005000000005,
+     "u": "Guna kecerunan = jarak mencancang ÷ jarak mengufuk. Ganti: 3 ÷ 4 = 0.75."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jarak mencancang 6, jarak mengufuk 4 dan arah naik ke kanan. Berapakah kecerunan (perpuluhan)?",
      "b": 1.5,
-     "tol": 0.01,
-     "u": "Kecerunan = 6 ÷ 4 = 1.5."
+     "tol": 0.01000000001,
+     "u": "Guna kecerunan = jarak mencancang ÷ jarak mengufuk = 6 ÷ 4 = 1.5 (positif kerana naik ke kanan)."
     },
     {
      "j": "nombor",
      "t": "Sebatang jalan turun 20 m sepanjang 100 m mengufuk (turun ke kanan). Berapakah kecerunannya?",
      "b": -0.2,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "u": "Jalan itu turun, jadi jarak mencancang ialah -20. Kecerunan = -20 ÷ 100 = -0.2."
     },
     {
      "j": "nombor",
      "t": "Sebuah bumbung naik 1.5 m bagi setiap 3 m mengufuk. Berapakah kecerunan bumbung itu?",
      "b": 0.5,
-     "tol": 0.01,
-     "u": "Kecerunan = 1.5 ÷ 3 = 0.5."
+     "tol": 0.01000000001,
+     "u": "Guna kecerunan = jarak mencancang ÷ jarak mengufuk. Ganti: 1.5 ÷ 3 = 0.5."
     },
     {
      "j": "nombor",
      "t": "Sebuah bukit naik 150 m sepanjang 600 m mengufuk. Berapakah kecerunannya (perpuluhan)?",
      "b": 0.25,
-     "tol": 0.01,
-     "u": "Kecerunan = 150 ÷ 600 = 0.25."
+     "tol": 0.005000000005,
+     "u": "Guna kecerunan = jarak mencancang ÷ jarak mengufuk. Ganti: 150 ÷ 600 = 0.25."
     },
     {
      "j": "pilih",
@@ -467,7 +467,7 @@ window.BANK["m2b10"] =
     "j": "nombor",
     "t": "Sebatang jalan menurun 30 m dan panjang mengufuknya 250 m. Berapakah kecerunan jalan itu (perpuluhan, turun ke kanan)?",
     "b": -0.12,
-    "tol": 0.01,
+    "tol": 0.005000000005,
     "u": "Jalan menurun, jadi jarak mencancang ialah -30. Kecerunan = -30 ÷ 250 = -0.12."
    }
   },
@@ -487,29 +487,29 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pintasan-x = 2 dan pintasan-y = 4. Berapakah kecerunan garis itu?",
      "b": -2,
-     "tol": 0.01,
-     "u": "m = -(pintasan-y) ÷ (pintasan-x) = -4 ÷ 2 = -2."
+     "tol": 0.001000000001,
+     "u": "Guna m = −(pintasan-y) ÷ (pintasan-x). Ganti: m = −4 ÷ 2 = −2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pintasan-x = -2 dan pintasan-y = 4. Berapakah kecerunan garis itu?",
      "b": 2,
-     "tol": 0.01,
-     "u": "m = -4 ÷ (-2) = 2."
+     "tol": 0.001000000001,
+     "u": "Guna m = −(pintasan-y) ÷ (pintasan-x). Ganti: m = −4 ÷ (−2) = 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pintasan-x = 4 dan pintasan-y = -2. Berapakah kecerunan garis itu (perpuluhan)?",
      "b": 0.5,
-     "tol": 0.01,
-     "u": "m = -(-2) ÷ 4 = 2 ÷ 4 = 0.5."
+     "tol": 0.01000000001,
+     "u": "Guna m = −(pintasan-y) ÷ (pintasan-x). Ganti: m = −(−2) ÷ 4 = 2 ÷ 4 = 0.5."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pintasan-x = -4 dan pintasan-y = -3. Berapakah kecerunan garis itu (perpuluhan)?",
      "b": -0.75,
-     "tol": 0.01,
-     "u": "m = -(-3) ÷ (-4) = 3 ÷ (-4) = -0.75."
+     "tol": 0.005000000005,
+     "u": "Guna m = −(pintasan-y) ÷ (pintasan-x). Ganti: m = −(−3) ÷ (−4) = 3 ÷ (−4) = −0.75."
     },
     {
      "j": "pilih",
@@ -539,23 +539,28 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Sebuah garis memotong paksi-x pada (6, 0) dan paksi-y pada (0, 3). Berapakah kecerunannya?",
      "b": -0.5,
-     "tol": 0.01,
-     "u": "m = (3 - 0) ÷ (0 - 6) = 3 ÷ (-6) = -0.5."
+     "tol": 0.01000000001,
+     "u": "Guna m = beza y ÷ beza x. Dari (6, 0) ke (0, 3): beza y = 3 − 0 = 3 dan beza x = 0 − 6 = −6. m = 3 ÷ (−6) = −0.5."
     },
     {
-     "j": "nombor",
-     "t": "Garis melalui (0, 8) dan (4, 0). Berapakah kecerunannya?",
-     "b": -2,
-     "tol": 0.01,
-     "u": "m = (0 - 8) ÷ (4 - 0) = -8 ÷ 4 = -2."
+     "j": "pilih",
+     "t": "Seorang murid mengira kecerunan garis melalui (0, 8) dan (4, 0) sebagai 4 ÷ 8 = 0.5. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya menambah 8 dan 4 untuk mendapat kecerunan 12",
+      "Tiada kesilapan kerana kecerunan ialah jarak mengufuk ÷ jarak mencancang",
+      "Dia sepatutnya menolak 0.5 daripada 1 untuk mendapat 0.5",
+      "Dia membahagi jarak mengufuk dengan jarak mencancang dan tiada tanda negatif; kecerunan ialah −2"
+     ],
+     "b": 3,
+     "u": "Kecerunan = beza y ÷ beza x = (0 − 8) ÷ (4 − 0) = −8 ÷ 4 = −2. Garis turun ke kanan, jadi kecerunan negatif."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Garis melalui titik (0, -6) dan (-4, 0). Berapakah kecerunannya (perpuluhan)?",
     "b": -1.5,
-    "tol": 0.01,
-    "u": "m = (0 - (-6)) ÷ (-4 - 0) = 6 ÷ (-4) = -1.5."
+    "tol": 0.01000000001,
+    "u": "Guna m = beza y ÷ beza x. Dari (0, −6) ke (−4, 0): beza y = 0 − (−6) = 6 dan beza x = −4 − 0 = −4. m = 6 ÷ (−4) = −1.5."
    }
   },
   {
@@ -574,52 +579,57 @@ window.BANK["m2b10"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, A(-2, 3). Tetapkan B(2, -1). Berapakah kecerunan garis AB?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "naik = -1 - 3 = -4 dan larian = 2 - (-2) = 4. m = -4 ÷ 4 = -1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, A(-2, 3). Tetapkan B(-1, -3). Berapakah kecerunan garis AB?",
      "b": -6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "naik = -3 - 3 = -6 dan larian = -1 - (-2) = 1. m = -6 ÷ 1 = -6."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, A(-2, 3). Tetapkan B(-2, -1). Apakah kecerunan garis AB?",
      "p": [
+      "Tak tertakrif",
       "Sama dengan sifar",
       "Sama dengan -1",
-      "Sama dengan 4",
-      "Tak tertakrif"
+      "Sama dengan 4"
      ],
-     "b": 3,
+     "b": 0,
      "u": "A dan B mempunyai x yang sama, jadi larian = 0. Garis mencancang tidak mempunyai kecerunan yang tertakrif."
     },
     {
      "j": "nombor",
      "t": "Titik P(1, 2) dan Q(k, 8). Kecerunan garis PQ ialah 3. Cari nilai k.",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "(8 - 2) ÷ (k - 1) = 3. Maka 6 = 3(k - 1), k - 1 = 2 dan k = 3."
     },
     {
-     "j": "nombor",
-     "t": "Garis melalui A(2, 1) dan B(6, h) mempunyai kecerunan 0.5. Cari nilai h.",
-     "b": 3,
-     "tol": 0.01,
-     "u": "(h - 1) ÷ (6 - 2) = 0.5. Maka h - 1 = 0.5 × 4 = 2 dan h = 3."
+     "j": "pilih",
+     "t": "Seorang murid berkata garis berkecerunan 3 lebih landai daripada garis berkecerunan 1 kerana 3 lebih besar. Apakah kesilapannya?",
+     "p": [
+      "Kedua-dua garis sama curam kerana kedua-duanya berkecerunan positif",
+      "Kecerunan yang lebih besar bermaksud garis lebih curam, bukan lebih landai",
+      "Garis berkecerunan 1 lebih curam kerana 1 lebih dekat kepada 0",
+      "Tiada kesilapan kerana nombor yang besar bermaksud garis yang landai"
+     ],
+     "b": 1,
+     "u": "Kecerunan 3 = naik 3 bagi setiap 1 mengufuk, lebih curam daripada kecerunan 1 (naik 1 bagi setiap 1). Semakin besar nilai kecerunan, semakin curam garis."
     },
     {
      "j": "pilih",
      "t": "Tiga titik A(1, 1), B(3, 2) dan C(5, 3). Adakah ketiga-tiga titik itu segaris?",
      "p": [
-      "Ya, kecerunan AB sama dengan kecerunan BC",
       "Tidak, kecerunan AB tidak sama dengan BC",
       "Ya, kerana semua koordinat x ialah nombor ganjil",
+      "Ya, kecerunan AB sama dengan kecerunan BC",
       "Tidak, kerana koordinat y semuanya berbeza"
      ],
-     "b": 0,
+     "b": 2,
      "u": "Kecerunan AB = (2 - 1) ÷ (3 - 1) = 0.5 dan kecerunan BC = (3 - 2) ÷ (5 - 3) = 0.5. Kedua-duanya sama, jadi titik-titik itu segaris."
     },
     {
@@ -627,23 +637,23 @@ window.BANK["m2b10"] =
      "t": "Seorang murid mengira kecerunan A(1, 2) dan B(3, 8) sebagai 2/6. Apakah kesilapannya?",
      "p": [
       "Dia menolak koordinat dengan urutan berbeza",
-      "Dia membahagi jarak mengufuk dengan mencancang",
       "Dia menambah koordinat, bukan menolaknya",
-      "Tiada kesilapan, jawapan 2/6 itu betul"
+      "Tiada kesilapan, jawapan 2/6 itu betul",
+      "Dia membahagi jarak mengufuk dengan mencancang"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Jarak mencancang ialah 8 - 2 = 6 dan jarak mengufuk ialah 3 - 1 = 2. Kecerunan betul ialah 6 ÷ 2 = 3. Murid itu mengira 2 ÷ 6, iaitu terbalik."
     },
     {
      "j": "pilih",
      "t": "Garis dengan kecerunan -2 melalui A(0, 5). Antara titik berikut, yang manakah juga terletak pada garis itu?",
      "p": [
+      "(2, 1)",
       "(2, 9)",
       "(1, 7)",
-      "(2, 1)",
       "(3, 1)"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Kecerunan dari A(0, 5) ke (2, 1) ialah (1 - 5) ÷ 2 = -2. Titik lain memberi kecerunan +2 atau -4/3."
     }
    ],

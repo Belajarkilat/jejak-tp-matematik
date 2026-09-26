@@ -87,7 +87,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan m = 2 dan c = 1 (y = 2x + 1). Berapakah pintasan-y garis itu?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pintasan-y ialah c = 1. Garis memotong paksi-y di titik (0, 1)."
     },
     {
@@ -118,7 +118,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Sebuah papan luncur naik 6 m bagi setiap 12 m jarak mendatar. Berapakah kecerunannya?",
      "b": 0.5,
-     "tol": 0.01,
+     "tol": 0.01000000001,
      "u": "Kecerunan = naik ÷ larian = 6 ÷ 12 = 0.5."
     },
     {
@@ -198,7 +198,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 2 dan b = 4 (x/2 + y/4 = 1). Berapakah kecerunan garis itu?",
      "b": -2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kecerunan = −b ÷ a = −4 ÷ 2 = −2."
     },
     {
@@ -217,14 +217,14 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Bagi garis 2x + 3y = 12, berapakah pintasan-y?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Letak x = 0: 3y = 12, maka y = 4."
     },
     {
      "j": "nombor",
      "t": "Bagi garis 2x + 3y = 12, berapakah pintasan-x?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Letak y = 0: 2x = 12, maka x = 6."
     },
     {
@@ -273,7 +273,7 @@ window.BANK["m3b9"] =
     "j": "nombor",
     "t": "Garis 5x − 2y = 10 memotong paksi-x di (a, 0) dan paksi-y di (0, b). Berapakah nilai a + b?",
     "b": -3,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Letak y = 0: 5x = 10, a = 2. Letak x = 0: −2y = 10, b = −5. Jadi a + b = −3."
    }
   },
@@ -305,7 +305,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan m = 1 dan c = 1 (y = x + 1). Berapakah nilai y bagi garis itu apabila x = 2?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "y = 2 + 1 = 3."
     },
     {
@@ -336,7 +336,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Titik (4, k) terletak pada garis y = 3x − 5. Cari nilai k.",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "k = 3(4) − 5 = 7."
     },
     {
@@ -424,7 +424,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Garis y = 3x + 2 selari dengan garis y = mx − 4. Cari nilai m.",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Garis selari mempunyai kecerunan sama, jadi m = 3."
     },
     {
@@ -443,7 +443,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Cari kecerunan garis yang melalui titik (1, 2) dan (4, 11).",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kecerunan = (11 − 2) ÷ (4 − 1) = 9 ÷ 3 = 3."
     },
     {
@@ -462,7 +462,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, L2 selari dengan L1 dan melalui titik (1, 6). Berapakah nilai c bagi L2?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "L2 ialah y = 2x + c. Gantikan (1, 6): 6 = 2 + c, maka c = 4."
     },
     {
@@ -499,7 +499,7 @@ window.BANK["m3b9"] =
     "j": "nombor",
     "t": "Garis M melalui (1, 3) dan (3, 9). Garis N selari dengan M dan melalui (0, −3). Di manakah N memotong paksi-x? Beri nilai x.",
     "b": 1,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Kecerunan M = (9 − 3) ÷ (3 − 1) = 3. N ialah y = 3x − 3. Letak y = 0: x = 1."
    }
   },
@@ -531,14 +531,14 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan L2: y = −x + 5. Berapakah koordinat-x titik persilangan L1 dan L2?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x + 1 = −x + 5, maka 2x = 4 dan x = 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan L2: y = −x + 5. Berapakah koordinat-y titik persilangan L1 dan L2?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Gantikan x = 2 ke dalam y = x + 1: y = 3. Titik persilangan ialah (2, 3)."
     },
     {
@@ -557,7 +557,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Selesaikan y = 2x dan y = x + 3. Berapakah nilai x di titik persilangan?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x = x + 3, maka x = 3 dan y = 6."
     },
     {
@@ -593,7 +593,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Selesaikan 2x + y = 8 dan x − y = 1. Berapakah nilai y?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Tambah: 3x = 9, x = 3. Gantikan ke x − y = 1: y = 2."
     }
    ],
@@ -601,7 +601,7 @@ window.BANK["m3b9"] =
     "j": "nombor",
     "t": "Garis 3x + 2y = 12 dan x − y = −1 bersilang di titik (p, q). Berapakah nilai p + q?",
     "b": 5,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Daripada x − y = −1, y = x + 1. Gantikan: 3x + 2x + 2 = 12, maka x = 2 dan y = 3. p + q = 5."
    }
   },
@@ -645,7 +645,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Garis y = k dan garis x = 4 bersilang di titik (4, −2). Cari nilai k.",
      "b": -2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik persilangan berada pada y = k, jadi k = −2."
     },
     {
@@ -664,7 +664,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Sebuah pagar segi empat tepat dibina dengan garis x = 1, x = 5, y = 2 dan y = 4 (unit dalam meter). Berapakah luas kawasan itu (m²)?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
      "u": "Panjang = 5 − 1 = 4 m dan lebar = 4 − 2 = 2 m. Luas = 4 × 2 = 8 m²."
     },
@@ -684,7 +684,7 @@ window.BANK["m3b9"] =
      "j": "nombor",
      "t": "Garis y = 2x + 3 bersilang dengan garis mencancang x = 4 di titik (4, t). Cari nilai t.",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "t = 2(4) + 3 = 11."
     },
     {

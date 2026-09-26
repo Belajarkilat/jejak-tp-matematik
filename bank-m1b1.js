@@ -205,21 +205,21 @@ window.BANK["m1b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3, b = 4 dan pilih tambah. Berapakah hasilnya?",
      "b": 7,
-     "tol": 0.01,
-     "u": "Bermula di 3, lompat 4 langkah ke kanan sampai 7."
+     "tol": 0.001000000001,
+     "u": "Guna garis nombor. Mula di 3, lompat 4 langkah ke kanan: 3 + 4 = 7."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = −2, b = 5 dan pilih tambah. Berapakah hasilnya?",
      "b": 3,
-     "tol": 0.01,
-     "u": "Bermula di −2, lompat 5 langkah ke kanan. −2 + 5 = 3."
+     "tol": 0.001000000001,
+     "u": "Mula di −2, lompat 5 langkah ke kanan. Jadi −2 + 5 = 3."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 4, b = 6 dan pilih tolak. Berapakah hasilnya?",
      "b": -2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Menolak 6 bermaksud lompat 6 langkah ke kiri dari 4. Hasilnya −2."
     },
     {
@@ -244,7 +244,7 @@ window.BANK["m1b1"] =
       "8"
      ],
      "b": 3,
-     "u": "5 − (−3) = 5 + 3 = 8."
+     "u": "Menolak negatif sama seperti menambah positif. 5 − (−3) = 5 + 3 = 8."
     },
     {
      "j": "pilih",
@@ -268,7 +268,7 @@ window.BANK["m1b1"] =
       "−13 °C"
      ],
      "b": 1,
-     "u": "−4 + 9 = 5, jadi suhu tengah hari 5 °C."
+     "u": "Suhu naik, jadi tambah. −4 + 9 = 5. Suhu tengah hari 5 °C."
     },
     {
      "j": "banyak",
@@ -293,7 +293,7 @@ window.BANK["m1b1"] =
     "j": "nombor",
     "t": "Sebuah lif bermula di aras −2. Ia naik 7 aras, kemudian turun 9 aras. Di aras berapakah lif itu berhenti?",
     "b": -4,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "−2 + 7 = 5, kemudian 5 − 9 = −4. Lif berhenti di aras −4."
    }
   },
@@ -313,15 +313,15 @@ window.BANK["m1b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 3 dan b = −2. Berapakah n × b?",
      "b": -6,
-     "tol": 0.01,
-     "u": "3 lompatan berukuran −2 ke kiri: −2, −4, −6. Jadi 3 × (−2) = −6."
+     "tol": 0.001000000001,
+     "u": "Guna n × b = 3 × (−2). Tiga lompatan −2 ke kiri: −2, −4, −6. Jadi 3 × (−2) = −6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = −3 dan b = −2. Berapakah n × b?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Bila n negatif, arah lompatan terbalik. Tiga lompatan −2 dibalikkan menjadi 3 lompatan +2 ke kanan, sampai 6."
+     "tol": 0.001000000001,
+     "u": "Guna n × b = (−3) × (−2). Negatif × negatif = positif, jadi 3 × 2 = 6. Dalam rajah, arah lompatan terbalik dan berhenti di 6."
     },
     {
      "j": "pilih",
@@ -339,8 +339,8 @@ window.BANK["m1b1"] =
      "j": "nombor",
      "t": "Hitung (−24) ÷ 4 + 3 × (−2).",
      "b": -12,
-     "tol": 0.01,
-     "u": "Bahagi dan darab dahulu: −6 dan −6. Kemudian −6 + (−6) = −12."
+     "tol": 0.001000000001,
+     "u": "Tertib operasi: bahagi dan darab dahulu. (−24) ÷ 4 = −6 dan 3 × (−2) = −6. Kemudian −6 + (−6) = −12."
     },
     {
      "j": "pilih",
@@ -358,8 +358,8 @@ window.BANK["m1b1"] =
      "j": "nombor",
      "t": "Guna hukum kalis agihan untuk mengira 102 × 15, iaitu (100 + 2) × 15.",
      "b": 1530,
-     "tol": 0.01,
-     "u": "100 × 15 = 1 500 dan 2 × 15 = 30. Jumlahnya 1 530."
+     "tol": 0.001000000001,
+     "u": "Guna kalis agihan: (100 + 2) × 15 = 100 × 15 + 2 × 15 = 1 500 + 30 = 1 530."
     },
     {
      "j": "pilih",
@@ -444,7 +444,7 @@ window.BANK["m1b1"] =
       "1/4"
      ],
      "b": 2,
-     "u": "−1 + 3 = 2, jadi hasilnya 2/4 = 1/2."
+     "u": "Penyebut sama, jadi kira pengangka: −1 + 3 = 2. Hasilnya 2/4 = 1/2."
     },
     {
      "j": "pilih",
@@ -456,7 +456,7 @@ window.BANK["m1b1"] =
       "−1/2"
      ],
      "b": 3,
-     "u": "1 − 3 = −2, jadi hasilnya −2/4 = −1/2."
+     "u": "Penyebut sama, jadi kira pengangka: 1 − 3 = −2. Hasilnya −2/4 = −1/2."
     },
     {
      "j": "pilih",
@@ -486,9 +486,9 @@ window.BANK["m1b1"] =
      "j": "nombor",
      "t": "Sebuah kedai roti ada 3/4 kg tepung. Ali guna 1/2 kg. Berapa kg tepung yang tinggal? (Jawab dalam perpuluhan)",
      "b": 0.25,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "kg",
-     "u": "3/4 − 1/2 = 3/4 − 2/4 = 1/4 = 0.25 kg."
+     "u": "Baki = 3/4 − 1/2. Samakan penyebut: 3/4 − 2/4 = 1/4. Tukar kepada perpuluhan: 1 ÷ 4 = 0.25 kg."
     },
     {
      "j": "susun",
@@ -519,16 +519,16 @@ window.BANK["m1b1"] =
       "4/8 m"
      ],
      "b": 2,
-     "u": "3/4 = 6/8. Kemudian 6/8 − 1/8 = 5/8."
+     "u": "Samakan penyebut: 3/4 = 6/8. Baki = 6/8 − 1/8 = 5/8 m."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Seorang pembuat kek ada 5/2 kg gula (dua setengah kilogram). Dia guna 3/4 kg pada waktu pagi dan 5/4 kg pada waktu petang. Berapa kg gula yang tinggal? (Jawab dalam perpuluhan)",
     "b": 0.5,
-    "tol": 0.01,
+    "tol": 0.01000000001,
     "suf": "kg",
-    "u": "Semua ke suku: 5/2 = 10/4. Gula digunakan 3/4 + 5/4 = 8/4. Baki 10/4 − 8/4 = 2/4 = 0.5 kg."
+    "u": "Guna suku: 5/2 = 10/4. Gula digunakan = 3/4 + 5/4 = 8/4. Baki = 10/4 − 8/4 = 2/4 = 0.5 kg."
    }
   },
   {
@@ -547,82 +547,87 @@ window.BANK["m1b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 1.2, b = −0.7 dan pilih tambah. Berapakah hasilnya?",
      "b": 0.5,
-     "tol": 0.01,
-     "u": "1.2 + (−0.7) = 1.2 − 0.7 = 0.5."
+     "tol": 0.01000000001,
+     "u": "Menambah negatif sama seperti menolak. 1.2 + (−0.7) = 1.2 − 0.7 = 0.5."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = −0.8, b = 1.3 dan pilih tolak. Berapakah hasilnya?",
      "b": -2.1,
-     "tol": 0.01,
-     "u": "−0.8 − 1.3 = −2.1."
+     "tol": 0.01000000001,
+     "u": "Kira −0.8 − 1.3. Kedua-duanya ke arah kiri, jadi jumlahkan 0.8 + 1.3 = 2.1. Jawapan −2.1."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, tetapkan a = −1.5, b = −0.9 dan pilih tolak. Berapakah hasilnya?",
-     "b": -0.6,
-     "tol": 0.01,
-     "u": "Menolak negatif sama seperti menambah positif. −1.5 − (−0.9) = −1.5 + 0.9 = −0.6."
+     "j": "pilih",
+     "t": "Seorang murid menghitung −1.5 − (−0.9) dan mendapat −2.4. Apakah kesilapannya?",
+     "p": [
+      "Dia menambah 0.9, sedangkan operasi itu memerlukan tolak 0.9",
+      "Dia patut mendarab −1.5 dengan −0.9 dahulu",
+      "Dia patut menukar −1.5 kepada 1.5 sebelum mengira",
+      "Dia menolak 0.9, sedangkan menolak negatif bermaksud menambah 0.9"
+     ],
+     "b": 3,
+     "u": "Menolak nombor negatif sama seperti menambah positif. −1.5 − (−0.9) = −1.5 + 0.9 = −0.6, bukan −2.4."
     },
     {
      "j": "pilih",
      "t": "Antara perpuluhan berikut, yang manakah paling kecil?",
      "p": [
+      "−1.25",
       "−1.2",
       "−1.15",
-      "−0.5",
-      "−1.25"
+      "−0.5"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Antara perpuluhan negatif, yang paling jauh dari sifar ialah paling kecil. −1.25 lebih jauh daripada −1.2."
     },
     {
      "j": "pilih",
      "t": "Manakah susunan menaik (kecil ke besar) yang betul?",
      "p": [
-      "−0.6, −0.06, 0.06, 0.6",
       "−0.06, −0.6, 0.06, 0.6",
+      "−0.6, −0.06, 0.06, 0.6",
       "−0.6, −0.06, 0.6, 0.06",
       "0.6, 0.06, −0.06, −0.6"
      ],
-     "b": 0,
+     "b": 1,
      "u": "−0.6 lebih kecil daripada −0.06. Kemudian dua nombor positif: 0.06 lebih kecil daripada 0.6."
     },
     {
      "j": "nombor",
      "t": "Hitung 2.5 − 3.2 × 0.5 + (−1.4).",
      "b": -0.5,
-     "tol": 0.01,
-     "u": "Darab dahulu: 3.2 × 0.5 = 1.6. Kemudian 2.5 − 1.6 = 0.9, dan 0.9 + (−1.4) = −0.5."
+     "tol": 0.01000000001,
+     "u": "Tertib operasi: darab dahulu, 3.2 × 0.5 = 1.6. Kemudian 2.5 − 1.6 = 0.9. Akhir sekali 0.9 + (−1.4) = −0.5."
     },
     {
      "j": "nombor",
      "t": "Baki akaun Nora ialah −RM12.50 (terlebih guna). Dia menyimpan RM40.00 kemudian berbelanja RM18.75. Berapakah baki akhir dalam RM?",
      "b": 8.75,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "RM",
-     "u": "−12.50 + 40.00 = 27.50. Kemudian 27.50 − 18.75 = 8.75."
+     "u": "Baki mula −12.50. Simpan: −12.50 + 40.00 = 27.50. Belanja: 27.50 − 18.75 = 8.75. Baki akhir RM8.75."
     },
     {
      "j": "pilih",
      "t": "Suhu −3.5 °C naik 6.2 °C kemudian turun 4.1 °C. Berapakah suhu akhir?",
      "p": [
       "1.4 °C",
-      "−1.4 °C",
       "−0.4 °C",
+      "−1.4 °C",
       "13.8 °C"
      ],
-     "b": 1,
-     "u": "−3.5 + 6.2 = 2.7. Kemudian 2.7 − 4.1 = −1.4."
+     "b": 2,
+     "u": "Naik = tambah: −3.5 + 6.2 = 2.7. Turun = tolak: 2.7 − 4.1 = −1.4. Suhu akhir −1.4 °C."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Untung/rugi sebuah kedai selama 5 hari ialah +RM32.50, −RM18.75, +RM45.00, −RM60.25 dan +RM12.00. Berapakah untung bersih dalam RM?",
     "b": 10.5,
-    "tol": 0.01,
+    "tol": 0.01000000001,
     "suf": "RM",
-    "u": "32.50 − 18.75 = 13.75. Kemudian +45.00 = 58.75, −60.25 = −1.50, dan +12.00 = 10.50."
+    "u": "Jumlahkan berturut-turut: 32.50 − 18.75 = 13.75. Kemudian +45.00 = 58.75, −60.25 = −1.50, +12.00 = 10.50. Untung bersih RM10.50."
    }
   },
   {
@@ -643,72 +648,77 @@ window.BANK["m1b1"] =
      "p": [
       "0.385",
       "0.835",
-      "0.375",
-      "0.038"
+      "0.038",
+      "0.375"
      ],
-     "b": 2,
-     "u": "3 ÷ 8 = 0.375."
+     "b": 3,
+     "u": "Bahagi pengangka dengan penyebut: 3 ÷ 8 = 0.375."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan pengangka −5. Tukar −5/8 kepada perpuluhan.",
      "b": -0.625,
-     "tol": 0.001,
-     "u": "5 ÷ 8 = 0.625, jadi −5/8 = −0.625."
+     "tol": 0.0005000000005,
+     "u": "Bahagi: 5 ÷ 8 = 0.625. Pecahan negatif, jadi −5/8 = −0.625."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1 (penyebut 8), pengangka berapakah yang memberi perpuluhan 0.75?",
      "p": [
+      "6",
       "24",
       "60",
-      "75",
-      "6"
+      "75"
      ],
-     "b": 3,
-     "u": "0.75 × 8 = 6, jadi 6/8 = 0.75."
+     "b": 0,
+     "u": "Pengangka = perpuluhan × penyebut = 0.75 × 8 = 6. Semak: 6 ÷ 8 = 0.75."
     },
     {
      "j": "pilih",
      "t": "Antara 0.3 dan 1/3, yang manakah lebih besar?",
      "p": [
-      "1/3",
       "0.3",
+      "1/3",
       "Sama",
       "Tidak dapat dibandingkan"
      ],
-     "b": 0,
-     "u": "1/3 = 0.333... yang lebih besar sedikit daripada 0.3."
+     "b": 1,
+     "u": "Tukar 1/3 kepada perpuluhan: 1 ÷ 3 = 0.333... Ini lebih besar daripada 0.3."
     },
     {
      "j": "pilih",
      "t": "Nombor manakah terletak di antara −1/2 dan −1/4?",
      "p": [
       "−5/8",
-      "−3/8",
       "−7/8",
+      "−3/8",
       "−1/8"
      ],
-     "b": 1,
+     "b": 2,
      "u": "−3/8 = −0.375, iaitu di antara −0.5 dan −0.25. Nombor lain di luar selang itu."
     },
     {
-     "j": "nombor",
-     "t": "Cari titik tengah (purata) bagi −0.7 dan 0.3.",
-     "b": -0.2,
-     "tol": 0.001,
-     "u": "(−0.7 + 0.3) ÷ 2 = −0.4 ÷ 2 = −0.2."
+     "j": "pilih",
+     "t": "Seorang murid mencari titik tengah bagi −0.7 dan 0.3. Dia menjumlahkan dan mendapat −0.4, lalu berhenti. Langkah apa yang tertinggal?",
+     "p": [
+      "Mendarab jumlah itu dengan 2",
+      "Menolak 0.3 daripada −0.7",
+      "Menukar −0.4 kepada 0.4",
+      "Membahagi jumlah itu dengan 2"
+     ],
+     "b": 3,
+     "u": "Titik tengah ialah purata dua nombor. Jumlah = −0.7 + 0.3 = −0.4. Kemudian bahagi dengan 2: −0.4 ÷ 2 = −0.2."
     },
     {
      "j": "pilih",
      "t": "Adakah 0.333... (angka 3 berulang) nombor nisbah?",
      "p": [
+      "Ya, sebab sama dengan 1/3",
       "Tidak, sebab tidak berhenti",
       "Tidak, sebab bukan integer",
-      "Ya, sebab sama dengan 1/3",
       "Ya, sebab kurang daripada 1"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Nombor nisbah ialah nombor yang boleh ditulis sebagai p/q. 0.333... = 1/3, jadi ia nombor nisbah."
     },
     {

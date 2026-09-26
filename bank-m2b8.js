@@ -65,8 +65,8 @@ window.BANK["m2b8"] =
      "p": [
       "Hubungan yang memberi tepat satu output bagi setiap input",
       "Hubungan yang memberi dua output bagi setiap input",
-      "Hubungan yang hanya menggunakan nombor bulat positif",
-      "Hubungan yang sentiasa membentuk satu garis lurus"
+      "Hubungan yang menggunakan nombor bulat positif",
+      "Hubungan yang membentuk satu garis lurus"
      ],
      "b": 0,
      "u": "Fungsi ialah hubungan yang memberi tepat satu output bagi setiap input. Ia tidak semestinya garis lurus."
@@ -75,14 +75,14 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan input x = 3. Berapakah output f(x)?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "f(3) = 2(3) + 1 = 7."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan input x = −2. Berapakah output f(x)?",
      "b": -3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "f(−2) = 2(−2) + 1 = −4 + 1 = −3."
     },
     {
@@ -101,21 +101,21 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Diberi f(x) = 3x − 2. Cari nilai f(5).",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "f(5) = 3(5) − 2 = 15 − 2 = 13."
     },
     {
      "j": "nombor",
      "t": "Diberi f(x) = x<sup>2</sup> + 1. Cari nilai f(−3).",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "f(−3) = (−3)² + 1 = 9 + 1 = 10. Kuasa dua nombor negatif ialah positif."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, input x yang manakah menghasilkan output f(x) = 5?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + 1 = 5, maka 2x = 4 dan x = 2. Semak dalam jadual Rajah 1: f(2) = 5."
     },
     {
@@ -219,7 +219,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1 (hubungan A hingga E), berapakah bilangan hubungan yang ialah fungsi?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "A (satu kepada satu), B (banyak kepada satu) dan E (semua ke 4) ialah fungsi. C dan D bukan fungsi."
     },
     {
@@ -250,7 +250,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, hubungan A memetakan setiap input kepada dua kali ganda nilainya. Berapakah output bagi input 3?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Output = 2 × 3 = 6, seperti anak panah 3→6 dalam hubungan A."
     }
    ],
@@ -289,15 +289,15 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, apabila x = −3, berapakah nilai y dalam jadual?",
      "b": 9,
-     "tol": 0.01,
-     "u": "y = (−3)² = 9."
+     "tol": 0.001000000001,
+     "u": "Ganti x = −3 ke dalam y = x²: y = (−3)² = (−3) × (−3) = 9."
     },
     {
      "j": "nombor",
      "t": "Jika y = x<sup>2</sup>, berapakah nilai y apabila x = 2.5?",
      "b": 6.25,
-     "tol": 0.01,
-     "u": "y = 2.5 × 2.5 = 6.25."
+     "tol": 0.005000000005,
+     "u": "Ganti x = 2.5 ke dalam y = x²: y = 2.5 × 2.5 = 6.25."
     },
     {
      "j": "pilih",
@@ -327,15 +327,15 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Lengkapkan jadual bagi y = 2x − 3. Berapakah y apabila x = 4?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "y = 2(4) − 3 = 8 − 3 = 5."
     },
     {
      "j": "nombor",
      "t": "Lengkapkan jadual bagi y = x<sup>3</sup>. Berapakah y apabila x = −2?",
      "b": -8,
-     "tol": 0.01,
-     "u": "y = (−2)³ = (−2) × (−2) × (−2) = −8."
+     "tol": 0.001000000001,
+     "u": "Ganti x = −2 ke dalam y = x³: y = (−2)³ = (−2) × (−2) × (−2) = 4 × (−2) = −8."
     },
     {
      "j": "pilih",
@@ -371,7 +371,7 @@ window.BANK["m2b8"] =
     "j": "nombor",
     "t": "Titik (a, 16) terletak pada graf y = x<sup>2</sup> dengan a positif. Berapakah nilai a?",
     "b": 4,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "a² = 16, maka a = 4 (nilai positif). Nilai −4 juga memberi 16, tetapi soalan meminta a positif."
    }
   },
@@ -391,7 +391,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah tinggi bola (m) pada masa t = 1 saat?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
      "u": "h = 20(1) − 5(1)² = 20 − 5 = 15 m."
     },
@@ -399,14 +399,14 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Tambang teksi J = 3 + 2d (RM), dengan d ialah jarak dalam km. Berapakah tambang bagi perjalanan 8 km (dalam RM)?",
      "b": 19,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "J = 3 + 2(8) = 3 + 16 = RM19."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pada masa berapakah (saat) bola mencapai tinggi maksimum?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "saat",
      "u": "Puncak lengkung berada di tengah antara t = 0 dan t = 4, iaitu t = 2 saat."
     },
@@ -414,7 +414,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah tinggi maksimum bola (m)?",
      "b": 20,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
      "u": "Pada t = 2, h = 20(2) − 5(2)² = 40 − 20 = 20 m."
     },
@@ -422,8 +422,8 @@ window.BANK["m2b8"] =
      "j": "pilih",
      "t": "Mengapakah graf tinggi bola melawan masa berbentuk lengkung dan bukan garis lurus?",
      "p": [
-      "Kerana bola sentiasa bergerak dengan laju seragam",
-      "Kerana masa sentiasa berkurang apabila bola naik",
+      "Kerana bola bergerak dengan laju seragam",
+      "Kerana masa berkurang apabila bola naik",
       "Kerana tinggi bola sama pada setiap saat",
       "Kerana h bergantung pada t dan t kuasa dua"
      ],
@@ -434,7 +434,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pada masa berapakah (saat) bola menyentuh tanah semula selepas dilambung?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "saat",
      "u": "h = 0 apabila 20t − 5t² = 0, iaitu 5t(4 − t) = 0. Selain t = 0, t = 4 saat."
     },
@@ -454,7 +454,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah tinggi bola (m) pada t = 3.5 saat, kepada 2 tempat perpuluhan?",
      "b": 8.75,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "m",
      "u": "h = 20(3.5) − 5(3.5)² = 70 − 61.25 = 8.75 m."
     }
@@ -463,7 +463,7 @@ window.BANK["m2b8"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, bola berada pada tinggi 15 m pada t = 1 saat. Pada masa berapakah (saat) bola berada pada tinggi 15 m sekali lagi?",
     "b": 3,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "saat",
     "u": "Lengkung bersimetri pada t = 2. Masa 1 saat sebelum puncak ialah t = 1, jadi 1 saat selepas puncak ialah t = 3. Semak: 20(3) − 5(9) = 15."
    }
@@ -484,28 +484,28 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih garis y = 4 dan lengkung y = x<sup>2</sup>. Berapakah nilai x positif pada titik persilangan?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x² = 4, maka x = 2 atau x = −2. Nilai positif ialah 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih garis y = x + 2. Berapakah nilai x positif pada titik persilangan?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x² = x + 2, maka x² − x − 2 = 0, iaitu (x − 2)(x + 1) = 0. Nilai positif ialah x = 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih garis y = x + 2. Berapakah nilai x negatif pada titik persilangan?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Daripada (x − 2)(x + 1) = 0, nilai negatif ialah x = −1."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih garis y = 2x + 3. Berapakah nilai y pada titik persilangan yang mempunyai x positif?",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x² = 2x + 3, maka (x − 3)(x + 1) = 0. Nilai positif x = 3, jadi y = 3² = 9."
     },
     {
@@ -548,7 +548,7 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih garis y = −x + 6. Berapakah hasil tambah kedua-dua nilai x pada titik persilangan?",
      "b": -1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x² = −x + 6, maka (x − 2)(x + 3) = 0, jadi x = 2 dan x = −3. Hasil tambah = 2 + (−3) = −1."
     }
    ],
@@ -556,7 +556,7 @@ window.BANK["m2b8"] =
     "j": "nombor",
     "t": "Garis y = k bersilang dengan lengkung y = x<sup>2</sup> pada dua titik yang berjarak 6 unit secara mengufuk. Berapakah nilai k?",
     "b": 9,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Dua titik itu bersimetri di sekitar paksi-y, jadi x = 3 dan x = −3. Maka k = 3² = 9."
    }
   },
@@ -600,15 +600,15 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 3 dan a = 1. Berapakah nilai y apabila x = −2?",
      "b": -8,
-     "tol": 0.01,
-     "u": "y = (−2)³ = −8."
+     "tol": 0.001000000001,
+     "u": "Bagi n = 3 dan a = 1, y = x³. Ganti x = −2: (−2)³ = (−2) × (−2) × (−2) = −8."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = −1 dan a = 2. Berapakah nilai y apabila x = 2?",
      "b": 1,
-     "tol": 0.01,
-     "u": "y = 2/x = 2/2 = 1."
+     "tol": 0.001000000001,
+     "u": "Bagi n = −1 dan a = 2, y = 2/x. Ganti x = 2: y = 2/2 = 1."
     },
     {
      "j": "pilih",
@@ -626,8 +626,8 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 2 dan a = 2. Berapakah nilai y apabila x = −3?",
      "b": 18,
-     "tol": 0.01,
-     "u": "y = 2(−3)² = 2 × 9 = 18."
+     "tol": 0.001000000001,
+     "u": "Bagi n = 2 dan a = 2, y = 2x². Ganti x = −3: y = 2 × (−3)² = 2 × 9 = 18."
     },
     {
      "j": "pilih",
@@ -645,8 +645,8 @@ window.BANK["m2b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 3 dan a = −2. Berapakah nilai y apabila x = 2?",
      "b": -16,
-     "tol": 0.01,
-     "u": "y = −2(2)³ = −2 × 8 = −16."
+     "tol": 0.001000000001,
+     "u": "Bagi n = 3 dan a = −2, y = −2x³. Ganti x = 2: y = −2 × 2³ = −2 × 8 = −16."
     }
    ],
    "bos": {

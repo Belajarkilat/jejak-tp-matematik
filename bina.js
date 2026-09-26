@@ -265,6 +265,10 @@ function semakRajah(bab){
   return m;
 }
 
+/* Toleransi jawapan nombor dikira daripada soalan (lihat tools/_tol.js). */
+const { tolBaharu } = require("./tools/_tol");
+const tolQ = q => q && q.j === "nombor" ? Object.assign({}, q, { tol: tolBaharu(q) }) : q;
+
 function tulis(bab){
   const lampiran = {};
   for(const k of Object.keys(bab.lampiran || {})) lampiran[k] = lukisLampiran(bab.lampiran[k]);
@@ -277,7 +281,7 @@ function tulis(bab){
       n: a.n, tempat: a.tempat, sk: a.sk, lampiran: a.lampiran || null,
       kadNama: a.kadNama, kadEm: a.kadEm, kadFakta: a.kadFakta,
       bosKadNama: a.bosKadNama, bosKadEm: a.bosKadEm, bosKadFakta: a.bosKadFakta,
-      soalan: a.soalan, bos: a.bos,
+      soalan: a.soalan.map(tolQ), bos: tolQ(a.bos),
     })),
   };
   const kepala =
@@ -334,5 +338,6 @@ senarai.forEach(id => {
   console.log(`✓ ${id}  ${item} item  ·  ${fail}  ${fs.statSync(fail).size} bait  ·  kedudukan ${kedudukan}`);
 });
 
+try{ require("./tools/bina-indeks").bina(); }catch(e){ console.log("amaran: bab-indeks.js tidak dijana: "+e.message); }
 if(gagal) process.exit(1);
 }

@@ -75,14 +75,14 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Nombor ganjil dan tetapkan n = 6. Berapakah sebutan ke-6?",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nombor ganjil ialah 1, 3, 5, 7, 9, 11. Sebutan ke-6 ialah 11."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Nombor genap dan tetapkan n = 7. Berapakah sebutan ke-7?",
      "b": 14,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nombor genap ialah 2, 4, 6, 8, 10, 12, 14. Sebutan ke-7 ialah 14."
     },
     {
@@ -101,7 +101,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Fibonacci dan tetapkan n = 8. Berapakah sebutan ke-8?",
      "b": 21,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Jujukan Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21. Sebutan ke-8 ialah 21."
     },
     {
@@ -184,14 +184,14 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan baris 4. Berapakah nombor ketiga dari kiri dalam baris itu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Baris 4 ialah 1, 4, 6, 4, 1. Nombor ketiga ialah 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan baris 5. Berapakah jumlah semua nombor dalam baris itu?",
      "b": 32,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Baris 5 ialah 1, 5, 10, 10, 5, 1. Jumlahnya ialah 32, iaitu 2 kuasa 5."
     },
     {
@@ -210,7 +210,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam baris 6 Segi Tiga Pascal, dua nombor bersebelahan ialah 15 dan 20. Berapakah nombor tepat di bawah kedua-duanya dalam baris 7?",
      "b": 35,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Nombor itu ialah 15 + 20 = 35, iaitu nombor di tengah baris 7."
     },
     {
@@ -277,7 +277,7 @@ window.BANK["m2b1"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, jumlah nombor dalam baris r ialah 2 kuasa r. Jika jumlah suatu baris ialah 128, baris berapakah itu?",
     "b": 7,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "2 kuasa 7 = 128, jadi baris 7. Baris 7 ialah 1, 7, 21, 35, 35, 21, 7, 1."
    }
   },
@@ -297,7 +297,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi empat dan tetapkan n = 4. Berapakah batang mancis yang digunakan?",
      "b": 13,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "batang",
      "u": "Segi empat pertama guna 4 batang, dan setiap segi empat tambahan guna 3 batang. 4 + 3 + 3 + 3 = 13."
     },
@@ -305,7 +305,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi tiga dan tetapkan n = 5. Berapakah batang mancis yang digunakan?",
      "b": 11,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "batang",
      "u": "Segi tiga pertama guna 3 batang, dan setiap segi tiga tambahan guna 2 batang. 3 + 4 × 2 = 11."
     },
@@ -349,8 +349,8 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Corak segi tiga mancis ialah 3, 5, 7, 9, ... Berapakah sebutan ke-6?",
      "b": 13,
-     "tol": 0.01,
-     "u": "Beza ialah 2. Sebutan ke-6 = 3 + 5 × 2 = 13."
+     "tol": 0.001000000001,
+     "u": "Beza sebutan = 5 − 3 = 2. Guna sebutan ke-n = sebutan pertama + (n − 1) × beza. Sebutan ke-6 = 3 + 5 × 2 = 13."
     },
     {
      "j": "susun",
@@ -392,7 +392,7 @@ window.BANK["m2b1"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, tetapkan n = 8 bagi corak segi empat dan segi tiga. Berapakah beza bilangan batang mancis antara 8 segi empat dengan 8 segi tiga?",
     "b": 8,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "batang",
     "u": "8 segi empat: 3 × 8 + 1 = 25 batang. 8 segi tiga: 2 × 8 + 1 = 17 batang. Beza ialah 25 - 17 = 8."
    }
@@ -413,7 +413,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, baris pertama ada 5 kerusi dan setiap baris seterusnya bertambah 4 kerusi. Kira dahulu bilangan kerusi dalam baris ke-8, kemudian semak dengan rajah.",
      "b": 33,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "kerusi",
      "u": "Sebutan ke-8 = 5 + 7 × 4 = 33, atau guna rumus 4n + 1 = 33."
     },
@@ -421,7 +421,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Menggunakan corak dalam Rajah 1, berapakah kerusi dalam baris ke-15?",
      "b": 61,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "kerusi",
      "u": "Rumus sebutan ke-n ialah 4n + 1. Bagi n = 15: 4 × 15 + 1 = 61."
     },
@@ -441,15 +441,15 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Sebutan ke-n bagi suatu jujukan ialah 3n + 4. Berapakah sebutan ke-10?",
      "b": 34,
-     "tol": 0.01,
-     "u": "3 × 10 + 4 = 34."
+     "tol": 0.001000000001,
+     "u": "Guna rumus sebutan ke-n: 3n + 4. Ganti n = 10: 3 × 10 + 4 = 30 + 4 = 34."
     },
     {
      "j": "nombor",
      "t": "Jujukan 50, 46, 42, 38, ... Berapakah sebutan ke-9?",
      "b": 18,
-     "tol": 0.01,
-     "u": "Beza ialah -4. Sebutan ke-9 = 50 + 8 × (-4) = 18."
+     "tol": 0.001000000001,
+     "u": "Beza = 46 − 50 = −4. Sebutan ke-9 = 50 + (9 − 1) × (−4) = 50 − 32 = 18."
     },
     {
      "j": "pilih",
@@ -467,8 +467,8 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Sebutan ke-n bagi suatu jujukan ialah 5n − 3. Sebutan yang ke berapakah bernilai 37?",
      "b": 8,
-     "tol": 0.01,
-     "u": "5n - 3 = 37, jadi 5n = 40 dan n = 8."
+     "tol": 0.001000000001,
+     "u": "Guna 5n − 3 = 37. Tambah 3 pada kedua-dua belah: 5n = 40. Bahagi 5: n = 8. Semak: 5 × 8 − 3 = 37."
     },
     {
      "j": "pilih",
@@ -487,7 +487,7 @@ window.BANK["m2b1"] =
     "j": "nombor",
     "t": "Dalam Rajah 1, dewan itu ada 12 baris. Berapakah jumlah kerusi dalam 3 baris terakhir, iaitu baris 10, 11 dan 12?",
     "b": 135,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "kerusi",
     "u": "Baris 10 ialah 41, baris 11 ialah 45 dan baris 12 ialah 49. Jumlahnya 41 + 45 + 49 = 135."
    }
@@ -508,17 +508,17 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih n = 6 untuk timbunan tin itu. Kira dahulu jumlah tin, kemudian semak dengan rajah.",
      "b": 21,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "tin",
-     "u": "1 + 2 + 3 + 4 + 5 + 6 = 21, atau 6 × 7 ÷ 2 = 21."
+     "u": "Guna nombor segi tiga ke-n = n × (n + 1) ÷ 2. Ganti n = 6: 6 × 7 ÷ 2 = 21. Semak: 1 + 2 + 3 + 4 + 5 + 6 = 21 tin."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah tin tambahan diperlukan apabila timbunan bertambah daripada 5 baris kepada 6 baris?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "tin",
-     "u": "Baris baharu ada 6 tin. 21 - 15 = 6."
+     "u": "Baris ke-6 mempunyai 6 tin. Tambahan = nombor segi tiga ke-6 − nombor segi tiga ke-5 = 21 − 15 = 6 tin."
     },
     {
      "j": "pilih",
@@ -536,27 +536,32 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Berapakah jumlah tin dalam timbunan berbentuk segi tiga yang mempunyai 10 baris? Guna rumus n × (n + 1) ÷ 2.",
      "b": 55,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "tin",
-     "u": "10 × 11 ÷ 2 = 55."
+     "u": "Guna n × (n + 1) ÷ 2. Ganti n = 10: 10 × 11 ÷ 2 = 110 ÷ 2 = 55 tin."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah timbunan tin berbentuk segi tiga mempunyai 28 tin. Berapakah bilangan barisnya?",
-     "b": 7,
-     "tol": 0.01,
-     "u": "Nombor segi tiga: 1, 3, 6, 10, 15, 21, 28. Sebutan ke-7 ialah 28."
+     "j": "pilih",
+     "t": "Seorang murid mengira jumlah tin dalam timbunan segi tiga 8 baris sebagai 8 × 9 = 72 tin. Apakah kesilapannya?",
+     "p": [
+      "Dia sepatutnya mendarab 8 × 8 kerana timbunan itu ada 8 baris",
+      "Dia terlupa membahagi 8 × 9 dengan 2, jadi jawapan betul ialah 36 tin",
+      "Dia sepatutnya menjumlahkan 8 + 9 dan mendapat 17 tin",
+      "Tiada kesilapan kerana 8 × 9 ialah rumus nombor segi tiga"
+     ],
+     "b": 1,
+     "u": "Nombor segi tiga ke-n = n × (n + 1) ÷ 2. Ganti n = 8: 8 × 9 ÷ 2 = 72 ÷ 2 = 36. Tanpa ÷ 2, murid mengira dua timbunan."
     },
     {
      "j": "pilih",
      "t": "Dua nombor segi tiga berturut-turut, 10 dan 15, dijumlahkan menjadi 25. Nombor 25 juga ialah:",
      "p": [
       "Nombor segi tiga",
-      "Nombor segi empat sama",
       "Nombor Fibonacci",
+      "Nombor segi empat sama",
       "Nombor genap"
      ],
-     "b": 1,
+     "b": 2,
      "u": "25 = 5 × 5, iaitu nombor segi empat sama. 25 bukan nombor segi tiga, bukan Fibonacci dan bukan genap."
     },
     {
@@ -599,7 +604,7 @@ window.BANK["m2b1"] =
     "j": "nombor",
     "t": "Seorang penjual menyusun 100 tin dalam timbunan berbentuk segi tiga. Berapakah bilangan baris penuh yang paling banyak boleh disusun?",
     "b": 13,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "13 baris memerlukan 13 × 14 ÷ 2 = 91 tin. 14 baris memerlukan 105 tin, lebih daripada 100. Jadi 13 baris penuh, dan 9 tin tinggal."
    }
   },
@@ -619,7 +624,7 @@ window.BANK["m2b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih segi empat tepat dan tetapkan n = 6. Berapakah jumlah titik?",
      "b": 42,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "titik",
      "u": "Segi empat tepat ialah 6 baris dan 7 lajur. 6 × 7 = 42."
     },
@@ -629,45 +634,50 @@ window.BANK["m2b1"] =
      "p": [
       "n × n",
       "2n",
-      "n × (n + 1)",
-      "n + 2"
+      "n + 2",
+      "n × (n + 1)"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Bagi n = 1: 1 × 2 = 2. Bagi n = 2: 2 × 3 = 6. Bagi n = 3: 3 × 4 = 12."
     },
     {
      "j": "nombor",
      "t": "Berapakah nombor segi empat tepat ke-9, menggunakan rumus n × (n + 1)?",
      "b": 90,
-     "tol": 0.01,
-     "u": "9 × 10 = 90."
+     "tol": 0.001000000001,
+     "u": "Guna nombor segi empat tepat ke-n = n × (n + 1). Ganti n = 9: 9 × 10 = 90."
     },
     {
      "j": "pilih",
      "t": "Apabila dua nombor segi tiga berturut-turut, seperti 6 dan 10, dijumlahkan, hasilnya ialah:",
      "p": [
+      "Nombor segi empat sama",
       "Nombor segi tiga lain",
       "Nombor Fibonacci",
-      "Nombor segi empat tepat",
-      "Nombor segi empat sama"
+      "Nombor segi empat tepat"
      ],
-     "b": 3,
+     "b": 0,
      "u": "6 + 10 = 16 = 4 × 4. Ini benar untuk mana-mana dua nombor segi tiga berturut-turut."
     },
     {
      "j": "nombor",
      "t": "Sebuah segi empat tepat titik 5 × 6 dipotong pada pepenjuru kepada dua segi tiga yang sama. Berapakah titik dalam satu segi tiga?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "titik",
      "u": "Segi empat tepat ada 5 × 6 = 30 titik. Separuh ialah 15, sama dengan nombor segi tiga ke-5."
     },
     {
-     "j": "nombor",
-     "t": "Nombor segi empat sama ke-12 ialah 144 dan ke-11 ialah 121. Berapakah beza antara keduanya?",
-     "b": 23,
-     "tol": 0.01,
-     "u": "144 - 121 = 23, iaitu 2 × 12 - 1, nombor ganjil ke-12."
+     "j": "pilih",
+     "t": "Seorang murid berkata rumus sebutan ke-n bagi jujukan 5, 8, 11, 14 ialah n + 3 kerana 2 + 3 = 5. Apakah kesilapannya?",
+     "p": [
+      "Rumus itu betul kerana sebutan pertama ialah 5 dan 2 + 3 = 5",
+      "Beza antara sebutan ialah 3, jadi pekali n mesti 3 dan rumus betul ialah 3n + 2",
+      "Rumus itu sepatutnya 5n kerana sebutan pertama ialah 5",
+      "Rumus itu sepatutnya n + 5 kerana sebutan pertama ialah 5"
+     ],
+     "b": 1,
+     "u": "Beza = 8 − 5 = 3, jadi pekali n ialah 3. Sebutan pertama 5 = 3 × 1 + 2. Rumus 3n + 2. Semak n = 2: 3 × 2 + 2 = 8. Rumus n + 3 memberi 5 apabila n = 2, bukan 8."
     },
     {
      "j": "susun",

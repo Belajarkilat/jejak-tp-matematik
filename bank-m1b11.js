@@ -64,12 +64,12 @@ window.BANK["m1b11"] =
      "t": "Antara yang berikut, yang manakah ialah satu set?",
      "p": [
       "Semua huruf dalam perkataan 'BUNGA'",
-      "Murid yang paling hensem dalam kelas",
-      "Nombor yang cantik pada mata awak",
+      "Lagu yang paling sedap didengar",
+      "Warna yang paling cantik",
       "Buah-buahan yang sedap dimakan"
      ],
      "b": 0,
-     "u": "Set ialah koleksi objek yang jelas. Kita boleh tentukan dengan pasti sama ada sesuatu objek ahli atau bukan. Hensem, cantik dan sedap bergantung pada pendapat, jadi tidak jelas."
+     "u": "Set ialah koleksi objek yang jelas. Kita boleh tentukan dengan pasti sama ada sesuatu objek ahli atau bukan. 'Paling sedap' dan 'paling cantik' bergantung pada pendapat setiap orang, jadi tidak jelas."
     },
     {
      "j": "pilih",
@@ -220,14 +220,14 @@ window.BANK["m1b11"] =
      "j": "nombor",
      "t": "A = {x: x nombor genap, x ≤ 12}, iaitu set nombor genap positif sehingga 12. Berapakah n(A)?",
      "b": 6,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "A = {2, 4, 6, 8, 10, 12}. Ada 6 unsur, jadi n(A) = 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih set 'perdana'. Berapakah n(A)?",
      "b": 5,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "A = {2, 3, 5, 7, 11}. Ada 5 unsur."
     },
     {
@@ -258,14 +258,14 @@ window.BANK["m1b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih set 'gandaan 13'. Berapakah n(A)?",
      "b": 0,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "Tiada nombor antara 1 dan 12 yang ialah gandaan 13. A ialah set kosong, jadi n(A) = 0."
     },
     {
      "j": "nombor",
      "t": "Set A ialah set huruf dalam perkataan 'MALAYSIA'. Berapakah n(A)?",
      "b": 6,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "Huruf berbeza ialah M, A, L, Y, S dan I. Huruf A berulang tetapi dikira sekali sahaja, jadi n(A) = 6."
     }
    ],
@@ -328,8 +328,8 @@ window.BANK["m1b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih set B ke-3, iaitu {2, 2, 4, 6, 8}. Berapakah n(B)?",
      "b": 4,
-     "tol": 0.001,
-     "u": "Unsur 2 ditulis dua kali tetapi dikira sekali. B mempunyai 4 unsur berbeza, jadi n(B) = 4 dan B = A."
+     "tol": 0.001000000001,
+     "u": "Set tidak mengira unsur yang berulang. Unsur berbeza: 2, 4, 6, 8. Jadi n(B) = 4 dan B = A."
     },
     {
      "j": "pilih",
@@ -445,21 +445,21 @@ window.BANK["m1b11"] =
       "Bukan unsur A"
      ],
      "b": 3,
-     "u": "A' mengandungi semua unsur ξ yang tidak ada dalam A."
+     "u": "A' mengandungi semua unsur ξ yang tidak ada dalam A. Bersama A, ia melengkapkan seluruh ξ."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih set 'gandaan 3'. Berapakah n(A')?",
      "b": 8,
-     "tol": 0.001,
-     "u": "A = {3, 6, 9, 12}, jadi n(A) = 4. n(A') = 12 − 4 = 8."
+     "tol": 0.001000000001,
+     "u": "Gandaan 3 dalam ξ: A = {3, 6, 9, 12}, jadi n(A) = 4. Guna n(A') = n(ξ) − n(A) = 12 − 4 = 8."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih set 'perdana'. Berapakah n(A')?",
      "b": 7,
-     "tol": 0.001,
-     "u": "A = {2, 3, 5, 7, 11}, jadi n(A) = 5. n(A') = 12 − 5 = 7."
+     "tol": 0.001000000001,
+     "u": "Perdana dalam ξ: A = {2, 3, 5, 7, 11}, jadi n(A) = 5. Guna n(A') = 12 − 5 = 7."
     },
     {
      "j": "pilih",
@@ -489,15 +489,15 @@ window.BANK["m1b11"] =
      "j": "nombor",
      "t": "ξ = {1, 2, 3, ..., 20} dan A = {x: x nombor genap}. Berapakah n(A')?",
      "b": 10,
-     "tol": 0.001,
-     "u": "Ada 10 nombor genap dan 10 nombor ganjil antara 1 dan 20. A' ialah set nombor ganjil, jadi n(A') = 10."
+     "tol": 0.001000000001,
+     "u": "Nombor genap dalam ξ: 2, 4, ..., 20, iaitu 10 nombor. A' ialah set nombor ganjil, jadi n(A') = 20 − 10 = 10."
     },
     {
      "j": "nombor",
      "t": "n(ξ) = 30 dan n(A) = 12. Berapakah n(A')?",
      "b": 18,
-     "tol": 0.001,
-     "u": "n(A') = n(ξ) − n(A) = 30 − 12 = 18."
+     "tol": 0.001000000001,
+     "u": "Guna n(A') = n(ξ) − n(A). Ganti: 30 − 12 = 18."
     }
    ],
    "bos": {
@@ -541,7 +541,7 @@ window.BANK["m1b11"] =
       "B ialah semesta bagi A"
      ],
      "b": 2,
-     "u": "⊂ bermaksud 'ialah subset bagi'."
+     "u": "⊂ bermaksud 'ialah subset bagi'. B ⊂ A bermaksud setiap unsur B juga unsur A."
     },
     {
      "j": "pilih",
@@ -559,15 +559,15 @@ window.BANK["m1b11"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, A = {2, 4, 6}. Berapakah jumlah subset A, termasuk set kosong dan A sendiri?",
      "b": 8,
-     "tol": 0.001,
-     "u": "Subset A ialah { }, {2}, {4}, {6}, {2, 4}, {2, 6}, {4, 6} dan {2, 4, 6}. Jumlahnya 8."
+     "tol": 0.001000000001,
+     "u": "Setiap unsur dipilih atau tidak: 2 × 2 × 2 = 8. Senarai: { }, {2}, {4}, {6}, {2, 4}, {2, 6}, {4, 6}, {2, 4, 6}. Jumlah subset = 8."
     },
     {
      "j": "nombor",
      "t": "A = {2, 4, 6}. Berapakah subset A yang mempunyai tepat 2 unsur?",
      "b": 3,
-     "tol": 0.001,
-     "u": "Tiga subset: {2, 4}, {2, 6} dan {4, 6}."
+     "tol": 0.001000000001,
+     "u": "Pilih 2 daripada 3 unsur: {2, 4}, {2, 6} dan {4, 6}. Jadi ada 3 subset."
     },
     {
      "j": "pilih",
@@ -582,29 +582,34 @@ window.BANK["m1b11"] =
      "u": "8 ialah unsur {2, 8} tetapi 8 bukan unsur A. Set kosong dan A sendiri kedua-duanya subset A."
     },
     {
-     "j": "nombor",
-     "t": "Set P = {a, b, c, d}. Berapakah jumlah subset P?",
-     "b": 16,
-     "tol": 0.001,
-     "u": "Setiap unsur boleh dipilih atau tidak dipilih. 2 × 2 × 2 × 2 = 16 subset."
+     "j": "pilih",
+     "t": "Seorang murid berkata set {1, 2, 3} ada 3 subset kerana ada 3 unsur. Apakah kesilapannya?",
+     "p": [
+      "Subset mesti mengandungi semua unsur, jadi ada 1 subset",
+      "Subset termasuk set kosong dan gabungan unsur, jadi ada 8 subset",
+      "Set kosong bukan subset, jadi ada 7 subset",
+      "Tiada kesilapan, bilangan subset sama dengan bilangan unsur"
+     ],
+     "b": 1,
+     "u": "Subset { } dan {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}: jumlahnya 8 (2 × 2 × 2). Bilangan subset tidak sama dengan bilangan unsur."
     },
     {
      "j": "nombor",
      "t": "Berapakah bilangan subset bagi set kosong, { }?",
      "b": 1,
-     "tol": 0.001,
-     "u": "Set kosong tiada unsur untuk dipilih. Subsetnya hanya set kosong itu sendiri, jadi ada 1 subset."
+     "tol": 0.001000000001,
+     "u": "Set kosong tiada unsur untuk dipilih. Subsetnya ialah set kosong itu sendiri: { }. Jadi ada 1 subset."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, subset B ialah {4, 6}. Pernyataan yang betul ialah:",
      "p": [
       "A ⊂ B dan n(B) = 2",
-      "B ⊂ A dan n(B) = 2",
       "B ⊂ A dan n(B) = 3",
+      "B ⊂ A dan n(B) = 2",
       "B = A"
      ],
-     "b": 1,
+     "b": 2,
      "u": "4 dan 6 ada dalam A = {2, 4, 6}, jadi B ⊂ A. B ada 2 unsur, kurang daripada A yang ada 3, jadi B ≠ A."
     }
    ],
@@ -645,74 +650,79 @@ window.BANK["m1b11"] =
      "p": [
       "{1, 3, 5, 7}",
       "{1, 2, 3, 4, 5, 6, 7, 8}",
-      "{2, 4, 6, 8}",
-      "{ }"
+      "{ }",
+      "{2, 4, 6, 8}"
      ],
-     "b": 2,
+     "b": 3,
      "u": "A' ialah unsur ξ yang tiada dalam A, iaitu nombor genap 2, 4, 6 dan 8."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, B ialah set semua unsur A kecuali 1 dan 7. Berapakah n(B)?",
      "b": 2,
-     "tol": 0.001,
-     "u": "A = {1, 3, 5, 7}. Buang 1 dan 7, tinggal B = {3, 5}, jadi n(B) = 2 dan B ⊂ A."
+     "tol": 0.001000000001,
+     "u": "A = {1, 3, 5, 7}. Buang 1 dan 7, tinggal B = {3, 5}. Jadi n(B) = 2 dan B ⊂ A."
     },
     {
      "j": "nombor",
      "t": "Sebuah kelas mempunyai 30 murid (ξ). Seramai 18 murid bermain badminton (set A). Berapakah bilangan murid yang tidak bermain badminton, iaitu n(A')?",
      "b": 12,
-     "tol": 0.001,
-     "u": "n(A') = n(ξ) − n(A) = 30 − 18 = 12 murid."
+     "tol": 0.001000000001,
+     "u": "Guna n(A') = n(ξ) − n(A). Ganti: 30 − 18 = 12. Jadi 12 murid tidak bermain badminton."
     },
     {
-     "j": "nombor",
-     "t": "ξ = {x: x integer, 1 ≤ x ≤ 40} dan A = {x: x gandaan 5}. Berapakah n(A')?",
-     "b": 32,
-     "tol": 0.001,
-     "u": "Gandaan 5 dalam ξ ialah 5, 10, ..., 40, iaitu 8 nombor. n(A') = 40 − 8 = 32."
+     "j": "pilih",
+     "t": "Sebuah kelas mempunyai 25 murid (ξ) dan 10 murid memakai cermin mata (set A). Seorang murid menulis n(A') = n(A) − n(ξ) = −15. Apakah kesilapannya?",
+     "p": [
+      "Rumus betul ialah n(A') = n(ξ) − n(A) = 15",
+      "Rumus betul ialah n(A') = n(ξ) + n(A), jadi n(A') = 35 murid",
+      "Rumus betul ialah n(A') = n(A) ÷ n(ξ), jadi n(A') = 0.4",
+      "Jawapan −15 betul kerana A' lebih kecil daripada A"
+     ],
+     "b": 0,
+     "u": "A' ialah murid yang tidak memakai cermin mata: n(A') = n(ξ) − n(A) = 25 − 10 = 15. Bilangan unsur tidak boleh negatif."
     },
     {
      "j": "pilih",
      "t": "Huraian yang manakah menunjukkan gambar rajah Venn bagi B ⊂ A ⊂ ξ?",
      "p": [
       "Bulatan A dalam bulatan B, dan bulatan B dalam segi empat ξ",
+      "B dalam A, A dalam ξ",
       "Bulatan A dan B berasingan, kedua-duanya dalam segi empat ξ",
-      "Bulatan B dalam segi empat ξ tetapi di luar bulatan A",
-      "B dalam A, A dalam ξ"
+      "Bulatan B dalam segi empat ξ tetapi di luar bulatan A"
      ],
-     "b": 3,
+     "b": 1,
      "u": "B ⊂ A bermaksud B di dalam A, dan A ⊂ ξ bermaksud A di dalam ξ."
     },
     {
      "j": "pilih",
      "t": "ξ = {1, 2, ..., 10}, A = {x: x nombor perdana} dan B = {2, 3}. Pernyataan yang betul ialah:",
      "p": [
-      "B ⊂ A dan n(A') = 6",
       "A ⊂ B dan n(A') = 6",
       "B ⊂ A dan n(A') = 4",
+      "B ⊂ A dan n(A') = 6",
       "B = A dan n(A') = 6"
      ],
-     "b": 0,
+     "b": 2,
      "u": "A = {2, 3, 5, 7}. B ⊂ A kerana 2 dan 3 ada dalam A. n(A) = 4, jadi n(A') = 10 − 4 = 6."
     },
     {
      "j": "nombor",
      "t": "ξ = {x: x integer, 1 ≤ x ≤ 50} dan A = {x: x kuasa dua sempurna}. Berapakah n(A')?",
      "b": 43,
-     "tol": 0.001,
-     "u": "Kuasa dua sempurna ialah 1, 4, 9, 16, 25, 36 dan 49, iaitu 7 nombor. n(A') = 50 − 7 = 43."
+     "tol": 0.001000000001,
+     "u": "Kuasa dua sempurna dalam ξ: 1, 4, 9, 16, 25, 36 dan 49 (7 nombor). Guna n(A') = 50 − 7 = 43."
     },
     {
      "j": "pilih",
      "t": "Set B ialah subset bagi set A. Jika n(A) = 6 dan n(B) = 6, maka:",
      "p": [
       "B = { }",
-      "B = A",
       "B = ξ",
-      "A' = B"
+      "A' = B",
+      "B = A"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Semua unsur B ada dalam A, dan bilangan unsurnya sama. Tiada unsur A yang tertinggal, jadi B = A."
     }
    ],

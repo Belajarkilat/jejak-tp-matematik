@@ -13,8 +13,8 @@ const babDiuji = process.argv.slice(2).filter(x => !x.startsWith("--"));
 const tanpaLaporanPenuh = process.argv.includes("--ringkas");
 (async () => {
   let html = fs.readFileSync("index.html", "utf8");
-  if (!/SOALAN_SET=4/.test(html)) throw new Error("SOALAN_SET=4 tidak dijumpai");
-  fs.writeFileSync("index-uji.html", html.replace("SOALAN_SET=4", "SOALAN_SET=9"));
+  if (!/SOALAN_SET=6/.test(html)) throw new Error("SOALAN_SET=6 tidak dijumpai");
+  fs.writeFileSync("index-uji.html", html.replace("SOALAN_SET=6", "SOALAN_SET=9"));
   const b = await chromium.launch();
   let jumlahGagal = 0;
   for (const bab of babDiuji) {

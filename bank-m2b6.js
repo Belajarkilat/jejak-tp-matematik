@@ -75,10 +75,10 @@ window.BANK["m2b6"] =
      "j": "pilih",
      "t": "Bentuk tiga dimensi mempunyai:",
      "p": [
-      "Hanya panjang dan lebar",
+      "Panjang dan lebar",
       "Panjang, lebar dan tinggi",
-      "Hanya panjang",
-      "Hanya tinggi"
+      "Lebar dan tinggi",
+      "Panjang dan tinggi"
      ],
      "b": 1,
      "u": "Tiga dimensi bermaksud tiga ukuran: panjang, lebar dan tinggi."
@@ -87,21 +87,21 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kubus. Berapakah bilangan muka kubus itu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kubus mempunyai 6 muka yang sama: atas, bawah dan empat sisi."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kubus. Berapakah bilangan tepi kubus itu?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kubus mempunyai 4 tepi di atas, 4 di bawah dan 4 tegak: 12 tepi."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kubus. Berapakah bilangan bucu kubus itu?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kubus mempunyai 4 bucu di atas dan 4 bucu di bawah: 8 bucu."
     },
     {
@@ -181,21 +181,21 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih prisma heksagon. Berapakah bilangan muka prisma itu?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dua tapak heksagon dan enam muka sisi berbentuk segi empat: 2 + 6 = 8 muka."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih prisma heksagon. Berapakah bilangan tepi prisma itu?",
      "b": 18,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Setiap heksagon ada 6 tepi, jadi 12 tepi. Tambah 6 tepi tegak: 18 tepi."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih prisma heksagon. Berapakah bilangan bucu prisma itu?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Setiap heksagon ada 6 bucu: 6 + 6 = 12 bucu."
     },
     {
@@ -214,7 +214,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih piramid segi empat. Berapakah bilangan bucunya?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Empat bucu di tapak dan satu bucu di puncak: 5 bucu."
     },
     {
@@ -245,7 +245,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebuah prisma tegak mempunyai tapak oktagon (8 sisi). Berapakah bilangan muka prisma itu?",
      "b": 10,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dua tapak oktagon dan 8 muka sisi segi empat: 2 + 8 = 10 muka."
     }
    ],
@@ -253,7 +253,7 @@ window.BANK["m2b6"] =
     "j": "nombor",
     "t": "Sebuah piramid mempunyai tapak heksagon. Berapakah bilangan tepi piramid itu?",
     "b": 12,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Tapak heksagon ada 6 tepi. Ada 6 tepi lagi dari puncak ke setiap bucu tapak: 6 + 6 = 12 tepi."
    }
   },
@@ -273,7 +273,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih bentangan kubus. Berapakah bilangan segi empat sama dalam bentangan itu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Kubus mempunyai 6 muka yang sama, jadi bentangannya mempunyai 6 segi empat sama."
     },
     {
@@ -316,7 +316,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebuah kubus bersisi 4 cm. Berapakah luas permukaannya (cm²)?",
      "b": 96,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas permukaan = 6 × 4 × 4 = 96 cm². Bentangan kubus terdiri daripada 6 petak yang sama."
     },
@@ -324,7 +324,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebuah kuboid berukuran 5 cm × 4 cm × 3 cm. Berapakah luas permukaannya (cm²)?",
      "b": 94,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas = 2(5×4 + 5×3 + 4×3) = 2(20 + 15 + 12) = 94 cm²."
     },
@@ -344,7 +344,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebuah kuboid berukuran 6 cm × 5 cm × 4 cm. Berapakah isi padunya (cm³)?",
      "b": 120,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Isi padu = panjang × lebar × tinggi = 6 × 5 × 4 = 120 cm³."
     }
@@ -353,7 +353,7 @@ window.BANK["m2b6"] =
     "j": "nombor",
     "t": "Sebuah kotak hadiah berbentuk kuboid berukuran 12 cm × 8 cm × 5 cm. Berapakah luas kertas hias yang diperlukan untuk menutup seluruh permukaannya (cm²)?",
     "b": 392,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm²",
     "u": "Luas = 2(12×8 + 12×5 + 8×5) = 2(96 + 60 + 40) = 392 cm²."
    }
@@ -374,47 +374,47 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kubus, saiz besar (a = 5 cm). Berapakah luas permukaannya (cm²)?",
      "b": 150,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 6 × 5 × 5 = 150 cm²."
+     "u": "Guna luas permukaan kubus = 6a². Ganti a = 5: 6 × 5 × 5 = 150 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kuboid, saiz kecil (5 cm × 4 cm × 3 cm). Berapakah luas permukaannya (cm²)?",
      "b": 94,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 2(20 + 15 + 12) = 94 cm²."
+     "u": "Guna 2(pl + pt + lt). Ganti: 2(5 × 4 + 5 × 3 + 4 × 3) = 2(20 + 15 + 12) = 2 × 47 = 94 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder, saiz kecil (r = 7 cm, t = 10 cm). Guna π = 22/7. Berapakah luas permukaannya (cm²)?",
      "b": 748,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 2πr(r + t) = 2 × 22/7 × 7 × 17 = 748 cm²."
+     "u": "Guna luas permukaan silinder = 2πr(r + t). Ganti: 2 × 22/7 × 7 × (7 + 10) = 44 × 17 = 748 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kon, saiz kecil (r = 7 cm, tinggi condong s = 25 cm). Guna π = 22/7. Berapakah luas permukaannya (cm²)?",
      "b": 704,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = πr(r + s) = 22/7 × 7 × 32 = 704 cm²."
+     "u": "Guna luas permukaan kon = πr(r + s). Ganti: 22/7 × 7 × (7 + 25) = 22 × 32 = 704 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih sfera, saiz kecil (r = 7 cm). Guna π = 22/7. Berapakah luas permukaannya (cm²)?",
      "b": 616,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 4πr² = 4 × 22/7 × 49 = 616 cm²."
+     "u": "Guna luas permukaan sfera = 4πr². Ganti r = 7: 4 × 22/7 × 49 = 4 × 22 × 7 = 616 cm²."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih prisma segi tiga, saiz kecil (tapak 3, 4, 5 cm; panjang 10 cm). Berapakah luas permukaannya (cm²)?",
      "b": 132,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas = 2 × (1/2 × 3 × 4) + (3 + 4 + 5) × 10 = 12 + 120 = 132 cm²."
     },
@@ -422,7 +422,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih piramid, saiz kecil (tapak 6 cm × 6 cm, tinggi condong s = 5 cm). Berapakah luas permukaannya (cm²)?",
      "b": 96,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas = 6 × 6 + 4 × (1/2 × 6 × 5) = 36 + 60 = 96 cm²."
     },
@@ -430,7 +430,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebuah kotak kuboid tanpa penutup berukuran 20 cm × 10 cm × 8 cm (tapak 20 × 10). Berapakah luas permukaan kotak itu (cm²)?",
      "b": 680,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
      "u": "Luas kuboid penuh = 2(200 + 160 + 80) = 880 cm². Tolak penutup 20 × 10 = 200 cm²: 680 cm²."
     }
@@ -439,7 +439,7 @@ window.BANK["m2b6"] =
     "j": "nombor",
     "t": "Sebuah bilik berbentuk kubus bersisi 3 m. Dinding dan siling akan dicat (lantai tidak dicat). Kos cat ialah RM12 semeter persegi. Berapakah jumlah kos mengecat bilik itu (RM)?",
     "b": 540,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Ada 5 permukaan dicat: 5 × 3 × 3 = 45 m². Kos = 45 × 12 = RM540."
    }
   },
@@ -459,39 +459,39 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih piramid, saiz kecil (tapak 6 cm × 6 cm, tinggi tegak 5 cm). Berapakah isi padunya (cm³)?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
-     "u": "Isi padu = 1/3 × 6 × 6 × 5 = 60 cm³."
+     "u": "Guna isi padu piramid = 1/3 × luas tapak × tinggi. Ganti: 1/3 × 6 × 6 × 5 = 180 ÷ 3 = 60 cm³."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder, saiz kecil (r = 7 cm, t = 10 cm). Guna π = 22/7. Berapakah isi padunya (cm³)?",
      "b": 1540,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
-     "u": "Isi padu = πr²t = 22/7 × 7 × 7 × 10 = 1 540 cm³."
+     "u": "Guna isi padu silinder = πr²t. Ganti: 22/7 × 7 × 7 × 10 = 154 × 10 = 1 540 cm³."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kon, saiz kecil (r = 7 cm, tinggi tegak 6 cm). Guna π = 22/7. Berapakah isi padunya (cm³)?",
      "b": 308,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
-     "u": "Isi padu = 1/3 × 22/7 × 7 × 7 × 6 = 308 cm³."
+     "u": "Guna isi padu kon = 1/3 πr²t. Ganti: 1/3 × 22/7 × 7 × 7 × 6 = 1/3 × 924 = 308 cm³."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih sfera, saiz kecil (r = 7 cm). Guna π = 22/7. Berapakah isi padunya kepada 2 tempat perpuluhan (cm³)?",
      "b": 1437.33,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm³",
-     "u": "Isi padu = 4/3 × 22/7 × 7 × 7 × 7 = 1 437.33 cm³."
+     "u": "Guna isi padu sfera = 4/3 πr³. Ganti r = 7: 4/3 × 22/7 × 343 = 4/3 × 1 078 = 1 437.33 cm³."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih prisma segi tiga, saiz kecil (tapak segi tiga bersudut tegak 3 cm dan 4 cm; panjang 10 cm). Berapakah isi padunya (cm³)?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Isi padu = luas tapak × panjang = 1/2 × 3 × 4 × 10 = 60 cm³."
     },
@@ -499,7 +499,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder, saiz sederhana (r = 14 cm, t = 5 cm). Guna π = 22/7. Berapakah isi padunya dalam liter?",
      "b": 3.08,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "liter",
      "u": "Isi padu = 22/7 × 14 × 14 × 5 = 3 080 cm³. Bahagi dengan 1 000: 3.08 liter."
     },
@@ -507,9 +507,9 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kon, saiz besar (r = 3.5 cm, tinggi tegak 6 cm). Guna π = 22/7. Berapakah isi padunya (cm³)?",
      "b": 77,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
-     "u": "Isi padu = 1/3 × 22/7 × 3.5 × 3.5 × 6 = 77 cm³."
+     "u": "Guna isi padu kon = 1/3 πr²t. Ganti r = 3.5 dan t = 6: 1/3 × 22/7 × 3.5 × 3.5 × 6 = 1/3 × 231 = 77 cm³."
     },
     {
      "j": "pilih",
@@ -528,7 +528,7 @@ window.BANK["m2b6"] =
     "j": "nombor",
     "t": "Sebuah tangki air berbentuk silinder mempunyai jejari 14 cm dan tinggi 50 cm. Guna π = 22/7. Berapakah isi padu air (liter) apabila tangki itu penuh?",
     "b": 30.8,
-    "tol": 0.01,
+    "tol": 0.01000000001,
     "suf": "liter",
     "u": "Isi padu = 22/7 × 14 × 14 × 50 = 30 800 cm³. Bahagi dengan 1 000: 30.8 liter."
    }
@@ -549,7 +549,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder + kon, saiz A (r = 7 cm, silinder t = 10 cm, kon t = 6 cm). Guna π = 22/7. Berapakah jumlah isi padunya (cm³)?",
      "b": 1848,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Silinder = 1 540 cm³ dan kon = 308 cm³. Jumlah = 1 848 cm³."
     },
@@ -557,7 +557,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder + kon, saiz C (r = 3.5 cm, silinder t = 12 cm, kon t = 6 cm). Guna π = 22/7. Berapakah jumlah isi padunya (cm³)?",
      "b": 539,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Silinder = 462 cm³ dan kon = 77 cm³. Jumlah = 539 cm³."
     },
@@ -565,7 +565,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih kuboid + prisma, saiz A (p = 6 cm, l = 10 cm, kuboid t = 4 cm, prisma t = 3 cm). Berapakah jumlah isi padunya (cm³)?",
      "b": 330,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
      "u": "Kuboid = 6 × 10 × 4 = 240 cm³. Prisma = 1/2 × 6 × 3 × 10 = 90 cm³. Jumlah = 330 cm³."
     },
@@ -573,7 +573,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder + hemisfera, saiz B (r = 3.5 cm, silinder t = 8 cm). Guna π = 22/7. Berapakah jumlah isi padunya kepada 2 tempat perpuluhan (cm³)?",
      "b": 397.83,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm³",
      "u": "Silinder = 308 cm³. Hemisfera = 2/3 × 22/7 × 3.5³ = 89.83 cm³. Jumlah = 397.83 cm³."
     },
@@ -581,7 +581,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih silinder + kon, saiz A. Tukarkan jumlah isi padunya kepada liter.",
      "b": 1.848,
-     "tol": 0.001,
+     "tol": 0.0005000000005,
      "suf": "liter",
      "u": "Jumlah = 1 848 cm³. Bahagi dengan 1 000: 1.848 liter."
     },
@@ -601,7 +601,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebiji bola sfera berjejari 3.5 cm ditenggelamkan dalam bikar silinder berjejari 7 cm yang berisi air. Guna π = 22/7. Berapakah kenaikan paras air kepada 2 tempat perpuluhan (cm)?",
      "b": 1.17,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm",
      "u": "Isi padu bola = 4/3 × 22/7 × 3.5³ = 179.67 cm³. Luas tapak bikar = 22/7 × 7² = 154 cm². Kenaikan = 179.67 ÷ 154 = 1.17 cm."
     },
@@ -609,7 +609,7 @@ window.BANK["m2b6"] =
      "j": "nombor",
      "t": "Sebuah kon aiskrim berjejari 3.5 cm dan tinggi tegak 12 cm diisi penuh dengan aiskrim. Satu hemisfera aiskrim berjejari 3.5 cm diletakkan di atasnya. Guna π = 22/7. Berapakah jumlah isi padu aiskrim kepada 2 tempat perpuluhan (cm³)?",
      "b": 243.83,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "cm³",
      "u": "Kon = 1/3 × 22/7 × 3.5² × 12 = 154 cm³. Hemisfera = 89.83 cm³. Jumlah = 243.83 cm³."
     }

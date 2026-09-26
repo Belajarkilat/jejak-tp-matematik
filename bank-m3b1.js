@@ -86,7 +86,7 @@ window.BANK["m3b1"] =
      "j": "nombor",
      "t": "Gerakkan gelongsor n pada Rajah 1 sehingga n = 4. Berapakah bilangan blok yang dipaparkan?",
      "b": 16,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "u": "n = 4 bermakna 2 × 2 × 2 × 2 = 16 blok."
     },
     {
@@ -201,7 +201,7 @@ window.BANK["m3b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan m = 5 dan n = 3. Berapakah indeks bagi hasil darab a<sup>m</sup> × a<sup>n</sup>?",
      "b": 8,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "u": "Bilangan faktor a bertambah: 5 + 3 = 8."
     },
     {
@@ -232,7 +232,7 @@ window.BANK["m3b1"] =
      "j": "nombor",
      "t": "Cari nilai x jika 3<sup>x</sup> × 3<sup>4</sup> = 3<sup>9</sup>.",
      "b": 5,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "u": "x + 4 = 9, jadi x = 5."
     },
     {
@@ -318,14 +318,14 @@ window.BANK["m3b1"] =
       "3<sup>8</sup>"
      ],
      "b": 3,
-     "u": "Indeks dikuasakan, jadi darabkan: 2 × 4 = 8."
+     "u": "Guna (a<sup>m</sup>)<sup>n</sup> = a<sup>m × n</sup>. Ganti: (3<sup>2</sup>)<sup>4</sup> = 3<sup>2 × 4</sup> = 3<sup>8</sup>."
     },
     {
      "j": "nombor",
      "t": "Cari nilai x jika (2<sup>3</sup>)<sup>x</sup> = 2<sup>12</sup>.",
      "b": 4,
-     "tol": 0.5,
-     "u": "3 × x = 12, jadi x = 4."
+     "tol": 0.001000000001,
+     "u": "(2<sup>3</sup>)<sup>x</sup> = 2<sup>3x</sup>. Samakan indeks dengan 2<sup>12</sup>: 3x = 12, jadi x = 12 ÷ 3 = 4."
     },
     {
      "j": "pilih",
@@ -337,14 +337,14 @@ window.BANK["m3b1"] =
       "Tidak tertakrif"
      ],
      "b": 0,
-     "u": "Sebarang nombor bukan sifar yang dikuasakan sifar sama dengan 1."
+     "u": "Guna a<sup>0</sup> = 1 bagi a bukan sifar. Maka 7<sup>0</sup> = 1, bukan 0 dan bukan 7."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan m = 3 dan n = 3. Berapakah indeks bagi hasil bahagi a<sup>m</sup> ÷ a<sup>n</sup>?",
      "b": 0,
-     "tol": 0.5,
-     "u": "Semua faktor dibatalkan, jadi indeks ialah 3 − 3 = 0, dan a kuasa sifar sama dengan 1."
+     "tol": 0.001000000001,
+     "u": "Guna a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m − n</sup>. Ganti: a<sup>3</sup> ÷ a<sup>3</sup> = a<sup>3 − 3</sup> = a<sup>0</sup> = 1. Jadi indeks hasil ialah 0."
     },
     {
      "j": "pilih",
@@ -356,7 +356,7 @@ window.BANK["m3b1"] =
       "1/6"
      ],
      "b": 1,
-     "u": "2<sup>−3</sup> = 1 ÷ 2<sup>3</sup> = 1/8. Indeks negatif memberi songsangan, bukan nilai negatif."
+     "u": "Guna a<sup>−n</sup> = 1 ÷ a<sup>n</sup>. Ganti: 2<sup>−3</sup> = 1 ÷ 2<sup>3</sup> = 1/8. Indeks negatif memberi songsangan, bukan nilai negatif."
     },
     {
      "j": "pilih",
@@ -368,14 +368,14 @@ window.BANK["m3b1"] =
       "a<sup>7</sup>"
      ],
      "b": 2,
-     "u": "Indeks hasil ialah 2 − 5 = −3, dan a<sup>−3</sup> = 1/a<sup>3</sup>."
+     "u": "Guna a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m − n</sup>. Indeks hasil: 2 − 5 = −3, dan a<sup>−3</sup> = 1/a<sup>3</sup>."
     },
     {
      "j": "nombor",
      "t": "Nyatakan 10<sup>−2</sup> dalam bentuk perpuluhan.",
      "b": 0.01,
-     "tol": 0.0001,
-     "u": "10<sup>−2</sup> = 1 ÷ 10<sup>2</sup> = 1/100 = 0.01."
+     "tol": 0.0001000000001,
+     "u": "Guna a<sup>−n</sup> = 1 ÷ a<sup>n</sup>. Ganti: 10<sup>−2</sup> = 1 ÷ 10<sup>2</sup> = 1/100 = 0.01."
     },
     {
      "j": "pilih",
@@ -387,7 +387,7 @@ window.BANK["m3b1"] =
       "m<sup>2</sup>"
      ],
      "b": 3,
-     "u": "(m<sup>3</sup>)<sup>2</sup> = m<sup>6</sup>, kemudian m<sup>6</sup> ÷ m<sup>4</sup> = m<sup>2</sup>."
+     "u": "Guna (a<sup>m</sup>)<sup>n</sup> = a<sup>m × n</sup>: (m<sup>3</sup>)<sup>2</sup> = m<sup>6</sup>. Kemudian bahagi: m<sup>6</sup> ÷ m<sup>4</sup> = m<sup>6 − 4</sup> = m<sup>2</sup>."
     }
    ],
    "bos": {
@@ -425,15 +425,15 @@ window.BANK["m3b1"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, lipat kertas 5 kali. Berapakah bilangan lapisan?",
      "b": 32,
-     "tol": 0.5,
-     "u": "Setiap lipatan menggandakan lapisan: 2<sup>5</sup> = 32."
+     "tol": 0.001000000001,
+     "u": "Setiap lipatan menggandakan lapisan, jadi lapisan = 2<sup>n</sup>. Ganti n = 5: 2<sup>5</sup> = 2 × 2 × 2 × 2 × 2 = 32."
     },
     {
      "j": "nombor",
      "t": "Berdasarkan Rajah 1, berapakah tebal kertas (mm) selepas 6 kali lipatan?",
      "b": 6.4,
-     "tol": 0.05,
-     "u": "2<sup>6</sup> = 64 lapisan, jadi 64 × 0.1 = 6.4 mm."
+     "tol": 0.05000000005,
+     "u": "Lapisan = 2<sup>6</sup> = 64. Tebal = lapisan × 0.1 mm. Ganti: 64 × 0.1 = 6.4 mm."
     },
     {
      "j": "pilih",
@@ -445,7 +445,7 @@ window.BANK["m3b1"] =
       "n + 2"
      ],
      "b": 0,
-     "u": "Setiap lipatan menggandakan lapisan, jadi n lipatan memberi 2 didarab n kali."
+     "u": "Lipatan 1 memberi 2 lapisan, lipatan 2 memberi 4, lipatan 3 memberi 8. Setiap lipatan mendarab 2, jadi n lipatan memberi 2 didarab n kali, iaitu 2<sup>n</sup>."
     },
     {
      "j": "pilih",
@@ -481,14 +481,14 @@ window.BANK["m3b1"] =
       "25.6 mm"
      ],
      "b": 3,
-     "u": "Setiap lipatan menggandakan tebal: 12.8 × 2 = 25.6 mm."
+     "u": "Setiap lipatan menggandakan tebal kertas. Ganti: 12.8 × 2 = 25.6 mm."
     },
     {
      "j": "nombor",
      "t": "Cari nilai x jika 2<sup>x</sup> × 2<sup>3</sup> = 2<sup>8</sup> ÷ 2<sup>2</sup>.",
      "b": 3,
-     "tol": 0.5,
-     "u": "Sebelah kanan: 2<sup>8</sup> ÷ 2<sup>2</sup> = 2<sup>6</sup>. Maka x + 3 = 6, jadi x = 3."
+     "tol": 0.001000000001,
+     "u": "Kanan: 2<sup>8</sup> ÷ 2<sup>2</sup> = 2<sup>8 − 2</sup> = 2<sup>6</sup>. Kiri: 2<sup>x</sup> × 2<sup>3</sup> = 2<sup>x + 3</sup>. Samakan indeks: x + 3 = 6, jadi x = 3."
     },
     {
      "j": "pilih",
@@ -500,16 +500,16 @@ window.BANK["m3b1"] =
       "16"
      ],
      "b": 0,
-     "u": "16 ÷ 8 = 2, kemudian 2 × 4 = 8."
+     "u": "Nilaikan kuasa dahulu: 2<sup>3</sup> = 8 dan 2<sup>2</sup> = 4. Kira dari kiri ke kanan: 16 ÷ 8 = 2, kemudian 2 × 4 = 8."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Kertas setebal 0.1 mm dilipat 10 kali. Berapakah tebalnya dalam sentimeter (cm)?",
     "b": 10.24,
-    "tol": 0.05,
+    "tol": 0.005000000005,
     "suf": "cm",
-    "u": "2<sup>10</sup> = 1 024 lapisan, jadi tebalnya 1 024 × 0.1 = 102.4 mm. Bahagi 10 untuk cm: 10.24 cm."
+    "u": "Lapisan = 2<sup>10</sup> = 1 024. Tebal = 1 024 × 0.1 = 102.4 mm. Tukar kepada cm: 102.4 ÷ 10 = 10.24 cm."
    }
   },
   {
@@ -525,30 +525,35 @@ window.BANK["m3b1"] =
    "bosKadFakta": "Kata laluan komputer yang lebih panjang menjadi kuasa yang jauh lebih sukar diteka: setiap huruf tambahan mendarab kemungkinan dengan banyak kali.",
    "soalan": [
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, tetapkan m = 3 dan n = 3. Berapakah indeks hasil bagi (a<sup>m</sup>)<sup>n</sup>?",
-     "b": 9,
-     "tol": 0.5,
-     "u": "n kumpulan, setiap satu ada m faktor a. Jumlah faktor a ialah 3 × 3 = 9."
+     "j": "pilih",
+     "t": "Dalam Rajah 1, m = 3 dan n = 3. Seorang murid menulis (a<sup>3</sup>)<sup>3</sup> = a<sup>3 + 3</sup> = a<sup>6</sup>. Apakah kesilapannya?",
+     "p": [
+      "Indeks perlu ditolak, jadi jawapannya a<sup>0</sup>",
+      "Indeks perlu didarab, jadi jawapannya a<sup>9</sup>",
+      "Asas perlu ditambah, jadi jawapannya 3a<sup>3</sup>",
+      "Tiada kesilapan, indeks memang ditambah, jadi jawapannya a<sup>6</sup>"
+     ],
+     "b": 1,
+     "u": "Rajah 1 menunjukkan n kumpulan, setiap satu ada m faktor a. Guna (a<sup>m</sup>)<sup>n</sup> = a<sup>m × n</sup>: jumlah faktor a = 3 × 3 = 9. Indeks ditambah hanya apabila asas yang sama didarab, bukan apabila dikuasakan."
     },
     {
      "j": "pilih",
      "t": "Ringkaskan (2x<sup>3</sup>)<sup>2</sup> × x<sup>−4</sup>.",
      "p": [
       "2x<sup>10</sup>",
-      "4x<sup>2</sup>",
       "4x<sup>10</sup>",
+      "4x<sup>2</sup>",
       "4x<sup>−2</sup>"
      ],
-     "b": 1,
+     "b": 2,
      "u": "(2x<sup>3</sup>)<sup>2</sup> = 4x<sup>6</sup>. Kemudian 4x<sup>6</sup> × x<sup>−4</sup> = 4x<sup>2</sup>."
     },
     {
      "j": "nombor",
      "t": "Jika 4<sup>x</sup> = 2<sup>10</sup>, cari nilai x.",
      "b": 5,
-     "tol": 0.5,
-     "u": "4 = 2<sup>2</sup>, jadi 4<sup>x</sup> = 2<sup>2x</sup>. Maka 2x = 10, x = 5."
+     "tol": 0.001000000001,
+     "u": "Samakan asas: 4 = 2<sup>2</sup>, jadi 4<sup>x</sup> = 2<sup>2x</sup>. Maka 2<sup>2x</sup> = 2<sup>10</sup>, 2x = 10 dan x = 5."
     },
     {
      "j": "pilih",
@@ -556,53 +561,53 @@ window.BANK["m3b1"] =
      "p": [
       "a<sup>2</sup>b<sup>1</sup>",
       "a<sup>8</sup>b<sup>1</sup>",
-      "a<sup>2</sup>b<sup>3</sup>",
-      "a<sup>8</sup>b<sup>3</sup>"
+      "a<sup>8</sup>b<sup>3</sup>",
+      "a<sup>2</sup>b<sup>3</sup>"
      ],
-     "b": 2,
-     "u": "Tolak indeks setiap asas: a: 5 − 3 = 2; b: 2 − (−1) = 3."
+     "b": 3,
+     "u": "Guna a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m − n</sup> pada setiap asas. Bagi a: 5 − 3 = 2. Bagi b: 2 − (−1) = 3. Jadi a<sup>2</sup>b<sup>3</sup>."
     },
     {
      "j": "nombor",
      "t": "Cari nilai 27<sup>2/3</sup>.",
      "b": 9,
-     "tol": 0.05,
-     "u": "27<sup>1/3</sup> = 3 (punca kuasa tiga), kemudian 3<sup>2</sup> = 9."
+     "tol": 0.001000000001,
+     "u": "27<sup>2/3</sup> = (27<sup>1/3</sup>)<sup>2</sup>. 27<sup>1/3</sup> = 3 (punca kuasa tiga bagi 27). Maka 3<sup>2</sup> = 9."
     },
     {
      "j": "pilih",
      "t": "a<sup>1/3</sup> bersamaan dengan:",
      "p": [
+      "Punca kuasa tiga bagi a",
       "a dibahagi dengan 3",
       "a didarab dengan 3",
-      "a dikuasa tigakan",
-      "Punca kuasa tiga bagi a"
+      "a dikuasa tigakan"
      ],
-     "b": 3,
-     "u": "Indeks 1/n bermaksud punca kuasa n."
+     "b": 0,
+     "u": "Guna a<sup>1/n</sup> = punca kuasa n bagi a. Jadi a<sup>1/3</sup> ialah punca kuasa tiga bagi a."
     },
     {
      "j": "pilih",
      "t": "Sejenis virus berganda setiap jam. Bermula dengan 5 virus, bilangannya selepas t jam ialah 5 × 2<sup>t</sup>. Jika bilangan virus ialah 320, berapakah t?",
      "p": [
-      "6",
       "12",
+      "6",
       "64",
       "320"
      ],
-     "b": 0,
-     "u": "320 ÷ 5 = 64 = 2<sup>6</sup>, jadi t = 6."
+     "b": 1,
+     "u": "5 × 2<sup>t</sup> = 320. Bahagi 5: 2<sup>t</sup> = 320 ÷ 5 = 64 = 2<sup>6</sup>. Maka t = 6."
     },
     {
      "j": "pilih",
      "t": "Manakah pilihan yang memberi nilai terbesar?",
      "p": [
       "3<sup>6</sup>",
-      "2<sup>10</sup>",
       "5<sup>4</sup>",
+      "2<sup>10</sup>",
       "10<sup>3</sup>"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Nilainya 1024, 729, 625 dan 1000. 2<sup>10</sup> lebih besar sedikit daripada 10<sup>3</sup>."
     }
    ],
@@ -612,10 +617,10 @@ window.BANK["m3b1"] =
     "p": [
      "Ali, kerana indeks juga dibahagi apabila asas dibahagi",
      "Kedua-duanya salah, jawapannya 2<sup>15</sup>",
-     "Siti, kerana indeks ditolak apabila asas yang sama dibahagi",
-     "Kedua-duanya betul kerana bergantung pada kaedah"
+     "Kedua-duanya betul kerana bergantung pada kaedah",
+     "Siti, kerana indeks ditolak apabila asas yang sama dibahagi"
     ],
-    "b": 2,
+    "b": 3,
     "u": "Bahagi asas yang sama bermakna tolak indeks: 10 − 5 = 5. Jadi 2<sup>10</sup> ÷ 2<sup>5</sup> = 2<sup>5</sup>."
    }
   },
@@ -635,24 +640,24 @@ window.BANK["m3b1"] =
      "j": "pilih",
      "t": "Seorang murid mahu menulis 2<sup>10</sup> dengan asas 4. Jawapannya ialah:",
      "p": [
+      "4<sup>5</sup>",
       "4<sup>12</sup>",
       "4<sup>20</sup>",
-      "4<sup>15</sup>",
-      "4<sup>5</sup>"
+      "4<sup>15</sup>"
      ],
-     "b": 3,
-     "u": "4 = 2<sup>2</sup>, jadi 4<sup>n</sup> = 2<sup>2n</sup>. Maka 2n = 10, n = 5."
+     "b": 0,
+     "u": "Tukar asas: 4 = 2<sup>2</sup>, jadi 4<sup>n</sup> = 2<sup>2n</sup>. Samakan dengan 2<sup>10</sup>: 2n = 10, maka n = 5."
     },
     {
      "j": "pilih",
      "t": "Antara nombor berikut, yang manakah TIDAK sama nilai dengan yang lain?",
      "p": [
-      "16<sup>4</sup>",
       "2<sup>12</sup>",
+      "16<sup>4</sup>",
       "4<sup>6</sup>",
       "8<sup>4</sup>"
      ],
-     "b": 0,
+     "b": 1,
      "u": "2<sup>12</sup>, 4<sup>6</sup> dan 8<sup>4</sup> semuanya bersamaan 4096. Tetapi 16<sup>4</sup> = 2<sup>16</sup>."
     },
     {
@@ -660,62 +665,67 @@ window.BANK["m3b1"] =
      "t": "2<sup>n</sup> + 2<sup>n</sup> bersamaan dengan:",
      "p": [
       "2<sup>2n</sup>",
-      "2<sup>n + 1</sup>",
       "4<sup>n</sup>",
+      "2<sup>n + 1</sup>",
       "2<sup>n</sup>"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Dua kumpulan 2<sup>n</sup> ialah 2 × 2<sup>n</sup> = 2<sup>n + 1</sup>. Menambah bukan mendarab indeks."
     },
     {
      "j": "nombor",
      "t": "Digit unit bagi 3<sup>1</sup>, 3<sup>2</sup>, 3<sup>3</sup>, 3<sup>4</sup> berulang setiap empat kuasa. Apakah digit unit bagi 3<sup>2026</sup>?",
      "b": 9,
-     "tol": 0.5,
-     "u": "Digit unit berulang: 3, 9, 7, 1. Baki 2026 ÷ 4 ialah 2, jadi digitnya sama dengan 3<sup>2</sup> = 9."
+     "tol": 0.001000000001,
+     "u": "Digit unit 3<sup>n</sup> berulang setiap empat kuasa: 3, 9, 7, 1. Baki 2026 ÷ 4 ialah 2, jadi digitnya sama dengan 3<sup>2</sup>, iaitu 9."
     },
     {
-     "j": "nombor",
-     "t": "Diberi 2<sup>a</sup> = 3 dan 2<sup>b</sup> = 5. Cari nilai 2<sup>a + b</sup>.",
-     "b": 15,
-     "tol": 0.5,
-     "u": "2<sup>a + b</sup> = 2<sup>a</sup> × 2<sup>b</sup> = 3 × 5 = 15."
+     "j": "pilih",
+     "t": "Seorang murid menulis 3<sup>2</sup> × 2<sup>3</sup> = 6<sup>5</sup>. Apakah kesilapannya?",
+     "p": [
+      "Indeks perlu ditolak, jadi jawapannya 6<sup>−1</sup>",
+      "Asas perlu ditambah, jadi jawapannya 5<sup>5</sup>",
+      "Indeks perlu didarab, jadi jawapannya 6<sup>6</sup>",
+      "Asasnya berbeza, jadi hukum darab tidak boleh digunakan; nilainya 9 × 8 = 72"
+     ],
+     "b": 3,
+     "u": "Hukum a<sup>m</sup> × a<sup>n</sup> = a<sup>m + n</sup> memerlukan asas yang sama. Di sini asas 3 dan 2 berbeza, maka kira nilai: 3<sup>2</sup> = 9 dan 2<sup>3</sup> = 8, jadi 9 × 8 = 72. 6<sup>5</sup> = 7776 tidak sama dengan 72."
     },
     {
      "j": "pilih",
      "t": "Satu megabait (1 MB) mengandungi 2<sup>20</sup> bait. Sebuah fail 8 MB mengandungi bait sebanyak:",
      "p": [
+      "2<sup>23</sup>",
       "2<sup>60</sup>",
       "2<sup>21</sup>",
-      "2<sup>23</sup>",
       "16<sup>20</sup>"
      ],
-     "b": 2,
-     "u": "8 = 2<sup>3</sup>, jadi 8 × 2<sup>20</sup> = 2<sup>3</sup> × 2<sup>20</sup> = 2<sup>23</sup>."
+     "b": 0,
+     "u": "Tukar 8 = 2<sup>3</sup>. Guna hukum darab: 2<sup>3</sup> × 2<sup>20</sup> = 2<sup>3 + 20</sup> = 2<sup>23</sup>."
     },
     {
      "j": "pilih",
      "t": "Bakteria A berganda setiap 30 minit. Bakteria B berganda setiap 1 jam. Bermula 1 sel setiap satu, selepas 3 jam bilangan A ialah berapa kali bilangan B?",
      "p": [
       "2 kali",
+      "8 kali",
       "6 kali",
-      "64 kali",
-      "8 kali"
+      "64 kali"
      ],
-     "b": 3,
+     "b": 1,
      "u": "A: 2<sup>6</sup> = 64. B: 2<sup>3</sup> = 8. Nisbahnya 64 ÷ 8 = 8 kali."
     },
     {
      "j": "pilih",
      "t": "Nombor 1/32 boleh ditulis sebagai:",
      "p": [
-      "2<sup>−5</sup>",
       "2<sup>5</sup>",
       "−2<sup>5</sup>",
+      "2<sup>−5</sup>",
       "5<sup>−2</sup>"
      ],
-     "b": 0,
-     "u": "32 = 2<sup>5</sup>, jadi 1/32 = 2<sup>−5</sup>."
+     "b": 2,
+     "u": "Tukar 32 = 2<sup>5</sup>. Guna a<sup>−n</sup> = 1 ÷ a<sup>n</sup>: 1/32 = 1/2<sup>5</sup> = 2<sup>−5</sup>."
     }
    ],
    "bos": {

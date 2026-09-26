@@ -75,8 +75,8 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan saiz kumpulan 6. Berapakah bilangan kumpulan penuh yang terbentuk?",
      "b": 4,
-     "tol": 0.01,
-     "u": "24 ÷ 6 = 4 kumpulan tanpa baki, jadi 6 ialah faktor bagi 24."
+     "tol": 0.001000000001,
+     "u": "Faktor ialah nombor yang membahagi tepat. Bilangan kumpulan = 24 ÷ 6 = 4, tanpa baki, jadi 6 ialah faktor bagi 24."
     },
     {
      "j": "pilih",
@@ -94,8 +94,8 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Berapakah bilangan faktor bagi 18?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Faktor bagi 18 ialah 1, 2, 3, 6, 9 dan 18. Jumlahnya 6."
+     "tol": 0.001000000001,
+     "u": "Cari pasangan yang darabnya 18: 1 × 18, 2 × 9, 3 × 6. Faktor: 1, 2, 3, 6, 9, 18. Jumlahnya 6."
     },
     {
      "j": "pilih",
@@ -142,8 +142,8 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Berapakah bilangan nombor perdana antara 1 dan 20?",
      "b": 8,
-     "tol": 0.01,
-     "u": "Nombor perdana ialah 2, 3, 5, 7, 11, 13, 17 dan 19. Jumlahnya 8."
+     "tol": 0.001000000001,
+     "u": "Nombor perdana hanya ada dua faktor. Semak 2 hingga 19: 2, 3, 5, 7, 11, 13, 17, 19. Jumlahnya 8 (nombor 1 bukan perdana)."
     }
    ],
    "bos": {
@@ -181,8 +181,8 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, bahagikan 84 dengan nombor perdana sehingga hasilnya 1. Berapakah bilangan langkah bahagi yang diperlukan?",
      "b": 4,
-     "tol": 0.01,
-     "u": "84 ÷ 2 = 42, ÷ 2 = 21, ÷ 3 = 7, ÷ 7 = 1. Empat langkah."
+     "tol": 0.001000000001,
+     "u": "Bahagi dengan nombor perdana terkecil dahulu: 84 ÷ 2 = 42, 42 ÷ 2 = 21, 21 ÷ 3 = 7, 7 ÷ 7 = 1. Ada 4 langkah."
     },
     {
      "j": "pilih",
@@ -218,21 +218,21 @@ window.BANK["m1b2"] =
       "3 × 10"
      ],
      "b": 2,
-     "u": "30 = 2 × 3 × 5. Ketiga-tiga nombor ialah nombor perdana."
+     "u": "Bahagi berulang: 30 ÷ 2 = 15, 15 ÷ 3 = 5, 5 ÷ 5 = 1. Jadi 30 = 2 × 3 × 5 dan semuanya perdana."
     },
     {
      "j": "nombor",
      "t": "Tulis 90 sebagai hasil darab faktor perdana. Berapakah bilangan faktor perdana yang BERBEZA?",
      "b": 3,
-     "tol": 0.01,
-     "u": "90 = 2 × 3 × 3 × 5. Faktor perdana yang berbeza ialah 2, 3 dan 5, iaitu tiga."
+     "tol": 0.001000000001,
+     "u": "Bahagi berulang: 90 ÷ 2 = 45, ÷ 3 = 15, ÷ 3 = 5, ÷ 5 = 1. Jadi 90 = 2 × 3 × 3 × 5. Faktor perdana yang berbeza: 2, 3 dan 5, iaitu tiga."
     },
     {
      "j": "nombor",
      "t": "Berapakah faktor perdana terbesar bagi 132?",
      "b": 11,
-     "tol": 0.01,
-     "u": "132 = 2 × 2 × 3 × 11. Faktor perdana terbesar ialah 11."
+     "tol": 0.001000000001,
+     "u": "Bahagi berulang: 132 ÷ 2 = 66, ÷ 2 = 33, ÷ 3 = 11, ÷ 11 = 1. Jadi 132 = 2 × 2 × 3 × 11. Faktor perdana terbesar ialah 11."
     },
     {
      "j": "pilih",
@@ -299,22 +299,22 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 3 dan B = 4. Berapakah GSTK bagi 3 dan 4?",
      "b": 12,
-     "tol": 0.01,
-     "u": "Gandaan 3: 3, 6, 9, 12. Gandaan 4: 4, 8, 12. Gandaan sepunya terkecil ialah 12."
+     "tol": 0.001000000001,
+     "u": "GSTK ialah gandaan sepunya terkecil. Gandaan 3: 3, 6, 9, 12. Gandaan 4: 4, 8, 12. Yang pertama sama ialah 12."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 6 dan B = 9. Berapakah GSTK bagi 6 dan 9?",
      "b": 18,
-     "tol": 0.01,
-     "u": "Gandaan 6: 6, 12, 18. Gandaan 9: 9, 18. Gandaan sepunya pertama ialah 18."
+     "tol": 0.001000000001,
+     "u": "Senaraikan gandaan 6: 6, 12, 18 dan gandaan 9: 9, 18. Gandaan sepunya terkecil (GSTK) ialah 18."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 8 dan B = 12. Berapakah GSTK?",
      "b": 24,
-     "tol": 0.01,
-     "u": "Gandaan 8: 8, 16, 24. Gandaan 12: 12, 24. GSTK ialah 24."
+     "tol": 0.001000000001,
+     "u": "Senaraikan gandaan 8: 8, 16, 24 dan gandaan 12: 12, 24. GSTK ialah 24."
     },
     {
      "j": "pilih",
@@ -332,15 +332,15 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Cari FSTB bagi 12 dan 18.",
      "b": 6,
-     "tol": 0.01,
-     "u": "Faktor 12: 1, 2, 3, 4, 6, 12. Faktor 18: 1, 2, 3, 6, 9, 18. Faktor sepunya terbesar ialah 6."
+     "tol": 0.001000000001,
+     "u": "Faktor 12: 1, 2, 3, 4, 6, 12. Faktor 18: 1, 2, 3, 6, 9, 18. Faktor sepunya: 1, 2, 3, 6. FSTB = 6."
     },
     {
      "j": "nombor",
      "t": "Cari FSTB bagi 24 dan 36.",
      "b": 12,
-     "tol": 0.01,
-     "u": "Faktor sepunya 24 dan 36 ialah 1, 2, 3, 4, 6 dan 12. Yang terbesar ialah 12."
+     "tol": 0.001000000001,
+     "u": "Faktor 24: 1, 2, 3, 4, 6, 8, 12, 24. Faktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Faktor sepunya terbesar ialah 12."
     },
     {
      "j": "pilih",
@@ -376,8 +376,8 @@ window.BANK["m1b2"] =
     "j": "nombor",
     "t": "Cari FSTB bagi tiga nombor 12, 18 dan 30.",
     "b": 6,
-    "tol": 0.01,
-    "u": "Faktor sepunya 12, 18 dan 30 ialah 1, 2, 3 dan 6. Yang terbesar ialah 6."
+    "tol": 0.001000000001,
+    "u": "Faktor 12: 1, 2, 3, 4, 6, 12. Faktor 18: 1, 2, 3, 6, 9, 18. Faktor 30: 1, 2, 3, 5, 6, 10, 15, 30. Sepunya: 1, 2, 3, 6. FSTB = 6."
    }
   },
   {
@@ -396,37 +396,37 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 24 dan B = 16. Berapakah FSTB bagi 24 dan 16?",
      "b": 8,
-     "tol": 0.01,
-     "u": "Faktor sepunya 24 dan 16 ialah 1, 2, 4 dan 8. Yang terbesar ialah 8."
+     "tol": 0.001000000001,
+     "u": "Faktor 24: 1, 2, 3, 4, 6, 8, 12, 24. Faktor 16: 1, 2, 4, 8, 16. Faktor sepunya terbesar ialah 8."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 36 dan B = 27. Berapakah FSTB bagi 36 dan 27?",
      "b": 9,
-     "tol": 0.01,
-     "u": "Faktor sepunya 36 dan 27 ialah 1, 3 dan 9. FSTB ialah 9."
+     "tol": 0.001000000001,
+     "u": "Faktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Faktor 27: 1, 3, 9, 27. Faktor sepunya terbesar ialah 9."
     },
     {
      "j": "nombor",
      "t": "Cikgu Hana ada 24 biskut coklat dan 36 biskut kelapa. Dia mahu membuat bungkusan yang sama banyak untuk setiap jenis tanpa baki. Berapakah bilangan bungkusan paling banyak yang boleh dibuat?",
      "b": 12,
-     "tol": 0.01,
-     "u": "Bilangan bungkusan terbanyak ialah FSTB bagi 24 dan 36, iaitu 12."
+     "tol": 0.001000000001,
+     "u": "Bungkusan paling banyak tanpa baki ialah FSTB. FSTB bagi 24 dan 36 = 12. Jadi 12 bungkusan."
     },
     {
      "j": "nombor",
      "t": "Ika ada 30 pen biru dan 45 pen merah. Dia membuat kumpulan pen yang sama banyak untuk setiap warna tanpa baki, dengan bilangan kumpulan yang paling banyak. Berapakah bilangan pen biru dalam setiap kumpulan?",
      "b": 2,
-     "tol": 0.01,
-     "u": "Bilangan kumpulan terbanyak ialah FSTB 30 dan 45, iaitu 15. Pen biru setiap kumpulan ialah 30 ÷ 15 = 2."
+     "tol": 0.001000000001,
+     "u": "Kumpulan terbanyak = FSTB 30 dan 45 = 15. Pen biru setiap kumpulan = 30 ÷ 15 = 2."
     },
     {
      "j": "nombor",
      "t": "Bas A bertolak setiap 12 minit dan bas B setiap 18 minit. Kedua-duanya bertolak serentak pada jam 8:00 pagi. Selepas berapa minit kedua-duanya bertolak serentak lagi?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "minit",
-     "u": "Masalah ini guna GSTK. GSTK bagi 12 dan 18 ialah 36, jadi mereka bertolak serentak lagi selepas 36 minit."
+     "u": "Bertolak serentak semula ialah GSTK. Gandaan 12: 12, 24, 36. Gandaan 18: 18, 36. GSTK = 36, jadi selepas 36 minit."
     },
     {
      "j": "pilih",
@@ -450,23 +450,23 @@ window.BANK["m1b2"] =
       "Saat ke-24"
      ],
      "b": 3,
-     "u": "GSTK bagi 6 dan 8 ialah 24, jadi serentak lagi pada saat ke-24."
+     "u": "Serentak lagi ialah GSTK. Gandaan 6: 6, 12, 18, 24. Gandaan 8: 8, 16, 24. GSTK = 24, jadi pada saat ke-24."
     },
     {
      "j": "nombor",
      "t": "Sekeping kertas 72 cm × 48 cm dipotong kepada petak persegi sama saiz tanpa baki. Berapakah panjang sisi petak terbesar yang boleh dipotong?",
      "b": 24,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Sisi petak terbesar ialah FSTB bagi 72 dan 48, iaitu 24 cm."
+     "u": "Petak terbesar tanpa baki ialah FSTB. FSTB bagi 72 dan 48 = 24. Sisi petak terbesar 24 cm."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Cikgu mahu mengagihkan 18 buku, 24 pen dan 30 pemadam kepada beberapa kumpulan yang sama banyak tanpa baki. Berapakah bilangan kumpulan yang paling banyak?",
     "b": 6,
-    "tol": 0.01,
-    "u": "Bilangan kumpulan terbanyak ialah FSTB bagi 18, 24 dan 30, iaitu 6."
+    "tol": 0.001000000001,
+    "u": "Kumpulan terbanyak ialah FSTB bagi 18, 24 dan 30. Faktor sepunya: 1, 2, 3, 6. FSTB = 6, jadi 6 kumpulan."
    }
   },
   {
@@ -485,15 +485,15 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 6 dan B = 8. Berapakah GSTK bagi 6 dan 8?",
      "b": 24,
-     "tol": 0.01,
-     "u": "Gandaan 6: 6, 12, 18, 24. Gandaan 8: 8, 16, 24. GSTK ialah 24."
+     "tol": 0.001000000001,
+     "u": "Senaraikan gandaan 6: 6, 12, 18, 24 dan gandaan 8: 8, 16, 24. GSTK ialah 24."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 9 dan B = 12. Berapakah GSTK bagi 9 dan 12?",
      "b": 36,
-     "tol": 0.01,
-     "u": "Gandaan 9: 9, 18, 27, 36. Gandaan 12: 12, 24, 36. GSTK ialah 36."
+     "tol": 0.001000000001,
+     "u": "Senaraikan gandaan 9: 9, 18, 27, 36 dan gandaan 12: 12, 24, 36. GSTK ialah 36."
     },
     {
      "j": "pilih",
@@ -511,35 +511,39 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Tiga lampu berkelip setiap 4, 6 dan 10 saat. Ketiga-tiganya berkelip serentak pada saat 0. Pada saat ke berapakah ketiga-tiganya berkelip serentak lagi?",
      "b": 60,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "saat",
-     "u": "GSTK bagi 4, 6 dan 10 ialah 60. Serentak lagi pada saat ke-60."
+     "u": "Serentak lagi ialah GSTK 4, 6 dan 10. Gandaan 10: 10, 20, 30, 40, 50, 60. Hanya 60 yang juga gandaan 4 dan 6. Jadi serentak lagi pada saat ke-60."
     },
     {
-     "j": "nombor",
-     "t": "Pak Salleh ke pasar setiap 6 hari dan Mak Jah setiap 8 hari. Mereka bertemu di pasar hari ini. Selepas berapa hari mereka bertemu lagi di pasar?",
-     "b": 24,
-     "tol": 0.01,
-     "suf": "hari",
-     "u": "GSTK bagi 6 dan 8 ialah 24, jadi mereka bertemu lagi selepas 24 hari."
+     "j": "pilih",
+     "t": "Pak Salleh ke pasar setiap 6 hari dan Mak Jah setiap 8 hari. Mereka bertemu hari ini. Aiman menggunakan FSTB dan berkata mereka bertemu lagi selepas 2 hari. Apakah kesilapan Aiman?",
+     "p": [
+      "Dia patut mendarab 6 dan 8 supaya mendapat 48 hari, iaitu tempoh bertemu",
+      "Soalan ini tentang kitaran berulang, jadi patut guna GSTK dan bukan FSTB",
+      "Dia patut menambah 6 dan 8 supaya mendapat 14 hari, iaitu tempoh bertemu",
+      "Jawapan 2 hari betul, tetapi unitnya patut ditukar kepada minggu"
+     ],
+     "b": 1,
+     "u": "Bertemu lagi bermaksud kitaran berulang serentak, jadi guna GSTK. Gandaan 6: 6, 12, 18, 24. Gandaan 8: 8, 16, 24. GSTK = 24 hari, bukan FSTB = 2."
     },
     {
      "j": "nombor",
      "t": "Lantai 360 cm × 240 cm dijubin dengan jubin persegi terbesar tanpa dipotong. Berapakah bilangan jubin yang diperlukan?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Sisi jubin terbesar ialah FSTB 360 dan 240, iaitu 120 cm. Bilangan jubin = (360 ÷ 120) × (240 ÷ 120) = 3 × 2 = 6."
+     "tol": 0.001000000001,
+     "u": "Jubin terbesar = FSTB 360 dan 240 = 120 cm. Jubin sepanjang = 360 ÷ 120 = 3 dan selebar = 240 ÷ 120 = 2. Jumlah 3 × 2 = 6."
     },
     {
      "j": "pilih",
      "t": "Nombor terkecil yang boleh dibahagi tepat dengan 6, 8 dan 12 ialah:",
      "p": [
       "48",
-      "24",
       "12",
+      "24",
       "96"
      ],
-     "b": 1,
+     "b": 2,
      "u": "GSTK bagi 6, 8 dan 12 ialah 24. Ia boleh dibahagi tepat dengan ketiga-tiganya."
     },
     {
@@ -548,10 +552,10 @@ window.BANK["m1b2"] =
      "p": [
       "32",
       "38",
-      "36",
-      "34"
+      "34",
+      "36"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Bilangan murid mesti gandaan sepunya 4 dan 6, iaitu gandaan 12. Dalam julat 31 hingga 39 hanya 36."
     }
    ],
@@ -559,9 +563,9 @@ window.BANK["m1b2"] =
     "j": "nombor",
     "t": "Tiga jam loceng berbunyi setiap 15 minit, 20 minit dan 25 minit. Ketiga-tiganya berbunyi serentak pada jam 9:00 pagi. Selepas berapa minit ketiga-tiganya berbunyi serentak lagi?",
     "b": 300,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "minit",
-    "u": "GSTK bagi 15, 20 dan 25 ialah 300. Serentak lagi selepas 300 minit, iaitu pada jam 2:00 petang."
+    "u": "Serentak lagi ialah GSTK 15, 20 dan 25. 15 = 3 × 5, 20 = 2 × 2 × 5, 25 = 5 × 5. GSTK = 2 × 2 × 3 × 5 × 5 = 300. Selepas 300 minit (5 jam), iaitu jam 2:00 petang."
    }
   },
   {
@@ -580,52 +584,57 @@ window.BANK["m1b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan A = 36 dan B = 42. Berapakah FSTB bagi 36 dan 42?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Faktor sepunya 36 dan 42 ialah 1, 2, 3 dan 6. FSTB ialah 6."
+     "tol": 0.001000000001,
+     "u": "Faktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Faktor 42: 1, 2, 3, 6, 7, 14, 21, 42. Faktor sepunya terbesar ialah 6."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, tetapkan A = 16 dan B = 45. Apakah yang benar tentang FSTB kedua-dua nombor itu?",
      "p": [
+      "FSTB ialah 1 kerana tiada faktor sepunya lain",
       "FSTB ialah 5 kerana kedua-duanya ada faktor 5",
       "FSTB ialah 2 kerana kedua-duanya nombor genap",
-      "FSTB ialah 16 kerana 16 lebih kecil",
-      "FSTB ialah 1 kerana tiada faktor sepunya lain"
+      "FSTB ialah 16 kerana 16 lebih kecil"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Faktor 16: 1, 2, 4, 8, 16. Faktor 45: 1, 3, 5, 9, 15, 45. Hanya 1 yang sama, jadi FSTB ialah 1."
     },
     {
      "j": "nombor",
      "t": "Dua nombor mempunyai FSTB 6 dan GSTK 36. Salah satu nombor itu ialah 12. Berapakah nombor yang satu lagi?",
      "b": 18,
-     "tol": 0.01,
-     "u": "Bagi dua nombor, hasil darab nombor itu sama dengan FSTB × GSTK. Nombor itu = (6 × 36) ÷ 12 = 18. Semak: FSTB 12 dan 18 ialah 6, GSTK ialah 36."
+     "tol": 0.001000000001,
+     "u": "Guna FSTB × GSTK = hasil darab dua nombor. Nombor kedua = (6 × 36) ÷ 12 = 216 ÷ 12 = 18. Semak: FSTB 12 dan 18 ialah 6, GSTK ialah 36."
     },
     {
-     "j": "nombor",
-     "t": "Cari nombor terkecil lebih daripada 1 yang memberi baki 1 apabila dibahagi dengan 4, 6 dan 10.",
-     "b": 61,
-     "tol": 0.01,
-     "u": "Nombor itu ialah GSTK bagi 4, 6 dan 10 ditambah 1. GSTK ialah 60, jadi nombor itu ialah 61."
+     "j": "pilih",
+     "t": "Seorang murid mencari nombor terkecil lebih daripada 1 yang memberi baki 1 apabila dibahagi dengan 4, 6 dan 10. Dia menjawab 60. Apakah kesilapannya?",
+     "p": [
+      "60 terlalu kecil kerana jawapan patut dua kali GSTK iaitu 120",
+      "60 ialah GSTK yang memberi baki 0, jadi perlu ditambah 1 untuk baki 1",
+      "GSTK bagi 4, 6 dan 10 sebenarnya 30, bukan 60",
+      "Dia patut mencari FSTB, iaitu 2, kemudian menambah 1"
+     ],
+     "b": 1,
+     "u": "60 = GSTK 4, 6 dan 10, jadi 60 ÷ 4, 60 ÷ 6 dan 60 ÷ 10 semuanya baki 0. Tambah 1 supaya baki 1: 60 + 1 = 61."
     },
     {
      "j": "nombor",
      "t": "Sekeping papan 90 cm × 150 cm dipotong kepada petak persegi sama saiz yang terbesar tanpa baki. Berapakah bilangan petak yang terhasil?",
      "b": 15,
-     "tol": 0.01,
-     "u": "Sisi petak terbesar ialah FSTB 90 dan 150, iaitu 30 cm. Bilangan petak = 3 × 5 = 15."
+     "tol": 0.001000000001,
+     "u": "Petak terbesar = FSTB 90 dan 150 = 30 cm. Bilangan petak = (90 ÷ 30) × (150 ÷ 30) = 3 × 5 = 15."
     },
     {
      "j": "pilih",
      "t": "Pernyataan mana yang BENAR tentang FSTB dua nombor?",
      "p": [
-      "FSTB sentiasa membahagi kedua-dua nombor itu tepat",
       "FSTB sentiasa lebih besar daripada kedua-dua nombor",
       "FSTB sentiasa lebih besar daripada GSTK",
+      "FSTB sentiasa membahagi kedua-dua nombor itu tepat",
       "FSTB sentiasa sama dengan 1"
      ],
-     "b": 0,
+     "b": 2,
      "u": "FSTB ialah faktor kedua-dua nombor, jadi ia membahagi kedua-duanya tepat. Ia tidak lebih besar daripada nombor yang lebih kecil."
     },
     {
@@ -633,11 +642,11 @@ window.BANK["m1b2"] =
      "t": "Manakah pasangan nombor yang GSTK-nya sama dengan hasil darab kedua-duanya?",
      "p": [
       "6 dan 9",
-      "8 dan 9",
       "4 dan 10",
-      "12 dan 18"
+      "12 dan 18",
+      "8 dan 9"
      ],
-     "b": 1,
+     "b": 3,
      "u": "8 dan 9 tiada faktor sepunya selain 1, jadi GSTK = 72 = 8 × 9. Bagi pasangan lain, GSTK lebih kecil daripada hasil darab."
     },
     {

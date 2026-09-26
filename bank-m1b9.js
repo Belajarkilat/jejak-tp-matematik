@@ -87,14 +87,14 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan gelongsor kepada 6 sisi. Berapakah bilangan bucu poligon itu?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bilangan bucu sama dengan bilangan sisi, iaitu 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan gelongsor kepada 8 sisi. Berapakah bilangan pepenjuru yang dilukis dari bucu A?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Dari satu bucu, pepenjuru tidak dilukis ke dirinya dan dua bucu bersebelahan. Bilangan pepenjuru = 8 − 3 = 5."
     },
     {
@@ -113,7 +113,7 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Sebuah poligon mempunyai 7 sisi. Berapakah bilangan pepenjuru yang boleh dilukis dari satu bucu?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Bilangan pepenjuru dari satu bucu = bilangan sisi − 3 = 7 − 3 = 4."
     },
     {
@@ -193,14 +193,14 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan segi tiga 1 (sama sisi). Berapakah bilangan paksi simetri segi tiga itu?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Segi tiga sama sisi mempunyai 3 paksi simetri, satu dari setiap bucu ke tengah sisi bertentangan."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan segi tiga 2 dengan ∠A = 50° dan ∠B = 50°. Berapakah ∠C (darjah)?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Jumlah sudut dalam segi tiga ialah 180°. ∠C = 180° − 50° − 50° = 80°."
     },
@@ -232,7 +232,7 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Berapakah bilangan paksi simetri bagi segi tiga sama kaki yang bukan sama sisi?",
      "b": 1,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Segi tiga sama kaki mempunyai satu paksi simetri, dari puncak ke tengah tapak."
     },
     {
@@ -295,25 +295,25 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Dua sudut sebuah segi tiga ialah 65° dan 45°. Berapakah sudut yang ketiga (darjah)?",
      "b": 70,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut ketiga = 180° − 65° − 45° = 70°."
+     "u": "Jumlah sudut dalam segi tiga = 180°. Sudut ketiga = 180° − 65° − 45° = 70°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan segi tiga 1 dengan ∠A = 40° dan ∠B = 70°. Berapakah sudut peluaran ∠CBD (darjah)?",
      "b": 110,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "∠CBD = 180° − ∠ABC = 180° − 70° = 110°."
+     "u": "∠ABC + ∠CBD = 180° (garis lurus). ∠CBD = 180° − 70° = 110°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan segi tiga 2 dengan ∠A = 50° dan ∠B = 60°. Berapakah ∠A + ∠C (darjah)?",
      "b": 120,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "∠C = 180° − 50° − 60° = 70°. ∠A + ∠C = 50° + 70° = 120°, sama dengan sudut peluaran di B."
+     "u": "Jumlah sudut segi tiga = 180°. ∠C = 180° − 50° − 60° = 70°. ∠A + ∠C = 50° + 70° = 120°, sama dengan sudut peluaran di B."
     },
     {
      "j": "pilih",
@@ -331,25 +331,25 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Sudut peluaran sebuah segi tiga ialah 125°. Satu sudut pedalaman bertentangan ialah 55°. Berapakah sudut pedalaman bertentangan yang satu lagi (darjah)?",
      "b": 70,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut peluaran = jumlah dua sudut dalam bertentangan. 125° − 55° = 70°."
+     "u": "Sudut peluaran = jumlah dua sudut pedalaman bertentangan. 125° = 55° + sudut itu, jadi sudut itu = 125° − 55° = 70°."
     },
     {
      "j": "nombor",
      "t": "Sudut puncak sebuah segi tiga sama kaki ialah 40°. Berapakah setiap sudut tapaknya (darjah)?",
      "b": 70,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Dua sudut tapak sama. Setiap satu = (180° − 40°) ÷ 2 = 70°."
+     "u": "Dua sudut tapak sama besar dan jumlah sudut = 180°. Sudut tapak = (180° − 40°) ÷ 2 = 140° ÷ 2 = 70°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan segi tiga 3 dengan ∠A = 30° dan ∠B = 100°. Berapakah sudut peluaran ∠CBD (darjah)?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "∠CBD = 180° − 100° = 80°. Ia juga sama dengan ∠A + ∠C = 30° + 50°."
+     "u": "∠CBD = 180° − 100° = 80° (garis lurus). Semak: ∠C = 180° − 30° − 100° = 50°, dan ∠A + ∠C = 30° + 50° = 80°."
     },
     {
      "j": "pilih",
@@ -368,9 +368,9 @@ window.BANK["m1b9"] =
     "j": "nombor",
     "t": "Dalam segi tiga ABC, ∠A = x, ∠B = x + 20° dan sudut peluaran di C ialah 130°. Berapakah nilai x (darjah)?",
     "b": 55,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "°",
-    "u": "Sudut peluaran di C = ∠A + ∠B. Maka x + (x + 20) = 130, 2x = 110 dan x = 55."
+    "u": "Sudut peluaran di C = ∠A + ∠B. x + (x + 20) = 130. 2x + 20 = 130, 2x = 110, maka x = 55."
    }
   },
   {
@@ -389,29 +389,29 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan bentuk 5 (lelayang). Berapakah bilangan paksi simetri lelayang itu?",
      "b": 1,
-     "tol": 0.01,
-     "u": "Lelayang mempunyai satu paksi simetri, iaitu pepenjuru yang menghubungkan dua bucu yang dikongsi oleh sisi-sisi sama panjang."
+     "tol": 0.001000000001,
+     "u": "Lipat lelayang pada pepenjuru yang menghubungkan dua bucu yang dikongsi oleh sisi sama panjang, dan kedua-dua bahagian bertindih. Jadi ada 1 paksi simetri."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan bentuk 1 (segi empat tepat). Berapakah bilangan paksi simetri?",
      "b": 2,
-     "tol": 0.01,
-     "u": "Segi empat tepat mempunyai 2 paksi simetri, melalui titik tengah sisi bertentangan."
+     "tol": 0.001000000001,
+     "u": "Lipat segi empat tepat melalui titik tengah sisi bertentangan: ada dua cara (mengufuk dan menegak). Pepenjurunya bukan paksi. Jadi ada 2 paksi simetri."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan bentuk 2 (segi empat sama). Berapakah bilangan paksi simetri?",
      "b": 4,
-     "tol": 0.01,
-     "u": "Segi empat sama mempunyai 4 paksi simetri: dua pepenjuru dan dua garis melalui titik tengah sisi."
+     "tol": 0.001000000001,
+     "u": "Segi empat sama: 2 pepenjuru + 2 garis melalui titik tengah sisi bertentangan = 4 paksi simetri."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan bentuk 6 (trapezium). Berapakah bilangan pasang sisi selari?",
      "b": 1,
-     "tol": 0.01,
-     "u": "Trapezium hanya ada satu pasang sisi selari."
+     "tol": 0.001000000001,
+     "u": "Dalam trapezium, hanya dua sisi yang selari dan dua sisi lagi condong. Jadi ada 1 pasang sisi selari."
     },
     {
      "j": "pilih",
@@ -441,16 +441,16 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Rombus ABCD mempunyai sisi 6 cm. Berapakah perimeternya (cm)?",
      "b": 24,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Semua sisi rombus sama panjang. Perimeter = 4 × 6 = 24 cm."
+     "u": "Rombus mempunyai empat sisi sama panjang. Perimeter = 4 × sisi = 4 × 6 = 24 cm."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan bentuk 3 (segi empat selari). Berapakah bilangan paksi simetrinya?",
      "b": 0,
-     "tol": 0.01,
-     "u": "Segi empat selari yang bukan segi empat tepat atau rombus tiada paksi simetri."
+     "tol": 0.001000000001,
+     "u": "Lipat segi empat selari pada mana-mana garis: kedua-dua bahagian tidak bertindih tepat. Jadi bilangan paksi simetri = 0."
     }
    ],
    "bos": {
@@ -489,61 +489,65 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sisi empat 1 dengan ∠A = 70°, ∠B = 100° dan ∠C = 110°. Berapakah ∠D (darjah)?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Jumlah sudut dalam sisi empat ialah 360°. ∠D = 360° − 70° − 100° − 110° = 80°."
+     "u": "Jumlah sudut dalam sisi empat = 360°. ∠D = 360° − 70° − 100° − 110° = 80°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sisi empat 2 dengan ∠C = 100°. Berapakah sudut peluaran ∠DCE (darjah)?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut peluaran = 180° − sudut pedalaman di C = 180° − 100° = 80°."
+     "u": "∠BCD + ∠DCE = 180° (garis lurus). ∠DCE = 180° − 100° = 80°."
     },
     {
-     "j": "nombor",
-     "t": "Tiga sudut sebuah sisi empat ialah 85°, 100° dan 95°. Berapakah sudut yang keempat (darjah)?",
-     "b": 80,
-     "tol": 0.01,
-     "suf": "°",
-     "u": "Sudut keempat = 360° − 85° − 100° − 95° = 80°."
+     "j": "pilih",
+     "t": "Seorang murid mengira sudut D bagi sisi empat ABCD dengan 180° − ∠A − ∠B − ∠C. Apakah kesilapannya?",
+     "p": [
+      "Jumlah sudut dalam sisi empat ialah 720°, bukan 180°",
+      "Jumlah sudut dalam sisi empat ialah 360°, bukan 180°",
+      "Tiada kesilapan, jumlah sudut dalam semua poligon ialah 180°",
+      "Jumlah sudut dalam sisi empat ialah 90°, bukan 180°"
+     ],
+     "b": 1,
+     "u": "Satu pepenjuru membahagi sisi empat kepada dua segi tiga, jadi jumlah sudut = 2 × 180° = 360°. Cara betul: ∠D = 360° − ∠A − ∠B − ∠C."
     },
     {
      "j": "nombor",
      "t": "Empat sudut sebuah sisi empat berada dalam nisbah x, 2x, 3x dan 4x. Berapakah nilai x (darjah)?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "x + 2x + 3x + 4x = 10x = 360°, maka x = 36°."
+     "u": "Jumlah sudut sisi empat = 360°. x + 2x + 3x + 4x = 10x = 360°. Maka x = 360° ÷ 10 = 36°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sisi empat 3 dengan ∠C = 110°. Berapakah sudut peluaran ∠DCE (darjah)?",
      "b": 70,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "∠DCE = 180° − 110° = 70°."
+     "u": "∠BCD + ∠DCE = 180° (garis lurus). ∠DCE = 180° − 110° = 70°."
     },
     {
      "j": "pilih",
      "t": "Sudut peluaran sebuah sisi empat pada satu bucu ialah 75°. Berapakah sudut pedalaman di bucu itu?",
      "p": [
       "75°",
-      "105°",
       "285°",
+      "105°",
       "15°"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Sudut pedalaman + sudut peluaran = 180°. Maka 180° − 75° = 105°."
     },
     {
      "j": "nombor",
      "t": "Sudut-sudut sisi empat ialah 90°, 90°, x dan (x + 30°). Berapakah nilai x (darjah)?",
      "b": 75,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "90° + 90° + x + (x + 30°) = 360°. Maka 2x + 210° = 360°, 2x = 150° dan x = 75°."
+     "u": "Jumlah sudut sisi empat = 360°. 90° + 90° + x + (x + 30°) = 360°. 2x + 210° = 360°, 2x = 150°, maka x = 75°."
     },
     {
      "j": "susun",
@@ -567,8 +571,8 @@ window.BANK["m1b9"] =
     "j": "nombor",
     "t": "Sudut-sudut sisi empat ABCD ialah ∠A = 2y, ∠B = (y + 20)°, ∠C = 90° dan ∠D = (y + 10)°. Berapakah nilai y?",
     "b": 60,
-    "tol": 0.01,
-    "u": "2y + (y + 20) + 90 + (y + 10) = 360. Maka 4y + 120 = 360, 4y = 240 dan y = 60."
+    "tol": 0.001000000001,
+    "u": "Jumlah sudut sisi empat = 360°. 2y + (y + 20) + 90 + (y + 10) = 360. 4y + 120 = 360, 4y = 240, maka y = 60."
    }
   },
   {
@@ -587,58 +591,62 @@ window.BANK["m1b9"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan ∠A = 70°. Berapakah ∠B (darjah)?",
      "b": 110,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut bersebelahan dalam segi empat selari berjumlah 180°. ∠B = 180° − 70° = 110°."
+     "u": "Sudut bersebelahan dalam segi empat selari berjumlah 180°. ∠B = 180° − ∠A = 180° − 70° = 110°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan ∠A = 120°. Berapakah ∠C (darjah)?",
      "b": 120,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut bertentangan dalam segi empat selari sama besar. ∠C = ∠A = 120°."
+     "u": "Sudut bertentangan dalam segi empat selari sama besar. Maka ∠C = ∠A = 120°."
     },
     {
      "j": "nombor",
      "t": "PQRS ialah segi empat selari. ∠P = (3x + 10)° dan ∠R = (5x − 30)°. Berapakah nilai x?",
      "b": 20,
-     "tol": 0.01,
-     "u": "Sudut bertentangan sama: 3x + 10 = 5x − 30. Maka 40 = 2x dan x = 20."
+     "tol": 0.001000000001,
+     "u": "Sudut bertentangan sama besar: 3x + 10 = 5x − 30. Tambah 30: 3x + 40 = 5x. Tolak 3x: 40 = 2x, maka x = 20."
     },
     {
      "j": "nombor",
      "t": "ABCD ialah segi empat selari. ∠A = 2x dan ∠B = (x + 30)°. Berapakah nilai x?",
      "b": 50,
-     "tol": 0.01,
-     "u": "Sudut bersebelahan berjumlah 180°: 2x + x + 30 = 180. Maka 3x = 150 dan x = 50."
+     "tol": 0.001000000001,
+     "u": "Sudut bersebelahan berjumlah 180°: 2x + (x + 30) = 180. 3x + 30 = 180, 3x = 150, maka x = 50."
     },
     {
      "j": "nombor",
      "t": "Sisi empat ABCD terdiri daripada segi tiga ABC dan segi tiga ACD yang berkongsi AC. ∠BAC = 30°, ∠ACB = 50°, ∠CAD = 40° dan ∠ACD = 60°. Berapakah ∠ABC + ∠ADC (darjah)?",
      "b": 180,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "∠ABC = 180° − 30° − 50° = 100° dan ∠ADC = 180° − 40° − 60° = 80°. Jumlahnya 180°."
+     "u": "Jumlah sudut segi tiga = 180°. ∠ABC = 180° − 30° − 50° = 100°. ∠ADC = 180° − 40° − 60° = 80°. Jumlah = 100° + 80° = 180°."
     },
     {
-     "j": "nombor",
-     "t": "Dalam segi empat selari ABCD, ∠A = 65°. Sisi AB dipanjangkan melalui B. Berapakah sudut peluaran di B (darjah)?",
-     "b": 65,
-     "tol": 0.01,
-     "suf": "°",
-     "u": "∠ABC = 180° − 65° = 115°. Sudut peluaran di B = 180° − 115° = 65°."
+     "j": "pilih",
+     "t": "Seorang murid menulis: 'ABCD segi empat selari dan ∠A = 70°, jadi ∠B = 70° kerana sudut bersebelahan.' Apakah kesilapannya?",
+     "p": [
+      "Sudut bersebelahan berjumlah 360°, jadi ∠B = 290°",
+      "Sudut bersebelahan berjumlah 90°, jadi ∠B = 20°",
+      "Sudut bersebelahan sama besar, jadi ∠B = 70° dan tiada kesilapan",
+      "Sudut bersebelahan berjumlah 180°, jadi ∠B = 110°"
+     ],
+     "b": 3,
+     "u": "Dalam segi empat selari, sudut bertentangan yang sama besar (∠A = ∠C), manakala sudut bersebelahan berjumlah 180°. ∠B = 180° − 70° = 110°."
     },
     {
      "j": "pilih",
      "t": "Antara berikut, yang manakah TIDAK benar bagi segi empat selari?",
      "p": [
+      "Pepenjurunya sentiasa sama panjang",
       "Sudut bertentangan sama besar",
       "Sudut bersebelahan berjumlah 180°",
-      "Pepenjurunya sentiasa sama panjang",
       "Sisi bertentangan selari dan sama panjang"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Pepenjuru segi empat selari yang umum tidak sama panjang. Ia hanya sama panjang pada segi empat tepat dan segi empat sama."
     },
     {

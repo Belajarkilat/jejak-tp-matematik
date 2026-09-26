@@ -87,7 +87,7 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut 210°. Berapakah sudut konjugatnya?",
      "b": 150,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "Sudut konjugat = 360° − 210° = 150°."
     },
@@ -228,7 +228,7 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Berapakah sudut pelengkap bagi 35°?",
      "b": 55,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "90° − 35° = 55°."
     },
@@ -236,7 +236,7 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Berapakah sudut penggenap bagi 128°?",
      "b": 52,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "180° − 128° = 52°."
     },
@@ -244,7 +244,7 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih sudut konjugat dan tetapkan a = 80°. Berapakah sudut b?",
      "b": 280,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "b = 360° − 80° = 280°."
     },
@@ -252,7 +252,7 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Berapakah sudut konjugat bagi 250°?",
      "b": 110,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
      "u": "360° − 250° = 110°."
     },
@@ -273,7 +273,7 @@ window.BANK["m1b8"] =
     "j": "nombor",
     "t": "Dua sudut pelengkap. Satu sudut ialah dua kali ganda sudut yang lain. Berapakah sudut yang lebih besar?",
     "b": 60,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "°",
     "u": "Katakan sudut kecil x. x + 2x = 90°, maka x = 30° dan sudut besar = 60°."
    }
@@ -295,7 +295,7 @@ window.BANK["m1b8"] =
      "t": "Semasa membina pembahagi dua sama serenjang bagi AB, jejari lengkok yang digunakan mesti:",
      "p": [
       "Kurang daripada separuh panjang AB",
-      "Sama dengan panjang AB sahaja",
+      "Sama dengan panjang AB",
       "Lebih daripada separuh panjang AB",
       "Sama dengan separuh panjang AB"
      ],
@@ -312,16 +312,16 @@ window.BANK["m1b8"] =
       "90°"
      ],
      "b": 3,
-     "u": "Garis itu serenjang dengan AB, jadi sudutnya 90°."
+     "u": "Dua lengkok yang bersilang memberi garis binaan yang serenjang dengan AB dan melalui titik tengahnya M. Jadi sudut antara AB dengan garis itu ialah 90°."
     },
     {
      "j": "pilih",
      "t": "Alat yang cukup untuk membina pembahagi dua sama sudut ialah:",
      "p": [
       "Jangka lukis dan alat tepi lurus",
-      "Protraktor sahaja",
-      "Pembaris bergraf sahaja",
-      "Set segi tiga sahaja"
+      "Protraktor dan pembaris bergraf",
+      "Set segi tiga dan protraktor",
+      "Pembaris bergraf dan set segi tiga"
      ],
      "b": 0,
      "u": "Pembinaan geometri hanya memerlukan jangka lukis dan alat tepi lurus."
@@ -330,17 +330,17 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih pembahagi dua sama serenjang dan langkah 3. AB = 8 cm. Berapakah panjang AM (cm)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "M ialah titik tengah AB, jadi AM = 8 ÷ 2 = 4 cm."
+     "u": "Pembahagi dua sama serenjang melalui titik tengah M. AM = AB ÷ 2 = 8 ÷ 2 = 4 cm."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih pembahagi dua sama sudut dan langkah 3. Sudut AOB = 70°. Berapakah setiap sudut yang terbentuk (darjah)?",
      "b": 35,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "70° ÷ 2 = 35°."
+     "u": "Pembahagi dua sama sudut membelah sudut kepada dua bahagian yang sama. 70° ÷ 2 = 35°."
     },
     {
      "j": "susun",
@@ -388,9 +388,9 @@ window.BANK["m1b8"] =
     "j": "nombor",
     "t": "Sudut tegak 90° dibahagi dua sama. Salah satu sudut yang terhasil dibahagi dua sama sekali lagi. Berapakah sudut terkecil itu?",
     "b": 22.5,
-    "tol": 0.01,
+    "tol": 0.01000000001,
     "suf": "°",
-    "u": "90° ÷ 2 = 45°, kemudian 45° ÷ 2 = 22.5°."
+    "u": "Bahagi dua kali. 90° ÷ 2 = 45°, kemudian 45° ÷ 2 = 22.5°. Jadi sudut terkecil = 22.5°."
    }
   },
   {
@@ -409,25 +409,25 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 70°. Berapakah sudut b?",
      "b": 110,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut a dan b bersebelahan pada garis lurus, jadi b = 180° − 70° = 110°."
+     "u": "Diberi a = 70°. Sudut a dan b berada pada garis lurus, jadi a + b = 180°. Maka b = 180° − 70° = 110°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 130°. Berapakah sudut c?",
      "b": 130,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut c bertentang bucu dengan a, jadi c = a = 130°."
+     "u": "Sudut c bertentang bucu dengan a. Sudut bertentang bucu sama besar, jadi c = a = 130°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 50°. Berapakah sudut d?",
      "b": 130,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "d bertentang bucu dengan b. b = 180° − 50° = 130°, jadi d = 130°."
+     "u": "Diberi a = 50°. b = 180° − 50° = 130° (garis lurus). d bertentang bucu dengan b, jadi d = b = 130°."
     },
     {
      "j": "pilih",
@@ -439,21 +439,21 @@ window.BANK["m1b8"] =
       "Sama besar"
      ],
      "b": 3,
-     "u": "Sudut bertentang bucu sama besar."
+     "u": "Dua garis bersilang membentuk dua pasang sudut bertentang bucu, dan setiap pasang sama besar."
     },
     {
      "j": "nombor",
      "t": "Dua garis bersilang. Sudut bertentang bucu ialah (2x + 20)° dan (x + 50)°. Cari x.",
      "b": 30,
-     "tol": 0.01,
-     "u": "2x + 20 = x + 50, maka x = 30."
+     "tol": 0.001000000001,
+     "u": "Sudut bertentang bucu sama besar. 2x + 20 = x + 50. Tolak x: x + 20 = 50. Tolak 20: x = 30."
     },
     {
      "j": "nombor",
      "t": "Dua sudut bersebelahan pada garis lurus ialah 2y° dan 3y°. Cari y.",
      "b": 36,
-     "tol": 0.01,
-     "u": "2y + 3y = 180, maka y = 36."
+     "tol": 0.001000000001,
+     "u": "Sudut pada garis lurus berjumlah 180°. 2y + 3y = 180, 5y = 180. Maka y = 180 ÷ 5 = 36."
     },
     {
      "j": "pilih",
@@ -471,18 +471,18 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, a = 150°. Berapakah sudut b?",
      "b": 30,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "b = 180° − 150° = 30°."
+     "u": "a dan b berada pada garis lurus, jadi a + b = 180°. b = 180° − 150° = 30°."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Dua garis bersilang. Satu sudut ialah (5p − 10)° dan sudut bertentang bucunya ialah (3p + 20)°. Berapakah sudut bersebelahan dengan sudut itu?",
     "b": 115,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "°",
-    "u": "5p − 10 = 3p + 20, maka p = 15. Sudut = 5(15) − 10 = 65°. Sudut bersebelahan = 180° − 65° = 115°."
+    "u": "Sudut bertentang bucu sama: 5p − 10 = 3p + 20. 2p = 30, p = 15. Sudut = 5(15) − 10 = 65°. Sudut bersebelahan = 180° − 65° = 115°."
    }
   },
   {
@@ -501,37 +501,41 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih pasangan sepadan dan condong 0°, dengan sudut 110°. Berapakah sudut hijau?",
      "b": 110,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut sepadan pada garis selari adalah sama, jadi sudut hijau = 110°."
+     "u": "Garis selari, jadi sudut sepadan sama besar. Sudut hijau = 110°."
     },
     {
      "j": "nombor",
      "t": "Dua garis selari dipotong garis rentas lintang. Satu sudut pedalaman ialah 110°. Berapakah sudut pedalaman satu lagi di sebelah yang sama?",
      "b": 70,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut pedalaman berjumlah 180°, maka 180° − 110° = 70°."
+     "u": "Sudut pedalaman di sebelah yang sama berjumlah 180°. Guna 180° − 110° = 70°."
     },
     {
-     "j": "nombor",
-     "t": "Dua garis selari dipotong garis rentas lintang. Satu sudut selang-seli ialah 125°. Berapakah sudut selang-seli yang satu lagi?",
-     "b": 125,
-     "tol": 0.01,
-     "suf": "°",
-     "u": "Sudut selang-seli adalah sama, jadi sudutnya 125°."
+     "j": "pilih",
+     "t": "Aina menulis: 'PQ selari dengan RS. Satu sudut pedalaman ialah 110°, jadi sudut pedalaman yang satu lagi juga 110°.' Apakah kesilapan Aina?",
+     "p": [
+      "Sudut pedalaman berjumlah 360°, jadi sudut itu ialah 250°",
+      "Sudut pedalaman berjumlah 180°, jadi sudut itu ialah 70°",
+      "Aina betul, sudut pedalaman sama besar seperti sudut selang-seli",
+      "Sudut pedalaman berjumlah 90°, jadi sudut itu tidak wujud"
+     ],
+     "b": 1,
+     "u": "Sudut pedalaman di sebelah yang sama berjumlah 180°, bukan sama besar. Sudut satu lagi = 180° − 110° = 70°. Sudut yang sama besar ialah sudut selang-seli dan sudut sepadan."
     },
     {
      "j": "pilih",
      "t": "Dalam rajah, dua garis dinyatakan selari dengan menandakan:",
      "p": [
       "Sudut tegak pada satu garis",
-      "Anak panah yang sama pada kedua-dua garis",
       "Garis putus-putus pada satu garis",
+      "Anak panah yang sama pada kedua-dua garis",
       "Huruf besar di hujung garis"
      ],
-     "b": 1,
-     "u": "Tanda anak panah yang sama menunjukkan garis itu selari."
+     "b": 2,
+     "u": "Anak panah yang sama pada dua garis menunjukkan kedua-duanya selari, seperti dua landasan kereta api."
     },
     {
      "j": "pilih",
@@ -539,36 +543,36 @@ window.BANK["m1b8"] =
      "p": [
       "Garis selari kerana sudut sepadan sama",
       "Garis selari kerana sudut berjumlah 180°",
-      "Garis tidak selari kerana sudut sepadan tidak sama",
-      "Garis serenjang kerana sudutnya berbeza"
+      "Garis serenjang kerana sudutnya berbeza",
+      "Garis tidak selari kerana sudut sepadan tidak sama"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Jika garis selari, sudut sepadan mesti sama. Apabila tidak sama, garis tidak selari."
     },
     {
      "j": "nombor",
      "t": "PQ selari dengan RS. Dua sudut pedalaman ialah (3x + 10)° dan (2x + 20)°. Cari x.",
      "b": 30,
-     "tol": 0.01,
-     "u": "Sudut pedalaman berjumlah 180°. 5x + 30 = 180, maka x = 30."
+     "tol": 0.001000000001,
+     "u": "Sudut pedalaman berjumlah 180°. (3x + 10) + (2x + 20) = 180. 5x + 30 = 180, 5x = 150, maka x = 30."
     },
     {
      "j": "nombor",
      "t": "PQ selari dengan RS. Dua sudut selang-seli ialah (4y − 15)° dan (y + 60)°. Cari y.",
      "b": 25,
-     "tol": 0.01,
-     "u": "Sudut selang-seli adalah sama. 4y − 15 = y + 60, maka y = 25."
+     "tol": 0.001000000001,
+     "u": "Sudut selang-seli sama besar. 4y − 15 = y + 60. Tolak y: 3y − 15 = 60. Tambah 15: 3y = 75, maka y = 25."
     },
     {
      "j": "pilih",
      "t": "Dua garis dipotong garis rentas lintang. Sudut sepadan ialah 75° dan 80°. Apakah kesimpulannya?",
      "p": [
+      "Garis tidak selari",
       "Garis selari",
       "Garis serenjang",
-      "Garis bersilang tegak",
-      "Garis tidak selari"
+      "Garis bersilang tegak"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Sudut sepadan tidak sama, jadi kedua-dua garis tidak selari."
     }
    ],
@@ -576,9 +580,9 @@ window.BANK["m1b8"] =
     "j": "nombor",
     "t": "PQ selari dengan RS. Dua sudut sepadan ialah (5m − 20)° dan (3m + 30)°. Berapakah nilai sudut sepadan itu?",
     "b": 105,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "°",
-    "u": "Sudut sepadan sama: 5m − 20 = 3m + 30, maka m = 25. Sudut = 5(25) − 20 = 105°."
+    "u": "Sudut sepadan sama besar: 5m − 20 = 3m + 30. 2m = 50, m = 25. Sudut = 5(25) − 20 = 105°."
    }
   },
   {
@@ -597,73 +601,77 @@ window.BANK["m1b8"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut dongak 40°. Berapakah sudut tunduk dari T?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut tunduk sama dengan sudut dongak, iaitu 40°."
+     "u": "Garis mengufuk di T dan P selari, jadi sudut selang-seli sama. Sudut tunduk = sudut dongak = 40°."
     },
     {
      "j": "pilih",
      "t": "Sudut dongak diukur dari:",
      "p": [
-      "Garis mengufuk ke atas",
       "Garis menegak ke bawah",
+      "Garis mengufuk ke atas",
       "Garis mengufuk ke bawah",
       "Garis menegak ke atas"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Sudut dongak bermula daripada garis mengufuk dan naik ke arah objek."
     },
     {
-     "j": "nombor",
-     "t": "Dari puncak menara, sudut tunduk ke sebuah bot ialah 28°. Berapakah sudut dongak dari bot ke puncak menara?",
-     "b": 28,
-     "tol": 0.01,
-     "suf": "°",
-     "u": "Sudut tunduk sama dengan sudut dongak (sudut selang-seli), iaitu 28°."
+     "j": "pilih",
+     "t": "Seorang murid menulis bahawa sudut antara garis pandangan dengan garis menegak ke atas sama dengan sudut dongak. Apakah yang betul?",
+     "p": [
+      "Sudut itu ialah 180° tolak sudut dongak",
+      "Sudut itu sama dengan sudut tunduk",
+      "Sudut itu ialah 90° tolak sudut dongak",
+      "Sudut itu ialah dua kali sudut dongak"
+     ],
+     "b": 2,
+     "u": "Sudut dongak diukur dari garis mengufuk, dan garis menegak berbeza 90° daripada garis mengufuk. Jadi sudut dari garis menegak = 90° − sudut dongak."
     },
     {
      "j": "nombor",
      "t": "Sudut dongak ke sebuah layang-layang ialah 35°. Berapakah sudut antara garis pandangan dengan garis menegak ke atas?",
      "b": 55,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Garis mengufuk dan garis menegak berbeza 90°. 90° − 35° = 55°."
+     "u": "Garis mengufuk dan garis menegak berbeza 90°. Sudut dari garis menegak = 90° − 35° = 55°."
     },
     {
      "j": "nombor",
      "t": "Dari puncak bangunan, sudut tunduk ke kereta P ialah 32° dan ke kereta Q ialah 58°. Berapakah sudut PTQ antara dua garis pandangan?",
      "b": 26,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Kedua-dua sudut diukur dari garis mengufuk yang sama. 58° − 32° = 26°."
+     "u": "Kedua-dua sudut tunduk diukur dari garis mengufuk yang sama di T. Sudut PTQ = 58° − 32° = 26°."
     },
     {
      "j": "pilih",
      "t": "Mengapakah sudut tunduk dari T sama dengan sudut dongak dari P?",
      "p": [
       "Kerana T dan P sentiasa sama tinggi dari tanah",
-      "Garis mengufuk di T dan P selari, jadi sudut selang-seli sama",
       "Kerana kedua-dua sudut itu ialah sudut tegak",
-      "Kerana jumlah kedua-dua sudut ialah 180°"
+      "Kerana jumlah kedua-dua sudut ialah 180°",
+      "Garis mengufuk di T dan P selari, jadi sudut selang-seli sama"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Garis mengufuk di T selari dengan garis mengufuk di P. Sudut selang-seli antara garis selari adalah sama."
     },
     {
      "j": "nombor",
      "t": "Sudut tunduk dari sebuah kapal terbang ke landasan ialah 24°. Berapakah sudut antara garis pandangan dengan garis menegak ke bawah?",
      "b": 66,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "90° − 24° = 66°."
+     "u": "Garis mengufuk dan garis menegak berbeza 90°. Sudut dari garis menegak = 90° − 24° = 66°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut dongak 50°. Berapakah jumlah sudut dongak dan sudut tunduk?",
      "b": 100,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "Sudut tunduk = 50°, jadi jumlahnya 50° + 50° = 100°."
+     "u": "Sudut tunduk = sudut dongak = 50° (selang-seli). Jumlah = 50° + 50° = 100°."
     }
    ],
    "bos": {

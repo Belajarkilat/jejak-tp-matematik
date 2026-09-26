@@ -87,7 +87,7 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 6. Berapakah bilangan petak kecil dalam petak besar itu?",
      "b": 36,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Petak besar mempunyai 6 baris dan 6 lajur, jadi 6 × 6 = 36 petak."
     },
     {
@@ -100,7 +100,7 @@ window.BANK["m1b3"] =
       "729"
      ],
      "b": 2,
-     "u": "Luas = sisi × sisi = 9 × 9 = 81 cm²."
+     "u": "Luas petak = sisi × sisi = 9 × 9 = 81 cm²."
     },
     {
      "j": "pilih",
@@ -118,7 +118,7 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Berapakah nilai 3<sup>3</sup>?",
      "b": 27,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "3³ = 3 × 3 × 3 = 9 × 3 = 27."
     },
     {
@@ -128,7 +128,7 @@ window.BANK["m1b3"] =
       "Ia hasil darab 5 dengan dirinya sendiri",
       "Ia boleh dibahagi dengan 5 tanpa baki",
       "Ia ialah nombor ganjil yang besar",
-      "Ia lebih besar daripada 20 sahaja"
+      "Ia lebih besar daripada 20"
      ],
      "b": 0,
      "u": "Kuasa dua sempurna ialah nombor yang terhasil apabila satu integer didarab dengan dirinya sendiri. 25 = 5 × 5."
@@ -210,7 +210,7 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan jubin kepada 30. Berapakah bilangan jubin yang berbaki selepas petak terbesar dibentuk?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Petak terbesar ialah 5 × 5 = 25, jadi bakinya 30 − 25 = 5 jubin."
     },
     {
@@ -229,16 +229,16 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Berapakah punca kuasa dua positif bagi 64?",
      "b": 8,
-     "tol": 0.01,
-     "u": "8 × 8 = 64, jadi punca kuasa dua positif bagi 64 ialah 8."
+     "tol": 0.001000000001,
+     "u": "Cari nombor positif yang didarab dengan dirinya memberi 64. 8 × 8 = 64, jadi punca kuasa dua positif ialah 8."
     },
     {
      "j": "pilih",
      "t": "Apakah hubungan antara kuasa dua dan punca kuasa dua?",
      "p": [
       "Punca kuasa dua ialah songsangan bagi kuasa dua",
-      "Punca kuasa dua sentiasa lebih besar daripada kuasa dua",
-      "Kuasa dua dan punca kuasa dua sentiasa sama nilai",
+      "Punca kuasa dua ialah kuasa dua yang dibahagi dengan 2",
+      "Punca kuasa dua dan kuasa dua ialah operasi yang sama",
       "Punca kuasa dua ialah kuasa dua ditambah 2"
      ],
      "b": 0,
@@ -279,7 +279,7 @@ window.BANK["m1b3"] =
      "Kerana 7 × 7 = 49 dan (−7) × (−7) = 49 juga"
     ],
     "b": 3,
-    "u": "Kedua-dua 7 dan −7 memberi 49 apabila dikuasa duakan. Itulah sebabnya punca kuasa dua bagi nombor positif ada dua nilai."
+    "u": "7 × 7 = 49 dan (−7) × (−7) = 49. DSKP 3.1.3 menyatakan punca kuasa dua bernilai positif dan negatif. Simbol √49 pula bermaksud punca positif sahaja, iaitu 7."
    }
   },
   {
@@ -298,43 +298,43 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan n = 5. Berapakah bilangan kubus kecil dalam kubus besar itu?",
      "b": 125,
-     "tol": 0.01,
-     "u": "Isi padu kubus 5 × 5 × 5 = 125 kubus kecil."
+     "tol": 0.001000000001,
+     "u": "Isi padu kubus = n × n × n = 5 × 5 × 5 = 125 kubus kecil."
     },
     {
      "j": "nombor",
      "t": "Berapakah nilai 12<sup>2</sup>?",
      "b": 144,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "12 × 12 = 144."
     },
     {
      "j": "nombor",
      "t": "Guna kalkulator. Berapakah nilai 2.5<sup>2</sup>?",
      "b": 6.25,
-     "tol": 0.001,
-     "u": "2.5 × 2.5 = 6.25."
+     "tol": 0.001000000001,
+     "u": "Kuasa dua: 2.5² = 2.5 × 2.5. Semak: 2.5 × 2 = 5 dan 2.5 × 0.5 = 1.25, jumlahnya 6.25."
     },
     {
      "j": "nombor",
      "t": "Berapakah nilai punca kuasa tiga bagi 343 (³√343)?",
      "b": 7,
-     "tol": 0.01,
-     "u": "7 × 7 × 7 = 343, jadi ³√343 = 7."
+     "tol": 0.001000000001,
+     "u": "Cari nombor yang didarab tiga kali memberi 343. 7 × 7 × 7 = 343, jadi ³√343 = 7."
     },
     {
      "j": "nombor",
      "t": "Berapakah nilai √(9/16) dalam bentuk perpuluhan?",
      "b": 0.75,
-     "tol": 0.001,
-     "u": "√9 = 3 dan √16 = 4, jadi √(9/16) = 3/4 = 0.75."
+     "tol": 0.001000000001,
+     "u": "Punca pecahan: √(9/16) = √9 ÷ √16 = 3 ÷ 4 = 0.75."
     },
     {
      "j": "nombor",
      "t": "Berapakah nilai √0.09?",
      "b": 0.3,
-     "tol": 0.001,
-     "u": "0.3 × 0.3 = 0.09, jadi √0.09 = 0.3 (bukan 0.03)."
+     "tol": 0.001000000001,
+     "u": "0.3 × 0.3 = 0.09, jadi √0.09 = 0.3. Ingat, punca kuasa dua 0.09 bukan 0.03."
     },
     {
      "j": "pilih",
@@ -352,16 +352,16 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Hitung √81 − ³√8.",
      "b": 7,
-     "tol": 0.01,
-     "u": "√81 = 9 dan ³√8 = 2. 9 − 2 = 7."
+     "tol": 0.001000000001,
+     "u": "Kira setiap punca dahulu: √81 = 9 dan ³√8 = 2. Kemudian 9 − 2 = 7."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Hitung (√25 + ³√27)².",
     "b": 64,
-    "tol": 0.01,
-    "u": "√25 = 5 dan ³√27 = 3. Kurungan dahulu: 5 + 3 = 8. Kemudian 8² = 64."
+    "tol": 0.001000000001,
+    "u": "Kurungan dahulu: √25 = 5 dan ³√27 = 3, maka 5 + 3 = 8. Kemudian 8² = 8 × 8 = 64."
    }
   },
   {
@@ -380,47 +380,47 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan luas kepada 49. Berapakah panjang sisi petak itu (unit)?",
      "b": 7,
-     "tol": 0.01,
-     "u": "Sisi = √49 = 7 unit, kerana 7 × 7 = 49."
+     "tol": 0.001000000001,
+     "u": "Diberi luas 49. Sisi = √49 = 7 unit, kerana 7 × 7 = 49."
     },
     {
      "j": "nombor",
      "t": "Sebuah petak taman berbentuk segi empat sama mempunyai luas 196 m². Berapakah panjang sisinya (m)?",
      "b": 14,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Sisi = √196 = 14 m, kerana 14 × 14 = 196."
+     "u": "Diberi luas 196 m². Sisi = √196 = 14 m, kerana 14 × 14 = 196."
     },
     {
      "j": "nombor",
      "t": "Sebuah bilik berbentuk segi empat sama bersisi 6.5 m. Berapakah luas bilik itu (m²)?",
      "b": 42.25,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "m²",
-     "u": "Luas = 6.5 × 6.5 = 42.25 m²."
+     "u": "Guna luas = sisi × sisi = 6.5 × 6.5 = 42.25 m²."
     },
     {
      "j": "nombor",
      "t": "Sebuah ubin lantai berbentuk segi empat sama bersisi 30 cm. Berapakah luas satu ubin (cm²)?",
      "b": 900,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm²",
-     "u": "Luas = 30 × 30 = 900 cm²."
+     "u": "Guna luas = sisi × sisi = 30 × 30 = 900 cm²."
     },
     {
      "j": "nombor",
      "t": "Seorang pekebun mahu memagar kebun berbentuk segi empat sama yang luasnya 400 m². Berapakah panjang pagar yang diperlukan (m)?",
      "b": 80,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "Sisi = √400 = 20 m. Panjang pagar ialah perimeter = 4 × 20 = 80 m."
+     "u": "Sisi = √400 = 20 m. Panjang pagar = perimeter = 4 × sisi = 4 × 20 = 80 m."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan luas kepada 144. Berapakah perimeter petak itu (unit)?",
      "b": 48,
-     "tol": 0.01,
-     "u": "Sisi = √144 = 12. Perimeter = 4 × 12 = 48 unit."
+     "tol": 0.001000000001,
+     "u": "Sisi = √144 = 12. Perimeter = 4 × sisi = 4 × 12 = 48 unit."
     },
     {
      "j": "pilih",
@@ -444,15 +444,15 @@ window.BANK["m1b3"] =
       "50"
      ],
      "b": 2,
-     "u": "Luas petak besar = 25 m². Sisi = √25 = 5 m."
+     "u": "Luas petak besar = 25 × 1 = 25 m². Sisi = √25 = 5 m."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Sebuah dewan berbentuk segi empat sama berluas 324 m² hendak diubin dengan ubin segi empat sama bersisi 0.5 m. Berapakah bilangan ubin yang diperlukan?",
     "b": 1296,
-    "tol": 0.01,
-    "u": "Sisi dewan = √324 = 18 m. Luas satu ubin = 0.5 × 0.5 = 0.25 m². Bilangan ubin = 324 ÷ 0.25 = 1 296."
+    "tol": 0.001000000001,
+    "u": "Sisi dewan = √324 = 18 m. Luas satu ubin = 0.5 × 0.5 = 0.25 m². Bilangan ubin = luas dewan ÷ luas ubin = 324 ÷ 0.25 = 1 296."
    }
   },
   {
@@ -471,76 +471,80 @@ window.BANK["m1b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan isi padu kepada 125. Berapakah panjang sisi kubus itu (unit)?",
      "b": 5,
-     "tol": 0.01,
-     "u": "Sisi = ³√125 = 5 unit, kerana 5 × 5 × 5 = 125."
+     "tol": 0.001000000001,
+     "u": "Diberi isi padu 125. Sisi = ³√125 = 5 unit, kerana 5 × 5 × 5 = 125."
     },
     {
      "j": "nombor",
      "t": "Sebuah bekas berbentuk kubus mempunyai isi padu 216 cm³. Berapakah panjang sisinya (cm)?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Sisi = ³√216 = 6 cm, kerana 6 × 6 × 6 = 216."
+     "u": "Isi padu 216 cm³. Sisi = ³√216 = 6 cm, kerana 6 × 6 × 6 = 216."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah kotak berbentuk kubus bersisi 9 cm. Berapakah isi padunya (cm³)?",
-     "b": 729,
-     "tol": 0.01,
-     "suf": "cm³",
-     "u": "Isi padu = 9 × 9 × 9 = 729 cm³."
+     "j": "pilih",
+     "t": "Seorang murid mengira isi padu kubus bersisi 9 cm sebagai 9 × 3 = 27 cm³. Apakah kesilapannya?",
+     "p": [
+      "Dia patut mendarab sisi dengan 2 kerana kubus ada dua tapak",
+      "Dia patut menjumlahkan tiga sisi, iaitu 9 + 9 + 9",
+      "Nilai 27 betul tetapi unitnya patut ditulis cm² bukan cm³",
+      "Dia mendarab sisi dengan 3, sedangkan isi padu ialah sisi × sisi × sisi"
+     ],
+     "b": 3,
+     "u": "Isi padu kubus = sisi × sisi × sisi = 9 × 9 × 9 = 729 cm³. Mendarab dengan 3 memberi 27, iaitu hanya jumlah tiga sisi yang disusun."
     },
     {
      "j": "nombor",
      "t": "Sebuah tangki air berbentuk kubus bersisi 1.5 m. Berapakah isi padunya (m³)?",
      "b": 3.375,
-     "tol": 0.001,
+     "tol": 0.0005000000005,
      "suf": "m³",
-     "u": "Isi padu = 1.5 × 1.5 × 1.5 = 3.375 m³."
+     "u": "Isi padu = 1.5 × 1.5 × 1.5. Mula 1.5 × 1.5 = 2.25, kemudian 2.25 × 1.5 = 3.375 m³."
     },
     {
      "j": "nombor",
      "t": "Sebuah akuarium berbentuk kubus dipenuhi 64 000 cm³ air. Berapakah tinggi akuarium itu (cm)?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm",
-     "u": "Tinggi = ³√64 000 = 40 cm, kerana 40 × 40 × 40 = 64 000."
+     "u": "Isi padu 64 000 cm³. Tinggi = sisi = ³√64 000 = 40 cm, kerana 40 × 40 × 40 = 64 000."
     },
     {
      "j": "pilih",
      "t": "Sebuah kubus bersisi 4 cm. Jika sisinya digandakan, isi padu kubus baharu menjadi berapa kali ganda?",
      "p": [
+      "8 kali",
       "2 kali",
       "4 kali",
-      "6 kali",
-      "8 kali"
+      "6 kali"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Isi padu asal = 4³ = 64. Sisi baharu 8 cm, isi padu = 8³ = 512. 512 ÷ 64 = 8 kali."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan isi padu kepada 27. Berapakah jumlah panjang semua 12 rusuk kubus itu (unit)?",
      "b": 36,
-     "tol": 0.01,
-     "u": "Sisi = ³√27 = 3. Jumlah panjang 12 rusuk = 12 × 3 = 36 unit."
+     "tol": 0.001000000001,
+     "u": "Isi padu 27, jadi sisi = ³√27 = 3. Kubus ada 12 rusuk sama panjang, jadi jumlah = 12 × 3 = 36 unit."
     },
     {
      "j": "nombor",
      "t": "Air sebanyak 1 000 cm³ dituang ke dalam sebuah bekas kubus bersisi 8 cm sehingga penuh dan air yang lebih melimpah. Berapakah isi padu air yang melimpah (cm³)?",
      "b": 488,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "cm³",
-     "u": "Isi padu bekas = 8³ = 512 cm³. Air yang melimpah = 1 000 − 512 = 488 cm³."
+     "u": "Isi padu bekas = 8 × 8 × 8 = 512 cm³. Air melimpah = 1 000 − 512 = 488 cm³."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Tiga kubus logam bersisi 3 cm, 4 cm dan 5 cm dileburkan menjadi satu kubus besar. Berapakah panjang sisi kubus besar itu (cm)?",
     "b": 6,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm",
-    "u": "Jumlah isi padu = 27 + 64 + 125 = 216 cm³. Sisi kubus besar = ³√216 = 6 cm."
+    "u": "Jumlah isi padu = 3³ + 4³ + 5³ = 27 + 64 + 125 = 216 cm³. Sisi kubus besar = ³√216 = 6 cm."
    }
   },
   {
@@ -559,12 +563,12 @@ window.BANK["m1b3"] =
      "j": "pilih",
      "t": "Dalam Rajah 1, tetapkan nombor kepada 10. √10 terletak antara:",
      "p": [
-      "3 dan 4",
       "2 dan 3",
+      "3 dan 4",
       "4 dan 5",
       "9 dan 16"
      ],
-     "b": 0,
+     "b": 1,
      "u": "3² = 9 dan 4² = 16. Oleh sebab 9 < 10 < 16, √10 terletak antara 3 dan 4."
     },
     {
@@ -572,19 +576,19 @@ window.BANK["m1b3"] =
      "t": "Anggarkan √50 kepada nombor bulat terdekat.",
      "p": [
       "5",
-      "7",
       "8",
+      "7",
       "25"
      ],
-     "b": 1,
+     "b": 2,
      "u": "7² = 49 dan 8² = 64. 50 sangat dekat dengan 49, jadi √50 kira-kira 7."
     },
     {
      "j": "nombor",
      "t": "Guna kalkulator. Berapakah √50 kepada 2 tempat perpuluhan?",
      "b": 7.07,
-     "tol": 0.01,
-     "u": "√50 = 7.0710..., iaitu 7.07 (2 tempat perpuluhan)."
+     "tol": 0.005000000005,
+     "u": "Tekan √50 pada kalkulator: 7.0710... Bundarkan kepada 2 tempat perpuluhan. Digit ketiga ialah 1 (kurang 5), jadi 7.07."
     },
     {
      "j": "pilih",
@@ -592,49 +596,54 @@ window.BANK["m1b3"] =
      "p": [
       "2 dan 3",
       "4 dan 5",
-      "3 dan 4",
-      "27 dan 64"
+      "27 dan 64",
+      "3 dan 4"
      ],
-     "b": 2,
+     "b": 3,
      "u": "3³ = 27 dan 4³ = 64. Oleh sebab 27 < 30 < 64, ³√30 terletak antara 3 dan 4."
     },
     {
      "j": "nombor",
      "t": "Guna kalkulator. Berapakah ³√30 kepada 2 tempat perpuluhan?",
      "b": 3.11,
-     "tol": 0.01,
-     "u": "³√30 = 3.1072..., iaitu 3.11 (2 tempat perpuluhan)."
+     "tol": 0.005000000005,
+     "u": "Tekan ³√30 pada kalkulator: 3.1072... Digit ketiga ialah 7 (5 atau lebih), jadi naikkan digit kedua: 3.11."
     },
     {
      "j": "pilih",
      "t": "√5 × √5 sama dengan:",
      "p": [
+      "5",
       "10",
       "25",
-      "√10",
-      "5"
+      "√10"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Punca kuasa dua sesuatu nombor didarab dengan dirinya sendiri memberi nombor itu semula: √5 × √5 = 5."
     },
     {
      "j": "pilih",
      "t": "√2 × √8 sama dengan:",
      "p": [
-      "4",
       "√10",
+      "4",
       "10",
       "16"
      ],
-     "b": 0,
+     "b": 1,
      "u": "√2 × √8 = √(2 × 8) = √16 = 4. Punca kuasa dua boleh didarab dengan mendarab nombor di dalamnya."
     },
     {
-     "j": "nombor",
-     "t": "Tanpa kalkulator, anggarkan √300 kepada nombor bulat terdekat.",
-     "b": 17,
-     "tol": 0.01,
-     "u": "17² = 289 dan 18² = 324. 300 lebih dekat kepada 289, jadi √300 kira-kira 17."
+     "j": "pilih",
+     "t": "Seorang murid berkata √300 kira-kira 15 kerana 15 × 20 = 300. Apakah kesilapannya?",
+     "p": [
+      "Dia patut membahagi 300 dengan 2 untuk mendapat punca kuasa dua",
+      "Dia patut mencari punca kuasa tiga, iaitu nombor yang didarab tiga kali",
+      "Punca kuasa dua ialah nombor yang didarab dengan dirinya, bukan dua nombor berlainan",
+      "Dia patut menjumlahkan digit 3 + 0 + 0 untuk mendapat jawapan"
+     ],
+     "b": 2,
+     "u": "√300 mesti dijepit antara dua kuasa dua sempurna: 17² = 289 dan 18² = 324, jadi kira-kira 17. Nilai 15 tidak betul kerana 15² = 225, bukan 300."
     }
    ],
    "bos": {

@@ -98,7 +98,7 @@ window.BANK["m3b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut 30°. Berapakah panjang sisi bertentangan dengan θ?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pada sudut 30°, sisi bertentangan ialah 5 (separuh hipotenus 10)."
     },
     {
@@ -190,14 +190,14 @@ window.BANK["m3b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut 30°. Berapakah nilai sin θ?",
      "b": 0.5,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "sin 30° = 5 ÷ 10 = 0.5."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut 60°. Berapakah nilai kos θ?",
      "b": 0.5,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "kos 60° = 5 ÷ 10 = 0.5."
     },
     {
@@ -278,9 +278,9 @@ window.BANK["m3b5"] =
     "t": "Mengapakah nilai sin θ tidak bergantung pada saiz segi tiga bersudut tegak, asalkan sudut θ sama?",
     "p": [
      "Segi tiga dengan sudut sama adalah serupa, nisbah sisi kekal",
-     "Kerana hipotenus sentiasa 10 dalam semua segi tiga",
+     "Kerana hipotenus bernilai 10 dalam setiap segi tiga",
      "Kerana sin θ ialah sudut, bukan satu nisbah sisi",
-     "Kerana bertentangan sentiasa sama dengan bersebelahan"
+     "Kerana bertentangan sama dengan bersebelahan pada semua sudut"
     ],
     "b": 0,
     "u": "Segi tiga serupa mempunyai sisi yang berkadar. Jadi bertentangan ÷ hipotenus tidak berubah apabila segi tiga dibesarkan."
@@ -302,22 +302,22 @@ window.BANK["m3b5"] =
      "j": "nombor",
      "t": "Guna kalkulator (mod darjah). Cari nilai sin 40° kepada 3 tempat perpuluhan.",
      "b": 0.643,
-     "tol": 0.001,
-     "u": "sin 40° = 0.6428..., iaitu 0.643."
+     "tol": 0.0005000000005,
+     "u": "Tekan sin 40 pada kalkulator (mod darjah): sin 40° = 0.64278... Bundar kepada 3 tempat perpuluhan: 0.643."
     },
     {
      "j": "nombor",
      "t": "Guna kalkulator (mod darjah). Cari nilai kos 25° kepada 3 tempat perpuluhan.",
      "b": 0.906,
-     "tol": 0.001,
-     "u": "kos 25° = 0.9063..., iaitu 0.906."
+     "tol": 0.0005000000005,
+     "u": "Tekan kos 25 pada kalkulator (mod darjah): kos 25° = 0.90630... Digit ke-4 ialah 3 (kurang daripada 5), jadi 0.906."
     },
     {
      "j": "nombor",
      "t": "Guna kalkulator (mod darjah). Cari nilai tan 35° kepada 3 tempat perpuluhan.",
      "b": 0.7,
-     "tol": 0.001,
-     "u": "tan 35° = 0.7002..., iaitu 0.700."
+     "tol": 0.0005000000005,
+     "u": "Tekan tan 35 pada kalkulator (mod darjah): tan 35° = 0.70020... Bundar kepada 3 tempat perpuluhan: 0.700."
     },
     {
      "j": "pilih",
@@ -359,24 +359,24 @@ window.BANK["m3b5"] =
      "j": "nombor",
      "t": "Diberi sin θ = 0.5. Guna sin⁻¹ untuk mencari sudut tirus θ (darjah).",
      "b": 30,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "θ = sin⁻¹(0.5) = 30°."
+     "u": "Guna θ = sin⁻¹(sin θ). Ganti: θ = sin⁻¹(0.5). Tekan sin⁻¹ 0.5 pada kalkulator: θ = 30°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan sudut 50°. Berapakah nilai tan θ kepada 3 tempat perpuluhan?",
      "b": 1.192,
-     "tol": 0.001,
-     "u": "tan 50° = 1.1917..., iaitu 1.192."
+     "tol": 0.0005000000005,
+     "u": "Tekan tan 50 pada kalkulator (mod darjah): tan 50° = 1.19175... Bundar kepada 3 tempat perpuluhan: 1.192."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Diberi sin θ = 3/5 bagi sudut tirus θ. Berapakah nilai kos θ dalam bentuk perpuluhan?",
     "b": 0.8,
-    "tol": 0.001,
-    "u": "Bertentangan 3, hipotenus 5, maka bersebelahan = √(25 − 9) = 4. kos θ = 4/5 = 0.8."
+    "tol": 0.001000000001,
+    "u": "Guna sin θ = bertentangan ÷ hipotenus = 3/5. Bersebelahan = √(5² − 3²) = √(25 − 9) = √16 = 4. kos θ = bersebelahan ÷ hipotenus = 4/5 = 0.8."
    }
   },
   {
@@ -395,47 +395,47 @@ window.BANK["m3b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, hipotenus ialah 10. Kira panjang sisi bertentangan apabila θ = 30°.",
      "b": 5,
-     "tol": 0.01,
-     "u": "Bertentangan = hipotenus × sin θ = 10 × sin 30° = 5."
+     "tol": 0.001000000001,
+     "u": "Guna sin θ = bertentangan ÷ hipotenus. Bertentangan = hipotenus × sin θ = 10 × sin 30° = 10 × 0.5 = 5."
     },
     {
      "j": "nombor",
      "t": "Seorang murid berdiri 12 m dari tapak tiang bendera. Sudut dongak ke puncak tiang ialah 45°. Berapakah tinggi tiang bendera (m)?",
      "b": 12,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "m",
-     "u": "tan 45° = tinggi ÷ 12. Oleh sebab tan 45° = 1, tinggi = 12 m."
+     "u": "Guna tan θ = bertentangan ÷ bersebelahan. tan 45° = tinggi ÷ 12. Tinggi = 12 × tan 45° = 12 × 1 = 12 m."
     },
     {
      "j": "nombor",
      "t": "Sebatang tangga 5 m disandar pada dinding. Sudut antara tangga dengan tanah ialah 60°. Berapakah tinggi dinding yang dicapai tangga, kepada 2 tempat perpuluhan (m)?",
      "b": 4.33,
-     "tol": 0.01,
+     "tol": 0.005000000005,
      "suf": "m",
-     "u": "sin 60° = tinggi ÷ 5. Tinggi = 5 × 0.8660 = 4.33 m."
+     "u": "Guna sin θ = bertentangan ÷ hipotenus. sin 60° = tinggi ÷ 5. Tinggi = 5 × 0.8660 = 4.33 m."
     },
     {
      "j": "nombor",
      "t": "Dalam sebuah segi tiga bersudut tegak, sisi bersebelahan θ ialah 8 cm dan sisi bertentangan ialah 6 cm. Berapakah nilai tan θ?",
      "b": 0.75,
-     "tol": 0.001,
-     "u": "tan θ = bertentangan ÷ bersebelahan = 6 ÷ 8 = 0.75."
+     "tol": 0.001000000001,
+     "u": "Guna tan θ = bertentangan ÷ bersebelahan. Ganti: tan θ = 6 ÷ 8 = 0.75."
     },
     {
      "j": "nombor",
      "t": "Sisi bertentangan θ ialah 6 cm dan hipotenus ialah 10 cm. Cari sudut θ (darjah, 1 tempat perpuluhan).",
      "b": 36.9,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "°",
-     "u": "sin θ = 6 ÷ 10 = 0.6. θ = sin⁻¹(0.6) = 36.9°."
+     "u": "Guna sin θ = bertentangan ÷ hipotenus = 6 ÷ 10 = 0.6. Maka θ = sin⁻¹(0.6) = 36.9°."
     },
     {
      "j": "nombor",
      "t": "Sudut dongak matahari ialah 30°. Sebatang tiang setinggi 3 m mempunyai bayang mendatar sepanjang x m. Cari x kepada 1 tempat perpuluhan.",
      "b": 5.2,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "suf": "m",
-     "u": "tan 30° = 3 ÷ x, jadi x = 3 ÷ 0.5774 = 5.2 m."
+     "u": "Guna tan θ = tinggi ÷ jarak mendatar. tan 30° = 3 ÷ x, jadi x = 3 ÷ tan 30° = 3 ÷ 0.5774 = 5.2 m."
     },
     {
      "j": "pilih",
@@ -459,16 +459,16 @@ window.BANK["m3b5"] =
       "tan θ + sisi bersebelahan"
      ],
      "b": 1,
-     "u": "Darabkan kedua-dua belah dengan sisi bersebelahan."
+     "u": "Guna tan θ = bertentangan ÷ bersebelahan. Darabkan kedua-dua belah dengan sisi bersebelahan: bertentangan = tan θ × bersebelahan."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Seorang murid berdiri 20 m dari sebatang tiang. Sudut dongak ke puncak tiang ialah 35° dan matanya 1.5 m dari tanah. Berapakah tinggi tiang dari tanah, kepada 1 tempat perpuluhan (m)?",
     "b": 15.5,
-    "tol": 0.05,
+    "tol": 0.05000000005,
     "suf": "m",
-    "u": "Tinggi di atas paras mata = 20 × tan 35° = 14.0 m. Tambah tinggi mata 1.5 m: 15.5 m."
+    "u": "Tinggi di atas paras mata = 20 × tan 35° = 20 × 0.7002 = 14.0 m. Tambah tinggi mata: 14.0 + 1.5 = 15.5 m."
    }
   },
   {
@@ -487,46 +487,50 @@ window.BANK["m3b5"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, hipotenus ialah 10. Kira panjang sisi bersebelahan apabila θ = 60°.",
      "b": 5,
-     "tol": 0.01,
-     "u": "Bersebelahan = hipotenus × kos θ = 10 × kos 60° = 5."
+     "tol": 0.001000000001,
+     "u": "Guna kos θ = bersebelahan ÷ hipotenus. Bersebelahan = 10 × kos 60° = 10 × 0.5 = 5."
     },
     {
      "j": "nombor",
      "t": "Dari puncak sebuah menara setinggi 40 m, sudut tunduk ke sebuah kereta di atas tanah ialah 30°. Berapakah jarak mendatar kereta dari kaki menara, kepada 1 tempat perpuluhan (m)?",
      "b": 69.3,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "m",
-     "u": "Sudut dongak dari kereta juga 30°. tan 30° = 40 ÷ jarak, jadi jarak = 40 ÷ 0.5774 = 69.3 m."
+     "u": "Sudut dongak dari kereta juga 30° (sudut selang-seli). Guna tan θ = tinggi ÷ jarak: tan 30° = 40 ÷ jarak, jadi jarak = 40 ÷ 0.5774 = 69.3 m."
     },
     {
      "j": "nombor",
      "t": "Dari sebuah kapal yang berada 80 m dari kaki sebuah rumah api, sudut dongak ke puncak rumah api ialah 25°. Berapakah tinggi rumah api, kepada 1 tempat perpuluhan (m)?",
      "b": 37.3,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "m",
-     "u": "tan 25° = tinggi ÷ 80. Tinggi = 80 × 0.4663 = 37.3 m."
+     "u": "Guna tan θ = tinggi ÷ jarak mendatar. Tinggi = 80 × tan 25° = 80 × 0.4663 = 37.3 m."
     },
     {
-     "j": "nombor",
-     "t": "Tali sebuah layang-layang sepanjang 50 m membentuk sudut 40° dengan tanah. Anggap tali tegang dan lurus. Berapakah ketinggian layang-layang dari tanah, kepada 1 tempat perpuluhan (m)?",
-     "b": 32.1,
-     "tol": 0.1,
-     "suf": "m",
-     "u": "sin 40° = tinggi ÷ 50. Tinggi = 50 × 0.6428 = 32.1 m."
+     "j": "pilih",
+     "t": "Tali sebuah layang-layang sepanjang 50 m membentuk sudut 40° dengan tanah (tali tegang dan lurus). Ali mengira ketinggian layang-layang sebagai 50 × kos 40° = 38.3 m. Apakah kesilapannya?",
+     "p": [
+      "Tinggi bersebelahan dengan sudut 40°, jadi kos betul dan jawapan Ali tepat",
+      "Tali ialah sisi bertentangan, jadi guna tan: 50 × tan 40° = 42.0 m",
+      "Tinggi bertentangan dengan sudut 40°, jadi guna sin: 50 × sin 40° = 32.1 m",
+      "Sudut 40° perlu ditukar kepada radian sebelum menggunakan kos"
+     ],
+     "b": 2,
+     "u": "Tinggi ialah sisi bertentangan sudut 40°, dan tali ialah hipotenus. Guna sin θ = bertentangan ÷ hipotenus: tinggi = 50 × sin 40° = 50 × 0.6428 = 32.1 m. kos 40° memberi sisi bersebelahan, iaitu jarak mendatar 38.3 m."
     },
     {
      "j": "nombor",
      "t": "Sebatang jalan menanjak sepanjang 15 m menaikkan ketinggian sebanyak 3 m. Berapakah sudut kecondongan jalan itu dengan garis mengufuk, kepada 1 tempat perpuluhan (darjah)?",
      "b": 11.5,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "°",
-     "u": "sin θ = 3 ÷ 15 = 0.2. θ = sin⁻¹(0.2) = 11.5°."
+     "u": "Guna sin θ = bertentangan ÷ hipotenus = 3 ÷ 15 = 0.2. Maka θ = sin⁻¹(0.2) = 11.5°."
     },
     {
      "j": "nombor",
      "t": "Dari puncak bangunan A setinggi 30 m, sudut tunduk ke kaki bangunan B ialah 45° dan sudut tunduk ke puncak bangunan B ialah 30°. Berapakah tinggi bangunan B, kepada 1 tempat perpuluhan (m)?",
      "b": 12.7,
-     "tol": 0.1,
+     "tol": 0.05000000005,
      "suf": "m",
      "u": "Jarak mendatar = 30 ÷ tan 45° = 30 m. Beza tinggi = 30 × tan 30° = 17.3 m. Tinggi B = 30 − 17.3 = 12.7 m."
     },
@@ -534,32 +538,32 @@ window.BANK["m3b5"] =
      "j": "pilih",
      "t": "Mengapakah sudut tunduk dari A ke B sama dengan sudut dongak dari B ke A?",
      "p": [
-      "Kerana A dan B sentiasa sama tinggi dari tanah",
-      "Kerana sin θ = kos θ pada semua sudut tirus",
-      "Garis mengufuk selari, jadi sudut selang-seli sama",
-      "Kerana kedua-dua sudut itu ialah sudut tegak"
+      "Kerana A dan B berada pada ketinggian yang sama dari tanah",
+      "Kerana sin θ = kos θ untuk sudut tirus yang kecil",
+      "Kerana kedua-dua sudut itu ialah sudut tegak",
+      "Garis mengufuk selari, jadi sudut selang-seli sama"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Garis mengufuk di A dan di B selari. Sudut selang-seli antara dua garis selari adalah sama."
     },
     {
      "j": "pilih",
      "t": "Jika sin θ = kos θ bagi sudut tirus θ, maka θ ialah:",
      "p": [
+      "45°",
       "30°",
       "60°",
-      "0°",
-      "45°"
+      "0°"
      ],
-     "b": 3,
-     "u": "Bertentangan sama dengan bersebelahan hanya pada 45°."
+     "b": 0,
+     "u": "sin θ = kos θ bermaksud bertentangan = bersebelahan, iaitu tan θ = 1. Ini berlaku pada θ = 45°. Semak: sin 45° = kos 45° = 0.7071."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Dari titik yang berjarak 30 m mendatar dari sebatang tiang di atas bumbung, sudut dongak ke hujung bawah tiang ialah 20° dan ke hujung atas tiang ialah 35°. Berapakah panjang tiang, kepada 1 tempat perpuluhan (m)?",
     "b": 10.1,
-    "tol": 0.1,
+    "tol": 0.05000000005,
     "suf": "m",
     "u": "Tinggi hujung atas = 30 × tan 35° = 21.0 m. Tinggi hujung bawah = 30 × tan 20° = 10.9 m. Panjang tiang = 21.0 − 10.9 = 10.1 m."
    }
@@ -580,51 +584,55 @@ window.BANK["m3b5"] =
      "j": "pilih",
      "t": "Awak mahu mengukur tinggi sebatang pokok tanpa memanjatnya. Alat dan ukuran yang paling sesuai ialah:",
      "p": [
-      "Klinometer (sudut dongak) dan pita ukur (jarak mendatar)",
       "Pita ukur yang dililit pada batang pokok sahaja",
+      "Klinometer (sudut dongak) dan pita ukur (jarak mendatar)",
       "Jam tangan dan bayang pokok pada waktu malam",
       "Jangka lukis untuk mengukur sudut tegak pokok"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Tinggi = jarak mendatar × tan (sudut dongak), ditambah tinggi mata pengukur."
     },
     {
-     "j": "nombor",
-     "t": "Sebatang tangga 6 m selamat digunakan jika sudut dengan tanah ialah 75°. Berapakah jarak kaki tangga dari dinding, kepada 2 tempat perpuluhan (m)?",
-     "b": 1.55,
-     "tol": 0.01,
-     "suf": "m",
-     "u": "Kaki tangga ialah sisi bersebelahan sudut 75°. Jarak = 6 × kos 75° = 1.55 m."
+     "j": "pilih",
+     "t": "Seorang murid menekan sin 30 pada kalkulator dan mendapat −0.988, bukan 0.5. Apakah punca yang paling mungkin?",
+     "p": [
+      "Nilai sin bagi sudut tirus boleh negatif, jadi jawapan itu betul",
+      "Kalkulator perlu ditekan kos dahulu sebelum menekan sin",
+      "Kalkulator berada dalam mod radian (RAD); tukar kepada mod darjah (DEG)",
+      "Sudut 30° terlalu kecil untuk dikira oleh kalkulator"
+     ],
+     "b": 2,
+     "u": "sin 30 dalam mod radian mengira sin bagi 30 radian, iaitu −0.988. Dalam mod darjah, sin 30° = 0.5. Semak simbol D atau DEG pada skrin kalkulator sebelum mengira sin, kos atau tan."
     },
     {
      "j": "pilih",
      "t": "Dalam sebuah segi tiga bersudut tegak, hipotenus 10 cm dan θ = 60°. Berapakah luas segi tiga itu?",
      "p": [
       "25 cm²",
-      "21.65 cm²",
       "43.30 cm²",
-      "50 cm²"
+      "50 cm²",
+      "21.65 cm²"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Bertentangan = 10 sin 60° = 8.660 dan bersebelahan = 10 kos 60° = 5. Luas = ½ × 5 × 8.660 = 21.65 cm²."
     },
     {
      "j": "pilih",
      "t": "Diberi sin θ = 0.6 dan kos θ = 0.8. Apakah nilai (sin θ)² + (kos θ)²?",
      "p": [
+      "1",
       "0.14",
       "1.4",
-      "1",
       "0.5"
      ],
-     "b": 2,
+     "b": 0,
      "u": "0.36 + 0.64 = 1. Ini benar untuk mana-mana sudut kerana bertentangan² + bersebelahan² = hipotenus²."
     },
     {
      "j": "nombor",
      "t": "Dari titik A, sudut dongak ke puncak bukit ialah 20°. Dari titik B yang 100 m lebih dekat ke bukit (dalam garis yang sama), sudut dongak ialah 40°. Berapakah tinggi bukit, kepada 1 tempat perpuluhan (m)?",
      "b": 64.3,
-     "tol": 0.2,
+     "tol": 0.05000000005,
      "suf": "m",
      "u": "Katakan jarak B ke kaki bukit ialah d. tan 40° = h/d dan tan 20° = h/(d + 100). Selesaikan: d = 100 tan 20° ÷ (tan 40° − tan 20°) = 76.6 m, maka h = 76.6 × tan 40° = 64.3 m."
     },
@@ -633,23 +641,23 @@ window.BANK["m3b5"] =
      "t": "Mengapakah kalkulator memaparkan 'Math ERROR' bagi tan 90°?",
      "p": [
       "Kerana 90° bukan sudut tirus jadi tidak mempunyai nilai tan",
+      "Sisi bersebelahan menjadi 0, pembahagian dengan 0 tidak tertakrif",
       "Kerana bateri kalkulator lemah dan perlu dicas semula",
-      "Kerana tan 90° sentiasa sama dengan satu",
-      "Sisi bersebelahan menjadi 0, pembahagian dengan 0 tidak tertakrif"
+      "Kerana tan 90° sentiasa sama dengan satu"
      ],
-     "b": 3,
+     "b": 1,
      "u": "tan θ = bertentangan ÷ bersebelahan. Pada 90°, bersebelahan = 0."
     },
     {
      "j": "pilih",
      "t": "Sebuah cerun naik 1 unit bagi setiap 2 unit mendatar. Sudut kecondongan cerun itu ialah:",
      "p": [
-      "26.6°",
       "30°",
       "63.4°",
+      "26.6°",
       "45°"
      ],
-     "b": 0,
+     "b": 2,
      "u": "tan θ = 1 ÷ 2 = 0.5. θ = tan⁻¹(0.5) = 26.6°."
     },
     {
@@ -657,11 +665,11 @@ window.BANK["m3b5"] =
      "t": "Seorang murid mengatakan sin 30° + sin 30° = sin 60°. Adakah dia betul?",
      "p": [
       "Betul, kerana 30 + 30 = 60 darjah",
-      "Salah, 0.5 + 0.5 = 1 tetapi sin 60° = 0.866",
       "Betul, kerana nilai sin sentiasa boleh ditambah",
-      "Salah, kerana sin 30° sama dengan sifar"
+      "Salah, kerana sin 30° sama dengan sifar",
+      "Salah, 0.5 + 0.5 = 1 tetapi sin 60° = 0.866"
      ],
-     "b": 1,
+     "b": 3,
      "u": "sin 30° + sin 30° = 1 sedangkan sin 60° = 0.866. Nilai sin tidak bertambah secara linear dengan sudut."
     }
    ],

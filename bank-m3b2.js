@@ -98,7 +98,7 @@ window.BANK["m3b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan gelongsor kepada 3 angka bererti. Apakah nilai nombor 0.030457 yang dibundarkan itu?",
      "b": 0.0305,
-     "tol": 0.00001,
+     "tol": 0.00001000000001,
      "u": "0.030457 kepada 3 angka bererti: 3, 0, 4, dan digit seterusnya ialah 5, jadi 4 dinaikkan menjadi 5. Jawapan 0.0305."
     },
     {
@@ -111,12 +111,12 @@ window.BANK["m3b2"] =
       "0.00520"
      ],
      "b": 3,
-     "u": "0.00520 ada angka bererti 5, 2 dan 0 (sifar akhir perpuluhan). Nombor 5 200 hanya dua kerana sifar akhir nombor bulat tidak dikira.",
+     "u": "0.00520: sifar di hadapan tidak bererti, tetapi 5, 2 dan 0 (sifar akhir perpuluhan) ialah tiga angka bererti. Nombor 5 200 hanya dua kerana sifar akhir nombor bulat tidak dikira.",
      "sama": true
     },
     {
      "j": "pilih",
-     "t": "Berapakah bilangan angka bererti bagi 5 400?",
+     "t": "Berapakah bilangan angka bererti bagi 5 400? (Konvensyen: sifar akhir nombor bulat tidak dikira sebagai bererti.)",
      "p": [
       "2",
       "4",
@@ -124,16 +124,16 @@ window.BANK["m3b2"] =
       "1"
      ],
      "b": 0,
-     "u": "Bagi nombor bulat, sifar selepas digit bukan sifar yang terakhir tidak dikira, jadi hanya 5 dan 4."
+     "u": "Konvensyen dalam app ini: bagi nombor bulat, sifar selepas digit bukan sifar yang terakhir tidak dikira. Maka 5 400 hanya ada 5 dan 4, iaitu 2 angka bererti. (Sesetengah buku menganggapnya tidak pasti; ikut cara cikgu awak jika berbeza.)"
     },
     {
      "j": "pilih",
      "t": "Manakah pernyataan yang BETUL tentang angka bererti?",
      "p": [
-      "Semua sifar dalam sesuatu nombor ialah bererti",
+      "Sifar di antara dua digit bukan sifar tidak bererti",
       "Sifar di antara dua digit bukan sifar ialah bererti",
       "Sifar di hadapan nombor perpuluhan ialah bererti",
-      "Angka bererti hanya wujud dalam nombor perpuluhan"
+      "Sifar di hujung nombor bulat ialah bererti"
      ],
      "b": 1,
      "u": "Sifar di antara dua digit bukan sifar membawa maklumat, tetapi sifar di hadapan hanya menjaga kedudukan titik."
@@ -158,7 +158,7 @@ window.BANK["m3b2"] =
    ],
    "bos": {
     "j": "banyak",
-    "t": "Pilih SEMUA nombor yang mempunyai TEPAT 3 angka bererti.",
+    "t": "Pilih SEMUA nombor yang mempunyai TEPAT 3 angka bererti. (Konvensyen: sifar akhir nombor bulat tidak dikira sebagai bererti.)",
     "p": [
      "0.0405",
      "1.20",
@@ -172,7 +172,7 @@ window.BANK["m3b2"] =
      1,
      2
     ],
-    "u": "0.0405: 4, 0, 5. 1.20: 1, 2, 0. 3 070: 3, 0, 7. Manakala 0.0003 ada 1, 5 004 ada 4, dan 12.05 ada 4."
+    "u": "0.0405: 4, 0, 5. 1.20: 1, 2, 0. 3 070: 3, 0, 7 (sifar di hujung nombor bulat tidak dikira). Manakala 0.0003 ada 1, 5 004 ada 4, dan 12.05 ada 4."
    }
   },
   {
@@ -191,7 +191,7 @@ window.BANK["m3b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan gelongsor kepada 2 angka bererti. Nombor 5 264 dibundarkan menjadi berapa?",
      "b": 5300,
-     "tol": 0.5,
+     "tol": 0.5000000005,
      "u": "5 264: dua digit pertama ialah 5, 2. Digit seterusnya 6 ialah 5 atau lebih, jadi 2 dinaikkan menjadi 3. Jawapan 5 300."
     },
     {
@@ -235,7 +235,7 @@ window.BANK["m3b2"] =
      "j": "nombor",
      "t": "Bundarkan 2.0549 kepada 3 angka bererti.",
      "b": 2.05,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "u": "2, 0, 5 dan digit seterusnya ialah 4, kurang daripada 5. Jadi 2.05."
     },
     {
@@ -340,7 +340,7 @@ window.BANK["m3b2"] =
       "4.5 × 10<sup>7</sup>"
      ],
      "b": 2,
-     "u": "Titik dianjak 6 tempat ke kiri, iaitu 4.5 × 10 kuasa 6."
+     "u": "Anjak titik ke kiri sehingga tinggal satu digit bukan sifar sebelum titik: 4 500 000 → 4.5 (6 tempat). Jadi 4.5 × 10<sup>6</sup>."
     },
     {
      "j": "pilih",
@@ -352,7 +352,7 @@ window.BANK["m3b2"] =
       "6.2 × 10<sup>−4</sup>"
      ],
      "b": 3,
-     "u": "Titik dianjak 4 tempat ke kanan, jadi kuasa 10 ialah negatif 4."
+     "u": "Anjak titik ke kanan sehingga 6.2: 0.00062 → 6.2 (4 tempat). Nombor kecil, jadi kuasa negatif: 6.2 × 10<sup>−4</sup>."
     },
     {
      "j": "pilih",
@@ -364,7 +364,7 @@ window.BANK["m3b2"] =
       "0.000073"
      ],
      "b": 0,
-     "u": "Anjak titik 5 tempat ke kanan: 730 000."
+     "u": "Kuasa 5 bermaksud anjak titik 5 tempat ke kanan. 7.3 × 10<sup>5</sup> = 730 000."
     },
     {
      "j": "pilih",
@@ -376,7 +376,7 @@ window.BANK["m3b2"] =
       "−6"
      ],
      "b": 1,
-     "u": "Titik dianjak 7 tempat ke kanan, jadi kuasa 10 ialah negatif 7."
+     "u": "0.00000091 → 9.1 memerlukan anjakan 7 tempat ke kanan. Nombor kecil, jadi kuasa 10 ialah −7."
     },
     {
      "j": "pilih",
@@ -388,7 +388,7 @@ window.BANK["m3b2"] =
       "5"
      ],
      "b": 2,
-     "u": "52 000 000 = 5.2 × 10 kuasa 7, jadi titik dianjak 7 tempat."
+     "u": "52 000 000 → 5.2 memerlukan anjakan 7 tempat ke kiri. Jadi 52 000 000 = 5.2 × 10<sup>7</sup>."
     },
     {
      "j": "pilih",
@@ -438,8 +438,8 @@ window.BANK["m3b2"] =
      "j": "nombor",
      "t": "Jarak purata Bulan dari Bumi ialah 384 400 000 m. Dalam Rajah 1, apakah kuasa 10 apabila nombor itu dalam bentuk piawai?",
      "b": 8,
-     "tol": 0.5,
-     "u": "Titik dianjak 8 tempat ke kiri, jadi 3.844 × 10 kuasa 8."
+     "tol": 0.001000000001,
+     "u": "384 400 000 → 3.844: titik dianjak 8 tempat ke kiri. Nombor besar, jadi kuasa 10 ialah 8 (3.844 × 10<sup>8</sup>)."
     },
     {
      "j": "pilih",
@@ -463,7 +463,7 @@ window.BANK["m3b2"] =
       "1.5 × 10<sup>8</sup> m"
      ],
      "b": 1,
-     "u": "Darabkan pekali: 3 × 2 = 6, kuasa 10 kekal 10<sup>8</sup>."
+     "u": "Darab pekali: 3 × 2 = 6. Kuasa 10 kekal 10<sup>8</sup>. Jadi jarak = 6 × 10<sup>8</sup> m."
     },
     {
      "j": "pilih",
@@ -481,9 +481,9 @@ window.BANK["m3b2"] =
      "j": "nombor",
      "t": "Jisim sebutir pasir ialah 2 × 10<sup>−3</sup> g. Berapakah jisim 500 butir pasir dalam gram?",
      "b": 1,
-     "tol": 0.001,
+     "tol": 0.001000000001,
      "suf": "g",
-     "u": "2 × 10<sup>−3</sup> = 0.002. Darab 500 memberi 1 g."
+     "u": "Jisim = 500 × (2 × 10<sup>−3</sup>) = 1 000 × 10<sup>−3</sup> = 1 g."
     },
     {
      "j": "pilih",
@@ -507,7 +507,7 @@ window.BANK["m3b2"] =
       "8 × 10<sup>−9</sup>"
      ],
      "b": 0,
-     "u": "Ada 9 sifar selepas 8, jadi titik dianjak 9 tempat."
+     "u": "8 000 000 000 → 8: titik dianjak 9 tempat ke kiri (ada 9 sifar). Jadi 8 × 10<sup>9</sup>."
     },
     {
      "j": "susun",
@@ -524,16 +524,16 @@ window.BANK["m3b2"] =
       2,
       3
      ],
-     "u": "Nombor kecil daripada 1 memberi kuasa 10 yang negatif."
+     "u": "Anjak titik 5 tempat ke kanan: 0.0000451 → 4.51. Nombor asal kurang daripada 1, jadi kuasa negatif: 4.51 × 10<sup>−5</sup>."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Jarak dari Bumi ke Matahari ialah 1.5 × 10<sup>8</sup> km. Cahaya bergerak 3 × 10<sup>5</sup> km sesaat. Berapa saat cahaya mengambil masa untuk sampai ke Bumi?",
     "b": 500,
-    "tol": 0.5,
+    "tol": 0.001000000001,
     "suf": "saat",
-    "u": "Masa = jarak ÷ laju = (1.5 × 10<sup>8</sup>) ÷ (3 × 10<sup>5</sup>) = 0.5 × 10<sup>3</sup> = 500 saat."
+    "u": "Masa = jarak ÷ laju. Ganti: (1.5 × 10<sup>8</sup>) ÷ (3 × 10<sup>5</sup>) = 0.5 × 10<sup>8 − 5</sup> = 0.5 × 10<sup>3</sup> = 500 saat."
    }
   },
   {
@@ -558,7 +558,7 @@ window.BANK["m3b2"] =
       "−7"
      ],
      "b": 1,
-     "u": "Titik dianjak 8 tempat ke kanan, jadi 7.5 × 10 kuasa negatif 8."
+     "u": "0.000000075 → 7.5: titik dianjak 8 tempat ke kanan. Nombor kecil, jadi 7.5 × 10<sup>−8</sup>, kuasa −8."
     },
     {
      "j": "pilih",
@@ -570,7 +570,7 @@ window.BANK["m3b2"] =
       "6 × 10<sup>1</sup>"
      ],
      "b": 2,
-     "u": "Darab pekali 3 × 2 = 6. Tambah indeks 5 + 4 = 9."
+     "u": "Darab pekali: 3 × 2 = 6. Tambah indeks: 5 + 4 = 9. Jadi 6 × 10<sup>9</sup>."
     },
     {
      "j": "pilih",
@@ -582,7 +582,7 @@ window.BANK["m3b2"] =
       "2 × 10<sup>4</sup>"
      ],
      "b": 3,
-     "u": "Bahagi pekali 8 ÷ 4 = 2. Tolak indeks 7 − 3 = 4."
+     "u": "Bahagi pekali: 8 ÷ 4 = 2. Tolak indeks: 7 − 3 = 4. Jadi 2 × 10<sup>4</sup>."
     },
     {
      "j": "pilih",
@@ -594,14 +594,14 @@ window.BANK["m3b2"] =
       "16.25 × 10<sup>12</sup>"
      ],
      "b": 0,
-     "u": "Kuasa 10 sama, jadi tambah pekali sahaja: 6.5 + 2.5 = 9."
+     "u": "Kuasa 10 sama, jadi tambah pekali sahaja: 6.5 + 2.5 = 9. Jawapan 9 × 10<sup>6</sup>."
     },
     {
      "j": "nombor",
      "t": "Ungkapan (9 × 10<sup>5</sup>) + (3 × 10<sup>4</sup>) ditulis sebagai a × 10<sup>5</sup>. Cari a.",
      "b": 9.3,
-     "tol": 0.01,
-     "u": "3 × 10<sup>4</sup> = 0.3 × 10<sup>5</sup>. Jadi 9 + 0.3 = 9.3."
+     "tol": 0.01000000001,
+     "u": "Samakan kuasa 10: 3 × 10<sup>4</sup> = 0.3 × 10<sup>5</sup>. Tambah pekali: 9 + 0.3 = 9.3. Jadi a = 9.3."
     },
     {
      "j": "pilih",
@@ -616,11 +616,16 @@ window.BANK["m3b2"] =
      "u": "5.2 − 4.7 = 0.5, iaitu 0.5 × 10<sup>7</sup>. Tetapi 0.5 bukan bentuk piawai, jadi tulis 5 × 10<sup>6</sup>."
     },
     {
-     "j": "nombor",
-     "t": "Sebuah kilang menghasilkan 2.5 × 10<sup>4</sup> cip sehari. Jumlah dalam 40 hari ditulis sebagai a × 10<sup>6</sup>. Cari a.",
-     "b": 1,
-     "tol": 0.01,
-     "u": "2.5 × 10<sup>4</sup> × 40 = 1 000 000 = 1 × 10<sup>6</sup>."
+     "j": "pilih",
+     "t": "Ali menulis (3 × 10<sup>4</sup>) + (2 × 10<sup>3</sup>) = 5 × 10<sup>7</sup>. Apakah kesilapannya?",
+     "p": [
+      "Pekali perlu didarab, jadi jawapannya 6 × 10<sup>7</sup>",
+      "Indeks perlu didarab, jadi jawapannya 5 × 10<sup>12</sup>",
+      "Kuasa 10 berbeza; samakan dahulu, jawapannya 3.2 × 10<sup>4</sup>",
+      "Tiada kesilapan, pekali dan indeks memang ditambah"
+     ],
+     "b": 2,
+     "u": "Kuasa 10 mesti sama sebelum menambah pekali. 2 × 10<sup>3</sup> = 0.2 × 10<sup>4</sup>. Tambah pekali: 3 + 0.2 = 3.2, jadi 3.2 × 10<sup>4</sup>. Semak: 30 000 + 2 000 = 32 000."
     },
     {
      "j": "pilih",
@@ -628,10 +633,10 @@ window.BANK["m3b2"] =
      "p": [
       "5 × 10<sup>−8</sup>",
       "0.5 × 10<sup>2</sup>",
-      "5 × 10<sup>1</sup>",
-      "5 × 10<sup>−2</sup>"
+      "5 × 10<sup>−2</sup>",
+      "5 × 10<sup>1</sup>"
      ],
-     "b": 2,
+     "b": 3,
      "u": "4 ÷ 8 = 0.5 dan kuasa 10: −3 − (−5) = 2, memberi 0.5 × 10<sup>2</sup> = 50. Bentuk piawainya 5 × 10<sup>1</sup>."
     }
    ],
@@ -639,12 +644,12 @@ window.BANK["m3b2"] =
     "j": "pilih",
     "t": "Siti kata (2 × 10<sup>5</sup>) × (6 × 10<sup>3</sup>) = 12 × 10<sup>8</sup> dan itu bentuk piawai. Apakah kesilapan Siti?",
     "p": [
+     "Pekali 12 melebihi 10; sepatutnya 1.2 × 10<sup>9</sup>",
      "Indeks mesti ditolak apabila dua nombor didarab",
      "Dia patut menambah 2 dan 6 dahulu sebelum mendarab",
-     "Jawapan Siti betul kerana nilainya sama sahaja",
-     "Pekali 12 melebihi 10; sepatutnya 1.2 × 10<sup>9</sup>"
+     "Jawapan Siti betul kerana nilainya sama sahaja"
     ],
-    "b": 3,
+    "b": 0,
     "u": "Pengiraannya betul tetapi 12 melebihi 10. Tulis 12 × 10<sup>8</sup> sebagai 1.2 × 10<sup>9</sup>."
    }
   },
@@ -664,12 +669,12 @@ window.BANK["m3b2"] =
      "j": "pilih",
      "t": "Antara berikut, yang manakah nilai TERBESAR?",
      "p": [
-      "1.0 × 10<sup>5</sup>",
       "9.9 × 10<sup>4</sup>",
+      "1.0 × 10<sup>5</sup>",
       "99 × 10<sup>3</sup>",
       "0.98 × 10<sup>5</sup>"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Nilainya 100 000, 99 000, 99 000 dan 98 000. Yang paling besar ialah 1.0 × 10<sup>5</sup>."
     },
     {
@@ -677,12 +682,12 @@ window.BANK["m3b2"] =
      "t": "Sebuah komputer melakukan 2 × 10<sup>9</sup> pengiraan sesaat. Berapa saat untuk 6 × 10<sup>12</sup> pengiraan?",
      "p": [
       "3 × 10<sup>21</sup> saat",
-      "3 × 10<sup>3</sup> saat",
       "1.2 × 10<sup>22</sup> saat",
+      "3 × 10<sup>3</sup> saat",
       "4 × 10<sup>13</sup> saat"
      ],
-     "b": 1,
-     "u": "Masa = 6 × 10<sup>12</sup> ÷ 2 × 10<sup>9</sup> = 3 × 10<sup>3</sup> saat."
+     "b": 2,
+     "u": "Masa = pengiraan ÷ kadar = (6 × 10<sup>12</sup>) ÷ (2 × 10<sup>9</sup>) = 3 × 10<sup>12 − 9</sup> = 3 × 10<sup>3</sup> saat."
     },
     {
      "j": "pilih",
@@ -690,41 +695,46 @@ window.BANK["m3b2"] =
      "p": [
       "1.02 m²",
       "1.1 m²",
-      "1.0 m²",
-      "0.10 m²"
+      "0.10 m²",
+      "1.0 m²"
      ],
-     "b": 2,
-     "u": "Luas = 1.20 × 0.85 = 1.02. Kepada 2 angka bererti, 1.0."
+     "b": 3,
+     "u": "Luas = panjang × lebar = 1.20 × 0.85 = 1.02 m². Bundar kepada 2 angka bererti: digit seterusnya 2 kurang daripada 5, jadi 1.0 m²."
     },
     {
-     "j": "nombor",
-     "t": "Jika x = 5 × 10<sup>k</sup> dan x ialah nombor bulat antara 1 000 dan 10 000, cari nilai k.",
-     "b": 3,
-     "tol": 0.5,
-     "u": "5 × 10<sup>3</sup> = 5 000, yang berada antara 1 000 dan 10 000."
+     "j": "pilih",
+     "t": "Ali kata 8 × 10<sup>−3</sup> lebih besar daripada 2 × 10<sup>−2</sup> kerana 8 lebih besar daripada 2. Apakah kesilapannya?",
+     "p": [
+      "Kuasa 10 perlu dibandingkan dahulu; 2 × 10<sup>−2</sup> = 0.02 lebih besar daripada 8 × 10<sup>−3</sup> = 0.008",
+      "Pekali dibandingkan dahulu, jadi 8 × 10<sup>−3</sup> memang lebih besar",
+      "Kuasa 10 yang lebih kecil memberi nilai lebih besar, jadi 8 × 10<sup>−3</sup> lebih besar",
+      "Kedua-duanya sama, kerana 8 × 10<sup>−3</sup> = 2 × 10<sup>−2</sup>"
+     ],
+     "b": 0,
+     "u": "Tukar kepada perpuluhan: 8 × 10<sup>−3</sup> = 0.008 dan 2 × 10<sup>−2</sup> = 0.02. Oleh sebab 0.02 lebih besar, kuasa 10 yang lebih besar (−2 lawan −3) menentukan saiz, bukan pekali."
     },
     {
      "j": "pilih",
      "t": "Cahaya Matahari sampai ke Bumi dalam 5 × 10<sup>2</sup> saat. Berapa minit kira-kira, dibundarkan kepada 2 angka bererti?",
      "p": [
       "8.4 minit",
+      "8.3 minit",
       "8.0 minit",
-      "5.0 minit",
-      "8.3 minit"
+      "5.0 minit"
      ],
-     "b": 3,
-     "u": "500 ÷ 60 = 8.333... minit. Kepada 2 angka bererti, 8.3."
+     "b": 1,
+     "u": "Tukar saat kepada minit: 500 ÷ 60 = 8.333... minit. Bundar kepada 2 angka bererti: digit seterusnya 3 kurang daripada 5, jadi 8.3 minit."
     },
     {
      "j": "pilih",
      "t": "Nombor Avogadro ialah 6.02 × 10<sup>23</sup>. Bilangan atom dalam 2 mol ialah:",
      "p": [
-      "1.204 × 10<sup>24</sup>",
       "12.04 × 10<sup>23</sup>",
       "6.02 × 10<sup>46</sup>",
+      "1.204 × 10<sup>24</sup>",
       "1.204 × 10<sup>23</sup>"
      ],
-     "b": 0,
+     "b": 2,
      "u": "2 × 6.02 = 12.04, jadi 12.04 × 10<sup>23</sup>. Bentuk piawainya 1.204 × 10<sup>24</sup>."
     },
     {
@@ -732,23 +742,23 @@ window.BANK["m3b2"] =
      "t": "Satu tahun cahaya kira-kira 9.46 × 10<sup>12</sup> km. Bintang A jauhnya 2 tahun cahaya. Bintang B jauhnya 5 × 10<sup>13</sup> km. Yang manakah lebih jauh?",
      "p": [
       "Bintang A, kerana 2 tahun cahaya lebih besar daripada 5",
-      "Bintang B, kerana 5 × 10<sup>13</sup> lebih besar daripada 1.892 × 10<sup>13</sup>",
       "Kedua-duanya sama jauh",
-      "Tidak dapat dibandingkan"
+      "Tidak dapat dibandingkan",
+      "Bintang B, kerana 5 × 10<sup>13</sup> lebih besar daripada 1.892 × 10<sup>13</sup>"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Bintang A: 2 × 9.46 × 10<sup>12</sup> = 1.892 × 10<sup>13</sup> km. Bintang B: 5 × 10<sup>13</sup> km, lebih jauh."
     },
     {
      "j": "pilih",
      "t": "Semasa membundarkan 4 950 kepada 2 angka bererti, Ali menjawab 4 900 dan Siti menjawab 5 000. Siapa betul?",
      "p": [
+      "Siti, kerana digit seterusnya 5 menaikkan digit 9",
       "Ali, kerana digit 5 sentiasa dibundarkan ke bawah",
       "Kedua-duanya betul kerana cara bundar berbeza",
-      "Siti, kerana digit seterusnya 5 menaikkan digit 9",
       "Kedua-duanya salah, jawapan betul ialah 4 950"
      ],
-     "b": 2,
+     "b": 0,
      "u": "4, 9 dan digit seterusnya ialah 5. Naikkan 9 menjadi 10, jadi 4 9 menjadi 5 0. Jawapannya 5 000."
     }
    ],

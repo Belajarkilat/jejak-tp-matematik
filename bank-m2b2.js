@@ -64,8 +64,8 @@ window.BANK["m2b2"] =
      "t": "Kembangan dua ungkapan algebra bermaksud:",
      "p": [
       "Mendarab setiap sebutan dalam satu kurungan dengan setiap sebutan dalam kurungan lain",
-      "Menambah semua sebutan daripada kedua-dua kurungan tanpa mendarab",
-      "Mencari faktor sepunya bagi semua sebutan dalam kedua-dua kurungan",
+      "Menambah sebutan daripada kedua-dua kurungan kemudian membuang kurungan",
+      "Mencari faktor sepunya bagi sebutan dalam kedua-dua kurungan",
       "Menggantikan x dengan satu nombor tertentu dalam setiap kurungan"
      ],
      "b": 0,
@@ -87,14 +87,14 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 2 dan b = 3. Berapakah bilangan petak unit merah?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Petak unit membentuk segi empat tepat a kali b, iaitu 2 × 3 = 6 petak."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 4 dan b = 3. Berapakah jumlah jalur x berwarna hijau?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Ada 4 jalur x menegak dan 3 jalur x mengufuk, jadi 4 + 3 = 7 jalur x. Itulah pekali x dalam hasil kembangan."
     },
     {
@@ -198,7 +198,7 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, sel kanan bawah ialah hasil darab +3 dan −4. Berapakah nilainya?",
      "b": -12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "3 kali −4 = −12. Positif kali negatif memberi negatif."
     },
     {
@@ -217,7 +217,7 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 2. Berapakah nilai (2x + 3)(x − 4)?",
      "b": -14,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "(2 × 2 + 3)(2 − 4) = 7 × (−2) = −14. Bentuk dikembang 2x² − 5x − 12 juga memberi 8 − 10 − 12 = −14."
     },
     {
@@ -248,7 +248,7 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Sebuah kebun segi empat tepat berukuran (x + 5) m panjang dan (x + 2) m lebar. Apabila x = 3, berapakah luas kebun dalam m²?",
      "b": 40,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "m²",
      "u": "Panjang 8 m dan lebar 5 m, jadi luas 40 m². Bentuk dikembang x² + 7x + 10 juga memberi 9 + 21 + 10 = 40."
     },
@@ -274,7 +274,7 @@ window.BANK["m2b2"] =
     "j": "nombor",
     "t": "Sebuah bingkai gambar berukuran (2x + 1) cm panjang dan (x + 3) cm lebar. Apabila x = 4, berapakah luas bingkai dalam cm²?",
     "b": 63,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "cm²",
     "u": "Panjang 9 cm dan lebar 7 cm, jadi luas 63 cm². Semakan: 2x² + 7x + 3 = 32 + 28 + 3 = 63."
    }
@@ -307,14 +307,14 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, sasaran ialah x² + 7x + 12. Dua nombor m dan n yang betul mesti mempunyai hasil darab m × n berapa?",
      "b": 12,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Sebutan pemalar 12 datang daripada petak unit, iaitu m × n, jadi m × n = 12."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, sasaran ialah x² + 7x + 12. Dua nombor m dan n yang betul mesti mempunyai hasil tambah m + n berapa?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Pekali x ialah m + n, kerana m jalur menegak dan n jalur mengufuk, jadi m + n = 7."
     },
     {
@@ -413,21 +413,21 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3. Berapakah luas bentuk L (kuning dan hijau) dalam unit persegi?",
      "b": 91,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Luas petak besar 10 × 10 = 100. Tolak petak kecil 3 × 3 = 9. Luas bentuk L ialah 91."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3. Apabila bentuk L disusun semula menjadi segi empat tepat, berapakah panjangnya dalam unit?",
      "b": 13,
-     "tol": 0.01,
-     "u": "Panjang ialah x + a = 10 + 3 = 13 unit."
+     "tol": 0.001000000001,
+     "u": "Segi empat tepat itu mempunyai panjang x + a. Ganti x = 10 dan a = 3: panjang = 10 + 3 = 13 unit."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan a = 3. Berapakah lebar segi empat tepat itu dalam unit?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Lebar ialah x − a = 10 − 3 = 7 unit. Semakan: 13 × 7 = 91."
     },
     {
@@ -470,8 +470,8 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Guna beza dua kuasa dua untuk mengira 51² − 49².",
      "b": 200,
-     "tol": 0.01,
-     "u": "51² − 49² = (51 + 49)(51 − 49) = 100 × 2 = 200."
+     "tol": 0.001000000001,
+     "u": "Guna beza dua kuasa dua: a² − b² = (a + b)(a − b). Ganti a = 51 dan b = 49: (51 + 49)(51 − 49) = 100 × 2 = 200."
     },
     {
      "j": "pilih",
@@ -490,7 +490,7 @@ window.BANK["m2b2"] =
     "j": "nombor",
     "t": "Sebuah taman petak bersisi 12 m mempunyai kolam petak bersisi 5 m di satu sudut. Guna (12 + 5)(12 − 5) untuk mencari luas taman yang tinggal dalam m².",
     "b": 119,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "suf": "m²",
     "u": "12² − 5² = (12 + 5)(12 − 5) = 17 × 7 = 119 m². Semakan: 144 − 25 = 119."
    }
@@ -523,14 +523,14 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 7. Berapakah nilai (x + 1)/2 + (x − 1)/3 di sebelah kiri?",
      "b": 6,
-     "tol": 0.01,
-     "u": "(7 + 1)/2 + (7 − 1)/3 = 4 + 2 = 6."
+     "tol": 0.001000000001,
+     "u": "Ganti x = 7: (7 + 1)/2 + (7 − 1)/3. Kira setiap pecahan: 8/2 + 6/3 = 4 + 2 = 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 7. Berapakah nilai (5x + 1)/6 di sebelah kanan?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "(5 × 7 + 1)/6 = 36/6 = 6. Nilai ini sama dengan sebelah kiri."
     },
     {
@@ -628,21 +628,21 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 9. Berapakah nilai (x² − 9)/6?",
      "b": 12,
-     "tol": 0.01,
-     "u": "(81 − 9)/6 = 72/6 = 12."
+     "tol": 0.001000000001,
+     "u": "Ganti x = 9: x² − 9 = 81 − 9 = 72. Kemudian bahagi 6: 72 ÷ 6 = 12."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 9. Berapakah nilai 3/(x + 3)?",
      "b": 0.25,
-     "tol": 0.001,
-     "u": "3/(9 + 3) = 3/12 = 0.25."
+     "tol": 0.001000000001,
+     "u": "Ganti x = 9: penyebut x + 3 = 9 + 3 = 12. Maka 3/12 = 1/4 = 0.25."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 9. Berapakah nilai (x − 3)/2 di sebelah kanan?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "(9 − 3)/2 = 3. Hasil darab di sebelah kiri ialah 12 × 0.25 = 3, sama dengan sebelah kanan."
     },
     {
@@ -674,8 +674,8 @@ window.BANK["m2b2"] =
      "t": "Permudahkan (x + 2)/4 ÷ (x + 2)/8.",
      "p": [
       "1/2",
-      "(x + 2)/2",
-      "(x + 2)/8",
+      "4",
+      "1/4",
       "2"
      ],
      "b": 3,
@@ -697,7 +697,7 @@ window.BANK["m2b2"] =
      "j": "nombor",
      "t": "Permudahkan (2x + 4)/(x + 2). Berapakah nilainya apabila x = 5?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + 4 = 2(x + 2), jadi (2x + 4)/(x + 2) = 2 untuk semua x selain −2. Apabila x = 5 nilainya ialah 14/7 = 2."
     }
    ],

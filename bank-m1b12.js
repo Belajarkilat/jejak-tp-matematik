@@ -109,15 +109,15 @@ window.BANK["m1b12"] =
     },
     {
      "j": "pilih",
-     "t": "Dalam Rajah 1, pilih 'Tinggi'. Kotak yang menyala pada pokok jenis data ialah:",
+     "t": "Tinggi badan murid diukur dalam sentimeter. Dalam pokok jenis data, tinggi terletak pada cabang:",
      "p": [
       "Numerik, kemudian selanjar",
-      "Kategori sahaja",
+      "Kategori",
       "Numerik, kemudian diskret",
       "Kategori, kemudian diskret"
      ],
      "b": 0,
-     "u": "Tinggi ialah data numerik yang diukur, jadi kotak Numerik dan Selanjar menyala."
+     "u": "Tinggi diukur dan boleh ada perpuluhan, contohnya 152.5 cm, jadi ia data numerik yang selanjar. Cabang Numerik dibahagi kepada diskret (dikira) dan selanjar (diukur)."
     },
     {
      "j": "pilih",
@@ -199,21 +199,21 @@ window.BANK["m1b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, gelongsor data hingga 15. Berapakah kekerapan markah 3?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Titik pada markah 3 ialah 6, jadi f = 6."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, gelongsor data hingga 15. Berapakah kekerapan markah 5?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Markah 5 muncul 3 kali, jadi f = 3."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, gelongsor data hingga 15. Berapakah jumlah kekerapan?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Jumlah kekerapan sama dengan bilangan data, iaitu 15 murid."
     },
     {
@@ -232,7 +232,7 @@ window.BANK["m1b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1 (15 data), berapakah bilangan murid yang mendapat markah kurang daripada 4?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Markah 2 ada 2 murid dan markah 3 ada 6 murid. 2 + 6 = 8 murid."
     },
     {
@@ -276,7 +276,7 @@ window.BANK["m1b12"] =
     "j": "nombor",
     "t": "Dalam Rajah 1 (15 data), 3 murid lagi mendapat markah 4. Berapakah kekerapan markah 4 sekarang?",
     "b": 7,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Kekerapan asal markah 4 ialah 4. Tambah 3 murid, jadi 4 + 3 = 7."
    }
   },
@@ -296,31 +296,31 @@ window.BANK["m1b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Bola. Berapakah kekerapannya?",
      "b": 12,
-     "tol": 0.01,
-     "u": "Palang Bola bernilai 12 murid."
+     "tol": 0.001000000001,
+     "u": "Baca palang Bola pada carta palang: tingginya 12. Jadi kekerapan Bola = 12 murid."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah jumlah kekerapan semua sukan?",
      "b": 40,
-     "tol": 0.01,
-     "u": "12 + 8 + 6 + 4 + 10 = 40 murid."
+     "tol": 0.001000000001,
+     "u": "Jumlah kekerapan = jumlah semua palang. 12 + 8 + 6 + 4 + 10 = 40 murid."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tukar kepada carta pai dan pilih Renang. Berapakah sudut sektor Renang (darjah)?",
      "b": 72,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "°",
-     "u": "8 ÷ 40 × 360° = 72°."
+     "u": "Guna sudut = f ÷ jumlah f × 360°. Ganti: 8 ÷ 40 × 360° = 72°."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, pilih Lari. Berapakah peratus murid yang memilih Lari?",
      "b": 15,
-     "tol": 0.1,
+     "tol": 0.001000000001,
      "suf": "%",
-     "u": "6 ÷ 40 × 100 = 15%."
+     "u": "Guna peratus = f ÷ jumlah f × 100%. Ganti: 6 ÷ 40 × 100% = 15%."
     },
     {
      "j": "pilih",
@@ -332,7 +332,7 @@ window.BANK["m1b12"] =
       "36°"
      ],
      "b": 3,
-     "u": "4 ÷ 40 × 360° = 36°."
+     "u": "Guna sudut = f ÷ jumlah f × 360°. Ganti: 4 ÷ 40 × 360° = 36°."
     },
     {
      "j": "pilih",
@@ -368,16 +368,16 @@ window.BANK["m1b12"] =
       "90°"
      ],
      "b": 2,
-     "u": "Sektor-sektor membentuk satu bulatan penuh, iaitu 360°."
+     "u": "Semua sektor dalam carta pai bersama-sama membentuk satu bulatan penuh, iaitu 360°."
     }
    ],
    "bos": {
     "j": "nombor",
     "t": "Dalam Rajah 1, sektor Bola dan sektor Tenis digabungkan. Berapakah sudut sektor gabungan itu (darjah)?",
     "b": 198,
-    "tol": 0.1,
+    "tol": 0.001000000001,
     "suf": "°",
-    "u": "Bola = 12 ÷ 40 × 360° = 108°. Tenis = 10 ÷ 40 × 360° = 90°. Jumlah = 198°."
+    "u": "Guna sudut = f ÷ jumlah f × 360°. Bola = 12 ÷ 40 × 360° = 108°. Tenis = 10 ÷ 40 × 360° = 90°. Sektor gabungan = 108° + 90° = 198°."
    }
   },
   {
@@ -396,29 +396,29 @@ window.BANK["m1b12"] =
      "j": "nombor",
      "t": "Markah 12 murid: 23, 35, 28, 41, 36, 32, 45, 29, 38, 33, 27, 44. Dalam Rajah 1, berapakah bilangan daun pada batang 3?",
      "b": 5,
-     "tol": 0.01,
-     "u": "Data 30-an ialah 35, 36, 32, 38 dan 33. Ada 5 daun."
+     "tol": 0.001000000001,
+     "u": "Baca batang 3: data 30-an ialah 35, 36, 32, 38 dan 33 (daun 5, 6, 2, 8, 3). Ada 5 daun."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah markah tertinggi?",
      "b": 45,
-     "tol": 0.01,
-     "u": "Batang 4 mempunyai daun 5, jadi markah tertinggi ialah 45."
+     "tol": 0.001000000001,
+     "u": "Pilih batang terbesar (4), kemudian daun terbesar padanya (5). Markah tertinggi = 45."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah markah terendah?",
      "b": 23,
-     "tol": 0.01,
-     "u": "Batang 2 mempunyai daun 3, jadi markah terendah ialah 23."
+     "tol": 0.001000000001,
+     "u": "Pilih batang terkecil (2), kemudian daun terkecil padanya (3). Markah terendah = 23."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah beza antara markah tertinggi dengan markah terendah?",
      "b": 22,
-     "tol": 0.01,
-     "u": "45 − 23 = 22."
+     "tol": 0.001000000001,
+     "u": "Beza = markah tertinggi − markah terendah = 45 − 23 = 22."
     },
     {
      "j": "pilih",
@@ -436,8 +436,8 @@ window.BANK["m1b12"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah bilangan murid yang mendapat lebih daripada 35 markah?",
      "b": 5,
-     "tol": 0.01,
-     "u": "Markah lebih daripada 35 ialah 41, 36, 45, 38 dan 44. Ada 5 murid."
+     "tol": 0.001000000001,
+     "u": "Semak data: lebih daripada 35 ialah 36 dan 38 (batang 3), serta 41, 44 dan 45 (batang 4). Ada 5 murid."
     },
     {
      "j": "pilih",
@@ -468,8 +468,8 @@ window.BANK["m1b12"] =
     "j": "nombor",
     "t": "Satu markah baharu, 39, ditambah kepada data dalam Rajah 1. Berapakah bilangan daun pada batang 3 sekarang?",
     "b": 6,
-    "tol": 0.01,
-    "u": "Batang 3 asalnya ada 5 daun. Markah 39 ditambah pada batang 3, jadi menjadi 6 daun."
+    "tol": 0.001000000001,
+    "u": "Batang 3 asalnya ada 5 daun (35, 36, 32, 38, 33). Markah 39 masuk batang 3, jadi 5 + 1 = 6 daun."
    }
   },
   {
@@ -488,36 +488,41 @@ window.BANK["m1b12"] =
      "j": "nombor",
      "t": "Masa 15 murid berlari (minit): 11, 14, 18, 21, 23, 24, 26, 27, 29, 31, 33, 34, 36, 38, 42. Dalam Rajah 1, dengan selang 10 min, berapakah kekerapan kelas 20 - 29?",
      "b": 6,
-     "tol": 0.01,
-     "u": "Data dalam kelas 20 - 29 ialah 21, 23, 24, 26, 27 dan 29. Ada 6 murid."
+     "tol": 0.001000000001,
+     "u": "Semak data dalam kelas 20 - 29: 21, 23, 24, 26, 27 dan 29. Kira: 6 murid."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, dengan selang 5 min, berapakah bilangan kelas?",
      "b": 7,
-     "tol": 0.01,
-     "u": "Kelas ialah 10 - 14, 15 - 19, 20 - 24, 25 - 29, 30 - 34, 35 - 39 dan 40 - 44. Ada 7 kelas."
+     "tol": 0.001000000001,
+     "u": "Data bermula 11 hingga 42. Selang 5 min: 10 - 14, 15 - 19, 20 - 24, 25 - 29, 30 - 34, 35 - 39 dan 40 - 44. Kira: 7 kelas."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, dengan selang 5 min, berapakah kekerapan kelas 20 - 24?",
      "b": 3,
-     "tol": 0.01,
-     "u": "Data dalam kelas 20 - 24 ialah 21, 23 dan 24. Ada 3 murid."
+     "tol": 0.001000000001,
+     "u": "Semak data dalam kelas 20 - 24: 21, 23 dan 24. Kira: 3 murid."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, dengan selang 10 min, berapakah kekerapan kelas 40 - 49?",
      "b": 1,
-     "tol": 0.01,
-     "u": "Hanya 42 berada dalam kelas 40 - 49, jadi kekerapannya 1."
+     "tol": 0.001000000001,
+     "u": "Semak data dalam kelas 40 - 49: hanya 42. Kekerapan = 1."
     },
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, berapakah jumlah kekerapan semua kelas?",
-     "b": 15,
-     "tol": 0.01,
-     "u": "Jumlah kekerapan sama dengan bilangan data, iaitu 15."
+     "j": "pilih",
+     "t": "Seorang murid menulis kelas bagi selang 5 min sebagai 10 - 15, 15 - 20, 20 - 25 dan seterusnya. Apakah kesilapannya?",
+     "p": [
+      "Selang kelas perlu 10 min, bukan 5 min",
+      "Kelas pertama perlu bermula pada 0",
+      "Kelas bertindih pada 15 dan 20; sepatutnya 10 - 14, 15 - 19, 20 - 24",
+      "Tiada kesilapan, nilai sempadan boleh masuk dua kelas"
+     ],
+     "b": 2,
+     "u": "Setiap data mesti masuk tepat satu kelas. Nilai 15 tidak boleh berada dalam 10 - 15 dan 15 - 20 sekali gus, jadi kelas ditulis 10 - 14, 15 - 19, 20 - 24."
     },
     {
      "j": "pilih",
@@ -525,34 +530,34 @@ window.BANK["m1b12"] =
      "p": [
       "Histogram untuk data kategori sahaja",
       "Histogram tiada paksi kekerapan",
-      "Palang histogram bersentuhan kerana data selanjar",
-      "Palang histogram mesti berjarak"
+      "Palang histogram mesti berjarak",
+      "Palang histogram bersentuhan kerana data selanjar"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Data selanjar dibahagi kepada kelas tanpa jurang, jadi palang bersentuhan."
     },
     {
      "j": "pilih",
      "t": "Poligon kekerapan dilukis dengan menyambung:",
      "p": [
+      "Titik tengah atas setiap palang",
       "Sudut kiri atas setiap palang",
       "Dasar setiap palang",
-      "Hujung kanan setiap palang",
-      "Titik tengah atas setiap palang"
+      "Hujung kanan setiap palang"
      ],
-     "b": 3,
+     "b": 0,
      "u": "Titik tengah bahagian atas setiap palang disambung dengan garis lurus."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, dengan selang 10 min, kelas manakah mempunyai kekerapan tertinggi?",
      "p": [
-      "20 - 29",
       "10 - 19",
+      "20 - 29",
       "30 - 39",
       "40 - 49"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Kelas 20 - 29 mempunyai 6 murid, lebih banyak daripada kelas lain."
     }
    ],
@@ -560,8 +565,8 @@ window.BANK["m1b12"] =
     "j": "nombor",
     "t": "Dengan selang 5 min, berapa murid mengambil masa 25 min atau lebih tetapi kurang daripada 40 min?",
     "b": 8,
-    "tol": 0.01,
-    "u": "Kelas 25 - 29 ada 3, kelas 30 - 34 ada 3 dan kelas 35 - 39 ada 2. 3 + 3 + 2 = 8 murid."
+    "tol": 0.001000000001,
+    "u": "Kelas 25 - 29 ada 3, kelas 30 - 34 ada 3 dan kelas 35 - 39 ada 2. Jumlah = 3 + 3 + 2 = 8 murid."
    }
   },
   {
@@ -577,80 +582,85 @@ window.BANK["m1b12"] =
    "bosKadFakta": "Ramalan daripada graf garis hanya andaian berdasarkan corak lalu. Semakin panjang tempoh data dan semakin stabil coraknya, semakin munasabah ramalan itu.",
    "soalan": [
     {
-     "j": "nombor",
-     "t": "Dalam Rajah 1, pilih Jun. Berapakah jualan pada bulan Jun (RM ribu)?",
-     "b": 53,
-     "tol": 0.01,
-     "u": "Titik Jun berada pada RM53 ribu."
+     "j": "pilih",
+     "t": "Seorang murid meramal jualan Disember dengan menambah RM2.2 ribu (purata kenaikan sebulan) sebanyak enam kali kepada jualan Jun, kerana 'corak pasti berterusan'. Apakah kelemahannya?",
+     "p": [
+      "Purata kenaikan sebulan tidak sesuai digunakan untuk membuat ramalan",
+      "Ramalan Disember perlu sama dengan jualan pada bulan terakhir data",
+      "Ramalan yang jauh daripada data enam bulan kurang boleh dipercayai",
+      "Tiada kelemahan kerana graf garis menjamin ramalan yang tepat"
+     ],
+     "b": 2,
+     "u": "Ramalan menganggap corak lalu berterusan. Data enam bulan pendek dan jualan boleh berubah, jadi ramalan jangka jauh hanya anggaran kasar (53 + 6 × 2.2 = 66.2), bukan jaminan."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah kenaikan jualan dari Mac ke April (RM ribu)?",
      "b": 4,
-     "tol": 0.01,
-     "u": "47 − 43 = 4."
+     "tol": 0.001000000001,
+     "u": "Kenaikan = jualan April − jualan Mac = 47 − 43 = 4 (RM ribu)."
     },
     {
      "j": "nombor",
      "t": "Purata kenaikan sebulan dari Januari ke Jun ialah RM2.2 ribu. Anggarkan jualan Julai kepada 1 tempat perpuluhan (RM ribu).",
      "b": 55.2,
-     "tol": 0.05,
-     "u": "Jualan Jun ialah 53. Tambah purata kenaikan 2.2, jadi 53 + 2.2 = 55.2."
+     "tol": 0.05000000005,
+     "u": "Jualan Jun = 53. Tambah purata kenaikan sebulan 2.2: 53 + 2.2 = 55.2. Anggaran jualan Julai = RM55.2 ribu."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, apabila paksi-y dipotong dan bermula dari 40, kenaikan jualan kelihatan:",
      "p": [
       "Lebih landai daripada sebenar",
-      "Lebih curam daripada sebenar",
       "Sama seperti sebenar",
-      "Tiada kenaikan"
+      "Tiada kenaikan",
+      "Lebih curam daripada sebenar"
      ],
-     "b": 1,
+     "b": 3,
      "u": "Julat paksi menjadi lebih pendek, jadi garis kelihatan lebih curam."
     },
     {
      "j": "pilih",
      "t": "Perwakilan data yang beretika mesti:",
      "p": [
+      "Bermula paksi-y dari sifar atau menunjukkan pemotongan",
       "Memilih skala yang menonjolkan kesimpulan kita",
       "Menyembunyikan data yang tidak menyokong kita",
-      "Bermula paksi-y dari sifar atau menunjukkan pemotongan",
       "Menggunakan warna terang sahaja untuk garis"
      ],
-     "b": 2,
+     "b": 0,
      "u": "Pembaca berhak melihat data sebenar. Pemotongan paksi mesti dinyatakan supaya tidak mengelirukan."
     },
     {
      "j": "nombor",
      "t": "Dari Januari ke Jun, jualan naik daripada RM42 ribu kepada RM53 ribu. Berapakah peratus kenaikan itu kepada 1 tempat perpuluhan?",
      "b": 26.2,
-     "tol": 0.05,
+     "tol": 0.05000000005,
      "suf": "%",
-     "u": "Kenaikan = 53 − 42 = 11. 11 ÷ 42 × 100 = 26.2%."
+     "u": "Peratus kenaikan = kenaikan ÷ nilai asal × 100%. Kenaikan = 53 − 42 = 11. 11 ÷ 42 × 100% = 26.2%."
     },
     {
      "j": "pilih",
      "t": "Ramalan daripada graf garis lebih boleh dipercayai jika:",
      "p": [
       "Hanya dua titik data yang digunakan",
+      "Corak data stabil dalam tempoh panjang",
       "Paksi-y dipotong dengan banyak sekali",
-      "Data sebelum bulan Mac telah dibuang",
-      "Corak data stabil dalam tempoh panjang"
+      "Data sebelum bulan Mac telah dibuang"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Corak yang stabil dan data yang cukup memberi asas yang lebih baik untuk ramalan."
     },
     {
      "j": "pilih",
      "t": "Dalam Rajah 1, paksi-y bermula dari 0 atau dari 40 (dipotong). Yang manakah menunjukkan kenaikan sebenar dengan lebih jujur?",
      "p": [
-      "Bermula dari 0",
       "Bermula dari 40",
       "Kedua-duanya sama jujur",
+      "Bermula dari 0",
       "Tidak ada perbezaan"
      ],
-     "b": 0,
+     "b": 2,
      "u": "Paksi dari 0 mengekalkan nisbah sebenar antara nilai. Paksi yang dipotong membesar-besarkan perubahan."
     }
    ],

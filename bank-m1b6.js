@@ -99,14 +99,14 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 3. Berapakah nilai sebelah kiri, iaitu x + 4?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x + 4 = 3 + 4 = 7. Nilai kiri 7 kurang daripada 9, jadi pan kanan lebih berat."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 5. Berapakah nilai sebelah kiri, iaitu x + 4?",
      "b": 9,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x + 4 = 5 + 4 = 9. Nilai ini sama dengan sebelah kanan, jadi neraca seimbang."
     },
     {
@@ -210,14 +210,14 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 1. Berapakah nilai y?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + y = 6. Apabila x = 1, 2(1) + y = 6, maka y = 4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x = 4. Berapakah nilai y?",
      "b": -2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2(4) + y = 6, maka 8 + y = 6 dan y = −2."
     },
     {
@@ -260,7 +260,7 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Kopi RM2 secawan dan kek RM1 sekeping. Aina bayar RM6 untuk 2 keping kek dan beberapa cawan kopi. Berapa cawan kopi dibeli?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + 2 = 6, maka 2x = 4 dan x = 2 cawan."
     }
    ],
@@ -311,28 +311,28 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, selepas menolak 3 daripada kedua-dua belah, persamaan menjadi 3x = ?. Berapakah nilai di sebelah kanan?",
      "b": 15,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "18 − 3 = 15, jadi 3x = 15."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah nilai x?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "3x = 15, bahagi kedua-dua belah dengan 3. x = 5."
     },
     {
      "j": "nombor",
      "t": "Selesaikan 2x + 5 = 17. Berapakah nilai x?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x = 17 − 5 = 12, maka x = 12 ÷ 2 = 6."
     },
     {
      "j": "nombor",
      "t": "Selesaikan 5x − 7 = 3x + 9. Berapakah nilai x?",
      "b": 8,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "5x − 3x = 9 + 7, maka 2x = 16 dan x = 8."
     },
     {
@@ -381,7 +381,7 @@ window.BANK["m1b6"] =
     "j": "nombor",
     "t": "Selesaikan 5(x − 2) = 3x + 4. Berapakah nilai x?",
     "b": 7,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Kembangkan: 5x − 10 = 3x + 4. Maka 2x = 14 dan x = 7."
    }
   },
@@ -413,21 +413,21 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x dalam L2 = 2 dan c = 8. Berapakah nilai x pada titik persilangan?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x + y = 6 dan 2x + y = 8. Tolak: x = 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x dalam L2 = 2 dan c = 8. Berapakah nilai y pada titik persilangan?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x = 2, maka y = 6 − 2 = 4. Semak: 2(2) + 4 = 8."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x dalam L2 = 2 dan c = 10. Berapakah nilai x pada titik persilangan?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "x + y = 6 dan 2x + y = 10. Tolak: x = 4."
     },
     {
@@ -458,7 +458,7 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan x dalam L2 = 2 dan c = 9. Berapakah nilai y pada titik persilangan?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + y = 9 tolak x + y = 6 memberi x = 3. Maka y = 6 − 3 = 3."
     },
     {
@@ -483,7 +483,7 @@ window.BANK["m1b6"] =
     "j": "nombor",
     "t": "Garis x + y = 6 dan garis 2x + y = c bersilang di titik yang x = 5. Berapakah nilai c?",
     "b": 11,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "Apabila x = 5, y = 6 − 5 = 1. Maka c = 2(5) + 1 = 11."
    }
   },
@@ -515,35 +515,35 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, selepas (1) × 3 dan (2) × 2, berapakah pekali y dalam kedua-dua persamaan?",
      "b": 6,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2 × 3 = 6 dan 3 × 2 = 6, jadi pekali y ialah 6 dalam kedua-duanya."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, selepas menolak dua persamaan, kita dapat 5x = 20. Berapakah nilai x?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "9x − 4x = 5x dan 48 − 28 = 20. Maka x = 20 ÷ 5 = 4."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, ganti x = 4 dalam 3x + 2y = 16. Berapakah nilai y?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "12 + 2y = 16, maka 2y = 4 dan y = 2."
     },
     {
      "j": "nombor",
      "t": "Selesaikan x + y = 10 dan x − y = 4 dengan penghapusan. Berapakah nilai x?",
      "b": 7,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Tambah kedua-dua persamaan: 2x = 14, maka x = 7."
     },
     {
      "j": "nombor",
      "t": "Selesaikan 2x + y = 11 dan x + y = 7 dengan penghapusan. Berapakah nilai x?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Tolak persamaan kedua daripada pertama: x = 11 − 7 = 4."
     },
     {
@@ -580,7 +580,7 @@ window.BANK["m1b6"] =
     "j": "nombor",
     "t": "Selesaikan 4x + 3y = 25 dan 3x + 2y = 17. Berapakah nilai x + y?",
     "b": 8,
-    "tol": 0.01,
+    "tol": 0.001000000001,
     "u": "(1) × 2: 8x + 6y = 50. (2) × 3: 9x + 6y = 51. Tolak: x = 1. Ganti: 4 + 3y = 25, y = 7. Maka x + y = 8."
    }
   },
@@ -612,35 +612,35 @@ window.BANK["m1b6"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, 3x + 2(2x + 1) = 16 dikembangkan menjadi 7x + 2 = 16. Berapakah nilai x?",
      "b": 2,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "7x = 16 − 2 = 14, maka x = 2."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, berapakah nilai y apabila x = 2?",
      "b": 5,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "y = 2x + 1 = 2(2) + 1 = 5."
     },
     {
      "j": "nombor",
      "t": "Selesaikan y = x + 3 dan 2x + y = 12 dengan penggantian. Berapakah nilai x?",
      "b": 3,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "2x + (x + 3) = 12, maka 3x = 9 dan x = 3."
     },
     {
      "j": "nombor",
      "t": "Harga 2 buku dan 1 pen ialah RM11. Harga 1 buku dan 1 pen ialah RM7. Berapakah harga sebuah buku (dalam RM)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "u": "Persamaan: 2b + p = 11 dan b + p = 7. Tolak: b = 4."
     },
     {
      "j": "nombor",
      "t": "Umur Aina tiga kali umur adiknya. Jumlah umur mereka ialah 16 tahun. Berapakah umur adik (tahun)?",
      "b": 4,
-     "tol": 0.01,
+     "tol": 0.001000000001,
      "suf": "tahun",
      "u": "a = 3d dan a + d = 16. Ganti: 3d + d = 16, maka 4d = 16 dan d = 4."
     },

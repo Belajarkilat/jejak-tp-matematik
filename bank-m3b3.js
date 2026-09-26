@@ -209,9 +209,9 @@ window.BANK["m3b3"] =
      "t": "Faedah kompaun dikira ke atas:",
      "p": [
       "Prinsipal dan faedah terkumpul",
-      "Prinsipal asal sahaja",
-      "Faedah tahun pertama sahaja",
-      "Kadar faedah tahunan sahaja"
+      "Prinsipal pada tahun pertama",
+      "Faedah yang diperoleh pada tahun lepas",
+      "Kadar faedah tahunan"
      ],
      "b": 0,
      "u": "Faedah kompaun ditambah kepada prinsipal, jadi tahun berikutnya faedah dikira ke atas jumlah yang lebih besar."
@@ -220,17 +220,17 @@ window.BANK["m3b3"] =
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan tahun kepada 4. Berapakah nilai simpanan dengan faedah mudah?",
      "b": 5800,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "suf": "RM",
      "u": "Faedah mudah I = Prt = 5 000 × 0.04 × 4 = RM800. Nilai simpanan = 5 000 + 800 = RM5 800."
     },
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan tahun kepada 10. Berapakah beza antara nilai kompaun dan nilai mudah, kepada ringgit terdekat?",
-     "b": 401.22,
-     "tol": 0.5,
+     "b": 401,
+     "tol": 0.001000000001,
      "suf": "RM",
-     "u": "Pada tahun 10, nilai kompaun ialah RM7 401.22 dan nilai mudah RM7 000. Bezanya kira-kira RM401."
+     "u": "Pada tahun 10, nilai kompaun ialah RM7 401.22 dan nilai mudah RM7 000. Bezanya kira-kira RM401 (ke ringgit terdekat)."
     },
     {
      "j": "pilih",
@@ -285,9 +285,9 @@ window.BANK["m3b3"] =
     "j": "nombor",
     "t": "Prinsipal RM5 000 disimpan pada faedah mudah 4% setahun. Selepas berapa tahun nilai simpanan mencapai RM7 000?",
     "b": 10,
-    "tol": 0.5,
+    "tol": 0.001000000001,
     "suf": "tahun",
-    "u": "Faedah yang diperlukan ialah RM2 000. Setiap tahun RM200, jadi 2 000 ÷ 200 = 10 tahun."
+    "u": "Faedah diperlukan = 7 000 − 5 000 = RM2 000. Faedah setahun = 5 000 × 0.04 = RM200. Bilangan tahun = 2 000 ÷ 200 = 10 tahun."
    }
   },
   {
@@ -317,10 +317,10 @@ window.BANK["m3b3"] =
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan tahun kepada 5. Berapakah nilai kompaun simpanan RM10 000 pada 6% setahun dikompaun setiap bulan, kepada ringgit terdekat?",
-     "b": 13488.5,
-     "tol": 1,
+     "b": 13489,
+     "tol": 0.001000000001,
      "suf": "RM",
-     "u": "MV = 10 000 × (1 + 0.06/12) kuasa 60 = RM13 488.50."
+     "u": "Guna MV = P(1 + r/n)<sup>nt</sup>. P = 10 000, r = 0.06, n = 12, t = 5. MV = 10 000 × (1 + 0.06/12)<sup>60</sup> = 10 000 × 1.005<sup>60</sup> = RM13 488.50, iaitu kira-kira RM13489 ke ringgit terdekat."
     },
     {
      "j": "pilih",
@@ -336,11 +336,11 @@ window.BANK["m3b3"] =
     },
     {
      "j": "nombor",
-     "t": "Hitung nilai matang bagi RM4 000 pada 5% setahun dikompaun setahun sekali selama 3 tahun.",
+     "t": "Hitung nilai matang bagi RM4 000 pada 5% setahun dikompaun setahun sekali selama 3 tahun, kepada 2 tempat perpuluhan.",
      "b": 4630.5,
-     "tol": 0.05,
+     "tol": 0.005000000005,
      "suf": "RM",
-     "u": "MV = 4 000 × (1.05) kuasa 3 = 4 000 × 1.157625 = RM4 630.50."
+     "u": "Guna MV = P(1 + r/n)<sup>nt</sup>. P = 4 000, r = 0.05, n = 1, t = 3. MV = 4 000 × (1.05)<sup>3</sup> = 4 000 × 1.157625 = RM4 630.50."
     },
     {
      "j": "pilih",
@@ -358,9 +358,9 @@ window.BANK["m3b3"] =
      "j": "nombor",
      "t": "Ali melabur RM8 000 dalam amanah saham dan menjualnya RM8 800. Berapakah ROI?",
      "b": 10,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "%",
-     "u": "Untung bersih = 8 800 − 8 000 = RM800. ROI = 800 ÷ 8 000 × 100% = 10%."
+     "u": "Guna ROI = (untung bersih ÷ modal) × 100%. Untung bersih = 8 800 − 8 000 = RM800. ROI = 800 ÷ 8 000 × 100% = 10%."
     },
     {
      "j": "pilih",
@@ -372,7 +372,7 @@ window.BANK["m3b3"] =
       "15%"
      ],
      "b": 0,
-     "u": "15 000 ÷ 300 000 × 100% = 5%."
+     "u": "Kadar pulangan sewa = sewa setahun ÷ harga beli × 100%. Ganti: 15 000 ÷ 300 000 × 100% = 5%."
     },
     {
      "j": "pilih",
@@ -416,17 +416,17 @@ window.BANK["m3b3"] =
      "j": "nombor",
      "t": "Berdasarkan Jadual 1, berapakah jumlah unit yang dibeli dalam tiga bulan?",
      "b": 470,
-     "tol": 0.5,
+     "tol": 0.001000000001,
      "suf": "unit",
-     "u": "150 + 120 + 200 = 470 unit."
+     "u": "Unit = wang dilabur ÷ harga seunit. Januari: 300 ÷ 2.00 = 150. Februari: 300 ÷ 2.50 = 120. Mac: 300 ÷ 1.50 = 200. Jumlah: 150 + 120 + 200 = 470 unit."
     },
     {
      "j": "nombor",
      "t": "Jumlah wang dilaburkan dalam tiga bulan ialah RM900. Berapakah purata kos seunit, kepada 2 tempat perpuluhan?",
      "b": 1.91,
-     "tol": 0.005,
+     "tol": 0.005000000005,
      "suf": "RM",
-     "u": "Purata kos = 900 ÷ 470 = RM1.91 seunit."
+     "u": "Purata kos seunit = jumlah dilabur ÷ jumlah unit. Ganti: 900 ÷ 470 = 1.9148... = RM1.91 (2 tempat perpuluhan)."
     },
     {
      "j": "pilih",
@@ -505,9 +505,9 @@ window.BANK["m3b3"] =
     "j": "nombor",
     "t": "Dalam tiga bulan seterusnya, harga seunit ialah RM2.20, RM1.80 dan RM2.00, dengan RM300 dilabur setiap bulan. Berapakah purata kos seunit, kepada 2 tempat perpuluhan?",
     "b": 1.99,
-    "tol": 0.005,
+    "tol": 0.005000000005,
     "suf": "RM",
-    "u": "Unit: 136.36 + 166.67 + 150 = 453.03. Purata kos = 900 ÷ 453.03 = RM1.99."
+    "u": "Unit = 300 ÷ harga. Bulan 1: 300 ÷ 2.20 = 136.36. Bulan 2: 300 ÷ 1.80 = 166.67. Bulan 3: 300 ÷ 2.00 = 150. Jumlah unit = 453.03. Purata kos = 900 ÷ 453.03 = RM1.99."
    }
   },
   {
@@ -525,10 +525,10 @@ window.BANK["m3b3"] =
     {
      "j": "nombor",
      "t": "Dalam Rajah 1, tetapkan bulan kepada 6. Berapakah baki hutang selepas bayar minimum sahaja selama 6 bulan, kepada ringgit terdekat?",
-     "b": 2375.93,
-     "tol": 1,
+     "b": 2376,
+     "tol": 0.001000000001,
      "suf": "RM",
-     "u": "Setiap bulan bayar 5% baki (atau RM50), kemudian faedah 15%/12 ditambah. Selepas 6 bulan, baki ialah RM2 375.93."
+     "u": "Setiap bulan: bayar yang lebih besar antara 5% baki atau RM50, kemudian tambah faedah 15% ÷ 12 = 1.25% pada baki yang tinggal. Ulang 6 kali bermula dengan RM3 000. Selepas 6 bulan baki = RM2 375.93, iaitu kira-kira RM2376."
     },
     {
      "j": "pilih",
@@ -546,8 +546,8 @@ window.BANK["m3b3"] =
      "j": "pilih",
      "t": "Jika hanya bayaran minimum dibuat, faedah dikenakan ke atas:",
      "p": [
-      "Jumlah pembelian asal sahaja",
-      "Bayaran minimum sahaja",
+      "Jumlah pembelian asal",
+      "Bayaran minimum bulan itu",
       "Baki yang belum dibayar",
       "Kadar tukaran mata wang"
      ],
@@ -555,35 +555,39 @@ window.BANK["m3b3"] =
      "u": "Faedah baki dikira atas hutang yang masih tinggal selepas bayaran."
     },
     {
-     "j": "nombor",
-     "t": "Berdasarkan Rajah 1, berapakah jumlah faedah yang dikenakan dalam 12 bulan jika hanya bayar minimum, kepada ringgit terdekat?",
-     "b": 348.33,
-     "tol": 1,
-     "suf": "RM",
-     "u": "Jumlah faedah selama 12 bulan ialah RM348.33."
+     "j": "pilih",
+     "t": "Farah berkata, “Saya bayar minimum 5% baki setiap bulan. Dalam 20 bulan (5% × 20 = 100%) hutang RM3 000 saya habis.” Berdasarkan Rajah 1, apakah kesilapannya?",
+     "p": [
+      "Faedah dihapuskan apabila bayaran minimum dibuat, jadi hutang habis dalam 20 bulan",
+      "Bayaran minimum meningkat apabila baki berkurang, jadi hutang habis sebelum 20 bulan",
+      "Tiada kesilapan, kerana 5% didarab 20 bulan memang bersamaan 100%",
+      "Bayaran 5% dikira atas baki yang mengecil dan faedah ditambah, jadi hutang tidak habis dalam 20 bulan"
+     ],
+     "b": 3,
+     "u": "Bayaran minimum ialah 5% daripada baki terkini (atau RM50), bukan 5% daripada RM3 000 yang tetap. Baki mengecil, maka bayaran pun mengecil, dan faedah 15% ÷ 12 ditambah setiap bulan. Dalam Rajah 1, selepas 12 bulan baki masih RM1 881.68."
     },
     {
      "j": "pilih",
      "t": "Faedah kad kredit Nora ialah 1.5% sebulan atas baki RM2 000. Berapakah faedah untuk sebulan?",
      "p": [
+      "RM30",
       "RM3",
       "RM300",
-      "RM20",
-      "RM30"
+      "RM20"
      ],
-     "b": 3,
-     "u": "1.5% daripada 2 000 = 0.015 × 2 000 = RM30."
+     "b": 0,
+     "u": "Faedah sebulan = kadar × baki. Ganti: 1.5% × 2 000 = 0.015 × 2 000 = RM30."
     },
     {
      "j": "pilih",
      "t": "Manakah tindakan paling bijak untuk mengelak caj faedah kad kredit?",
      "p": [
-      "Bayar penuh baki sebelum tarikh akhir",
       "Bayar minimum setiap bulan",
+      "Bayar penuh baki sebelum tarikh akhir",
       "Bayar lewat sehari sahaja",
       "Guna kad kredit lain untuk membayar"
      ],
-     "b": 0,
+     "b": 1,
      "u": "Bayar penuh sebelum tarikh akhir bermakna tiada faedah dikenakan pada pembelian biasa."
     },
     {
@@ -591,11 +595,11 @@ window.BANK["m3b3"] =
      "t": "Harga sebuah barang dalam talian ialah 40 dolar AS dan 1 dolar AS bersamaan RM4.50. Berapakah harganya dalam ringgit?",
      "p": [
       "RM44.50",
-      "RM180",
       "RM8.89",
+      "RM180",
       "RM1 800"
      ],
-     "b": 1,
+     "b": 2,
      "u": "40 × 4.50 = RM180. Ingat pertukaran mata wang boleh mengenakan caj tambahan."
     },
     {
@@ -604,10 +608,10 @@ window.BANK["m3b3"] =
      "p": [
       "Faedah dihapuskan",
       "Had kredit bertambah automatik",
-      "Caj lewat dan kesan buruk pada rekod kredit",
-      "Ganjaran mata digandakan"
+      "Ganjaran mata digandakan",
+      "Caj lewat dan kesan buruk pada rekod kredit"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Bayaran lewat dikenakan caj dan boleh menjejaskan kelayakan pinjaman pada masa depan."
     }
    ],
@@ -615,12 +619,12 @@ window.BANK["m3b3"] =
     "j": "pilih",
     "t": "Danial hanya membayar minimum setiap bulan dan berkata, 'Baki saya menurun, jadi tiada masalah.' Berdasarkan Rajah 1, apakah kelemahan pertimbangannya?",
     "p": [
+     "Baki menurun perlahan, faedah yang dibayar sangat besar",
      "Baki sebenarnya bertambah pada setiap bulan bayaran",
-     "Bayaran minimum sentiasa meningkat setiap bulan",
-     "Faedah hanya dikenakan pada bulan pertama sahaja",
-     "Baki menurun perlahan, faedah yang dibayar sangat besar"
+     "Bayaran minimum meningkat pada setiap bulan",
+     "Faedah dikenakan pada bulan pertama, bukan bulan seterusnya"
     ],
-    "b": 3,
+    "b": 0,
     "u": "Baki memang menurun, tetapi lambat. Hutang RM3 000 masih besar selepas setahun dan faedah terus dikenakan."
    }
   },
@@ -638,22 +642,22 @@ window.BANK["m3b3"] =
    "soalan": [
     {
      "j": "nombor",
-     "t": "Dalam Rajah 1, tetapkan tempoh kepada 7 tahun. Berapakah ansuran bulanan bagi pinjaman RM30 000 pada kadar rata 3.5% setahun?",
+     "t": "Dalam Rajah 1, tetapkan tempoh kepada 7 tahun. Berapakah ansuran bulanan bagi pinjaman RM30 000 pada kadar rata 3.5% setahun, kepada 2 tempat perpuluhan?",
      "b": 444.64,
-     "tol": 0.05,
+     "tol": 0.005000000005,
      "suf": "RM",
-     "u": "Jumlah bayar balik A = P + Prt = 30 000 + 30 000 × 0.035 × 7 = RM37 350. Bahagi 84 bulan: RM444.64."
+     "u": "Guna A = P + Prt. Ganti: 30 000 + 30 000 × 0.035 × 7 = RM37 350. Tempoh 7 tahun = 84 bulan. Ansuran = RM37 350 ÷ 84 = RM444.64."
     },
     {
      "j": "pilih",
      "t": "Pinjaman kereta RM60 000 pada kadar rata 4% setahun selama 5 tahun. Berapakah jumlah bayar balik?",
      "p": [
-      "RM72 000",
       "RM12 000",
+      "RM72 000",
       "RM62 400",
       "RM144 000"
      ],
-     "b": 0,
+     "b": 1,
      "u": "A = P + Prt = 60 000 + 60 000 × 0.04 × 5 = RM72 000. RM12 000 ialah faedah sahaja."
     },
     {
@@ -661,11 +665,11 @@ window.BANK["m3b3"] =
      "t": "Encik Ali membandingkan dua pinjaman RM20 000. Pinjaman A: 3% selama 5 tahun. Pinjaman B: 4% selama 3 tahun. Yang manakah jumlah faedahnya lebih rendah?",
      "p": [
       "A, faedah RM3 000 berbanding RM2 400",
-      "B, faedah RM2 400 berbanding RM3 000",
       "Sama, RM3 000 setiap satu",
+      "B, faedah RM2 400 berbanding RM3 000",
       "Tidak dapat ditentukan tanpa ansuran"
      ],
-     "b": 1,
+     "b": 2,
      "u": "Faedah A = 20 000 × 0.03 × 5 = RM3 000. Faedah B = 20 000 × 0.04 × 3 = RM2 400."
     },
     {
@@ -674,50 +678,54 @@ window.BANK["m3b3"] =
      "p": [
       "Pinjaman B, komitmen 42.4% daripada gaji",
       "Kedua-duanya sesuai",
-      "Pinjaman A, komitmen 37.7% daripada gaji",
-      "Tiada satu pun sesuai"
+      "Tiada satu pun sesuai",
+      "Pinjaman A, komitmen 37.7% daripada gaji"
      ],
-     "b": 2,
+     "b": 3,
      "u": "Dengan A: (1 500 + RM383.33) ÷ 5 000 = 37.7%, di bawah 40%. Dengan B: 42.4%, melebihi 40%."
     },
     {
-     "j": "nombor",
-     "t": "Seorang pelanggan membayar ansuran RM500 sebulan selama 4 tahun untuk pinjaman RM18 000. Berapakah jumlah faedah yang dibayar?",
-     "b": 6000,
-     "tol": 0.5,
-     "suf": "RM",
-     "u": "Jumlah bayar = 500 × 48 = RM24 000. Faedah = 24 000 − 18 000 = RM6 000."
+     "j": "pilih",
+     "t": "Ali memilih pinjaman RM18 000 dengan ansuran RM400 sebulan selama 60 bulan, bukan ansuran RM600 sebulan selama 36 bulan, kerana ansurannya lebih rendah. Apakah kelemahan pertimbangannya?",
+     "p": [
+      "Tempoh lebih panjang, jadi jumlah bayar balik RM24 000 lebih besar daripada RM21 600",
+      "Ansuran lebih rendah lebih menjimatkan, jadi tiada kelemahan dalam pertimbangan Ali",
+      "Tempoh panjang mengurangkan faedah, jadi RM400 sebulan memang lebih murah",
+      "Jumlah bayar balik sama bagi kedua-dua pinjaman kerana pinjaman asal sama"
+     ],
+     "b": 0,
+     "u": "Jumlah bayar balik = ansuran × bilangan bulan. Pilihan Ali: 400 × 60 = RM24 000 (faedah RM6 000). Pilihan lain: 600 × 36 = RM21 600 (faedah RM3 600). Ansuran rendah menjimatkan belanjawan bulanan tetapi menambah jumlah faedah."
     },
     {
      "j": "nombor",
      "t": "Pinjaman RM20 000 selama 3 tahun dibayar balik sebanyak RM22 400. Berapakah kadar faedah rata setahun?",
      "b": 4,
-     "tol": 0.05,
+     "tol": 0.001000000001,
      "suf": "%",
-     "u": "Faedah = 22 400 − 20 000 = RM2 400. Dari I = Prt, r = 2 400 ÷ (20 000 × 3) = 0.04 = 4%."
+     "u": "Faedah I = 22 400 − 20 000 = RM2 400. Guna I = Prt, jadi r = I ÷ (P × t). Ganti: 2 400 ÷ (20 000 × 3) = 0.04 = 4%."
     },
     {
      "j": "pilih",
      "t": "Pinjaman segera (pemberi pinjam tidak berlesen) sering berbahaya kerana:",
      "p": [
-      "Ia tidak perlu dibayar balik",
-      "Kadar faedahnya sentiasa paling rendah",
-      "Ia hanya diberi kepada mereka yang tiada hutang",
-      "Kadar faedah dan caj sering sangat tinggi"
+      "Ia boleh dibayar balik pada bila-bila masa yang dipilih",
+      "Kadar faedah dan caj sering sangat tinggi",
+      "Kadar faedahnya lebih rendah daripada bank",
+      "Ia diberi kepada orang yang tiada hutang"
      ],
-     "b": 3,
+     "b": 1,
      "u": "Pinjaman tidak berlesen sering mengenakan faedah yang tidak munasabah dan cara kutipan yang menekan."
     },
     {
      "j": "pilih",
      "t": "Sebelum menandatangani perjanjian pinjaman, tindakan paling bijak ialah:",
      "p": [
-      "Baca semua syarat, kadar dan caj",
       "Tandatangan dahulu, baca kemudian",
       "Pilih ansuran paling rendah sahaja",
+      "Baca semua syarat, kadar dan caj",
       "Pinjam sebanyak yang ditawarkan"
      ],
-     "b": 0,
+     "b": 2,
      "u": "Perjanjian mengandungi kadar, caj dan penalti. Ia perlu difahami sebelum ditandatangani."
     }
    ],
