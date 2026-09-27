@@ -9,5 +9,7 @@
    Kunci service_role TIDAK BOLEH SEKALI-KALI diletakkan di sini. */
 window.CN_AWAN = {
   url: "https://noaeagitwklnpmyhhhtn.supabase.co",
-  kunci: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vYWVhZ2l0d2tsbnBteWhoaHRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNTU4MDEsImV4cCI6MjEwNTczMTgwMX0.Z7ltdqSgxAlVVSlzDuPvUnFdpStY5UWHbdOqXS8BtB0"
+  kunci: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vYWVhZ2l0d2tsbnBteWhoaHRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNTU4MDEsImV4cCI6MjEwNTczMTgwMX0.Z7ltdqSgxAlVVSlzDuPvUnFdpStY5UWHbdOqXS8BtB0",
+  /* Butang bayar toyyibPay (FPX). Premium diaktifkan oleh Edge Function "bayar". */
+  bayarOnline: true
 };

@@ -900,6 +900,12 @@ body.zon-murid{color:var(--tinta)}
 .kadpremium .status.aktif{color:var(--teal)}
 .baris-premium{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:10px;border-top:1px solid var(--line)}
 .baris-premium:first-of-type{border-top:none}
+.bayar-pilih{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.pautan-kecil{background:none;border:0;color:var(--ink2);font:inherit;font-size:12px;text-decoration:underline;cursor:pointer;min-height:44px;padding:0 4px}
+.bayar-mesej{border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;margin:8px 0}
+.bayar-mesej.berjaya{background:var(--teal-soft);color:var(--teal)}
+.bayar-mesej.menunggu{background:var(--surface2);color:var(--ink)}
+.bayar-mesej.gagal{background:var(--amber-soft);color:var(--ink)}
 .mb-skor{display:flex;gap:8px;margin-top:8px}
 .mb-skor .kbtn{min-width:48px;min-height:48px;justify-content:center;font-weight:700}
 .mb-skor .kbtn[aria-pressed="true"]{background:var(--vena);color:#fff;border-color:var(--vena)}
@@ -1060,7 +1066,7 @@ body.zon-murid{color:var(--tinta)}
 <script src="muzik.js?v=2"></script>
 <script src="conteng.js?v=1"></script>
 <script src="akses.js?v=1"></script>
-<script src="konfig.js?v=20260914"></script>
+<script src="konfig.js?v=20260927"></script>
 
 <div id="flash" aria-hidden="true"></div>
 
@@ -3645,6 +3651,7 @@ function tetapSesi(sesi){
       if(e&&e.code==="23503"){ SB.auth.signOut(); return; }
       RALAT_GURU=pesanRalat(e); if(!PROFIL) PROFIL={nama:"",sekolah:"",ada:false};
     })
+    .then(function(){ segarGuru(); return semakBayaranKembali(); })
     .then(segarGuru);
 }
 
@@ -4052,6 +4059,63 @@ function bukaWaNaikTaraf(kod){
     (SESI&&SESI.user&&SESI.user.email?"\n\nE-mel akaun saya: "+SESI.user.email:"");
   window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
 }
+/* Bayaran dalam talian (toyyibPay, FPX). Dibuka dengan CN_AWAN.bayarOnline
+   dalam konfig.js. Premium diaktifkan oleh Edge Function "bayar" selepas
+   status disemak dengan toyyibPay; app tidak boleh menulis premium sendiri. */
+var BAYAR_MESEJ=null, SEMAK_BIL=null;
+function bayarOnline(){ return !!(AWAN&&AWAN.bayarOnline); }
+function panggilBayar(isi){
+  return fetch(AWAN.url+"/functions/v1/bayar",{method:"POST",
+    headers:{"Content-Type":"application/json",apikey:AWAN.kunci,Authorization:"Bearer "+SESI.access_token},
+    body:JSON.stringify(isi)}).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(j){
+        if(!r.ok&&j.status!=="tiada") throw new Error(j.ralat||"Ralat "+r.status);
+        return j;
+      });
+    });
+}
+function naikTarafOnline(peringkat, btn){
+  btn.disabled=true; var asal=btn.textContent; btn.textContent="Membuka halaman bayaran...";
+  panggilBayar({aksi:"cipta",peringkat:peringkat}).then(function(j){
+    if(!j.url) throw new Error(j.ralat||"Tiada pautan bayaran");
+    try{ localStorage.setItem("cn-bil",j.billcode); }catch(e){}
+    location.href=j.url;
+  }).catch(function(e){
+    btn.disabled=false; btn.textContent=asal;
+    alert("Tak dapat buka halaman bayaran.\n\n"+e.message+"\n\nCuba lagi, atau bayar melalui WhatsApp.");
+  });
+}
+/* toyyibPay memulangkan guru ke ?cikgu=1&bayar=1 bersama billcode/status_id.
+   status_id tidak dipercayai; status sebenar disemak melalui fungsi. */
+function semakBayaranKembali(cubaan){
+  if(!cubaan){
+    var u=new URL(location.href), bc=u.searchParams.get("billcode");
+    if(!bc&&u.searchParams.has("bayar")){ try{ bc=localStorage.getItem("cn-bil"); }catch(e){} }
+    var ubah=false;
+    ["bayar","billcode","status_id","order_id","msg","transaction_id"].forEach(function(k){ if(u.searchParams.has(k)){ u.searchParams.delete(k); ubah=true; } });
+    if(ubah) history.replaceState(null,"",u.pathname+u.search+u.hash);
+    if(!bc||!SESI||!bayarOnline()) return;
+    SEMAK_BIL=bc; cubaan=0;
+  }
+  BAYAR_MESEJ={jenis:"menunggu",teks:"⏳ Menyemak bayaran dengan bank..."};
+  return panggilBayar({aksi:"semak",billcode:SEMAK_BIL}).then(function(j){
+    if(j.status==="berjaya"){
+      try{ localStorage.removeItem("cn-bil"); }catch(e){}
+      BAYAR_MESEJ={jenis:"berjaya",teks:"✅ Terima kasih! Bayaran berjaya dan Premium dah aktif. Resit dihantar ke e-mel guru."};
+      return muatProfil();
+    }
+    if(j.status==="gagal"){ BAYAR_MESEJ={jenis:"gagal",teks:"Bayaran tidak berjaya atau dibatalkan. Tiada caj dikenakan. Cuba lagi bila-bila masa."}; return; }
+    if(j.status==="tiada"){ BAYAR_MESEJ=null; return; }
+    if(cubaan<5){
+      BAYAR_MESEJ={jenis:"menunggu",teks:"⏳ Bank belum sahkan bayaran. Kami semak semula sendiri, tak perlu bayar lagi."};
+      setTimeout(function(){ Promise.resolve(semakBayaranKembali(cubaan+1)).then(segarGuru); },15000);
+      return;
+    }
+    BAYAR_MESEJ={jenis:"menunggu",teks:"Bayaran masih belum disahkan. Kalau duit dah ditolak, Premium akan aktif sendiri bila bank sahkan. Masih tak aktif dalam 1 jam? WhatsApp kami."};
+  }).catch(function(){
+    BAYAR_MESEJ={jenis:"gagal",teks:"Tak dapat semak status bayaran sekarang. Muat semula halaman sebentar lagi."};
+  });
+}
 function barisPremium(nama, kod, aktif, tamat){
   var d=el("div","baris-premium");
   var kiri=el("div","grow");
@@ -4065,6 +4129,16 @@ function barisPremium(nama, kod, aktif, tamat){
   kiri.appendChild(el("span","status","\u{1F512} Percuma — Bab 1 dan 2"));
   d.appendChild(kiri);
   var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Naik taraf RM23/tahun \u{1F525}";
+  if(bayarOnline()){
+    var kanan=el("div","bayar-pilih");
+    bw.onclick=function(){ naikTarafOnline(/Rendah/.test(kod)?"rendah":"atas",bw); };
+    kanan.appendChild(bw);
+    var wa=el("button","pautan-kecil"); wa.type="button"; wa.textContent="atau bayar melalui WhatsApp";
+    wa.onclick=function(){ bukaWaNaikTaraf(kod); };
+    kanan.appendChild(wa);
+    d.appendChild(kanan);
+    return d;
+  }
   bw.onclick=function(){ bukaWaNaikTaraf(kod); };
   d.appendChild(bw);
   return d;
@@ -4072,6 +4146,7 @@ function barisPremium(nama, kod, aktif, tamat){
 function kadPremium(){
   var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
   bd.appendChild(el("h3",null,"Premium"));
+  if(BAYAR_MESEJ) bd.appendChild(el("p","bayar-mesej "+BAYAR_MESEJ.jenis,esc(BAYAR_MESEJ.teks)));
   bd.appendChild(el("p","note","Harga perintis RM23/tahun hingga 31 Dis 2026, kekal setiap tahun untuk cikgu perintis. Mulai 1 Jan 2027: RM33. Menengah rendah (T1-3) dahulu, menengah atas (T4-5) akan datang."));
   bd.appendChild(barisPremium("Menengah rendah · Tingkatan 1–3","Menengah Rendah",PROFIL.premiumRendah,PROFIL.premiumRendahTamat));
   var ba=el("div","baris-premium"), ka=el("div","grow");
