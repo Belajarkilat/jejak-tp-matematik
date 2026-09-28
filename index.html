@@ -3710,7 +3710,7 @@ function kotakSetuju(nilai){
   var w=el("label","setuju");
   var cb=el("input"); cb.type="checkbox"; cb.checked=!!nilai; cb.name="setuju";
   w.appendChild(cb);
-  w.appendChild(el("span",null,"Saya setuju menerima maklumat dan tawaran produk pendidikan BelajarKilat melalui e-mel. <em>(Pilihan)</em>"));
+  w.appendChild(el("span",null,"Saya setuju menerima maklumat dan tawaran produk pendidikan NaikGred melalui e-mel. <em>(Pilihan)</em>"));
   return w;
 }
 
@@ -3850,13 +3850,13 @@ function kadNilai(){
   bd.appendChild(el("p","qnote","Setiap bab jadi satu perjalanan enam hentian, satu hentian satu Tahap Penguasaan. Murid bermain, cikgu dapat rekodnya."));
   var ul=el("ul","nilaisenarai");
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
-   "Grid diagnostik: soalan mana satu kelas gagal",
-   "Ulasan PBD sedia salin ke SPPB",
+   "Grid diagnostik: soalan yang paling ramai murid gagal",
+   "Ulasan PBD sedia untuk disalin ke SPPB",
    "35 bab Matematik Tingkatan 1, 2 dan 3 (Bab 1-2 percuma, selebihnya Premium: harga perintis RM23/tahun hingga 31 Dis 2026)",
-   "Murid masuk dengan kod kelas dan PIN, tiada akaun murid"
+   "Murid log masuk dengan kod kelas dan PIN, tak perlu akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);
-  bd.appendChild(el("p","qnote","Kelas contoh tidak perlu daftar dan tidak menyimpan apa-apa."));
+  bd.appendChild(el("p","qnote","Kelas contoh boleh dibuka tanpa daftar, dan tiada data disimpan."));
   var a=el("div","actions");
   var b1=el("button","btn teal"); b1.type="button"; b1.textContent="Lihat kelas contoh"; b1.onclick=bukaDemoGuru;
   var b2=el("button","btn ghost"); b2.type="button"; b2.textContent="Cuba sebagai murid"; b2.onclick=cubaSebagaiMurid;
@@ -3913,7 +3913,7 @@ function paneLogMasuk(ak){
     f.appendChild(el("p","note privasi",esc(NOTIS_PRIVASI)));
   }
   var bs=el("button","btn penuh"); bs.type="submit"; bs.style.marginTop="18px";
-  var labelBs={masuk:"Log masuk",daftar:"Daftar dan mula",lupa:"Hantar pautan"}[mod];
+  var labelBs={masuk:"Log masuk",daftar:"Daftar dan mulakan",lupa:"Hantar pautan"}[mod];
   bs.textContent=labelBs;
   f.appendChild(bs); f.appendChild(msg);
   function nilai(w){ return w?w.querySelector("input").value.trim():""; }
