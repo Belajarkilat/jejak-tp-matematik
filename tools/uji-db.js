@@ -48,6 +48,18 @@ const H = (kunci, jwt) => ({ apikey: kunci, Authorization: "Bearer " + (jwt || k
     /* 6. papan (murid nampak bacaan sendiri melalui PIN) */
     r = await fetch(U + "/rest/v1/rpc/jm_papan", { method: "POST", headers: H(ANON), body: JSON.stringify({ p_bab: "m3b1", p_kelas: kelas.id, p_no: "1", p_pin: "1234" }) });
     const papan = await j(r); ok(r.status < 300 && papan, "papan skor dibaca", papan);
+    /* 6b. percubaan kedua: ditulis sekali, hanya jika percubaan pertama gagal */
+    const hantar = (aras, betul, lulus, masa) => fetch(U + "/rest/v1/rpc/jm_simpan_cubaan", { method: "POST", headers: H(ANON), body: JSON.stringify({ p_bab: "m3b1", p_kelas: kelas.id, p_no: "1", p_kod: "1234", p_aras: aras, p_kini: { masa, betul, jumlah: 6, bos: false, lulus, skor: 0, mod: "tenang", soalan: [] }, p_karangan: null }) }).then(j);
+    let k1 = await hantar(1, 6, true, Date.now() + 1);
+    ok(k1 && !k1.kedua && k1.kali === 2, "hentian lulus pertama: percubaan kedua tidak ditulis", k1);
+    await hantar(2, 3, false, 1001);
+    let k2 = await hantar(2, 5, true, 1002);
+    ok(k2 && k2.pertama.masa === 1001 && k2.kedua && k2.kedua.masa === 1002, "hentian gagal pertama: percubaan kedua ditulis", k2);
+    k2 = await hantar(2, 6, true, 1003);
+    ok(k2 && k2.kedua.masa === 1002 && k2.pertama.masa === 1001 && k2.kali === 3, "percubaan ketiga tidak menindih pertama atau kedua", k2);
+    r = await fetch(U + "/rest/v1/rpc/jm_papan", { method: "POST", headers: H(ANON), body: JSON.stringify({ p_bab: "m3b1", p_kelas: kelas.id, p_no: "1", p_pin: "1234" }) });
+    const papan2 = await j(r);
+    ok(papan2 && papan2.cubaan.some(c => c.aras === 2 && c.kedua && c.kedua.masa === 1002), "papan memulangkan percubaan kedua murid sendiri", papan2);
     /* 7. guru baca percubaan kelas sendiri (RLS) */
     r = await fetch(U + "/rest/v1/jm_cubaan?select=bab,aras,no&kelas=eq." + kelas.id, { headers: HG });
     const cub = await j(r); ok(Array.isArray(cub) && cub.length >= 1 && cub[0].bab === "m3b1", "guru nampak percubaan kelas sendiri", cub);

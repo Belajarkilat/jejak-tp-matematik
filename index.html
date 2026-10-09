@@ -1441,7 +1441,28 @@ var MIN_HANTAR=150;                /* aksara minimum sebelum tugasan reka cipta 
    Dengan 5 item dan ambang 80% (4/5), murid yang sebenarnya 80% menguasai gagal 26% daripada masa
    dan murid 60% lulus 34%; 7 item memberi keputusan yang lebih stabil. */
 var AMBANG=0.7;                    /* nisbah betul minimum untuk dikira menguasai satu hentian */
-function ambangItem(n){ return Math.ceil(AMBANG*n); }
+function ambangItem(n){ return Math.ceil(AMBANG*n-1e-9); }   /* 0.7*10 = 7.000000000000001 */
+/* Soalan penentu. Dengan 7 item sahaja, murid 60% masih lulus 42% kali dan
+   murid 80% gagal 15% kali. Jika markah selepas bos tepat pada ambang (5/7),
+   dua soalan bank yang belum keluar ditambah dan ambang dikira semula atas
+   9 item (perlu 7). Pada 4/7 penentu tidak diberi kerana 6/9 tetap gagal.
+   Murid yang jelas lulus atau jelas gagal tidak menjawab soalan tambahan. */
+var PENENTU=2;
+function lulusItem(betul,jum){ return betul>=ambangItem(jum); }
+/* Cadangan TP bagi satu hentian. Percubaan pertama lulus = menguasai.
+   Jika gagal, percubaan kedua (ditulis sekali oleh pelayan) digabungkan
+   dengan yang pertama dan dinilai pada ambang yang sama. Percubaan ketiga
+   dan seterusnya tidak dikira, jadi ulangan tidak boleh memancing tuah.
+   Gabungan: murid 80% lulus hentian 89% kali (dahulu 85%), murid 60% 32%
+   (dahulu 42%). */
+function itemC(x){ return {b:(x.betul||0)+(x.bos?1:0), n:(x.jumlah||0)+1}; }
+function lulusCadangan(c){
+  if(!c||!c.pertama) return false;
+  if(c.pertama.lulus) return true;
+  if(!c.kedua) return false;
+  var x=itemC(c.pertama), y=itemC(c.kedua);
+  return lulusItem(x.b+y.b, x.n+y.n);
+}
 
 var S={
   skrin:"kodkelas", aras:1, set:[], qi:0,
@@ -1466,6 +1487,7 @@ var S={
    Murid : kod kelas -> nama kelas + senarai nama (tanpa PIN).
            PIN murid menjadi kunci bagi setiap bacaan dan tulisan rekod.
            Percubaan pertama ditulis sekali sahaja dan tidak pernah ditindih.
+           Jika percubaan pertama gagal, percubaan kedua juga ditulis sekali.
    ============================================================ */
 var KM=null;           /* kelas murid pada peranti ini: {id,nama,kod,guru,sekolah} */
 var KELAS_GURU=[];     /* kelas milik guru yang log masuk: [{id,nama,kod}] */
@@ -1613,13 +1635,14 @@ function benihContohBab(){
 /* ============================================================
    KIRAAN TP
    ============================================================ */
-/* Cadangan automatik dikira daripada PERCUBAAN PERTAMA setiap hentian.
+/* Cadangan automatik dikira daripada PERCUBAAN PERTAMA setiap hentian,
+   digabung dengan percubaan kedua jika yang pertama gagal (lulusCadangan).
    TP6 tidak pernah automatik: tugasan reka cipta mesti dibaca guru. */
 function tpAuto(kelas,no){
   var t=0;
   for(var i=1;i<=5;i++){
     var c=CUBAAN[kunciC(kelas,no,i)];
-    if(c&&c.pertama&&c.pertama.lulus) t=i; else break;
+    if(lulusCadangan(c)) t=i; else break;
   }
   return t;
 }
@@ -1951,13 +1974,15 @@ function binaSet(n){
   var a=ARAS[n-1];
   var jum=Math.min(SOALAN_SET,a.soalan.length);
   var pilih=ambilRawak(a.soalan,jum);
-  pilih.forEach(function(q){ q._ulang=false; });
+  pilih.forEach(function(q){ q._ulang=false; q._penentu=false; });
+  S.simpanan=ambilRawak(a.soalan.filter(function(q){ return pilih.indexOf(q)<0 && q.j!=="buka"; }),PENENTU);
+  S.penentu=false;
   /* Ulangan pintar: satu soalan yang pernah salah dari hentian terdahulu.
      Ia latihan sahaja — tidak dikira dalam keputusan hentian ini dan
      tidak direkod sebagai bukti hentian ini. */
   if(S.salah.length && n>1 && Math.random()<0.8){
     var s=S.salah[rnd(S.salah.length)];
-    if(s && s.aras<n){ s.q._ulang=true; pilih.splice(rnd(pilih.length),0,s.q); }
+    if(s && s.aras<n){ s.q._ulang=true; s.q._penentu=false; pilih.splice(rnd(pilih.length),0,s.q); }
   }
   a.bos._ulang=false;
   pilih.push(a.bos);
@@ -2156,7 +2181,21 @@ function cubaLagiSoalan(){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
+/* Markah selepas soalan terakhir jatuh di sempadan dan masih ada soalan penentu? */
+function perluPenentu(){
+  if(S.modHarian||S.penentu||S.aras>=6||!S.simpanan||!S.simpanan.length) return false;
+  if(S.qi+1<S.set.length) return false;
+  var jum=S.jumlahBiasa+1, betul=S.betulBiasa+(S.bosBetul?1:0), perlu=ambangItem(jum);
+  /* hanya apabila lulus masih boleh dicapai DAN belum pasti lulus */
+  return betul===perlu && betul+S.simpanan.length>=ambangItem(jum+S.simpanan.length);
+}
 function seterusnya(){
+  if(perluPenentu()){
+    S.penentu=true;
+    S.simpanan.forEach(function(q){ q._ulang=false; q._penentu=true; q._betul=undefined; S.set.push(q); });
+    S.jumlahBiasa+=S.simpanan.length;
+    S.simpanan=[];
+  }
   S.qi++;
   if(S.qi>=S.set.length){ return S.modHarian?hasilHarian():hasilAras(); }
   reset(); render(); window.scrollTo({top:0,behavior:"smooth"});
@@ -2931,6 +2970,10 @@ function renderSoalan(){
   bd.appendChild(top);
 
   if(q._ulang) bd.appendChild(el("p","chip-ulang","Ulangan dari hentian "+q.tp+". Latihan sahaja, tidak dikira dalam keputusan hentian ini."));
+  if(q._penentu&&!S.modHarian){
+    var kePenentu=S.set.filter(function(x){ return x._penentu; }).indexOf(q)+1;
+    bd.appendChild(el("p","chip-ulang","Soalan penentu "+kePenentu+" daripada "+PENENTU+". Markah awak tepat pada garisan lulus, jadi dua soalan lagi menentukan keputusan dengan lebih adil."));
+  }
 
   if(!S.modHarian&&!bos&&S.aras===1&&S.qi===0&&!Object.keys(S.lulus||{}).length)
     bd.appendChild(el("p","qnote","Soalan pertama! Pilih jawapan yang betul, kemudian tekan Semak jawapan."));
@@ -3083,7 +3126,7 @@ function renderSoalan(){
     act.appendChild(bk);
   } else {
     var bn=el("button","btn");bn.setAttribute("data-f","aksi");
-    bn.textContent=(S.qi+1<S.set.length)?"Teruskan":"Lihat keputusan";
+    bn.textContent=(S.qi+1<S.set.length||perluPenentu())?"Teruskan":"Lihat keputusan";
     bn.onclick=seterusnya;
     act.appendChild(bn);
     if(q._betul===false && q.j!=="buka" && !(S.retry&&S.retryOk)){
@@ -3101,7 +3144,7 @@ function hasilAras(){
   var a=ARAS[S.aras-1];
   var terbukaTP6=(a.n===6);
   var jumItem=S.jumlahBiasa+1, betulItem=S.betulBiasa+(S.bosBetul?1:0), perlu=ambangItem(jumItem);
-  var lulus = terbukaTP6 ? false : (betulItem>=perlu);
+  var lulus = terbukaTP6 ? false : lulusItem(betulItem,jumItem);
   var kadBaru=[];
   if((lulus||(terbukaTP6&&S.bosHantar)) && !S.kad[a.n+"a"]){ S.kad[a.n+"a"]=1; kadBaru.push([a.kadNama,a.kadEm,a.kadFakta]); }
   if((S.bosBetul||(terbukaTP6&&S.bosHantar)) && !S.kad[a.n+"b"]){ S.kad[a.n+"b"]=1; kadBaru.push([a.bosKadNama,a.bosKadEm,a.bosKadFakta]); }
@@ -3170,7 +3213,11 @@ function hasilAras(){
   kepil(S.tenang?"Mod tenang":"Tenaga tinggal "+Math.ceil(S.nafas));
   kepil(S.no?("Percubaan ke-"+kaliKe):"Latihan, tidak direkod");
   b.appendChild(meta);
-  if(S.no&&kaliKe===1) b.appendChild(el("p","note","Percubaan pertama inilah yang dilihat cikgu sebagai bukti. Ulangan selepas ini untuk latihan dan skor sahaja."));
+  if(S.no&&kaliKe===1) b.appendChild(el("p","note",(lulus||terbukaTP6)
+    ? "Percubaan pertama inilah yang dilihat cikgu sebagai bukti. Ulangan selepas ini untuk latihan dan skor sahaja."
+    : "Percubaan pertama ini direkod untuk cikgu. Percubaan kedua awak akan digabungkan dengannya, jadi ulang kaji dahulu sebelum mencuba lagi. Percubaan ketiga dan seterusnya untuk latihan sahaja."));
+  else if(S.no&&kaliKe===2&&!terbukaTP6&&sebelum&&sebelum.pertama&&!sebelum.pertama.lulus)
+    b.appendChild(el("p","note","Percubaan kedua ini digabungkan dengan percubaan pertama sebagai bukti untuk cikgu. Ulangan selepas ini untuk latihan dan skor sahaja."));
 
   /* Apa yang murid sebenarnya belajar dalam pusingan ini. */
   var pel=el("div","pelajaran");
@@ -3379,10 +3426,12 @@ function rekodCubaan(a,lulus){
 }
 function gabungCubaan(lama,kelas,no,a,kini,karangan){
   var out = (lama&&lama.v===SKEMA)
-    ? {v:SKEMA,kelas:kelas,no:no,aras:a,pertama:lama.pertama||null,terbaik:lama.terbaik||null,
+    ? {v:SKEMA,kelas:kelas,no:no,aras:a,pertama:lama.pertama||null,kedua:lama.kedua||null,terbaik:lama.terbaik||null,
        kali:lama.kali||0,karangan:lama.karangan||null}
-    : {v:SKEMA,kelas:kelas,no:no,aras:a,pertama:null,terbaik:null,kali:0,karangan:null};
+    : {v:SKEMA,kelas:kelas,no:no,aras:a,pertama:null,kedua:null,terbaik:null,kali:0,karangan:null};
   if(kini){
+    /* sama seperti jm_simpan_cubaan: kedua ditulis sekali, hanya jika pertama gagal */
+    if(out.pertama&&!out.pertama.lulus&&!out.kedua) out.kedua=kini;
     if(!out.pertama) out.pertama=kini;
     if(!out.terbaik||kini.betul>out.terbaik.betul||(kini.lulus&&!out.terbaik.lulus)) out.terbaik=kini;
     out.kali=out.kali+1;
@@ -3396,7 +3445,7 @@ function terimaBarisCubaan(baris){
   if(!baris||!baris.kelas) return;
   if(baris.bab&&baris.bab!==BAB_ID) return;   /* bab lain, bukan urusan skrin ini */
   var c={v:SKEMA,kelas:baris.kelas,no:baris.no,aras:baris.aras,
-         pertama:baris.pertama,terbaik:baris.terbaik,kali:baris.kali,
+         pertama:baris.pertama,kedua:baris.kedua||null,terbaik:baris.terbaik,kali:baris.kali,
          karangan:baris.karangan,akhir:baris.akhir};
   CUBAAN[kunciC(c.kelas,c.no,c.aras)]=c;
   simpanSalinan(c);
@@ -3421,6 +3470,8 @@ function paduCubaan(x,y){
   var out={v:SKEMA,kelas:x.kelas||y.kelas,no:x.no||y.no,aras:x.aras||y.aras};
   var px=x.pertama, py=y.pertama;
   out.pertama=(px&&py)?(px.masa<=py.masa?px:py):(px||py);
+  var dx=x.kedua, dy=y.kedua;
+  out.kedua=(dx&&dy)?(dx.masa<=dy.masa?dx:dy):(dx||dy||null);
   var tx=x.terbaik, ty=y.terbaik;
   out.terbaik=(tx&&ty)?(((ty.betul>tx.betul)||(ty.lulus&&!tx.lulus))?ty:tx):(tx||ty);
   out.kali=Math.max(x.kali||0,y.kali||0);
@@ -3538,7 +3589,7 @@ function muatBabJauh(){
     if(!d){ pinBerubah(); return; }
     (d.cubaan||[]).forEach(function(r){
       letakCubaan({v:SKEMA,kelas:r.kelas,no:r.no,aras:r.aras,
-        pertama:r.pertama,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir});
+        pertama:r.pertama,kedua:r.kedua||null,terbaik:r.terbaik,kali:r.kali,karangan:r.karangan,akhir:r.akhir});
     });
     if(d.tp) GURU[kunciG(d.tp.kelas,d.tp.no)]={tp:d.tp.tp,sebab:d.tp.sebab||""};
     if(S.no) S.lulus=kiraLulus();
@@ -3763,7 +3814,7 @@ function muatGuru(){
     });
     r[2].data.forEach(function(c){
       CUBAAN[kunciC(c.kelas,c.no,c.aras)]={v:SKEMA,kelas:c.kelas,no:c.no,aras:c.aras,
-        pertama:c.pertama,terbaik:c.terbaik,kali:c.kali,karangan:c.karangan,akhir:c.akhir};
+        pertama:c.pertama,kedua:c.kedua||null,terbaik:c.terbaik,kali:c.kali,karangan:c.karangan,akhir:c.akhir};
     });
     r[3].data.forEach(function(t){ GURU[kunciG(t.kelas,t.no)]={tp:t.tp,sebab:t.sebab||""}; });
     GURU_DIMUAT=true; RALAT_GURU="";
@@ -4511,7 +4562,7 @@ function paneKelas(){
   var be=el("button","btn"); be.textContent="Eksport untuk SPPB"; be.onclick=eksport;
   act.appendChild(be); p.appendChild(act);
   p.appendChild(el("div",null,'<div id="kotakEksport"></div>'));
-  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik dikira daripada percubaan PERTAMA setiap hentian sahaja, dan percubaan pertama itu ditulis sekali lalu tidak pernah ditindih oleh ulangan. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
+  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik dikira daripada percubaan PERTAMA setiap hentian. Jika percubaan pertama gagal, percubaan kedua digabungkan dengannya pada ambang 70% yang sama, kerana satu percubaan yang pendek boleh gagal akibat nasib. Kedua-duanya ditulis sekali lalu tidak pernah ditindih; percubaan ketiga dan seterusnya tidak dikira. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
 }
 function butiranMurid(kelas,no,auto,lapor){
   var w=el("div","ulasan");
@@ -4521,7 +4572,7 @@ function butiranMurid(kelas,no,auto,lapor){
   w.appendChild(hd);
 
   var tb=el("table","cubtab");
-  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Terbaik</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
+  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Kedua</th><th class="n">Terbaik</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
   var ada=false;
   for(var a=1;a<=6;a++){
     var c=cubaanMurid(kelas,no,a);
@@ -4530,6 +4581,7 @@ function butiranMurid(kelas,no,auto,lapor){
     th+='<tr><td>'+a+' · '+esc(ARAS[a-1].tempat)+'</td>'+
         '<td class="n">'+c.pertama.betul+' / '+c.pertama.jumlah+'</td>'+
         '<td class="n">'+(c.pertama.bos?"✓":"✗")+'</td>'+
+        '<td class="n">'+(c.kedua?(c.kedua.betul+' / '+c.kedua.jumlah+(c.kedua.bos?" + bos":"")):"—")+'</td>'+
         '<td class="n">'+(c.terbaik?c.terbaik.betul+' / '+c.terbaik.jumlah:"—")+'</td>'+
         '<td class="n">'+(c.kali||0)+'</td>'+
         '<td class="n">'+(c.pertama.mod==="tenang"?"tenang":"masa")+'</td>'+
@@ -5276,7 +5328,7 @@ function paneTangga(){
     var r=el("div","rung");
     var cara=(i===5)
       ? "Tugasan reka cipta bertulis, dinilai oleh guru sahaja"
-      : "Perlu "+ambangItem(SOALAN_SET+1)+" daripada "+(SOALAN_SET+1)+" item betul, termasuk soalan bos dalam kiraan";
+      : "Perlu "+ambangItem(SOALAN_SET+1)+" daripada "+(SOALAN_SET+1)+" item betul, termasuk soalan bos dalam kiraan; jika markah tepat pada ambang, "+PENENTU+" soalan penentu ditambah dan perlu "+ambangItem(SOALAN_SET+1+PENENTU)+" daripada "+(SOALAN_SET+1+PENENTU);
     r.innerHTML='<div class="rung-hd"><span class="tp-chip">TP'+(i+1)+'</span><span class="k">'+KKO[i]+'</span><span class="n">'+esc(a.tempat)+'</span></div>'+
       '<p>'+esc(SPI[i])+'</p><p class="note" style="margin-top:7px">'+esc(a.sk)+' · '+(a.soalan.length+1)+' item termasuk bos · '+esc(cara)+'</p>';
     lad.appendChild(r);
