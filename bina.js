@@ -28,6 +28,15 @@ function semak(bab){
   if(m.length) return m;
 
   const idDilihat = new Set();
+  /* Teks soalan mesti unik dalam satu bab. Dua soalan yang sama teksnya (contohnya
+     "Berapakah Q3?" bagi dua rajah berbeza) mengelirukan murid yang melihatnya dalam
+     ulangan dan laporan guru, dan uji-penuh tidak dapat membezakannya. */
+  const teksDilihat = new Map();
+  bab.aras.forEach((a, i) => (a.soalan || []).concat(a.bos ? [a.bos] : []).forEach((q, k) => {
+    const t = String(q.t || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+    if (teksDilihat.has(t)) m.push(`H${i+1} item ${k+1}: teks soalan sama dengan ${teksDilihat.get(t)}`);
+    else teksDilihat.set(t, `H${i+1} item ${k+1}`);
+  }));
   bab.aras.forEach((a, i) => {
     const di = `H${i+1}`;
     lihat(a.n === i+1, `${di}: nombor hentian tidak sepadan dengan kedudukannya`);

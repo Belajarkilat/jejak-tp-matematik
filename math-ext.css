@@ -93,3 +93,12 @@ body.conteng-buka{padding-bottom:46vh}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jmi-label b{color:var(--tinta)}}
 
 .numrow .tanda{min-width:48px;min-height:48px;font-size:22px;font-weight:700;padding:0 12px}
+
+/* ---- Cip pilihan rajah (kawalan pilih: true), Tingkatan 4 ---- */
+.jmi-baris.jmi-cip{flex-direction:column;align-items:stretch;gap:6px}
+.jmi-cipkump{display:flex;flex-wrap:wrap;gap:6px}
+.jmi-cipb{min-height:44px;padding:0 12px;border:2px solid var(--garis,#1C1B3A);border-radius:12px;background:var(--kad,#fff);color:var(--tinta,#1C1B3A);font:700 14px "DM Mono",ui-monospace,monospace;cursor:pointer;box-shadow:0 2px 0 var(--garis,#1C1B3A);transition:transform .08s}
+.jmi-cipb:active{transform:translateY(2px);box-shadow:none}
+.jmi-cipb[aria-pressed="true"]{background:var(--dunia,#6D3BFF);color:#fff;border-color:var(--garis,#1C1B3A)}
+.jmi-cipb:focus-visible{outline:3px solid var(--dunia,#6D3BFF);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.jmi-cipb{transition:none}}

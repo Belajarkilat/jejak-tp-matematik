@@ -12,7 +12,8 @@ let html = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="
 body{padding:12px;display:block !important}
 h2{font-size:14px;margin:18px 0 6px}.kotak{width:296px;background:var(--surface,#fff);border-radius:14px;padding:12px;margin:0 8px 10px 0;display:inline-block;vertical-align:top;border:1px solid var(--line,#ddd)}
 .kotak small{display:block;font:11px DM Mono,monospace;color:var(--ink3,#777);margin-bottom:4px}</style><body class="zon-murid">`;
-for(const f of fs.readdirSync("sumber").filter(f => /^m\d+b\d+\.js$/.test(f))){
+/* hujah pilihan: awalan id bab, contoh `node tools/galeri.js m4b2` */
+for(const f of fs.readdirSync("sumber").filter(f => /^m\d+b\d+\.js$/.test(f) && (!process.argv[2] || f.startsWith(process.argv[2] + ".")))){
   const bab = require(path.resolve("sumber", f));
   for(const [k, spec] of Object.entries(bab.lampiran || {})){
     if(!spec || spec.jenis !== "interaktif") continue;

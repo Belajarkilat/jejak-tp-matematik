@@ -527,6 +527,22 @@
         kurang.onclick = function () { if (s[k.k] > k.min) { s[k.k]--; tulisLabel(); lukisSemula(); klik(); } };
         tambah.onclick = function () { if (s[k.k] < k.maks) { s[k.k]++; tulisLabel(); lukisSemula(); klik(); } };
         baris.appendChild(kurang); baris.appendChild(lbl); baris.appendChild(tambah);
+      } else if (k.pilih && k.teks) {
+        /* Cip pilihan: untuk pilihan kategori (operasi set, bentuk hujah) yang tiada
+           urutan. Gelongsor menyembunyikan pilihan lain; cip menunjukkan semuanya. */
+        baris.className = "jmi-baris jmi-cip";
+        var kump = document.createElement("div"); kump.className = "jmi-cipkump";
+        kump.setAttribute("role", "group"); kump.setAttribute("aria-label", k.label);
+        var butang = [];
+        function tandaCip() { butang.forEach(function (b, i) { b.setAttribute("aria-pressed", i + k.min === s[k.k] ? "true" : "false"); }); }
+        for (var v = k.min; v <= k.maks; v++) (function (v) {
+          var b = document.createElement("button"); b.type = "button"; b.className = "jmi-cipb";
+          b.textContent = k.teks[v];
+          b.onclick = function () { if (s[k.k] === v) return; s[k.k] = v; tulisLabel(); tandaCip(); lukisSemula(); klik(); };
+          butang.push(b); kump.appendChild(b);
+        })(v);
+        tandaCip();
+        baris.appendChild(lbl); baris.appendChild(kump);
       } else {
         var inp = document.createElement("input");
         inp.type = "range"; inp.min = k.min; inp.max = k.maks; inp.step = 1; inp.value = s[k.k];

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Semak soalan · Jejak TP Matematik</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="ikon.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#FBFAF6;--surface:#fff;--surface2:#F1F5F4;--ink:#12302C;--ink2:#3F625C;--ink3:#5B716D;--line:#CFE6E1;--line2:#9DBBB5;
+  --teal:#1C7A73;--teal-soft:#DDF2EE;--arteri:#C2255C;--arteri-soft:#FFE3EC;--vena:#5F3DC4;--gen:#7A4E2D;--gen-soft:#F1E6DC;
+  --amber:#B45309;--amber-soft:#FDE8C8;--ok:#0B7A4B;--ok-soft:#DDF5EC;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1A18;--surface:#15262A;--surface2:#1B3033;--ink:#EAF3F0;--ink2:#B7D2CC;--ink3:#93B3AC;--line:#26474C;--line2:#3B666B;--teal:#5FD0C4;--teal-soft:#16403F;--arteri:#FF7FA8;--arteri-soft:#40202E;--vena:#B8A2FF;--gen:#E8B98D;--gen-soft:#3A2C22;--amber:#F0A64B;--amber-soft:#3B2A12;--ok:#5FE0A5;--ok-soft:#15382B}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:1.5rem;margin:8px 0 4px}
+.sub{color:var(--ink2);margin:0 0 14px}
+.kawal{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.kawal label{font-weight:600;font-size:.9rem;color:var(--ink2)}
+select,button,a.btn{font:inherit;min-height:44px;border:2px solid var(--line2);border-radius:10px;background:var(--surface);color:var(--ink);padding:0 12px}
+a.btn{display:inline-flex;align-items:center;text-decoration:none}
+.hentian{margin:22px 0 8px;padding:10px 14px;border-radius:12px;background:var(--teal-soft);font-weight:700}
+.hentian small{display:block;font-weight:400;color:var(--ink2)}
+.soalan{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;break-inside:avoid}
+.soalan .no{font:600 .8rem ui-monospace,Menlo,monospace;color:var(--ink3)}
+.soalan .t{font-weight:600;margin:4px 0 8px}
+.pil{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.pil li{padding:8px 10px;border:1px solid var(--line);border-radius:9px}
+.pil li.betul{background:var(--ok-soft);border-color:var(--ok);font-weight:600}
+.pil li.betul::after{content:" ✓";color:var(--ok)}
+.jaw{padding:8px 10px;border-radius:9px;background:var(--ok-soft);border:1px solid var(--ok);font-weight:600}
+.u{margin-top:8px;color:var(--ink2);font-size:.94rem}
+.u b{color:var(--ink)}
+.bos{border-color:var(--vena)}
+.lencana{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;background:var(--gen-soft);color:var(--gen);margin-left:6px}
+.jmi-petunjuk,.jmi-cabar{display:none}
+.jmi-kawal{margin-top:8px}.jmi-baris{display:flex;gap:10px;align-items:center;margin:6px 0}.jmi-baris input[type=range]{flex:1;min-height:44px}.jmi-label{font:600 14px ui-monospace,Menlo,monospace;min-width:118px}.jmi-btn{min-height:44px}
+figure{margin:8px 0 12px;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:8px}
+figure svg{width:100%;max-width:420px;height:auto;display:block;margin:auto}
+figcaption{font-size:.85rem;color:var(--ink3);text-align:center}
+@media print{.kawal{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Semak soalan</h1>
+  <p class="sub">Paparan cikgu: setiap soalan, jawapan betul (ditanda ✓), penjelasan dan rajah. Untuk semak kandungan sebelum digunakan.</p>
+  <div class="kawal">
+    <label for="ting">Tingkatan</label><select id="ting"></select>
+    <label for="bab">Bab</label><select id="bab"></select>
+    <button id="cetak" type="button">Cetak</button>
+    <a class="btn" href="index.html?cikgu">← Papan guru</a>
+  </div>
+  <div id="isi" aria-live="polite"></div>
+</div>
+<script src="bab-indeks.js?v=1"></script>
+<script src="interaktif.js?v=3"></script>
+<script>
+(function(){
+  var I=window.BAB_INDEKS||{}, $=function(i){return document.getElementById(i)};
+  var ting=$("ting"), bab=$("bab"), isi=$("isi");
+  var tings=[]; Object.keys(I).forEach(function(k){ if(tings.indexOf(I[k].tingkatan)<0) tings.push(I[k].tingkatan); });
+  tings.sort().forEach(function(t){ var o=document.createElement("option"); o.value=t; o.textContent="Tingkatan "+t; ting.appendChild(o); });
+  function isiBab(){
+    bab.innerHTML=""; Object.keys(I).filter(function(k){ return I[k].tingkatan==ting.value; })
+      .sort(function(a,b){ return +a.slice(3)-+b.slice(3); })
+      .forEach(function(k){ var o=document.createElement("option"); o.value=k; o.textContent=I[k].kod; bab.appendChild(o); });
+  }
+  function skrip(src){ return new Promise(function(ok,tolak){ var e=document.createElement("script"); e.src=src; e.async=false; e.onload=ok; e.onerror=function(){ tolak(new Error(src)); }; document.head.appendChild(e); }); }
+  function muat(id){
+    if(window.BANK&&window.BANK[id]) return Promise.resolve(window.BANK[id]);
+    return (I[id].widget?skrip("widget-"+id+".js?v=1"):Promise.resolve()).then(function(){ return skrip("bank-"+id+".js?v=1"); }).then(function(){ return window.BANK[id]; });
+  }
+  var HURUF="ABCDEFGH";
+  function q(s,bos,n){
+    var d=document.createElement("div"); d.className="soalan"+(bos?" bos":"");
+    var h='<div class="no">'+n+(bos?'<span class="lencana">BOS</span>':"")+' · '+({pilih:"pilih satu",banyak:"pilih semua yang betul",susun:"susun mengikut urutan",nombor:"jawapan nombor",buka:"tugasan bertulis"}[s.j]||s.j)+'</div><div class="t">'+s.t+'</div>';
+    if(s.j==="pilih"||s.j==="banyak"){
+      var betul=[].concat(s.b); h+='<ul class="pil">'+s.p.map(function(x,i){ return '<li class="'+(betul.indexOf(i)>=0?"betul":"")+'"><b>'+HURUF[i]+'.</b> '+x+'</li>'; }).join("")+'</ul>';
+    } else if(s.j==="susun"){
+      h+='<ol class="pil">'+[].concat(s.b).map(function(i){ return '<li class="betul">'+s.p[i]+'</li>'; }).join("")+'</ol>';
+    } else if(s.j==="nombor"){
+      h+='<div class="jaw">Jawapan: '+s.b+(s.suf?" "+s.suf:"")+'</div>';
+    } else if(s.j==="buka"){
+      h+='<div class="jaw">'+(s.arahan||"")+'</div>';
+    }
+    if(s.u) h+='<div class="u"><b>Penjelasan:</b> '+s.u+'</div>';
+    d.innerHTML=h; return d;
+  }
+  function papar(){
+    var id=bab.value; if(!id) return;
+    isi.textContent="Memuatkan...";
+    muat(id).then(function(b){
+      isi.innerHTML=""; var t=document.createElement("h2"); t.textContent=b.kod+" · "+b.tajuk; isi.appendChild(t);
+      b.aras.forEach(function(a){
+        var hh=document.createElement("div"); hh.className="hentian";
+        hh.innerHTML='Hentian '+a.n+' · '+a.tempat+'<small>TP'+a.n+' · '+(a.sk||"")+'</small>'; isi.appendChild(hh);
+        if(a.lampiran&&b.lampiran&&b.lampiran[a.lampiran]){ var w=document.createElement("div"); w.innerHTML=b.lampiran[a.lampiran]; isi.appendChild(w); }
+        a.soalan.forEach(function(s,i){ isi.appendChild(q(s,false,"H"+a.n+"."+(i+1))); });
+        if(a.bos) isi.appendChild(q(a.bos,true,"H"+a.n+" bos"));
+      });
+      if(window.JMI&&window.JMI.hidupkan) window.JMI.hidupkan(isi);
+      try{ history.replaceState(null,"","?bab="+id); }catch(e){}
+    }).catch(function(){ isi.textContent="Bab tidak dapat dimuatkan. Semak internet dan cuba lagi."; });
+  }
+  ting.onchange=function(){ isiBab(); papar(); }; bab.onchange=papar;
+  $("cetak").onclick=function(){ window.print(); };
+  var awal=(/[?&]bab=(m\db\d+)/.exec(location.search)||[])[1];
+  if(awal&&I[awal]) ting.value=I[awal].tingkatan;
+  isiBab(); if(awal&&I[awal]) bab.value=awal; papar();
+})();
+</script>
+</body>
+</html>
