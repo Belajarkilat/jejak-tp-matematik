@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Jejak TP Matematik: pentaksiran bilik darjah untuk Matematik KSSM Tingkatan 1 hingga 4. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
+<meta name="description" content="Jejak TP Matematik: pentaksiran bilik darjah untuk Matematik KSSM Tingkatan 1 hingga 5. Setiap bidang pembelajaran menjadi satu perjalanan enam hentian yang dipetakan kepada Tahap Penguasaan 1 hingga 6.">
 <meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#070D18" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1163,7 +1163,7 @@ body.zon-murid{color:var(--tinta)}
 /* Semua 51 bab (Tingkatan 1-5) sedia dimainkan. Bab 1-2 setiap tingkatan
    percuma; Bab 3 ke atas memerlukan kelas milik guru Premium (RM23/tahun).
    Lihat bebasBab() dan premiumAktif(). */
-var JUMLAH_BAB={1:13,2:13,3:9,4:10};
+var JUMLAH_BAB={1:13,2:13,3:9,4:10,5:8};
 var BAB_TERSEDIA=[];
 Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("m"+t+"b"+i);
@@ -1360,7 +1360,31 @@ var DUNIA={
         misi:"Gabungkan peristiwa dengan rajah pokok dan gambar rajah Venn, dan reka permainan yang adil."},
   m4b10:{warna:"#8F5B00",lembut:"#FBEFD5",gelap:"#5F3C00",ikon:"\u{1F4B0}",
         hentian:["\u{1F3AF}","\u{1F9FE}","\u{1F4D2}","\u{1F3E6}","\u{1F4CA}","\u{1F680}"],
-        misi:"Tetapkan matlamat SMART, susun belanjawan, dan bina pelan kewangan yang boleh dilaksanakan."}
+        misi:"Tetapkan matlamat SMART, susun belanjawan, dan bina pelan kewangan yang boleh dilaksanakan."},
+  m5b1:{warna:"#5C3BC4",lembut:"#ECE6FB",gelap:"#3E2789",ikon:"\u{1F4C8}",
+        hentian:["\u{1F33E}","\u{1F4C8}","\u{1F697}","\u{1F6D1}","\u{1F58C}\u{FE0F}","\u{1F52C}"],
+        misi:"Cari pemalar ubahan, temui garis lurus yang tersembunyi dalam graf, dan ramal nilai dalam situasi sebenar."},
+  m5b2:{warna:"#0B6E8C",lembut:"#D6EEF5",gelap:"#084D62",ikon:"\u{1F9EE}",
+        hentian:["\u{1F4CB}","\u{2795}","\u{2716}\u{FE0F}","\u{1F511}","\u{1F6D2}","\u{1F510}"],
+        misi:"Susun data dalam matriks, darab baris dengan lajur, dan selesaikan persamaan serentak dengan matriks songsang."},
+  m5b3:{warna:"#2B7A3E",lembut:"#DDF1E2",gelap:"#1C5229",ikon:"\u{1F6E1}\u{FE0F}",
+        hentian:["\u{2602}\u{FE0F}","\u{1F697}","\u{1F3E5}","\u{1F3E0}","\u{1F9EE}","\u{1F4DD}"],
+        misi:"Fahami risiko dan perlindungan, kira premium dan pampasan, dan pilih polisi yang sesuai."},
+  m5b4:{warna:"#9C4A00",lembut:"#FBE9D8",gelap:"#6B3300",ikon:"\u{1F9FE}",
+        hentian:["\u{1F3DB}\u{FE0F}","\u{1F4B5}","\u{1F4CA}","\u{1F3E1}","\u{1F6D2}","\u{1F4A1}"],
+        misi:"Kenal pasti jenis cukai, kira cukai pendapatan, cukai jalan dan cukai pintu, dan rancang kewangan yang bijak."},
+  m5b5:{warna:"#A3195B",lembut:"#FBE3EE",gelap:"#721040",ikon:"\u{1F537}",
+        hentian:["\u{1F9E9}","\u{1F50D}","\u{1F4D0}","\u{1F504}","\u{1F5FA}\u{FE0F}","\u{1F3A8}"],
+        misi:"Kenal pasti bentuk kongruen, besarkan dan kecilkan rajah, dan gabungkan transformasi untuk mereka corak."},
+  m5b6:{warna:"#1F5FBF",lembut:"#DFE8FA",gelap:"#154285",ikon:"\u{1F30A}",
+        hentian:["\u{2B55}","\u{1F4D0}","\u{1F30A}","\u{1F39A}\u{FE0F}","\u{1F3A1}","\u{1F3B5}"],
+        misi:"Gerakkan titik pada bulatan unit, lukis graf sinus dan kosinus, dan ubah amplitud serta tempohnya."},
+  m5b7:{warna:"#6B4BB0",lembut:"#EBE5F8",gelap:"#4A337A",ikon:"\u{1F4CA}",
+        hentian:["\u{1F4CB}","\u{1F4CA}","\u{1F4C8}","\u{1F4CF}","\u{2696}\u{FE0F}","\u{1F52C}"],
+        misi:"Bina histogram dan ogif, anggar kuartil daripada graf, dan bandingkan dua kumpulan data terkumpul."},
+  m5b8:{warna:"#00796B",lembut:"#D4F0EC",gelap:"#00544A",ikon:"\u{1F9E0}",
+        hentian:["\u{2753}","\u{1F4DD}","\u{1F4C9}","\u{1F9EA}","\u{1F504}","\u{1F680}"],
+        misi:"Kenal pasti masalah, buat andaian, pilih model, uji dan perhalusinya seperti seorang ahli matematik."}
 };
 var DUNIA_ASAS={warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔢",hentian:[],misi:"Lepasi enam hentian untuk menguasai bab ini."};
 function duniaBab(id){ return DUNIA[id||BAB_ID]||DUNIA_ASAS; }
@@ -3933,7 +3957,7 @@ function kadNilai(){
   ["Cadangan TP setiap murid, cikgu yang tentukan TP akhir",
    "Grid diagnostik: soalan yang paling ramai murid gagal",
    "Ulasan PBD sedia untuk disalin ke SPPB",
-   "45 bab Matematik Tingkatan 1 hingga 4 (Bab 1-2 setiap tingkatan percuma; Premium Tingkatan 1-3 pada harga perintis RM23/tahun hingga 31 Dis 2026)",
+   "53 bab Matematik Tingkatan 1 hingga 5 (Bab 1-2 setiap tingkatan percuma; Premium Menengah Rendah atau Menengah Atas pada harga perintis RM23/tahun hingga 31 Dis 2026)",
    "Murid log masuk dengan kod kelas dan PIN, tidak perlu akaun murid"
   ].forEach(function(t){ ul.appendChild(el("li",null,esc(t))); });
   bd.appendChild(ul);

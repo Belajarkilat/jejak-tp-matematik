@@ -102,3 +102,6 @@ body.conteng-buka{padding-bottom:46vh}
 .jmi-cipb[aria-pressed="true"]{background:var(--dunia,#6D3BFF);color:#fff;border-color:var(--garis,#1C1B3A)}
 .jmi-cipb:focus-visible{outline:3px solid var(--dunia,#6D3BFF);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.jmi-cipb{transition:none}}
+
+/* ---- Matriks dalam teks soalan dan pilihan, Tingkatan 5 Bab 2 ---- */
+.mat{display:inline-grid;grid-template-columns:repeat(var(--k,2),auto);gap:0 .7em;padding:.15em .5em;margin:.1em .2em;vertical-align:middle;border-left:2px solid currentColor;border-right:2px solid currentColor;border-radius:7px;text-align:center;line-height:1.3;font-variant-numeric:tabular-nums}
