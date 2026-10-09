@@ -190,6 +190,14 @@ a{color:inherit}
 footer{padding-block:26px 40px;border-top:1px solid var(--teal-line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;color:var(--ink2);font-size:.88rem}
 footer .ng{display:flex;align-items:center;gap:6px;font-weight:600}
 footer .ng b{color:var(--teal)}
+/* Bar tindakan melekat (telefon sahaja): muncul selepas pelawat melepasi hero, hilang di bahagian penutup. */
+.bar-lekat{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--teal-line);box-shadow:0 -8px 24px -12px rgba(11,74,70,.35)}
+.bar-lekat a{flex:1;display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:12px;font:600 15px "Lexend",sans-serif;text-decoration:none}
+.bar-lekat .utama{background:var(--teal-deep);color:#fff}
+.bar-lekat .kedua{border:1.5px solid var(--teal-line);color:var(--teal-deep);background:transparent;flex:0 0 auto;padding:0 18px}
+@media (max-width:700px){.bar-lekat.nampak{display:flex}body{padding-bottom:72px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar-lekat .kedua{color:var(--teal)}}
+:root[data-theme="dark"] .bar-lekat .kedua{color:var(--teal)}
 </style>
 </head>
 <body>
@@ -331,9 +339,9 @@ footer .ng b{color:var(--teal)}
   <div class="cerita">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
     <div>
-      <h2>Mengikut DSKP dan sedang diuji bersama guru</h2>
-      <p>Setiap soalan ditulis mengikut Standard Pembelajaran DSKP KSSM, dan Standard Prestasi disalin kata demi kata daripada dokumen rasmi. Lebih 1,200 jawapan berangka disemak semula oleh sistem melalui pengiraan berasingan supaya rajah dan jawapan tidak bercanggah.</p>
-      <p>Jejak TP Matematik kini berada dalam fasa rintis bersama guru Matematik sekolah menengah. Jika ada soalan yang tidak sesuai dengan buku teks guru, sila beritahu kami melalui butang "Beri maklum balas" dalam aplikasi, dan kami akan membetulkannya.</p>
+      <h2>Mengikut DSKP dan disemak dengan teliti</h2>
+      <p>Setiap soalan ditulis mengikut Standard Pembelajaran DSKP KSSM, dan Standard Prestasi disalin kata demi kata daripada dokumen rasmi. Lebih 1 800 jawapan berangka disemak semula oleh sistem melalui pengiraan berasingan supaya rajah dan jawapan tidak bercanggah.</p>
+      <p>Jejak TP Matematik masih baharu dan terus ditambah baik. Jika ada soalan yang tidak sesuai dengan buku teks guru, sila beritahu kami melalui butang "Beri maklum balas" dalam aplikasi, dan kami akan membetulkannya.</p>
     </div>
   </div>
 </div>
@@ -415,11 +423,25 @@ footer .ng b{color:var(--teal)}
 
 <div class="wrap">
   <footer>
-    <span>Jejak TP Matematik · Matematik KSSM Tingkatan 1–4</span>
+    <span>Jejak TP Matematik · Matematik KSSM Tingkatan 1–5</span>
     <span><a href="terma.html">Terma &amp; bayaran balik</a></span>
     <span class="ng">Satu produk <b>Naik</b>Gred</span>
   </footer>
 </div>
 
+<nav class="bar-lekat" id="barLekat" aria-label="Tindakan pantas">
+  <a class="utama" href="index.html?demo=cikgu">Lihat kelas contoh</a>
+  <a class="kedua" href="#harga">Harga</a>
+</nav>
+<script>
+(function(){
+  var bar=document.getElementById("barLekat"), hero=document.querySelector(".hero .ctas"), tutup=document.querySelector(".penutup");
+  if(!bar||!hero||!("IntersectionObserver" in window)) return;
+  var heroNampak=true, tutupNampak=false;
+  function kemas(){ bar.classList.toggle("nampak", !heroNampak && !tutupNampak); }
+  new IntersectionObserver(function(e){ heroNampak=e[0].isIntersecting; kemas(); }).observe(hero);
+  if(tutup) new IntersectionObserver(function(e){ tutupNampak=e[0].isIntersecting; kemas(); }).observe(tutup);
+})();
+</script>
 </body>
 </html>

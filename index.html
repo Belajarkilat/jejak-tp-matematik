@@ -479,6 +479,12 @@ input.pin{
 .tenangrow .d{font-size:13px;color:var(--ink2);line-height:1.45}
 .hud.tenang .nafasbar i{background:linear-gradient(90deg,#7B8EA8,#AABCD3)}
 .hud.tenang .nafasbar{animation:none}
+/* Mod tenang: bar tenaga disembunyikan supaya murid tidak menyangka tenaga boleh habis. */
+.hud .lbltenang{display:none}
+.petunjuk-semak{display:none;flex-basis:100%;margin:2px 0 0;font-size:13px;color:var(--ink3)}
+#btnSemak:disabled ~ .petunjuk-semak{display:block}
+.hud.tenang .nafasbar,.hud.tenang .ikonhud{display:none}
+.hud.tenang .lbltenang{display:block;font-weight:700;font-size:13px;color:var(--ink2);white-space:nowrap}
 .nafasbar.baca i{background:linear-gradient(90deg,#8AA3CC,#C3D2E8)}
 .nafasbar.baca{animation:none}
 .qnote.baca{color:var(--vena);font-weight:600}
@@ -1106,6 +1112,7 @@ body.zon-murid{color:var(--tinta)}
       <div>
         <span class="lbl">Tenaga <span id="vNafas">100</span></span>
         <div class="nafasbar" id="bar"><i style="width:100%"></i></div>
+        <span class="lbltenang">Mod tenang: tiada had masa</span>
       </div>
       <div class="kombo"><span class="lbl">Kombo</span><span aria-hidden="true">&#x1F525;</span><span class="val" id="vKombo">&times;1</span></div>
       <div class="skor"><span class="lbl">Skor</span><span aria-hidden="true">&#x2B50;</span><span class="val" id="vSkor">0</span></div>
@@ -1228,7 +1235,7 @@ function pasangBab(id){
 var DUNIA={
   m3b1:{warna:"#6D3BFF",lembut:"#ECE5FF",gelap:"#4B22C9",ikon:"🔢",
         hentian:["🧱","🔄","✖️","🧩","🏗️","📜"],
-        misi:"Kuasai kuasa nombor, dari blok kecil hingga menara indeks."},
+        misi:"Kuasai kuasa nombor, daripada blok kecil hingga menara indeks."},
   m3b2:{warna:"#0B7285",lembut:"#D3F0F4",gelap:"#085261",ikon:"🔭",
         hentian:["🎯","📏","🧪","🪐","🦠","🚀"],
         misi:"Tulis nombor gergasi dan nombor halus dengan kemas dan tepat."},
@@ -1240,10 +1247,10 @@ var DUNIA={
         misi:"Kecilkan atau besarkan dunia dengan skala yang tepat."},
   m3b5:{warna:"#1971C2",lembut:"#DCEBFA",gelap:"#11508A",ikon:"📏",
         hentian:["📐","📈","🖩️","🚩","🗼","🌳"],
-        misi:"Ukur tinggi dan jarak yang tak boleh dicapai, dengan satu sudut dan satu sisi."},
+        misi:"Ukur tinggi dan jarak yang tidak boleh dicapai dengan satu sudut dan satu sisi."},
   m3b6:{warna:"#0B7285",lembut:"#D5F1F5",gelap:"#075463",ikon:"\u{1F535}",
         hentian:["\u{1F3A1}","\u{1F570}\u{FE0F}","\u{1F6B2}","\u{1F6E4}\u{FE0F}","\u{1F517}","\u{1F3C5}"],
-        misi:"Cari sudut tersembunyi dalam bulatan, dari roda ferris sampailah lencana."},
+        misi:"Cari sudut tersembunyi dalam bulatan, daripada roda ferris hingga lencana."},
   m3b7:{warna:"#5F3DC4",lembut:"#EDE7FA",gelap:"#432B99",ikon:"\u{1F3D7}\u{FE0F}",
         hentian:["\u270F\u{FE0F}","\u{1F3E0}","\u{1F6CB}\u{FE0F}","\u{1F9F1}","\u{1F3D7}\u{FE0F}","\u{1F52C}"],
         misi:"Lukis rumah kayu dari tiga arah, dan bina semula daripada lakaran."},
@@ -1261,7 +1268,7 @@ var DUNIA={
         misi:"Pecahkan nombor kepada faktor dan cari bila dua kitaran bertemu semula."},
   m1b3:{warna:"#087F5B",lembut:"#DDF5EC",gelap:"#055A41",ikon:"\u{1F9CA}",
         hentian:["\u{2B1C}","\u{1F9E9}","\u{1F9EE}","\u{1F3E0}","\u{1F4A7}","\u{1F3AF}"],
-        misi:"Bina petak dan kubus, cari sisinya, dan anggar punca yang tak sempurna."},
+        misi:"Bina petak dan kubus, cari sisinya, dan anggar punca yang tidak sempurna."},
   m1b4:{warna:"#B45309",lembut:"#FDE8C8",gelap:"#7C3A06",ikon:"\u{2696}\u{FE0F}",
         hentian:["\u{1F370}","\u{1F4B0}","\u{1F697}","\u{1F6D2}","\u{1F9C3}","\u{1F4AF}"],
         misi:"Bahagi adil, kira laju dan jimat belanja dengan nisbah dan peratus."},
@@ -1273,10 +1280,10 @@ var DUNIA={
         misi:"Seimbangkan neraca, cari x, dan selesaikan dua persamaan sekali gus."},
   m1b7:{warna:"#0F766E",lembut:"#D5F5F0",gelap:"#0A5A54",ikon:"\u{1F6A6}",
         hentian:["\u{2744}\u{FE0F}","\u{2696}\u{FE0F}","\u{1F6A6}","\u{1F527}","\u{1F6D2}","\u{1F6E1}\u{FE0F}"],
-        misi:"Tentukan siapa yang layak, dari suhu peti sejuk sampailah zon selamat."},
+        misi:"Tentukan siapa yang layak, daripada suhu peti sejuk hingga zon selamat."},
   m1b8:{warna:"#A61E4D",lembut:"#FFE3EC",gelap:"#7A1538",ikon:"\u{1F4D0}",
         hentian:["\u{1F9ED}","\u{1F91D}","\u{1F527}","\u{1F500}","\u{1F686}","\u{1F52D}"],
-        misi:"Ukur, bina dan kira sudut dari padang protraktor sampailah menara pandang."},
+        misi:"Ukur, bina dan kira sudut daripada padang protraktor hingga menara pandang."},
   m1b9:{warna:"#4D7C0F",lembut:"#ECF8D9",gelap:"#365314",ikon:"\u{1F537}",
         hentian:["\u{1F3D8}\u{FE0F}","\u{26FA}","\u{1F3ED}","\u{1F6E0}\u{FE0F}","\u{1F5FA}\u{FE0F}","\u{1F3A8}"],
         misi:"Kenal semua bentuk berbucu, kira sudutnya, dan reka corak batik sendiri."},
@@ -1300,7 +1307,7 @@ var DUNIA={
         misi:"Kembangkan jubin, cari faktor tersembunyi dan mudahkan pecahan algebra."},
   m2b3:{warna:"#0B6E4F",lembut:"#D8F3E8",gelap:"#084C37",ikon:"\u{1F9EA}",
         hentian:["\u{1F695}","\u{1F321}\u{FE0F}","\u{1F527}","\u{1F33C}","\u{1F3CE}\u{FE0F}","\u{1F4A1}"],
-        misi:"Bentuk rumus, gantikan nilai, dan tukar perkara rumus dari meter teksi sampailah trek laju."},
+        misi:"Bentuk rumus, gantikan nilai, dan tukar perkara rumus daripada meter teksi hingga trek laju."},
   m2b4:{warna:"#8A5A00",lembut:"#FBEFD5",gelap:"#5C3C00",ikon:"\u{1F536}",
         hentian:["\u{1F41D}","\u{270F}\u{FE0F}","\u{1F4D0}","\u{1F504}","\u{1F5FA}\u{FE0F}","\u{1F9F1}"],
         misi:"Bina poligon sekata, kira sudutnya, dan cari sudut yang hilang."},
@@ -1309,28 +1316,28 @@ var DUNIA={
         misi:"Ukur lilitan, cari luas dan bongkar rahsia sektor dalam bulatan."},
   m2b6:{warna:"#7A4E2D",lembut:"#F1E6DC",gelap:"#4E301A",ikon:"\u{1F3FA}",
         hentian:["\u{1F3DB}\u{FE0F}","\u{1F528}","\u{1F4E6}","\u{1F3A8}","\u{1F4A7}","\u{1F5FC}"],
-        misi:"Bina, bentang dan isi pepejal dengan tepat, dari kotak sampailah menara."},
+        misi:"Bina, bentang dan isi pepejal dengan tepat, daripada kotak hingga menara."},
   m2b7:{warna:"#2D6A4F",lembut:"#D8F3E4",gelap:"#1B4332",ikon:"\u{1F9ED}",
         hentian:["\u{1F5FA}\u{FE0F}","\u{1F309}","\u{1F9ED}","\u{1F3D8}\u{FE0F}","\u{1F53A}","\u{1F58A}\u{FE0F}"],
-        misi:"Cari jarak dan titik tengah pada peta, dari harta karun sampailah reka bandar."},
+        misi:"Cari jarak dan titik tengah pada peta, daripada harta karun hingga reka bandar."},
   m2b8:{warna:"#B02A6B",lembut:"#FCE4F0",gelap:"#7E1E4C",ikon:"\u{2699}\u{FE0F}",
         hentian:["\u{2699}\u{FE0F}","\u{1F3F9}","\u{1F4CD}","\u{26BD}","\u{1F6A6}","\u{1F3A8}"],
         misi:"Masukkan nombor ke dalam mesin, palot titik, dan cari di mana dua graf bertemu."},
   m2b9:{warna:"#B8321F",lembut:"#FBE5E1",gelap:"#7F2214",ikon:"\u{1F680}",
         hentian:["\u{1F6B2}","\u{1F697}","\u{1F504}","\u{1F6E3}\u{FE0F}","\u{1F3CE}\u{FE0F}","\u{270F}\u{FE0F}"],
-        misi:"Kira laju dan pecutan, dari basikal Aina sampailah kereta lumba."},
+        misi:"Kira laju dan pecutan, daripada basikal Aina hingga kereta lumba."},
   m2b10:{warna:"#6B5B00",lembut:"#FBF3C9",gelap:"#4A3F00",ikon:"\u{1F4C9}",
         hentian:["\u{1F4D0}","\u{1F6F4}","\u{1F5FA}\u{FE0F}","\u{1F3E0}","\u{2702}\u{FE0F}","\u{270F}\u{FE0F}"],
-        misi:"Ukur curam atau landai, dari tangga sampailah reka tanjakan sendiri."},
+        misi:"Ukur curam atau landai, daripada tangga hingga reka tanjakan sendiri."},
   m2b11:{warna:"#5C2D91",lembut:"#EEE6F7",gelap:"#3E1E63",ikon:"\u{1F504}",
         hentian:["\u{1F3A0}","\u{1F52E}","\u{1F3A1}","\u{1F5FA}\u{FE0F}","\u{1F9F1}","\u{1F3A8}"],
-        misi:"Gerak, pantul dan putar objek, dan cari bentuk yang tak berubah saiz."},
+        misi:"Gerak, pantul dan putar objek, dan cari bentuk yang tidak berubah saiz."},
   m2b12:{warna:"#3B5B00",lembut:"#E6F0CC",gelap:"#243800",ikon:"\u{1F3AF}",
         hentian:["\u{1F3DF}\u{FE0F}","\u{1F9EE}","\u{1F5C2}\u{FE0F}","\u{1F4F6}","\u{1F680}","\u{1F4AC}"],
         misi:"Cari nilai tengah data, dan pilih ukuran yang paling adil."},
   m2b13:{warna:"#1F4E79",lembut:"#DCE8F5",gelap:"#123556",ikon:"\u{1F3B2}",
         hentian:["\u{1F3B2}","\u{1F333}","\u{1F4CA}","\u{1F3AF}","\u{1F517}","\u{270F}\u{FE0F}"],
-        misi:"Baling, putar dan kira peluang, dari dadu sampailah permainan yang adil."},
+        misi:"Baling, putar dan kira peluang, daripada dadu hingga permainan yang adil."},
   m4b1:{warna:"#6F42C1",lembut:"#EFE7FB",gelap:"#4A2B85",ikon:"\u{26F2}",
         hentian:["\u{1F33F}","\u{1F309}","\u{1F527}","\u{1F33B}","\u{1F5FC}","\u{26BE}"],
         misi:"Bentuk parabola, cari puncanya, dan gunakan fungsi kuadratik untuk menyelesaikan masalah sebenar."},
@@ -1979,7 +1986,7 @@ function pengsan(){
   var b=el("div","result");
   b.appendChild(el("div","badbig","\u{1F635}"));
   b.appendChild(el("h2",null,"Habis tenaga"));
-  b.appendChild(el("p",null,"Awak kehabisan tenaga sebelum sampai ke hentian seterusnya. Setiap jawapan betul menambah tenaga awak. Kalau meter ini mengganggu, hidupkan Mod tenang di peta."));
+  b.appendChild(el("p",null,"Awak kehabisan tenaga sebelum sampai ke hentian seterusnya. Setiap jawapan betul menambah tenaga awak. Jika meter ini mengganggu, hidupkan Mod tenang di peta."));
   var a=el("div","actions");a.style.justifyContent="center";
   var b1=el("button","btn");b1.textContent="Cuba hentian ini semula";b1.setAttribute("data-f","aksi");
   b1.onclick=function(){ mulaAras(S.aras); };
@@ -2332,12 +2339,12 @@ function renderNamaBebas(){
   bd.innerHTML='<div class="sambut">'+
     '<img class="logo" src="ikon.svg" alt="">'+
     '<h2>Jom mula jejak Matematik!</h2>'+
-    '<p>Tulis nama awak dulu. Nama ni disimpan dalam telefon ni je.</p></div>';
+    '<p>Tulis nama awak dahulu. Nama ini disimpan dalam telefon ini sahaja.</p></div>';
   var t=el("div","tengah");
   var l1=el("label","medan-bebas"); l1.innerHTML='<span>Nama awak</span>';
   var n=el("input"); n.type="text"; n.id="namaBebas"; n.maxLength=40; n.autocomplete="given-name";
   n.placeholder="Contoh: Aina"; n.value=S.namaMain||""; l1.appendChild(n);
-  var l2=el("label","medan-bebas"); l2.innerHTML='<span>Sekolah <small>(tak wajib)</small></span>';
+  var l2=el("label","medan-bebas"); l2.innerHTML='<span>Sekolah <small>(pilihan)</small></span>';
   var k=el("input"); k.type="text"; k.id="sekolahBebas"; k.maxLength=60; k.autocomplete="off";
   k.placeholder="Contoh: SMK Convent Bukit Nanas"; k.value=S.sekolahMain||""; l2.appendChild(k);
   var bt=el("button","btn penuh"); bt.textContent="Mula main"; bt.style.maxWidth="340px";
@@ -2346,7 +2353,7 @@ function renderNamaBebas(){
   bd.appendChild(t);
   function mula(){
     var v=n.value.replace(/\s+/g," ").trim();
-    if(v.length<2){ msg.hidden=false; msg.textContent="Tulis nama awak dulu, sekurang-kurangnya 2 huruf."; n.focus(); return; }
+    if(v.length<2){ msg.hidden=false; msg.textContent="Tulis nama awak dahulu, sekurang-kurangnya 2 huruf."; n.focus(); return; }
     S.namaMain=v; S.sekolahMain=k.value.replace(/\s+/g," ").trim();
     simpanDiri(); render(); window.scrollTo({top:0});
   }
@@ -2596,7 +2603,7 @@ function kadPasang(){
   var k=el("div","kotakmain pasang");
   k.appendChild(el("span","em","\u{1F4F2}"));
   var d=GESA_PASANG
-    ? "Sekali tekan, terus main. Tak payah cari pautan dalam group lagi."
+    ? "Sekali tekan, terus main. Tidak perlu mencari pautan dalam kumpulan lagi."
     : ios
     ? '<ol class="langkah"><li>Tekan butang <b>Kongsi</b> (petak dengan anak panah ke atas) di bawah skrin.</li>'+
       '<li>Pilih <b>Add to Home Screen</b>.</li></ol>'
@@ -2700,7 +2707,7 @@ function renderPeta(){
      (S.rentetan>0?'<span class="stat"><span aria-hidden="true">🔥</span>'+S.rentetan+' hari</span>':'')+
      ((S.inhaler||S.hemo)?'<span class="stat" title="Kuasa: tenaga segar dan petunjuk"><span aria-hidden="true">⚡</span>'+S.inhaler+' <span aria-hidden="true">🔍</span>'+S.hemo+'</span>':'')+
      '</div>';
-  if(!berekod) h+='<span class="latihan">'+(S.namaMain?'Main bebas: kemajuan disimpan dalam telefon ni je':'Mod latihan: markah tidak dihantar kepada cikgu')+'</span>';
+  if(!berekod) h+='<span class="latihan">'+(S.namaMain?'Main bebas: kemajuan disimpan dalam telefon ini sahaja':'Mod latihan: markah tidak dihantar kepada cikgu')+'</span>';
   w.innerHTML=h;
   st.appendChild(w);
 
@@ -2729,7 +2736,7 @@ function renderPeta(){
       var t=el("button",kunci?"terkunci":null); t.type="button"; t.title=kunci?"Bab premium — naik taraf untuk buka":b.kod;
       t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
       t.innerHTML=(kunci?'<span class="ik" aria-hidden="true">\u{1F512}</span>':'<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>')+esc(b.tajuk);
-      if(kunci) t.onclick=function(){ alert("\u{1F512} "+b.tajuk+" ialah bab premium.\n\nMinta cikgu awak naik taraf akaun untuk buka bab ni dan bab premium lain."); };
+      if(kunci) t.onclick=function(){ alert("\u{1F512} "+b.tajuk+" ialah bab premium.\n\nMinta cikgu awak naik taraf akaun untuk membuka bab ini dan bab premium yang lain."); };
       else t.onclick=function(){ tukarBab(b.id); };
       bp.appendChild(t);
     });
@@ -2776,8 +2783,8 @@ function renderPeta(){
   for(var n=6;n>S.aras;n--){ if(S.lulus[n]){ lompat=n; break; } }
   if(!S.latihan&&lompat&&!S.lulus[S.aras]){
     st.appendChild(el("p","note urutannota",
-      "Awak dah lepas hentian "+lompat+", tapi TP dikira ikut urutan. Lepas hentian "+
-      S.aras+" dulu supaya TP awak naik."));
+      "Awak sudah melepasi hentian "+lompat+", tetapi TP dikira mengikut urutan. Lepasi hentian "+
+      S.aras+" dahulu supaya TP awak naik."));
   }
 
   if(tunggu){
@@ -3000,7 +3007,7 @@ function renderSoalan(){
   }
 
   if(!S.modHarian&&!bos&&S.aras===1&&S.qi===0&&!Object.keys(S.lulus||{}).length)
-    bd.appendChild(el("p","qnote","Soalan pertama! Pilih jawapan yang betul, kemudian tekan Semak jawapan."));
+    bd.appendChild(el("p","qnote","Soalan pertama! "+({nombor:"Taip jawapan dalam kotak",banyak:"Pilih SEMUA jawapan yang betul",susun:"Tekan pilihan mengikut urutan yang betul",buka:"Tulis jawapan awak"}[q.j]||"Pilih jawapan yang betul")+", kemudian tekan Semak jawapan."));
 
   bd.appendChild(el("p","qtext",q.t));
   if(q.arahan) bd.appendChild(el("p","qnote",q.arahan));
@@ -3131,7 +3138,7 @@ function renderSoalan(){
     var PUJI=["Betul!","Hebat!","Tepat sekali!","Mantap!"];
     var tajukFb, emo;
     if(hantar){ tajukFb="Dihantar kepada cikgu"; emo="✉️"; }
-    else if(ulang){ tajukFb=S.retryOk?"Sekarang betul! Awak dah faham":"Belum lagi, tak apa"; emo=S.retryOk?"\u{1F4AA}":"\u{1F4A1}"; }
+    else if(ulang){ tajukFb=S.retryOk?"Sekarang betul! Awak sudah faham":"Belum lagi, tidak mengapa"; emo=S.retryOk?"\u{1F4AA}":"\u{1F4A1}"; }
     else if(q._betul){ tajukFb=(S.kombo>=3?"Kombo "+S.kombo+"!":PUJI[S.qi%PUJI.length]); emo=(S.kombo>=3?"\u{1F525}":"\u{1F389}"); }
     else { tajukFb="Jom lihat caranya"; emo="\u{1F4A1}"; }
     f.innerHTML='<span class="emo" aria-hidden="true">'+emo+'</span><div><b>'+tajukFb+'</b>'+
@@ -3148,6 +3155,8 @@ function renderSoalan(){
     var bk=el("button","btn ghost sm");bk.textContent="Balik ke peta";
     bk.onclick=function(){S.skrin="peta";hentiJam();render();};
     act.appendChild(bk);
+    /* Butang yang belum aktif kelihatan pucat; terangkan sebabnya (CSS memaparkannya hanya semasa :disabled). */
+    act.appendChild(el("p","petunjuk-semak",q.j==="nombor"?"Taip jawapan dahulu untuk menyemak.":q.j==="buka"?"Tulis sekurang-kurangnya "+MIN_HANTAR+" aksara dahulu.":"Pilih jawapan dahulu untuk menyemak."));
   } else {
     var bn=el("button","btn");bn.setAttribute("data-f","aksi");
     bn.textContent=(S.qi+1<S.set.length||perluPenentu())?"Teruskan":"Lihat keputusan";
@@ -4160,7 +4169,7 @@ function mainMingguIni(kelas,no){
    resit disemak. Lihat jejak-tp-admin/premium.js. */
 function bukaWaNaikTaraf(kod){
   var mesej="Salam, saya "+(PROFIL&&PROFIL.nama||"cikgu")+(PROFIL&&PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
-    ". Saya nak naik taraf akaun Jejak TP Matematik saya ke Premium "+kod+" (harga perintis RM23/tahun)."+
+    ". Saya ingin naik taraf akaun Jejak TP Matematik saya ke Premium "+kod+" (harga perintis RM23/tahun)."+
     (SESI&&SESI.user&&SESI.user.email?"\n\nE-mel akaun saya: "+SESI.user.email:"");
   window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
 }
@@ -4187,7 +4196,7 @@ function naikTarafOnline(peringkat, btn){
     location.href=j.url;
   }).catch(function(e){
     btn.disabled=false; btn.textContent=asal;
-    alert("Tak dapat buka halaman bayaran.\n\n"+e.message+"\n\nCuba lagi, atau bayar melalui WhatsApp.");
+    alert("Halaman bayaran tidak dapat dibuka.\n\n"+e.message+"\n\nCuba lagi, atau bayar melalui WhatsApp.");
   });
 }
 /* toyyibPay memulangkan guru ke ?cikgu=1&bayar=1 bersama billcode/status_id.
@@ -4206,19 +4215,19 @@ function semakBayaranKembali(cubaan){
   return panggilBayar({aksi:"semak",billcode:SEMAK_BIL}).then(function(j){
     if(j.status==="berjaya"){
       try{ localStorage.removeItem("cn-bil"); }catch(e){}
-      BAYAR_MESEJ={jenis:"berjaya",teks:"✅ Terima kasih! Bayaran berjaya dan Premium dah aktif. Resit dihantar ke e-mel guru."};
+      BAYAR_MESEJ={jenis:"berjaya",teks:"✅ Terima kasih! Bayaran berjaya dan Premium sudah aktif. Resit dihantar ke e-mel cikgu."};
       return muatProfil();
     }
     if(j.status==="gagal"){ BAYAR_MESEJ={jenis:"gagal",teks:"Bayaran tidak berjaya atau dibatalkan. Tiada caj dikenakan. Cuba lagi bila-bila masa."}; return; }
     if(j.status==="tiada"){ BAYAR_MESEJ=null; return; }
     if(cubaan<5){
-      BAYAR_MESEJ={jenis:"menunggu",teks:"⏳ Bank belum sahkan bayaran. Kami semak semula sendiri, tak perlu bayar lagi."};
+      BAYAR_MESEJ={jenis:"menunggu",teks:"⏳ Bank belum mengesahkan bayaran. Kami akan menyemak semula; cikgu tidak perlu membayar sekali lagi."};
       setTimeout(function(){ Promise.resolve(semakBayaranKembali(cubaan+1)).then(segarGuru); },15000);
       return;
     }
-    BAYAR_MESEJ={jenis:"menunggu",teks:"Bayaran masih belum disahkan. Kalau duit dah ditolak, Premium akan aktif sendiri bila bank sahkan. Masih tak aktif dalam 1 jam? WhatsApp kami."};
+    BAYAR_MESEJ={jenis:"menunggu",teks:"Bayaran masih belum disahkan. Jika wang sudah ditolak, Premium akan aktif secara automatik apabila bank mengesahkannya. Masih belum aktif selepas 1 jam? Hubungi kami melalui WhatsApp."};
   }).catch(function(){
-    BAYAR_MESEJ={jenis:"gagal",teks:"Tak dapat semak status bayaran sekarang. Muat semula halaman sebentar lagi."};
+    BAYAR_MESEJ={jenis:"gagal",teks:"Status bayaran tidak dapat disemak sekarang. Muat semula halaman sebentar lagi."};
   });
 }
 function barisPremium(nama, kod, aktif, tamat){
@@ -4319,7 +4328,7 @@ function panelMaklumBalas(){
   var p=el("div","panel maklumbalas");
   var bd=el("div","panel-bd"); p.appendChild(bd);
   if(!MB.buka){
-    bd.appendChild(el("div",null,'<h3>Bantu kami baiki Jejak TP</h3><p class="note">Dah cuba dengan murid? Kongsi pendapat cikgu dalam 1 minit. Kami baca setiap satu.</p>'+
+    bd.appendChild(el("div",null,'<h3>Bantu kami baiki Jejak TP</h3><p class="note">Sudah mencuba dengan murid? Kongsi pendapat cikgu dalam 1 minit. Kami membaca setiap maklum balas.</p>'+
       (MB.mesej?'<p class="note mb-ok">'+esc(MB.mesej)+'</p>':'')));
     var bb=el("button","btn sm"); bb.type="button"; bb.textContent="Beri maklum balas";
     bb.onclick=function(){ MB.buka=true; MB.mesej=""; renderCikgu(); };
@@ -4336,7 +4345,7 @@ function panelMaklumBalas(){
     sk.appendChild(b);
   });
   bd.appendChild(sk);
-  bd.appendChild(el("p","note mb-hujung","1 = tak mungkin guna &nbsp;&middot;&nbsp; 5 = pasti guna"));
+  bd.appendChild(el("p","note mb-hujung","1 = tidak mungkin guna &nbsp;&middot;&nbsp; 5 = pasti guna"));
   function kotak(lbl,kunci,ph){
     var m=el("div","medan"); m.appendChild(el("label",null,lbl));
     var t=el("textarea","free"); t.maxLength=1500; t.placeholder=ph; t.value=MB[kunci];
@@ -4373,8 +4382,8 @@ function hantarMaklumBalas(){
   SB.from("jm_maklum_balas").insert({skor:MB.skor,suka:MB.suka.trim(),baiki:MB.baiki.trim(),tingkatan:ting,hubungi:MB.hubungi})
     .then(function(r){
       MB.sibuk=false;
-      if(r.error){ MB.mesej="Tak berjaya dihantar. Cuba lagi."; MB.ralat=true; }
-      else { MB={buka:false,skor:0,suka:"",baiki:"",ting:{},hubungi:true,sibuk:false,mesej:"Terima kasih cikgu! Maklum balas dah sampai.",ralat:false}; }
+      if(r.error){ MB.mesej="Tidak berjaya dihantar. Cuba lagi."; MB.ralat=true; }
+      else { MB={buka:false,skor:0,suka:"",baiki:"",ting:{},hubungi:true,sibuk:false,mesej:"Terima kasih, cikgu! Maklum balas sudah diterima.",ralat:false}; }
       renderCikgu();
     });
 }
@@ -4649,7 +4658,7 @@ function butiranMurid(kelas,no,auto,lapor){
 
   var lbl=el("div","ulasan-hd");
   lbl.appendChild(el("span","nm","Sebab penindihan"));
-  lbl.appendChild(el("span","meta","kalau cikgu tukar TP"));
+  lbl.appendChild(el("span","meta","jika cikgu menukar TP"));
   w.appendChild(lbl);
   var sb=el("textarea"); sb.style.minHeight="64px";
   sb.placeholder="Contoh: pemerhatian semasa amali dan soal jawab lisan menunjukkan penguasaan lebih tinggi daripada rekod bertulis.";
@@ -5235,7 +5244,7 @@ function paneSenarai(){
       if(!k.contoh){
         var bw=el("a","btnkecil"); bw.textContent="WhatsApp";
         bw.href="https://wa.me/?text="+encodeURIComponent("Hai "+namaPendek(kelas,m.no)+"! Ini pautan Jejak TP Matematik untuk awak seorang. "+
-          "Tekan sekali, terus masuk, tak perlu taip PIN:\n"+urlPeribadi(k.kod,m.no,m.pin)+"\n\nJangan kongsi pautan ni dengan kawan ya.");
+          "Tekan sekali untuk terus masuk, tanpa menaip PIN:\n"+urlPeribadi(k.kod,m.no,m.pin)+"\n\nJangan kongsi pautan ini dengan kawan.");
         bw.target="_blank"; bw.rel="noopener";
         bw.title="Hantar pautan masuk terus kepada "+m.nama+" sahaja";
         ops.appendChild(bw); ops.appendChild(document.createTextNode(" "));
