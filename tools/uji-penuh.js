@@ -27,7 +27,7 @@ const tanpaLaporanPenuh = process.argv.includes("--ringkas");
     p.on("dialog", d => d.dismiss().catch(() => {}));
     await p.goto("http://localhost:8811/index-uji.html?demo=murid", { waitUntil: "domcontentloaded" });
     await p.waitForTimeout(1800);
-    await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(800);
+    await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(800);
     const teks = h => String(h).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
     const laporan = { pilih: 0, banyak: 0, susun: 0, nombor: 0, buka: 0, bos: 0 };
     const gagal = [];

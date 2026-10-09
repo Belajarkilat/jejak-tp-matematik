@@ -43,7 +43,7 @@ const ok = (c, m, x) => { console.log((c ? "✓ " : "✗ ") + m + (c ? "" : "  "
     p.on("pageerror", e => ralat.push(e.message));
     await p.goto("http://localhost:8811/index.html?demo=murid", { waitUntil: "domcontentloaded" });
     await p.waitForTimeout(1500);
-    await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(600);
+    await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(600);
     await p.click('[data-f="stop-1"]'); await p.waitForTimeout(400);
 
     const corak = sc.biasa + (sc.bos ? "T" : "F") + sc.penentu;

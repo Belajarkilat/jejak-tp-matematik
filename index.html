@@ -1192,7 +1192,9 @@ function tingkatanBab(id){ var m=/^m(\d)b/.exec(id||""); return m?+m[1]:3; }
 function tingkatanKelas(nama){ var m=/^\s*(?:t(?:ing(?:katan)?)?\.?\s*)?([1-5])(?!\d)/i.exec(nama||""); var t=m?+m[1]:null; return t&&BAB_TERSEDIA.indexOf("m"+t+"b1")>=0?t:null; }
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("jm-bab"); }catch(e){}
-if(BAB_TERSEDIA.indexOf(BAB_ID)<0) BAB_ID="m3b1";
+/* Pelawat baharu (tiada bab disimpan) mesti memilih tingkatan pada skrin nama main bebas. */
+var BAB_DIPILIH=BAB_TERSEDIA.indexOf(BAB_ID)>=0;
+if(!BAB_DIPILIH) BAB_ID="m3b1";
 
 /* ============================================================
    KANDUNGAN — dimuatkan daripada fail bank yang berasingan.
@@ -2349,13 +2351,31 @@ function renderNamaBebas(){
   k.placeholder="Contoh: SMK Convent Bukit Nanas"; k.value=S.sekolahMain||""; l2.appendChild(k);
   var bt=el("button","btn penuh"); bt.textContent="Mula main"; bt.style.maxWidth="340px";
   var msg=el("p","ralat",""); msg.hidden=true;
-  t.appendChild(l1); t.appendChild(l2); t.appendChild(bt); t.appendChild(msg);
+  var tkPilih=BAB_DIPILIH?tingkatanBab(BAB_ID):null;
+  var tingAda=[1,2,3,4,5].filter(function(x){ return BAB_TERSEDIA.indexOf("m"+x+"b1")>=0; });
+  var l3=el("div","medan-bebas"); l3.setAttribute("role","group"); l3.setAttribute("aria-labelledby","lblTingBebas");
+  l3.innerHTML='<span id="lblTingBebas">Tingkatan awak</span>';
+  var tp=el("div","tingpilih"); tp.style.marginTop="0";
+  tingAda.forEach(function(x){
+    var b=el("button"); b.type="button"; b.textContent="Tingkatan "+x; b.setAttribute("data-ting",x);
+    b.setAttribute("aria-pressed",x===tkPilih?"true":"false");
+    b.onclick=function(){
+      tkPilih=x; msg.hidden=true;
+      [].forEach.call(tp.children,function(c){ c.setAttribute("aria-pressed",c===b?"true":"false"); });
+    };
+    tp.appendChild(b);
+  });
+  l3.appendChild(tp);
+  t.appendChild(l1); t.appendChild(l3); t.appendChild(l2); t.appendChild(bt); t.appendChild(msg);
   bd.appendChild(t);
   function mula(){
     var v=n.value.replace(/\s+/g," ").trim();
     if(v.length<2){ msg.hidden=false; msg.textContent="Tulis nama awak dahulu, sekurang-kurangnya 2 huruf."; n.focus(); return; }
+    if(!tkPilih){ msg.hidden=false; msg.textContent="Pilih tingkatan awak dahulu."; tp.firstChild.focus(); return; }
     S.namaMain=v; S.sekolahMain=k.value.replace(/\s+/g," ").trim();
-    simpanDiri(); render(); window.scrollTo({top:0});
+    simpanDiri(); BAB_DIPILIH=true;
+    if(tingkatanBab(BAB_ID)!==tkPilih) tukarBab("m"+tkPilih+"b1");
+    else { render(); window.scrollTo({top:0}); }
   }
   n.onkeydown=function(e){ if(e.key==="Enter") k.focus(); };
   k.onkeydown=function(e){ if(e.key==="Enter") mula(); };

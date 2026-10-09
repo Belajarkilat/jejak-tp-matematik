@@ -11,7 +11,7 @@ const dir=process.argv[2]||'.';
  p.on('console',m=>{ if(m.type()==='error') ralat.push('console: '+m.text()); });
  await p.goto('http://localhost:8811/index.html?demo=murid',{waitUntil:'domcontentloaded'});
  await p.waitForTimeout(2500);
- await p.fill('#namaBebas','Aina'); await p.click('text=Mula main'); await p.waitForTimeout(1200);
+ await p.fill('#namaBebas','Aina'); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click('text=Mula main'); await p.waitForTimeout(1200);
  console.log('tajuk:',await p.title());
  console.log('muzik btn:',await p.$('#btnMuzik')!==null);
  await p.screenshot({path:dir+'/u1-peta.png'});

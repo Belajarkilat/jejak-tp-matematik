@@ -25,7 +25,7 @@ const fs = require("fs");
     };
     await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1800);
     await axe("nama murid");
-    await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(900);
+    await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(900);
     await axe("peta");
     await p.click('[data-f="stop-1"]'); await p.waitForTimeout(700);
     await axe("soalan");

@@ -12,7 +12,7 @@ const dir = process.argv[2] || ".";
   p.on("pageerror", e => ralat.push("pageerror: " + e.message));
   await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "domcontentloaded" });
   await p.waitForTimeout(1800);
-  await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(900);
+  await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(900);
   console.log("seg Cikgu kelihatan:", await p.$eval("#segMod", e => getComputedStyle(e).display !== "none"));
   await p.click("#btnBunyi"); await p.waitForTimeout(300);
   console.log("panel bunyi:", await p.$eval("#bunyiPanel", e => !e.hidden));

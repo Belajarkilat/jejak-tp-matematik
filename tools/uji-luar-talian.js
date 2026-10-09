@@ -22,7 +22,7 @@ const BASE = process.env.BASE || "http://localhost:8811";
   console.log("tajuk luar talian:", tajuk);
   const fonOk = await p.evaluate(async () => { await document.fonts.ready; return [...document.fonts].filter(f => f.status === "loaded").map(f => f.family).filter((v, i, a) => a.indexOf(v) === i); });
   console.log("fon dimuat dari cache:", fonOk.join(", ") || "tiada");
-  await p.click("text=Main dahulu tanpa rekod"); await p.waitForTimeout(700); await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(900);
+  await p.click("text=Main dahulu tanpa rekod"); await p.waitForTimeout(700); await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(900);
   await p.click('[data-f="stop-1"]'); await p.waitForTimeout(800);
   console.log("soalan dipaparkan luar talian:", !!(await p.$(".qtext")), " bank dimuat:", await p.evaluate(() => !!window.BANK && Object.keys(window.BANK).join(",")));
   console.log("ralat:", ralat.length ? ralat : "tiada");

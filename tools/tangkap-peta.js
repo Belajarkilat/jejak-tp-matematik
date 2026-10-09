@@ -13,7 +13,7 @@ fs.mkdirSync(ARAH, { recursive: true });
     await ctx.addInitScript(id => { try { localStorage.setItem("jm-bab", id); } catch (e) {} }, bab);
     const p = await ctx.newPage();
     await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1500);
-    await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(900);
+    await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(900);
     await p.screenshot({ path: path.join(ARAH, bab + "-peta.png") });
     await p.click('[data-f="stop-1"]'); await p.waitForTimeout(800);
     await p.screenshot({ path: path.join(ARAH, bab + "-soalan.png") });

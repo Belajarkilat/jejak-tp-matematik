@@ -21,7 +21,7 @@ fs.mkdirSync(ARAH, { recursive: true });
     const p = await ctx.newPage(); const ralat = [];
     p.on("pageerror", e => ralat.push("pageerror: " + e.message));
     await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1500);
-    await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(800);
+    await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(800);
     await p.click('[data-f="stop-1"]'); await p.waitForTimeout(700);
     const kunci = await p.evaluate(id => Object.keys(window.BANK[id].lampiran || {}), bab);
     for (const k of kunci) {

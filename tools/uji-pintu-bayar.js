@@ -10,7 +10,7 @@ const BASE = process.env.BASE || "http://localhost:8811";
   const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
     const p = await ctx.newPage();
   await p.goto(BASE + "/index.html?demo=murid", { waitUntil: "load" }); await p.waitForTimeout(1800);
-  await p.fill("#namaBebas", "Aina"); await p.click("text=Mula main"); await p.waitForTimeout(1000);
+  await p.fill("#namaBebas", "Aina"); await p.evaluate(()=>{const b=document.querySelector('[data-ting][aria-pressed="true"]')||document.querySelector('[data-ting="3"]');if(b)b.click();}); await p.click("text=Mula main"); await p.waitForTimeout(1000);
   let pesan = "";
   p.on("dialog", d => { pesan = d.message(); d.dismiss().catch(() => {}); });
   const senarai = await p.evaluate(() => [...document.querySelectorAll("button.terkunci, .terkunci")].map(e => e.innerText.trim().slice(0, 30)));
