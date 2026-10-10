@@ -4261,6 +4261,29 @@ function semakBayaranKembali(cubaan){
     BAYAR_MESEJ={jenis:"gagal",teks:"Status bayaran tidak dapat disemak sekarang. Muat semula halaman sebentar lagi."};
   });
 }
+/* Butang "Langgan" di landing.html membuka ?cikgu&naik=rendah|atas. Niat itu
+   disimpan dalam localStorage (bertahan melalui daftar dan log masuk Google)
+   selama sejam, kemudian halaman bayaran dibuka sebaik sahaja cikgu berada di
+   skrin utama. Cikgu yang sudah Premium bagi peringkat itu tidak dicaj lagi. */
+function simpanNiatNaik(){
+  try{
+    var u=new URL(location.href), n=u.searchParams.get("naik");
+    if(!u.searchParams.has("naik")) return;
+    if(n==="rendah"||n==="atas") localStorage.setItem("jm-naik",JSON.stringify({p:n,t:Date.now()}));
+    u.searchParams.delete("naik");
+    history.replaceState(null,"",u.pathname+u.search+u.hash);
+  }catch(e){}
+}
+function teruskanNiatNaik(){
+  var niat=null;
+  try{ niat=JSON.parse(localStorage.getItem("jm-naik")||"null"); }catch(e){}
+  if(!niat) return;
+  try{ localStorage.removeItem("jm-naik"); }catch(e){}
+  if(Date.now()-niat.t>3600000||SEMAK_BIL) return;
+  if(niat.p==="rendah"?PROFIL.premiumRendah:PROFIL.premiumAtas) return;
+  if(!bayarOnline()) return bukaWaNaikTaraf(niat.p==="rendah"?"Menengah Rendah":"Menengah Atas");
+  naikTarafOnline(niat.p,document.createElement("button"));
+}
 function barisPremium(nama, kod, aktif, tamat){
   var d=el("div","baris-premium");
   var kiri=el("div","grow");
@@ -4311,7 +4334,8 @@ function paneRumah(ak){
   hd.appendChild(bb);
   ak.appendChild(hd);
 
-  /* Pilot: kad Premium disembunyikan. */
+  ak.appendChild(kadPremium());
+  teruskanNiatNaik();
   var pb=el("div"); pilihBabGuru(pb);
   if(RALAT_GURU){
     ak.appendChild(pb);
@@ -5523,6 +5547,7 @@ function mula(){
     if(qk) u.searchParams.delete("k");
     if(u.search!==location.search) history.replaceState(null,"",u.pathname+u.search+u.hash);
   }catch(e){}
+  simpanNiatNaik();
   var qdaftar=false;
   try{ var up=new URL(location.href); modLama=(up.searchParams.has("cikgu")||up.searchParams.has("daftar"))?"cikgu":null; qdaftar=up.searchParams.has("daftar"); }catch(e){ modLama=null; }
 

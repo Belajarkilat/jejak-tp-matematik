@@ -157,6 +157,8 @@ a{color:inherit}
 .plan ul{margin:10px 0 0;padding-left:20px;color:var(--ink2);font-size:.92rem;display:flex;flex-direction:column;gap:4px}
 .harga-nota{margin-top:16px;color:var(--ink2);font-size:.92rem;max-width:70ch}
 .plan .rm s{font:600 1.15rem "Lexend",sans-serif;color:var(--ink2);text-decoration-thickness:2px;text-decoration-color:#E0424B}
+.plan .langgan{margin-top:auto;align-self:stretch;text-align:center}
+.plan-bayar{margin-top:4px;font-size:.82rem;color:var(--ink2);text-align:center}
 .plan .perintis{align-self:flex-start;background:var(--gold);color:#3A2510;font:700 12.5px "Lexend",sans-serif;padding:4px 10px;border-radius:99px}
 .perintis-jalur{margin-top:14px;display:inline-block;background:color-mix(in srgb,var(--gold) 22%,var(--surface));border:1.5px solid var(--gold);border-radius:14px;padding:12px 16px;font-size:.98rem;color:var(--ink)}
 
@@ -234,7 +236,7 @@ footer .ng b{color:var(--teal)}
   <div class="video-kotak">
     <div class="telefon" id="telefon">
       <video id="vidDemo" src="video-demo-math.mp4?v=2" poster="video-demo-poster-math.jpg?v=2" preload="none" playsinline width="720" height="1558" aria-label="Video demo Jejak TP Matematik, satu minit"></video>
-      <button class="main-btn" id="mainBtn" type="button" aria-label="Main video demo">
+      <button class="main-btn" id="mainBtn" type="button" aria-label="Mainkan video demo">
         <span class="bulat"><svg viewBox="0 0 24 24" fill="#12302C" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></span>
         <span class="label">Tonton satu minit</span>
       </button>
@@ -329,7 +331,7 @@ footer .ng b{color:var(--teal)}
       <div>
         <span class="tunjuk-label">Diagnostik</span>
         <h3>Kenal pasti soalan yang paling banyak dijawab salah</h3>
-        <p>Grid ini menunjukkan jawapan setiap murid bagi setiap soalan. Topik yang tidak dikuasai oleh lebih separuh kelas ditanda dan dimasukkan ke dalam kotak "Ajar semula esok", maka guru tidak perlu menyemak kertas satu demi satu untuk mengetahui bahagian yang perlu diberi tumpuan.</p>
+        <p>Grid ini menunjukkan jawapan setiap murid bagi setiap soalan. Topik yang tidak dikuasai oleh lebih separuh kelas ditandakan dan dimasukkan ke dalam kotak "Ajar semula esok", jadi guru tidak perlu menyemak kertas satu demi satu untuk mengetahui bahagian yang perlu diberi tumpuan.</p>
       </div>
     </div>
   </div>
@@ -340,7 +342,7 @@ footer .ng b{color:var(--teal)}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
     <div>
       <h2>Mengikut DSKP dan disemak dengan teliti</h2>
-      <p>Setiap soalan ditulis mengikut Standard Pembelajaran DSKP KSSM, dan Standard Prestasi disalin kata demi kata daripada dokumen rasmi. Lebih 1 800 jawapan berangka disemak semula oleh sistem melalui pengiraan berasingan supaya rajah dan jawapan tidak bercanggah.</p>
+      <p>Setiap soalan ditulis mengikut Standard Pembelajaran DSKP KSSM, dan Standard Prestasi disalin kata demi kata daripada dokumen rasmi. Lebih daripada 1 800 jawapan berangka disemak semula oleh sistem melalui pengiraan berasingan supaya rajah dan jawapan tidak bercanggah.</p>
       <p>Jejak TP Matematik masih baharu dan terus ditambah baik. Jika ada soalan yang tidak sesuai dengan buku teks guru, sila beritahu kami melalui butang "Beri maklum balas" dalam aplikasi, dan kami akan membetulkannya.</p>
     </div>
   </div>
@@ -361,15 +363,19 @@ footer .ng b{color:var(--teal)}
       <span class="rm"><s>RM33</s> RM23 <small>/ tahun</small></span>
       <span class="perintis">Harga perintis hingga 31 Dis 2026</span>
       <p>Semua bab Tingkatan 1, 2 dan 3 (35 bab). Ciri-ciri lain sama seperti akaun percuma.</p>
+      <a class="btn utama langgan" href="index.html?cikgu&amp;naik=rendah">Langgan RM23</a>
+      <span class="plan-bayar">Log masuk atau daftar dahulu, kemudian bayar melalui FPX.</span>
     </div>
-    <div class="plan">
+    <div class="plan utama">
       <span class="siapa">Premium — Menengah atas</span>
       <span class="rm"><s>RM33</s> RM23 <small>/ tahun</small></span>
       <span class="perintis">Harga perintis hingga 31 Dis 2026</span>
       <p>Semua bab Tingkatan 4 (10 bab) dan Tingkatan 5 (8 bab).</p>
+      <a class="btn utama langgan" href="index.html?cikgu&amp;naik=atas">Langgan RM23</a>
+      <span class="plan-bayar">Log masuk atau daftar dahulu, kemudian bayar melalui FPX.</span>
     </div>
   </div>
-  <p class="harga-nota">Mulai 1 Januari 2027, harga akan naik kepada RM33 setahun. Guru yang melanggan sebelum 31 Disember 2026 kekal membayar RM23 setiap tahun, selagi langganan tidak terputus.</p>
+  <p class="harga-nota">Mulai 1 Januari 2027, harga akan naik kepada RM33 setahun. Guru yang melanggan sebelum 31 Disember 2026 kekal membayar RM23 setiap tahun, selagi langganan tidak terputus. Mengajar kedua-dua peringkat? Langgan kedua-duanya pada harga RM23 setiap satu.</p>
 </div>
 
 <div class="wrap soalan-sec">
@@ -413,7 +419,7 @@ footer .ng b{color:var(--teal)}
 <div class="wrap">
   <div class="penutup">
     <h2>Cuba dahulu dengan kelas guru sendiri</h2>
-    <p>Hanya lima minit untuk mengimport senarai murid, dan guru terus mendapat kod kelas untuk dikongsi. Kad kredit tidak diperlukan.</p>
+    <p>Mengimport senarai murid hanya mengambil masa lima minit, dan guru terus mendapat kod kelas untuk dikongsi. Kad kredit tidak diperlukan.</p>
     <div class="ctas">
       <a class="btn utama" href="index.html?daftar">Daftar percuma</a>
       <a class="btn kedua" href="index.html?demo=cikgu">Lihat kelas contoh dahulu</a>
@@ -424,7 +430,7 @@ footer .ng b{color:var(--teal)}
 <div class="wrap">
   <footer>
     <span>Jejak TP Matematik · Matematik KSSM Tingkatan 1–5</span>
-    <span><a href="terma.html">Terma &amp; bayaran balik</a></span>
+    <span><a href="terma.html">Terma dan bayaran balik</a></span>
     <span class="ng">Satu produk <b>Naik</b>Gred</span>
   </footer>
 </div>
