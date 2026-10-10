@@ -891,7 +891,7 @@ body.zon-murid{color:var(--tinta)}
 .jalurbungkus .anak.kiri{left:3px}
 .jalurbungkus .anak.kanan{right:3px}
 .jalurbungkus[data-kiri="1"] .anak.kiri,.jalurbungkus[data-kanan="1"] .anak.kanan{opacity:.9}
-.babpilih{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.babpilih{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:14px}
 .babpilih::-webkit-scrollbar{display:none}
 .tingpilih{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
 /* 44px: chip tingkatan ialah navigasi utama peta, bukan hiasan. */
@@ -923,13 +923,19 @@ body.zon-murid{color:var(--tinta)}
 .maklumbalas textarea.free{min-height:96px;margin-top:0}
 .mb-ok{color:var(--teal);font-weight:650}
 .babpilih button{
-  flex:none;display:flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;
-  border:2px solid var(--garis);background:var(--kad);color:var(--tinta);border-radius:999px;
-  padding:6px 14px 6px 8px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:15px;
+  display:flex;align-items:center;gap:7px;cursor:pointer;text-align:left;
+  border:2px solid var(--garis);background:var(--kad);color:var(--tinta);border-radius:16px;
+  padding:6px 12px 6px 8px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:15px;
   box-shadow:0 3px 0 var(--garis);min-height:44px;
 }
 .babpilih button[aria-pressed="true"]{background:var(--tinta);color:var(--kad)}
-.babpilih .ik{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;border:2px solid var(--garis)}
+.babpilih .tb{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.babpilih .tb b{font-size:14px;overflow-wrap:anywhere}
+.babpilih .tb small{font-family:inherit;font-weight:600;font-size:11.5px;opacity:.75}
+.guru-lungsur{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.guru-lungsur label{display:flex;flex-direction:column;gap:2px;font-size:12.5px;font-weight:700;flex:1 1 140px;min-width:0}
+.guru-lungsur select{min-height:44px;font:inherit;font-size:15px;padding:6px 10px;border-radius:10px;border:2px solid var(--garis,var(--line2));background:var(--kad,var(--surface));color:inherit;width:100%}
+.babpilih .ik{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:16px;border:2px solid var(--garis)}
 
 .laluan{position:relative;margin:44px auto 10px;max-width:560px}
 .laluan svg.jalan{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
@@ -1416,6 +1422,11 @@ function pasangJenama(){
   var ge=document.getElementById("guruEyebrow");
   if(ge) ge.textContent="Matematik · Tingkatan "+BAB.tingkatan+" · "+BAB.kod;
   document.title = BAB.tajuk ? ("Jejak TP Matematik · "+BAB.tajuk) : "Jejak TP Matematik";
+}
+/* "Bab 3 · Indeks": nombor bab dan tajuk topik, bukan nama dunia permainan. */
+function labelBab(b){
+  var m=/b(\d+)$/.exec(b.id||""), tajuk=String(b.kod||"").replace(/^\d+(\.\d+)?\s*/,"");
+  return "Bab "+(m?m[1]:"")+" \u00B7 "+esc(tajuk);
 }
 function senaraiBab(){
   return BAB_TERSEDIA.filter(function(x){ return !!(window.BAB_INDEKS&&window.BAB_INDEKS[x]); })
@@ -2755,12 +2766,12 @@ function renderPeta(){
       var dd=duniaBab(b.id), kunci=!bebasBab(b.id)&&!premium;
       var t=el("button",kunci?"terkunci":null); t.type="button"; t.title=kunci?"Bab premium — naik taraf untuk buka":b.kod;
       t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
-      t.innerHTML=(kunci?'<span class="ik" aria-hidden="true">\u{1F512}</span>':'<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>')+esc(b.tajuk);
+      t.innerHTML=(kunci?'<span class="ik" aria-hidden="true">\u{1F512}</span>':'<span class="ik" style="background:'+dd.warna+'" aria-hidden="true">'+dd.ikon+'</span>')+'<span class="tb"><b>'+labelBab(b)+'</b><small>'+esc(b.tajuk)+'</small></span>';
       if(kunci) t.onclick=function(){ alert("\u{1F512} "+b.tajuk+" ialah bab premium.\n\nMinta cikgu awak naik taraf akaun untuk membuka bab ini dan bab premium yang lain."); };
       else t.onclick=function(){ tukarBab(b.id); };
       bp.appendChild(t);
     });
-    st.appendChild(bungkusJalur(bp,'button[aria-pressed="true"]'));
+    st.appendChild(bp);
   }
 
   /* peta level */
@@ -4494,41 +4505,39 @@ function pilihBabGuru(p){
   var semuaBab=senaraiBab(), tingKini=tingkatanBab(BAB_ID), premium=premiumAktif(tingKini);
   if(semuaBab.length<2) return;
   var tingAda=[1,2,3,4,5].filter(function(t){ return semuaBab.some(function(b){ return tingkatanBab(b.id)===t; }); });
+  var w=el("div","guru-lungsur");
+  function medanLungsur(teks,id){
+    var l=el("label"); l.htmlFor=id; l.appendChild(document.createTextNode(teks));
+    var sel=el("select"); sel.id=id; l.appendChild(sel); w.appendChild(l); return sel;
+  }
   if(tingAda.length>1){
-    var tr=el("div","actions tingguru");
-    tingAda.forEach(function(t){
-      var b=el("button","kbtn"); b.type="button"; b.textContent="Tingkatan "+t;
-      b.setAttribute("aria-pressed",t===tingKini?"true":"false");
-      if(t===tingKini){ b.style.borderColor="var(--vena)"; b.style.fontWeight="700"; }
-      b.onclick=function(){
-        var pertama=semuaBab.filter(function(x){ return tingkatanBab(x.id)===t; })[0];
-        if(pertama) tukarBabGuru(pertama.id);
-      };
-      tr.appendChild(b);
-    });
-    p.appendChild(tr);
+    var st=medanLungsur("Tingkatan","guru-ting");
+    tingAda.forEach(function(t){ var o=el("option",null,"Tingkatan "+t); o.value=String(t); st.appendChild(o); });
+    st.value=String(tingKini);
+    st.onchange=function(){
+      var pertama=semuaBab.filter(function(x){ return tingkatanBab(x.id)===+st.value; })[0];
+      if(pertama) tukarBabGuru(pertama.id); else st.value=String(tingKini);
+    };
   }
   var babs=semuaBab.filter(function(b){ return tingkatanBab(b.id)===tingKini; });
   var ada_terkunci=false;
-  var row=el("div","actions");
+  var sb=medanLungsur("Bab","guru-bab");
   babs.forEach(function(b){
     var kunci=!bebasBab(b.id)&&!premium;
     if(kunci) ada_terkunci=true;
-    var t=el("button","kbtn"+(kunci?" terkunci":"")); t.type="button";
-    t.innerHTML=(kunci?"\u{1F512} ":"\u{1F4D8} ")+esc(b.kod);
-    t.setAttribute("aria-pressed",b.id===BAB_ID?"true":"false");
-    if(kunci){
-      t.title="Bab premium — naik taraf untuk buka";
-      t.onclick=function(){ bukaWaNaikTaraf(tingkatanBab(b.id)<=3?"Menengah Rendah":"Menengah Atas"); };
-    }
-    else{
-      if(b.id===BAB_ID){ t.style.borderColor="var(--vena)"; t.style.background="var(--surface)"; t.style.fontWeight="700"; }
-      t.onclick=function(){ tukarBabGuru(b.id); };
-    }
-    row.appendChild(t);
+    var o=el("option"); o.value=b.id;
+    o.textContent=(kunci?"\u{1F512} ":"")+labelBab(b).replace(/&amp;/g,"&");
+    sb.appendChild(o);
   });
-  p.appendChild(row);
-  if(ada_terkunci&&!premium) row.parentNode.appendChild(el("span","note akan-datang-guru",
+  sb.value=BAB_ID;
+  sb.onchange=function(){
+    var b=semuaBab.filter(function(x){ return x.id===sb.value; })[0];
+    if(!b) return;
+    if(!bebasBab(b.id)&&!premium){ sb.value=BAB_ID; bukaWaNaikTaraf(tingkatanBab(b.id)<=3?"Menengah Rendah":"Menengah Atas"); return; }
+    tukarBabGuru(b.id);
+  };
+  p.appendChild(w);
+  if(ada_terkunci&&!premium) p.appendChild(el("span","note akan-datang-guru",
     "\u{1F512} Bab premium dikunci. Naik taraf pada harga perintis RM23/tahun (hingga 31 Dis) untuk buka semua bab "+(tingKini<=3?"Menengah Rendah (T1-3)":"Menengah Atas (T4-5)")+"."));
 }
 
