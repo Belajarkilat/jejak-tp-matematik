@@ -47,6 +47,12 @@
   --shadow:0 18px 40px -22px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
+/* Latar Jalur Gemilang lembut (patriotik) */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2028%2014%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%3E%3Crect%20width%3D%2228%22%20height%3D%2214%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20y%3D%220%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20y%3D%222%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20y%3D%224%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20y%3D%226%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20y%3D%228%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20y%3D%2210%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20y%3D%2212%22%20width%3D%2228%22%20height%3D%221%22%20fill%3D%22%23CC0001%22%2F%3E%3Crect%20width%3D%2214%22%20height%3D%228%22%20fill%3D%22%23010066%22%2F%3E%3Ccircle%20cx%3D%225.6%22%20cy%3D%224%22%20r%3D%222.9%22%20fill%3D%22%23FFCC00%22%2F%3E%3Ccircle%20cx%3D%226.5%22%20cy%3D%224%22%20r%3D%222.4%22%20fill%3D%22%23010066%22%2F%3E%3Cpolygon%20points%3D%229.100%2C1.400%209.334%2C2.976%2010.228%2C1.657%209.755%2C3.179%2011.133%2C2.379%2010.046%2C3.544%2011.635%2C3.421%2010.150%2C4.000%2011.635%2C4.579%2010.046%2C4.456%2011.133%2C5.621%209.755%2C4.821%2010.228%2C6.343%209.334%2C5.024%209.100%2C6.600%208.866%2C5.024%207.972%2C6.343%208.445%2C4.821%207.067%2C5.621%208.154%2C4.456%206.565%2C4.579%208.050%2C4.000%206.565%2C3.421%208.154%2C3.544%207.067%2C2.379%208.445%2C3.179%207.972%2C1.657%208.866%2C2.976%22%20fill%3D%22%23FFCC00%22%2F%3E%3C%2Fsvg%3E") center/cover no-repeat;opacity:.075}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.10}}
+:root[data-theme="dark"] body::before{opacity:.10}
+@media (max-width:760px){body::before{background-size:100% auto;background-position:center top;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);opacity:.09}}
+
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Lexend",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:"Baloo 2","Trebuchet MS",sans-serif;line-height:1.08;margin:0;text-wrap:balance}
