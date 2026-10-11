@@ -52,6 +52,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.10}}
 :root[data-theme="dark"] body::before{opacity:.10}
 @media (max-width:760px){body::before{background-size:100% auto;background-position:center top;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);opacity:.09}}
+/* Alunan lembut bendera */
+body::after{content:"";position:fixed;top:0;bottom:0;left:-240px;width:calc(100% + 480px);z-index:-1;pointer-events:none;background:repeating-linear-gradient(90deg,rgba(125,15,58,0) 0,rgba(125,15,58,.055) 70px,rgba(125,15,58,0) 140px,rgba(255,255,255,.0) 180px,rgba(125,15,58,0) 240px);animation:alun-geser 9s linear infinite;will-change:transform}
+body::before{animation:alun-hayun 7s ease-in-out infinite alternate;will-change:transform}
+@keyframes alun-geser{to{transform:translateX(240px)}}
+@keyframes alun-hayun{from{transform:translate3d(0,0,0) scale(1.03) skewY(0deg)}to{transform:translate3d(-10px,-8px,0) scale(1.06) skewY(-1.2deg)}}
+@media (max-width:760px){body::after{-webkit-mask-image:linear-gradient(#000 30%,transparent 62%);mask-image:linear-gradient(#000 30%,transparent 62%)}}
+@media (prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
 
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 "Lexend",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
