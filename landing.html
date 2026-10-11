@@ -67,6 +67,9 @@ a{color:inherit}
 .hero-photo{position:relative;justify-self:start}
 .hero-photo img{width:100%;max-width:184px;height:auto;display:block;border-radius:18px;border:6px solid var(--surface);box-shadow:var(--shadow);transform:rotate(-2.2deg)}
 .hero-badge{position:absolute;left:-10px;bottom:16px;background:var(--gold);color:#3A2510;font:700 12px "Baloo 2",sans-serif;padding:7px 11px;border-radius:10px;transform:rotate(-4deg);box-shadow:0 10px 22px -12px rgba(0,0,0,.35)}
+.lencana-pink{position:absolute;right:-12px;top:-12px;width:58px;height:58px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px -10px rgba(125,15,58,.6);transform:rotate(10deg);border:3px solid var(--surface)}
+.lencana-pink.bar{position:static;width:42px;height:42px;transform:none;margin-left:auto;margin-right:12px;flex:none}
+.topbar .lencana-pink.bar+.cta{margin-left:0}
 .eyebrow-tag{display:inline-block;background:var(--mint);color:var(--teal-deep);font:600 14.5px "Lexend",sans-serif;padding:6px 14px;border-radius:99px;margin-bottom:16px}
 :root[data-theme="dark"] .eyebrow-tag,:root[data-theme="dark"] .step i,:root[data-theme="dark"] .cerita svg{color:#FAD4E4}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow-tag,:root:not([data-theme="light"]) .step i,:root:not([data-theme="light"]) .cerita svg{color:#FAD4E4}}
@@ -217,6 +220,7 @@ footer .ng b{color:var(--teal)}
 <div class="wrap hero">
   <div class="hero-photo">
     <img src="promo-hero-math.jpg" alt="Ilustrasi guru Matematik berhijab memegang kalkulator, jangka lukis dan pembaris" width="440" height="794">
+    <div class="lencana-pink" title="Pinktober" role="img" aria-label="Pita Pinktober"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 5.5C8.5 2 15.5 2 15.5 5.5 15.5 10.5 8.6 15.5 6.5 21.5"/><path d="M8.5 5.5C8.5 10.5 15.4 15.5 17.5 21.5"/></svg></div>
     <div class="hero-badge">53 bab, T1–T5</div>
   </div>
   <div>
