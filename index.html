@@ -3397,6 +3397,8 @@ var PERANTI=(function(){
 var ralatDihantar={};
 function ping(jenis,bab,aras,nota){
   if(!AWAN||!PERANTI) return;
+  /* Ujian automatik (CI di localhost, Playwright) tidak boleh mencemar statistik sebenar. */
+  if(navigator.webdriver||/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
   try{
     fetch(AWAN.url+"/rest/v1/rpc/jm_ping",{
       method:"POST", keepalive:true,
