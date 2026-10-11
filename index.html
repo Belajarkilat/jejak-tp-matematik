@@ -3977,8 +3977,9 @@ function bukaDemoGuru(){
   DEMO_GURU=true; S.gk="contoh"; S.tabCikgu="kelas"; S.muridPilih=null;
   renderCikgu(); window.scrollTo({top:0});
 }
+var DARI_DEMO=false;
 function cubaSebagaiMurid(){
-  mainTanpaRekod(); tukarMod("murid");
+  DARI_DEMO=true; mainTanpaRekod(); tukarMod("murid");
 }
 /* Kad nilai, diletak DI ATAS borang log masuk.
 
@@ -5570,7 +5571,7 @@ function mula(){
     } else if(!S.no){ S.latihan=false; S.skrin="nama"; }
   }
 
-  if(qdemo==="murid"&&!qk&&!authUrl){ S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); }
+  if(qdemo==="murid"&&!qk&&!authUrl){ DARI_DEMO=true; S.latihan=true; S.no=null; S.lulus={}; S.aras=1; S.skrin="peta"; simpanDiri(); }
   if(qdemo==="bebas"&&!qk&&!authUrl&&!(S.no&&S.kod)){ S.latihan=true; S.no=null; S.skrin="peta"; muatLatihan(); simpanDiri(); }
   if(S.latihan){
     var sekali=false;
@@ -5594,5 +5595,37 @@ mula();
 </script>
 
 <!-- Analitik Cloudflare Sains dibuang daripada Matematik supaya data pilot tidak bercampur. Letak token baharu bila domain Matematik siap. -->
+<style>
+.bar-daftar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:80;display:none;align-items:center;gap:12px;width:min(560px,calc(100% - 24px));padding:10px 10px 10px 16px;border-radius:16px;background:#14231F;color:#fff;box-shadow:0 14px 34px -14px rgba(0,0,0,.55);font-size:14.5px;line-height:1.35}
+.bar-daftar.nampak{display:flex}
+.bar-daftar span{flex:1}
+.bar-daftar a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:#F0A62F;color:#2A1B05;font-weight:700;text-decoration:none;white-space:nowrap}
+body.ada-bar-daftar{padding-bottom:84px}
+</style>
+<div class="bar-daftar" id="barDaftar" role="region" aria-label="Daftar percuma">
+  <span id="barDaftarTeks">Suka apa yang dilihat? Guna untuk kelas cikgu sendiri, percuma.</span>
+  <a id="barDaftarBtn" href="index.html?daftar">Daftar percuma</a>
+</div>
+<script>
+/* Bar "Daftar percuma" kekal di bawah skrin semasa demo guru (kelas contoh)
+   dan semasa guru mencuba sebagai murid. Tidak muncul untuk pengguna yang
+   sudah log masuk, murid kelas sebenar, atau pautan main bebas keluarga. */
+(function(){
+  var bar=document.getElementById("barDaftar"), teks=document.getElementById("barDaftarTeks");
+  function segar(){
+    try{
+      var zonMurid=document.body.classList.contains("zon-murid");
+      var demoGuru=(typeof DEMO_GURU!=="undefined"&&DEMO_GURU)&&!zonMurid;
+      var demoMurid=(typeof DARI_DEMO!=="undefined"&&DARI_DEMO)&&zonMurid&&S.latihan;
+      var log=(typeof SESI!=="undefined"&&SESI);
+      var nampak=!log&&(demoGuru||demoMurid);
+      teks.textContent=demoMurid?"Cikgu? Guna permainan ini dengan murid sebenar anda, percuma.":"Suka apa yang dilihat? Guna untuk kelas cikgu sendiri, percuma.";
+      bar.classList.toggle("nampak",nampak);
+      document.body.classList.toggle("ada-bar-daftar",nampak);
+    }catch(e){}
+  }
+  setInterval(segar,800); segar();
+})();
+</script>
 </body>
 </html>
