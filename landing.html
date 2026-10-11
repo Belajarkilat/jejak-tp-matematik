@@ -24,25 +24,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  --paper:#FBFAF6; --surface:#FFFFFF; --mint:#E4F5F1;
-  --ink:#12302C; --ink2:#4B6D67;
-  --teal:#1C7A73; --teal-deep:#0B4A46; --teal-line:#CFE6E1;
+  --paper:#FFF8FB; --surface:#FFFFFF; --mint:#FCE4EE;
+  --ink:#33121F; --ink2:#7A4A5C;
+  --teal:#C2185B; --teal-deep:#7D0F3A; --teal-line:#F4C9DA;
   --gold:#E8A33D; --gold-ink:#7A4E0E;
-  --shadow:0 18px 40px -22px rgba(11,74,70,.35);
+  --shadow:0 18px 40px -22px rgba(125,15,58,.35);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#0B1815; --surface:#122622; --mint:#173A34;
-    --ink:#EAF3F0; --ink2:#9FC1BA;
-    --teal:#3FB6AB; --teal-deep:#0B4A46; --teal-line:#1E4A43;
+    --paper:#1A0A12; --surface:#2A121E; --mint:#3A1828;
+    --ink:#FBEAF1; --ink2:#D9A8BD;
+    --teal:#D81B60; --teal-deep:#7D0F3A; --teal-line:#4A2234;
     --gold:#F0B35A; --gold-ink:#3A2510;
     --shadow:0 18px 40px -22px rgba(0,0,0,.6);
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0B1815; --surface:#122622; --mint:#173A34;
-  --ink:#EAF3F0; --ink2:#9FC1BA;
-  --teal:#3FB6AB; --teal-deep:#0B4A46; --teal-line:#1E4A43;
+  --paper:#1A0A12; --surface:#2A121E; --mint:#3A1828;
+  --ink:#FBEAF1; --ink2:#D9A8BD;
+  --teal:#D81B60; --teal-deep:#7D0F3A; --teal-line:#4A2234;
   --gold:#F0B35A; --gold-ink:#3A2510;
   --shadow:0 18px 40px -22px rgba(0,0,0,.6);
 }
@@ -68,8 +68,8 @@ a{color:inherit}
 .hero-photo img{width:100%;max-width:184px;height:auto;display:block;border-radius:18px;border:6px solid var(--surface);box-shadow:var(--shadow);transform:rotate(-2.2deg)}
 .hero-badge{position:absolute;left:-10px;bottom:16px;background:var(--gold);color:#3A2510;font:700 12px "Baloo 2",sans-serif;padding:7px 11px;border-radius:10px;transform:rotate(-4deg);box-shadow:0 10px 22px -12px rgba(0,0,0,.35)}
 .eyebrow-tag{display:inline-block;background:var(--mint);color:var(--teal-deep);font:600 14.5px "Lexend",sans-serif;padding:6px 14px;border-radius:99px;margin-bottom:16px}
-:root[data-theme="dark"] .eyebrow-tag,:root[data-theme="dark"] .step i,:root[data-theme="dark"] .cerita svg{color:#CFEFE9}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow-tag,:root:not([data-theme="light"]) .step i,:root:not([data-theme="light"]) .cerita svg{color:#CFEFE9}}
+:root[data-theme="dark"] .eyebrow-tag,:root[data-theme="dark"] .step i,:root[data-theme="dark"] .cerita svg{color:#FAD4E4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .eyebrow-tag,:root:not([data-theme="light"]) .step i,:root:not([data-theme="light"]) .cerita svg{color:#FAD4E4}}
 .hero h1{font-size:clamp(1.85rem,3.9vw,2.6rem);font-weight:800;line-height:1.16}
 .hero h1 mark{color:inherit;background:linear-gradient(transparent 60%,color-mix(in srgb,var(--gold) 55%,transparent) 60%);padding-inline:2px}
 .hero .lede{margin-top:16px;font-size:1.14rem;color:var(--ink2);max-width:46ch}
@@ -85,11 +85,11 @@ a{color:inherit}
 .video-sec{padding-block:8px 64px;scroll-margin-top:16px}
 .video-kotak{background:var(--mint);border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:44px;align-items:center}
 @media (max-width:760px){.video-kotak{grid-template-columns:1fr;padding:24px 18px;gap:28px}}
-.telefon{position:relative;justify-self:center;width:100%;max-width:300px;background:#0B1815;border-radius:34px;padding:9px;box-shadow:0 30px 60px -28px rgba(11,74,70,.55)}
+.telefon{position:relative;justify-self:center;width:100%;max-width:300px;background:#0B1815;border-radius:34px;padding:9px;box-shadow:0 30px 60px -28px rgba(125,15,58,.55)}
 @media (max-width:760px){.telefon{max-width:270px}}
-.telefon video{display:block;width:100%;height:auto;aspect-ratio:720/1558;border-radius:26px;background:#0d3a33;object-fit:cover}
-.main-btn{position:absolute;inset:9px;border:0;border-radius:26px;background:rgba(11,24,21,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;color:#fff;font:700 15px "Lexend",sans-serif}
-.main-btn .label{background:rgba(11,24,21,.78);padding:7px 14px;border-radius:99px}
+.telefon video{display:block;width:100%;height:auto;aspect-ratio:720/1558;border-radius:26px;background:#3a0f22;object-fit:cover}
+.main-btn{position:absolute;inset:9px;border:0;border-radius:26px;background:rgba(26,10,18,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;color:#fff;font:700 15px "Lexend",sans-serif}
+.main-btn .label{background:rgba(26,10,18,.78);padding:7px 14px;border-radius:99px}
 .main-btn .bulat{width:76px;height:76px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -10px rgba(0,0,0,.5);transition:transform .15s}
 .main-btn:hover .bulat,.main-btn:focus-visible .bulat{transform:scale(1.07)}
 .main-btn svg{width:30px;height:30px;margin-left:4px}
@@ -135,14 +135,14 @@ a{color:inherit}
 .tunjuk-frame{background:var(--surface);border:1px solid var(--teal-line);border-radius:16px;padding:10px;box-shadow:var(--shadow)}
 .tunjuk-frame img{width:100%;display:block;border-radius:9px}
 .tunjuk-label{display:inline-block;background:var(--mint);color:var(--teal-deep);font:600 13px "Lexend",sans-serif;padding:5px 12px;border-radius:99px}
-:root[data-theme="dark"] .tunjuk-label{color:#CFEFE9}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tunjuk-label{color:#CFEFE9}}
+:root[data-theme="dark"] .tunjuk-label{color:#FAD4E4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tunjuk-label{color:#FAD4E4}}
 .tunjuk-item h3{font-size:1.4rem;margin-top:12px}
 .tunjuk-item p{margin-top:8px;color:var(--ink2)}
 .contoh-ulasan{margin-top:16px;background:var(--mint);border-radius:14px;padding:16px 18px}
 .contoh-ulasan .cap{display:block;font:600 12.5px "Lexend",sans-serif;color:var(--teal-deep);margin-bottom:6px}
-:root[data-theme="dark"] .contoh-ulasan .cap{color:#CFEFE9}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contoh-ulasan .cap{color:#CFEFE9}}
+:root[data-theme="dark"] .contoh-ulasan .cap{color:#FAD4E4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contoh-ulasan .cap{color:#FAD4E4}}
 .contoh-ulasan p{margin:0;color:var(--ink);font-size:.96rem;font-style:italic}
 
 .harga-sec{padding-block:56px}
@@ -220,7 +220,7 @@ footer .ng b{color:var(--teal)}
     <div class="hero-badge">53 bab, T1–T5</div>
   </div>
   <div>
-    <span class="eyebrow-tag">Bab 1 dan 2 percuma</span>
+    <span class="eyebrow-tag"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-2px;margin-right:6px" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 5.5C8.5 2 15.5 2 15.5 5.5 15.5 10.5 8.6 15.5 6.5 21.5"/><path d="M8.5 5.5C8.5 10.5 15.4 15.5 17.5 21.5"/></svg>Pinktober · Bab 1 dan 2 percuma</span>
     <h1>Tidak perlu lagi mengisi TP murid <mark>satu demi satu</mark>.</h1>
     <p class="lede">Murid menjawab soalan Matematik KSSM Tingkatan 1 hingga 5 dengan rajah interaktif melalui telefon atau komputer. Sistem mencadangkan TP setiap murid berdasarkan Standard Prestasi DSKP dan menyediakan ulasan PBD untuk disalin ke SPPB. Keputusan akhir tetap di tangan guru.</p>
     <div class="ctas">
