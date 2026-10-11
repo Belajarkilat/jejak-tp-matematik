@@ -1599,6 +1599,8 @@ var KELAS_CONTOH={id:"contoh",nama:"3 Amanah (contoh)",kod:"CONTOH",contoh:true}
 /* Guru yang belum log masuk boleh membuka kelas contoh. Tidak disimpan,
    jadi muat semula halaman membawa guru kembali ke skrin log masuk. */
 var DEMO_GURU=false;
+/* Jambatan untuk bar "Daftar percuma" (skrip di hujung halaman berada di luar skop ini). */
+window.jtKeadaanDemo=function(){ return {demoGuru:!!(DEMO_GURU&&S.gk==="contoh"), dariDemo:!!DARI_DEMO, latihan:!!S.latihan, sesi:!!SESI}; };
 function kelasGuruKini(){
   if(S.gk==="contoh") return KELAS_CONTOH;
   for(var i=0;i<KELAS_GURU.length;i++) if(KELAS_GURU[i].id===S.gk) return KELAS_GURU[i];
@@ -5614,11 +5616,12 @@ body.ada-bar-daftar{padding-bottom:84px}
   var bar=document.getElementById("barDaftar"), teks=document.getElementById("barDaftarTeks");
   function segar(){
     try{
+      if(!window.jtKeadaanDemo) return;
+      var k=window.jtKeadaanDemo();
       var zonMurid=document.body.classList.contains("zon-murid");
-      var demoGuru=(typeof DEMO_GURU!=="undefined"&&DEMO_GURU)&&!zonMurid;
-      var demoMurid=(typeof DARI_DEMO!=="undefined"&&DARI_DEMO)&&zonMurid&&S.latihan;
-      var log=(typeof SESI!=="undefined"&&SESI);
-      var nampak=!log&&(demoGuru||demoMurid);
+      var demoGuru=k.demoGuru&&!zonMurid;
+      var demoMurid=k.dariDemo&&k.latihan&&zonMurid;
+      var nampak=!k.sesi&&(demoGuru||demoMurid);
       teks.textContent=demoMurid?"Cikgu? Guna permainan ini dengan murid sebenar anda, percuma.":"Suka apa yang dilihat? Guna untuk kelas cikgu sendiri, percuma.";
       bar.classList.toggle("nampak",nampak);
       document.body.classList.toggle("ada-bar-daftar",nampak);
