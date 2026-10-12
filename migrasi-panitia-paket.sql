@@ -13,7 +13,7 @@ returns int language sql stable security definer set search_path = public as $$
      and coalesce((select case when p_peringkat = 'rendah' then premium_rendah_tamat else premium_atas_tamat end
                     from jm_guru where id = p_guru), '-infinity') > now() - interval '30 days'
       then 2300
-    else 3300 end
+    else 5900 end
 $$;
 
 create or replace function jm_bayaran_berjaya(p_billcode text, p_refno text, p_saluran text, p_jumlah_sen int)
