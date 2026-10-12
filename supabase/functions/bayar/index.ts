@@ -50,7 +50,12 @@ const json = (data: unknown, status = 200) =>
 const PERINGKAT: Record<string, string> = {
   rendah: "Premium Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
   atas: "Premium Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
+  /* Paket kelas: RM23 = 5 kelas tambahan, tiada tarikh tamat */
+  kelas: "Tambahan 5 kelas guru",
+  "panitia-rendah": "Pakej Panitia Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
+  "panitia-atas": "Pakej Panitia Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
 };
+const PAKEJ = ["kecil", "standard", "besar"];
 
 /* toyyibPay: billName/billDescription hanya huruf, nombor, ruang dan '_'. */
 const bersih = (s: string, max: number) => s.replace(/[^A-Za-z0-9 _]/g, " ").replace(/\s+/g, " ").trim().slice(0, max);
@@ -107,25 +112,30 @@ async function sahkan(billcode: string) {
   return { status: "menunggu" };
 }
 
-async function cipta(guru: { id: string; email?: string }, peringkat: string) {
+async function cipta(guru: { id: string; email?: string }, peringkat: string, pakej = "") {
+  const panitia = peringkat.startsWith("panitia-");
   if (!PERINGKAT[peringkat]) return json({ ralat: "Peringkat tidak sah" }, 400);
   if (!RAHSIA || !KATEGORI || !APP_URL) return json({ ralat: "Bayaran dalam talian belum dibuka" }, 503);
 
   const { data: profil } = await sb.from(P + "_guru").select("nama, telefon").eq("id", guru.id).maybeSingle();
   if (!profil?.nama) return json({ ralat: "Lengkapkan profil guru dahulu" }, 400);
 
-  const { data: harga, error: eh } = await sb.rpc(P + "_harga", { p_guru: guru.id, p_peringkat: peringkat });
+  if (panitia && !PAKEJ.includes(pakej)) return json({ ralat: "Pakej tidak sah" }, 400);
+  const { data: harga, error: eh } = panitia
+    ? await sb.rpc(P + "_harga_panitia", { p_guru: guru.id, p_pakej: pakej, p_peringkat: peringkat.slice(8) })
+    : await sb.rpc(P + "_harga", { p_guru: guru.id, p_peringkat: peringkat });
   if (eh || !harga) return json({ ralat: "Harga tidak dapat dikira" }, 500);
 
   /* Guna semula bil yang masih baharu, supaya tekan dua kali tidak cipta dua bil. */
   const { data: lama } = await sb.from(P + "_bayaran").select("billcode")
     .eq("guru", guru.id).eq("peringkat", peringkat).eq("status", "menunggu").eq("jumlah_sen", harga)
+    .filter("pakej", panitia ? "eq" : "is", panitia ? pakej : null)
     .not("billcode", "is", null).gt("dicipta", new Date(Date.now() - 20 * 60e3).toISOString())
     .order("dicipta", { ascending: false }).limit(1).maybeSingle();
   if (lama?.billcode) return json({ url: BASE + "/" + lama.billcode, billcode: lama.billcode });
 
   const { data: baris, error: ei } = await sb.from(P + "_bayaran")
-    .insert({ guru: guru.id, emel: guru.email ?? "", peringkat, jumlah_sen: harga })
+    .insert({ guru: guru.id, emel: guru.email ?? "", peringkat, jumlah_sen: harga, pakej: panitia ? pakej : null })
     .select("id").single();
   if (ei) return json({ ralat: "Tidak dapat merekod bil" }, 500);
 
@@ -133,7 +143,7 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string) {
   const hasil = await toyyib("createBill", {
     userSecretKey: RAHSIA,
     categoryCode: KATEGORI,
-    billName: bersih(PRODUK + " Premium", 30),
+    billName: bersih(PRODUK + (peringkat === "kelas" ? " Kelas" : panitia ? " Panitia " + pakej : " Premium"), 30),
     billDescription: bersih(PERINGKAT[peringkat], 100),
     billPriceSetting: "1",
     billPayorInfo: "1",
@@ -181,7 +191,7 @@ Deno.serve(async (req) => {
     if (!guru) return json({ ralat: "Sila log masuk semula" }, 401);
     const body = await req.json().catch(() => ({}));
 
-    if (body.aksi === "cipta") return await cipta(guru, String(body.peringkat ?? ""));
+    if (body.aksi === "cipta") return await cipta(guru, String(body.peringkat ?? ""), String(body.pakej ?? ""));
     if (body.aksi === "semak") {
       const billcode = String(body.billcode ?? "");
       const { data: milik } = await sb.from(P + "_bayaran").select("id").eq("billcode", billcode).eq("guru", guru.id).maybeSingle();

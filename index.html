@@ -3821,7 +3821,7 @@ function normTelefon(v){
    pangkalan data tetapi belum diminta daripada guru buat masa ini. */
 function muatProfil(){
   var uid=SESI.user.id;
-  return SB.from("jm_guru").select("nama,sekolah,telefon,setuju_pemasaran,premium_rendah_tamat,premium_atas_tamat").eq("id",uid).maybeSingle().then(function(r){
+  return SB.from("jm_guru").select("nama,sekolah,telefon,setuju_pemasaran,premium_rendah_tamat,premium_atas_tamat,paket_kelas").eq("id",uid).maybeSingle().then(function(r){
     if(r.error) throw r.error;
     if(!SESI||SESI.user.id!==uid) return;
     var md=SESI.user.user_metadata||{}, d=r.data||{}, kini=new Date();
@@ -3832,12 +3832,13 @@ function muatProfil(){
             simpanan:r.data?!!d.setuju_pemasaran:null,
             premiumRendahTamat:d.premium_rendah_tamat||null,
             premiumAtasTamat:d.premium_atas_tamat||null,
+            paketKelas:d.paket_kelas||0,
             premiumRendah:!!(d.premium_rendah_tamat&&new Date(d.premium_rendah_tamat)>kini),
             premiumAtas:!!(d.premium_atas_tamat&&new Date(d.premium_atas_tamat)>kini)};
     PROFIL.ada=!!d.nama;
     if(!PROFIL.ada&&md.nama&&md.sekolah)
       return simpanProfil(PROFIL.nama,PROFIL.sekolah,PROFIL.telefon,PROFIL.setuju);
-  });
+  }).then(muatPanitia);
 }
 function simpanProfil(nama,sekolah,telefon,setuju){
   var baris={id:SESI.user.id,nama:nama,sekolah:sekolah,telefon:telefon||"",setuju_pemasaran:!!setuju};
@@ -3849,7 +3850,8 @@ function simpanProfil(nama,sekolah,telefon,setuju){
             premiumRendahTamat:PROFIL?PROFIL.premiumRendahTamat:null,
             premiumAtasTamat:PROFIL?PROFIL.premiumAtasTamat:null,
             premiumRendah:PROFIL?PROFIL.premiumRendah:false,
-            premiumAtas:PROFIL?PROFIL.premiumAtas:false};
+            premiumAtas:PROFIL?PROFIL.premiumAtas:false,
+            paketKelas:PROFIL?PROFIL.paketKelas:0};
   });
 }
 var NOTIS_PRIVASI="E-mel cikgu digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Matematik. "+
@@ -4226,9 +4228,9 @@ function panggilBayar(isi){
       });
     });
 }
-function naikTarafOnline(peringkat, btn){
+function naikTarafOnline(peringkat, btn, pakej){
   btn.disabled=true; var asal=btn.textContent; btn.textContent="Membuka halaman bayaran...";
-  panggilBayar({aksi:"cipta",peringkat:peringkat}).then(function(j){
+  panggilBayar({aksi:"cipta",peringkat:peringkat,pakej:pakej||""}).then(function(j){
     if(!j.url) throw new Error(j.ralat||"Tiada pautan bayaran");
     try{ localStorage.setItem("cn-bil",j.billcode); }catch(e){}
     location.href=j.url;
@@ -4253,7 +4255,7 @@ function semakBayaranKembali(cubaan){
   return panggilBayar({aksi:"semak",billcode:SEMAK_BIL}).then(function(j){
     if(j.status==="berjaya"){
       try{ localStorage.removeItem("cn-bil"); }catch(e){}
-      BAYAR_MESEJ={jenis:"berjaya",teks:"✅ Terima kasih! Bayaran berjaya dan Premium sudah aktif. Resit dihantar ke e-mel cikgu."};
+      BAYAR_MESEJ={jenis:"berjaya",teks:/^panitia-/.test(j.peringkat||"")?"✅ Terima kasih! Pakej panitia sudah aktif. Kod panitia ada di kad Pakej Panitia; beri kepada guru lain di sekolah cikgu.":j.peringkat==="kelas"?"✅ Terima kasih! 5 kelas tambahan sudah ditambah ke akaun cikgu. Resit dihantar ke e-mel cikgu.":"✅ Terima kasih! Bayaran berjaya dan Premium sudah aktif. Resit dihantar ke e-mel cikgu."};
       return muatProfil();
     }
     if(j.status==="gagal"){ BAYAR_MESEJ={jenis:"gagal",teks:"Bayaran tidak berjaya atau dibatalkan. Tiada caj dikenakan. Cuba lagi bila-bila masa."}; return; }
@@ -4318,6 +4320,89 @@ function barisPremium(nama, kod, aktif, tamat){
   d.appendChild(bw);
   return d;
 }
+/* Paket kelas: 5 kelas termasuk dalam akaun; setiap RM23 tambah 5 kelas lagi.
+   Had sebenar dikuatkuasakan oleh pencetus lo_had_kelas dalam pangkalan data. */
+function kadKelas5(){
+  if(!GURU_DIMUAT) return el("div");
+  var had=((PROFIL.premiumRendah||PROFIL.premiumAtas)?5:2)+5*(PROFIL.paketKelas||0), guna=KELAS_GURU.length;
+  var d=el("div","baris-premium");
+  var kiri=el("div","grow");
+  kiri.appendChild(el("b",null,"Kelas: "+guna+" daripada "+had));
+  kiri.appendChild(el("span","status"+(guna>=had?"":" aktif"),guna>=had?"Had kelas dicapai. Tambah 5 kelas untuk daftar kelas baharu.":((PROFIL.premiumRendah||PROFIL.premiumAtas)?"Akaun Premium termasuk 5 kelas, 60 murid setiap kelas.":"Akaun percuma termasuk 2 kelas, 40 murid setiap kelas.")));
+  d.appendChild(kiri);
+  if(!bayarOnline()) return d;
+  var kanan=el("div","bayar-pilih");
+  var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Tambah 5 kelas RM23";
+  bw.onclick=function(){ naikTarafOnline("kelas",bw); };
+  kanan.appendChild(bw);
+  d.appendChild(kanan);
+  return d;
+}
+/* ---------------- Pakej Panitia Sekolah ----------------
+   Ketua panitia bayar satu pakej bagi satu peringkat; guru lain sertai dengan
+   kod dan mendapat Premium peringkat itu. Kelas dikongsi dalam satu kolam.
+   Harga perintis hingga 31 Dis 2026, kemudian harga biasa. Sumber kebenaran
+   harga ialah lo_harga_panitia di pangkalan data; jadual ini hanya paparan. */
+var PANITIA=[];
+var PAKEJ_PANITIA={
+  kecil:{nama:"Kecil",guru:5,kelas:25,perintis:99,biasa:199},
+  standard:{nama:"Standard",guru:10,kelas:50,perintis:179,biasa:349},
+  besar:{nama:"Besar",guru:20,kelas:100,perintis:299,biasa:599}
+};
+function hargaPanitia(k){ return Date.now()<new Date("2027-01-01T00:00:00+08:00").getTime()?PAKEJ_PANITIA[k].perintis:PAKEJ_PANITIA[k].biasa; }
+function muatPanitia(){
+  if(!SB||!SESI) return;
+  return SB.rpc("jm_panitia_saya").then(function(r){ PANITIA=(r&&!r.error&&r.data)||[]; },function(){ PANITIA=[]; });
+}
+function tarikhPanjang(t){ return new Date(t).toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"}); }
+function kadPanitia(){
+  var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
+  bd.appendChild(el("h3",null,"Pakej Panitia Sekolah"));
+  bd.appendChild(el("p","note","Untuk satu sekolah: ketua panitia bayar sekali, guru Matematik lain sertai dengan kod dan dapat Premium tanpa bayar sendiri. Kelas dikongsi dalam satu kolam. Setahun, satu peringkat."));
+  PANITIA.forEach(function(x){
+    var d=el("div","baris-premium"), kiri=el("div","grow");
+    kiri.appendChild(el("b",null,"Panitia "+PAKEJ_PANITIA[x.pakej].nama+" · "+(x.peringkat==="rendah"?"Tingkatan 1–3":"Tingkatan 4–5")));
+    kiri.appendChild(el("span","status aktif","Kod panitia: <b>"+esc(x.kod)+"</b> · "+x.ahli+" daripada "+x.had_guru+" guru · "+x.kelas+" daripada "+x.had_kelas+" kelas · sehingga "+tarikhPanjang(x.tamat)));
+    d.appendChild(kiri);
+    var kanan=el("div","bayar-pilih");
+    var bs=el("button","btn sm"); bs.type="button"; bs.textContent="Salin kod";
+    bs.onclick=function(){
+      var teks="Sertai panitia Matematik kita di Jejak TP Matematik: "+location.origin+"/?cikgu=1\nLog masuk, buka Akaun & Premium, tekan 'Sertai panitia' dan masukkan kod: "+x.kod;
+      (navigator.clipboard?navigator.clipboard.writeText(teks):Promise.reject()).then(function(){ bs.textContent="Disalin ✓"; },function(){ prompt("Salin mesej ini:",teks); });
+    };
+    kanan.appendChild(bs); d.appendChild(kanan); bd.appendChild(d);
+  });
+  var f=el("div","baris-premium"), kf=el("div","grow");
+  kf.appendChild(el("b",null,PANITIA.length?"Beli pakej lain atau lanjutkan":"Beli pakej panitia"));
+  var sp=document.createElement("select"), ss=document.createElement("select");
+  [["rendah","Tingkatan 1–3"],["atas","Tingkatan 4–5"]].forEach(function(o){ var op=document.createElement("option"); op.value=o[0]; op.textContent=o[1]; sp.appendChild(op); });
+  Object.keys(PAKEJ_PANITIA).forEach(function(k){
+    var v=PAKEJ_PANITIA[k], op=document.createElement("option"); op.value=k;
+    op.textContent=v.nama+" — "+v.guru+" guru, "+v.kelas+" kelas — RM"+hargaPanitia(k); ss.appendChild(op);
+  });
+  ss.value="standard";
+  var pilih=el("div","bayar-pilih"); pilih.style.cssText="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px";
+  pilih.appendChild(sp); pilih.appendChild(ss);
+  kf.appendChild(pilih); f.appendChild(kf);
+  var kb=el("div","bayar-pilih");
+  var bb=el("button","btn teal sm"); bb.type="button"; bb.textContent="Beli pakej panitia";
+  if(bayarOnline()) bb.onclick=function(){ naikTarafOnline("panitia-"+sp.value,bb,ss.value); };
+  else bb.onclick=function(){ window.open("https://wa.me/60193686146?text="+encodeURIComponent("Salam, saya nak beli Pakej Panitia "+PAKEJ_PANITIA[ss.value].nama+" untuk "+(PROFIL&&PROFIL.sekolah||"sekolah saya")+"."),"_blank"); };
+  kb.appendChild(bb); f.appendChild(kb); bd.appendChild(f);
+  var sj=el("button","pautan-kecil"); sj.type="button"; sj.textContent="Ada kod panitia? Sertai panitia";
+  sj.onclick=function(){
+    var kod=prompt("Masukkan kod panitia (8 huruf/nombor) daripada ketua panitia:");
+    if(!kod) return;
+    SB.rpc("jm_panitia_sertai",{p_kod:kod}).then(function(r){
+      var j=r&&r.data;
+      if(r.error||!j||!j.ok){ alert((j&&j.sebab)||"Tak dapat sertai panitia. Semak kod dan cuba lagi."); return; }
+      BAYAR_MESEJ={jenis:"berjaya",teks:"✅ Cikgu dah sertai panitia "+(j.sekolah||"")+". Premium "+(j.peringkat==="rendah"?"Tingkatan 1–3":"Tingkatan 4–5")+" aktif sehingga "+tarikhPanjang(j.tamat)+"."};
+      return muatProfil().then(segarGuru);
+    });
+  };
+  bd.appendChild(sj);
+  return p;
+}
 function kadPremium(){
   var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
   bd.appendChild(el("h3",null,"Premium"));
@@ -4325,7 +4410,9 @@ function kadPremium(){
   bd.appendChild(el("p","note","Harga Early Bird RM23/tahun hingga 31 Dis 2026, dikunci setiap tahun selagi langganan tidak terputus. Mulai 1 Jan 2027: RM59. Menengah rendah (T1-3) dan menengah atas (T4-5) dibeli berasingan."));
   bd.appendChild(barisPremium("Menengah rendah · Tingkatan 1–3","Menengah Rendah",PROFIL.premiumRendah,PROFIL.premiumRendahTamat));
   bd.appendChild(barisPremium("Menengah atas · Tingkatan 4–5","Menengah Atas",PROFIL.premiumAtas,PROFIL.premiumAtasTamat));
-  return p;
+  bd.appendChild(kadKelas5());
+  var w=el("div"); w.appendChild(p); w.appendChild(kadPanitia());
+  return w;
 }
 
 function paneRumah(ak){
