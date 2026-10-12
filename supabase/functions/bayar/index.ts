@@ -52,8 +52,7 @@ const PERINGKAT: Record<string, string> = {
   atas: "Premium Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
   /* Paket kelas: RM23 = 5 kelas tambahan, tiada tarikh tamat */
   kelas: "Tambahan 5 kelas guru",
-  "panitia-rendah": "Pakej Panitia Menengah Rendah Tingkatan 1 hingga 3 selama 365 hari",
-  "panitia-atas": "Pakej Panitia Menengah Atas Tingkatan 4 hingga 5 selama 365 hari",
+  panitia: "Pakej Panitia Tingkatan 1 hingga 5 selama 365 hari",
 };
 const PAKEJ = ["kecil", "standard", "besar"];
 
@@ -113,7 +112,7 @@ async function sahkan(billcode: string) {
 }
 
 async function cipta(guru: { id: string; email?: string }, peringkat: string, pakej = "") {
-  const panitia = peringkat.startsWith("panitia-");
+  const panitia = peringkat === "panitia";
   if (!PERINGKAT[peringkat]) return json({ ralat: "Peringkat tidak sah" }, 400);
   if (!RAHSIA || !KATEGORI || !APP_URL) return json({ ralat: "Bayaran dalam talian belum dibuka" }, 503);
 
@@ -122,7 +121,7 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string, pa
 
   if (panitia && !PAKEJ.includes(pakej)) return json({ ralat: "Pakej tidak sah" }, 400);
   const { data: harga, error: eh } = panitia
-    ? await sb.rpc(P + "_harga_panitia", { p_guru: guru.id, p_pakej: pakej, p_peringkat: peringkat.slice(8) })
+    ? await sb.rpc(P + "_harga_panitia", { p_guru: guru.id, p_pakej: pakej, p_peringkat: "semua" })
     : await sb.rpc(P + "_harga", { p_guru: guru.id, p_peringkat: peringkat });
   if (eh || !harga) return json({ ralat: "Harga tidak dapat dikira" }, 500);
 
