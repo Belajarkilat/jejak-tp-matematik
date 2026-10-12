@@ -11,8 +11,8 @@ alter table jm_bayaran add constraint jm_bayaran_peringkat_check
 create or replace function jm_harga_panitia(p_guru uuid, p_pakej text, p_peringkat text)
 returns int language sql stable security definer set search_path = public as $$
   select case when now() < timestamptz '2027-01-01 00:00:00+08'
-              then case p_pakej when 'kecil' then 9900 when 'standard' then 17900 else 29900 end
-              else case p_pakej when 'kecil' then 19900 when 'standard' then 34900 else 59900 end end
+              then case p_pakej when 'kecil' then 9500 when 'standard' then 16700 else 29300 end
+              else case p_pakej when 'kecil' then 24800 when 'standard' then 44600 else 77900 end end
 $$;
 
 create or replace function jm_panitia_selaras(p_id uuid)
