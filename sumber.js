@@ -26,3 +26,30 @@
     }).catch(function(){});
   }catch(e){}
 })();
+
+/* Klik butang di landing (13 Okt 2026): satu ping 'klik' bagi setiap butang utama.
+   nota = daftar | contoh | murid | video. Hanya di landing; sekali bagi setiap jenis setiap sesi. */
+(function(){
+  try{
+    if(!/landing(\.html)?$/.test(location.pathname)) return;
+    var awan=window.CN_AWAN; if(!awan) return;
+    document.addEventListener("click",function(e){
+      try{
+        var a=e.target.closest&&e.target.closest("a"); if(!a) return;
+        var h=a.getAttribute("href")||"", n="";
+        if(/[?&]daftar/.test(h)) n="daftar";
+        else if(/demo=cikgu/.test(h)) n="contoh";
+        else if(/demo=murid/.test(h)) n="murid";
+        else if(h==="#video") n="video";
+        if(!n||sessionStorage.getItem("cn-klik-"+n)) return;
+        var p=localStorage.getItem("jm-peranti"); if(!p||!/^[a-z0-9]{8}$/.test(p)) return;
+        sessionStorage.setItem("cn-klik-"+n,"1");
+        fetch(awan.url+"/rest/v1/rpc/jm_ping",{
+          method:"POST", keepalive:true,
+          headers:{"apikey":awan.kunci,"Authorization":"Bearer "+awan.kunci,"Content-Type":"application/json"},
+          body:JSON.stringify({p_jenis:"klik",p_peranti:p,p_nota:n})
+        }).catch(function(){});
+      }catch(x){}
+    });
+  }catch(x){}
+})();
