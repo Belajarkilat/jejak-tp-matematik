@@ -256,7 +256,7 @@ footer .ng-logo.gelap{display:none}
       <a class="btn kedua" href="index.html?daftar">Daftar percuma</a>
     </div>
     <a class="cuba-murid" href="#video">&#9654;&nbsp; Tonton video satu minit</a> &nbsp;·&nbsp; <a class="cuba-murid" href="index.html?demo=murid">Cuba sebagai murid →</a>
-    <p class="bukti">Lebih daripada 40 guru dan 1,600 murid telah mendaftar dalam Jejak TP (Sains, Matematik dan Sejarah). Lebih daripada 400 murid sudah bermain. Pada 12 Okt 2026 sahaja, 89 murid daripada satu sekolah membuat 746 percubaan dalam satu hari.</p>
+    <p class="bukti" id="bukti">Lebih daripada 600 murid sudah bermain Jejak TP.</p>
     <p class="kod">Sudah ada kod kelas daripada guru? Masukkan kod itu di <b>jejaktpmath.naikgred.com</b></p>
   </div>
 </div>
@@ -519,5 +519,14 @@ footer .ng-logo.gelap{display:none}
 </script>
 <script src="konfig.js?v=20261012"></script>
 <script src="sumber.js?v=20261012"></script>
+<script>
+/* Pengira hidup Jejak TP (Sains, Matematik, Sejarah): nombor sebenar daripada lo_statistik_awam. Jika gagal, ayat asal kekal. */
+(function(){try{var e=document.getElementById("bukti");if(!e)return;var u="https://cqokowzzgseuvhcgpktj.supabase.co",k="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxb2tvd3p6Z3NldXZoY2dwa3RqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NzE5MDgsImV4cCI6MjEwMjU0NzkwOH0.AjFtow8RscN0KpIrWNrHCQu-cztcjd_ojTKZyY5GTg8";
+fetch(u+"/rest/v1/rpc/lo_statistik_awam",{method:"POST",headers:{"apikey":k,"Authorization":"Bearer "+k,"Content-Type":"application/json"},body:"{}"})
+.then(function(r){return r.ok?r.json():null}).then(function(d){
+if(!d||!(d.bermain_24j>=20))return;
+var f=function(n){return n.toLocaleString("ms-MY")};
+e.innerHTML="<b>"+f(d.bermain_24j)+" murid</b> bermain Jejak TP dalam 24 jam lepas. Sejak dilancarkan, "+f(d.bermain_semua)+" murid sudah bermain."}).catch(function(){})}catch(x){}})();
+</script>
 </body>
 </html>
