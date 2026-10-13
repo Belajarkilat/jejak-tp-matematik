@@ -93,7 +93,11 @@ a{color:inherit}
 .btn.kedua{background:var(--surface);color:var(--ink);border:2px solid var(--teal-line)}
 .hero .cuba-murid{margin-top:16px;display:inline-flex;align-items:center;min-height:44px;font:600 14.5px "Lexend",sans-serif;color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
 .hero .kod{margin-top:18px;font-size:.95rem;color:var(--ink2)}
-.hero .bukti{margin-top:14px;font-size:.9rem;color:var(--ink2);max-width:52ch;border-left:3px solid var(--teal);padding-left:12px}
+.hero .bukti{margin-top:18px;display:flex;gap:28px;flex-wrap:wrap;max-width:52ch;border-left:4px solid var(--teal);padding-left:14px}
+.hero .bukti[hidden]{display:none}
+.hero .bukti div{display:flex;flex-direction:column}
+.hero .bukti b{font:700 2rem/1.1 "Lexend",sans-serif;color:var(--ink)}
+.hero .bukti span{font-size:.85rem;color:var(--ink2);margin-top:2px}
 .hero .kod b{color:var(--ink);font-family:"Lexend",monospace}
 
 /* ---------- video demo ---------- */
@@ -256,7 +260,7 @@ footer .ng-logo.gelap{display:none}
       <a class="btn kedua" href="index.html?daftar">Daftar percuma</a>
     </div>
     <a class="cuba-murid" href="#video">&#9654;&nbsp; Tonton video satu minit</a> &nbsp;·&nbsp; <a class="cuba-murid" href="index.html?demo=murid">Cuba sebagai murid →</a>
-    <p class="bukti" id="bukti">Lebih daripada 600 murid sudah bermain Jejak TP.</p>
+    <div class="bukti" id="bukti" hidden></div>
     <p class="kod">Sudah ada kod kelas daripada guru? Masukkan kod itu di <b>jejaktpmath.naikgred.com</b></p>
   </div>
 </div>
@@ -520,13 +524,15 @@ footer .ng-logo.gelap{display:none}
 <script src="konfig.js?v=20261012"></script>
 <script src="sumber.js?v=20261013"></script>
 <script>
-/* Pengira hidup Jejak TP (Sains, Matematik, Sejarah): nombor sebenar daripada lo_statistik_awam. Jika gagal, ayat asal kekal. */
-(function(){try{var e=document.getElementById("bukti");if(!e)return;var u="https://cqokowzzgseuvhcgpktj.supabase.co",k="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxb2tvd3p6Z3NldXZoY2dwa3RqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NzE5MDgsImV4cCI6MjEwMjU0NzkwOH0.AjFtow8RscN0KpIrWNrHCQu-cztcjd_ojTKZyY5GTg8";
-fetch(u+"/rest/v1/rpc/lo_statistik_awam",{method:"POST",headers:{"apikey":k,"Authorization":"Bearer "+k,"Content-Type":"application/json"},body:"{}"})
-.then(function(r){return r.ok?r.json():null}).then(function(d){
-if(!d||!(d.bermain_24j>=20))return;
+/* Pengira hidup Jejak TP: jumlah Sains (lo_statistik_awam) + Matematik/Sejarah (mj_statistik_awam), dikira semula setiap kali halaman dibuka. Jika gagal, kotak kekal tersembunyi. */
+(function(){try{var e=document.getElementById("bukti");if(!e)return;
+var SA={url:"https://cqokowzzgseuvhcgpktj.supabase.co",kunci:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxb2tvd3p6Z3NldXZoY2dwa3RqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NzE5MDgsImV4cCI6MjEwMjU0NzkwOH0.AjFtow8RscN0KpIrWNrHCQu-cztcjd_ojTKZyY5GTg8"},MJ={url:"https://noaeagitwklnpmyhhhtn.supabase.co",kunci:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5vYWVhZ2l0d2tsbnBteWhoaHRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNTU4MDEsImV4cCI6MjEwNTczMTgwMX0.Z7ltdqSgxAlVVSlzDuPvUnFdpStY5UWHbdOqXS8BtB0"};
+var ambil=function(c,fn){return fetch(c.url+"/rest/v1/rpc/"+fn,{method:"POST",headers:{"apikey":c.kunci,"Authorization":"Bearer "+c.kunci,"Content-Type":"application/json"},body:"{}"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})};
+Promise.all([ambil(SA,"lo_statistik_awam"),ambil(MJ,"mj_statistik_awam")]).then(function(h){
+var s=h[0],m=h[1];if(!s||!(s.bermain_semua>=1))return;
+var semua=s.bermain_semua+(m?m.semua:0),j24=s.bermain_24j+(m?m.j24:0);
 var f=function(n){return n.toLocaleString("ms-MY")};
-e.innerHTML="<b>"+f(d.bermain_24j)+" murid</b> bermain Jejak TP dalam 24 jam lepas. Sejak dilancarkan, "+f(d.bermain_semua)+" murid sudah bermain."}).catch(function(){})}catch(x){}})();
+e.innerHTML="<div><b>"+f(semua)+"</b><span>murid sudah bermain sejak dilancarkan</span></div>"+(j24>=20?"<div><b>"+f(j24)+"</b><span>bermain dalam 24 jam lepas</span></div>":"");e.hidden=false})}catch(x){}})();
 </script>
 </body>
 </html>
