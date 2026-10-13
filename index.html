@@ -3882,6 +3882,9 @@ function simpanProfil(nama,sekolah,telefon,setuju){
 var NOTIS_PRIVASI="E-mel cikgu digunakan untuk log masuk, urusan akaun dan sokongan Jejak TP Matematik. "+
   "Ia tidak dipaparkan kepada guru lain atau murid, dan tidak dijual kepada pihak ketiga. "+
   "Cikgu boleh menukar atau menarik balik persetujuan tawaran bila-bila masa di halaman Akaun.";
+var NOTIS_KELUARGA="E-mel anda digunakan untuk log masuk, urusan akaun dan sokongan Anak NaikGred. "+
+  "Ia tidak dipaparkan kepada pengguna lain dan tidak dijual kepada pihak ketiga. "+
+  "Anda boleh menukar atau menarik balik persetujuan tawaran bila-bila masa di halaman Akaun.";
 function kotakSetuju(nilai){
   var w=el("label","setuju");
   var cb=el("input"); cb.type="checkbox"; cb.checked=!!nilai; cb.name="setuju";
@@ -3927,7 +3930,7 @@ function pesanRalat(e){
   if(/Password should|at least|weak.password/i.test(m)) return "Kata laluan perlu sekurang-kurangnya 8 aksara.";
   if(/rate limit|too many|security purposes/i.test(m)) return "Terlalu banyak cubaan. Tunggu sebentar dan cuba lagi.";
   if(/valid email|invalid.*email|Unable to validate email/i.test(m)) return "Alamat e-mel tidak sah.";
-  if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk cikgu.";
+  if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk anda.";
   if(/Failed to fetch|NetworkError|Load failed|network/i.test(m)) return "Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi.";
   if(/had (5 |20 )?kelas/.test(m)) return "Akaun percuma boleh ada 2 kelas, akaun Premium 5 kelas. Setiap RM23 tambahan membuka 5 kelas lagi.";
   if(/had (60 )?murid/.test(m)) return "Akaun percuma boleh ada 40 murid setiap kelas, akaun Premium 60 murid.";
@@ -3967,7 +3970,7 @@ function medan(label,jenis,nama,nilai,atr){
 }
 function kadMudah(tajuk,teks,butang){
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Jejak TP Matematik · Untuk guru</p><h2>'+esc(tajuk)+'</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(untukKeluarga()?"Anak NaikGred · Untuk ibu bapa":"Jejak TP Matematik · Untuk guru")+'</p><h2>'+esc(tajuk)+'</h2></div>'));
   var bd=el("div","panel-bd");
   if(teks) bd.appendChild(el("p","qnote",esc(teks)));
   if(butang){ var a=el("div","actions"); a.appendChild(butang); bd.appendChild(a); }
@@ -3981,10 +3984,16 @@ function salin(teks,btn){
   else manual();
 }
 
+/* Akaun/laluan keluarga (Anak NaikGred): penanda setempat, metadata akaun, atau profil bertanda keluarga. */
+function untukKeluarga(){
+  if(PROFIL&&PROFIL.keluarga) return true;
+  try{ if(localStorage.getItem("cn-keluarga")==="1") return true; }catch(e){}
+  var md=SESI&&SESI.user&&SESI.user.user_metadata;
+  return !!(md&&md.keluarga);
+}
 function renderCikgu(){
   var ak=$("guruAkaun"), kl=$("guruKelas");
-  var untukKel=!!(PROFIL&&PROFIL.keluarga);
-  if(!untukKel&&!SESI){ try{ untukKel=localStorage.getItem("cn-keluarga")==="1"; }catch(e){} }
+  var untukKel=untukKeluarga();
   $("btnCikgu").textContent=untukKel?"Ibu bapa":"Cikgu";
   var dalamKelas=!!(SESI&&PROFIL&&PROFIL.ada&&S.guruSkrin!=="katabaru"&&S.guruSkrin!=="profil"&&kelasGuruKini())||
                  (!SESI&&DEMO_GURU&&S.gk==="contoh");
@@ -3992,7 +4001,7 @@ function renderCikgu(){
   kl.classList.toggle("hidden",!dalamKelas);
   if(dalamKelas) return renderKelasGuru();
   ak.innerHTML="";
-  if(!AWAN) return ak.appendChild(kadMudah("Mod cikgu perlukan internet","Sambung ke internet dan muat semula halaman."));
+  if(!AWAN) return ak.appendChild(kadMudah(untukKeluarga()?"Memerlukan internet":"Mod cikgu perlukan internet","Sambung ke internet dan muat semula halaman."));
   if(AUTH_GAGAL){
     var bc=el("button","btn"); bc.textContent="Cuba semula";
     bc.onclick=function(){ AUTH_GAGAL=false; AUTH_SIAP=false; mulaAuth(); renderCikgu(); };
@@ -4050,7 +4059,7 @@ function kadNilai(){
 
 function paneLogMasuk(ak){
   var mod=S.authMod||"masuk";
-  var kel=false; try{ kel=localStorage.getItem("cn-keluarga")==="1"; }catch(e){}
+  var kel=untukKeluarga();
   if(mod==="masuk"&&!kel) ak.appendChild(kadNilai());
   var tajuk=(kel?{masuk:"Log masuk keluarga",daftar:"Daftar akaun keluarga",lupa:"Lupa kata laluan"}:{masuk:"Log masuk guru",daftar:"Daftar akaun guru",lupa:"Lupa kata laluan"})[mod];
   var p=el("div","panel authkad");
@@ -4058,8 +4067,8 @@ function paneLogMasuk(ak){
   var bd=el("div","panel-bd");
   bd.appendChild(el("p","qnote",
     mod==="daftar" ? (kel?"Percuma untuk bermula. Tambah anak anda, mereka bermain, dan anda nampak bab yang sudah dikuasai dan bab yang masih lemah. Bab 1 dan 2 percuma.":"Percuma. Setiap guru ada kelas, senarai nama dan rekod murid sendiri. Guru lain tidak dapat melihatnya.") :
-    mod==="lupa"   ? "Masukkan e-mel akaun cikgu. Kami akan hantar pautan untuk menetapkan kata laluan baharu." :
-                     "Sudah ada akaun? Log masuk untuk membuka kelas cikgu."));
+    mod==="lupa"   ? (kel?"Masukkan e-mel akaun anda. Kami akan hantar pautan untuk menetapkan kata laluan baharu.":"Masukkan e-mel akaun cikgu. Kami akan hantar pautan untuk menetapkan kata laluan baharu.") :
+                     (kel?"Log masuk untuk melihat kemajuan anak anda.":"Sudah ada akaun? Log masuk untuk membuka kelas cikgu.")));
   var msg=el("p","ralat",""); msg.hidden=true;
   function papar(t,baik){ msg.hidden=!t; msg.className=baik?"berjaya":"ralat"; msg.textContent=t||""; }
   if(RALAT_AUTH){ papar("Log masuk tidak berjaya: "+RALAT_AUTH); RALAT_AUTH=""; }
@@ -4087,7 +4096,7 @@ function paneLogMasuk(ak){
       f.appendChild(fSekolah);
     }
   }
-  fEmel=medan("E-mel","email","emel",S.authEmel||"",{autocomplete:"email",inputmode:"email",placeholder:"nama@moe-dl.edu.my"});
+  fEmel=medan("E-mel","email","emel",S.authEmel||"",{autocomplete:"email",inputmode:"email",placeholder:kel?"nama@gmail.com":"nama@moe-dl.edu.my"});
   f.appendChild(fEmel);
   if(mod!=="lupa"){
     fKata=medan(mod==="daftar"?"Kata laluan (sekurang-kurangnya 8 aksara)":"Kata laluan","password","kata","",
@@ -4097,7 +4106,7 @@ function paneLogMasuk(ak){
   if(mod==="daftar"){
     fSetuju=kotakSetuju(false);
     f.appendChild(fSetuju);
-    f.appendChild(el("p","note privasi",esc(NOTIS_PRIVASI)));
+    f.appendChild(el("p","note privasi",esc(untukKeluarga()?NOTIS_KELUARGA:NOTIS_PRIVASI)));
   }
   var bs=el("button","btn penuh"); bs.type="submit"; bs.style.marginTop="18px";
   var labelBs={masuk:"Log masuk",daftar:"Daftar dan mulakan",lupa:"Hantar pautan"}[mod];
@@ -4121,7 +4130,7 @@ function paneLogMasuk(ak){
       if(r.error) throw r.error;
     });
     else if(mod==="daftar") kerja=SB.auth.signUp({email:emel,password:kata,options:{
-        data:{nama:nilai(fNama),sekolah:kel?"Keluarga":nilai(fSekolah),
+        data:{nama:nilai(fNama),sekolah:kel?"Keluarga":nilai(fSekolah),keluarga:kel,
               setuju_pemasaran:fSetuju.querySelector("input").checked},emailRedirectTo:asasUrl()}}).then(function(r){
       if(r.error) throw r.error;
       if(r.data&&r.data.user&&r.data.user.identities&&r.data.user.identities.length===0)
@@ -4152,7 +4161,7 @@ function paneLogMasuk(ak){
 
 function paneKataBaru(ak){
   var p=el("div","panel authkad");
-  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">Jejak TP Matematik · Untuk guru</p><h2>Tetapkan kata laluan baharu</h2></div>'));
+  p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(untukKeluarga()?"Anak NaikGred · Untuk ibu bapa":"Jejak TP Matematik · Untuk guru")+'</p><h2>Tetapkan kata laluan baharu</h2></div>'));
   var bd=el("div","panel-bd");
   var f=el("form"); f.noValidate=true;
   var fk=medan("Kata laluan baharu (sekurang-kurangnya 8 aksara)","password","katabaru","",{autocomplete:"new-password",minlength:"8"});
@@ -4181,8 +4190,7 @@ function paneKataBaru(ak){
 
 function paneProfil(ak){
   var baru=!PROFIL.ada;
-  var kelMod=!!PROFIL.keluarga;
-  if(baru){ try{ kelMod=localStorage.getItem("cn-keluarga")==="1"; }catch(e){} }
+  var kelMod=untukKeluarga();
   var p=el("div","panel authkad");
   p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(SESI.user.email||"")+'</p><h2>'+(baru?"Lengkapkan profil":"Akaun saya")+'</h2></div>'));
   var bd=el("div","panel-bd");
@@ -4192,7 +4200,7 @@ function paneProfil(ak){
   var fs=medan("Sekolah","text","psekolah",PROFIL.sekolah,{placeholder:"cth. SMK Convent Bukit Nanas",maxlength:"120"});
   var fsj=kotakSetuju(PROFIL.setuju);
   f.appendChild(fn); if(!kelMod) f.appendChild(fs); f.appendChild(fsj);
-  f.appendChild(el("p","note privasi",esc(NOTIS_PRIVASI)));
+  f.appendChild(el("p","note privasi",esc(untukKeluarga()?NOTIS_KELUARGA:NOTIS_PRIVASI)));
   var bs=el("button","btn penuh"); bs.type="submit"; bs.textContent=baru?"Simpan dan teruskan":"Simpan"; bs.style.marginTop="18px";
   var msg=el("p","ralat",""); msg.hidden=!RALAT_GURU; msg.textContent=RALAT_GURU;
   f.appendChild(bs); f.appendChild(msg);
@@ -4616,7 +4624,7 @@ function kadLangganKeluarga(){
 }
 function paneKeluarga(ak){
   var hd=el("div","guruhd");
-  hd.appendChild(el("div","grow",'<p class="eyebrow">Anak NaikGred</p><h2>Keluarga '+esc(sapaan(PROFIL.nama))+'</h2><p>Lihat bab yang anak sudah kuasai dan bab yang masih lemah.</p>'));
+  hd.appendChild(el("div","grow",'<p class="eyebrow">Anak NaikGred</p><h2>Keluarga '+esc(PROFIL.nama)+'</h2><p>Lihat bab yang anak sudah kuasai dan bab yang masih lemah.</p>'));
   var bp=el("button","btn ghost sm"); bp.textContent="Akaun";
   bp.onclick=function(){ S.guruSkrin="profil"; renderCikgu(); };
   var bo=el("button","btn ghost sm"); bo.textContent="Log keluar"; bo.onclick=logKeluar;
