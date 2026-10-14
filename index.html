@@ -4647,6 +4647,18 @@ function paneKeluarga(ak){
   if(KEL.ralat) ak.appendChild(el("p","ralat",esc(KEL.ralat)));
   if(!murid.length) ak.appendChild(el("p","note","Tambah anak pertama untuk mula. Setiap anak mendapat PIN sendiri."));
   if(murid.length<5) ak.appendChild(borangAnak());
+  /* Penerangan TP dalam bahasa mudah untuk ibu bapa (dijanjikan di landing Anak NaikGred) */
+  var tpd=el("details","panel kel-semua");
+  tpd.appendChild(el("summary",null,"Apa maksud TP1 hingga TP6?"));
+  tpd.appendChild(el("div","panel-bd",
+    '<p class="note"><b>TP1 Mengingat</b>: anak dapat mengingat fakta dan istilah asas.</p>'+
+    '<p class="note"><b>TP2 Memahami</b>: anak dapat menerangkan sesuatu konsep dengan ayat sendiri.</p>'+
+    '<p class="note"><b>TP3 Mengaplikasi</b>: anak dapat menggunakan konsep itu untuk menyelesaikan tugasan mudah.</p>'+
+    '<p class="note"><b>TP4 Menganalisis</b>: anak dapat mentafsir data atau situasi untuk menyelesaikan masalah.</p>'+
+    '<p class="note"><b>TP5 Menilai</b>: anak dapat menimbang bukti dan membuat keputusan yang wajar.</p>'+
+    '<p class="note"><b>TP6 Mereka cipta</b>: anak dapat menghasilkan idea atau penyelesaian baharu.</p>'+
+    '<p class="note">TP3 bermaksud anak sudah boleh menggunakan apa yang dipelajari, tetapi belum kukuh apabila soalan memerlukan analisis. Paparan ini menunjukkan sehingga TP5, kerana TP6 memerlukan guru menyemak jawapan reka cipta anak.</p>'));
+  ak.appendChild(tpd);
   var rf=el("div","actions"); var br=el("button","btn ghost sm"); br.type="button"; br.textContent="Muat semula kemajuan";
   br.onclick=function(){ KEL.dimuat=false; muatKeluarga().then(segarGuru); };
   rf.appendChild(br); ak.appendChild(rf);
