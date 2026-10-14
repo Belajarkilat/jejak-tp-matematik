@@ -51,7 +51,9 @@ figure.jmi{position:relative}
 .kel-bar .nb{flex:1;min-width:0}
 .kel-bar .mt{display:flex;gap:3px;flex:none}
 .kel-bar .mt i{width:15px;height:8px;border-radius:3px}
-.kel-bar b{min-width:34px;text-align:right;flex:none}
+.kel-bar b{min-width:42px;text-align:right;flex:none}
+.kel-bar .nb small{display:block;font-size:12px;color:var(--ink2);margin-top:1px}
+.kel-bar .nb small b{min-width:0;text-align:left;font-weight:700}
 .kel-bar b.belum{font-weight:600;color:var(--ink2)}
 .kel-pautan a.btn,a.kel-wa{text-decoration:none}
 a.kel-wa{margin-top:10px}
@@ -4507,27 +4509,28 @@ function muatKeluarga(){
   if(!SB||!SESI||!KELAS_GURU.length||KEL.sibuk) return Promise.resolve();
   KEL.sibuk=true;
   var k=KELAS_GURU[0].id;
-  return semuaBaris(function(){ return SB.from("jm_cubaan").select("bab,no,aras,kali,akhir,l:pertama->lulus").eq("kelas",k).order("bab").order("no").order("aras"); })
+  return semuaBaris(function(){ return SB.from("jm_cubaan").select("bab,no,aras,kali,akhir,l:pertama->lulus,b:terbaik->betul,j:terbaik->jumlah,bs:terbaik->bos").eq("kelas",k).order("bab").order("no").order("aras"); })
     .then(function(r){
       if(r.error) throw r.error;
       var d={};
       r.data.forEach(function(c){
-        var a=d[c.no]=d[c.no]||{}, o=a[c.bab]=a[c.bab]||{aras:{},kali:0,akhir:0};
-        o.aras[c.aras]=(c.l===true); o.kali+=(c.kali||0); if((c.akhir||0)>o.akhir) o.akhir=c.akhir;
+        var a=d[c.no]=d[c.no]||{}, o=a[c.bab]=a[c.bab]||{aras:{},kali:0,akhir:0,betul:0,jumlah:0,hentian:0};
+        o.aras[c.aras]=(c.l===true);
+        /* Markah = item betul / jumlah item (termasuk soalan bos) dalam percubaan terbaik, hentian 1 hingga 5 */
+        if(c.aras>=1&&c.aras<=5&&c.j!=null){ o.betul+=(+c.b||0)+(c.bs===true?1:0); o.jumlah+=(+c.j||0)+1; o.hentian++; } o.kali+=(c.kali||0); if((c.akhir||0)>o.akhir) o.akhir=c.akhir;
       });
       KEL.data=d; KEL.dimuat=true; KEL.ralat="";
     }).catch(function(e){ KEL.ralat=pesanRalat(e); KEL.dimuat=true; })
     .then(function(){ KEL.sibuk=false; });
 }
 function ringkasAnak(no){
-  var d=KEL.data[no]||{}, baris=[], akhir=0, jum=0;
+  var d=KEL.data[no]||{}, baris=[], akhir=0, jum=0, ada=0;
   Object.keys(d).filter(function(b){ return /^m\d+b\d+$/.test(b); }).sort(urutBab).forEach(function(b){
-    var o=d[b], t=0;
-    for(var i=1;i<=5;i++){ if(o.aras[i]) t=i; else break; }
-    baris.push({bab:b,tp:t,kali:o.kali,akhir:o.akhir}); jum+=t; if(o.akhir>akhir) akhir=o.akhir;
+    var o=d[b], m=o.jumlah?Math.round(100*o.betul/o.jumlah):null;
+    baris.push({bab:b,markah:m,hentian:o.hentian,kali:o.kali,akhir:o.akhir}); if(m!=null){ jum+=m; ada++; } if(o.akhir>akhir) akhir=o.akhir;
   });
-  var lemah=baris.filter(function(r){ return r.tp<=3; }).sort(function(a,b){ return a.tp-b.tp||b.kali-a.kali; }).slice(0,3);
-  return {baris:baris,akhir:akhir,purata:baris.length?jum/baris.length:0,lemah:lemah};
+  var lemah=baris.filter(function(r){ return r.markah!=null&&r.markah<60; }).sort(function(a,b){ return a.markah-b.markah||b.kali-a.kali; }).slice(0,3);
+  return {baris:baris,akhir:akhir,purata:ada?Math.round(jum/ada):null,lemah:lemah};
 }
 function statusAnak(ms){
   if(!ms) return {w:"#C8102E",t:"Belum mula bermain"};
@@ -4551,13 +4554,17 @@ function senaraiAnakKini(){
   var kid=KELAS_GURU[0].id;
   return nomborKelas(kid).map(function(m){ return {no:m.no,nama:NAMA[kid][m.no],pin:PIN[kid][m.no]}; });
 }
-function meterTP(t){
-  var h="";
-  for(var i=1;i<=5;i++) h+='<i style="background:'+(i<=t?WARNA_TP[Math.max(t,1)]:"var(--line2)")+'"></i>';
+/* Ibu bapa kurang biasa dengan istilah TP, jadi paparan keluarga guna markah % dan label */
+function labelMarkah(m){ return m>=80?{t:"Cemerlang",w:"#0E8C7F"}:m>=60?{t:"Baik",w:"#6B9E3A"}:m>=40?{t:"Sederhana",w:"#B8860B"}:{t:"Perlu bantuan",w:"#C8102E"}; }
+function meterMarkah(m){
+  var h="", n=Math.round(m/20), w=labelMarkah(m).w;
+  for(var i=1;i<=5;i++) h+='<i style="background:'+(i<=n?w:"var(--line2)")+'"></i>';
   return h;
 }
 function barisBab(x){
-  return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'</span><span class="mt">'+meterTP(x.tp)+'</span>'+(x.tp?'<b>TP'+x.tp+'</b>':'<b class="belum">Belum</b>'));
+  if(x.markah==null) return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'</span><b class="belum">Belum</b>');
+  var L=labelMarkah(x.markah);
+  return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'<small><b style="color:'+L.w+'">'+L.t+'</b> · '+x.hentian+' daripada 5 hentian</small></span><span class="mt">'+meterMarkah(x.markah)+'</span><b>'+x.markah+'%</b>');
 }
 function kadAnak(k,m){
   var r=ringkasAnak(m.no), st=statusAnak(r.akhir), nama=NAMA[k.id][m.no], pin=PIN[k.id][m.no];
@@ -4566,11 +4573,11 @@ function kadAnak(k,m){
     '<span class="kel-av" style="background:'+warnaAv(nama)+'">'+esc(hurufAwal(nama))+'</span>'+
     '<div class="grow"><h3>'+esc(namaPendek(k.id,m.no))+'</h3><p class="kel-st"><i style="background:'+st.w+'"></i>'+esc(st.t)+'</p></div>'));
   bd.appendChild(el("div","kel-nombor",
-    '<span><b>'+r.baris.length+'</b>bab dicuba</span><span><b>'+(r.baris.length?r.purata.toFixed(1):"–")+'</b>purata TP</span>'));
+    '<span><b>'+r.baris.length+'</b>bab dicuba</span><span><b>'+(r.purata!=null?r.purata+"%":"–")+'</b>purata markah</span>'));
   var tindak, nm=esc(namaPendek(k.id,m.no));
   if(!r.baris.length) tindak="Beri "+nm+" pautan dan PIN di bawah, kemudian minta dia mula dengan Bab 1.";
-  else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBab(r.lemah[0].bab))+"</b> ("+(r.lemah[0].tp?"kini TP"+r.lemah[0].tp:"belum lulus hentian pertama")+").";
-  else tindak="Semua bab yang dicuba sudah TP4 ke atas. Minta "+nm+" teruskan ke bab seterusnya.";
+  else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBab(r.lemah[0].bab))+"</b> (kini "+r.lemah[0].markah+"%).";
+  else tindak="Semua bab yang dicuba sudah mencapai 60% ke atas. Minta "+nm+" teruskan ke bab seterusnya.";
   bd.appendChild(el("p","kel-tindak","<b>Satu tindakan:</b> "+tindak));
   var lb=r.lemah.length?r.lemah[0].bab:null, lbBuka=lb&&(bebasBab(lb)||premiumAktif(+(/(d)bd+$/.exec(lb)||[0,0])[1]));
   if(lb&&!lbBuka) bd.appendChild(el("p","note","Bab ini memerlukan langganan keluarga. Langgan di bawah untuk membukanya."));
@@ -4670,17 +4677,14 @@ function paneKeluarga(ak){
   if(!murid.length) ak.appendChild(el("p","note","Tambah anak pertama untuk mula. Setiap anak mendapat PIN sendiri."));
   if(murid.length<5) ak.appendChild(borangAnak());
   if(!BAYAR_MESEJ) ak.appendChild(kadLangganKeluarga());
-  /* Penerangan TP dalam bahasa mudah untuk ibu bapa (dijanjikan di landing Anak NaikGred) */
+  /* Penerangan markah untuk ibu bapa (istilah TP diganti markah atas cadangan Nani, 14 Okt 2026) */
   var tpd=el("details","panel kel-semua");
-  tpd.appendChild(el("summary",null,"Apa maksud TP1 hingga TP6?"));
+  tpd.appendChild(el("summary",null,"Bagaimana markah dikira?"));
   tpd.appendChild(el("div","panel-bd",
-    '<p class="note"><b>TP1 Mengingat</b>: anak dapat mengingat fakta dan istilah asas.</p>'+
-    '<p class="note"><b>TP2 Memahami</b>: anak dapat menerangkan sesuatu konsep dengan ayat sendiri.</p>'+
-    '<p class="note"><b>TP3 Mengaplikasi</b>: anak dapat menggunakan konsep itu untuk menyelesaikan tugasan mudah.</p>'+
-    '<p class="note"><b>TP4 Menganalisis</b>: anak dapat mentafsir data atau situasi untuk menyelesaikan masalah.</p>'+
-    '<p class="note"><b>TP5 Menilai</b>: anak dapat menimbang bukti dan membuat keputusan yang wajar.</p>'+
-    '<p class="note"><b>TP6 Mereka cipta</b>: anak dapat menghasilkan idea atau penyelesaian baharu.</p>'+
-    '<p class="note">TP3 bermaksud anak sudah boleh menggunakan apa yang dipelajari, tetapi belum kukuh apabila soalan memerlukan analisis. Paparan ini menunjukkan sehingga TP5, kerana TP6 memerlukan guru menyemak jawapan reka cipta anak. <b>Belum</b> bermaksud anak sudah mencuba bab itu tetapi belum lulus hentian pertama.</p>'));
+    '<p class="note">Setiap bab mempunyai 5 hentian. Markah ialah peratus jawapan betul dalam percubaan terbaik anak bagi hentian yang sudah dicuba.</p>'+
+    '<p class="note"><b style="color:#0E8C7F">Cemerlang</b>: 80% ke atas · <b style="color:#6B9E3A">Baik</b>: 60% hingga 79% · <b style="color:#B8860B">Sederhana</b>: 40% hingga 59% · <b style="color:#C8102E">Perlu bantuan</b>: bawah 40%</p>'+
+    '<p class="note"><b>2 daripada 5 hentian</b> bermaksud anak sudah mencuba dua hentian dalam bab itu. Hentian seterusnya lebih mencabar, jadi galakkan anak menamatkan kelima-lima hentian.</p>'+
+    '<p class="note"><b>Belum</b> bermaksud anak sudah membuka bab itu tetapi belum menamatkan satu hentian pun.</p>'));
   ak.appendChild(tpd);
   var rf=el("div","actions"); var br=el("button","btn ghost sm"); br.type="button"; br.textContent="Muat semula kemajuan";
   br.onclick=function(){ KEL.dimuat=false; muatKeluarga().then(segarGuru); };
