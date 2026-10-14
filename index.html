@@ -51,7 +51,11 @@ figure.jmi{position:relative}
 .kel-bar .nb{flex:1;min-width:0}
 .kel-bar .mt{display:flex;gap:3px;flex:none}
 .kel-bar .mt i{width:15px;height:8px;border-radius:3px}
-.kel-bar b{width:34px;text-align:right;flex:none}
+.kel-bar b{min-width:34px;text-align:right;flex:none}
+.kel-bar b.belum{font-weight:600;color:var(--ink2)}
+.kel-pautan a.btn,a.kel-wa{text-decoration:none}
+a.kel-wa{margin-top:10px}
+.kel-padam{background:none;border:0;padding:10px 0;min-height:44px;font:inherit;font-size:13.5px;color:#B42318;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .kel-pautan{margin-top:14px;padding-top:12px;border-top:1px solid var(--line2)}
 @media (min-width:760px){.kel-grid{grid-template-columns:1fr 1fr}}
 </style>
@@ -1220,6 +1224,8 @@ function tingkatanBab(id){ var m=/^m(\d)b/.exec(id||""); return m?+m[1]:3; }
 function tingkatanKelas(nama){ var m=/^\s*(?:t(?:ing(?:katan)?)?\.?\s*)?([1-5])(?!\d)/i.exec(nama||""); var t=m?+m[1]:null; return t&&BAB_TERSEDIA.indexOf("m"+t+"b1")>=0?t:null; }
 var BAB_ID=null;
 try{ BAB_ID=localStorage.getItem("jm-bab"); }catch(e){}
+/* ?bab=ID (pautan ibu bapa "ulang bab ini"): buka terus bab itu */
+try{ var qbab=new URL(location.href).searchParams.get("bab"); if(qbab&&BAB_TERSEDIA.indexOf(qbab)>=0){ BAB_ID=qbab; try{ localStorage.setItem("jm-bab",qbab); }catch(e){} var ub=new URL(location.href); ub.searchParams.delete("bab"); history.replaceState(null,"",ub.pathname+ub.search+ub.hash); } }catch(e){}
 /* Pelawat baharu (tiada bab disimpan) mesti memilih tingkatan pada skrin nama main bebas. */
 var BAB_DIPILIH=BAB_TERSEDIA.indexOf(BAB_ID)>=0;
 if(!BAB_DIPILIH) BAB_ID="m3b1";
@@ -2884,7 +2890,7 @@ function renderPeta(){
   /* papan skor kelas */
   if(berekod){
     var p2=el("div","panel");
-    p2.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(KM.nama)+'</p><h2>Papan skor kelas</h2></div>'));
+    p2.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+esc(KM.nama)+'</p><h2>Papan skor '+(untukKeluarga()?"keluarga":"kelas")+'</h2></div>'));
     var bd2=el("div","panel-bd");
     bd2.appendChild(tabPapan(S.papan,function(v){ S.papan=v; render(); }));
     var mingguan=(S.papan==="minggu");
@@ -3988,6 +3994,8 @@ function salin(teks,btn){
 function namaApp(){ return untukKeluarga()?"Anak NaikGred Matematik":"Jejak TP Matematik"; }
 function pasangNama(){
   var b=document.querySelector(".brand b"); if(b) b.textContent=namaApp();
+  /* Peranti anak keluarga juga melihat tab "Ibu bapa", bukan "Cikgu" */
+  var bc=document.getElementById("btnCikgu"); if(bc&&untukKeluarga()) bc.textContent="Ibu bapa";
   if(untukKeluarga()&&/^Jejak TP/.test(document.title)) document.title=document.title.replace(/^Jejak TP Matematik/,namaApp());
 }
 function untukKeluarga(){
@@ -4546,7 +4554,7 @@ function meterTP(t){
   return h;
 }
 function barisBab(x){
-  return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'</span><span class="mt">'+meterTP(x.tp)+'</span><b>TP'+x.tp+'</b>');
+  return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'</span><span class="mt">'+meterTP(x.tp)+'</span>'+(x.tp?'<b>TP'+x.tp+'</b>':'<b class="belum">Belum</b>'));
 }
 function kadAnak(k,m){
   var r=ringkasAnak(m.no), st=statusAnak(r.akhir), nama=NAMA[k.id][m.no], pin=PIN[k.id][m.no];
@@ -4558,9 +4566,16 @@ function kadAnak(k,m){
     '<span><b>'+r.baris.length+'</b>bab dicuba</span><span><b>'+(r.baris.length?r.purata.toFixed(1):"–")+'</b>purata TP</span>'));
   var tindak, nm=esc(namaPendek(k.id,m.no));
   if(!r.baris.length) tindak="Beri "+nm+" pautan dan PIN di bawah, kemudian minta dia mula dengan Bab 1.";
-  else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBab(r.lemah[0].bab))+"</b> (TP"+r.lemah[0].tp+").";
+  else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBab(r.lemah[0].bab))+"</b> ("+(r.lemah[0].tp?"kini TP"+r.lemah[0].tp:"belum lulus hentian pertama")+").";
   else tindak="Semua bab yang dicuba sudah TP4 ke atas. Minta "+nm+" teruskan ke bab seterusnya.";
   bd.appendChild(el("p","kel-tindak","<b>Satu tindakan:</b> "+tindak));
+  var lb=r.lemah.length?r.lemah[0].bab:null, lbBuka=lb&&(bebasBab(lb)||premiumAktif(+(/(d)bd+$/.exec(lb)||[0,0])[1]));
+  if(lb&&!lbBuka) bd.appendChild(el("p","note","Bab ini memerlukan langganan keluarga. Langgan di bawah untuk membukanya."));
+  if(lbBuka){
+    var bl=el("a","btn sm kel-wa"); bl.target="_blank"; bl.rel="noopener"; bl.textContent="Hantar bab ini kepada "+namaPendek(k.id,m.no)+" melalui WhatsApp";
+    bl.href="https://wa.me/?text="+encodeURIComponent(namaPendek(k.id,m.no)+", tolong ulang "+labelBab(r.lemah[0].bab)+" dalam Anak NaikGred Matematik. Tekan pautan ini: "+urlPeribadi(k.kod,m.no,pin)+"&bab="+r.lemah[0].bab);
+    bd.appendChild(bl);
+  }
   if(r.lemah.length){
     var l=el("div","kel-lemah"); l.appendChild(el("h4",null,"Bab paling lemah"));
     r.lemah.forEach(function(x){ l.appendChild(barisBab(x)); });
@@ -4576,14 +4591,17 @@ function kadAnak(k,m){
   var ba=el("div","actions");
   var bs=el("button","btn ghost sm"); bs.type="button"; bs.textContent="Salin pautan anak";
   bs.onclick=function(){ salin(urlPeribadi(k.kod,m.no,pin),bs); };
-  var bp=el("button","btn ghost sm"); bp.type="button"; bp.textContent="Padam anak";
+  /* Kebanyakan ibu bapa menghantar pautan kepada anak melalui WhatsApp */
+  var bw=el("a","btn sm"); bw.textContent="Hantar pautan ke WhatsApp"; bw.target="_blank"; bw.rel="noopener";
+  bw.href="https://wa.me/?text="+encodeURIComponent("Pautan Anak NaikGred Matematik untuk "+nama+". Tekan pautan ini untuk terus bermain: "+urlPeribadi(k.kod,m.no,pin));
+  var bp=el("button","kel-padam"); bp.type="button"; bp.textContent="Padam anak";
   bp.onclick=function(){
     if(!confirm("Padam "+nama+" daripada senarai? Rekod bermainnya tidak akan dipaparkan lagi.")) return;
     bp.disabled=true;
     simpanSenaraiAnak(senaraiAnakKini().filter(function(x){ return x.no!==m.no; }))
       .then(function(){ renderCikgu(); }).catch(function(e){ bp.disabled=false; alert(pesanRalat(e)); });
   };
-  ba.appendChild(bs); ba.appendChild(bp); pt.appendChild(ba); bd.appendChild(pt);
+  ba.appendChild(bw); ba.appendChild(bs); pt.appendChild(ba); pt.appendChild(bp); bd.appendChild(pt);
   return c;
 }
 function borangAnak(){
@@ -4629,13 +4647,13 @@ function kadLangganKeluarga(){
 }
 function paneKeluarga(ak){
   var hd=el("div","guruhd");
-  hd.appendChild(el("div","grow",'<p class="eyebrow">Anak NaikGred</p><h2>Keluarga '+esc(PROFIL.nama)+'</h2><p>Lihat bab yang anak sudah kuasai dan bab yang masih lemah.</p>'));
+  hd.appendChild(el("div","grow",'<p class="eyebrow">Anak NaikGred Matematik</p><h2>Keluarga '+esc(PROFIL.nama)+'</h2><p>Lihat bab yang anak sudah kuasai dan bab yang masih lemah.</p>'));
   var bp=el("button","btn ghost sm"); bp.textContent="Akaun";
   bp.onclick=function(){ S.guruSkrin="profil"; renderCikgu(); };
   var bo=el("button","btn ghost sm"); bo.textContent="Log keluar"; bo.onclick=logKeluar;
   var bb=el("div","butang"); bb.appendChild(bp); bb.appendChild(bo); hd.appendChild(bb);
   ak.appendChild(hd);
-  ak.appendChild(kadLangganKeluarga());
+  if(BAYAR_MESEJ) ak.appendChild(kadLangganKeluarga());
   if(RALAT_GURU){ ak.appendChild(el("p","ralat",esc(RALAT_GURU))); return; }
   if(!GURU_DIMUAT||!KELAS_GURU.length){ ak.appendChild(el("p","note","Memuatkan keluarga...")); return; }
   var k=KELAS_GURU[0];
@@ -4647,6 +4665,7 @@ function paneKeluarga(ak){
   if(KEL.ralat) ak.appendChild(el("p","ralat",esc(KEL.ralat)));
   if(!murid.length) ak.appendChild(el("p","note","Tambah anak pertama untuk mula. Setiap anak mendapat PIN sendiri."));
   if(murid.length<5) ak.appendChild(borangAnak());
+  if(!BAYAR_MESEJ) ak.appendChild(kadLangganKeluarga());
   /* Penerangan TP dalam bahasa mudah untuk ibu bapa (dijanjikan di landing Anak NaikGred) */
   var tpd=el("details","panel kel-semua");
   tpd.appendChild(el("summary",null,"Apa maksud TP1 hingga TP6?"));
@@ -4657,7 +4676,7 @@ function paneKeluarga(ak){
     '<p class="note"><b>TP4 Menganalisis</b>: anak dapat mentafsir data atau situasi untuk menyelesaikan masalah.</p>'+
     '<p class="note"><b>TP5 Menilai</b>: anak dapat menimbang bukti dan membuat keputusan yang wajar.</p>'+
     '<p class="note"><b>TP6 Mereka cipta</b>: anak dapat menghasilkan idea atau penyelesaian baharu.</p>'+
-    '<p class="note">TP3 bermaksud anak sudah boleh menggunakan apa yang dipelajari, tetapi belum kukuh apabila soalan memerlukan analisis. Paparan ini menunjukkan sehingga TP5, kerana TP6 memerlukan guru menyemak jawapan reka cipta anak.</p>'));
+    '<p class="note">TP3 bermaksud anak sudah boleh menggunakan apa yang dipelajari, tetapi belum kukuh apabila soalan memerlukan analisis. Paparan ini menunjukkan sehingga TP5, kerana TP6 memerlukan guru menyemak jawapan reka cipta anak. <b>Belum</b> bermaksud anak sudah mencuba bab itu tetapi belum lulus hentian pertama.</p>'));
   ak.appendChild(tpd);
   var rf=el("div","actions"); var br=el("button","btn ghost sm"); br.type="button"; br.textContent="Muat semula kemajuan";
   br.onclick=function(){ KEL.dimuat=false; muatKeluarga().then(segarGuru); };
