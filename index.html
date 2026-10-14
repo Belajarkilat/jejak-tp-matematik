@@ -2103,7 +2103,7 @@ function masaBaca(q){
   var n=bilPerkataan(q.t)+bilPerkataan(q.arahan);
   (q.p||[]).forEach(function(x){ n+=bilPerkataan(x); });
   var a=ARAS[S.aras-1];
-  n+=bilPerkataan(lampiranUntuk(q, S.modHarian ? q._lam : (a&&a.lampiran)));
+  n+=bilPerkataan(lampiranUntuk(q, (S.modHarian||q._ulang) ? q._lam : (a&&a.lampiran)));
   return Math.max(6, Math.min(45, Math.round(n/2.5)));
 }
 function reset(){
@@ -3085,7 +3085,7 @@ function renderSoalan(){
   if(chips.length) bd.appendChild(el("div","qchips",chips.map(function(c){return "<span>"+c+"</span>";}).join("")));
   if(bt) bd.appendChild(bt);
 
-  var lam = lampiranUntuk(q, S.modHarian ? q._lam : a.lampiran);
+  var lam = lampiranUntuk(q, (S.modHarian||q._ulang) ? q._lam : a.lampiran);
   if(lam){ var lf=el("div"); lf.innerHTML=lam; bd.appendChild(lf); tandaLeret(lf); }
 
   var body=el("div"); bd.appendChild(body);
