@@ -1208,7 +1208,9 @@ Object.keys(JUMLAH_BAB).forEach(function(t){
   for(var i=1;i<=JUMLAH_BAB[t];i++) BAB_TERSEDIA.push("m"+t+"b"+i);
 });
 /* Bab 1 dan 2 setiap tingkatan percuma; Bab 3 ke atas Premium. */
-function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=2; }
+/* Akaun keluarga percuma (14 Okt 2026): Bab 1 sahaja. Guru percuma kekal Bab 1-2. */
+function keluargaKini(){ return !!((KM&&KM.keluarga)||(PROFIL&&PROFIL.keluarga)); }
+function bebasBab(id){ var m=/b(\d+)$/.exec(id||""); return !!m && +m[1]<=(keluargaKini()?1:2); }
 /* Menengah rendah (T1-3) dan menengah atas (T4-5) dijual berasingan,
    RM23/tahun setiap satu. Murid: premium ikut kelas (KM.premiumRendah/
    KM.premiumAtas, daripada jm_kelas_buka). Guru: premium ikut akaun
@@ -2488,7 +2490,7 @@ function pasangKM(d){
   var kelasBaru=!KM||KM.id!==d.id;
   if(KM&&KM.id!==d.id){ S.no=null; S.kod=""; S.lulus={}; S.kad={}; }
   KM={id:d.id,nama:d.nama,kod:d.kod,guru:d.guru||"",sekolah:d.sekolah||"",
-      premiumRendah:!!d.premium_rendah,premiumAtas:!!d.premium_atas};
+      premiumRendah:!!d.premium_rendah,premiumAtas:!!d.premium_atas,keluarga:!!d.keluarga};
   S.kelasId=d.id;
   NOMBOR[d.id]=(d.murid||[]).map(function(m){ return {no:m.no}; });
   NAMA[d.id]={};
@@ -3939,6 +3941,7 @@ function pesanRalat(e){
   if(/Email not confirmed/i.test(m)) return "E-mel ini belum disahkan. Semak peti masuk anda.";
   if(/Failed to fetch|NetworkError|Load failed|network/i.test(m)) return "Tidak dapat menghubungi pelayan. Semak internet dan cuba lagi.";
   if(/had (5 |20 )?kelas/.test(m)) return "Akaun percuma boleh ada 2 kelas, akaun Premium 5 kelas. Setiap RM23 tambahan membuka 5 kelas lagi.";
+  if(/had (60 )?murid/.test(m)&&untukKeluarga()) return "Akaun percuma untuk seorang anak sahaja. Langgan untuk menambah sehingga 5 anak.";
   if(/had (60 )?murid/.test(m)) return "Akaun percuma boleh ada 40 murid setiap kelas, akaun Premium 60 murid.";
   if(/JWT expired|not authenticated/i.test(m)) return "Sesi log masuk tamat. Sila log masuk semula.";
   if(/permission denied|row-level security|bukan kelas anda/i.test(m)) return "Tiada kebenaran untuk tindakan ini. Muat semula halaman dan cuba lagi.";
@@ -4079,7 +4082,7 @@ function paneLogMasuk(ak){
   p.appendChild(el("div","panel-hd",'<div class="grow"><p class="eyebrow">'+(kel?"Anak NaikGred Matematik · Untuk ibu bapa":"Jejak TP Matematik · Untuk guru")+'</p><h2>'+tajuk+'</h2></div>'));
   var bd=el("div","panel-bd");
   bd.appendChild(el("p","qnote",
-    mod==="daftar" ? (kel?"Percuma untuk bermula. Tambah anak anda, mereka bermain, dan anda nampak bab yang sudah dikuasai dan bab yang masih lemah. Bab 1 dan 2 percuma.":"Percuma. Setiap guru ada kelas, senarai nama dan rekod murid sendiri. Guru lain tidak dapat melihatnya.") :
+    mod==="daftar" ? (kel?"Percuma untuk bermula. Tambah anak anda, mereka bermain, dan anda nampak bab yang sudah dikuasai dan bab yang masih lemah. Akaun percuma: seorang anak, Bab 1 setiap tingkatan.":"Percuma. Setiap guru ada kelas, senarai nama dan rekod murid sendiri. Guru lain tidak dapat melihatnya.") :
     mod==="lupa"   ? (kel?"Masukkan e-mel akaun anda. Kami akan hantar pautan untuk menetapkan kata laluan baharu.":"Masukkan e-mel akaun cikgu. Kami akan hantar pautan untuk menetapkan kata laluan baharu.") :
                      (kel?"Log masuk untuk melihat kemajuan anak anda.":"Sudah ada akaun? Log masuk untuk membuka kelas cikgu.")));
   var msg=el("p","ralat",""); msg.hidden=true;
@@ -4618,7 +4621,8 @@ function borangAnak(){
     var nama=fn.querySelector("input").value.trim();
     if(nama.length<2){ msg.hidden=false; msg.textContent="Isi nama anak."; return; }
     var ada=senaraiAnakKini();
-    if(ada.length>=5){ msg.hidden=false; msg.textContent="Satu keluarga boleh ada sehingga 5 anak."; return; }
+    var berbayar=!!(PROFIL&&(PROFIL.premiumRendah||PROFIL.premiumAtas));
+    if(ada.length>=(berbayar?5:1)){ msg.hidden=false; msg.textContent=berbayar?"Satu keluarga boleh ada sehingga 5 anak.":"Akaun percuma untuk seorang anak sahaja. Langgan untuk menambah sehingga 5 anak."; return; }
     var guna={}; ada.forEach(function(x){ guna[x.no]=1; });
     var no=1; while(guna[String(no)]) no++;
     ada.push({no:String(no),nama:nama,pin:pinRawak()});
@@ -4638,7 +4642,7 @@ function kadLangganKeluarga(){
   }
   var awal=Date.now()<new Date("2027-01-01T00:00:00+08:00").getTime();
   bd.appendChild(el("h3",null,"Buka semua bab"));
-  bd.appendChild(el("p","note","Bab 1 dan 2 percuma. "+(awal?"Harga <i>Early Bird</i> RM32 setahun sehingga 31 Dis 2026, dikunci setiap tahun selagi langganan tidak terputus. Mulai 1 Januari 2027, harga biasa RM59 setahun. ":"RM59 setahun. ")+
+  bd.appendChild(el("p","note","Akaun percuma: seorang anak, Bab 1 setiap tingkatan. "+(awal?"Harga <i>Early Bird</i> RM32 setahun sehingga 31 Dis 2026, dikunci setiap tahun selagi langganan tidak terputus. Mulai 1 Januari 2027, harga biasa RM59 setahun. ":"RM59 setahun. ")+
     "Satu langganan keluarga membuka <b>Sejarah, Sains dan Matematik</b> untuk sehingga 5 anak. Bayar di Anak NaikGred Sains menggunakan e-mel yang sama, kemudian muat semula halaman ini."));
   var a=el("div","actions");
   var b=el("a","btn"); b.href="https://jejaktpsains.naikgred.com/?keluarga=1"; b.textContent=awal?"Langgan RM32 setahun":"Langgan RM59 setahun";
@@ -4924,7 +4928,8 @@ function pilihBabGuru(p){
     tukarBabGuru(b.id);
   };
   p.appendChild(w);
-  if(ada_terkunci&&!premium) p.appendChild(el("span","note akan-datang-guru",
+  if(ada_terkunci&&!premium&&untukKeluarga()) p.appendChild(el("span","note akan-datang-guru","\u{1F512} Akaun percuma membuka Bab 1 sahaja. Langgan Anak NaikGred untuk membuka semua bab."));
+  else if(ada_terkunci&&!premium) p.appendChild(el("span","note akan-datang-guru",
     "\u{1F512} Bab premium dikunci. Naik taraf pada harga Early Bird RM23/tahun (hingga 31 Dis) untuk buka semua bab "+(tingKini<=3?"Menengah Rendah (T1-3)":"Menengah Atas (T4-5)")+"."));
 }
 
