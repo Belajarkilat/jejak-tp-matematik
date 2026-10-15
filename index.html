@@ -4579,7 +4579,7 @@ function kadAnak(k,m){
   else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBab(r.lemah[0].bab))+"</b> (kini "+r.lemah[0].markah+"%).";
   else tindak="Semua bab yang dicuba sudah mencapai 60% ke atas. Minta "+nm+" teruskan ke bab seterusnya.";
   bd.appendChild(el("p","kel-tindak","<b>Satu tindakan:</b> "+tindak));
-  var lb=r.lemah.length?r.lemah[0].bab:null, lbBuka=lb&&(bebasBab(lb)||premiumAktif(+(/(d)bd+$/.exec(lb)||[0,0])[1]));
+  var lb=r.lemah.length?r.lemah[0].bab:null, lbBuka=lb&&(bebasBab(lb)||premiumAktif(tingkatanBab(lb)));
   if(lb&&!lbBuka) bd.appendChild(el("p","note","Bab ini memerlukan langganan keluarga. Langgan di bawah untuk membukanya."));
   if(lbBuka){
     var bl=el("a","btn sm kel-wa"); bl.target="_blank"; bl.rel="noopener"; bl.textContent="Hantar bab ini kepada "+namaPendek(k.id,m.no)+" melalui WhatsApp";
