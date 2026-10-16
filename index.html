@@ -4304,6 +4304,21 @@ function naikTarafOnline(peringkat, btn, pakej){
 }
 /* toyyibPay memulangkan guru ke ?cikgu=1&bayar=1 bersama billcode/status_id.
    status_id tidak dipercayai; status sebenar disemak melalui fungsi. */
+/* Meta Pixel: dimuat HANYA selepas bayaran guru atau ibu bapa disahkan berjaya,
+   supaya tiada penjejak semasa murid bermain. ID Pixel dalam naikgred.com/aset/piksel.js.
+   Nilai ikut harga perintis (RM23 guru/kelas, RM32 keluarga); panitia dihantar tanpa nilai. */
+function NGPiksel(peringkat,bil){
+  try{
+    var s=document.createElement("script");
+    s.src="https://naikgred.com/aset/piksel.js"; s.async=true;
+    s.onload=function(){
+      if(!window.fbq) return;
+      var p=peringkat||"", nilai=p==="keluarga"?32:/^panitia/.test(p)?0:23;
+      fbq("track","Purchase",{value:nilai,currency:"MYR",content_name:p||"guru"},{eventID:bil||undefined});
+    };
+    document.head.appendChild(s);
+  }catch(e){}
+}
 function semakBayaranKembali(cubaan){
   if(!cubaan){
     var u=new URL(location.href), bc=u.searchParams.get("billcode");
@@ -4317,6 +4332,7 @@ function semakBayaranKembali(cubaan){
   BAYAR_MESEJ={jenis:"menunggu",teks:"⏳ Menyemak bayaran dengan bank..."};
   return panggilBayar({aksi:"semak",billcode:SEMAK_BIL}).then(function(j){
     if(j.status==="berjaya"){
+      NGPiksel(j.peringkat,SEMAK_BIL);
       try{ localStorage.removeItem("cn-bil"); }catch(e){}
       BAYAR_MESEJ={jenis:"berjaya",teks:/^panitia/.test(j.peringkat||"")?"✅ Terima kasih! Pakej panitia sudah aktif. Kod panitia ada di kad Pakej Panitia; beri kepada guru lain di sekolah cikgu.":j.peringkat==="keluarga"?"✅ Terima kasih! Anak NaikGred Keluarga sudah aktif. Semua bab Matematik Tingkatan 1 hingga 5 dibuka untuk anak anda.":j.peringkat==="kelas"?"✅ Terima kasih! 5 kelas tambahan sudah ditambah ke akaun cikgu. Resit dihantar ke e-mel cikgu.":"✅ Terima kasih! Bayaran berjaya dan Premium sudah aktif. Resit dihantar ke e-mel cikgu."};
       return muatProfil();
