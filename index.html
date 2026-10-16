@@ -4512,7 +4512,7 @@ function semuaBaris(buat){
    (1 hingga 5) yang lulus pada percubaan pertama, sama seperti tpAuto().
    ============================================================ */
 var KEL={dimuat:false,sibuk:false,data:{},ralat:"",tambah:false};
-function labelBab(id){
+function labelBabKel(id){
   var b=(window.BAB_INDEKS&&window.BAB_INDEKS[id])||(window.BANK&&window.BANK[id]), m=/^m(\d)b(\d+)$/.exec(id)||[];
   var nama=b?String(b.kod||b.tajuk||id).replace(/^\d+(\.\d+)?\s*/,""):id;
   return "T"+m[1]+" Bab "+m[2]+" · "+nama;
@@ -4578,9 +4578,9 @@ function meterMarkah(m){
   return h;
 }
 function barisBab(x){
-  if(x.markah==null) return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'</span><b class="belum">Belum</b>');
+  if(x.markah==null) return el("div","kel-bar",'<span class="nb">'+esc(labelBabKel(x.bab))+'</span><b class="belum">Belum</b>');
   var L=labelMarkah(x.markah);
-  return el("div","kel-bar",'<span class="nb">'+esc(labelBab(x.bab))+'<small><b style="color:'+L.w+'">'+L.t+'</b> · '+x.hentian+' daripada 5 hentian</small></span><span class="mt">'+meterMarkah(x.markah)+'</span><b>'+x.markah+'%</b>');
+  return el("div","kel-bar",'<span class="nb">'+esc(labelBabKel(x.bab))+'<small><b style="color:'+L.w+'">'+L.t+'</b> · '+x.hentian+' daripada 5 hentian</small></span><span class="mt">'+meterMarkah(x.markah)+'</span><b>'+x.markah+'%</b>');
 }
 function kadAnak(k,m){
   var r=ringkasAnak(m.no), st=statusAnak(r.akhir), nama=NAMA[k.id][m.no], pin=PIN[k.id][m.no];
@@ -4592,14 +4592,14 @@ function kadAnak(k,m){
     '<span><b>'+r.baris.length+'</b>bab dicuba</span><span><b>'+(r.purata!=null?r.purata+"%":"–")+'</b>purata markah</span>'));
   var tindak, nm=esc(namaPendek(k.id,m.no));
   if(!r.baris.length) tindak="Beri "+nm+" pautan dan PIN di bawah, kemudian minta dia mula dengan Bab 1.";
-  else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBab(r.lemah[0].bab))+"</b> (kini "+r.lemah[0].markah+"%).";
+  else if(r.lemah.length) tindak="Minggu ini, minta "+nm+" ulang <b>"+esc(labelBabKel(r.lemah[0].bab))+"</b> (kini "+r.lemah[0].markah+"%).";
   else tindak="Semua bab yang dicuba sudah mencapai 60% ke atas. Minta "+nm+" teruskan ke bab seterusnya.";
   bd.appendChild(el("p","kel-tindak","<b>Satu tindakan:</b> "+tindak));
   var lb=r.lemah.length?r.lemah[0].bab:null, lbBuka=lb&&(bebasBab(lb)||premiumAktif(tingkatanBab(lb)));
   if(lb&&!lbBuka) bd.appendChild(el("p","note","Bab ini memerlukan langganan keluarga. Langgan di bawah untuk membukanya."));
   if(lbBuka){
     var bl=el("a","btn sm kel-wa"); bl.target="_blank"; bl.rel="noopener"; bl.textContent="Hantar bab ini kepada "+namaPendek(k.id,m.no)+" melalui WhatsApp";
-    bl.href="https://wa.me/?text="+encodeURIComponent(namaPendek(k.id,m.no)+", tolong ulang "+labelBab(r.lemah[0].bab)+" dalam Anak NaikGred Matematik. Tekan pautan ini: "+urlPeribadi(k.kod,m.no,pin)+"&bab="+r.lemah[0].bab);
+    bl.href="https://wa.me/?text="+encodeURIComponent(namaPendek(k.id,m.no)+", tolong ulang "+labelBabKel(r.lemah[0].bab)+" dalam Anak NaikGred Matematik. Tekan pautan ini: "+urlPeribadi(k.kod,m.no,pin)+"&bab="+r.lemah[0].bab);
     bd.appendChild(bl);
   }
   if(r.lemah.length){
