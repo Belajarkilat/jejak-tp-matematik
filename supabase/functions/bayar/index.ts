@@ -1,4 +1,4 @@
-/* Bayaran Premium melalui toyyibPay (FPX sahaja).
+/* Bayaran Premium melalui toyyibPay (FPX + kad, jika kad diaktifkan pada akaun toyyibPay).
 
    Satu fungsi, tiga pintu:
      POST {aksi:"cipta", peringkat:"rendah"|"atas"}   (guru log masuk)
@@ -155,8 +155,10 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string, pa
     /* toyyibPay live menolak billPhone kosong; telefon guru adalah pilihan,
        jadi guna nombor sokongan jika guru belum isi. */
     billPhone: String(profil.telefon ?? "").replace(/\D/g, "") || env("TOYYIB_TELEFON", "60193686146"),
-    billPaymentChannel: "0",
-    /* "0" = caj FPX (RM1) dibayar oleh pembeli, ditunjuk oleh toyyibPay di halaman bayar. */
+    /* "2" = FPX + kad debit/kredit. Selagi akaun toyyibPay belum diluluskan untuk kad,
+       halaman bayar hanya papar FPX (diuji 17 Okt 2026), jadi selamat. */
+    billPaymentChannel: "2",
+    /* "0" = caj FPX (RM1) dibayar oleh pembeli; caj kad ditanggung penjual. */
     billChargeToCustomer: "0",
     billExpiryDays: "1",
   }).catch((e) => ({ ralat: String(e.message ?? e) }));
