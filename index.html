@@ -4276,10 +4276,36 @@ function bukaWaNaikTaraf(kod){
     (SESI&&SESI.user&&SESI.user.email?"\n\nE-mel akaun saya: "+SESI.user.email:"");
   window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
 }
+/* FPX bermasalah (bank gagal, tiada perbankan dalam talian): guru/ibu bapa
+   WhatsApp nombor sokongan, dihantar DuitNow QR atau bayar TNG, kemudian
+   Premium dibuka secara manual (jejak-tp-admin). Tiada caj FPX RM1. */
+var LABEL_BAYAR={rendah:"Premium Menengah Rendah (Tingkatan 1–3) RM23",atas:"Premium Menengah Atas (Tingkatan 4–5) RM23",kelas:"Tambah 5 kelas RM23",keluarga:"Anak NaikGred Keluarga RM32",panitia:"Pakej Panitia Sekolah"};
+function bukaWaBayarManual(peringkat){
+  var kel=peringkat==="keluarga";
+  var mesej="Salam, saya "+(PROFIL&&PROFIL.nama||(kel?"ibu bapa":"cikgu"))+(!kel&&PROFIL&&PROFIL.sekolah?" dari "+PROFIL.sekolah:"")+
+    ". Saya ingin membayar "+(LABEL_BAYAR[peringkat]||"Premium")+" untuk "+namaApp()+" melalui DuitNow QR / TNG kerana FPX bermasalah."+
+    (SESI&&SESI.user&&SESI.user.email?"\n\nE-mel akaun saya: "+SESI.user.email:"");
+  window.open("https://wa.me/60193686146?text="+encodeURIComponent(mesej),"_blank");
+}
+function pautanBayarManual(peringkat){
+  var b=el("button","pautan-kecil"); b.type="button"; b.textContent="FPX bermasalah? Bayar melalui DuitNow QR / TNG";
+  b.onclick=function(){ bukaWaBayarManual(peringkat); };
+  return b;
+}
+/* Bil terakhir yang dibuka pada peranti ini (peringkat + masa), sah 24 jam. */
+function niatBil(){
+  try{ var n=JSON.parse(localStorage.getItem("cn-bil-p")||"null"); return n&&Date.now()-n.t<864e5?n:null; }catch(e){ return null; }
+}
+function mesejBayar(){
+  var p=el("p","bayar-mesej "+BAYAR_MESEJ.jenis,esc(BAYAR_MESEJ.teks));
+  var n=BAYAR_MESEJ.manual&&niatBil();
+  if(n){ p.appendChild(document.createElement("br")); p.appendChild(pautanBayarManual(n.p)); }
+  return p;
+}
 /* Bayaran dalam talian (toyyibPay, FPX). Dibuka dengan CN_AWAN.bayarOnline
    dalam konfig.js. Premium diaktifkan oleh Edge Function "bayar" selepas
    status disemak dengan toyyibPay; app tidak boleh menulis premium sendiri. */
-var BAYAR_MESEJ=null, SEMAK_BIL=null;
+var BAYAR_MESEJ=null, SEMAK_BIL=null, SEMAK_SENYAP=false;
 function bayarOnline(){ return !!(AWAN&&AWAN.bayarOnline); }
 function panggilBayar(isi){
   return fetch(AWAN.url+"/functions/v1/bayar",{method:"POST",
@@ -4295,7 +4321,7 @@ function naikTarafOnline(peringkat, btn, pakej){
   btn.disabled=true; var asal=btn.textContent; btn.textContent="Membuka halaman bayaran...";
   panggilBayar({aksi:"cipta",peringkat:peringkat,pakej:pakej||""}).then(function(j){
     if(!j.url) throw new Error(j.ralat||"Tiada pautan bayaran");
-    try{ localStorage.setItem("cn-bil",j.billcode); }catch(e){}
+    try{ localStorage.setItem("cn-bil",j.billcode); localStorage.setItem("cn-bil-p",JSON.stringify({p:peringkat,t:Date.now()})); }catch(e){}
     location.href=j.url;
   }).catch(function(e){
     btn.disabled=false; btn.textContent=asal;
@@ -4323,6 +4349,10 @@ function semakBayaranKembali(cubaan){
   if(!cubaan){
     var u=new URL(location.href), bc=u.searchParams.get("billcode");
     if(!bc&&u.searchParams.has("bayar")){ try{ bc=localStorage.getItem("cn-bil"); }catch(e){} }
+    /* Tiada ?bayar: guru mungkin menekan butang kembali dari toyyibPay. Semak bil
+       terakhir sekali sahaja, tanpa ulangan; cn-bil dibuang supaya tidak berulang. */
+    SEMAK_SENYAP=false;
+    if(!bc&&!u.searchParams.has("bayar")&&niatBil()){ try{ bc=localStorage.getItem("cn-bil"); localStorage.removeItem("cn-bil"); }catch(e){} SEMAK_SENYAP=!!bc; }
     var ubah=false;
     ["bayar","billcode","status_id","order_id","msg","transaction_id"].forEach(function(k){ if(u.searchParams.has(k)){ u.searchParams.delete(k); ubah=true; } });
     if(ubah) history.replaceState(null,"",u.pathname+u.search+u.hash);
@@ -4333,19 +4363,21 @@ function semakBayaranKembali(cubaan){
   return panggilBayar({aksi:"semak",billcode:SEMAK_BIL}).then(function(j){
     if(j.status==="berjaya"){
       NGPiksel(j.peringkat,SEMAK_BIL);
-      try{ localStorage.removeItem("cn-bil"); }catch(e){}
+      try{ localStorage.removeItem("cn-bil"); localStorage.removeItem("cn-bil-p"); }catch(e){}
       BAYAR_MESEJ={jenis:"berjaya",teks:/^panitia/.test(j.peringkat||"")?"✅ Terima kasih! Pakej panitia sudah aktif. Kod panitia ada di kad Pakej Panitia; beri kepada guru lain di sekolah cikgu.":j.peringkat==="keluarga"?"✅ Terima kasih! Anak NaikGred Keluarga sudah aktif. Semua bab Matematik Tingkatan 1 hingga 5 dibuka untuk anak anda.":j.peringkat==="kelas"?"✅ Terima kasih! 5 kelas tambahan sudah ditambah ke akaun cikgu. Resit dihantar ke e-mel cikgu.":"✅ Terima kasih! Bayaran berjaya dan Premium sudah aktif. Resit dihantar ke e-mel cikgu."};
       return muatProfil();
     }
-    if(j.status==="gagal"){ BAYAR_MESEJ={jenis:"gagal",teks:"Bayaran tidak berjaya atau dibatalkan. Tiada caj dikenakan. Cuba lagi bila-bila masa."}; return; }
+    if(j.status==="gagal"){ BAYAR_MESEJ={manual:1,jenis:"gagal",teks:"Bayaran tidak berjaya atau dibatalkan. Tiada caj dikenakan. Cuba lagi bila-bila masa."}; return; }
     if(j.status==="tiada"){ BAYAR_MESEJ=null; return; }
+    if(SEMAK_SENYAP){ BAYAR_MESEJ={manual:1,jenis:"menunggu",teks:"Bayaran tadi belum selesai. Jika belum membayar, cuba sekali lagi atau gunakan DuitNow QR / TNG. Jika duit sudah ditolak, Premium akan aktif sendiri setelah bank mengesahkan."}; return; }
     if(cubaan<5){
       BAYAR_MESEJ={jenis:"menunggu",teks:"⏳ Bank belum mengesahkan bayaran. Kami akan menyemak semula; cikgu tidak perlu membayar sekali lagi."};
       setTimeout(function(){ Promise.resolve(semakBayaranKembali(cubaan+1)).then(segarGuru); },15000);
       return;
     }
-    BAYAR_MESEJ={jenis:"menunggu",teks:"Bayaran masih belum disahkan. Jika wang sudah ditolak, Premium akan aktif secara automatik apabila bank mengesahkannya. Masih belum aktif selepas 1 jam? Hubungi kami melalui WhatsApp."};
+    BAYAR_MESEJ={manual:1,jenis:"menunggu",teks:"Bayaran masih belum disahkan. Jika wang sudah ditolak, Premium akan aktif secara automatik apabila bank mengesahkannya. Masih belum aktif selepas 1 jam? Hubungi kami melalui WhatsApp."};
   }).catch(function(){
+    if(SEMAK_SENYAP){ BAYAR_MESEJ=null; return; }
     BAYAR_MESEJ={jenis:"gagal",teks:"Status bayaran tidak dapat disemak sekarang. Muat semula halaman sebentar lagi."};
   });
 }
@@ -4389,8 +4421,7 @@ function barisPremium(nama, kod, aktif, tamat){
     var kanan=el("div","bayar-pilih");
     bw.onclick=function(){ naikTarafOnline(/Rendah/.test(kod)?"rendah":"atas",bw); };
     kanan.appendChild(bw);
-    var wa=el("button","pautan-kecil"); wa.type="button"; wa.textContent="atau bayar melalui WhatsApp";
-    wa.onclick=function(){ bukaWaNaikTaraf(kod); };
+    var wa=pautanBayarManual(/Rendah/.test(kod)?"rendah":"atas");
     kanan.appendChild(wa);
     d.appendChild(kanan);
     return d;
@@ -4414,6 +4445,7 @@ function kadKelas5(){
   var bw=el("button","btn teal sm"); bw.type="button"; bw.textContent="Tambah 5 kelas RM23";
   bw.onclick=function(){ naikTarafOnline("kelas",bw); };
   kanan.appendChild(bw);
+  kanan.appendChild(pautanBayarManual("kelas"));
   d.appendChild(kanan);
   return d;
 }
@@ -4484,7 +4516,7 @@ function kadPanitia(){
 function kadPremium(){
   var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
   bd.appendChild(el("h3",null,"Premium"));
-  if(BAYAR_MESEJ) bd.appendChild(el("p","bayar-mesej "+BAYAR_MESEJ.jenis,esc(BAYAR_MESEJ.teks)));
+  if(BAYAR_MESEJ) bd.appendChild(mesejBayar());
   bd.appendChild(el("p","note","Harga Early Bird RM23/tahun hingga 31 Dis 2026, dikunci setiap tahun selagi langganan tidak terputus. Mulai 1 Jan 2027: RM59. Menengah rendah (T1-3) dan menengah atas (T4-5) dibeli berasingan."));
   bd.appendChild(barisPremium("Menengah rendah · Tingkatan 1–3","Menengah Rendah",PROFIL.premiumRendah,PROFIL.premiumRendahTamat));
   bd.appendChild(barisPremium("Menengah atas · Tingkatan 4–5","Menengah Atas",PROFIL.premiumAtas,PROFIL.premiumAtasTamat));
@@ -4658,6 +4690,7 @@ function borangAnak(){
 }
 function kadLangganKeluarga(){
   var p=el("div","panel kadpremium"), bd=el("div","panel-bd"); p.appendChild(bd);
+  if(BAYAR_MESEJ) bd.appendChild(mesejBayar());
   if(PROFIL.premiumRendah||PROFIL.premiumAtas){
     bd.appendChild(el("h3",null,"Anak NaikGred Keluarga aktif"));
     bd.appendChild(el("p","note","Semua bab Matematik Tingkatan 1 hingga 5 dibuka untuk anak anda sehingga "+tarikhPanjang(PROFIL.premiumRendahTamat||PROFIL.premiumAtasTamat)+"."));
@@ -4670,6 +4703,7 @@ function kadLangganKeluarga(){
   var a=el("div","actions");
   var b=el("a","btn"); b.href="https://jejaktpsains.naikgred.com/?keluarga=1"; b.textContent=awal?"Langgan RM32 setahun":"Langgan RM59 setahun";
   a.appendChild(b); bd.appendChild(a);
+  if(bayarOnline()) bd.appendChild(pautanBayarManual("keluarga"));
   return p;
 }
 function paneKeluarga(ak){
