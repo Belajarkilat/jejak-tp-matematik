@@ -6,6 +6,17 @@
    (localhost, pelayar webdriver) tidak direkod. */
 /* Perayap (pratonton pautan Meta dsb.), pelayar automatik dan localhost tidak dikira sebagai lawatan (17 Okt 2026). */
 var NG_ROBOT=(function(){try{return !!navigator.webdriver||/bot|crawl|spider|slurp|facebookexternalhit|meta-externalagent|facebookcatalog|headlesschrome|lighthouse/i.test(navigator.userAgent||"")||/^(localhost|127.0.0.1)$/.test(location.hostname);}catch(e){return true;}})();
+/* Rujukan lawatan (18 Okt 2026): hos laman yang membawa pelawat (tanpa www.), atau 'langsung'
+   jika tiada (WhatsApp, taip sendiri, penanda buku), ditambah '|app-<nama>' jika dibuka dalam
+   pelayar app. Disimpan dalam lajur rujuk bersama ping 'lawat'. */
+var NG_RUJUK=(function(){try{
+  var ua=navigator.userAgent||"", a="", r=document.referrer||"", h="";
+  if(/FBAN|FBAV|FB_IAB/.test(ua)) a="facebook"; else if(/Instagram/.test(ua)) a="instagram";
+  else if(/Barcelona/.test(ua)) a="threads"; else if(/musical_ly|BytedanceWebview|TikTok/i.test(ua)) a="tiktok";
+  else if(/Telegram/i.test(ua)) a="telegram"; else if(/\bLine\//.test(ua)) a="line";
+  if(r){try{var u=new URL(r);h=(u.protocol==="android-app:"?"android-app:":"")+u.hostname.replace(/^www\./,"");}catch(x){}}
+  return (h||"langsung")+(a?"|app-"+a:"");
+}catch(e){return "";}})();
 (function(){
   try{
     if(NG_ROBOT) return;
@@ -25,7 +36,7 @@ var NG_ROBOT=(function(){try{return !!navigator.webdriver||/bot|crawl|spider|slu
     fetch(awan.url+"/rest/v1/rpc/jm_ping",{
       method:"POST", keepalive:true,
       headers:{"apikey":awan.kunci,"Authorization":"Bearer "+awan.kunci,"Content-Type":"application/json"},
-      body:JSON.stringify({p_jenis:"lawat",p_peranti:p,p_nota:kod||localStorage.getItem("jm-dari")||""})
+      body:JSON.stringify({p_jenis:"lawat",p_peranti:p,p_nota:kod||localStorage.getItem("jm-dari")||"",p_rujuk:NG_RUJUK})
     }).catch(function(){});
   }catch(e){}
 })();
