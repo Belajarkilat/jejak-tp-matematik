@@ -1527,14 +1527,17 @@ var PENENTU=2;
 function lulusItem(betul,jum){ return betul>=ambangItem(jum); }
 /* Cadangan TP bagi satu hentian. Percubaan pertama lulus = menguasai.
    Jika gagal, percubaan kedua (ditulis sekali oleh pelayan) digabungkan
-   dengan yang pertama dan dinilai pada ambang yang sama. Percubaan ketiga
-   dan seterusnya tidak dikira, jadi ulangan tidak boleh memancing tuah.
+   dengan yang pertama dan dinilai pada ambang yang sama.
    Gabungan: murid 80% lulus hentian 89% kali (dahulu 85%), murid 60% 32%
    (dahulu 42%). */
 function itemC(x){ return {b:(x.betul||0)+(x.bos?1:0), n:(x.jumlah||0)+1}; }
+/* Sejak 21 Okt 2026: lulus pada mana-mana percubaan (terbaik) turut dikira,
+   kerana murid yang gagal sekali di hentian 1 kekal TP0 walaupun lulus semua
+   hentian selepasnya. Gabungan pertama+kedua di bawah dikekalkan. */
 function lulusCadangan(c){
   if(!c||!c.pertama) return false;
   if(c.pertama.lulus) return true;
+  if(c.terbaik&&c.terbaik.lulus) return true;
   if(!c.kedua) return false;
   var x=itemC(c.pertama), y=itemC(c.kedua);
   return lulusItem(x.b+y.b, x.n+y.n);
@@ -3312,10 +3315,10 @@ function hasilAras(){
   kepil(S.no?("Percubaan ke-"+kaliKe):"Latihan, tidak direkod");
   b.appendChild(meta);
   if(S.no&&kaliKe===1) b.appendChild(el("p","note",(lulus||terbukaTP6)
-    ? "Percubaan pertama inilah yang dilihat cikgu sebagai bukti. Ulangan selepas ini untuk latihan dan skor sahaja."
-    : "Percubaan pertama ini direkod untuk cikgu. Percubaan kedua awak akan digabungkan dengannya, jadi ulang kaji dahulu sebelum mencuba lagi. Percubaan ketiga dan seterusnya untuk latihan sahaja."));
+    ? "Percubaan pertama ini direkod untuk cikgu. Ulangan selepas ini untuk latihan dan skor."
+    : "Percubaan pertama ini direkod untuk cikgu. Jika belum lulus, ulang kaji dan cuba lagi: lulus pada percubaan seterusnya tetap dikira."));
   else if(S.no&&kaliKe===2&&!terbukaTP6&&sebelum&&sebelum.pertama&&!sebelum.pertama.lulus)
-    b.appendChild(el("p","note","Percubaan kedua ini digabungkan dengan percubaan pertama sebagai bukti untuk cikgu. Ulangan selepas ini untuk latihan dan skor sahaja."));
+    b.appendChild(el("p","note","Percubaan kedua ini direkod untuk cikgu bersama percubaan pertama. Jika belum lulus, cuba lagi: lulus pada percubaan seterusnya tetap dikira."));
 
   /* Apa yang murid sebenarnya belajar dalam pusingan ini. */
   var pel=el("div","pelajaran");
@@ -4541,7 +4544,7 @@ function semuaBaris(buat){
    MOD KELUARGA (Anak NaikGred). Akaun ibu bapa ialah akaun guru bertanda
    keluarga, dengan satu kelas "Keluarga" (sehingga 5 anak). Paparan ini
    mengira TP setiap bab daripada rekod cubaan: TP = hentian berturut-turut
-   (1 hingga 5) yang lulus pada percubaan pertama, sama seperti tpAuto().
+   (1 hingga 5) yang lulus, sama seperti tpAuto().
    ============================================================ */
 var KEL={dimuat:false,sibuk:false,data:{},ralat:"",tambah:false};
 function labelBabKel(id){
@@ -5070,7 +5073,7 @@ function paneKelas(){
   var be=el("button","btn"); be.textContent="Eksport untuk SPPB"; be.onclick=eksport;
   act.appendChild(be); p.appendChild(act);
   p.appendChild(el("div",null,'<div id="kotakEksport"></div>'));
-  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik dikira daripada percubaan PERTAMA setiap hentian. Jika percubaan pertama gagal, percubaan kedua digabungkan dengannya pada ambang 70% yang sama, kerana satu percubaan yang pendek boleh gagal akibat nasib. Kedua-duanya ditulis sekali lalu tidak pernah ditindih; percubaan ketiga dan seterusnya tidak dikira. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
+  p.appendChild(el("p","note","TP yang dilapor ialah keputusan guru. Cadangan automatik dikira daripada percubaan PERTAMA setiap hentian. Jika percubaan pertama gagal, percubaan kedua digabungkan dengannya pada ambang 70% yang sama, kerana satu percubaan yang pendek boleh gagal akibat nasib. Murid yang lulus pada percubaan seterusnya juga dikira; lajur Lulus dalam butiran murid menunjukkan sama ada murid lulus pada kali pertama atau selepas ulangan. Percubaan pertama dan kedua ditulis sekali lalu tidak pernah ditindih. TP6 tidak pernah dicadangkan oleh sistem kerana tugasan reka cipta mesti dibaca guru. DSKP menyatakan TP ditentukan secara kolektif dan holistik mengikut pertimbangan profesional guru, jadi penindihan di sini sah dan direkod bersama sebabnya."));
 }
 function butiranMurid(kelas,no,auto,lapor){
   var w=el("div","ulasan");
@@ -5080,7 +5083,7 @@ function butiranMurid(kelas,no,auto,lapor){
   w.appendChild(hd);
 
   var tb=el("table","cubtab");
-  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Kedua</th><th class="n">Terbaik</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
+  var th='<thead><tr><th>Hentian</th><th class="n">Percubaan pertama</th><th class="n">Bos</th><th class="n">Kedua</th><th class="n">Terbaik</th><th class="n">Lulus</th><th class="n">Kali</th><th class="n">Mod</th><th class="n">Tarikh</th></tr></thead><tbody>';
   var ada=false;
   for(var a=1;a<=6;a++){
     var c=cubaanMurid(kelas,no,a);
@@ -5091,6 +5094,7 @@ function butiranMurid(kelas,no,auto,lapor){
         '<td class="n">'+(c.pertama.bos?"✓":"✗")+'</td>'+
         '<td class="n">'+(c.kedua?(c.kedua.betul+' / '+c.kedua.jumlah+(c.kedua.bos?" + bos":"")):"—")+'</td>'+
         '<td class="n">'+(c.terbaik?c.terbaik.betul+' / '+c.terbaik.jumlah:"—")+'</td>'+
+        '<td class="n">'+(a===6?"—":(c.pertama.lulus?"Kali pertama":(lulusCadangan(c)?"Selepas ulangan":"Belum")))+'</td>'+
         '<td class="n">'+(c.kali||0)+'</td>'+
         '<td class="n">'+(c.pertama.mod==="tenang"?"tenang":"masa")+'</td>'+
         '<td class="n">'+tarikhPendek(c.pertama.masa)+'</td></tr>';

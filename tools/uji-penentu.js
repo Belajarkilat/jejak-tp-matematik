@@ -93,6 +93,8 @@ const ok = (c, m, x) => { console.log((c ? "✓ " : "✗ ") + m + (c ? "" : "  "
       ["6/9 + 7/9 = 13/18 -> lulus", { pertama: R(5, 8, true, false), kedua: R(6, 8, true, true) }, true],
       ["5/9 + 7/9 = 12/18 -> gagal", { pertama: R(4, 8, true, false), kedua: R(6, 8, true, true) }, false],
       ["rekod lama 5 item: 3/5 + 4/5 = 7/10 -> lulus", { pertama: R(2, 4, true, false), kedua: R(3, 4, true, true) }, true],
+      ["gagal pertama & gabungan, lulus kali ketiga (terbaik) -> lulus", { pertama: R(3, 6, true, false), kedua: R(4, 6, true, false), terbaik: R(6, 6, true, true) }, true],
+      ["terbaik juga gagal -> gagal", { pertama: R(3, 6, true, false), kedua: R(4, 6, true, false), terbaik: R(4, 6, true, false) }, false],
     ].map(([n, c, mahu]) => [n, U.lulusCadangan(c) === mahu]);
     /* tpAuto: hentian 2 gagal pertama tetapi lulus selepas gabung, rantai diteruskan */
     const K = (a, c) => { U.CUBAAN[U.kunciC("ujiK", "1", a)] = Object.assign({ v: U.SKEMA, kelas: "ujiK", no: "1", aras: a, kali: 1 }, c); };
