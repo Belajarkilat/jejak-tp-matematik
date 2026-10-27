@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soalan PBD Matematik Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf (TP1-TP6) | Jejak TP Matematik</title>
+<meta name="description" content="Contoh soalan PBD Matematik Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf mengikut TP1 hingga TP6, Standard Prestasi DSKP dan contoh ulasan PBD. Murid bermain, guru dapat cadangan TP automatik.">
+<link rel="canonical" href="https://jejaktpmath.naikgred.com/bab/tingkatan-4-bab-5-rangkaian-dalam-teori-graf/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ms_MY">
+<meta property="og:site_name" content="Jejak TP Matematik">
+<meta property="og:url" content="https://jejaktpmath.naikgred.com/bab/tingkatan-4-bab-5-rangkaian-dalam-teori-graf/">
+<meta property="og:title" content="Soalan PBD Matematik Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf (TP1-TP6) | Jejak TP Matematik">
+<meta property="og:description" content="Contoh soalan PBD Matematik Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf mengikut TP1 hingga TP6, Standard Prestasi DSKP dan contoh ulasan PBD. Murid bermain, guru dapat cadangan TP automatik.">
+<meta property="og:image" content="https://jejaktpmath.naikgred.com/og-jejak-math.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/ikon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Lexend:wght@400;600;700&display=swap">
+<style>
+:root{--paper:#F6FAF8;--surface:#FFFFFF;--soft:#E3F1EC;--ink:#12302A;--ink2:#4E6B64;--brand:#2F8874;--brand-deep:#1D5E50;--line:#CFE3DC;--gold:#E8A33D;--gold-soft:#FFF1D9;--gold-ink:#6B4308}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0E1C19;--surface:#152824;--soft:#1C3530;--ink:#E6F3EF;--ink2:#9DBDB4;--brand:#5FC2A8;--brand-deep:#7ED3BF;--line:#29453E;--gold:#F0B35A;--gold-soft:#3A2C14;--gold-ink:#F5D49B}}
+:root[data-theme="dark"]{--paper:#0E1C19;--surface:#152824;--soft:#1C3530;--ink:#E6F3EF;--ink2:#9DBDB4;--brand:#5FC2A8;--brand-deep:#7ED3BF;--line:#29453E;--gold:#F0B35A;--gold-soft:#3A2C14;--gold-ink:#F5D49B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Lexend,system-ui,sans-serif}
+a{color:var(--brand-deep)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+header.atas{border-bottom:1px solid var(--line);background:var(--surface)}
+header.atas .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:12px}
+.logo{font-family:"Baloo 2",Lexend,sans-serif;font-weight:800;font-size:20px;text-decoration:none;color:var(--ink)}
+.logo span{color:var(--brand)}
+.atas .cta-kecil{font-size:14px;font-weight:600;text-decoration:none;background:var(--brand);color:#fff;padding:8px 14px;border-radius:999px;white-space:nowrap}
+nav.jejak{font-size:13px;color:var(--ink2);margin:20px 0 8px}
+nav.jejak a{color:var(--ink2)}
+h1{font-family:"Baloo 2",Lexend,sans-serif;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:4px 0 12px}
+h2{font-family:"Baloo 2",Lexend,sans-serif;font-size:24px;line-height:1.2;margin:40px 0 12px}
+.lede{font-size:18px;color:var(--ink2);margin:0 0 20px}
+.cip{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
+.cip li{background:var(--soft);border-radius:999px;padding:4px 12px;font-size:14px}
+.kotak-cta{background:var(--surface);border:2px solid var(--brand);border-radius:18px;padding:20px;margin:24px 0}
+.kotak-cta p{margin:0 0 12px}
+.btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:12px;margin:4px 8px 4px 0}
+.btn.dua{background:transparent;color:var(--brand-deep);border:2px solid var(--brand)}
+.nota-harga{font-size:14px;color:var(--ink2)}
+.tb{width:100%;border-collapse:collapse;background:var(--surface);border-radius:14px;overflow:hidden;font-size:15px}
+.tb th,.tb td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tb th{background:var(--soft);font-weight:600}
+.tb td:first-child{font-weight:700;white-space:nowrap;color:var(--brand-deep)}
+.skrol{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.kad{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;padding:0;margin:0;list-style:none}
+.kad li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.kad b{display:block;margin-bottom:4px}
+.soalan{list-style:none;padding:0;margin:0;counter-reset:s}
+.soalan>li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin:0 0 12px}
+.soalan .tp{display:inline-block;font-size:12px;font-weight:700;background:var(--gold-soft);color:var(--gold-ink);border-radius:6px;padding:2px 8px;margin-bottom:6px}
+.soalan .t{font-weight:600;margin:0 0 8px}
+.soalan ol{margin:0 0 8px;padding-left:24px;list-style:upper-alpha}
+details{margin-top:6px}
+summary{cursor:pointer;color:var(--brand-deep);font-weight:600}
+.ulasan{background:var(--surface);border-left:4px solid var(--brand);border-radius:0 12px 12px 0;padding:10px 14px;margin:0 0 10px}
+.ulasan b{color:var(--brand-deep)}
+.senarai{columns:2 260px;padding-left:20px}
+.senarai li{margin:0 0 6px;break-inside:avoid}
+footer{margin-top:56px;border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--ink2)}
+@media (max-width:520px){.atas .cta-kecil{display:none}.tb{font-size:14px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Jejak TP Matematik","item":"https://jejaktpmath.naikgred.com/landing.html"},{"@type":"ListItem","position":2,"name":"Semua bab","item":"https://jejaktpmath.naikgred.com/bab/"},{"@type":"ListItem","position":3,"name":"Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf","item":"https://jejaktpmath.naikgred.com/bab/tingkatan-4-bab-5-rangkaian-dalam-teori-graf/"}]},{"@type":"LearningResource","name":"Soalan PBD Matematik Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf (TP1-TP6)","description":"Contoh soalan PBD Matematik Tingkatan 4 Bab 5 Rangkaian dalam Teori Graf mengikut TP1 hingga TP6, Standard Prestasi DSKP dan contoh ulasan PBD. Murid bermain, guru dapat cadangan TP automatik.","url":"https://jejaktpmath.naikgred.com/bab/tingkatan-4-bab-5-rangkaian-dalam-teori-graf/","inLanguage":"ms","learningResourceType":"Kuiz","educationalLevel":"Tingkatan 4","about":"Matematik KSSM Tingkatan 4: Rangkaian dalam Teori Graf","isAccessibleForFree":false,"provider":{"@type":"Organization","name":"NaikGred","url":"https://naikgred.com/"}}]}</script>
+</head>
+<body>
+<header class="atas"><div class="wrap"><a class="logo" href="/landing.html">Jejak TP <span>Matematik</span></a><a class="cta-kecil" href="/index.html?daftar&amp;dari=seo">Daftar guru percuma</a></div></header>
+<main class="wrap">
+
+<nav class="jejak" aria-label="Lokasi"><a href="/landing.html">Jejak TP Matematik</a> › <a href="/bab/">Semua bab</a> › <a href="/bab/#tingkatan-4">Tingkatan 4</a> › Bab 5</nav>
+<h1>Soalan PBD Matematik Tingkatan 4 Bab 5: Rangkaian dalam Teori Graf</h1>
+<p class="lede">Halaman ini memaparkan Standard Prestasi DSKP bagi setiap TP, nota ringkas, contoh soalan dan contoh ulasan PBD untuk bab ini. Dalam Jejak TP Matematik, murid menjawab 54 soalan dalam enam hentian, daripada TP1 hingga TP6, dan guru memperoleh cadangan TP secara automatik.</p>
+<ul class="cip"><li>54 soalan</li><li>6 hentian TP</li><li>Premium</li><li>Tingkatan 4</li></ul>
+
+<div class="kotak-cta">
+<p><b>Main bab ini dengan murid anda.</b> Bab 1 dan 2 setiap tingkatan adalah percuma. Bab 5 dibuka dalam Premium menengah atas (Tingkatan 4 dan 5).</p>
+<a class="btn" href="/index.html?daftar&amp;dari=seo">Main dengan murid anda, percuma</a><a class="btn dua" href="/index.html?demo=murid&amp;bab=m4b5&amp;dari=seo">Cuba sebagai murid</a>
+<p class="nota-harga">Premium RM23 setahun bagi setiap peringkat (harga perintis hingga 31 Disember 2026).</p>
+</div>
+
+<h2>Standard Prestasi DSKP: TP1 hingga TP6</h2>
+<p>Deskriptor di bawah disalin kata demi kata daripada DSKP KSSM Matematik Tingkatan 4, Bahagian Pembangunan Kurikulum. Setiap hentian dalam permainan dipadankan dengan satu TP.</p>
+<div class="skrol"><table class="tb"><thead><tr><th>TP</th><th>Deskriptor</th><th>Hentian</th></tr></thead><tbody>
+<tr><td>TP1</td><td>Mempamerkan pengetahuan asas tentang rangkaian.</td><td>Stesen Bucu<br><small>Mengingat</small></td></tr>
+<tr><td>TP2</td><td>Mempamerkan kefahaman tentang rangkaian.</td><td>Menara Pengikut<br><small>Memahami</small></td></tr>
+<tr><td>TP3</td><td>Mengaplikasikan kefahaman tentang rangkaian untuk melaksanakan tugasan mudah.</td><td>Taman Pokok<br><small>Mengaplikasi</small></td></tr>
+<tr><td>TP4</td><td>Mengaplikasikan pengetahuan dan kemahiran yang sesuai tentang rangkaian dalam konteks penyelesaian masalah rutin yang mudah.</td><td>Peta Kampung<br><small>Menganalisis</small></td></tr>
+<tr><td>TP5</td><td>Mengaplikasikan pengetahuan dan kemahiran yang sesuai tentang rangkaian dalam konteks penyelesaian masalah rutin yang kompleks.</td><td>Jalan ke Pantai<br><small>Menilai</small></td></tr>
+<tr><td>TP6</td><td>Mengaplikasikan pengetahuan dan kemahiran yang sesuai tentang rangkaian dalam konteks penyelesaian masalah bukan rutin secara kreatif.</td><td>Pejabat Perancang<br><small>Mereka cipta</small></td></tr>
+</tbody></table></div>
+<p><b>Standard kandungan yang diuji:</b> 5.1.1 Rangkaian sebagai graf; bucu, tepi dan darjah; 5.1.2 Graf terarah dan graf tak terarah; berpemberat dan tak berpemberat; 5.1.3 Subgraf dan pokok; 5.1.4 / 5.1.5 Mewakilkan maklumat dan masalah rangkaian; 5.1.5 Masalah kos optimum (masa, jarak dan perbelanjaan); 5.1.5 Masalah rangkaian bukan rutin.</p>
+
+<h2>Nota ringkas Rangkaian dalam Teori Graf</h2>
+<p>Setiap hentian memberi murid satu kad fakta selepas lulus. Ini kad bagi bab ini:</p>
+<ul class="kad">
+<li><b>Bucu dan Tepi</b>Graf terdiri daripada bintik yang dipanggil bucu dan garis yang dipanggil tepi. Darjah suatu bucu ialah bilangan tepi yang bertemu di bucu itu.</li>
+<li><b>Jumlah Darjah</b>Setiap tepi menyumbang 2 kepada jumlah darjah (satu bagi setiap hujung), jadi jumlah darjah = 2 × bilangan tepi. Gelung menyumbang 2 kepada darjah bucunya.</li>
+<li><b>Graf Terarah</b>Dalam graf terarah, setiap tepi mempunyai arah (anak panah). Darjah masuk = bilangan anak panah yang menuju ke bucu, darjah keluar = bilangan yang keluar dari bucu.</li>
+<li><b>Berpemberat</b>Graf berpemberat mempunyai nilai pada setiap tepi, seperti jarak, masa atau kos. Graf tak berpemberat hanya menunjukkan sama ada dua bucu berkait.</li>
+<li><b>Subgraf</b>Subgraf ialah sebahagian daripada graf: bucu dan tepinya semua diambil daripada graf asal.</li>
+<li><b>Pokok</b>Pokok ialah graf terkait tanpa kitaran. Bagi pokok, bilangan tepi = bilangan bucu − 1.</li>
+<li><b>Laluan Terpendek</b>Untuk mencari laluan terpendek, bandingkan jumlah pemberat bagi setiap laluan yang mungkin, dan pilih yang terkecil.</li>
+<li><b>Kebaikan Rangkaian</b>Rangkaian pengangkutan lebih ringkas daripada peta: ia hanya menunjukkan sambungan dan pemberat, jadi laluan mudah dibandingkan. Namun ia tidak menunjukkan bentuk sebenar jalan.</li>
+<li><b>Kos Optimum</b>Kos dalam rangkaian boleh bermaksud jarak, masa atau perbelanjaan. Laluan optimum bergantung pada kriteria yang dipilih.</li>
+<li><b>Timbang Pilihan</b>Laluan terpantas tidak semestinya termurah. Keputusan yang baik menimbang semua kriteria mengikut keperluan pengguna.</li>
+<li><b>Jalan Baharu</b>Menambah satu tepi baharu boleh mengubah laluan optimum. Perancang membandingkan penjimatan dengan kos membina jalan itu.</li>
+<li><b>Perancang Bandar</b>Keputusan perancangan yang baik menggunakan data rangkaian (jarak, masa, kos) dan mengambil kira pengguna yang terkesan.</li>
+</ul>
+
+<h2>Contoh soalan</h2>
+<p>2 daripada 54 soalan dalam bab ini. Soalan lain, termasuk soalan berajah, soalan bos dan TP6, dimainkan dalam permainan.</p>
+<ol class="soalan">
+<li><span class="tp">TP3</span><p class="t">Suatu pokok mempunyai 8 bucu. Berapakah bilangan tepinya?</p>
+
+<details><summary>Lihat jawapan</summary><p><b>Jawapan:</b> 7<br>Bagi pokok, tepi = bucu − 1 = 8 − 1 = 7.</p></details></li>
+<li><span class="tp">TP4</span><p class="t">Seorang pemandu bas bertolak dari A, singgah di D, kemudian ke F melalui laluan terpendek. Berapakah jumlah jarak, dalam km?</p>
+
+<details><summary>Lihat jawapan</summary><p><b>Jawapan:</b> 16<br>A ke D terpendek: A→B→D = 9 km (A→C→D = 10 km). D ke F terpendek: D→E→F = 7 km (D→F = 8 km). Jumlah 16 km.</p></details></li>
+</ol>
+
+<h2>Contoh ulasan PBD</h2>
+<p>Selepas murid bermain, Jejak TP Matematik mencadangkan TP dan ulasan seperti di bawah. Guru menyemak, kemudian menyalin ulasan ke dalam rekod PBD.</p>
+<p class="ulasan"><b>TP1:</b> Murid dapat mengenal bucu, tepi dan darjah dalam suatu graf, termasuk gelung dan berbilang tepi. Langkah seterusnya ialah membezakan graf terarah dengan graf tak terarah.</p>
+<p class="ulasan"><b>TP2:</b> Murid memahami perbezaan graf terarah dan tak terarah serta graf berpemberat dan tak berpemberat, dan dapat mengira darjah masuk dan darjah keluar. Perlu lebih latihan subgraf dan pokok.</p>
+<p class="ulasan"><b>TP3:</b> Murid boleh mengenal subgraf dan menentukan sama ada suatu subgraf ialah pokok menggunakan syarat terkait, tanpa kitaran dan tepi = bucu − 1.</p>
+<p class="ulasan"><b>TP4:</b> Murid mampu mewakilkan maklumat dalam rangkaian berpemberat dan mencari laluan terpendek. Seterusnya, latih masalah kos optimum dengan pelbagai kriteria.</p>
+<p class="ulasan"><b>TP5:</b> Murid dapat menyelesaikan masalah kos optimum yang melibatkan jarak, masa dan perbelanjaan serta membuat keputusan mengikut kekangan. Sudah bersedia untuk masalah bukan rutin.</p>
+<p class="ulasan"><b>TP6:</b> Murid berjaya mereka rangkaian sendiri, mencadangkan penambahbaikan yang mengurangkan kos optimum, dan menilai kelebihan serta kekurangannya. Pencapaian cemerlang bagi bab ini.</p>
+
+<div class="kotak-cta">
+<p><b>Jimat masa merekod PBD.</b> Murid bermain di telefon, dan jadual TP kelas siap dengan sendirinya.</p>
+<a class="btn" href="/index.html?daftar&amp;dari=seo">Main dengan murid anda, percuma</a><a class="btn dua" href="/landing.html">Lihat cara ia berfungsi</a>
+</div>
+
+<h2>Bab lain Tingkatan 4</h2>
+<p>← <a href="/bab/tingkatan-4-bab-4-operasi-set/">Bab 4: Operasi Set</a> · <a href="/bab/tingkatan-4-bab-6-ketaksamaan-linear-dalam-dua-pemboleh-ubah/">Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah</a> →</p>
+<ul class="senarai">
+<li><a href="/bab/tingkatan-4-bab-1-fungsi-dan-persamaan-kuadratik/">Bab 1: Fungsi dan Persamaan Kuadratik</a></li>
+<li><a href="/bab/tingkatan-4-bab-2-asas-nombor/">Bab 2: Asas Nombor</a></li>
+<li><a href="/bab/tingkatan-4-bab-3-penaakulan-logik/">Bab 3: Penaakulan Logik</a></li>
+<li><a href="/bab/tingkatan-4-bab-4-operasi-set/">Bab 4: Operasi Set</a></li>
+<li><a href="/bab/tingkatan-4-bab-6-ketaksamaan-linear-dalam-dua-pemboleh-ubah/">Bab 6: Ketaksamaan Linear dalam Dua Pemboleh Ubah</a></li>
+<li><a href="/bab/tingkatan-4-bab-7-graf-gerakan/">Bab 7: Graf Gerakan</a></li>
+<li><a href="/bab/tingkatan-4-bab-8-sukatan-serakan-data-tak-terkumpul/">Bab 8: Sukatan Serakan Data Tak Terkumpul</a></li>
+<li><a href="/bab/tingkatan-4-bab-9-kebarangkalian-peristiwa-bergabung/">Bab 9: Kebarangkalian Peristiwa Bergabung</a></li>
+<li><a href="/bab/tingkatan-4-bab-10-matematik-pengguna-pengurusan-kewangan/">Bab 10: Matematik Pengguna: Pengurusan Kewangan</a></li>
+</ul>
+</main>
+<footer><div class="wrap">
+<p><b>Jejak TP Matematik</b> ialah permainan pentaksiran bilik darjah (PBD) Matematik KSSM Tingkatan 1 hingga 5. Murid menjawab soalan mengikut bab, dan guru memperoleh cadangan TP serta ulasan PBD secara automatik.</p>
+<p>Subjek lain: <a href="https://jejaktpsains.naikgred.com/bab/">Jejak TP Sains</a> · <a href="https://jejaktpsejarah.naikgred.com/bab/">Jejak TP Sejarah</a> · <a href="https://jejaktpenglish.naikgred.com/bab/">Jejak TP English</a></p>
+<p><a href="/landing.html">Tentang Jejak TP Matematik</a> · <a href="/bab/">Semua bab</a> · <a href="/privasi.html">Privasi</a> · <a href="/terma.html">Terma</a> · Sebuah produk <a href="https://naikgred.com/">NaikGred</a></p>
+</div></footer>
+<script src="/konfig.js?v=20261012"></script>
+<script src="/sumber.js?v=20261027"></script>
+</body>
+</html>

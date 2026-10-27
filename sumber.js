@@ -23,6 +23,7 @@ var NG_RUJUK=(function(){try{
     if(navigator.webdriver||/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
     var m=/[?&]dari=([^&#]*)/.exec(location.search), kod="";
     if(m) kod=decodeURIComponent(m[1]).toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,30);
+    if(!kod&&/^\/bab\//.test(location.pathname)) kod="seo"; /* halaman SEO bab (27 Okt 2026) */
     if(kod&&!localStorage.getItem("jm-dari")) localStorage.setItem("jm-dari",kod);
     if(sessionStorage.getItem("jm-lawat")) return;
     var awan=window.CN_AWAN; if(!awan) return;
