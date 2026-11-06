@@ -60,6 +60,12 @@ a.kel-wa{margin-top:10px;display:inline-flex;align-items:center;max-width:100%;l
 .kel-padam{background:none;border:0;padding:10px 0;min-height:44px;font:inherit;font-size:13.5px;color:#B42318;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .kel-pautan{margin-top:14px;padding-top:12px;border-top:1px solid var(--line2)}
 @media (min-width:760px){.kel-grid{grid-template-columns:1fr 1fr}}
+.kel-subjek{margin:2px 0 16px}
+.kel-subjek nav{display:flex;flex-wrap:wrap;gap:6px}
+.kel-subjek a{padding:7px 12px;border-radius:999px;border:1.5px solid rgba(0,0,0,.18);background:#fff;color:inherit;text-decoration:none;font-weight:700;font-size:.86rem;line-height:1.2}
+.kel-subjek a:hover{border-color:rgba(0,0,0,.45)}
+.kel-subjek a.aktif{background:#1f2937;color:#fff;border-color:#1f2937}
+.kel-subjek .note{margin:8px 0 0}
 </style>
 <!-- Fon disimpan dalam app (tools/muat-fon.js), bukan dimuat dari Google -->
 <link rel="stylesheet" href="fon/fon.css">
@@ -3854,7 +3860,22 @@ function normTelefon(v){
 }
 /* Profil lengkap memerlukan nama dan sekolah. Medan telefon wujud dalam
    pangkalan data tetapi belum diminta daripada guru buat masa ini. */
+/* Anak NaikGred (6 Nov 2026): daftar sekali untuk semua subjek. kel_mula mencipta profil keluarga +
+   anak di sini jika ibu bapa sudah berdaftar di subjek lain (rekod kel_induk ikut e-mel). */
+var APP_KEL="jm", KEL_FN="https://cqokowzzgseuvhcgpktj.supabase.co/functions/v1/keluarga";
 function muatProfil(){
+  if(!SESI||!SB) return muatProfilAsal();
+  return SB.rpc("kel_mula",{p_app:APP_KEL}).then(function(r){
+    var d=r&&r.data; if(d&&d.keluarga&&!d.induk) sebarKeluarga();
+  },function(){}).then(muatProfilAsal);
+}
+/* Sebar nama + senarai anak keluarga ini ke semua subjek (fungsi tepi membaca data terus dari DB). */
+function sebarKeluarga(){
+  if(!SESI||!SESI.access_token) return Promise.resolve(null);
+  return fetch(KEL_FN,{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+SESI.access_token},
+    body:JSON.stringify({app:APP_KEL})}).then(function(r){ return r.json(); }).catch(function(){ return null; });
+}
+function muatProfilAsal(){
   var uid=SESI.user.id;
   return SB.from("jm_guru").select("nama,sekolah,telefon,setuju_pemasaran,premium_rendah_tamat,premium_atas_tamat,paket_kelas,keluarga").eq("id",uid).maybeSingle().then(function(r){
     if(r.error) throw r.error;
@@ -4233,7 +4254,7 @@ function paneProfil(ak){
     simpanProfil(n,s,PROFIL.telefon,fsj.querySelector("input").checked)
       .then(function(){ return (kelMod&&baru)?SB.rpc("jm_keluarga_tetap").then(function(r){ if(r.error) throw r.error; try{ localStorage.removeItem("cn-keluarga"); }catch(e){} return muatProfil(); }):null; })
       .then(function(){ return (GURU_DIMUAT&&!(kelMod&&baru))?null:muatGuru(); })
-      .then(function(){ RALAT_GURU=""; S.guruSkrin=null; renderCikgu(); })
+      .then(function(){ RALAT_GURU=""; S.guruSkrin=null; if(kelMod) sebarKeluarga(); renderCikgu(); })
       .catch(function(e){ bs.disabled=false; msg.hidden=false; msg.textContent=pesanRalat(e); });
   };
   bd.appendChild(f);
@@ -4596,6 +4617,7 @@ function simpanSenaraiAnak(senarai){
   var kid=KELAS_GURU[0].id;
   return SB.rpc("jm_guru_simpan_murid",{p_kelas:kid,p_murid:senarai}).then(function(r){
     if(r.error) throw r.error;
+    sebarKeluarga();
     NOMBOR[kid]=senarai.map(function(m){ return {no:m.no}; });
     NAMA[kid]={}; PIN[kid]={};
     senarai.forEach(function(m){ NAMA[kid][m.no]=m.nama; PIN[kid][m.no]=m.pin; });
@@ -4702,12 +4724,25 @@ function kadLangganKeluarga(){
   var awal=Date.now()<new Date("2027-01-01T00:00:00+08:00").getTime();
   bd.appendChild(el("h3",null,"Buka semua bab"));
   bd.appendChild(el("p","note","Akaun percuma: seorang anak, Bab 1 setiap tingkatan. "+(awal?"Harga <i>Early Bird</i> RM32 setahun sehingga 31 Dis 2026, dikunci setiap tahun selagi langganan tidak terputus. Mulai 1 Januari 2027, harga biasa RM59 setahun. ":"RM59 setahun. ")+
-    "Satu langganan keluarga membuka <b>Sejarah, Sains dan Matematik</b> untuk sehingga 5 anak. Bayar di Anak NaikGred Sains menggunakan e-mel yang sama, kemudian muat semula halaman ini."));
+    "Satu langganan keluarga membuka <b>Sains, Matematik, Sejarah dan English</b> untuk sehingga 5 anak. Bayar di Anak NaikGred Sains menggunakan e-mel yang sama, kemudian muat semula halaman ini."));
   var a=el("div","actions");
   var b=el("a","btn"); b.href="https://jejaktpsains.naikgred.com/?keluarga=1"; b.textContent=awal?"Langgan RM32 setahun":"Langgan RM59 setahun";
   a.appendChild(b); bd.appendChild(a);
   if(bayarOnline()) bd.appendChild(pautanBayarManual("keluarga"));
   return p;
+}
+function pilihSubjekKeluarga(){
+  var SUB=[["lo","Sains","https://jejaktpsains.naikgred.com/?keluarga=1"],["jm","Matematik","https://jejaktpmath.naikgred.com/?keluarga=1"],
+           ["js","Sejarah","https://jejaktpsejarah.naikgred.com/?keluarga=1"],["je","English","https://jejaktpenglish.naikgred.com/?keluarga=1"]];
+  var w=el("div","kel-subjek"), n=el("nav"); n.setAttribute("aria-label","Pilih subjek");
+  SUB.forEach(function(x){
+    var a=el("a",x[0]===APP_KEL?"aktif":null); a.textContent=x[1];
+    if(x[0]===APP_KEL) a.setAttribute("aria-current","page"); else a.href=x[2];
+    n.appendChild(a);
+  });
+  w.appendChild(n);
+  w.appendChild(el("p","note","Satu akaun untuk keempat-empat subjek. Anak dan PIN yang sama digunakan dalam setiap subjek; tambah atau padam anak di mana-mana subjek sahaja."));
+  return w;
 }
 function paneKeluarga(ak){
   var hd=el("div","guruhd");
@@ -4717,6 +4752,7 @@ function paneKeluarga(ak){
   var bo=el("button","btn ghost sm"); bo.textContent="Log keluar"; bo.onclick=logKeluar;
   var bb=el("div","butang"); bb.appendChild(bp); bb.appendChild(bo); hd.appendChild(bb);
   ak.appendChild(hd);
+  ak.appendChild(pilihSubjekKeluarga());
   if(BAYAR_MESEJ) ak.appendChild(kadLangganKeluarga());
   if(RALAT_GURU){ ak.appendChild(el("p","ralat",esc(RALAT_GURU))); return; }
   if(!GURU_DIMUAT||!KELAS_GURU.length){ ak.appendChild(el("p","note","Memuatkan keluarga...")); return; }
