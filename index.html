@@ -4724,7 +4724,7 @@ function kadLangganKeluarga(){
   var awal=Date.now()<new Date("2027-01-01T00:00:00+08:00").getTime();
   bd.appendChild(el("h3",null,"Buka semua bab"));
   bd.appendChild(el("p","note","Akaun percuma: seorang anak, Bab 1 setiap tingkatan. "+(awal?"Harga <i>Early Bird</i> RM32 setahun sehingga 31 Dis 2026, dikunci setiap tahun selagi langganan tidak terputus. Mulai 1 Januari 2027, harga biasa RM59 setahun. ":"RM59 setahun. ")+
-    "Satu langganan keluarga membuka <b>Sains, Matematik, Sejarah dan English</b> untuk sehingga 5 anak. Bayar di Anak NaikGred Sains menggunakan e-mel yang sama, kemudian muat semula halaman ini."));
+    "Satu langganan keluarga membuka <b>Sains, Matematik, Sejarah, English dan Kimia</b> untuk sehingga 5 anak. Bayar di Anak NaikGred Sains menggunakan e-mel yang sama, kemudian muat semula halaman ini."));
   var a=el("div","actions");
   var b=el("a","btn"); b.href="https://jejaktpsains.naikgred.com/?keluarga=1"; b.textContent=awal?"Langgan RM32 setahun":"Langgan RM59 setahun";
   a.appendChild(b); bd.appendChild(a);
@@ -4733,7 +4733,8 @@ function kadLangganKeluarga(){
 }
 function pilihSubjekKeluarga(){
   var SUB=[["lo","Sains","https://jejaktpsains.naikgred.com/?keluarga=1"],["jm","Matematik","https://jejaktpmath.naikgred.com/?keluarga=1"],
-           ["js","Sejarah","https://jejaktpsejarah.naikgred.com/?keluarga=1"],["je","English","https://jejaktpenglish.naikgred.com/?keluarga=1"]];
+           ["js","Sejarah","https://jejaktpsejarah.naikgred.com/?keluarga=1"],["je","English","https://jejaktpenglish.naikgred.com/?keluarga=1"],
+           ["jk","Kimia","https://jejaktpkimia.naikgred.com/?keluarga=1"]];
   var w=el("div","kel-subjek"), n=el("nav"); n.setAttribute("aria-label","Pilih subjek");
   SUB.forEach(function(x){
     var a=el("a",x[0]===APP_KEL?"aktif":null); a.textContent=x[1];
@@ -4741,7 +4742,7 @@ function pilihSubjekKeluarga(){
     n.appendChild(a);
   });
   w.appendChild(n);
-  w.appendChild(el("p","note","Satu akaun untuk keempat-empat subjek. Anak dan PIN yang sama digunakan dalam setiap subjek; tambah atau padam anak di mana-mana subjek sahaja."));
+  w.appendChild(el("p","note","Satu akaun untuk kelima-lima subjek. Anak dan PIN yang sama digunakan dalam setiap subjek; tambah atau padam anak di mana-mana subjek sahaja."));
   return w;
 }
 function paneKeluarga(ak){
