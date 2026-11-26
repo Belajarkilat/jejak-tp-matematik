@@ -76,6 +76,32 @@ async function guruDaripada(req: Request) {
   return data.user ?? null;
 }
 
+/* Meta Conversions API (26 Nov 2026): Purchase dihantar dari pelayan sebaik bayaran disahkan,
+   walaupun guru menutup tab sebelum kembali ke app. event_id = billcode, sama seperti NGPiksel
+   di pelayar, jadi Meta membuang pendua. Rahsia: META_PIXEL_ID, META_CAPI_TOKEN.
+   Gagal tidak menjejaskan bayaran. */
+const sha256 = (s: string) => createHash("sha256").update(s.trim().toLowerCase()).digest("hex");
+async function capiPurchase(bil: any, sen: number) {
+  const px = env("META_PIXEL_ID"), tk = env("META_CAPI_TOKEN");
+  if (!px || !tk || !bil?.billcode) return;
+  try {
+    const ud: Record<string, unknown> = { external_id: [sha256(String(bil.guru ?? ""))] };
+    if (bil.emel) ud.em = [sha256(String(bil.emel))];
+    if (bil.fbp) ud.fbp = bil.fbp;
+    if (bil.fbc) ud.fbc = bil.fbc;
+    const r = await fetch("https://graph.facebook.com/v24.0/" + px + "/events", {
+      method: "POST",
+      body: new URLSearchParams({ access_token: tk, data: JSON.stringify([{
+        event_name: "Purchase", event_time: Math.floor(Date.now() / 1000), event_id: bil.billcode,
+        action_source: "website", event_source_url: APP_URL || undefined, user_data: ud,
+        custom_data: { value: sen / 100, currency: "MYR", content_name: bil.peringkat ?? "" },
+      }]) }),
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!r.ok) console.error("capi gagal", r.status, (await r.text()).slice(0, 200));
+  } catch (e) { console.error("capi ralat", String((e as Error).message ?? e)); }
+}
+
 /* Sumber kebenaran: getBillTransactions. Pulangkan status bil selepas dikemas kini. */
 async function sahkan(billcode: string) {
   const { data: bil } = await sb.from(P + "_bayaran").select("*").eq("billcode", billcode).maybeSingle();
@@ -101,6 +127,7 @@ async function sahkan(billcode: string) {
       console.error("aktifkan gagal", billcode, error ?? data);
       return { status: "ralat" };
     }
+    await capiPurchase(bil, sen);
     return { status: "berjaya", tamat: data.tamat, peringkat: bil.peringkat };
   }
   const menunggu = tx.some((t: any) => ["2", "4"].includes(String(t.billpaymentStatus)));
@@ -111,7 +138,7 @@ async function sahkan(billcode: string) {
   return { status: "menunggu" };
 }
 
-async function cipta(guru: { id: string; email?: string }, peringkat: string, pakej = "") {
+async function cipta(guru: { id: string; email?: string }, peringkat: string, pakej = "", meta: { fbp?: string; fbc?: string } = {}) {
   const panitia = peringkat === "panitia";
   if (!PERINGKAT[peringkat]) return json({ ralat: "Peringkat tidak sah" }, 400);
   if (!RAHSIA || !KATEGORI || !APP_URL) return json({ ralat: "Bayaran dalam talian belum dibuka" }, 503);
@@ -134,7 +161,8 @@ async function cipta(guru: { id: string; email?: string }, peringkat: string, pa
   if (lama?.billcode) return json({ url: BASE + "/" + lama.billcode, billcode: lama.billcode });
 
   const { data: baris, error: ei } = await sb.from(P + "_bayaran")
-    .insert({ guru: guru.id, emel: guru.email ?? "", peringkat, jumlah_sen: harga, pakej: panitia ? pakej : null })
+    .insert({ guru: guru.id, emel: guru.email ?? "", peringkat, jumlah_sen: harga, pakej: panitia ? pakej : null,
+      fbp: meta.fbp || null, fbc: meta.fbc || null })
     .select("id").single();
   if (ei) return json({ ralat: "Tidak dapat merekod bil" }, 500);
 
@@ -192,7 +220,10 @@ Deno.serve(async (req) => {
     if (!guru) return json({ ralat: "Sila log masuk semula" }, 401);
     const body = await req.json().catch(() => ({}));
 
-    if (body.aksi === "cipta") return await cipta(guru, String(body.peringkat ?? ""), String(body.pakej ?? ""));
+    if (body.aksi === "cipta") return await cipta(guru, String(body.peringkat ?? ""), String(body.pakej ?? ""), {
+      fbp: /^fb\.\d\.\d+\.\d+$/.test(String(body.fbp ?? "")) ? String(body.fbp) : "",
+      fbc: /^fb\.\d\.\d+\.[\w-]{1,500}$/.test(String(body.fbc ?? "")) ? String(body.fbc) : "",
+    });
     if (body.aksi === "semak") {
       const billcode = String(body.billcode ?? "");
       const { data: milik } = await sb.from(P + "_bayaran").select("id").eq("billcode", billcode).eq("guru", guru.id).maybeSingle();

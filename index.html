@@ -4331,6 +4331,13 @@ function mesejBayar(){
    status disemak dengan toyyibPay; app tidak boleh menulis premium sendiri. */
 var BAYAR_MESEJ=null, SEMAK_BIL=null, SEMAK_SENYAP=false;
 function bayarOnline(){ return !!(AWAN&&AWAN.bayarOnline); }
+/* Kuki Meta (_fbp/_fbc, domain .naikgred.com) dibaca sahaja, tiada penjejak dimuat; dihantar ke
+   fungsi bayar supaya Purchase dari pelayan (Conversions API) dapat dipadankan dengan iklan. */
+function kukiMeta(){
+  var o={}; try{ document.cookie.split(/;\s*/).forEach(function(c){ var i=c.indexOf("="), k=c.slice(0,i);
+    if(k==="_fbp"||k==="_fbc") o[k.slice(1)]=decodeURIComponent(c.slice(i+1)).slice(0,200); }); }catch(e){}
+  return o;
+}
 function panggilBayar(isi){
   return fetch(AWAN.url+"/functions/v1/bayar",{method:"POST",
     headers:{"Content-Type":"application/json",apikey:AWAN.kunci,Authorization:"Bearer "+SESI.access_token},
@@ -4343,7 +4350,7 @@ function panggilBayar(isi){
 }
 function naikTarafOnline(peringkat, btn, pakej){
   btn.disabled=true; var asal=btn.textContent; btn.textContent="Membuka halaman bayaran...";
-  panggilBayar({aksi:"cipta",peringkat:peringkat,pakej:pakej||""}).then(function(j){
+  panggilBayar(Object.assign({aksi:"cipta",peringkat:peringkat,pakej:pakej||""},kukiMeta())).then(function(j){
     if(!j.url) throw new Error(j.ralat||"Tiada pautan bayaran");
     try{ localStorage.setItem("cn-bil",j.billcode); localStorage.setItem("cn-bil-p",JSON.stringify({p:peringkat,t:Date.now()})); }catch(e){}
     location.href=j.url;

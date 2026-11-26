@@ -25,6 +25,22 @@ var NG_RUJUK=(function(){try{
     if(m) kod=decodeURIComponent(m[1]).toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,30);
     if(!kod&&/^\/bab\//.test(location.pathname)) kod="seo"; /* halaman SEO bab (27 Okt 2026) */
     if(kod&&!localStorage.getItem("jm-dari")) localStorage.setItem("jm-dari",kod);
+    /* Sumber automatik (26 Nov 2026): tanpa ?dari, kenal pasti iklan, carian atau sosial yang
+       membawa guru ke landing (utm_source, fbclid, gclid, rujukan). Kunjungan langsung tidak disimpan
+       supaya kod ?dari kemudian masih boleh direkod. Hanya di landing, bukan app murid. */
+    if(!kod&&!localStorage.getItem("jm-dari")&&/landing(\.html)?$/.test(location.pathname)){
+      var q=location.search, us=/[?&]utm_source=([^&#]*)/.exec(q), ap=(NG_RUJUK.split("|app-")[1]||""),
+          rh=NG_RUJUK.split("|")[0]||"", auto="";
+      if(us) auto=decodeURIComponent(us[1]);
+      else if(/[?&]fbclid=/.test(q)) auto="meta";
+      else if(/[?&](gclid|gbraid|wbraid)=/.test(q)) auto="google-iklan";
+      else if(ap) auto=ap;
+      else if(/(^|\.)google\./.test(rh)) auto="google";
+      else if(/(^|\.)(bing|duckduckgo|yahoo)\./.test(rh)) auto="carian-lain";
+      else { var km=/(facebook|instagram|threads|tiktok|telegram|youtube|whatsapp|naikgred)/.exec(rh); if(km) auto=km[1]; else if(rh&&rh!=="langsung") auto="web"; }
+      auto=String(auto).toLowerCase().replace(/[^a-z0-9-]/g,"").slice(0,30);
+      if(auto) localStorage.setItem("jm-dari",auto);
+    }
     if(sessionStorage.getItem("jm-lawat")) return;
     var awan=window.CN_AWAN; if(!awan) return;
     var p=localStorage.getItem("jm-peranti");
