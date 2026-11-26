@@ -3903,8 +3903,12 @@ function simpanProfil(nama,sekolah,telefon,setuju){
   var baris={id:SESI.user.id,nama:nama,sekolah:sekolah,telefon:telefon||"",setuju_pemasaran:!!setuju};
   /* masa persetujuan direkod setiap kali persetujuan berubah */
   if(!PROFIL||PROFIL.simpanan!==!!setuju) baris.setuju_masa=new Date().toISOString();
+  var baharu=!PROFIL||!PROFIL.ada;
   return SB.from("jm_guru").upsert(baris).then(function(r){
     if(r.error) throw r.error;
+    /* guru baharu: rekod sumber pertama (sumber.js, 26 Nov 2026); gagal tidak mengapa */
+    var dari=null; try{ dari=localStorage.getItem("jm-dari"); }catch(e){}
+    if(baharu&&dari) SB.rpc("jm_guru_tanda_sumber",{p_sumber:dari}).then(function(){},function(){});
     PROFIL={nama:nama,sekolah:sekolah,telefon:telefon,setuju:!!setuju,simpanan:!!setuju,ada:true,
             premiumRendahTamat:PROFIL?PROFIL.premiumRendahTamat:null,
             premiumAtasTamat:PROFIL?PROFIL.premiumAtasTamat:null,
